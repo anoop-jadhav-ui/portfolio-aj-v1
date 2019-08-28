@@ -1,0 +1,15 @@
+.subsection{
+    margin-top:2.75rem;
+}
+.subsection-data{
+    margin-top:1rem;
+    margin-bottom:2rem;
+}
+.education-bars{
+    margin-top:2rem;
+    margin-bottom: 2rem;
+}
+.know-more-button{
+    display: flex;
+    justify-content: flex-end;
+}
