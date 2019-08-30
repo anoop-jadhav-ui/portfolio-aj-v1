@@ -7,8 +7,11 @@ import posed, { PoseGroup } from 'react-pose'
 const Filled = posed.div({
   hidden: { width: 0 },
   visible: { 
-    width : `100%` ,
-    transition: { duration: 300 }
+    width : ({ i }) => ( i + '%' ) ,
+    transition: { 
+      duration: 900,
+      ease:'easeInOut'
+     }
   }
 })
 
@@ -17,13 +20,13 @@ class BarGraph extends React.Component {
   componentDidMount() {
     setTimeout(() => {
       this.setState({ isVisible: !this.state.isVisible });
-    }, 1000);
+    }, 500);
   }
 
   render() {
     const { isVisible } = this.state;
     return  <div class="bar-graph">
-            <Filled className="filled" pose={isVisible ? 'visible' : 'hidden'} />
+            <Filled className="filled" pose={isVisible ? 'visible' : 'hidden'} i={this.props.value}/>
         </div>
   }
 }
