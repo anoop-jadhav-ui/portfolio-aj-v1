@@ -29,7 +29,7 @@ font-weight: bold;
     font-size: 1.5rem;/*24*/
 }
 .h4{
-    font-size: 1.25rem;/*20*/
+    font-size: 1.25rem;/*20px*/
 }
 .body-text{
     font-size: 1.125rem;/*18px*/
@@ -40,17 +40,19 @@ font-weight: bold;
 .label{
     font-size: 0.875rem;/*14px*/
 }
-
-/*Colors*/
-.grey1{
-color:#333333;
-}
 a:hover,
 ul > li a:hover{
     text-decoration: none;
     font-weight: bold;
 }
-ul > li a:hover,
+ul > li a:hover{
+color:#4F4F4F;
+}
+
+/*Colors*/
+.grey1{
+color:#333333;
+}
 .grey2{
 color:#4F4F4F;
 }

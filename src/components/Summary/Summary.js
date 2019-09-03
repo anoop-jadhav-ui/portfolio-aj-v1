@@ -6,7 +6,7 @@ function Summary() {
   return (
     <div class="col-md-8 page-1 text-center">
       <img src={MainLogo} alt="main logo" />
-      <div class="h1 bold main-title">
+      <div class="h1 bold main-title grey-1">
         Anoop Jadhav
           </div>
       <div class="h4 uppercase letterspacing-1 red bold">
