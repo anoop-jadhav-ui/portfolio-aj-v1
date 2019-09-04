@@ -25,7 +25,7 @@ class BarGraph extends React.Component {
 
   render() {
     const { isVisible } = this.state;
-    return  <div class="bar-graph">
+    return  <div className={'bar-graph ' + this.props.class}>
             <Filled className="filled" pose={isVisible ? 'visible' : 'hidden'} i={this.props.value}/>
         </div>
   }

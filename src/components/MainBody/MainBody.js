@@ -5,6 +5,10 @@ import Summary from '../Summary/Summary'
 import Education from '../Education/Education'
 import WorkExperience from '../WorkExperience/WorkExperience'
 import Certifications from '../Certifications/Certifications'
+import Skills from '../Skills/Skills'
+import Hobbies from '../Hobbies/Hobbies'
+import Contacts from '../Contacts/Contacts'
+
 
 function MainBody() {
   return (
@@ -13,6 +17,9 @@ function MainBody() {
       <Education/>
       <WorkExperience/>
       <Certifications/>
+      <Skills/>
+      <Hobbies/>
+      <Contacts/>
     </div>
   );
 }

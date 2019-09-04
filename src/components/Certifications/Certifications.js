@@ -11,7 +11,7 @@ class Certifications extends React.Component {
                 <div class="subsection-data">
                     <span class="h3 grey1 bold">Web Development Fundamentals</span>
                     <div class="red default-text mt-1"><a href="javascript:void(0)">Certification Number/Link to Certificate</a></div>
-                    <div class="mt-4 grey-1 body-text">
+                    <div class="mt-2 grey-1 body-text">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque malesuada sed malesuada viverra facilisis. Vestibulum mattis mi fames quisque. Felis maecenas ultricies eu sagittis ornare diam felis lacus. Feugiat porta risus mus at tellus faucibus est. Pretium vel, risus sit eget.
                     </div>
                     
@@ -22,7 +22,7 @@ class Certifications extends React.Component {
                 <div class="subsection-data">
                     <span class="h3 grey1 bold">Drawing Vector Graphics: Iconography</span>
                     <div class="red default-text mt-1"><a href="javascript:void(0)">Certification Number/Link to Certificate</a></div>
-                    <div class="mt-4 grey-1 body-text">
+                    <div class="mt-2 grey-1 body-text">
                     Lynda.com -  Deke McClelland
                     </div>
                     
@@ -30,7 +30,7 @@ class Certifications extends React.Component {
                 <div class="subsection-data">
                     <span class="h3 grey1 bold">Illustrator CC 2017 One-on-One Fundamentals</span>
                     <div class="red default-text mt-1"><a href="javascript:void(0)">Certification Number/Link to Certificate</a></div>
-                    <div class="mt-4 grey-1 body-text">
+                    <div class="mt-2 grey-1 body-text">
                     Lynda.com -  Deke McClelland
                     </div>
                     
@@ -38,7 +38,7 @@ class Certifications extends React.Component {
                 <div class="subsection-data">
                     <span class="h3 grey1 bold">Creating a Design System with Sketch</span>
                     <div class="red default-text mt-1"><a href="javascript:void(0)">Certification Number/Link to Certificate</a></div>
-                    <div class="mt-4 grey-1 body-text">
+                    <div class="mt-2 grey-1 body-text">
                         Lynda.com - Anne Grundhoefer
                     </div>
                    

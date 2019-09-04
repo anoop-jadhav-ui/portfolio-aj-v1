@@ -1,0 +1,10 @@
+.skill-bar-wrapper + .skill-bar-wrapper{
+margin-top:2rem;
+}
+.subsection-data{
+    margin-top:2rem;
+}
+
+.subsection + .subsection{
+    margin-top:8rem;
+}
