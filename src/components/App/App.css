@@ -18,6 +18,9 @@ font-weight: bold;
 .letterspacing-1{
     letter-spacing: 2px;
 }
+.letterspacing-2{
+    letter-spacing: 4px;
+}
 /*Type*/
 .h1{
     font-size: 2.75rem;/*44px*/
@@ -85,4 +88,12 @@ color:#F2C94C;
 /*Section spacing*/
 .section{
     padding-top:8.25rem;
+}
+
+.dot{
+    height: 4px;
+    width:4px;
+    display: inline-block;
+    border-radius: 50%;
+    background: #E0E0E0;
 }

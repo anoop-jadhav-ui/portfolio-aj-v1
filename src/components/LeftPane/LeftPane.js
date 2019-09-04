@@ -10,6 +10,7 @@ function LeftPane() {
          <li class="bold grey2"><a class="grey2" href="javascript:void(0)">Work</a></li>
          <li><a class="grey4" href="javascript:void(0)">Summary</a></li>
          <li><a class="grey4" href="javascript:void(0)">Education</a></li>
+         <li><a class="grey4" href="javascript:void(0)">Work Experience</a></li>
          <li><a class="grey4" href="javascript:void(0)">Certifications</a></li>
          <li><a class="grey4" href="javascript:void(0)">Skills</a></li>
          <li><a class="grey4" href="javascript:void(0)">Hobbies & Interests</a></li>
