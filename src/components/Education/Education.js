@@ -7,7 +7,7 @@ import './Education.css';
 function Education() {
 
   return (
-    <div class="col-md-8 page-1 text-left">
+    <div class="col-md-7 page-1 text-left section">
      <div class="section-title grey4 h2 bold">Education</div>
      <div class="subsection">
        <div class="subsection-title uppercase body-text grey3 letterspacing-1">Higher Secondary</div>

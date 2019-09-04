@@ -4,7 +4,7 @@ import './Summary.css';
 
 function Summary() {
   return (
-    <div class="col-md-8 page-1 text-center">
+    <div class="col-md-7 page-1 text-center">
       <img src={MainLogo} alt="main logo" />
       <div class="h1 bold main-title grey-1">
         Anoop Jadhav

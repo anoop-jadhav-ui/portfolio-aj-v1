@@ -6,7 +6,7 @@ import Education from '../Education/Education'
 
 function MainBody() {
   return (
-    <div className="main-body col-md-8">
+    <div className="main-body row justify-content-center">
       <Summary/>
       <Education/>
     </div>
