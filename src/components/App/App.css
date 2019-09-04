@@ -71,7 +71,8 @@ color:#E0E0E0;
 .grey6{
 color:#F2F2F2;
 }
-.red{
+.red,
+.red > a{
 color:#EB5757;
 }
 .orange{

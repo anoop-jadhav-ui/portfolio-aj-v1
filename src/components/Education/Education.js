@@ -18,6 +18,7 @@ function Education() {
           </div>
           <a href="javascript:void(0)" class="know-more-button"><span class="red pr-2">Know more</span> <img src={KnowMoreButton} alt="know more buton"/></a>
        </div>
+       <div class="subsection-title uppercase body-text grey3 letterspacing-1">Graduation</div>
        <div class="subsection-data">
           <span class="h3 grey1 bold">MIT Academy of Engineering</span><span class="h3 grey3 light">, Alandi</span>
           <div className="education-bars">
@@ -25,7 +26,6 @@ function Education() {
           </div>
           <a href="javascript:void(0)" class="know-more-button"><span class="red pr-2">Know more</span> <img src={KnowMoreButton} alt="know more buton"/></a>
        </div>
-      
      </div> 
     </div>
   );

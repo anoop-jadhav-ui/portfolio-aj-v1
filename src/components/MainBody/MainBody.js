@@ -4,7 +4,7 @@ import './MainBody.css';
 import Summary from '../Summary/Summary'
 import Education from '../Education/Education'
 import WorkExperience from '../WorkExperience/WorkExperience'
-
+import Certifications from '../Certifications/Certifications'
 
 function MainBody() {
   return (
@@ -12,6 +12,7 @@ function MainBody() {
       <Summary/>
       <Education/>
       <WorkExperience/>
+      <Certifications/>
     </div>
   );
 }
