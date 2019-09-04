@@ -4,7 +4,7 @@ import './LeftPane.css';
 
 function LeftPane() {
   return (
-    <div className="left-pane position-fixed">
+    <div className="left-pane position-fixed  d-none d-md-block">
        <img src={LightLogo} alt="logo"/>
        <ul class="menu body-text grey4">
          <li class="bold grey2"><a class="grey2" href="javascript:void(0)">Work</a></li>

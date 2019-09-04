@@ -12,3 +12,14 @@
 .scroll-text{
     padding-top:2.75rem;
 }
+
+
+/* Medium devices (tablets, 768px and up)*/
+@media (max-width: 768px) { 
+    .main-body{
+        
+        margin-left:0;
+    }
+
+    
+}
