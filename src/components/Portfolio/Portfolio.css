@@ -1,0 +1,40 @@
+.portfolio-menu{
+    display:flex;
+    padding-top:2rem;
+    transform: translate(1rem, 0);
+}
+.portfolio-menu li + li{
+    padding-left : 2rem;
+}
+.portfolio-body{
+    padding:1rem 2.625rem 2.625rem 2.625rem !important;
+    max-width: 74.75rem;
+}
+
+.thumbnail{
+    height: 207px;;
+    background: #f2f2f2;
+}
+.thumbnail + .thumbnail:nth-child(n+4),
+.thumbnail + .thumbnail:nth-child(n+5),
+.thumbnail + .thumbnail:nth-child(n+6){
+    margin-top:1rem;
+}
+
+.dummy-image{
+    background: #E0E0E0;
+    height: 100%;
+    width:100%;
+}
+.social-icon{
+    width:20px;
+    height: 20px;
+    transition: transform 100ms ease-in;
+}
+.social-icon + .social-icon{
+    margin-left:1.5rem;
+}
+.social-icon:hover{
+   transform: scale(1.3);
+}
+

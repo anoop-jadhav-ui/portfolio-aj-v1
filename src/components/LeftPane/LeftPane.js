@@ -15,7 +15,7 @@ function LeftPane() {
          <li><a class="grey4" href="javascript:void(0)">Skills</a></li>
          <li><a class="grey4" href="javascript:void(0)">Hobbies & Interests</a></li>
          <li><a class="grey4" href="javascript:void(0)">Location</a></li>
-         <li><a class="grey4" href="javascript:void(0)">Contact</a>s</li>
+         <li><a class="grey4" href="javascript:void(0)">Contact</a></li>
        </ul>
     </div>
   );
