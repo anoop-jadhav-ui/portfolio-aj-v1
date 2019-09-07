@@ -7,23 +7,51 @@ import Portfolio from '../Portfolio/Portfolio'
 class App extends React.Component {
 
   state = {
-      currentStep: 0,
-      showPortfolio: true
-    }
+    currentStep: 0,
+
+    /*Variables used for transitions*/
+    showPortfolio: true,
+    mainPage:false
+  }
 
   changeStep = (newStep) => {
-    this.setState(() => {
-      return {
-        showPortfolio : false
-      }
-    })
-    setTimeout( () => {
+    /*transition
+    1. when portfolio appears by default fade in applies
+    2. when currentStep > 0 then portfolio is set to false to start fadeIn of portfolio 
+    3. when currentStep == 0 then summaryPages should fade and showPortfolio is true  
+    */
+
+    if (newStep !== 0) {
+      //portfolio - fade out , summary - fade in
       this.setState(() => {
         return {
-          currentStep: newStep
+          showPortfolio: false
         }
       })
-    }, 400)
+      setTimeout(() => {
+        this.setState(() => {
+          return {
+            currentStep: newStep,
+            mainPage : true
+          }
+        })
+      }, 400)
+    } else {
+      //portfolio - fade In, Summary - fade out
+      this.setState(() => {
+        return {
+          mainPage:false
+        }
+      })
+      setTimeout(() => {
+        this.setState(() => {
+          return {
+            showPortfolio: true,
+            currentStep: newStep,
+          }
+        })
+      }, 400)
+    }
   }
 
   render() {
@@ -35,8 +63,8 @@ class App extends React.Component {
               <Portfolio currentStep={this.state.currentStep} changeStep={this.changeStep} />
             </div>
             :
-            <div className={this.state.currentStep !== 0 ? 'App row no-gutters fade show' : 'App row no-gutters fadeOut hide'}>
-              <LeftPane currentStep={this.state.currentStep}  changeStep={this.changeStep}></LeftPane>
+            <div className={this.state.mainPage ? 'App row no-gutters fade show' : 'App row no-gutters fadeOut hide'}>
+              <LeftPane currentStep={this.state.currentStep} changeStep={this.changeStep}></LeftPane>
               <MainBody currentStep={this.state.currentStep} changeStep={this.changeStep} ></MainBody>
             </div>
         }
