@@ -5,20 +5,25 @@ import MainBody from '../MainBody/MainBody';
 import Portfolio from '../Portfolio/Portfolio'
 
 class App extends React.Component {
-  constructor() {
-    super()
-    this.state = {
-      currentStep: 0
-    }
-    this.changeStep = this.changeStep.bind(this);
-  }
 
-  changeStep(newStep) {
-    this.setState(prevState => {
+  state = {
+      currentStep: 0,
+      showPortfolio: true
+    }
+
+  changeStep = (newStep) => {
+    this.setState(() => {
       return {
-        currentStep: prevState.currentStep + 1
+        showPortfolio : false
       }
     })
+    setTimeout( () => {
+      this.setState(() => {
+        return {
+          currentStep: newStep
+        }
+      })
+    }, 400)
   }
 
   render() {
@@ -26,14 +31,13 @@ class App extends React.Component {
       <div>
         {
           this.state.currentStep === 0 ?
-            <div className='portfolio row no-gutters '>
-              <Portfolio currentStep={this.state.currentStep} changeStep={()=>this.changeStep} />
+            <div className={this.state.showPortfolio ? 'portfolio row no-gutters fade show' : 'portfolio row no-gutters fadeOut hide'}>
+              <Portfolio currentStep={this.state.currentStep} changeStep={this.changeStep} />
             </div>
             :
-            <div className='App row no-gutters'>
-              {'current step ' + this.state.currentStep}
-              <LeftPane></LeftPane>
-              <MainBody></MainBody>
+            <div className={this.state.currentStep !== 0 ? 'App row no-gutters fade show' : 'App row no-gutters fadeOut hide'}>
+              <LeftPane currentStep={this.state.currentStep}  changeStep={this.changeStep}></LeftPane>
+              <MainBody currentStep={this.state.currentStep} changeStep={this.changeStep} ></MainBody>
             </div>
         }
       </div>

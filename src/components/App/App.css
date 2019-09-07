@@ -56,27 +56,30 @@ ul > li{
     text-decoration: none !important;
 }
 
+
 a:hover,
 ul > li a:hover{
     text-decoration: none;
     font-weight: bold;
 }
 ul > li a:hover{
-color:#4F4F4F;
+color:#4F4F4F !important;
 }
 
 /*Colors*/
 .grey1{
 color:#333333;
 }
-.grey2{
-color:#4F4F4F;
+.grey2,
+.grey2 > a{
+color:#4F4F4F !important;
 }
 .grey3{
 color:#828282;
 }
-.grey4{
-color:#BDBDBD;
+.grey4,
+.grey4 >a{
+color:#BDBDBD !important;
 }
 .grey5{
 color:#E0E0E0;

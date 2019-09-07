@@ -9,11 +9,15 @@
 .portfolio-body{
     padding:1rem 2.625rem 2.625rem 2.625rem !important;
     max-width: 74.75rem;
+    height:100%;
+    overflow-y:auto;
 }
-
+.portfolio-footer{
+    position: fixed;
+    bottom: 3rem;   
+}
 .thumbnail{
-    height: 207px;;
-    background: #f2f2f2;
+    height: 207px;
 }
 .thumbnail + .thumbnail:nth-child(n+4),
 .thumbnail + .thumbnail:nth-child(n+5),
@@ -21,10 +25,23 @@
     margin-top:1rem;
 }
 
-.dummy-image{
-    background: #E0E0E0;
+.thumbnail-image{
+    background-size:cover;
+    background-position: center;
     height: 100%;
     width:100%;
+}
+.current-image{
+    position: absolute;
+    width:100%;
+    top:0;
+    left:0;
+    overflow-y:auto;
+    box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.25);
+    margin-bottom: 2rem;
+}
+.thumbnail-image{
+    cursor: pointer;
 }
 .social-icon{
     width:20px;
@@ -38,3 +55,85 @@
    transform: scale(1.3);
 }
 
+.fade {
+    animation: fadein 2s;
+    -moz-animation: fadein 2s; /* Firefox */
+    -webkit-animation: fadein 2s; /* Safari and Chrome */
+    -o-animation: fadein 2s; /* Opera */
+
+}
+.fadeOut{
+    animation: fadeout 1s;
+    -moz-animation: fadeout 1s; /* Firefox */
+    -webkit-animation: fadeout 1s; /* Safari and Chrome */
+    -o-animation: fadeout 1s; /* Opera */
+}
+
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-moz-keyframes fadein { /* Firefox */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-webkit-keyframes fadein { /* Safari and Chrome */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-o-keyframes fadein { /* Opera */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+
+
+@keyframes fadeout {
+    from {
+        opacity:1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+@-moz-keyframes fadeout { /* Firefox */
+    from {
+        opacity:1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+@-webkit-keyframes fadeout { /* Safari and Chrome */
+    from {
+        opacity:1;
+    }
+    to {
+        opacity:0;
+    }
+}
+@-o-keyframes fadeout { /* Opera */
+    from {
+        opacity:1;
+    }
+    to {
+        opacity: 0;
+    }
+}
