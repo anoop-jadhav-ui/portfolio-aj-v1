@@ -4,10 +4,10 @@ import BarGraph from '../BarGraph/BarGraph'
 import './Education.css';
 
 
-function Education() {
+function Education(props) {
 
   return (
-    <div className="col-md-7 page-1 text-left section education">
+    <div className={"show-on-scroll col-md-7 page-1 text-left section education " + props.class}>
      <div className="section-title grey4 h2 bold">Education</div>
      <div className="subsection">
        <div className="subsection-title uppercase body-text grey3 letterspacing-1">Higher Secondary</div>

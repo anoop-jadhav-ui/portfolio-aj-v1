@@ -104,7 +104,7 @@ color:#F2C94C;
 
 /*Section spacing*/
 .section{
-    padding-top:8.25rem;
+   padding-top:8.25rem;
 }
 
 .dot{
@@ -115,8 +115,19 @@ color:#F2C94C;
     background: #E0E0E0;
 }
 
-
-
+/*Summary*/
+.main-title{
+    padding-top:2.75rem;
+}
+.summary-text{
+    padding-top:2.5rem;
+}
+.scroll-text{
+    padding-top:2.75rem;
+}
+.main-body{
+    width:100%;
+}
 
 
 /* Medium devices (tablets, 768px and up)*/
@@ -136,4 +147,16 @@ color:#F2C94C;
     }
 
 
+}
+
+.show-on-scroll{
+    opacity: 0;
+    transform: translateY(2rem);
+    
+    transition: all 600ms ease-in;
+}
+
+.is-visible{
+    opacity: 1;
+    transform: translateY(0);
 }

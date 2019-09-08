@@ -13,6 +13,18 @@
     padding-top:2.75rem;
 }
 
+.hide{
+    opacity: 0;
+    transition:  height 200ms ease-in-out; 
+    transition: opacity  200ms ease-in-out; 
+    
+}
+.show{
+    opacity: 1;
+    transition:  height 200ms ease-in-out;
+    transition: opacity  200ms ease-in-out; 
+}
+
 
 /* Medium devices (tablets, 768px and up)*/
 @media (max-width: 768px) { 

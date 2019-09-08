@@ -2,9 +2,9 @@ import React from 'react'
 import './WorkExperience.css'
 import KnowMoreButton from '../../assets/arrow-icon.svg'
 
-class WorkExperience extends React.Component {
-    render() {
-        return <div className="col-md-7 page-1 text-left section work-experience">
+function WorkExperience (props){
+    
+        return <div className={"show-on-scroll col-md-7 page-1 text-left section work-experience "+ props.class}>
             <div className="section-title grey4 h2 bold">Work Experience</div>
             <div className="subsection">
                 <div className="subsection-data">
@@ -29,7 +29,7 @@ class WorkExperience extends React.Component {
                 </div>
             </div>
         </div>
-    }
+    
 }
 
 export default WorkExperience;

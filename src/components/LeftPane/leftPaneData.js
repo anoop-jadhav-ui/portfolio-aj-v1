@@ -2,42 +2,50 @@ var leftPaneData = [
     {
         key: 0,
         class: 'work',
-        label: 'Work'
+        label: 'Work',
+        headerPos:0
     },
     {
         key: 1,
         class: 'summary',
-        label: 'Summary'
+        label: 'Summary',
+        headerPos:0
     },
     {
         key: 2,
         class: 'education',
-        label: 'Education'
+        label: 'Education',
+        headerPos:0
     },
     {
         key: 3,
         class: 'work-experience',
-        label: 'Work Experience'
+        label: 'Work Experience',
+        headerPos:0
     },
     {
         key: 4,
         class: 'certifications',
-        label: 'Certifications'
+        label: 'Certifications',
+        headerPos:0
     },
     {
         key: 5,
         class: 'skills',
-        label: 'Skills'
+        label: 'Skills',
+        headerPos:0
     },
     {
         key: 6,
         class: 'hobbies-interests',
-        label: 'Hobbies & Interests'
+        label: 'Hobbies & Interests',
+        headerPos:0
     },
     {
         key: 7,
         class: 'contacts',
-        label: 'Contacts'
+        label: 'Contacts',
+        headerPos:0
     }
 ]
 

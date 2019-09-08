@@ -2,14 +2,15 @@ import React from 'react';
 import LightLogo from '../../assets/leftpane-logo.svg'
 import './LeftPane.css';
 
-function LeftPaneItems(props) {
 
+function LeftPaneItems(props) {
   var listItems = props.data.leftPaneItems.map((item) =>
     <li key={item.key} className={props.data.currentStep === item.key ? 'bold grey2' : 'grey4'}><a onClick={(e) => props.data.changeStep(item.key, e)}>{item.label}</a></li>
   )
   return listItems
-
 }
+
+
 
 
 const LeftPane = (props) => {

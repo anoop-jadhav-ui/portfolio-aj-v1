@@ -4,6 +4,7 @@
 }
 .menu li{
 list-style: none;
+cursor: pointer;
 }
 .menu li + li{
     margin-top:1rem;

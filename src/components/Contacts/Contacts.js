@@ -1,9 +1,9 @@
 import React from 'react'
 import './Contacts.css'
 
-class Contacts extends React.Component {
-    render() {
-        return <div className="col-md-7 page-1 text-left section contacts">
+function Contacts(props){
+    
+        return <div className={"show-on-scroll col-md-7 page-1 text-left section contacts "+ props.class}>
             <div className="section-title grey4 h2 bold">Contacts</div>
             <div className="subsection">
                 
@@ -24,7 +24,7 @@ class Contacts extends React.Component {
             </div>
         </div>
 
-    }
+    
 }
 
 export default Contacts

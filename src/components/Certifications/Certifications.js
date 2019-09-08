@@ -1,9 +1,9 @@
 import React from 'react'
 import './Certifications.css'
 
-class Certifications extends React.Component {
-    render() {
-        return <div className="col-md-7 page-1 text-left section certifications">
+function Certifications(props){
+    
+        return <div className={"show-on-scroll col-md-7 page-1 text-left section certifications "+ props.class}>
 
             <div className="section-title grey4 h2 bold">Certifications</div>
             <div className="subsection">
@@ -45,7 +45,7 @@ class Certifications extends React.Component {
                 </div>
             </div>
         </div>
-    }
+    
 }
 
 export default Certifications;

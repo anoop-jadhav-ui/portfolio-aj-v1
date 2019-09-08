@@ -2,9 +2,9 @@ import React from 'react';
 import MainLogo from '../../assets/main-logo.svg'
 import './Summary.css';
 
-function Summary() {
+function Summary(props) {
   return (
-    <div className="col-md-7 page-1 text-center">
+    <div className={'show-on-scroll col-md-7 page-1 text-center ' + props.class}>
       <img src={MainLogo} alt="main logo" />
       <div className="h1 bold main-title grey-1">
         Anoop Jadhav

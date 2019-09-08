@@ -3,9 +3,9 @@ import BarGraph from '../BarGraph/BarGraph'
 import './Skills.css'
 
 
-class Skills extends React.Component {
-    render() {
-        return <div className="col-md-7 page-1 text-left section skills">
+function Skills(props){
+    
+        return <div className={"show-on-scroll col-md-7 page-1 text-left section skills " + props.class} >
             <div className="section-title grey4 h2 bold">Skills</div>
             <div className="subsection">
                 <div className="subsection-title uppercase body-text grey3 letterspacing-1">Development</div>
@@ -52,7 +52,7 @@ class Skills extends React.Component {
                 
             </div>
         </div>
-    }
+    
 }
 
 export default Skills
