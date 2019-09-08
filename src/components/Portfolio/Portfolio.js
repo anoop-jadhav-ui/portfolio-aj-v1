@@ -46,7 +46,7 @@ class Portfolio extends React.Component {
         })
     }
     render() {
-        return <div className="portfolio-wrapper row no-gutters col-md-12  justify-content-center portfolio">
+        return <div className='portfolio-wrapper row no-gutters col-md-12  justify-content-center portfolio '>
             <img className="current-image" src={this.state.currentImage} onClick={() => this.closeImage()} />
             {
                 this.state.currentImage === '' &&
