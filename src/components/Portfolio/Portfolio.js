@@ -46,7 +46,7 @@ class Portfolio extends React.Component {
         })
     }
     render() {
-        return <div className="portfolio-wrapper row no-gutters col-md-12  justify-content-center">
+        return <div className="portfolio-wrapper row no-gutters col-md-12  justify-content-center portfolio">
             <img className="current-image" src={this.state.currentImage} onClick={() => this.closeImage()} />
             {
                 this.state.currentImage === '' &&
@@ -56,6 +56,7 @@ class Portfolio extends React.Component {
                         <img src={headerLogo} alt="header logo" />
                         
                         <ul className="portfolio-menu label grey4 justify-content-center uppercase">
+                        
                             <li className="bold grey2"><a className="grey2" onClick={(e) => this.props.changeStep(this.state.currentStep,e)}>Work</a></li>
                             <li><a className="grey4" onClick={(e) => this.props.changeStep(this.state.currentStep + 1,e)}>Profile</a></li>
                             <li><a className="grey4" onClick={(e) => this.props.changeStep(this.state.currentStep + 2,e)}>Contacts</a></li>
