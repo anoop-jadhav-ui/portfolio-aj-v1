@@ -136,7 +136,7 @@ color:#F2C94C;
         font-size: 11px;
     }
     .App{
-        padding:3rem;
+        padding:1rem;
         padding-top:6rem;
     }
     .letterspacing-1{
@@ -145,6 +145,7 @@ color:#F2C94C;
     .letterspacing-2{
         letter-spacing: 2px;
     }
+    
 
 
 }
