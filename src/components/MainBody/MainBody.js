@@ -49,13 +49,14 @@ render() {
       {
         props.currentStep === 7 &&  <Contacts/>
       } */}
-      <Summary />
-      <Education />
-      <WorkExperience />
-      <Certifications />
-      <Skills />
-      <Hobbies />
-      <Contacts />
+      
+      <Summary currentStep={this.props.currentStep}/>
+      <Education currentStep={this.props.currentStep}/>
+      <WorkExperience currentStep={this.props.currentStep}/>
+      <Certifications currentStep={this.props.currentStep}/>
+      <Skills currentStep={this.props.currentStep}/>
+      <Hobbies currentStep={this.props.currentStep}/>
+      <Contacts currentStep={this.props.currentStep}/>
 
     </div>
   );

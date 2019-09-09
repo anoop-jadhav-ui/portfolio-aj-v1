@@ -1,10 +1,11 @@
 import React from 'react'
+
 import LeftPane from '../LeftPane/LeftPane'
-import './App.css'
 import MainBody from '../MainBody/MainBody'
 import Portfolio from '../Portfolio/Portfolio'
 import leftPaneData from '../LeftPane/leftPaneData'
 
+import './App.css'
 
 
 // Detect request animation frame
@@ -53,8 +54,8 @@ class App extends React.Component {
     mainPage: false,
     leftPaneItems: leftPaneData,
     scrollPos: 0,
-    fetchFlag: true
-
+    fetchFlag: true,
+    
   }
 
   fetchHeaderPositions = () => {
@@ -166,7 +167,8 @@ class App extends React.Component {
             :
             <div className={this.state.mainPage ? 'App summary row no-gutters fade show' : 'App summary row no-gutters fadeOut hide'}>
 
-              {/* Test Data starts*/}
+              {/* Scroll Test Data starts*/}
+
               {/* <div style={{ position: 'fixed', top: '1rem', left: '1rem', zIndex: '2' }}>
                 <div style={{ color: 'red' }}>change step - {this.state.currentStep}</div>
                 <div style={{ color: 'green' }}>scroll top - {this.state.scrollPos}</div>
@@ -177,12 +179,14 @@ class App extends React.Component {
                   )
                 }
               </div> */}
-              {/* Test Data ends*/}˝
+
+              {/* Scroll Test Data ends*/}
+
               <LeftPane currentStep={this.state.currentStep} changeStep={this.changeStep} leftPaneItems={this.state.leftPaneItems}></LeftPane>
               <MainBody currentStep={this.state.currentStep} changeStep={this.changeStep} changeCurrentStepBasedOnScrollCalculation={this.changeCurrentStepBasedOnScrollCalculation}></MainBody>
             </div>
         }
-      </div>
+        </div>
     );
   }
 

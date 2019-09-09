@@ -12,7 +12,6 @@
 .know-more-button{
     display: flex;
     justify-content: flex-end;
-  
 }
 .know-more-button > img {
     width: 2rem;

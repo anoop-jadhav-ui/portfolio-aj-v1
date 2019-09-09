@@ -13,7 +13,7 @@ function Summary(props) {
         UI Developer | Designer
           </div>
       <div className="body-text summary-text">
-        5 years of experience in UI Development and Design using tools and technologies like HTML, CSS, JavaScript, Vue Js, Salesforce Lightning, Adobe Illustrator, Figma, Sketch and Invision.
+        A passionate UI Developer/Designer with around 5 years of experience using tools and technologies like HTML, CSS, JavaScript, Vue Js, React, Salesforce Lightning, Adobe Illustrator, Figma, Sketch and Invision.
           </div>
       <div className="default-text red scroll-text thin">
         Scroll to Know more

@@ -9,6 +9,9 @@
 .portfolio-menu li + li{
     padding-left : 2rem;
 }
+.portfolio-menu li a{
+    cursor: pointer;
+}
 .portfolio-body{
     padding:1rem 2.625rem 2.625rem 2.625rem !important;
     max-width: 74.75rem;
@@ -23,7 +26,6 @@
     position: fixed;
     bottom: 3rem;   
 }
-
 
 .thumbnail{
     height: 207px;
@@ -58,7 +60,7 @@
         padding:0;
     }
     .portfolio-header{
-        padding: 2.5rem 0 0 0;
+        padding: 2.5rem 0 0 0 !important;
     }
     .portfolio-body{
         padding:2rem 0.75rem 1rem 0.75rem !important;

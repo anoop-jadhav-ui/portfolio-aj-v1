@@ -4,8 +4,13 @@
 }
 .filled{
     display: block;
-    width: 50%;
     height:2.25rem;
     background: linear-gradient(101.14deg, #F2994A 0.99%, #EB5757 177.11%);
-    
+}
+
+.show-on-scroll .filled{
+    transition: all 900ms ease-in-out;
+}
+.show-on-scroll.is-visible .filled{
+    transition: all 900ms ease-in-out;
 }

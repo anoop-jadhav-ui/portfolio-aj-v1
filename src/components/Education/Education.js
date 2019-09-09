@@ -14,7 +14,7 @@ function Education(props) {
         <div className="subsection-data">
           <span className="h3 grey1 bold">Army Public School</span><span className="h3 grey3 light">, Kirkee</span>
           <div className="education-bars">
-            <BarGraph value="76" />
+            <BarGraph value="76" currentStep={props.currentStep} sectionStep={2}/>
           </div>
           <a className="know-more-button"><span className="red pr-2">Know more</span> <img src={KnowMoreButton} alt="know more buton"/></a>
        </div>
@@ -22,7 +22,7 @@ function Education(props) {
        <div className="subsection-data">
           <span className="h3 grey1 bold">MIT Academy of Engineering</span><span className="h3 grey3 light">, Alandi</span>
           <div className="education-bars">
-            <BarGraph value="64" />
+            <BarGraph value="64" currentStep={props.currentStep} sectionStep={2}/>
           </div>
           <a className="know-more-button"><span className="red pr-2">Know more</span> <img src={KnowMoreButton} alt="know more buton"/></a>
        </div>
