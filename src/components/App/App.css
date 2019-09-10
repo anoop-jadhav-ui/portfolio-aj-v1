@@ -45,7 +45,25 @@ font-weight: bold;
 .label{
     font-size: 0.875rem;/*14px*/
 }
-
+input{
+    width:100%;
+    border:1px solid #828282;
+    height:2.5rem;
+    padding:0 1rem;
+}
+textarea{
+    width:100%;
+    border:1px solid #828282;
+    height:6.5rem;
+    padding:0.5rem 1rem;
+}
+button{
+    background: #EB5757;
+    color:white;
+    padding:0.6rem 2rem;
+    border:0;
+    font-weight: bold;
+}
 
 
 
