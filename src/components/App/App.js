@@ -63,7 +63,7 @@ function MainbodyWrapper(props) {
       }
     </div> */}
 
-    <LeftPane currentStep={props.currentStep} changeStep={props.changeStep} leftPaneItems={props.leftPaneItems}></LeftPane>
+    <LeftPane currentStep={props.currentStep} changeStep={props.changeStep} leftPaneItems={props.leftPaneItems} fetchHeaderPositions={props.fetchHeaderPositions}></LeftPane>
     <MainBody currentStep={props.currentStep} changeStep={props.changeStep} changeCurrentStepBasedOnScrollCalculation={props.changeCurrentStepBasedOnScrollCalculation}></MainBody>
   </div>
 }
@@ -81,31 +81,31 @@ class App extends React.Component {
     fetchFlag: true,
 
   }
-  componentDidMount() {
-    // if (this.state.currentStep == 1 && this.state.fetchFlag) {
+  // componentDidMount() {
+  //   // if (this.state.currentStep == 1 && this.state.fetchFlag) {
 
 
-    setTimeout(() => {
-      var ele = document.getElementsByClassName('summary')
-      if (ele)
-        ele[0].scrollIntoView()
+  //   setTimeout(() => {
+  //     var ele = document.getElementsByClassName('summary')
+  //     if (ele[0])
+  //       ele[0].scrollIntoView()
 
 
-      this.setState(() => {
-        return {
-          currentStep: 1
-        }
-      })
-    }, 100)
+  //     this.setState(() => {
+  //       return {
+  //         currentStep: 1
+  //       }
+  //     })
+  //   }, 100)
 
-    setTimeout(() => {
+  //   setTimeout(() => {
 
-      this.fetchHeaderPositions();
-      //function to fetch all the header positions
+  //     this.fetchHeaderPositions();
+  //     //function to fetch all the header positions
 
-    }, 100)
+  //   }, 100)
 
-  }
+  // }
   fetchHeaderPositions = () => {
     var leftPaneItemsWithHeaderPos = this.state.leftPaneItems;
     leftPaneItemsWithHeaderPos.forEach(function (item) {
@@ -165,7 +165,7 @@ class App extends React.Component {
   render() {
     return <Router>
       <Route path="/" exact render={(props) => <PortfolioWrapper {...props} currentStep={this.state.currentStep} changeStep={this.changeStep} showPortfolio={this.state.showPortfolio} />} />
-      <Route path="/profile" render={(props) => <MainbodyWrapper {...props} currentStep={this.state.currentStep} changeStep={this.changeStep} changeCurrentStepBasedOnScrollCalculation={this.changeCurrentStepBasedOnScrollCalculation} mainPage={this.state.mainPage} leftPaneItems={this.state.leftPaneItems} scrollPos={this.state.scrollPos} />} />
+      <Route path="/profile" render={(props) => <MainbodyWrapper {...props} currentStep={this.state.currentStep} changeStep={this.changeStep} changeCurrentStepBasedOnScrollCalculation={this.changeCurrentStepBasedOnScrollCalculation} mainPage={this.state.mainPage} leftPaneItems={this.state.leftPaneItems} scrollPos={this.state.scrollPos} fetchHeaderPositions={this.fetchHeaderPositions}/>} />
     </Router>
 
   }

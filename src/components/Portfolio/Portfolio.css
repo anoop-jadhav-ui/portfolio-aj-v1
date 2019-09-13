@@ -4,7 +4,9 @@
 .portfolio-menu{
     display:flex;
     padding-top:2rem;
-    transform: translate(1rem, 0);
+    /* transform: translate(1rem, 0); */
+    position:relative;
+    left:0.7rem;
 }
 .portfolio-menu li + li{
     padding-left : 2rem;
@@ -23,8 +25,8 @@
 }
 
 .portfolio-footer{
-    position: fixed;
-    bottom: 3rem;   
+    padding:2rem 0 2rem 0!important;
+    background: white;
 }
 
 .thumbnail{

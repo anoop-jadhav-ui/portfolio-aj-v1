@@ -6,26 +6,48 @@ import { Link } from 'react-router-dom'
 
 function LeftPaneItems(props) {
   var listItems = props.data.leftPaneItems.map((item) =>
-    item.label == 'Work' ? 
+    item.label == 'Work' ?
       <li key={item.key} className={props.data.currentStep === item.key ? 'bold grey2' : 'grey4'}><Link to='/'>{item.label}</Link></li>
-  :
+      :
       <li key={item.key} className={props.data.currentStep === item.key ? 'bold grey2' : 'grey4'}><a onClick={(e) => props.data.changeStep(item.key, e)}>{item.label}</a></li>
   )
   return listItems
 }
 
 
+class LeftPane extends React.Component {
+  componentDidMount() {
+    // if (this.state.currentStep == 1 && this.state.fetchFlag) {
 
 
-const LeftPane = (props) => {
+    setTimeout(() => {
+      var ele = document.getElementsByClassName('summary')
+      if (ele[0])
+        ele[0].scrollIntoView()
 
-  return <div className="left-pane position-fixed  d-none d-md-block">
-    <img src={LightLogo} alt="logo" />
-    <ul className="menu body-text grey4">
-      {<LeftPaneItems data={props} />}
-    </ul>
+      this.setState(() => {
+        return {
+          currentStep: 1
+        }
+      })
+    }, 100)
 
-  </div>
+    setTimeout(() => {
+      this.props.fetchHeaderPositions();
+      //function to fetch all the header positions
+    }, 100)
+
+  }
+  render() {
+    return <div className="left-pane position-fixed  d-none d-md-block">
+      <img src={LightLogo} alt="logo" />
+      <ul className="menu body-text grey4">
+        {<LeftPaneItems data={this.props} />}
+      </ul>
+
+    </div>
+  }
+
 
 }
 
