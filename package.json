@@ -29,6 +29,7 @@
     "create-react-app",
     "react"
   ],
+  "proxy": "http://localhost:5000",
   "license": "MIT",
   "devDependencies": {}
 }
