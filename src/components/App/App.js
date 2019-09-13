@@ -83,16 +83,28 @@ class App extends React.Component {
   }
   componentDidMount() {
     // if (this.state.currentStep == 1 && this.state.fetchFlag) {
-      setTimeout(() => {
-        //function to fetch all the header positions
-        this.fetchHeaderPositions();
-        this.setState(() => {
-          return {
-            fetchFlag: false
-          }
-        })
-      }, 100)
-    
+
+
+    setTimeout(() => {
+      var ele = document.getElementsByClassName('summary')
+      if (ele)
+        ele[0].scrollIntoView()
+
+
+      this.setState(() => {
+        return {
+          currentStep: 1
+        }
+      })
+    }, 100)
+
+    setTimeout(() => {
+
+      this.fetchHeaderPositions();
+      //function to fetch all the header positions
+
+    }, 100)
+
   }
   fetchHeaderPositions = () => {
     var leftPaneItemsWithHeaderPos = this.state.leftPaneItems;
@@ -119,7 +131,7 @@ class App extends React.Component {
       var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
       leftPaneItemsWithHeaderPos.forEach(function (item) {
-        if (item.headerPos + 100 < scrollTop) {
+        if (item.headerPos - 100 < scrollTop) {
           // console.log(scrollTop + '------------' + item.headerPos);
           this.setState(() => {
             return {
@@ -147,7 +159,7 @@ class App extends React.Component {
     if (ele)
       ele[0].scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" })
     else
-      alert('scroll class not found')
+      alert('some error while scrolling ')
   }
 
   render() {
