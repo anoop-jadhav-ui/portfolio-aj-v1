@@ -1,37 +1,46 @@
 import React from 'react'
 import './Contacts.css'
+import axios from 'axios'
 
 
 class Contacts extends React.Component {
     state = {
-        email: 'default@gmail.com',
-        message: 'Please enter your message here'
+        email: '',
+        message: ''
     }
     handleChange = e => {
         this.setState({ [e.target.name]: e.target.value })
     }
 
     sendEmail = (event) => {
-        debugger;
+
         event.preventDefault();
         var { email, message } = this.state;
 
-        // axios({
-        //     method: "POST",
-        //     url: "http://localhost:3000/send",
-        //     data: {
-        //         name: email,
-        //         email: email,
-        //         messsage: message
-        //     }
-        // }).then((response) => {
-        //     if (response.data.msg === 'success') {
-        //         alert("Message Sent.");
-        //         this.resetForm()
-        //     } else if (response.data.msg === 'fail') {
-        //         alert("Message failed to send.")
-        //     }
-        // })
+        if (email !== '' && message !== '') {
+            axios.defaults.headers.post['Content-Type'] ='application/x-www-form-urlencoded';
+            axios({
+                headers: {
+                    'Access-Control-Allow-Origin': '*',
+                    'Content-Type': 'application/json',
+                },
+                method: "POST",
+                url: "http://localhost:5000/mail",
+                data: {
+                    userName: email,
+                    userEmail: email,
+                    userMessage: message
+                }
+
+            }).then((response) => {
+                if (response.data.msg === 'success') {
+                    alert("Message Sent.");
+                    this.resetForm()
+                } else if (response.data.msg === 'fail') {
+                    alert("Message failed to send.")
+                }
+            })
+        }
     }
 
     resetForm() {
@@ -46,15 +55,15 @@ class Contacts extends React.Component {
                 <div className="subsection-data">
                     <span className="default-text grey1 bold">Email Id</span>
                     <div className="red body-text mt-2">
-                        <input className="" type="email" name="email" placeholder={this.state.emailId} onChange={this.handleChange} />
+                        <input className="" type="email" name="email" placeholder={this.state.email} onChange={this.handleChange} />
                     </div>
                 </div>
                 <div className="subsection-data">
                     <span className="default-text grey1 bold">Message</span>
                     <div className="red body-text mt-2">
-                        <textarea className="" type="type" name="message" placeholder={this.state.userMessage} onChange={this.handleChange} />
+                        <textarea className="" type="type" name="message" placeholder={this.state.message} onChange={this.handleChange} />
                     </div>
-                    <div className="text-right mt-2"><button type="submit">Send</button></div>
+                    <div className="text-left mt-3"><button type="submit">Send</button></div>
                 </div>
             </form>
 
