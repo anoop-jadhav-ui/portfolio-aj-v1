@@ -18,18 +18,18 @@ class Contacts extends React.Component {
         var { email, message } = this.state;
 
         if (email !== '' && message !== '') {
-            axios.defaults.headers.post['Content-Type'] ='application/x-www-form-urlencoded';
+           
             axios({
-                headers: {
-                    'Access-Control-Allow-Origin': '*',
-                    'Content-Type': 'application/json',
-                },
-                method: "POST",
+                method: "post",
                 url: "http://localhost:5000/mail",
                 data: {
                     userName: email,
                     userEmail: email,
                     userMessage: message
+                },
+                headers: {
+                    'Access-Control-Allow-Origin': '*',
+                    'Content-Type': 'application/json',
                 }
 
             }).then((response) => {

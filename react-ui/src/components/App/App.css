@@ -47,13 +47,13 @@ font-weight: bold;
 }
 input{
     width:100%;
-    border:1px solid #828282;
+    border:1px solid #BDBDBD;
     height:2.5rem;
     padding:0 1rem;
 }
 textarea{
     width:100%;
-    border:1px solid #828282;
+    border:1px solid #BDBDBD;
     height:6.5rem;
     padding:0.5rem 1rem;
 }
@@ -65,15 +65,12 @@ button{
     font-weight: bold;
 }
 
-
-
 ul{
     list-style: none !important;
 }
 ul > li{
     text-decoration: none !important;
 }
-
 
 a:hover,
 ul > li a:hover{

@@ -3,11 +3,14 @@ const path = require('path');
 const cluster = require('cluster');
 const numCPUs = require('os').cpus().length;
 var cors = require('cors')
+var bodyParser=require("body-parser");
+
 
 require('dotenv').config();
 
 const app = express();
-
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 var corsOptions = {
   origin: 'http://localhost:3000',
   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
@@ -38,9 +41,13 @@ if (!isDev && cluster.isMaster) {
 
 } else {
   
+  app.use(cors({
+    corsOptions
+  }))
   // Answer API requests.
-  app.get('/mail',cors(corsOptions),function (req, res) {
-
+  app.post('/mail',function (req, res) {
+    console.log('inside response');
+    console.log(req.body);
     res.set("Content-Type", "application/json");
     const locals = { userName: req.body.userName };
     const request = mailjet.post("send", { 'version': 'v3.1' }).request({
