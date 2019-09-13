@@ -11,11 +11,13 @@ import thumbnail2 from '../../assets/thumbnails/thumbnail2.svg'
 import portfolio1 from '../../assets/portfolio/portfolio-1.png'
 import portfolio2 from '../../assets/portfolio/portfolio-2.png'
 
+
+import { Link } from 'react-router-dom'
 class Portfolio extends React.Component {
 
     state = {
         currentImage: '',
-        currentStep : this.props.currentStep,
+        currentStep: this.props.currentStep,
         portfolio: [
             {
                 'id': 1,
@@ -54,12 +56,21 @@ class Portfolio extends React.Component {
                 <div className="row no-gutters col-md-12  justify-content-center">
                     <div className="portfolio-header col-md-12  text-center">
                         <img src={headerLogo} alt="header logo" />
-                        
+
                         <ul className="portfolio-menu label grey4 justify-content-center uppercase">
-                        
-                            <li className="bold grey2"><a className="grey2" onClick={(e) => this.props.changeStep(this.state.currentStep,e)}>Work</a></li>
-                            <li><a className="grey4" onClick={(e) => this.props.changeStep(this.state.currentStep + 1,e)}>Profile</a></li>
-                            <li><a className="grey4" onClick={(e) => this.props.changeStep(this.state.currentStep + 2,e)}>Contacts</a></li>
+
+                            <li className="bold grey2"><a className="grey2" onClick={(e) => this.props.changeStep(this.state.currentStep, e)}>Work</a></li>
+                            <li>
+                                <Link to="/profile" className="grey4">
+                                   Profile
+                                </Link>
+                                {/* <a className="grey4" to="/profile" onClick={(e) => this.props.changeStep(this.state.currentStep + 1,e)}>Profile</a> */}
+                            </li>
+                            <li>
+                                <Link to="/profile" className="grey4">
+                                   Contact
+                                </Link>
+                            </li>
                         </ul>
                     </div>
                     <div className="portfolio-body row col-md-12 justify-content-center">

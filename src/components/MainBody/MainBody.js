@@ -21,35 +21,6 @@ componentWillUnmount(){
 render() {
   return (
     <div className="main-body row justify-content-center text" >
-      {/* <Summary class={props.currentStep === 1 ? 'show' : 'hide'} />
-      <Education class={props.currentStep === 2 ? 'show' : 'hide'} />
-      <WorkExperience class={props.currentStep === 3 ? 'show' : 'hide'} />
-      <Certifications class={props.currentStep === 4 ? 'show' : 'hide'} />
-      <Skills class={props.currentStep === 5 ? 'show' : 'hide'} />
-      <Hobbies class={props.currentStep === 6 ? 'show' : 'hide'} />
-      <Contacts class={props.currentStep === 7 ? 'show' : 'hide'} /> */}
-      {/* {
-        props.currentStep === 1 &&  <Summary/>
-      }
-      {
-        props.currentStep === 2 &&  <Education/>
-      }
-      {
-        props.currentStep === 3 &&  <WorkExperience/>
-      }
-      {
-        props.currentStep === 4 &&  <Certifications/>
-      }
-      {
-        props.currentStep === 5 &&  <Skills/>
-      }
-      {
-        props.currentStep === 6 &&  <Hobbies/>
-      }
-      {
-        props.currentStep === 7 &&  <Contacts/>
-      } */}
-      
       <Summary currentStep={this.props.currentStep}/>
       <Education currentStep={this.props.currentStep}/>
       <WorkExperience currentStep={this.props.currentStep}/>

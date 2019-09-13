@@ -4,7 +4,7 @@ import LeftPane from '../LeftPane/LeftPane'
 import MainBody from '../MainBody/MainBody'
 import Portfolio from '../Portfolio/Portfolio'
 import leftPaneData from '../LeftPane/leftPaneData'
-
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import './App.css'
 
 
@@ -27,6 +27,7 @@ function loop() {
 }
 // Call the loop for the first times
 loop();
+
 function isElementInViewport(el) {
   // special bonus for those using jQuery
   // if (typeof jQuery === "function" && el instanceof jQuery) {
@@ -44,20 +45,56 @@ function isElementInViewport(el) {
       rect.bottom <= (window.innerHeight || document.documentElement.clientHeight))
   );
 }
+function PortfolioWrapper(props) {
+  return <div className='portfolio row no-gutters'>
+    <Portfolio currentStep={props.currentStep} changeStep={props.changeStep} />
+  </div>
+}
+function MainbodyWrapper(props) {
+  return <div className='App summary row no-gutters fade show'>
+{/* 
+    <div style={{ position: 'fixed', top: '1rem', left: '1rem', zIndex: '2' }}>
+      <div style={{ color: 'red' }}>current step - {props.currentStep}</div>
+      <div style={{ color: 'green' }}>scroll top - {props.scrollPos}</div>
+      {
+        props.leftPaneItems.map(item => {
+          return item.class !== 'work' && <li key={item.key}>{item.class + '     -     ' + item.headerPos}</li>
+        }
+        )
+      }
+    </div> */}
+
+    <LeftPane currentStep={props.currentStep} changeStep={props.changeStep} leftPaneItems={props.leftPaneItems}></LeftPane>
+    <MainBody currentStep={props.currentStep} changeStep={props.changeStep} changeCurrentStepBasedOnScrollCalculation={props.changeCurrentStepBasedOnScrollCalculation}></MainBody>
+  </div>
+}
+
 
 class App extends React.Component {
 
   state = {
-    currentStep: 0,
+    currentStep: 1,
     /*Variables used for transitions*/
     showPortfolio: true,
     mainPage: false,
     leftPaneItems: leftPaneData,
     scrollPos: 0,
     fetchFlag: true,
+
+  }
+  componentDidMount() {
+    // if (this.state.currentStep == 1 && this.state.fetchFlag) {
+      setTimeout(() => {
+        //function to fetch all the header positions
+        this.fetchHeaderPositions();
+        this.setState(() => {
+          return {
+            fetchFlag: false
+          }
+        })
+      }, 400)
     
   }
-
   fetchHeaderPositions = () => {
     var leftPaneItemsWithHeaderPos = this.state.leftPaneItems;
     leftPaneItemsWithHeaderPos.forEach(function (item) {
@@ -72,12 +109,12 @@ class App extends React.Component {
         leftPaneItems: leftPaneItemsWithHeaderPos
       }
     })
-  }
 
+    console.log(this.state.leftPaneItems);
+  }
   changeCurrentStepBasedOnScrollCalculation = () => {
     //change step according to the threshhold '
     //this will run on scroll - so extensive method - use wisely
-
     var leftPaneItemsWithHeaderPos = this.state.leftPaneItems;
     var mainBody = document.getElementsByClassName('main-body')[0];
 
@@ -85,7 +122,7 @@ class App extends React.Component {
       var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
       leftPaneItemsWithHeaderPos.forEach(function (item) {
-        if (item.headerPos < scrollTop && item.class !== 'work') {
+        if (item.headerPos < scrollTop) {
           console.log(scrollTop + '------------' + item.headerPos);
           this.setState(() => {
             return {
@@ -93,101 +130,35 @@ class App extends React.Component {
               scrollPos: scrollTop
             }
           })
-
-
         }
-
-
       }.bind(this))
     }
 
   }
   changeStep = (newStep, event) => {
-    if (newStep !== 0) {
-      //portfolio - fade out , summary - fade in
-      this.setState(() => {
-        return {
-          showPortfolio: false
-        }
-      })
-      setTimeout(() => {
-        this.setState(() => {
-          return {
-            currentStep: newStep,
-            mainPage: true
-          }
-        })
-        //scroll to element logic 
-        event.preventDefault();
-        var leftPaneItemClass = this.state.leftPaneItems[newStep].class
-        var ele = document.getElementsByClassName(leftPaneItemClass)
-        if (ele)
-          ele[0].scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" })
-        else
-          alert('scroll class not found')
 
-        if (!this.state.showPortfolio && newStep == 1 && this.state.fetchFlag) {
-          //function to fetch all the header positions
-          this.fetchHeaderPositions();
-          this.setState(() => {
-            return {
-              fetchFlag: false
-            }
-          })
-
-        }
-
-      }, 400)
-    } else {
-      //portfolio - fade In, Summary - fade out
-      this.setState(() => {
-        return {
-          mainPage: false
-        }
-      })
-      setTimeout(() => {
-        this.setState(() => {
-          return {
-            showPortfolio: true,
-            currentStep: newStep,
-          }
-        })
-      }, 400)
-    }
+    this.setState(() => {
+      return {
+        currentStep: newStep,
+        mainPage: true
+      }
+    })
+    //scroll to element logic 
+    event.preventDefault();
+    var leftPaneItemClass = this.state.leftPaneItems[newStep].class
+    var ele = document.getElementsByClassName(leftPaneItemClass)
+    if (ele)
+      ele[0].scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" })
+    else
+      alert('scroll class not found')
   }
 
   render() {
-    return (
-      <div>
-        {
-          this.state.currentStep === 0 ?
-            <div className={this.state.showPortfolio ? 'portfolio row no-gutters fade show' : 'portfolio row no-gutters fadeOut hide'}>
-              <Portfolio currentStep={this.state.currentStep} changeStep={this.changeStep} />
-            </div>
-            :
-            <div className={this.state.mainPage ? 'App summary row no-gutters fade show' : 'App summary row no-gutters fadeOut hide'}>
+    return <Router>
+      <Route path="/" exact render={(props) => <PortfolioWrapper {...props} currentStep={this.state.currentStep} changeStep={this.changeStep} showPortfolio={this.state.showPortfolio} />} />
+      <Route path="/profile" render={(props) => <MainbodyWrapper {...props} currentStep={this.state.currentStep} changeStep={this.changeStep} changeCurrentStepBasedOnScrollCalculation={this.changeCurrentStepBasedOnScrollCalculation} mainPage={this.state.mainPage} leftPaneItems={this.state.leftPaneItems} scrollPos={this.state.scrollPos} />} />
+    </Router>
 
-              {/* Scroll Test Data starts*/}
-
-              {/* <div style={{ position: 'fixed', top: '1rem', left: '1rem', zIndex: '2' }}>
-                <div style={{ color: 'red' }}>change step - {this.state.currentStep}</div>
-                <div style={{ color: 'green' }}>scroll top - {this.state.scrollPos}</div>
-                {
-                  this.state.leftPaneItems.map(item => {
-                    return item.class !== 'work' && <li key={item.key}>{item.class + '     -     ' + item.headerPos}</li>
-                  }
-                  )
-                }
-              </div> */}
-
-              {/* Scroll Test Data ends*/}
-
-              <LeftPane currentStep={this.state.currentStep} changeStep={this.changeStep} leftPaneItems={this.state.leftPaneItems}></LeftPane>
-              <MainBody currentStep={this.state.currentStep} changeStep={this.changeStep} changeCurrentStepBasedOnScrollCalculation={this.changeCurrentStepBasedOnScrollCalculation}></MainBody>
-            </div>
-        }
-        </div>
-    );
   }
 
 }
