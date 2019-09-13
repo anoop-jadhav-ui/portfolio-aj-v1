@@ -52,7 +52,7 @@ function PortfolioWrapper(props) {
 }
 function MainbodyWrapper(props) {
   return <div className='App summary row no-gutters fade show'>
-    <div style={{ position: 'fixed', top: '1rem', left: '1rem', zIndex: '2' }}>
+    {/* <div style={{ position: 'fixed', top: '1rem', left: '1rem', zIndex: '2' }}>
       <div style={{ color: 'red' }}>current step - {props.currentStep}</div>
       <div style={{ color: 'green' }}>scroll top - {props.scrollPos}</div>
       {
@@ -61,7 +61,7 @@ function MainbodyWrapper(props) {
         }
         )
       }
-    </div>
+    </div> */}
 
     <LeftPane currentStep={props.currentStep} changeStep={props.changeStep} leftPaneItems={props.leftPaneItems}></LeftPane>
     <MainBody currentStep={props.currentStep} changeStep={props.changeStep} changeCurrentStepBasedOnScrollCalculation={props.changeCurrentStepBasedOnScrollCalculation}></MainBody>
@@ -108,8 +108,6 @@ class App extends React.Component {
         leftPaneItems: leftPaneItemsWithHeaderPos
       }
     })
-
-    console.log(this.state.leftPaneItems);
   }
   changeCurrentStepBasedOnScrollCalculation = () => {
     //change step according to the threshhold '
@@ -122,7 +120,7 @@ class App extends React.Component {
 
       leftPaneItemsWithHeaderPos.forEach(function (item) {
         if (item.headerPos + 100 < scrollTop) {
-          console.log(scrollTop + '------------' + item.headerPos);
+          // console.log(scrollTop + '------------' + item.headerPos);
           this.setState(() => {
             return {
               currentStep: item.key,
