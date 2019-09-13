@@ -25,6 +25,8 @@
 }
 
 .portfolio-footer{
+    position: fixed;
+    bottom: 0;
     padding:2rem 0 2rem 0!important;
     background: white;
 }
@@ -67,6 +69,9 @@
     .portfolio-body{
         padding:2rem 0.75rem 1rem 0.75rem !important;
         height: auto;;
+    }
+    .portfolio-footer{
+        position: relative;
     }
 
     .thumbnail + .thumbnail:nth-child(n+4),

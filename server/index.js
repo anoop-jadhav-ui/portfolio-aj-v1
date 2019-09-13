@@ -46,8 +46,6 @@ if (!isDev && cluster.isMaster) {
   }))
   // Answer API requests.
   app.post('/mail',function (req, res) {
-    console.log('inside response');
-    console.log(req.body);
     res.set("Content-Type", "application/json");
     const locals = { userName: req.body.userName };
     const request = mailjet.post("send", { 'version': 'v3.1' }).request({
@@ -72,9 +70,15 @@ if (!isDev && cluster.isMaster) {
     })
     request
       .then((result) => {
-        console.log(result.body)
+        console.log('Email Sent')
+        res.send({
+          msg : 'success'
+        });
       })
       .catch((err) => {
+        res.send({
+          msg : 'fail'
+        });
         console.log(err.statusCode)
       })
   });
