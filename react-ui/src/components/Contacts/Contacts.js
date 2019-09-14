@@ -23,7 +23,7 @@ class Contacts extends React.Component {
 
             axios({
                 method: "post",
-                url: "http://localhost:5000/mail",
+                url: "/mail",
                 data: {
                     userName: email,
                     userEmail: email,
