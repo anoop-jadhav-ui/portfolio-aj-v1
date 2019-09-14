@@ -26,8 +26,8 @@ class Contacts extends React.Component {
                 url: "/mail",
                 data: {
                     userName: email,
-                    userEmail: email,
-                    userMessage: message
+                    userEmail: 'anoopjadhav@gmail.com',
+                    userMessage: "User Email ID : " + email + "  Message : " + message
                 },
                 headers: {
                     'Access-Control-Allow-Origin': '*',
@@ -75,7 +75,7 @@ class Contacts extends React.Component {
                     }, 3000)
 
 
-                    alert("Message failed to send.")
+                    alert("Message failed to send.");
                 }
             })
         }
@@ -92,7 +92,8 @@ class Contacts extends React.Component {
                 <div className="subsection-title uppercase body-text grey3 letterspacing-1">Feedback/Message</div>
                 <div className="subsection-data">
                 {this.state.messageSent && <div class="default-text success-banner mb-2">Thank you for your feedback</div>}
-                {this.state.messageFailure && <div class="default-text error-banner mb-2">Sorry Couldn't send your message</div>}
+                {this.state.messageFailure && <div class="default-text error-banner mb-2">Sorry Couldn't send your message. Please retry.</div>}
+
                     <span className="default-text grey1 bold">Email Id</span>
                     <div className="red body-text mt-2">
                         <input className="" type="email" name="email" placeholder={this.state.email} onChange={this.handleChange} />
