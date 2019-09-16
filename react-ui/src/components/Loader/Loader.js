@@ -15,7 +15,7 @@ class Loader extends React.Component {
                 this.setState(() => {
                     return {
                         quote: data.content,
-                        author : data.author
+                        author: data.author
                     }
                 })
 
@@ -29,7 +29,7 @@ class Loader extends React.Component {
                 <svg height="80" viewBox="0 0 196 313" fill="" xmlns="http://www.w3.org/2000/svg">
 
                     <defs>
-                        <linearGradient id="ttb"  y2="1" >
+                        <linearGradient id="ttb" y2="1" >
                             <stop offset="100%" stopOpacity="1" stopColor="#333">
                                 <animate attributeName="offset" values="0;1;1;0" repeatCount="indefinite"
                                     repeatDur="05:00" dur="3s" begin="0s" />
@@ -45,9 +45,9 @@ class Loader extends React.Component {
 
                 </svg>
                 
-                {this.state.quote != '' && <div className="body-text quote-text text-center mt-4">{'" ' + this.state.quote + '"'}</div>}
-                {this.state.author != '' && <div className="label quote-author text-center grey2 mt-2">{'— ' + this.state.author}</div>}
-                
+                    {this.state.quote != '' && <div className="body-text quote-text text-center mt-4">{'" ' + this.state.quote + '"'}</div>}
+                    {this.state.author != '' && <div className="label quote-author text-center grey2 mt-2">{'— ' + this.state.author}</div>}
+               
                 <div className="loading-text text-center mt-4"> Loading... </div>
 
             </div>

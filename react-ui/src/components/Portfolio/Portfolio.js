@@ -7,9 +7,11 @@ import insta from '../../assets/insta.svg'
 import linkedIn from '../../assets/linkedin.svg'
 import thumbnail1 from '../../assets/thumbnails/thumbnail1.svg'
 import thumbnail2 from '../../assets/thumbnails/thumbnail2.svg'
+import thumbnail3 from '../../assets/thumbnails/thumbnail3.svg'
 
 import portfolio1 from '../../assets/portfolio/portfolio-1.png'
 import portfolio2 from '../../assets/portfolio/portfolio-2.png'
+import portfolio3 from '../../assets/portfolio/portfolio-3.png'
 
 
 import { Link } from 'react-router-dom'
@@ -28,6 +30,11 @@ class Portfolio extends React.Component {
                 'id': 2,
                 'thumbnail': thumbnail2,
                 'portfolioImage': portfolio2
+            },
+            {
+                'id': 3,
+                'thumbnail': thumbnail2,
+                'portfolioImage': portfolio3
             }
 
         ]
@@ -81,6 +88,7 @@ class Portfolio extends React.Component {
                     <div className="portfolio-body row col-md-12 justify-content-center">
                         <div className="thumbnail col-md-4"><div className="thumbnail-image thumbnail1" style={{ 'backgroundImage': 'url(' + thumbnail1 + ')' }} onClick={() => this.setCurrentImage(1)}></div></div>
                         <div className="thumbnail col-md-4"><div className="thumbnail-image thumbnail2" style={{ 'backgroundImage': 'url(' + thumbnail2 + ')' }} onClick={() => this.setCurrentImage(2)}></div></div>
+                        <div className="thumbnail col-md-4"><div className="thumbnail-image thumbnail3" style={{ 'backgroundImage': 'url(' + thumbnail3 + ')' }} onClick={() => this.setCurrentImage(3)}></div></div>
 
                     </div>
                     <div className="portfolio-footer col-md-12 row no-gutters justify-content-center text-center">
