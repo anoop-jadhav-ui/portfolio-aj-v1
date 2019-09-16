@@ -7,6 +7,8 @@ import leftPaneData from '../LeftPane/leftPaneData'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import './App.css'
 
+import Loader from '../Loader/Loader'
+
 
 // Detect request animation frame
 var scroll = window.requestAnimationFrame ||
@@ -47,7 +49,8 @@ function isElementInViewport(el) {
 }
 function PortfolioWrapper(props) {
   return <div className='portfolio row no-gutters'>
-    <Portfolio currentStep={props.currentStep} changeStep={props.changeStep} />
+    {props.showLoader && <Loader />}
+    <Portfolio currentStep={props.currentStep} changeStep={props.changeStep} toggleLoader={props.toggleLoader} />
   </div>
 }
 function MainbodyWrapper(props) {
@@ -62,9 +65,9 @@ function MainbodyWrapper(props) {
         )
       }
     </div> */}
-
-    <LeftPane currentStep={props.currentStep} changeStep={props.changeStep} leftPaneItems={props.leftPaneItems} fetchHeaderPositions={props.fetchHeaderPositions}></LeftPane>
-    <MainBody currentStep={props.currentStep} changeStep={props.changeStep} changeCurrentStepBasedOnScrollCalculation={props.changeCurrentStepBasedOnScrollCalculation}></MainBody>
+    {props.showLoader && <Loader />}
+    <LeftPane toggleLoader={props.toggleLoader} currentStep={props.currentStep} changeStep={props.changeStep} leftPaneItems={props.leftPaneItems} fetchHeaderPositions={props.fetchHeaderPositions} toggleLoader={props.toggleLoader}></LeftPane>
+    <MainBody toggleLoader={props.toggleLoader} currentStep={props.currentStep} changeStep={props.changeStep} changeCurrentStepBasedOnScrollCalculation={props.changeCurrentStepBasedOnScrollCalculation} toggleLoader={props.toggleLoader}></MainBody>
   </div>
 }
 
@@ -72,6 +75,7 @@ function MainbodyWrapper(props) {
 class App extends React.Component {
 
   state = {
+    showLoader: false,
     currentStep: 1,
     /*Variables used for transitions*/
     showPortfolio: true,
@@ -79,33 +83,25 @@ class App extends React.Component {
     leftPaneItems: leftPaneData,
     scrollPos: 0,
     fetchFlag: true,
+  }
+
+  toggleLoader = (toggleValue) => {
+    if (toggleValue == undefined || toggleValue == null) {
+      this.setState((prevState) => {
+        return {
+          showLoader: !prevState.showLoader
+        }
+      })
+    } else {
+      this.setState((prevState) => {
+        return {
+          showLoader: toggleValue
+        }
+      })
+    }
 
   }
-  // componentDidMount() {
-  //   // if (this.state.currentStep == 1 && this.state.fetchFlag) {
 
-
-  //   setTimeout(() => {
-  //     var ele = document.getElementsByClassName('summary')
-  //     if (ele[0])
-  //       ele[0].scrollIntoView()
-
-
-  //     this.setState(() => {
-  //       return {
-  //         currentStep: 1
-  //       }
-  //     })
-  //   }, 100)
-
-  //   setTimeout(() => {
-
-  //     this.fetchHeaderPositions();
-  //     //function to fetch all the header positions
-
-  //   }, 100)
-
-  // }
   fetchHeaderPositions = () => {
     var leftPaneItemsWithHeaderPos = this.state.leftPaneItems;
     leftPaneItemsWithHeaderPos.forEach(function (item) {
@@ -164,8 +160,8 @@ class App extends React.Component {
 
   render() {
     return <Router>
-      <Route path="/" exact render={(props) => <PortfolioWrapper {...props} currentStep={this.state.currentStep} changeStep={this.changeStep} showPortfolio={this.state.showPortfolio} />} />
-      <Route path="/profile" render={(props) => <MainbodyWrapper {...props} currentStep={this.state.currentStep} changeStep={this.changeStep} changeCurrentStepBasedOnScrollCalculation={this.changeCurrentStepBasedOnScrollCalculation} mainPage={this.state.mainPage} leftPaneItems={this.state.leftPaneItems} scrollPos={this.state.scrollPos} fetchHeaderPositions={this.fetchHeaderPositions}/>} />
+      <Route path="/" exact render={(props) => <PortfolioWrapper {...props} currentStep={this.state.currentStep} changeStep={this.changeStep} showPortfolio={this.state.showPortfolio} showLoader={this.state.showLoader} toggleLoader={this.toggleLoader} />} />
+      <Route path="/profile" render={(props) => <MainbodyWrapper {...props} currentStep={this.state.currentStep} changeStep={this.changeStep} changeCurrentStepBasedOnScrollCalculation={this.changeCurrentStepBasedOnScrollCalculation} mainPage={this.state.mainPage} leftPaneItems={this.state.leftPaneItems} scrollPos={this.state.scrollPos} fetchHeaderPositions={this.fetchHeaderPositions} showLoader={this.state.showLoader} toggleLoader={this.toggleLoader} />} />
     </Router>
 
   }

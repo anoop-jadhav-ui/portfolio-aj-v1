@@ -22,8 +22,12 @@ class LeftPane extends React.Component {
 
     setTimeout(() => {
       var ele = document.getElementsByClassName('summary')
-      if (ele[0])
-        ele[0].scrollIntoView()
+      try {
+        if (ele[0])
+          ele[0].scrollIntoView()
+      } catch (e) {
+        console.log(e);
+      }
 
       this.setState(() => {
         return {

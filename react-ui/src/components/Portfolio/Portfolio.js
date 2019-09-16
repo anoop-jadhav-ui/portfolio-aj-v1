@@ -34,11 +34,16 @@ class Portfolio extends React.Component {
     }
 
     setCurrentImage(number) {
+        this.props.toggleLoader(true);
         this.setState(() => {
             return {
                 currentImage: this.state.portfolio[number - 1]['portfolioImage']
             }
         })
+        setTimeout(function () {
+           this.props.toggleLoader(false);
+        }.bind(this), 4000);
+
     }
     closeImage() {
         this.setState(() => {
@@ -62,13 +67,13 @@ class Portfolio extends React.Component {
                             <li className="bold grey2"><a className="grey2" onClick={(e) => this.props.changeStep(this.state.currentStep, e)}>Work</a></li>
                             <li>
                                 <Link to="/profile" className="grey4">
-                                   Profile
+                                    Profile
                                 </Link>
                                 {/* <a className="grey4" to="/profile" onClick={(e) => this.props.changeStep(this.state.currentStep + 1,e)}>Profile</a> */}
                             </li>
                             <li>
                                 <Link to="/profile" className="grey4">
-                                   Contact
+                                    Contact
                                 </Link>
                             </li>
                         </ul>
