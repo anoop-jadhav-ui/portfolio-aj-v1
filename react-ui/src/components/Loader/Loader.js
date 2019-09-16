@@ -45,8 +45,8 @@ class Loader extends React.Component {
 
                 </svg>
                 
-                <div className="body-text quote-text text-center mt-4">{'" ' + this.state.quote + '"'}</div>
-                <div className="label text-center grey2 mt-2">{'— ' + this.state.author}</div>
+                {this.state.quote != '' && <div className="body-text quote-text text-center mt-4">{'" ' + this.state.quote + '"'}</div>}
+                {this.state.author != '' && <div className="label quote-author text-center grey2 mt-2">{'— ' + this.state.author}</div>}
                 
                 <div className="loading-text text-center mt-4"> Loading... </div>
 
