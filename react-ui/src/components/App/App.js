@@ -6,9 +6,11 @@ import Portfolio from '../Portfolio/Portfolio'
 import leftPaneData from '../LeftPane/leftPaneData'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import './App.css'
+import KnowMoreButton from '../../assets/arrow-icon.svg'
 
 import Loader from '../Loader/Loader'
 
+import { Link } from 'react-router-dom'
 
 // Detect request animation frame
 var scroll = window.requestAnimationFrame ||
@@ -65,6 +67,8 @@ function MainbodyWrapper(props) {
         )
       }
     </div> */}
+    <Link to='/' className="know-more-button back-to-work-button mt-4"><img src={KnowMoreButton} alt="Mobile back to work button" /><span className="red pl-2">Back to Work</span> </Link>
+
     {props.showLoader && <Loader />}
     <LeftPane toggleLoader={props.toggleLoader} currentStep={props.currentStep} changeStep={props.changeStep} leftPaneItems={props.leftPaneItems} fetchHeaderPositions={props.fetchHeaderPositions} toggleLoader={props.toggleLoader}></LeftPane>
     <MainBody toggleLoader={props.toggleLoader} currentStep={props.currentStep} changeStep={props.changeStep} changeCurrentStepBasedOnScrollCalculation={props.changeCurrentStepBasedOnScrollCalculation} toggleLoader={props.toggleLoader}></MainBody>
@@ -93,7 +97,7 @@ class App extends React.Component {
         }
       })
     } else {
-      this.setState((prevState) => {
+      this.setState(() => {
         return {
           showLoader: toggleValue
         }
@@ -101,7 +105,6 @@ class App extends React.Component {
     }
 
   }
-
   fetchHeaderPositions = () => {
     var leftPaneItemsWithHeaderPos = this.state.leftPaneItems;
     leftPaneItemsWithHeaderPos.forEach(function (item) {
@@ -152,10 +155,9 @@ class App extends React.Component {
     event.preventDefault();
     var leftPaneItemClass = this.state.leftPaneItems[newStep].class
     var ele = document.getElementsByClassName(leftPaneItemClass)
-    if (ele)
+    if (ele[0])
       ele[0].scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" })
-    else
-      alert('some error while scrolling ')
+   
   }
 
   render() {

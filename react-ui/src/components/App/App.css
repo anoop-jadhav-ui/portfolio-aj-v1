@@ -65,6 +65,15 @@ button{
     font-weight: bold;
 }
 
+.back-to-work-button{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 2rem;
+}
+.back-to-work-button > img {
+    transform: rotate(180deg);
+}
 ul{
     list-style: none !important;
 }
@@ -172,9 +181,9 @@ color:#F2C94C;
     .letterspacing-2{
         letter-spacing: 2px;
     }
-    
-
-
+    .back-to-work-button{
+        display: block;
+    }
 }
 
 .show-on-scroll{

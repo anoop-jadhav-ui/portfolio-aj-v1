@@ -57,7 +57,24 @@
     margin-bottom: 2rem;
 }
 
-
+.close-button{
+    width:3.5rem;
+    height:3.5rem;
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Gray 3 */
+    background:rgba(130,130,130,0.6);
+    background-blend-mode:multiply; 
+    z-index: 2;
+    cursor: pointer;
+}
+.close-button > img{
+    width:1.5rem;
+}
 /* Medium devices (tablets, 768px and up)*/
 @media (max-width: 768px) { 
     .portfolio{

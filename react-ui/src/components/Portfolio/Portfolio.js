@@ -13,6 +13,7 @@ import portfolio1 from '../../assets/portfolio/portfolio-1.png'
 import portfolio2 from '../../assets/portfolio/portfolio-2.png'
 import portfolio3 from '../../assets/portfolio/portfolio-3.png'
 
+import closeButtonImage from '../../assets/cross-icon.svg'
 
 import { Link } from 'react-router-dom'
 class Portfolio extends React.Component {
@@ -41,15 +42,18 @@ class Portfolio extends React.Component {
     }
 
     setCurrentImage(number) {
-        this.props.toggleLoader(true);
+
         this.setState(() => {
             return {
                 currentImage: this.state.portfolio[number - 1]['portfolioImage']
             }
         })
+
+        this.props.toggleLoader(true);
+
         setTimeout(function () {
-           this.props.toggleLoader(false);
-        }.bind(this), 4000);
+            this.props.toggleLoader(false);
+        }.bind(this), 5000);
 
     }
     closeImage() {
@@ -61,7 +65,12 @@ class Portfolio extends React.Component {
     }
     render() {
         return <div className='portfolio-wrapper row no-gutters col-md-12  justify-content-center portfolio '>
-            <img className="current-image" src={this.state.currentImage} onClick={() => this.closeImage()} />
+
+            {this.state.currentImage !== '' && <div className="close-button" onClick={() => this.closeImage()} >
+                <img src={closeButtonImage} alt="close button" />
+            </div>}
+
+            <img className="current-image" src={this.state.currentImage} />
             {
                 this.state.currentImage === '' &&
 
@@ -86,8 +95,8 @@ class Portfolio extends React.Component {
                         </ul>
                     </div>
                     <div className="portfolio-body row col-md-12 justify-content-center">
-                        <div className="thumbnail col-md-4"><div className="thumbnail-image thumbnail1" style={{ 'backgroundImage': 'url(' + thumbnail1 + ')' }} onClick={() => this.setCurrentImage(1)}></div></div>
                         <div className="thumbnail col-md-4"><div className="thumbnail-image thumbnail2" style={{ 'backgroundImage': 'url(' + thumbnail2 + ')' }} onClick={() => this.setCurrentImage(2)}></div></div>
+                        <div className="thumbnail col-md-4"><div className="thumbnail-image thumbnail1" style={{ 'backgroundImage': 'url(' + thumbnail1 + ')' }} onClick={() => this.setCurrentImage(1)}></div></div>
                         <div className="thumbnail col-md-4"><div className="thumbnail-image thumbnail3" style={{ 'backgroundImage': 'url(' + thumbnail3 + ')' }} onClick={() => this.setCurrentImage(3)}></div></div>
 
                     </div>
