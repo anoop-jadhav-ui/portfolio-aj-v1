@@ -119,11 +119,11 @@ class Contacts extends React.Component {
 
                 <div className="subsection-data">
                     <span className="default-text grey1 bold">Instagram</span>
-                    <div className="red body-text mt-1"><a href="https://www.instagram.com/mi_baburao/" target="_blank">mi_baburao</a></div>
+                    <div className="red body-text mt-1"><a href="https://www.instagram.com/anoop.design/" target="_blank">anoop.design</a></div>
                 </div>
                 <div className="subsection-data">
                     <span className="default-text grey1 bold">Contact Number</span>
-                    <div className="body-text mt-1">9028665267</div>
+                    <div className="body-text mt-1">(+91) 9028665267</div>
                 </div>
 
             </div>
