@@ -18,7 +18,7 @@ function Hobbies(props) {
             <div className="subsection-data">
                 <span className="h3 grey1 bold">Trekking</span>
                 <div className="mt-2 grey-1 body-text">
-                I prefer going for small treks to take a break from work and the daily routine. I have completed various treks in the Western ghats/Sahyadri region like Torna, Rajmachi, Sudhagad, Korigad, Kalsubai, Vikat Gad, Mahuli Gad, Visapur, Sihagad, Vasota jungle trek, Tung & Tikona,  Tadiandamol trek and the mighty Katraj to Sihagad night trek.  
+                Usually in the monsoons, I prefer going for small treks to take a break from work and the daily routine. The colossal mountains and lush green pastures always fascinates me. Being surrounded by mountains and trees always revives and rejuvenates me. I have completed various treks in the Western ghats/Sahyadri region like Torna, Rajmachi, Sudhagad, Korigad, Kalsubai, Vikat Gad, Mahuli Gad, Visapur, Sihagad, Vasota jungle trek, Tung & Tikona, Tadiandamol trek and the mighty Katraj to Sihagad night trek.
                 </div>
             </div>
 
@@ -29,7 +29,7 @@ function Hobbies(props) {
             <div className="subsection-data">
                 <span className="h3 grey1 bold">Bike Riding</span>
                 <div className="mt-2 grey-1 body-text">
-                From the day I have bought the RE classic 350 I have developed this weird interest of going to places without any reason. I love riding my bike. I usually travel Mumbai - Pune on bike. The Most memorable bike trip would be Leh Ladakh - The stunning view, endless empty roads full of twist and turns.
+                From the day I have bought the RE classic 350 I have developed this unstoppable urge of going new places riding my bike. I usually travel Mumbai - Pune on bike. The Most memorable bike trip would be Leh Ladakh - Khardungla and Changla Pass. The stunning view, endless empty roads full of twist and turns. Also the steep ascends, and bad road condition makes Chang La and Khardungla one of the most challenging roads to drive upon.
                 </div>
 
             </div>
