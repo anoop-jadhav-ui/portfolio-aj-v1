@@ -6,6 +6,15 @@ function Hobbies(props) {
     return <div className={"show-on-scroll col-md-7 page-1 text-left section hobbies-interests " + props.class}>
         <div className="section-title grey4 h2 bold">Hobbies & Interests</div>
         <div className="subsection">
+
+
+            <div className="subsection-data">
+                <span className="h3 grey1 bold">Drawing</span>
+                <div className="mt-2 grey-1 body-text">
+                    Since my childhood I was always passionate about drawing. I really enjoyed Art & Crafts classes in my school. I loved drawing Pokemon characters, cars and bikes. Later I was lost in the world of competition but still managed to keep my interest as we had engineering drawing, AutoCAD in the curriculum. Now I have started learning digital drawing. Please check my <a href="https://www.instagram.com/anoop.design/" class="red"  target="_blank">instagram profile</a>  for some of my work. 
+                </div>
+            </div>
+
             <div className="subsection-data">
                 <span className="h3 grey1 bold">Trekking</span>
                 <div className="mt-2 grey-1 body-text">
@@ -14,12 +23,6 @@ function Hobbies(props) {
             </div>
 
 
-            <div className="subsection-data">
-                <span className="h3 grey1 bold">Drawing</span>
-                <div className="mt-2 grey-1 body-text">
-                 Since my childhood I was always passionate about drawing. I really enjoyed Art & Crafts classes in my school. I loved drawing Pokemon characters, cars and bikes. Later I was lost in the world of competition but still managed to keep my interest as we had engineering drawing, AutoCAD in the curriculum. Now I have started learning digital drawing. Please check my instagram profile  for some of my work. 
-                </div>
-            </div>
 
 
 

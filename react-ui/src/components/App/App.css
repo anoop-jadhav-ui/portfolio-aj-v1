@@ -83,6 +83,7 @@ ul > li{
 
 a:hover,
 ul > li a:hover{
+    color:#EB5757;
     text-decoration: none;
     font-weight: bold;
 }
