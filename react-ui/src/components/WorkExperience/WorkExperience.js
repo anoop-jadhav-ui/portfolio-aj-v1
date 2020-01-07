@@ -17,7 +17,7 @@ function WorkExperience (props){
                     <div className="mt-3 grey-1 body-text">
                         Worked as a UI developer on various projects using frameworks like Salesforce Lightning, Vue.js and React.  Along with development work, I have also worked on multiple design projects which involved in-house web/mobile app design, several RFP's and posters. 
                     </div>
-                    <a className="know-more-button mt-4"><span className="red pr-2">Know more</span> <img src={KnowMoreButton} alt="know more buton" /></a>
+                   {/*  <a className="know-more-button mt-4"><span className="red pr-2">Know more</span> <img src={KnowMoreButton} alt="know more buton" /></a> */}
                 </div>
                 <div className="subsection-data">
                     <span className="h3 grey1 bold">Cognizant</span>
@@ -27,7 +27,7 @@ function WorkExperience (props){
                     <div className="mt-3 grey-1 body-text">
                     Worked as a UI developer on various projects using frameworks like Angular JS. I have also had the opportunity to work on SAP wherein I worked as a SAP BASIS Administrator. 
                     </div>
-                    <a  className="know-more-button mt-4"><span className="red pr-2">Know more</span> <img src={KnowMoreButton} alt="know more buton" /></a>
+                    {/* <a  className="know-more-button mt-4"><span className="red pr-2">Know more</span> <img src={KnowMoreButton} alt="know more buton" /></a> */}
                 </div>
             </div>
         </div>

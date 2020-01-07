@@ -16,7 +16,7 @@ function Education(props) {
           <div className="education-bars">
             <BarGraph value="76" currentStep={props.currentStep} sectionStep={2}/>
           </div>
-          <a className="know-more-button"><span className="red pr-2">Know more</span> <img src={KnowMoreButton} alt="know more buton"/></a>
+          {/* <a className="know-more-button"><span className="red pr-2">Know more</span> <img src={KnowMoreButton} alt="know more buton"/></a> */}
        </div>
        <div className="subsection-title uppercase body-text grey3 letterspacing-1">Graduation</div>
        <div className="subsection-data">
@@ -24,7 +24,7 @@ function Education(props) {
           <div className="education-bars">
             <BarGraph value="64" currentStep={props.currentStep} sectionStep={2}/>
           </div>
-          <a className="know-more-button"><span className="red pr-2">Know more</span> <img src={KnowMoreButton} alt="know more buton"/></a>
+          {/* <a className="know-more-button"><span className="red pr-2">Know more</span> <img src={KnowMoreButton} alt="know more buton"/></a> */}
        </div>
      </div> 
     </div>
