@@ -20,10 +20,10 @@ function Skills(props){
                         <div className="skill-label grey-1 body-text bold col-md-2">JS</div><BarGraph class="col-md-10" value="50" currentStep={props.currentStep} sectionStep={5}/>
                     </div>
                     <div className="skill-bar-wrapper row no-gutters align-items-center">
-                        <div className="skill-label grey-1 body-text bold col-md-2">Angular</div><BarGraph class="col-md-10" value="25" currentStep={props.currentStep} sectionStep={5}/>
+                        <div className="skill-label grey-1 body-text bold col-md-2">React JS</div><BarGraph class="col-md-10" value="25" currentStep={props.currentStep} sectionStep={5}/>
                     </div>
                     <div className="skill-bar-wrapper row no-gutters align-items-center">
-                        <div className="skill-label grey-1 body-text bold col-md-2">Vue</div><BarGraph class="col-md-10" value="50" currentStep={props.currentStep} sectionStep={5}/>
+                        <div className="skill-label grey-1 body-text bold col-md-2">Vue JS</div><BarGraph class="col-md-10" value="50" currentStep={props.currentStep} sectionStep={5}/>
                     </div>
                     <div className="skill-bar-wrapper row no-gutters align-items-center">
                         <div className="skill-label grey-1 body-text bold col-md-2">Lightning</div><BarGraph class="col-md-10" value="80" currentStep={props.currentStep} sectionStep={5}/>
