@@ -1,7 +1,10 @@
 .subsection{
     margin-top:2.75rem;
 }
-.subsection-data{
+.subsection-wrappers + .subsection-wrappers{
+    margin-top:3rem;
+}
+.education .subsection-data{
     margin-top:1rem;
     margin-bottom:2rem;
 }
