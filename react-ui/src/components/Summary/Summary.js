@@ -7,13 +7,13 @@ function Summary(props) {
     <div className={'show-on-scroll col-md-7 page-1 text-center ' + props.class}>
       <img src={MainLogo} alt="main logo" />
       <div className="h1 bold main-title grey-1">
-        Anoop Jadhav
-          </div>
+       {props.dbData.overview.name}
+      </div>
       <div className="h4 uppercase letterspacing-1 red bold">
-        UI Developer | Designer
+      {props.dbData.overview.title}
           </div>
       <div className="body-text summary-text">
-        A passionate UI Developer/Designer with around 5 years of experience using tools and technologies like HTML, CSS, JavaScript, Vue Js, React, Salesforce Lightning, Adobe Illustrator, Figma, Sketch and Invision.
+      {props.dbData.overview.summary}
           </div>
       <div className="default-text red scroll-text thin">
         Scroll to Know more

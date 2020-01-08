@@ -109,21 +109,20 @@ class Contacts extends React.Component {
                 </div>
             </form>
 
-
             <div className="subsection">
                 <div className="subsection-title uppercase body-text grey3 letterspacing-1">Contact Details</div>
                 <div className="subsection-data">
                     <span className="default-text grey1 bold">Email Id</span>
-                    <div className="red body-text mt-1"><a href="mailto: anoopjadhav@gmail.com">anoopjadhav@gmail.com</a></div>
+                    <div className="red body-text mt-1"><a href={"mailto: " + this.props.dbData.contactDetails.emailId}>{this.props.dbData.contactDetails.emailId}</a></div>
                 </div>
 
                 <div className="subsection-data">
                     <span className="default-text grey1 bold">Instagram</span>
-                    <div className="red body-text mt-1"><a href="https://www.instagram.com/anoop.design/" target="_blank">anoop.design</a></div>
+                    <div className="red body-text mt-1"><a href={"https://www.instagram.com/" + this.props.dbData.contactDetails.instaId} target="_blank">{this.props.dbData.contactDetails.instaId}</a></div>
                 </div>
                 <div className="subsection-data">
                     <span className="default-text grey1 bold">Contact Number</span>
-                    <div className="body-text mt-1">(+91) 9028665267</div>
+                    <div className="body-text mt-1">{this.props.dbData.contactDetails.contactNumber}</div>
                 </div>
 
             </div>

@@ -9,8 +9,8 @@ import './App.css'
 import KnowMoreButton from '../../assets/arrow-icon.svg'
 
 import Loader from '../Loader/Loader'
-
 import { Link } from 'react-router-dom'
+import firebase from '../firebaseConfig.js'
 
 // Detect request animation frame
 var scroll = window.requestAnimationFrame ||
@@ -52,7 +52,7 @@ function isElementInViewport(el) {
 function PortfolioWrapper(props) {
   return <div className='portfolio row no-gutters'>
     {props.showLoader && <Loader />}
-    <Portfolio currentStep={props.currentStep} changeStep={props.changeStep} toggleLoader={props.toggleLoader} />
+    <Portfolio currentStep={props.currentStep} changeStep={props.changeStep} toggleLoader={props.toggleLoader} dbData={props.dbData}/>
   </div>
 }
 function MainbodyWrapper(props) {
@@ -71,7 +71,7 @@ function MainbodyWrapper(props) {
 
     {props.showLoader && <Loader />}
     <LeftPane toggleLoader={props.toggleLoader} currentStep={props.currentStep} changeStep={props.changeStep} leftPaneItems={props.leftPaneItems} fetchHeaderPositions={props.fetchHeaderPositions} toggleLoader={props.toggleLoader}></LeftPane>
-    <MainBody toggleLoader={props.toggleLoader} currentStep={props.currentStep} changeStep={props.changeStep} changeCurrentStepBasedOnScrollCalculation={props.changeCurrentStepBasedOnScrollCalculation} toggleLoader={props.toggleLoader}></MainBody>
+    <MainBody toggleLoader={props.toggleLoader} currentStep={props.currentStep} changeStep={props.changeStep} changeCurrentStepBasedOnScrollCalculation={props.changeCurrentStepBasedOnScrollCalculation} toggleLoader={props.toggleLoader} dbData={props.dbData}></MainBody>
   </div>
 }
 
@@ -87,8 +87,25 @@ class App extends React.Component {
     leftPaneItems: leftPaneData,
     scrollPos: 0,
     fetchFlag: true,
+    dbData : {}
   }
 
+  componentDidMount(){
+    console.log('Inside Mount');
+    const rootRef = firebase.database().ref().child("/");
+    console.log(rootRef);
+
+    rootRef.once('value',snapshot => {
+      this.setState(() => {
+        return {
+          dbData : snapshot.val()
+        }
+      })
+      console.log(this.dbData);
+    })
+    
+
+  }
   toggleLoader = (toggleValue) => {
     if (toggleValue == undefined || toggleValue == null) {
       this.setState((prevState) => {
@@ -161,10 +178,12 @@ class App extends React.Component {
   }
 
   render() {
-    return <Router>
-      <Route path="/" exact render={(props) => <PortfolioWrapper {...props} currentStep={this.state.currentStep} changeStep={this.changeStep} showPortfolio={this.state.showPortfolio} showLoader={this.state.showLoader} toggleLoader={this.toggleLoader} />} />
-      <Route path="/profile" render={(props) => <MainbodyWrapper {...props} currentStep={this.state.currentStep} changeStep={this.changeStep} changeCurrentStepBasedOnScrollCalculation={this.changeCurrentStepBasedOnScrollCalculation} mainPage={this.state.mainPage} leftPaneItems={this.state.leftPaneItems} scrollPos={this.state.scrollPos} fetchHeaderPositions={this.fetchHeaderPositions} showLoader={this.state.showLoader} toggleLoader={this.toggleLoader} />} />
+    return !(Object.keys(this.state.dbData).length === 0 && this.state.dbData.constructor === Object) ? <Router>
+      <Route path="/" exact render={(props) => <PortfolioWrapper {...props} currentStep={this.state.currentStep} changeStep={this.changeStep} showPortfolio={this.state.showPortfolio} showLoader={this.state.showLoader} toggleLoader={this.toggleLoader} dbData={this.state.dbData}/>} />
+      <Route path="/profile" render={(props) => <MainbodyWrapper {...props} dbData={this.state.dbData} currentStep={this.state.currentStep} changeStep={this.changeStep} changeCurrentStepBasedOnScrollCalculation={this.changeCurrentStepBasedOnScrollCalculation} mainPage={this.state.mainPage} leftPaneItems={this.state.leftPaneItems} scrollPos={this.state.scrollPos} fetchHeaderPositions={this.fetchHeaderPositions} showLoader={this.state.showLoader} toggleLoader={this.toggleLoader}/>} />
     </Router>
+    : 
+    <Loader />
 
   }
 

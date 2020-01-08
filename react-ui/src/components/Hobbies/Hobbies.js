@@ -7,32 +7,17 @@ function Hobbies(props) {
         <div className="section-title grey4 h2 bold">Hobbies & Interests</div>
         <div className="subsection">
 
-
-            <div className="subsection-data">
-                <span className="h3 grey1 bold">Drawing</span>
-                <div className="mt-2 grey-1 body-text">
-                    Since my childhood I was always passionate about drawing. I really enjoyed Art & Crafts classes in my school. I loved drawing Pokemon characters, cars and bikes. Later I was lost in the world of competition but still managed to keep my interest as we had engineering drawing, AutoCAD in the curriculum. Now I have started learning digital drawing. Please check my <a href="https://www.instagram.com/anoop.design/" class="red"  target="_blank">instagram profile</a>  for some of my work. 
-                </div>
-            </div>
-
-            <div className="subsection-data">
-                <span className="h3 grey1 bold">Trekking</span>
-                <div className="mt-2 grey-1 body-text">
-                Usually in the monsoons, I prefer going for small treks to take a break from work and the daily routine. The colossal mountains and lush green pastures always fascinates me. Being surrounded by mountains and trees always revives and rejuvenates me. I have completed various treks in the Western ghats/Sahyadri region like Torna, Rajmachi, Sudhagad, Korigad, Kalsubai, Vikat Gad, Mahuli Gad, Visapur, Sihagad, Vasota jungle trek, Tung & Tikona, Tadiandamol trek and the mighty Katraj to Sihagad night trek.
-                </div>
-            </div>
-
-
-
-
-
-            <div className="subsection-data">
-                <span className="h3 grey1 bold">Bike Riding</span>
-                <div className="mt-2 grey-1 body-text">
-                From the day I have bought the RE classic 350 I have developed this unstoppable urge of going new places riding my bike. I usually travel Mumbai - Pune on bike. The Most memorable bike trip would be Leh Ladakh - Khardungla and Changla Pass. The stunning view, endless empty roads full of twist and turns. Also the steep ascends, and bad road condition makes Chang La and Khardungla one of the most challenging roads to drive upon.
-                </div>
-
-            </div>
+        {
+            props.dbData.hobbies.map((ele)=>{
+                return <div className="subsection-data">
+                            <span className="h3 grey1 bold">{ele.name}</span>
+                            <div className="mt-2 grey-1 body-text">
+                                {ele.summary}
+                            </div>
+                        </div>
+                
+            })
+        }
         </div>
     </div >
 
