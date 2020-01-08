@@ -95,7 +95,7 @@ class App extends React.Component {
     const rootRef = firebase.database().ref().child("/");
     console.log(rootRef);
 
-    rootRef.once('value',snapshot => {
+    rootRef.on('value',snapshot => {
       this.setState(() => {
         return {
           dbData : snapshot.val()
