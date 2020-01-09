@@ -9,12 +9,14 @@ import linkedIn from "../../assets/linkedin.svg";
 import closeButtonImage from "../../assets/cross-icon.svg";
 
 import { Link } from "react-router-dom";
+
 class Portfolio extends React.Component {
   state = {
     currentImage: "",
     currentStep: this.props.currentStep,
     portfolio: [],
-    imageData: this.props.imageData
+    imageData: this.props.imageData,
+    showSkipButton: true
   };
   componentDidMount() {
     var portfolioImageData = this.props.imageData.portfolio;
@@ -22,11 +24,11 @@ class Portfolio extends React.Component {
 
     let portfolioTemp = [];
     portfolioImageData.forEach((p, index) => {
-        portfolioTemp.push({
-            id: index,
-            thumbnail: thumbnailImageData[index].fileUrl,
-            portfolioImage: p.fileUrl
-            });
+      portfolioTemp.push({
+        id: index,
+        thumbnail: thumbnailImageData[index].fileUrl,
+        portfolioImage: p.fileUrl
+      });
     });
 
     this.setState(() => {
@@ -44,13 +46,12 @@ class Portfolio extends React.Component {
 
     this.props.toggleLoader(true);
 
-    setTimeout(
-      function() {
-        this.props.toggleLoader(false);
-      }.bind(this),
-      3000
-    );
+    setTimeout(() => {
+      this.props.toggleLoader(false);
+     
+    }, 3000);
   }
+
   closeImage() {
     this.setState(() => {
       return {
@@ -58,6 +59,21 @@ class Portfolio extends React.Component {
       };
     });
   }
+  scrollTop() {
+    var ele = document.querySelector(".portfolio.row");
+    if (ele)
+      ele.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+        inline: "nearest"
+      });
+  }
+
+  imageOnScroll(event) {
+    var ele = document.querySelector(".portfolio-image-wrapper");
+    console.log("scrolling...");
+  }
+
   render() {
     return (
       <div className="portfolio-wrapper row no-gutters col-md-12  justify-content-center portfolio ">
@@ -67,7 +83,18 @@ class Portfolio extends React.Component {
           </div>
         )}
 
-        <img className="current-image" src={this.state.currentImage} />
+        {this.state.currentImage !== "" && (
+          <div className="portfolio-image-wrapper">
+            <img className="current-image" src={this.state.currentImage} />
+          </div>
+        )}
+
+        {this.state.showSkipButton && this.state.currentImage !== "" && (
+          <div className="skip-button" onClick={() => this.scrollTop()}>
+            <div className="arrow"></div>
+          </div>
+        )}
+
         {this.state.currentImage === "" && (
           <div className="row no-gutters col-md-12  justify-content-center">
             <div className="portfolio-header col-md-12  text-center">
@@ -103,7 +130,9 @@ class Portfolio extends React.Component {
                   <div className="thumbnail col-md-4" key={index}>
                     <div
                       className={"thumbnail-image thumbnail" + index + 1}
-                      style={{ backgroundImage: "url(" + ele.thumbnail.i + ")" }}
+                      style={{
+                        backgroundImage: "url(" + ele.thumbnail.i + ")"
+                      }}
                       onClick={() => this.setCurrentImage(index)}
                     ></div>
                   </div>

@@ -48,15 +48,17 @@
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
 }
 .current-image{
+    width: 100%;
+}
+.portfolio-image-wrapper{
     position: absolute;
     width:100%;
     top:0;
     left:0;
-    overflow-y:auto;
+    /* overflow-y:auto; */
     box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.25);
-    margin-bottom: 2rem;
+    /* margin-bottom: 2rem; */
 }
-
 .close-button{
     width:3.5rem;
     height:3.5rem;
@@ -67,7 +69,7 @@
     justify-content: center;
     align-items: center;
     /* Gray 3 */
-    background:rgba(130,130,130,0.6);
+    background:#EB5757;
     background-blend-mode:multiply; 
     z-index: 2;
     cursor: pointer;
@@ -136,6 +138,9 @@
     -o-animation: fadeout 1s; /* Opera */
 }
 
+
+
+
 @keyframes fadein {
     from {
         opacity:0;
@@ -202,7 +207,47 @@
     }
 }
 
-
+.skip-button{
+    background: #EB5757;
+    width:3.5rem;
+    height: 3.5rem;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    position: fixed;
+    bottom: 6rem;
+    right: 2rem;
+    z-index: 1;
+    cursor: pointer;
+}
+.arrow {
+    position: relative;
+    height:1rem;
+    width:1rem;
+    top:0.3rem;
+  }
+  .arrow:before {
+    content: '';
+    position: absolute;
+    transform : rotate(45deg);
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    border-top: 2px solid;
+    border-color: white;
+  }
+  .arrow:after {
+    content: '';
+    position: absolute;
+    transform : rotate(-45deg);
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    border-top: 2px solid;
+    border-color: white;
+  }
 
 
 

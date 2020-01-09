@@ -19,10 +19,12 @@ var scroll =
   function(callback) {
     window.setTimeout(callback, 1000 / 60);
   };
+
 var elementsToShow = document.getElementsByClassName("show-on-scroll");
 
+
 function loop() {
-  if (elementsToShow.length > 0)
+  if (elementsToShow.length > 0) {
     for (var i = 0; i < elementsToShow.length; i++) {
       if (isElementInViewport(elementsToShow[i])) {
         elementsToShow[i].classList.add("is-visible");
@@ -30,6 +32,17 @@ function loop() {
         elementsToShow[i].classList.remove("is-visible");
       }
     }
+  }
+
+  var crossButtonPortfolio = document.querySelector(".close-button");
+  if (crossButtonPortfolio != undefined) {
+    if (isElementInViewport(crossButtonPortfolio)) {
+      document.querySelector(".skip-button").classList.add("hide");
+    } else {
+      document.querySelector(".skip-button").classList.remove("hide");
+    }
+  }
+
   scroll(loop);
 }
 // Call the loop for the first times
@@ -55,9 +68,11 @@ function isElementInViewport(el) {
 function PortfolioWrapper(props) {
   return (
     <div className="portfolio row no-gutters">
-      {props.showLoader &&  <Loader />}
-      {
-      !(Object.keys(props.imageData).length === 0 && props.imageData.constructor === Object) &&
+      {props.showLoader && <Loader />}
+      {!(
+        Object.keys(props.imageData).length === 0 &&
+        props.imageData.constructor === Object
+      ) && (
         <Portfolio
           currentStep={props.currentStep}
           changeStep={props.changeStep}
@@ -65,7 +80,7 @@ function PortfolioWrapper(props) {
           dbData={props.dbData}
           imageData={props.imageData}
         />
-      }
+      )}
     </div>
   );
 }
