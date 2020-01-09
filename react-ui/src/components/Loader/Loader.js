@@ -6,7 +6,7 @@ class Loader extends React.Component {
         author: ''
     }
     componentDidMount() {
-
+/*
         fetch('https://api.quotable.io/random')
             .then(response => response.json())
             .then(data => {
@@ -21,7 +21,7 @@ class Loader extends React.Component {
 
             })
 
-
+*/
     }
     render() {
         return <div className="loader">

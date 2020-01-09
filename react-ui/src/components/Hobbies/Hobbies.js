@@ -8,8 +8,8 @@ function Hobbies(props) {
         <div className="subsection">
 
         {
-            props.dbData.hobbies.map((ele)=>{
-                return <div className="subsection-data">
+            props.dbData.hobbies.map((ele,key)=>{
+                return <div className="subsection-data" key={key}>
                             <span className="h3 grey1 bold">{ele.name}</span>
                             <div className="mt-2 grey-1 body-text">
                                 {ele.summary}

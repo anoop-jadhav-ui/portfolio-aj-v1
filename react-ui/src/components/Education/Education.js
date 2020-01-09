@@ -14,9 +14,9 @@ function Education(props) {
       <div className="section-title grey4 h2 bold">Education</div>
 
       <div className="subsection">
-        {props.dbData.education.map(ele => {
+        {props.dbData.education.map((ele,key) => {
           return (
-            <div class="subsection-wrappers">
+            <div className="subsection-wrappers" key={key}>
               <div className="subsection-title uppercase body-text grey3 letterspacing-1 mt-2">
                 {ele.type}
               </div>

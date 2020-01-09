@@ -1,115 +1,146 @@
-import React from 'react'
-import './Portfolio.css'
-import headerLogo from '../../assets/leftpane-logo-dark.svg'
-import facebook from '../../assets/facebook.svg'
-import twitter from '../../assets/twitter.svg'
-import insta from '../../assets/insta.svg'
-import linkedIn from '../../assets/linkedin.svg'
-import thumbnail1 from '../../assets/thumbnails/thumbnail1.svg'
-import thumbnail2 from '../../assets/thumbnails/thumbnail2.svg'
-import thumbnail3 from '../../assets/thumbnails/thumbnail3.svg'
+import React from "react";
+import "./Portfolio.css";
+import headerLogo from "../../assets/leftpane-logo-dark.svg";
+import facebook from "../../assets/facebook.svg";
+import twitter from "../../assets/twitter.svg";
+import insta from "../../assets/insta.svg";
+import linkedIn from "../../assets/linkedin.svg";
 
-import portfolio1 from '../../assets/portfolio/portfolio-1.png'
-import portfolio2 from '../../assets/portfolio/portfolio-2.png'
-import portfolio3 from '../../assets/portfolio/portfolio-3.png'
+import closeButtonImage from "../../assets/cross-icon.svg";
 
-import closeButtonImage from '../../assets/cross-icon.svg'
-
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 class Portfolio extends React.Component {
+  state = {
+    currentImage: "",
+    currentStep: this.props.currentStep,
+    portfolio: [],
+    imageData: this.props.imageData
+  };
+  componentDidMount() {
+    var portfolioImageData = this.props.imageData.portfolio;
+    var thumbnailImageData = this.props.imageData.thumbnail;
 
-    state = {
-        currentImage: '',
-        currentStep: this.props.currentStep,
-        portfolio: [
-            {
-                'id': 1,
-                'thumbnail': thumbnail1,
-                'portfolioImage': portfolio1
-            },
-            {
-                'id': 2,
-                'thumbnail': thumbnail2,
-                'portfolioImage': portfolio2
-            },
-            {
-                'id': 3,
-                'thumbnail': thumbnail2,
-                'portfolioImage': portfolio3
-            }
+    let portfolioTemp = [];
+    portfolioImageData.forEach((p, index) => {
+        portfolioTemp.push({
+            id: index,
+            thumbnail: thumbnailImageData[index].fileUrl,
+            portfolioImage: p.fileUrl
+            });
+    });
 
-        ]
-    }
+    this.setState(() => {
+      return {
+        portfolio: portfolioTemp
+      };
+    });
+  }
+  setCurrentImage(number) {
+    this.setState(() => {
+      return {
+        currentImage: this.state.portfolio[number]["portfolioImage"].i
+      };
+    });
 
-    setCurrentImage(number) {
+    this.props.toggleLoader(true);
 
-        this.setState(() => {
-            return {
-                currentImage: this.state.portfolio[number - 1]['portfolioImage']
-            }
-        })
+    setTimeout(
+      function() {
+        this.props.toggleLoader(false);
+      }.bind(this),
+      2000
+    );
+  }
+  closeImage() {
+    this.setState(() => {
+      return {
+        currentImage: ""
+      };
+    });
+  }
+  render() {
+    return (
+      <div className="portfolio-wrapper row no-gutters col-md-12  justify-content-center portfolio ">
+        {this.state.currentImage !== "" && (
+          <div className="close-button" onClick={() => this.closeImage()}>
+            <img src={closeButtonImage} alt="close button" />
+          </div>
+        )}
 
-        this.props.toggleLoader(true);
+        <img className="current-image" src={this.state.currentImage} />
+        {this.state.currentImage === "" && (
+          <div className="row no-gutters col-md-12  justify-content-center">
+            <div className="portfolio-header col-md-12  text-center">
+              <img src={headerLogo} alt="header logo" />
 
-        setTimeout(function () {
-            this.props.toggleLoader(false);
-        }.bind(this), 5000);
-
-    }
-    closeImage() {
-        this.setState(() => {
-            return {
-                currentImage: ''
-            }
-        })
-    }
-    render() {
-        return <div className='portfolio-wrapper row no-gutters col-md-12  justify-content-center portfolio '>
-
-            {this.state.currentImage !== '' && <div className="close-button" onClick={() => this.closeImage()} >
-                <img src={closeButtonImage} alt="close button" />
-            </div>}
-
-            <img className="current-image" src={this.state.currentImage} />
-            {
-                this.state.currentImage === '' &&
-
-                <div className="row no-gutters col-md-12  justify-content-center">
-                    <div className="portfolio-header col-md-12  text-center">
-                        <img src={headerLogo} alt="header logo" />
-
-                        <ul className="portfolio-menu label grey4 justify-content-center uppercase">
-
-                            <li className="bold grey2"><a className="grey2" onClick={(e) => this.props.changeStep(this.state.currentStep, e)}>Work</a></li>
-                            <li>
-                                <Link to="/profile" className="grey4">
-                                    Profile
-                                </Link>
-                                {/* <a className="grey4" to="/profile" onClick={(e) => this.props.changeStep(this.state.currentStep + 1,e)}>Profile</a> */}
-                            </li>
-                            <li>
-                                <Link to="/profile" className="grey4">
-                                    Contact
-                                </Link>
-                            </li>
-                        </ul>
-                    </div>
-                    <div className="portfolio-body row col-md-12 justify-content-center">
-                        <div className="thumbnail col-md-4"><div className="thumbnail-image thumbnail2" style={{ 'backgroundImage': 'url(' + thumbnail2 + ')' }} onClick={() => this.setCurrentImage(2)}></div></div>
-                        <div className="thumbnail col-md-4"><div className="thumbnail-image thumbnail1" style={{ 'backgroundImage': 'url(' + thumbnail1 + ')' }} onClick={() => this.setCurrentImage(1)}></div></div>
-                        <div className="thumbnail col-md-4"><div className="thumbnail-image thumbnail3" style={{ 'backgroundImage': 'url(' + thumbnail3 + ')' }} onClick={() => this.setCurrentImage(3)}></div></div>
-
-                    </div>
-                    <div className="portfolio-footer col-md-12 row no-gutters justify-content-center text-center">
-                        <a className="social-icon" href="https://www.facebook.com/anoop.jadhav" target="_blank"><img src={facebook} /></a>
-                        <a className="social-icon" target="_blank"><img src={twitter} /></a>
-                        <a className="social-icon" href="https://www.instagram.com/mi_baburao/" target="_blank"><img src={insta} /></a>
-                        <a className="social-icon" href="https://www.linkedin.com/in/anoop-jadhav-44528258/" target="_blank"><img src={linkedIn} /></a>
-                    </div>
-                </div>
-            }
-        </div>
-    }
+              <ul className="portfolio-menu label grey4 justify-content-center uppercase">
+                <li className="bold grey2">
+                  <a
+                    className="grey2"
+                    onClick={e =>
+                      this.props.changeStep(this.state.currentStep, e)
+                    }
+                  >
+                    Work
+                  </a>
+                </li>
+                <li>
+                  <Link to="/profile" className="grey4">
+                    Profile
+                  </Link>
+                  {/* <a className="grey4" to="/profile" onClick={(e) => this.props.changeStep(this.state.currentStep + 1,e)}>Profile</a> */}
+                </li>
+                <li>
+                  <Link to="/profile" className="grey4">
+                    Contact
+                  </Link>
+                </li>
+              </ul>
+            </div>
+            <div className="portfolio-body row col-md-12 justify-content-center">
+              {this.state.portfolio.map((ele, index) => {
+                return (
+                  <div className="thumbnail col-md-4" key={index}>
+                    <div
+                      className={"thumbnail-image thumbnail" + index + 1}
+                      style={{ backgroundImage: "url(" + ele.thumbnail.i + ")" }}
+                      onClick={() => this.setCurrentImage(index)}
+                    ></div>
+                  </div>
+                );
+              })}
+            </div>
+            <div className="portfolio-footer col-md-12 row no-gutters justify-content-center text-center">
+              <a
+                className="social-icon"
+                href="https://www.facebook.com/anoop.jadhav"
+                target="_blank"
+              >
+                <img src={facebook} />
+              </a>
+              <a className="social-icon" target="_blank">
+                <img src={twitter} />
+              </a>
+              <a
+                className="social-icon"
+                href="https://www.instagram.com/mi_baburao/"
+                target="_blank"
+              >
+                <img src={insta} />
+              </a>
+              <a
+                className="social-icon"
+                href="https://www.linkedin.com/in/anoop-jadhav-44528258/"
+                target="_blank"
+              >
+                <img src={linkedIn} />
+              </a>
+            </div>
+          </div>
+        )}
+      </div>
+    );
+  }
 }
 
 export default Portfolio;
