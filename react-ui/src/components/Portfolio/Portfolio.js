@@ -48,7 +48,7 @@ class Portfolio extends React.Component {
       function() {
         this.props.toggleLoader(false);
       }.bind(this),
-      2000
+      3000
     );
   }
   closeImage() {
