@@ -22,7 +22,6 @@ var scroll =
 
 var elementsToShow = document.getElementsByClassName("show-on-scroll");
 
-
 function loop() {
   if (elementsToShow.length > 0) {
     for (var i = 0; i < elementsToShow.length; i++) {
@@ -72,7 +71,7 @@ function PortfolioWrapper(props) {
       {!(
         Object.keys(props.imageData).length === 0 &&
         props.imageData.constructor === Object
-      ) && (
+      ) ? (
         <Portfolio
           currentStep={props.currentStep}
           changeStep={props.changeStep}
@@ -80,6 +79,8 @@ function PortfolioWrapper(props) {
           dbData={props.dbData}
           imageData={props.imageData}
         />
+      ) : (
+        <Loader />
       )}
     </div>
   );
@@ -164,27 +165,6 @@ class App extends React.Component {
       portfolio: [],
       thumbnail: []
     };
-
-    var listRef = storageRef.child("portfolio-images/portfolio");
-    listRef
-      .listAll()
-      .then(res => {
-        res.items.forEach(itemRef => {
-          imageDataTemp.portfolio.push({
-            fileName: itemRef.name,
-            fileUrl: itemRef.getDownloadURL()
-          });
-        });
-        this.setState(() => {
-          return {
-            imageData: imageDataTemp
-          };
-        });
-      })
-      .catch(function(error) {
-        console.log("error  while downloading images");
-      });
-
     var listRef = storageRef.child("portfolio-images/thumbnails");
     listRef
       .listAll()
@@ -200,6 +180,27 @@ class App extends React.Component {
             imageData: imageDataTemp
           };
         });
+        console.log(this.state.imageData);
+      })
+      .catch(function(error) {
+        console.log("error  while downloading images");
+      });
+    var listRef = storageRef.child("portfolio-images/portfolio");
+    listRef
+      .listAll()
+      .then(res => {
+        res.items.forEach(itemRef => {
+          imageDataTemp.portfolio.push({
+            fileName: itemRef.name,
+            fileUrl: itemRef.getDownloadURL()
+          });
+        });
+        this.setState(() => {
+          return {
+            imageData: imageDataTemp
+          };
+        });
+        console.log(this.state.imageData);
       })
       .catch(function(error) {
         console.log("error  while downloading images");

@@ -36,6 +36,7 @@ class Portfolio extends React.Component {
         portfolio: portfolioTemp
       };
     });
+    console.log(this.state.portfolio);
   }
   setCurrentImage(number) {
     this.setState(() => {
@@ -48,7 +49,6 @@ class Portfolio extends React.Component {
 
     setTimeout(() => {
       this.props.toggleLoader(false);
-     
     }, 3000);
   }
 
@@ -128,16 +128,21 @@ class Portfolio extends React.Component {
               {this.state.portfolio.map((ele, index) => {
                 return (
                   <div className="thumbnail col-md-4" key={index}>
-                    <div
-                      className={"thumbnail-image thumbnail" + index + 1}
-                      style={{
-                        backgroundImage: "url(" + ele.thumbnail.i + ")"
-                      }}
-                      onClick={() => this.setCurrentImage(index)}
-                    ></div>
+                    {ele.thumbnail.i != undefined ? (
+                      <div
+                        className={"thumbnail-image thumbnail" + index + 1}
+                        style={{
+                          backgroundImage: "url(" + ele.thumbnail.i + ")"
+                        }}
+                        onClick={() => this.setCurrentImage(index)}
+                      ></div>
+                    ) : (
+                      <div className="thumbnail-image thumbnail thumbnail-stencil" />
+                    )}
                   </div>
                 );
               })}
+             
             </div>
             <div className="portfolio-footer col-md-12 row no-gutters justify-content-center text-center">
               <a
