@@ -3,6 +3,7 @@ node_modules
 npm-debug.log
 
 # Local development
+react-ui/*.env
 *.env
 *.dev
 .DS_Store
