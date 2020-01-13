@@ -78,17 +78,16 @@ class Portfolio extends React.Component {
     return (
       <div className="portfolio-wrapper row no-gutters col-md-12  justify-content-center portfolio ">
         {this.state.currentImage !== "" && (
-          <div className="close-button" onClick={() => this.closeImage()}>
-            <img src={closeButtonImage} alt="close button" />
+          <div class="portfolio-image-wrapper">
+            <div className="close-button" onClick={() => this.closeImage()}>
+              <img src={closeButtonImage} alt="close button" />
+            </div>
+
+            <div className="">
+              <img className="current-image" src={this.state.currentImage} />
+            </div>
           </div>
         )}
-
-        {this.state.currentImage !== "" && (
-          <div className="portfolio-image-wrapper">
-            <img className="current-image" src={this.state.currentImage} />
-          </div>
-        )}
-
         {this.state.showSkipButton && this.state.currentImage !== "" && (
           <div className="skip-button" onClick={() => this.scrollTop()}>
             <div className="arrow"></div>
@@ -142,7 +141,6 @@ class Portfolio extends React.Component {
                   </div>
                 );
               })}
-             
             </div>
             <div className="portfolio-footer col-md-12 row no-gutters justify-content-center text-center">
               <a
