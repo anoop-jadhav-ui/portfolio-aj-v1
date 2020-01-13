@@ -36,7 +36,7 @@ class Portfolio extends React.Component {
         portfolio: portfolioTemp
       };
     });
-    console.log(this.state.portfolio);
+    
   }
   setCurrentImage(number) {
     this.setState(() => {
@@ -71,7 +71,7 @@ class Portfolio extends React.Component {
 
   imageOnScroll(event) {
     var ele = document.querySelector(".portfolio-image-wrapper");
-    console.log("scrolling...");
+    // console.log("scrolling...");
   }
 
   render() {

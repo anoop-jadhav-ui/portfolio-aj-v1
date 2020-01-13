@@ -105,6 +105,7 @@ function MainbodyWrapper(props) {
 
       {props.showLoader && <Loader />}
       <LeftPane
+        imageData={props.imageData}
         toggleLoader={props.toggleLoader}
         currentStep={props.currentStep}
         changeStep={props.changeStep}
@@ -113,6 +114,7 @@ function MainbodyWrapper(props) {
         toggleLoader={props.toggleLoader}
       ></LeftPane>
       <MainBody
+        imageData={props.imageData}
         toggleLoader={props.toggleLoader}
         currentStep={props.currentStep}
         changeStep={props.changeStep}
@@ -163,7 +165,8 @@ class App extends React.Component {
 
     let imageDataTemp = {
       portfolio: [],
-      thumbnail: []
+      thumbnail: [],
+      assets: []
     };
     var listRef = storageRef.child("portfolio-images/thumbnails");
     listRef
@@ -180,7 +183,7 @@ class App extends React.Component {
             imageData: imageDataTemp
           };
         });
-        console.log(this.state.imageData);
+        // console.log(this.state.imageData);
       })
       .catch(function(error) {
         console.log("error  while downloading images");
@@ -200,7 +203,28 @@ class App extends React.Component {
             imageData: imageDataTemp
           };
         });
-        console.log(this.state.imageData);
+        // console.log(this.state.imageData);
+      })
+      .catch(function(error) {
+        console.log("error  while downloading images");
+      });
+    var listRef = storageRef.child("portfolio-images/assets");
+    listRef
+      .listAll()
+      .then(res => {
+        res.items.forEach(itemRef => {
+          imageDataTemp.assets.push({
+            fileName: itemRef.name,
+            fileUrl: itemRef.getDownloadURL()
+          });
+        });
+        this.setState(() => {
+          // console.log(this.state.imageData);
+          return {
+            imageData: imageDataTemp
+          };
+        });
+        // sconsole.log(this.state.imageData);
       })
       .catch(function(error) {
         console.log("error  while downloading images");
@@ -306,6 +330,7 @@ class App extends React.Component {
           render={props => (
             <MainbodyWrapper
               {...props}
+              imageData={this.state.imageData}
               dbData={this.state.dbData}
               currentStep={this.state.currentStep}
               changeStep={this.changeStep}
