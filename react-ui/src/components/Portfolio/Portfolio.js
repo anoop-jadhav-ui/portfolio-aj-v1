@@ -49,7 +49,7 @@ class Portfolio extends React.Component {
 
     setTimeout(() => {
       this.props.toggleLoader(false);
-    }, 3000);
+    }, 1500);
   }
 
   closeImage() {
