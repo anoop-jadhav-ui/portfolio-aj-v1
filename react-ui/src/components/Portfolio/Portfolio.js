@@ -36,7 +36,6 @@ class Portfolio extends React.Component {
         portfolio: portfolioTemp
       };
     });
-    
   }
   setCurrentImage(number) {
     this.setState(() => {
@@ -79,15 +78,18 @@ class Portfolio extends React.Component {
       <div className="portfolio-wrapper row no-gutters col-md-12  justify-content-center portfolio ">
         {this.state.currentImage !== "" && (
           <div class="portfolio-image-wrapper">
-            <div className="close-button" onClick={() => this.closeImage()}>
-              <img src={closeButtonImage} alt="close button" />
-            </div>
-
             <div className="">
               <img className="current-image" src={this.state.currentImage} />
             </div>
           </div>
         )}
+
+        {this.state.currentImage !== "" && (
+          <div className="close-button" onClick={() => this.closeImage()}>
+            <img src={closeButtonImage} alt="close button" />
+          </div>
+        )}
+
         {this.state.showSkipButton && this.state.currentImage !== "" && (
           <div className="skip-button" onClick={() => this.scrollTop()}>
             <div className="arrow"></div>
