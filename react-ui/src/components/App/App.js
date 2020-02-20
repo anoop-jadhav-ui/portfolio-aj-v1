@@ -64,6 +64,8 @@ function isElementInViewport(el) {
         (window.innerHeight || document.documentElement.clientHeight))
   );
 }
+
+// Portfolio wrapper component
 function PortfolioWrapper(props) {
   return (
     <div className="portfolio row no-gutters">
@@ -85,19 +87,10 @@ function PortfolioWrapper(props) {
     </div>
   );
 }
+// Mainbody wrapper component
 function MainbodyWrapper(props) {
   return (
     <div className="App summary row no-gutters fade show">
-      {/* <div style={{ position: 'fixed', top: '1rem', left: '1rem', zIndex: '2' }}>
-      <div style={{ color: 'red' }}>current step - {props.currentStep}</div>
-      <div style={{ color: 'green' }}>scroll top - {props.scrollPos}</div>
-      {
-        props.leftPaneItems.map(item => {
-          return item.class !== 'work' && <li key={item.key}>{item.class + '     -     ' + item.headerPos}</li>
-        }
-        )
-      }
-    </div> */}
       <Link to="/" className="know-more-button back-to-work-button mt-4">
         <img src={KnowMoreButton} alt="Mobile back to work button" />
         <span className="red pl-2">Back to Work</span>{" "}
@@ -146,6 +139,7 @@ class App extends React.Component {
   };
 
   componentDidMount() {
+    this.toggleLoader(true);
     /*GET DATA FROM FIREBASE*/
     const rootRef = firebase
       .database()
@@ -168,46 +162,7 @@ class App extends React.Component {
       thumbnail: [],
       assets: []
     };
-    var listRef = storageRef.child("portfolio-images/thumbnails");
-    listRef
-      .listAll()
-      .then(res => {
-        res.items.forEach(itemRef => {
-          imageDataTemp.thumbnail.push({
-            fileName: itemRef.name,
-            fileUrl: itemRef.getDownloadURL()
-          });
-        });
-        this.setState(() => {
-          return {
-            imageData: imageDataTemp
-          };
-        });
-        // console.log(this.state.imageData);
-      })
-      .catch(function(error) {
-        console.log("error  while downloading images");
-      });
-    var listRef = storageRef.child("portfolio-images/portfolio");
-    listRef
-      .listAll()
-      .then(res => {
-        res.items.forEach(itemRef => {
-          imageDataTemp.portfolio.push({
-            fileName: itemRef.name,
-            fileUrl: itemRef.getDownloadURL()
-          });
-        });
-        this.setState(() => {
-          return {
-            imageData: imageDataTemp
-          };
-        });
-        // console.log(this.state.imageData);
-      })
-      .catch(function(error) {
-        console.log("error  while downloading images");
-      });
+    //set asset image data
     var listRef = storageRef.child("portfolio-images/assets");
     listRef
       .listAll()
@@ -218,18 +173,53 @@ class App extends React.Component {
             fileUrl: itemRef.getDownloadURL()
           });
         });
-        this.setState(() => {
-          // console.log(this.state.imageData);
-          return {
-            imageData: imageDataTemp
-          };
+
+        //Set thumbnail images
+        var listRef = storageRef.child("portfolio-images/thumbnails");
+        listRef.listAll().then(res => {
+          res.items.forEach(itemRef => {
+            imageDataTemp.thumbnail.push({
+              fileName: itemRef.name,
+              fileUrl: itemRef.getDownloadURL()
+            });
+          });
+
+          //sort array based on the name
+          imageDataTemp.thumbnail.sort((a, b) => {
+            var indexA = parseInt(a.fileName.substring(9));
+            var indexB = parseInt(b.fileName.substring(9));
+            return indexA - indexB;
+          });
+          var listRef = storageRef.child("portfolio-images/portfolio");
+          listRef.listAll().then(res => {
+            res.items.forEach(itemRef => {
+              imageDataTemp.portfolio.push({
+                fileName: itemRef.name,
+                fileUrl: itemRef.getDownloadURL()
+              });
+            });
+
+            //sort array based on the name
+            imageDataTemp.portfolio.sort((a, b) => {
+              var indexA = parseInt(a.fileName.substring(10));
+              var indexB = parseInt(b.fileName.substring(10));
+              return indexA - indexB;
+            });
+
+            this.setState(() => {
+              return {
+                imageData: imageDataTemp
+              };
+            });
+            this.toggleLoader(false);
+          });
         });
-        // sconsole.log(this.state.imageData);
       })
       .catch(function(error) {
         console.log("error  while downloading images");
       });
   }
+
   toggleLoader = toggleValue => {
     if (toggleValue == undefined || toggleValue == null) {
       this.setState(prevState => {
@@ -245,6 +235,7 @@ class App extends React.Component {
       });
     }
   };
+
   fetchHeaderPositions = () => {
     var leftPaneItemsWithHeaderPos = this.state.leftPaneItems;
     leftPaneItemsWithHeaderPos.forEach(function(item) {
@@ -260,6 +251,7 @@ class App extends React.Component {
       };
     });
   };
+
   changeCurrentStepBasedOnScrollCalculation = () => {
     //change step according to the threshhold '
     //this will run on scroll - so extensive method - use wisely
@@ -284,6 +276,7 @@ class App extends React.Component {
       );
     }
   };
+
   changeStep = (newStep, event) => {
     this.setState(() => {
       return {
