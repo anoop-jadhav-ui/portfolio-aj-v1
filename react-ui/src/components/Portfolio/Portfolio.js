@@ -19,6 +19,8 @@ class Portfolio extends React.Component {
     showSkipButton: true
   };
   componentDidMount() {
+
+    
     var portfolioImageData = this.props.imageData.portfolio;
     var thumbnailImageData = this.props.imageData.thumbnail;
 
@@ -36,6 +38,9 @@ class Portfolio extends React.Component {
         portfolio: portfolioTemp
       };
     });
+    
+console.log('Portfolio loaded');
+
   }
   setCurrentImage(number) {
     this.setState(() => {
@@ -75,7 +80,9 @@ class Portfolio extends React.Component {
 
   render() {
     return (
+      
       <div className="portfolio-wrapper row no-gutters col-md-12  justify-content-center portfolio ">
+      
         {this.state.currentImage !== "" && (
           <div className="portfolio-image-wrapper">
             <div className="">
