@@ -19,8 +19,6 @@ class Portfolio extends React.Component {
     showSkipButton: true
   };
   componentDidMount() {
-
-    
     var portfolioImageData = this.props.imageData.portfolio;
     var thumbnailImageData = this.props.imageData.thumbnail;
 
@@ -38,9 +36,8 @@ class Portfolio extends React.Component {
         portfolio: portfolioTemp
       };
     });
-    
-console.log('Portfolio loaded');
 
+    console.log("Portfolio loaded");
   }
   setCurrentImage(number) {
     this.setState(() => {
@@ -55,7 +52,6 @@ console.log('Portfolio loaded');
       this.props.toggleLoader(false);
     }, 1500);
   }
-
   closeImage() {
     this.setState(() => {
       return {
@@ -72,7 +68,6 @@ console.log('Portfolio loaded');
         inline: "nearest"
       });
   }
-
   imageOnScroll(event) {
     var ele = document.querySelector(".portfolio-image-wrapper");
     // console.log("scrolling...");
@@ -80,9 +75,7 @@ console.log('Portfolio loaded');
 
   render() {
     return (
-      
       <div className="portfolio-wrapper row no-gutters col-md-12  justify-content-center portfolio ">
-      
         {this.state.currentImage !== "" && (
           <div className="portfolio-image-wrapper">
             <div className="">
@@ -120,13 +113,20 @@ console.log('Portfolio loaded');
                   </a>
                 </li>
                 <li>
-                  <Link to="/profile" className="grey4">
+                  <Link
+                    to="/profile"
+                    className="grey4"
+                    onClick={e => this.props.setClickedItem("Profile",e)}
+                  >
                     Profile
                   </Link>
-                  {/* <a className="grey4" to="/profile" onClick={(e) => this.props.changeStep(this.state.currentStep + 1,e)}>Profile</a> */}
                 </li>
                 <li>
-                  <Link to="/profile" className="grey4">
+                  <Link
+                    to="/profile"
+                    className="grey4"
+                    onClick={e => this.props.setClickedItem("Contacts",e)}
+                  >
                     Contact
                   </Link>
                 </li>

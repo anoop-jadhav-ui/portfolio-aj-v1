@@ -4,7 +4,12 @@ import LeftPane from "../LeftPane/LeftPane";
 import MainBody from "../MainBody/MainBody";
 import Portfolio from "../Portfolio/Portfolio";
 import leftPaneData from "../LeftPane/leftPaneData";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  withRouter
+} from "react-router-dom";
 import "./App.css";
 import KnowMoreButton from "../../assets/arrow-icon.svg";
 
@@ -83,6 +88,7 @@ function PortfolioWrapper(props) {
           toggleLoader={props.toggleLoader}
           dbData={props.dbData}
           imageData={props.imageData}
+          setClickedItem={props.setClickedItem}
         />
       ) : (
         <Loader />
@@ -138,11 +144,35 @@ class App extends React.Component {
     imageData: {
       portfolio: [],
       thumbnail: []
+    },
+    menuClickedItem: ""
+  };
+
+  setClickedItem = (clickedItem, event) => {
+    this.setState(() => {
+      return {
+        menuClickedItem: clickedItem
+      };
+    });
+    console.log(this.state.menuClickedItem);
+
+    if (clickedItem == "Contacts") {
+      console.log("Mount - " + this.state.menuClickedItem);
+      setTimeout(()=>{
+        this.changeStep(7,event,false);
+      },300);
+     
+    }else{
+      setTimeout(()=>{
+        this.changeStep(1,event,false);
+      },100);
+     
     }
   };
 
   componentDidMount() {
     this.toggleLoader(true);
+
     /*GET DATA FROM FIREBASE*/
     const rootRef = firebase
       .database()
@@ -282,7 +312,7 @@ class App extends React.Component {
     }
   };
 
-  changeStep = (newStep, event) => {
+  changeStep = (newStep, event, skip) => {
     this.setState(() => {
       return {
         currentStep: newStep,
@@ -290,6 +320,7 @@ class App extends React.Component {
       };
     });
     //scroll to element logic
+    if(skip != false)
     event.preventDefault();
     var leftPaneItemClass = this.state.leftPaneItems[newStep].class;
     var ele = document.getElementsByClassName(leftPaneItemClass);
@@ -320,6 +351,7 @@ class App extends React.Component {
               toggleLoader={this.toggleLoader}
               dbData={this.state.dbData}
               imageData={this.state.imageData}
+              setClickedItem={this.setClickedItem}
             />
           )}
         />
