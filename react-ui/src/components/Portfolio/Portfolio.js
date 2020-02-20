@@ -77,7 +77,7 @@ class Portfolio extends React.Component {
     return (
       <div className="portfolio-wrapper row no-gutters col-md-12  justify-content-center portfolio ">
         {this.state.currentImage !== "" && (
-          <div class="portfolio-image-wrapper">
+          <div className="portfolio-image-wrapper">
             <div className="">
               <img className="current-image" src={this.state.currentImage} />
             </div>
