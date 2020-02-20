@@ -76,7 +76,7 @@ function PortfolioWrapper(props) {
        
       )*/
       props.imageData != undefined &&
-      Object.keys(props.imageData).length > 0 ? (
+      Object.keys(props.imageData.portfolio).length > 0 ? (
         <Portfolio
           currentStep={props.currentStep}
           changeStep={props.changeStep}
