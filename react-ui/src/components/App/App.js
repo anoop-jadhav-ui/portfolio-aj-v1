@@ -71,8 +71,9 @@ function PortfolioWrapper(props) {
     <div className="portfolio row no-gutters">
       {props.showLoader && <Loader />}
       {!(
-        Object.keys(props.imageData).length === 0 &&
-        props.imageData.constructor === Object
+        // Object.keys(props.imageData).length === 0 &&
+        // props.imageData.constructor === Object
+        props.imageData != undefined && props.imageData.length > 0
       ) ? (
         <Portfolio
           currentStep={props.currentStep}
@@ -207,10 +208,12 @@ class App extends React.Component {
             });
 
             this.setState(() => {
+            
               return {
                 imageData: imageDataTemp
               };
             });
+            console.log(this.state.imageData);
             this.toggleLoader(false);
           });
         });
