@@ -1,6 +1,7 @@
 .portfolio{
     padding:2rem;
 }
+
 .portfolio-menu{
     display:flex;
     padding-top:2rem;
@@ -35,6 +36,31 @@
 .thumbnail{
     height: 207px;
 }
+.portfolio-details{
+    display: none;
+    border-top: 0;
+    background: white;
+    position: absolute;
+    width: 100%;
+    top: 100%;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+}
+.thumbnail-image:hover{
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    width: calc(100% + 24px);
+    height: calc(100% + 24px);
+    position: absolute;
+    left: -12px;
+    top:-12px;
+    z-index: 2;
+}
+.details-header > .h6{
+    margin-bottom:0;
+}
+.thumbnail-image:hover > .portfolio-details{
+    display: block;
+   
+}
 .thumbnail + .thumbnail:nth-child(n+4),
 .thumbnail + .thumbnail:nth-child(n+5),
 .thumbnail + .thumbnail:nth-child(n+6){
@@ -44,12 +70,9 @@
     background-size:cover;
     background-position: center;
     height: 100%;
-    width:100%;
-    transition: all 200ms linear;
+    width:100%;   
 }
-.thumbnail-image:hover{
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
-}
+
 .thumbnail-stencil{
     background: linear-gradient(217deg, #F2F2F2, #BDBDBD);
     background-size: 400% 400%;
@@ -133,7 +156,7 @@
         /* margin-top:0; */
     }
     .thumbnail + .thumbnail{
-        margin-top:1rem;
+        margin-top:9.5rem !important;
     }
     .current-image{
         box-shadow: none;
@@ -141,6 +164,27 @@
     }
     .image-open{
         padding:0 !important;
+    }
+
+    .portfolio-details{
+        display: block;
+         position: relative;
+       
+    }
+    .thumbnail-image:hover{
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+        width: 100%;
+        height: 100%;
+        position: relative;
+        left: 0;
+        top:0;
+        z-index: 0;
+    }
+    .details-body{
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        color: black;
     }
 
 }

@@ -16,33 +16,33 @@ class Portfolio extends React.Component {
     currentStep: this.props.currentStep,
     portfolio: [],
     imageData: this.props.imageData,
-    showSkipButton: true
+    showSkipButton: true,
   };
   componentDidMount() {
     var portfolioImageData = this.props.imageData.portfolio;
     var thumbnailImageData = this.props.imageData.thumbnail;
+    var portfolioData = this.props.dbData.portfolioData;
 
     let portfolioTemp = [];
     portfolioImageData.forEach((p, index) => {
       portfolioTemp.push({
         id: index,
         thumbnail: thumbnailImageData[index].fileUrl,
-        portfolioImage: p.fileUrl
+        portfolioImage: p.fileUrl,
+        portfolioData: portfolioData[index] ? portfolioData[index] : "",
       });
     });
 
     this.setState(() => {
       return {
-        portfolio: portfolioTemp
+        portfolio: portfolioTemp,
       };
     });
-
-    console.log("Portfolio loaded");
   }
   setCurrentImage(number) {
     this.setState(() => {
       return {
-        currentImage: this.state.portfolio[number]["portfolioImage"].i
+        currentImage: this.state.portfolio[number]["portfolioImage"].i,
       };
     });
 
@@ -55,7 +55,7 @@ class Portfolio extends React.Component {
   closeImage() {
     this.setState(() => {
       return {
-        currentImage: ""
+        currentImage: "",
       };
     });
   }
@@ -65,7 +65,7 @@ class Portfolio extends React.Component {
       ele.scrollIntoView({
         behavior: "smooth",
         block: "start",
-        inline: "nearest"
+        inline: "nearest",
       });
   }
   imageOnScroll(event) {
@@ -105,7 +105,7 @@ class Portfolio extends React.Component {
                 <li className="bold grey2">
                   <a
                     className="grey2"
-                    onClick={e =>
+                    onClick={(e) =>
                       this.props.changeStep(this.state.currentStep, e)
                     }
                   >
@@ -116,7 +116,7 @@ class Portfolio extends React.Component {
                   <Link
                     to="/profile"
                     className="grey4"
-                    onClick={e => this.props.setClickedItem("Profile",e)}
+                    onClick={(e) => this.props.setClickedItem("Profile", e)}
                   >
                     Profile
                   </Link>
@@ -125,7 +125,7 @@ class Portfolio extends React.Component {
                   <Link
                     to="/profile"
                     className="grey4"
-                    onClick={e => this.props.setClickedItem("Contacts",e)}
+                    onClick={(e) => this.props.setClickedItem("Contacts", e)}
                   >
                     Contact
                   </Link>
@@ -136,16 +136,29 @@ class Portfolio extends React.Component {
               {this.state.portfolio.map((ele, index) => {
                 return (
                   <div className="thumbnail col-md-4" key={index}>
-                    {ele.thumbnail.i != undefined ? (
+                    {!ele.thumbnail.i ? (
+                      <div className="thumbnail-image thumbnail thumbnail-stencil" />
+                    ) : (
                       <div
                         className={"thumbnail-image thumbnail" + index + 1}
                         style={{
-                          backgroundImage: "url(" + ele.thumbnail.i + ")"
+                          backgroundImage: "url(" + ele.thumbnail.i + ")",
                         }}
                         onClick={() => this.setCurrentImage(index)}
-                      ></div>
-                    ) : (
-                      <div className="thumbnail-image thumbnail thumbnail-stencil" />
+                      >
+                        <div class="portfolio-details pt-3 pb-3 pr-3 pl-3">
+                          <div class="details-header row no-gutters align-items-center">
+                            <span className="pr-3 h6 grey1 bold">{ele.portfolioData.title}</span>
+                            <span className="dot"></span>
+                            <span className="pl-3 grey3 label">{ele.portfolioData.type}</span>
+                          </div>
+                          <div class="details-body pt-2 pb-3 label">
+                            {ele.portfolioData.description}
+                          </div>
+                          <div class="red label">Click to view more</div>
+                        
+                        </div>
+                      </div>
                     )}
                   </div>
                 );

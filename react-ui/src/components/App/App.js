@@ -154,7 +154,7 @@ class App extends React.Component {
         menuClickedItem: clickedItem
       };
     });
-    console.log(this.state.menuClickedItem);
+    // console.log(this.state.menuClickedItem);
 
     if (clickedItem == "Contacts") {
       console.log("Mount - " + this.state.menuClickedItem);
