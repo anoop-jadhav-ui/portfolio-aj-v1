@@ -146,16 +146,16 @@ class Portfolio extends React.Component {
                         }}
                         onClick={() => this.setCurrentImage(index)}
                       >
-                        <div class="portfolio-details pt-3 pb-3 pr-3 pl-3">
-                          <div class="details-header row no-gutters align-items-center">
+                        <div className="portfolio-details pt-3 pb-3 pr-3 pl-3">
+                          <div className="details-header row no-gutters align-items-center">
                             <span className="pr-3 h6 grey1 bold">{ele.portfolioData.title}</span>
                             <span className="dot"></span>
                             <span className="pl-3 grey3 label">{ele.portfolioData.type}</span>
                           </div>
-                          <div class="details-body pt-2 pb-3 label">
+                          <div className="details-body pt-2 pb-3 label">
                             {ele.portfolioData.description}
                           </div>
-                          <div class="red label">Click to view more</div>
+                          <div className="red label">Click to view more</div>
                         
                         </div>
                       </div>
