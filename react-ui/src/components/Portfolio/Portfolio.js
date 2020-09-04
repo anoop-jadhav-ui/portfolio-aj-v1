@@ -177,7 +177,7 @@ class Portfolio extends React.Component {
               </a>
               <a
                 className="social-icon"
-                href="https://www.instagram.com/mi_baburao/"
+                href="https://www.instagram.com/anoop.designs/"
                 target="_blank"
               >
                 <img src={insta} />

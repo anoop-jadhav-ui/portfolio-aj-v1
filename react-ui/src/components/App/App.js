@@ -242,7 +242,6 @@ class App extends React.Component {
                 imageData: imageDataTemp,
               };
             });
-            // console.log(this.state.imageData);
             this.toggleLoader(false);
           });
         });
