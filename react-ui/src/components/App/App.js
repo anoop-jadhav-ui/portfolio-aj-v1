@@ -102,10 +102,10 @@ function PortfolioWrapper(props) {
 function MainbodyWrapper(props) {
   return (
     <div className="App summary row no-gutters fade show">
-      <Link to="/" className="know-more-button back-to-work-button mt-4">
+      {/* <Link to="/" className="know-more-button back-to-work-button mt-4">
         <img src={KnowMoreButton} alt="Mobile back to work button" />
         <span className="red pl-2">Back to Work</span>{" "}
-      </Link>
+      </Link> */}
 
       {props.showLoader && <Loader />}
       <LeftPane

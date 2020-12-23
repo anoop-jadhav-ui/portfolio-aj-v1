@@ -18,8 +18,6 @@ function LeftPaneItems(props) {
 class LeftPane extends React.Component {
   componentDidMount() {
     // if (this.state.currentStep == 1 && this.state.fetchFlag) {
-
-
     setTimeout(() => {
       var ele = document.getElementsByClassName('summary')
       try {
