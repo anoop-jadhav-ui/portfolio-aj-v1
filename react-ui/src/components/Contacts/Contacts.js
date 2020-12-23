@@ -120,10 +120,10 @@ class Contacts extends React.Component {
                     <span className="default-text grey1 bold">Instagram</span>
                     <div className="red body-text mt-1"><a href={"https://www.instagram.com/" + this.props.dbData.contactDetails.instaId} target="_blank">{this.props.dbData.contactDetails.instaId}</a></div>
                 </div>
-                <div className="subsection-data">
+                {/* <div className="subsection-data">
                     <span className="default-text grey1 bold">Contact Number</span>
                     <div className="body-text mt-1">{this.props.dbData.contactDetails.contactNumber}</div>
-                </div>
+                </div> */}
 
             </div>
 

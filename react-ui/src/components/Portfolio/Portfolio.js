@@ -16,31 +16,33 @@ class Portfolio extends React.Component {
     currentStep: this.props.currentStep,
     portfolio: [],
     imageData: this.props.imageData,
-    showSkipButton: true
+    showSkipButton: true,
   };
   componentDidMount() {
     var portfolioImageData = this.props.imageData.portfolio;
     var thumbnailImageData = this.props.imageData.thumbnail;
+    var portfolioData = this.props.dbData.portfolioData;
 
     let portfolioTemp = [];
     portfolioImageData.forEach((p, index) => {
       portfolioTemp.push({
         id: index,
         thumbnail: thumbnailImageData[index].fileUrl,
-        portfolioImage: p.fileUrl
+        portfolioImage: p.fileUrl,
+        portfolioData: portfolioData[index] ? portfolioData[index] : "",
       });
     });
 
     this.setState(() => {
       return {
-        portfolio: portfolioTemp
+        portfolio: portfolioTemp,
       };
     });
   }
   setCurrentImage(number) {
     this.setState(() => {
       return {
-        currentImage: this.state.portfolio[number]["portfolioImage"].i
+        currentImage: this.state.portfolio[number]["portfolioImage"].i,
       };
     });
 
@@ -50,11 +52,10 @@ class Portfolio extends React.Component {
       this.props.toggleLoader(false);
     }, 1500);
   }
-
   closeImage() {
     this.setState(() => {
       return {
-        currentImage: ""
+        currentImage: "",
       };
     });
   }
@@ -64,10 +65,9 @@ class Portfolio extends React.Component {
       ele.scrollIntoView({
         behavior: "smooth",
         block: "start",
-        inline: "nearest"
+        inline: "nearest",
       });
   }
-
   imageOnScroll(event) {
     var ele = document.querySelector(".portfolio-image-wrapper");
     // console.log("scrolling...");
@@ -77,7 +77,7 @@ class Portfolio extends React.Component {
     return (
       <div className="portfolio-wrapper row no-gutters col-md-12  justify-content-center portfolio ">
         {this.state.currentImage !== "" && (
-          <div class="portfolio-image-wrapper">
+          <div className="portfolio-image-wrapper">
             <div className="">
               <img className="current-image" src={this.state.currentImage} />
             </div>
@@ -105,7 +105,7 @@ class Portfolio extends React.Component {
                 <li className="bold grey2">
                   <a
                     className="grey2"
-                    onClick={e =>
+                    onClick={(e) =>
                       this.props.changeStep(this.state.currentStep, e)
                     }
                   >
@@ -113,13 +113,20 @@ class Portfolio extends React.Component {
                   </a>
                 </li>
                 <li>
-                  <Link to="/profile" className="grey4">
+                  <Link
+                    to="/profile"
+                    className="grey4"
+                    onClick={(e) => this.props.setClickedItem("Profile", e)}
+                  >
                     Profile
                   </Link>
-                  {/* <a className="grey4" to="/profile" onClick={(e) => this.props.changeStep(this.state.currentStep + 1,e)}>Profile</a> */}
                 </li>
                 <li>
-                  <Link to="/profile" className="grey4">
+                  <Link
+                    to="/profile"
+                    className="grey4"
+                    onClick={(e) => this.props.setClickedItem("Contacts", e)}
+                  >
                     Contact
                   </Link>
                 </li>
@@ -129,16 +136,29 @@ class Portfolio extends React.Component {
               {this.state.portfolio.map((ele, index) => {
                 return (
                   <div className="thumbnail col-md-4" key={index}>
-                    {ele.thumbnail.i != undefined ? (
+                    {!ele.thumbnail.i ? (
+                      <div className="thumbnail-image thumbnail thumbnail-stencil" />
+                    ) : (
                       <div
                         className={"thumbnail-image thumbnail" + index + 1}
                         style={{
-                          backgroundImage: "url(" + ele.thumbnail.i + ")"
+                          backgroundImage: "url(" + ele.thumbnail.i + ")",
                         }}
                         onClick={() => this.setCurrentImage(index)}
-                      ></div>
-                    ) : (
-                      <div className="thumbnail-image thumbnail thumbnail-stencil" />
+                      >
+                        <div className="portfolio-details pt-3 pb-3 pr-3 pl-3">
+                          <div className="details-header row no-gutters align-items-center">
+                            <span className="pr-3 h6 grey1 bold">{ele.portfolioData.title}</span>
+                            <span className="dot"></span>
+                            <span className="pl-3 grey3 label">{ele.portfolioData.type}</span>
+                          </div>
+                          <div className="details-body pt-2 pb-3 label">
+                            {ele.portfolioData.description}
+                          </div>
+                          <div className="red label">Click to view more</div>
+                        
+                        </div>
+                      </div>
                     )}
                   </div>
                 );
@@ -157,7 +177,7 @@ class Portfolio extends React.Component {
               </a>
               <a
                 className="social-icon"
-                href="https://www.instagram.com/mi_baburao/"
+                href="https://www.instagram.com/anoop.designs/"
                 target="_blank"
               >
                 <img src={insta} />

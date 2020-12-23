@@ -4,7 +4,12 @@ import LeftPane from "../LeftPane/LeftPane";
 import MainBody from "../MainBody/MainBody";
 import Portfolio from "../Portfolio/Portfolio";
 import leftPaneData from "../LeftPane/leftPaneData";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  withRouter,
+} from "react-router-dom";
 import "./App.css";
 import KnowMoreButton from "../../assets/arrow-icon.svg";
 
@@ -16,7 +21,7 @@ import firebase from "../firebaseConfig.js";
 var scroll =
   window.requestAnimationFrame ||
   // IE Fallback
-  function(callback) {
+  function (callback) {
     window.setTimeout(callback, 1000 / 60);
   };
 
@@ -70,20 +75,26 @@ function PortfolioWrapper(props) {
   return (
     <div className="portfolio row no-gutters">
       {props.showLoader && <Loader />}
-      {!(
-        Object.keys(props.imageData).length === 0 &&
-        props.imageData.constructor === Object
-      ) ? (
-        <Portfolio
-          currentStep={props.currentStep}
-          changeStep={props.changeStep}
-          toggleLoader={props.toggleLoader}
-          dbData={props.dbData}
-          imageData={props.imageData}
-        />
-      ) : (
-        <Loader />
-      )}
+      {
+        /*!(
+         Object.keys(props.imageData).length === 0 &&
+         props.imageData.constructor === Object
+       
+      )*/
+        props.imageData != undefined &&
+        Object.keys(props.imageData.portfolio).length > 0 ? (
+          <Portfolio
+            currentStep={props.currentStep}
+            changeStep={props.changeStep}
+            toggleLoader={props.toggleLoader}
+            dbData={props.dbData}
+            imageData={props.imageData}
+            setClickedItem={props.setClickedItem}
+          />
+        ) : (
+          <Loader />
+        )
+      }
     </div>
   );
 }
@@ -134,53 +145,73 @@ class App extends React.Component {
     dbData: {},
     imageData: {
       portfolio: [],
-      thumbnail: []
+      thumbnail: [],
+    },
+    menuClickedItem: "",
+  };
+
+  setClickedItem = (clickedItem, event) => {
+    this.setState(() => {
+      return {
+        menuClickedItem: clickedItem,
+      };
+    });
+    // console.log(this.state.menuClickedItem);
+
+    if (clickedItem == "Contacts") {
+      setTimeout(() => {
+        this.changeStep(7, event, false);
+      }, 300);
+    } else {
+      setTimeout(() => {
+        this.changeStep(1, event, false);
+      }, 100);
     }
   };
 
   componentDidMount() {
     this.toggleLoader(true);
-    /*GET DATA FROM FIREBASE*/
-    const rootRef = firebase
-      .database()
-      .ref()
-      .child("/");
 
-    rootRef.on("value", snapshot => {
+    /*GET DATA FROM FIREBASE*/
+    const rootRef = firebase.database().ref().child("/");
+
+    rootRef.on("value", (snapshot) => {
       this.setState(() => {
         return {
-          dbData: snapshot.val()
+          dbData: snapshot.val(),
         };
       });
     });
-
     /*GET IMAGES FROM FIREBASE*/
     const storageRef = firebase.storage().ref();
+    setTimeout(this.getDataFromFirebaseStorage(storageRef), 500);
+  }
 
+  getDataFromFirebaseStorage(storageRef) {
     let imageDataTemp = {
       portfolio: [],
       thumbnail: [],
-      assets: []
+      assets: [],
     };
     //set asset image data
     var listRef = storageRef.child("portfolio-images/assets");
     listRef
       .listAll()
-      .then(res => {
-        res.items.forEach(itemRef => {
+      .then((res) => {
+        res.items.forEach((itemRef) => {
           imageDataTemp.assets.push({
             fileName: itemRef.name,
-            fileUrl: itemRef.getDownloadURL()
+            fileUrl: itemRef.getDownloadURL(),
           });
         });
 
         //Set thumbnail images
         var listRef = storageRef.child("portfolio-images/thumbnails");
-        listRef.listAll().then(res => {
-          res.items.forEach(itemRef => {
+        listRef.listAll().then((res) => {
+          res.items.forEach((itemRef) => {
             imageDataTemp.thumbnail.push({
               fileName: itemRef.name,
-              fileUrl: itemRef.getDownloadURL()
+              fileUrl: itemRef.getDownloadURL(),
             });
           });
 
@@ -191,11 +222,11 @@ class App extends React.Component {
             return indexA - indexB;
           });
           var listRef = storageRef.child("portfolio-images/portfolio");
-          listRef.listAll().then(res => {
-            res.items.forEach(itemRef => {
+          listRef.listAll().then((res) => {
+            res.items.forEach((itemRef) => {
               imageDataTemp.portfolio.push({
                 fileName: itemRef.name,
-                fileUrl: itemRef.getDownloadURL()
+                fileUrl: itemRef.getDownloadURL(),
               });
             });
 
@@ -208,29 +239,29 @@ class App extends React.Component {
 
             this.setState(() => {
               return {
-                imageData: imageDataTemp
+                imageData: imageDataTemp,
               };
             });
             this.toggleLoader(false);
           });
         });
       })
-      .catch(function(error) {
+      .catch(function (error) {
         console.log("error  while downloading images");
       });
   }
 
-  toggleLoader = toggleValue => {
+  toggleLoader = (toggleValue) => {
     if (toggleValue == undefined || toggleValue == null) {
-      this.setState(prevState => {
+      this.setState((prevState) => {
         return {
-          showLoader: !prevState.showLoader
+          showLoader: !prevState.showLoader,
         };
       });
     } else {
       this.setState(() => {
         return {
-          showLoader: toggleValue
+          showLoader: toggleValue,
         };
       });
     }
@@ -238,7 +269,7 @@ class App extends React.Component {
 
   fetchHeaderPositions = () => {
     var leftPaneItemsWithHeaderPos = this.state.leftPaneItems;
-    leftPaneItemsWithHeaderPos.forEach(function(item) {
+    leftPaneItemsWithHeaderPos.forEach(function (item) {
       var element = document.getElementsByClassName(item.class)[0];
       if (element) {
         var rect = element.getBoundingClientRect();
@@ -247,7 +278,7 @@ class App extends React.Component {
     });
     this.setState(() => {
       return {
-        leftPaneItems: leftPaneItemsWithHeaderPos
+        leftPaneItems: leftPaneItemsWithHeaderPos,
       };
     });
   };
@@ -262,13 +293,13 @@ class App extends React.Component {
       var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
       leftPaneItemsWithHeaderPos.forEach(
-        function(item) {
+        function (item) {
           if (item.headerPos - 100 < scrollTop) {
             // console.log(scrollTop + '------------' + item.headerPos);
             this.setState(() => {
               return {
                 currentStep: item.key,
-                scrollPos: scrollTop
+                scrollPos: scrollTop,
               };
             });
           }
@@ -277,22 +308,22 @@ class App extends React.Component {
     }
   };
 
-  changeStep = (newStep, event) => {
+  changeStep = (newStep, event, skip) => {
     this.setState(() => {
       return {
         currentStep: newStep,
-        mainPage: true
+        mainPage: true,
       };
     });
     //scroll to element logic
-    event.preventDefault();
+    if (skip != false) event.preventDefault();
     var leftPaneItemClass = this.state.leftPaneItems[newStep].class;
     var ele = document.getElementsByClassName(leftPaneItemClass);
     if (ele[0])
       ele[0].scrollIntoView({
         behavior: "smooth",
         block: "start",
-        inline: "nearest"
+        inline: "nearest",
       });
   };
 
@@ -305,7 +336,7 @@ class App extends React.Component {
         <Route
           path="/"
           exact
-          render={props => (
+          render={(props) => (
             <PortfolioWrapper
               {...props}
               currentStep={this.state.currentStep}
@@ -315,12 +346,13 @@ class App extends React.Component {
               toggleLoader={this.toggleLoader}
               dbData={this.state.dbData}
               imageData={this.state.imageData}
+              setClickedItem={this.setClickedItem}
             />
           )}
         />
         <Route
           path="/profile"
-          render={props => (
+          render={(props) => (
             <MainbodyWrapper
               {...props}
               imageData={this.state.imageData}
