@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-// import MainLogo from '../../assets/main-logo.svg'
+import MainLogo from '../../assets/main-logo.svg'
 import "./Summary.css";
 
 class Summary extends React.Component {
@@ -7,19 +7,19 @@ class Summary extends React.Component {
     mainLogoUrl: ""
   };
 
-  componentDidMount() {
-    var assets = this.props.imageData.assets;
+  // componentDidMount() {
+    // var assets = this.props.imageData.assets;
 
-    let mainLogoUrl = assets.forEach(ele => {
-      if (ele.fileName == "main-logo.svg") {
-        this.setState(() => {
-          return {
-            mainLogoUrl: ele.fileUrl.i
-          };
-        });
-      }
-    });
-  }
+    // let mainLogoUrl = assets.forEach(ele => {
+    //   if (ele.fileName == "main-logo.svg") {
+    //     this.setState(() => {
+    //       return {
+    //         mainLogoUrl: ele.fileUrl.i
+    //       };
+    //     });
+    //   }
+    // });
+  // }
 
   render() {
     return (
@@ -28,12 +28,9 @@ class Summary extends React.Component {
           "show-on-scroll col-md-7 page-1 text-center " + this.props.class
         }
       >
-        {this.state.mainLogoUrl != "" ? (
-          <img src={this.state.mainLogoUrl} alt="main logo" />
-        ) : (
-          ""
-        )}
-
+       
+        <img src={MainLogo} alt="main logo" />
+       
         <div className="h1 bold main-title grey-1">
           {this.props.dbData.overview.name}
         </div>

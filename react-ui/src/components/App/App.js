@@ -181,10 +181,9 @@ class App extends React.Component {
           dbData: snapshot.val(),
         };
       });
+      this.toggleLoader(false);
     });
-    /*GET IMAGES FROM FIREBASE*/
-    const storageRef = firebase.storage().ref();
-    setTimeout(this.getDataFromFirebaseStorage(storageRef), 500);
+
   }
 
   getDataFromFirebaseStorage(storageRef) {
@@ -335,23 +334,6 @@ class App extends React.Component {
       <Router>
         <Route
           path="/"
-          exact
-          render={(props) => (
-            <PortfolioWrapper
-              {...props}
-              currentStep={this.state.currentStep}
-              changeStep={this.changeStep}
-              showPortfolio={this.state.showPortfolio}
-              showLoader={this.state.showLoader}
-              toggleLoader={this.toggleLoader}
-              dbData={this.state.dbData}
-              imageData={this.state.imageData}
-              setClickedItem={this.setClickedItem}
-            />
-          )}
-        />
-        <Route
-          path="/profile"
           render={(props) => (
             <MainbodyWrapper
               {...props}
