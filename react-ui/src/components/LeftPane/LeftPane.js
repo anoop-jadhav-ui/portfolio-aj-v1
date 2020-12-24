@@ -1,5 +1,6 @@
 import React from 'react';
 import LightLogo from '../../assets/leftpane-logo.svg'
+import DarkLogo from '../../assets/leftpane-logo-dark.svg'
 import './LeftPane.css';
 
 import { Link } from 'react-router-dom'
@@ -42,7 +43,9 @@ class LeftPane extends React.Component {
   }
   render() {
     return <div className="left-pane position-fixed  d-none d-md-block">
-      <img src={LightLogo} alt="logo" />
+      {!this.props.darkMode ? 
+      <img src={LightLogo} alt="logo" /> : <img src={DarkLogo} alt="logo" />
+  }
       <ul className="menu body-text grey4">
         {<LeftPaneItems data={this.props} />}
       </ul>

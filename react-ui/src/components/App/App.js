@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useEffect, useState} from "react";
 
 import LeftPane from "../LeftPane/LeftPane";
 import MainBody from "../MainBody/MainBody";
@@ -100,13 +100,26 @@ function PortfolioWrapper(props) {
 }
 // Mainbody wrapper component
 function MainbodyWrapper(props) {
+  let [darkMode,setDarkMode] = useState(false);
+  function toDarkMode(){
+    if(!darkMode){
+      setDarkMode(true);
+    }else{
+      setDarkMode(false);
+    }
+   
+  }
   return (
-    <div className="App summary row no-gutters fade show">
+    <div className={ `App summary row no-gutters fade show ${darkMode ? 'darkmode' : ''}`}>
       {/* <Link to="/" className="know-more-button back-to-work-button mt-4">
         <img src={KnowMoreButton} alt="Mobile back to work button" />
         <span className="red pl-2">Back to Work</span>{" "}
       </Link> */}
-
+      <div className="darkModeWrapper">
+      <div className="darkModeButton red" onClick={toDarkMode}>
+        {darkMode ? ' Switch to Light Mode' : 'Switch to Dark Mode' }
+      </div>
+      </div>
       {props.showLoader && <Loader />}
       <LeftPane
         imageData={props.imageData}
@@ -116,6 +129,7 @@ function MainbodyWrapper(props) {
         leftPaneItems={props.leftPaneItems}
         fetchHeaderPositions={props.fetchHeaderPositions}
         toggleLoader={props.toggleLoader}
+        darkMode={darkMode}
       ></LeftPane>
       <MainBody
         imageData={props.imageData}
@@ -127,6 +141,7 @@ function MainbodyWrapper(props) {
         }
         toggleLoader={props.toggleLoader}
         dbData={props.dbData}
+        darkMode={darkMode}
       ></MainBody>
     </div>
   );

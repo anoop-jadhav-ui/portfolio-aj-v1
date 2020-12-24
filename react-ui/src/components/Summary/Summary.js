@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import MainLogo from '../../assets/main-logo.svg'
+import MainLogoDark from '../../assets/main-logo-dark.svg'
 import "./Summary.css";
 
 class Summary extends React.Component {
@@ -29,7 +30,11 @@ class Summary extends React.Component {
         }
       >
        
-        <img src={MainLogo} alt="main logo" />
+        {
+          !this.props.darkMode ? <img src={MainLogo} alt="main logo" /> : 
+          <img src={MainLogoDark} alt="main logo" />
+        }
+      
        
         <div className="h1 bold main-title grey-1">
           {this.props.dbData.overview.name}

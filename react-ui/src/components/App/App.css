@@ -11,9 +11,15 @@ body{
 .App{
     padding:8.25rem;
 }
+.darkmode.App{
+    background-color: #333333;;
+    color:#F2F2F2;
+}
+
 .uppercase{
 text-transform: uppercase;
 }
+
 .bold{
 font-weight: bold;
 } 
@@ -51,11 +57,19 @@ input{
     height:2.5rem;
     padding:0 1rem;
 }
+.darkmode input{
+    background-color: #4F4F4F;
+    border:none;
+}
 textarea{
     width:100%;
     border:1px solid #BDBDBD;
     height:6.5rem;
     padding:0.5rem 1rem;
+}
+.darkmode textarea{
+    background-color: #4F4F4F;
+    border:none;
 }
 button{
     background: #EB5757;
@@ -95,10 +109,14 @@ color:#4F4F4F !important;
 .grey1{
 color:#333333;
 }
+.darkmode .grey1{
+    color:#F2F2F2;
+}
 .grey2,
 .grey2 > a{
 color:#4F4F4F !important;
 }
+
 .grey3{
 color:#828282;
 }
@@ -106,6 +124,11 @@ color:#828282;
 .grey4 >a{
 color:#BDBDBD !important;
 }
+.darkmode .grey2,
+.darkmode .grey2 >a {
+    color:#BDBDBD !important;
+}
+
 .grey5{
 color:#E0E0E0;
 }
@@ -150,6 +173,9 @@ color:#F2C94C;
     display: inline-block;
     border-radius: 50%;
     background: #E0E0E0;
+}
+.darkmode .dot{
+    background-color: #4F4F4F;
 }
 
 /*Summary*/
@@ -197,4 +223,14 @@ color:#F2C94C;
 .is-visible{
     opacity: 1;
     transform: translateY(0);
+}
+
+
+
+.darkModeWrapper{
+    position: fixed;
+    top:1rem;right:1rem;
+}
+.darkModeButton{
+    cursor: pointer;
 }
