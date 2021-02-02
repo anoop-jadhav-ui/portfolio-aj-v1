@@ -1,9 +1,10 @@
-import React,{useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 
 import LeftPane from "../LeftPane/LeftPane";
 import MainBody from "../MainBody/MainBody";
 import Portfolio from "../Portfolio/Portfolio";
 import leftPaneData from "../LeftPane/leftPaneData";
+import ToggleButton from "../ToggleButton/ToggleButton"
 import {
   BrowserRouter as Router,
   Switch,
@@ -63,10 +64,10 @@ function isElementInViewport(el) {
     (rect.bottom >=
       (window.innerHeight || document.documentElement.clientHeight) &&
       rect.top <=
-        (window.innerHeight || document.documentElement.clientHeight)) ||
+      (window.innerHeight || document.documentElement.clientHeight)) ||
     (rect.top >= 0 &&
       rect.bottom <=
-        (window.innerHeight || document.documentElement.clientHeight))
+      (window.innerHeight || document.documentElement.clientHeight))
   );
 }
 
@@ -82,43 +83,46 @@ function PortfolioWrapper(props) {
        
       )*/
         props.imageData != undefined &&
-        Object.keys(props.imageData.portfolio).length > 0 ? (
-          <Portfolio
-            currentStep={props.currentStep}
-            changeStep={props.changeStep}
-            toggleLoader={props.toggleLoader}
-            dbData={props.dbData}
-            imageData={props.imageData}
-            setClickedItem={props.setClickedItem}
-          />
-        ) : (
-          <Loader />
-        )
+          Object.keys(props.imageData.portfolio).length > 0 ? (
+            <Portfolio
+              currentStep={props.currentStep}
+              changeStep={props.changeStep}
+              toggleLoader={props.toggleLoader}
+              dbData={props.dbData}
+              imageData={props.imageData}
+              setClickedItem={props.setClickedItem}
+            />
+          ) : (
+            <Loader />
+          )
       }
     </div>
   );
 }
 // Mainbody wrapper component
 function MainbodyWrapper(props) {
-  let [darkMode,setDarkMode] = useState(false);
-  function toDarkMode(){
-    if(!darkMode){
+  let [darkMode, setDarkMode] = useState(false);
+  function toDarkMode() {
+    if (!darkMode) {
       setDarkMode(true);
-    }else{
+    } else {
       setDarkMode(false);
     }
-   
+
   }
   return (
-    <div className={ `App summary row no-gutters fade show ${darkMode ? 'darkmode' : ''}`}>
+    <div className={`App summary row no-gutters fade show ${darkMode ? 'darkmode' : ''}`}>
       {/* <Link to="/" className="know-more-button back-to-work-button mt-4">
         <img src={KnowMoreButton} alt="Mobile back to work button" />
         <span className="red pl-2">Back to Work</span>{" "}
       </Link> */}
       <div className="darkModeWrapper">
-      <div className="darkModeButton red" onClick={toDarkMode}>
-        {darkMode ? ' Switch to Light Mode' : 'Switch to Dark Mode' }
-      </div>
+        <div className="darkModeButton" onClick={toDarkMode} >
+          <div className={ `light ${ !darkMode && 'bold'}`}>Light</div>
+          <ToggleButton onClick={toDarkMode} value={darkMode} />
+          <div className={ `dark ${ darkMode && 'bold'}`}>Dark</div>
+        </div>
+
       </div>
       {props.showLoader && <Loader />}
       <LeftPane
@@ -346,32 +350,32 @@ class App extends React.Component {
       Object.keys(this.state.dbData).length === 0 &&
       this.state.dbData.constructor === Object
     ) ? (
-      <Router>
-        <Route
-          path="/"
-          render={(props) => (
-            <MainbodyWrapper
-              {...props}
-              imageData={this.state.imageData}
-              dbData={this.state.dbData}
-              currentStep={this.state.currentStep}
-              changeStep={this.changeStep}
-              changeCurrentStepBasedOnScrollCalculation={
-                this.changeCurrentStepBasedOnScrollCalculation
-              }
-              mainPage={this.state.mainPage}
-              leftPaneItems={this.state.leftPaneItems}
-              scrollPos={this.state.scrollPos}
-              fetchHeaderPositions={this.fetchHeaderPositions}
-              showLoader={this.state.showLoader}
-              toggleLoader={this.toggleLoader}
-            />
-          )}
-        />
-      </Router>
-    ) : (
-      <Loader />
-    );
+        <Router>
+          <Route
+            path="/"
+            render={(props) => (
+              <MainbodyWrapper
+                {...props}
+                imageData={this.state.imageData}
+                dbData={this.state.dbData}
+                currentStep={this.state.currentStep}
+                changeStep={this.changeStep}
+                changeCurrentStepBasedOnScrollCalculation={
+                  this.changeCurrentStepBasedOnScrollCalculation
+                }
+                mainPage={this.state.mainPage}
+                leftPaneItems={this.state.leftPaneItems}
+                scrollPos={this.state.scrollPos}
+                fetchHeaderPositions={this.fetchHeaderPositions}
+                showLoader={this.state.showLoader}
+                toggleLoader={this.toggleLoader}
+              />
+            )}
+          />
+        </Router>
+      ) : (
+        <Loader />
+      );
   }
 }
 

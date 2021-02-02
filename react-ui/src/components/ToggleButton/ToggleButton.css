@@ -1,0 +1,44 @@
+.ToggleButton{
+    position: relative;
+    width: 36px;
+    height: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.circle{
+    width:1rem;
+    height:1rem;
+  
+    border-radius: 50%;
+
+    position: absolute;
+    top:50%;
+    transform: translateY(-50%);
+
+    transition: all 0.3s ease-in;
+}
+
+.bar{
+    height:5px;
+  
+    width:36px;
+    border-radius:10px;
+}
+
+#on .bar{
+    background-color: #FFAEAE;
+}
+#off .bar{
+    background-color: #E0E0E0;
+}
+#on .circle{
+    background-color: #EB5757;
+    left:calc(100% - 1rem);
+}
+#off .circle{
+    background-color: #BDBDBD;
+    left:0;
+}
+
+

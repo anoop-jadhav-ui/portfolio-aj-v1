@@ -230,7 +230,16 @@ color:#F2C94C;
 .darkModeWrapper{
     position: fixed;
     top:1rem;right:1rem;
+    cursor: pointer;
 }
 .darkModeButton{
-    cursor: pointer;
+   display: flex;
+   align-items: center;
+   color:#BDBDBD;
+}
+.darkModeButton .light{
+    padding-right: 0.5rem;
+}
+.darkModeButton .dark{
+    padding-left: 0.5rem;
 }
