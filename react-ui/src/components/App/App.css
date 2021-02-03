@@ -24,10 +24,10 @@ text-transform: uppercase;
 font-weight: bold;
 } 
 .letterspacing-1{
-    letter-spacing: 2px;
+    letter-spacing: 1px;
 }
 .letterspacing-2{
-    letter-spacing: 4px;
+    letter-spacing: 2px;
 }
 /*Type*/
 .h1{
@@ -194,7 +194,7 @@ color:#F2C94C;
 
 
 /* Medium devices (tablets, 768px and up)*/
-@media (max-width: 768px) { 
+@media (max-width: 1200px) { 
     html{
         font-size: 11px;
     }
@@ -210,6 +210,12 @@ color:#F2C94C;
     }
     .back-to-work-button{
         display: block;
+    }
+    .left-pane{
+        display: none !important;
+    }
+    .main-body{
+        margin:0;
     }
 }
 
