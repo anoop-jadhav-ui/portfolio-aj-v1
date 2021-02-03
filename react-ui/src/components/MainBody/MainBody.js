@@ -7,7 +7,8 @@ import WorkExperience from '../WorkExperience/WorkExperience'
 import Certifications from '../Certifications/Certifications'
 import Skills from '../Skills/Skills'
 import Hobbies from '../Hobbies/Hobbies'
-import Contacts from '../Contacts/Contacts'
+import Feedback from '../Feedback/Feedback'
+import Contact from '../Contact/Contact'
 
 
 class MainBody extends React.Component {
@@ -28,7 +29,8 @@ render() {
       <Certifications currentStep={this.props.currentStep} dbData={this.props.dbData} imageData={this.props.imageData}/>
       <Skills currentStep={this.props.currentStep} dbData={this.props.dbData} imageData={this.props.imageData}/>
       <Hobbies currentStep={this.props.currentStep} dbData={this.props.dbData} imageData={this.props.imageData}/>
-      <Contacts currentStep={this.props.currentStep} dbData={this.props.dbData} imageData={this.props.imageData}/>
+      <Feedback currentStep={this.props.currentStep} dbData={this.props.dbData} imageData={this.props.imageData}/>
+      <Contact currentStep={this.props.currentStep} dbData={this.props.dbData} imageData={this.props.imageData}/>
 
     </div>
   );

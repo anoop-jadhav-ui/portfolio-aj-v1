@@ -43,8 +43,14 @@ var leftPaneData = [
     },
     {
         key: 7,
-        class: 'contacts',
-        label: 'Contacts',
+        class: 'feedback',
+        label: 'Feedback',
+        headerPos:0
+    },
+    {
+        key: 8,
+        class: 'contactme',
+        label: 'Contact Details',
         headerPos:0
     }
 ]

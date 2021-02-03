@@ -15,8 +15,8 @@ function Skills(props){
                     {
                         props.dbData.skills.development.map((ele,key) => {
                             return <div key={key} className="skill-bar-wrapper row no-gutters align-items-center">
-                            <div className="skill-label grey-1 body-text bold col-md-2">{ele.skillName}</div>
-                            <BarGraph class="col-md-10" value={ele.skillValue} currentStep={props.currentStep} sectionStep={5}/>
+                            <div className="skill-label grey-1 body-text bold col-md-3">{ele.skillName}</div>
+                            <BarGraph class="col-md-9" value={ele.skillValue} currentStep={props.currentStep} sectionStep={5}/>
                             </div>
                         })
                     }
@@ -33,8 +33,8 @@ function Skills(props){
                     {
                         props.dbData.skills.design.map((ele,key) => {
                             return <div key={key} className="skill-bar-wrapper row no-gutters align-items-center">
-                            <div className="skill-label grey-1 body-text bold col-md-2">{ele.skillName}</div>
-                            <BarGraph class="col-md-10" value={ele.skillValue} currentStep={props.currentStep} sectionStep={5}/>
+                            <div className="skill-label grey-1 body-text bold col-md-3">{ele.skillName}</div>
+                            <BarGraph class="col-md-9" value={ele.skillValue} currentStep={props.currentStep} sectionStep={5}/>
                             </div>
                         })
                     }
