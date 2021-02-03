@@ -237,6 +237,7 @@ color:#F2C94C;
     position: fixed;
     top:1rem;right:1rem;
     cursor: pointer;
+    z-index: 999;
 }
 .darkModeButton{
    display: flex;
