@@ -6,6 +6,13 @@
 list-style: none;
 cursor: pointer;
 }
+
+.menu li.bold::before{
+    content:'';
+    border-left: 3px solid #EB5757;
+    position: relative;
+    left: -1rem;
+}
 .menu li + li{
     margin-top:1rem;
 }
