@@ -7,6 +7,9 @@
     
 }
 
+.darkmode .contactimg{
+    filter: invert(100%) sepia(0%) saturate(2%) hue-rotate(305deg) brightness(104%) contrast(101%);
+}
 .contactimg{
     width: 2rem;
     height:2rem;
