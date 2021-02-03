@@ -6,7 +6,6 @@ const ToggleButton = (props) => {
         props.onClick();
     } 
     return (
-        // <input type="radio"/> Toggle 
         <div id={props.value ? 'on' : 'off'} className="ToggleButton" onClick={clickHandler}>
           <div className="bar"></div>
           <div className="circle"></div>

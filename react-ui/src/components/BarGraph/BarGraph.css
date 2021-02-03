@@ -1,6 +1,8 @@
 .bar-graph{
     background: #F2F2F2;
     height:2.25rem;
+    border-radius: 0.25rem;
+    overflow: hidden;
 }
 .darkmode .bar-graph{
     background-color: #4F4F4F;
@@ -9,6 +11,7 @@
     display: block;
     height:2.25rem;
     background: linear-gradient(101.14deg, #F2994A 0.99%, #EB5757 177.11%);
+    border-radius: 0.25rem;
 }
 
 .show-on-scroll .filled{
