@@ -1,11 +1,7 @@
 import React from 'react'
 import './Contact.css'
 import axios from 'axios'
-import email from '../../assets/email.svg';
-import linkedin from '../../assets/linkedin.svg';
-import github from '../../assets/github.svg';
-import insta from '../../assets/insta.svg';
-
+import ContactIcons from '../ContactIcons/ContactIcons'
 
 class Contact extends React.Component {
     state = {
@@ -94,21 +90,7 @@ class Contact extends React.Component {
 
             <div className="subsection">
                 <div>Reach out to me on email/linkedin or checkout some of my work on instagram/github -</div>
-                <div className="horizontally-placed">
-                    <div className="subsection-data">
-                        <a href={"mailto: " + this.props.dbData.contactDetails.emailId} title="Email Address"><img className="contactimg" src={email}></img></a>
-                    </div>
-                    <div className="subsection-data">
-                        <a href={this.props.dbData.contactDetails.linkedin} target="_blank" title="Linkedin"><img className="contactimg" src={linkedin}></img></a>
-                    </div>
-                    <div className="subsection-data">
-                        <a href={"https://www.instagram.com/" + this.props.dbData.contactDetails.instaId} target="_blank" title="Instagram"><img className="contactimg" src={insta}></img></a>
-                    </div>
-                   
-                    <div className="subsection-data">
-                        <a href={this.props.dbData.contactDetails.github} target="_blank" title="Github"><img className="contactimg" src={github}></img></a>
-                    </div>
-                </div>
+                <ContactIcons data={this.props.dbData}/>
             </div>
 
         </div>

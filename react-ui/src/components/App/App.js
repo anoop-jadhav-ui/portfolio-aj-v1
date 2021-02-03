@@ -5,6 +5,7 @@ import MainBody from "../MainBody/MainBody";
 import Portfolio from "../Portfolio/Portfolio";
 import leftPaneData from "../LeftPane/leftPaneData";
 import ToggleButton from "../ToggleButton/ToggleButton"
+import ContactIcons from '../ContactIcons/ContactIcons'
 import {
   BrowserRouter as Router,
   Switch,
@@ -122,8 +123,8 @@ function MainbodyWrapper(props) {
           <ToggleButton onClick={toDarkMode} value={darkMode} />
           <div className={ `dark ${ darkMode && 'bold'}`}>Dark</div>
         </div>
-
       </div>
+      <ContactIcons data={props.dbData} className="rightpane"/>
       {props.showLoader && <Loader />}
       <LeftPane
         imageData={props.imageData}
