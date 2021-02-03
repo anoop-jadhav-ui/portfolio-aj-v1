@@ -10,6 +10,7 @@ body{
 }
 .App{
     padding:5.25rem;
+    transition: background-color 0.5s ease-in-out;
 }
 .darkmode.App{
     background-color: #333333;;
@@ -61,6 +62,10 @@ input{
 .darkmode input{
     background-color: #4F4F4F;
     border:none;
+}
+.darkmode textarea:focus,
+.darkmode input:focus{
+    outline-color:grey;
 }
 textarea{
     width:100%;

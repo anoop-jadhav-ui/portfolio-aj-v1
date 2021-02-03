@@ -89,7 +89,7 @@ class Contact extends React.Component {
             <div className="section-title grey4 h2 bold">Contact Details</div>
 
             <div className="subsection">
-                <div>Reach out to me on email/linkedin or checkout some of my work on instagram/github -</div>
+                <div>Reach out to me on Email/LinkedIn or checkout some of my work on Instagram/Github -</div>
                 <ContactIcons data={this.props.dbData}/>
             </div>
 
@@ -99,17 +99,3 @@ class Contact extends React.Component {
 }
 
 export default Contact;
-
-{/* <div className="subsection-data">
-                    <span className="default-text grey1 bold">Email Id</span>
-                    <div className="red body-text mt-1"><a href={"mailto: " + this.props.dbData.contactDetails.emailId}>{this.props.dbData.contactDetails.emailId}</a></div>
-                </div>
-
-                <div className="subsection-data">
-                    <span className="default-text grey1 bold">Instagram</span>
-                    <div className="red body-text mt-1"><a href={"https://www.instagram.com/" + this.props.dbData.contactDetails.instaId} target="_blank">{this.props.dbData.contactDetails.instaId}</a></div>
-                </div> */}
-{/* <div className="subsection-data">
-                    <span className="default-text grey1 bold">Contact Number</span>
-                    <div className="body-text mt-1">{this.props.dbData.contactDetails.contactNumber}</div>
-                </div> */}
