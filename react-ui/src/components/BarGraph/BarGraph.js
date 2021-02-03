@@ -11,7 +11,7 @@ class BarGraph extends React.Component {
     return <div className={'bar-graph ' + this.props.class}>
     {
       this.props.value ? 
-      <div className="filled" style={this.props.currentStep == this.state.sectionStep ? { width: this.props.value + '%' } : {width:0}}/> : ''
+      <div className="filled" title={this.props.value + "%"} style={this.props.currentStep == this.state.sectionStep ? { width: this.props.value + '%' } : {width:0}}/> : ''
     }
       </div>
   }

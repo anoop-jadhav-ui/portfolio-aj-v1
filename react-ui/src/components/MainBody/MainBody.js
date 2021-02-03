@@ -9,6 +9,7 @@ import Skills from '../Skills/Skills'
 import Hobbies from '../Hobbies/Hobbies'
 import Feedback from '../Feedback/Feedback'
 import Contact from '../Contact/Contact'
+import Projects from '../Projects/Projects'
 
 
 class MainBody extends React.Component {
@@ -24,6 +25,7 @@ render() {
     <div className="main-body row justify-content-center text" >
 
       <Summary currentStep={this.props.currentStep} dbData={this.props.dbData}  imageData={this.props.imageData} darkMode={this.props.darkMode}/>
+      <Projects currentStep={this.props.currentStep} dbData={this.props.dbData} imageData={this.props.imageData}/>
       <Education currentStep={this.props.currentStep} dbData={this.props.dbData} imageData={this.props.imageData}/>
       <WorkExperience currentStep={this.props.currentStep} dbData={this.props.dbData} imageData={this.props.imageData}/>
       <Certifications currentStep={this.props.currentStep} dbData={this.props.dbData} imageData={this.props.imageData}/>

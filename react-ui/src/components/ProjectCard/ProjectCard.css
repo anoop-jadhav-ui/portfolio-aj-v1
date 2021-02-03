@@ -1,0 +1,41 @@
+.projectcard{
+    border:1px solid #E0E0E0;
+    padding:1.5rem 1rem !important;
+    border-radius: 0.25rem;
+    min-width: 20rem;
+    width: 33.33%;
+}
+.darkmode .projectcard{
+    border:1px solid #4F4F4F;
+    transition: border 0.5s ease-in-out;
+}
+.tags{
+    display:flex;
+    padding-top:0.5rem;
+}
+.tag + .tag{
+    margin-left:0.5rem;
+}
+.tag{
+    color:#f2f2f2;
+    font-weight: bold;
+    background-color: #EB5757;
+    padding:1px 0.5rem;
+    border-radius: 20px;
+}
+
+.description{
+    padding-top:0.5rem;
+}
+
+.projectlinks{
+    display: flex;
+    padding-top:1rem;
+}
+.projectlinks .contactimg{
+    width:1.5rem;
+}
+
+.projectlinks a + a{
+   margin-left: 1rem;
+}

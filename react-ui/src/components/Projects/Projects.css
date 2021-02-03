@@ -1,0 +1,32 @@
+.projectsectionbody{
+    display:flex;
+    width: 100%;
+}
+.showall{
+    flex-wrap: wrap;
+}
+.showall .projectcard{
+    width: 100%;;
+}
+.showsome{
+    flex-wrap: nowrap;
+    overflow-y: scroll;
+}
+
+.projectsectionbody::-webkit-scrollbar {
+    display: none;
+}
+
+.projectcard + .projectcard{
+    margin-left: 0.5rem;
+}
+
+.showall .projectcard + .projectcard{
+    margin-top:0.5rem;
+    margin-left: 0;
+}
+
+.projects .scroll-text{
+    padding-top:1.5rem;
+    cursor: pointer;
+}
