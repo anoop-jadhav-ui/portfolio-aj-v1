@@ -62,6 +62,7 @@ input{
 .darkmode input{
     background-color: #4F4F4F;
     border:none;
+    color:#f2f2f2;
 }
 .darkmode textarea:focus,
 .darkmode input:focus{
@@ -77,6 +78,7 @@ textarea{
 .darkmode textarea{
     background-color: #4F4F4F;
     border:none;
+    color:#f2f2f2;
 }
 button{
     background: #EB5757;
@@ -160,6 +162,7 @@ color:#F2C94C;
     padding:0.5rem 1rem;
     color:white !important;
     background:#27AE60;
+    border-radius:0.25rem;
 }
 .error-banner{
     padding:0.5rem 1rem;

@@ -43,9 +43,9 @@ class LeftPane extends React.Component {
   }
   render() {
     return <div className="left-pane position-fixed  d-none d-md-block">
-      {!this.props.darkMode ? 
+      {/* {!this.props.darkMode ? 
       <img src={LightLogo} alt="logo" /> : <img src={DarkLogo} alt="logo" />
-  }
+  } */}
       <ul className="menu body-text grey4">
         {<LeftPaneItems data={this.props} />}
       </ul>

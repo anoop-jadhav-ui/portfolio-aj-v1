@@ -7,21 +7,7 @@ class Summary extends React.Component {
   state = {
     mainLogoUrl: ""
   };
-
-  // componentDidMount() {
-    // var assets = this.props.imageData.assets;
-
-    // let mainLogoUrl = assets.forEach(ele => {
-    //   if (ele.fileName == "main-logo.svg") {
-    //     this.setState(() => {
-    //       return {
-    //         mainLogoUrl: ele.fileUrl.i
-    //       };
-    //     });
-    //   }
-    // });
-  // }
-
+  
   render() {
     return (
       <div
@@ -31,8 +17,7 @@ class Summary extends React.Component {
       >
        
         {
-          !this.props.darkMode ? <img src={MainLogo} alt="main logo" /> : 
-          <img src={MainLogoDark} alt="main logo" />
+          <img className="mainlogo" src={MainLogo} alt="main logo" />
         }
       
        
