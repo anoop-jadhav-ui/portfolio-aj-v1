@@ -12,7 +12,7 @@ const ProjectCard = (props) => {
             <div className="tags">
                 {props.data.tags && props.data.tags.map((ele, index) => {
                     return (
-                        <div className="tag label" key={index}>
+                        <div className="tag label" key={index} title={ele}>
                             {ele}
                         </div>
                     )
@@ -21,11 +21,16 @@ const ProjectCard = (props) => {
             <div className="description">
                 {props.data.description}
             </div>
+            <div className="footer">
             <div className="projectlinks">
-                <a href=""><img className="contactimg" title="view project on github" src={github} alt="github"/></a>
-                <a href=""><img className="contactimg" title="open app" src={weblink} alt="github"/></a>
+                { props.data.github && <a href={props.data.github}><img className="contactimg" title="view project on github" src={github} alt="github"/></a>}
+                { props.data.url && <a href={props.data.url}><img className="contactimg" title="open app" src={weblink} alt="github"/></a> } 
             </div>
-
+            <div className={`projectstatus ${props.data.status}`}>
+                <div className="statuscircle"></div>
+                <div className="label">{props.data.status}</div>
+            </div>
+            </div>
         </div>
     )
 }

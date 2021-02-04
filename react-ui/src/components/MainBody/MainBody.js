@@ -25,7 +25,7 @@ render() {
     <div className="main-body row justify-content-center text" >
 
       <Summary currentStep={this.props.currentStep} dbData={this.props.dbData}  imageData={this.props.imageData} darkMode={this.props.darkMode}/>
-      <Projects currentStep={this.props.currentStep} dbData={this.props.dbData} imageData={this.props.imageData}/>
+      <Projects currentStep={this.props.currentStep} projects={this.props.dbData.projects}/>
       <Education currentStep={this.props.currentStep} dbData={this.props.dbData} imageData={this.props.imageData}/>
       <WorkExperience currentStep={this.props.currentStep} dbData={this.props.dbData} imageData={this.props.imageData}/>
       <Certifications currentStep={this.props.currentStep} dbData={this.props.dbData} imageData={this.props.imageData}/>

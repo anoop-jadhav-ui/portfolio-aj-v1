@@ -1,6 +1,7 @@
 .projectsectionbody{
     display:flex;
     width: 100%;
+    padding-bottom: 0.5rem;
 }
 .showall{
     flex-wrap: wrap;
@@ -13,9 +14,9 @@
     overflow-y: scroll;
 }
 
-.projectsectionbody::-webkit-scrollbar {
+/* .projectsectionbody::-webkit-scrollbar {
     display: none;
-}
+} */
 
 .projectcard + .projectcard{
     margin-left: 0.5rem;
@@ -30,3 +31,26 @@
     padding-top:1.5rem;
     cursor: pointer;
 }
+
+
+/* width */
+.projectsectionbody::-webkit-scrollbar {
+    width: 0;
+    height:4px;
+  }
+  
+  /* Track */
+  .projectsectionbody::-webkit-scrollbar-track {
+    background: #f2f2f2;
+  }
+  
+  /* Handle */
+  .projectsectionbody::-webkit-scrollbar-thumb {
+    background: #BDBDBD;
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  .projectsectionbody::-webkit-scrollbar-thumb:hover {
+    background: #333333;
+  }

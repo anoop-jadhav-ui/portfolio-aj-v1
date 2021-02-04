@@ -11,26 +11,37 @@
 }
 .tags{
     display:flex;
-    padding-top:0.5rem;
+   
+    flex-wrap: wrap;
 }
-.tag + .tag{
-    margin-left:0.5rem;
-}
+
 .tag{
+    font-size: 0.65rem !important;
     color:#f2f2f2;
     font-weight: bold;
     background-color: #EB5757;
     padding:1px 0.5rem;
     border-radius: 20px;
+    margin-right:0.5rem;
+    width:4rem;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+}
+.tag + .tag:nth-child(4n + 2):not(:nth-child(2)),
+.tag + .tag:nth-child(4n + 1):not(:nth-child(1)),
+.tag + .tag:nth-child(4n){
+    margin-top:0.5rem;
 }
 
 .description{
-    padding-top:0.5rem;
+    padding-top:1rem;
 }
 
 .projectlinks{
     display: flex;
-    padding-top:1rem;
 }
 .projectlinks .contactimg{
     width:1.5rem;
@@ -38,4 +49,37 @@
 
 .projectlinks a + a{
    margin-left: 1rem;
+}
+
+.projectcard .footer{
+display: flex;
+justify-content: space-between;
+padding-top:1rem;
+}
+
+.projectstatus{
+display: flex;
+align-items: center;
+}
+
+.statuscircle{
+    border-radius: 50%;
+    height:0.75rem;
+    width:0.75rem;
+    margin-right: 0.5rem;
+}
+.projectstatus .label::first-letter{
+    text-transform: uppercase;
+}
+.projectstatus.Progress .statuscircle{
+    background-color: #F2C94C;
+}
+.projectstatus.Complete .statuscircle{
+    background-color: #27AE60;
+}
+.projectstatus.Complete .label{
+    color: #27AE60;
+}
+.projectstatus.Progress .label{
+    color: #F2C94C;
 }

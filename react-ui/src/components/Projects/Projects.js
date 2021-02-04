@@ -9,52 +9,7 @@ function Projects(props) {
     useEffect(()=>{
         setViewAll(false);
     },[])
-    let projectData = [
-        {
-            "projectName" : "Guest Tracker App",
-            "tags" : ['React Js', "Firebase"],
-            "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque malesuada sed malesuada viverra facilisis. Vestibulum mattis mi fames quisque. Felis maecenas ultricies eu sagittis ornare diam felis lacus. Feugiat porta risus mus at tellus faucibus est. Pretium vel, risus sit eget.",
-            "github" : '',
-            "url" : ''
-        },
-        {
-            "projectName" : "Guest Tracker App",
-            "tags" : ['React Js', "Firebase"],
-            "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque malesuada sed malesuada viverra facilisis. Vestibulum mattis mi fames quisque. Felis maecenas ultricies eu sagittis ornare diam felis lacus. Feugiat porta risus mus at tellus faucibus est. Pretium vel, risus sit eget.",
-            "github" : '',
-            "url" : ''
-        },
-        {
-            "projectName" : "Guest Tracker App",
-            "tags" : ['React Js', "Firebase"],
-            "description" : " Vestibulum mattis mi fames quisque. Felis maecenas ultricies eu sagittis ornare diam felis lacus. Feugiat porta risus mus at tellus faucibus est. Pretium vel, risus sit eget.",
-            "github" : '',
-            "url" : ''
-        },
-        {
-            "projectName" : "Guest Tracker App",
-            "tags" : ['React Js', "Firebase"],
-            "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque malesuada sed malesuada viverra facilisis. Vestibulum mattis mi fames quisque. Felis maecenas ultricies eu sagittis ornare diam felis lacus. Feugiat porta risus mus at tellus faucibus est. Pretium vel, risus sit eget.",
-            "github" : '',
-            "url" : ''
-        },
-        {
-            "projectName" : "Guest Tracker App",
-            "tags" : ['React Js', "Firebase"],
-            "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque malesuada sed malesuada viverra facilisis. Vestibulum mattis mi fames quisque. Felis maecenas ultricies eu sagittis ornare diam felis lacus. Feugiat porta risus mus at tellus faucibus est. Pretium vel, risus sit eget.",
-            "github" : '',
-            "url" : ''
-        },
-        {
-            "projectName" : "Guest Tracker App",
-            "tags" : ['React Js', "Firebase"],
-            "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque malesuada sed malesuada viverra facilisis. Vestibulum mattis mi fames quisque. Felis maecenas ultricies eu sagittis ornare diam felis lacus. Feugiat porta risus mus at tellus faucibus est. Pretium vel, risus sit eget.",
-            "github" : '',
-            "url" : ''
-        }
-    ]
-
-
+    
     function viewAllHandler(){
         if(viewAll){
             setViewAll(false);
@@ -75,9 +30,9 @@ function Projects(props) {
       
       <div className={ `subsection projectsectionbody ${viewAll ? 'showall' : 'showsome'}`}>
           {
-              projectData && projectData.map((ele,index) => {
+              props.projects && props.projects.map((ele,index) => {
                   return (
-                      <ProjectCard data={ele}/>
+                      <ProjectCard key={index} data={ele}/>
                   )
               })
           }
