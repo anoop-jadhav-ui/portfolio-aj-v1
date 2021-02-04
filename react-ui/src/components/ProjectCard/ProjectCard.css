@@ -16,6 +16,10 @@
     border:1px solid #4F4F4F;
     transition: border 0.5s ease-in-out;
 }
+.darkmode .projectcard:hover{
+    background-color: #4F4F4F;
+ }
+
 .tags{
     display:flex;
    
