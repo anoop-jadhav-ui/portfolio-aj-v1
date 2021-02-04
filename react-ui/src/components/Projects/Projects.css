@@ -54,3 +54,24 @@
   .projectsectionbody::-webkit-scrollbar-thumb:hover {
     background: #333333;
   }
+
+
+    /* Track */
+    .darkmode .projectsectionbody::-webkit-scrollbar-track {
+        background: #333333;
+        
+      }
+      
+      /* Handle */
+      .darkmode  .projectsectionbody::-webkit-scrollbar-thumb {
+        background: #4F4F4F;
+        border-radius: 10px;
+      }
+      
+      /* Handle on hover */
+      .darkmode  .projectsectionbody::-webkit-scrollbar-thumb:hover {
+        background: #333333;
+      }
+
+
+  
