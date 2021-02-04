@@ -3,6 +3,7 @@
     height:2.25rem;
     border-radius: 0.25rem;
     overflow: hidden;
+    transition: background-color 0.5s ease-in-out;
 }
 .darkmode .bar-graph{
     background-color: #4F4F4F;

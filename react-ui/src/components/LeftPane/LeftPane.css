@@ -1,6 +1,7 @@
 
 .menu{
     margin-top:2rem;
+   
 }
 .menu li{
 list-style: none;
@@ -15,4 +16,32 @@ cursor: pointer;
 }
 .menu li + li{
     margin-top:1rem;
+}
+
+.left-pane{
+    left:-10rem;
+    animation: slideInFromLeft 1s ease-in-out forwards;
+}
+
+
+@keyframes slideInFromLeft{
+    0%{
+        left:-10rem;
+    }
+    80%{
+        left:7rem;
+    }
+    100%{
+        left:6rem;
+    }
+}
+
+
+/* Medium devices (tablets, 768px and up)*/
+@media (max-width: 1200px) { 
+   
+    .left-pane{
+        display: none !important;
+    }
+
 }

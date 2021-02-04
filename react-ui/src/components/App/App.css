@@ -58,6 +58,7 @@ input{
     height:2.5rem;
     padding:0 1rem;
     border-radius: 0.25rem;
+    transition: background-color 0.5s ease-in-out;
 }
 .darkmode input{
     background-color: #4F4F4F;
@@ -74,6 +75,7 @@ textarea{
     height:6.5rem;
     padding:0.5rem 1rem;
     border-radius: 0.25rem;
+    transition: background-color 0.5s ease-in-out;
 }
 .darkmode textarea{
     background-color: #4F4F4F;
@@ -222,9 +224,6 @@ color:#F2C94C;
     .back-to-work-button{
         display: block;
     }
-    .left-pane{
-        display: none !important;
-    }
     .main-body{
         margin:0;
     }
@@ -246,10 +245,25 @@ color:#F2C94C;
 
 .darkModeWrapper{
     position: fixed;
-    top:1rem;right:1rem;
+    top:-1.5rem;
+    right:1rem;
     cursor: pointer;
     z-index: 999;
+    animation: slideInFromTop 1s ease-in-out forwards;
 }
+
+@keyframes slideInFromTop{
+    0%{
+        top:-1.5rem;
+    }
+    80%{
+        top:1.5rem;
+    }
+    100%{
+        top:1rem;
+    }
+}
+
 .darkModeButton{
    display: flex;
    align-items: center;
