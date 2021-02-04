@@ -41,12 +41,12 @@
   
   /* Track */
   .projectsectionbody::-webkit-scrollbar-track {
-    background: #f2f2f2;
+    background: white;
   }
   
   /* Handle */
   .projectsectionbody::-webkit-scrollbar-thumb {
-    background: #BDBDBD;
+    background: #f2f2f2;
     border-radius: 10px;
   }
   

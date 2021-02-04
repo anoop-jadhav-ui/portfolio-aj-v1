@@ -1,9 +1,21 @@
-import React from "react";
-import KnowMoreButton from "../../assets/arrow-icon.svg";
+import React, {useState, useEffect} from "react";
+// import KnowMoreButton from "../../assets/arrow-icon.svg";
 import BarGraph from "../BarGraph/BarGraph";
 import "./Education.css";
+import leftPaneData from '../LeftPane/leftPaneData'
 
 function Education(props) {
+  let [sectionStep, setSectionStep] = useState();
+  useEffect(()=>{
+      let key = 0;
+      leftPaneData.forEach(ele=>{
+          if(ele.label === 'Education'){
+              key = ele.key;
+          }
+      })
+      setSectionStep(parseInt(key));
+  },[])
+
   return (
     <div
       className={
@@ -27,7 +39,7 @@ function Education(props) {
                   <BarGraph
                     value={ele.percentage}
                     currentStep={props.currentStep}
-                    sectionStep={2}
+                    sectionStep={sectionStep}
                   />
                 </div>
               </div>

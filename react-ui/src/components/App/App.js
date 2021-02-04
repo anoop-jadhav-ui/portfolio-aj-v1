@@ -314,12 +314,13 @@ class App extends React.Component {
       leftPaneItemsWithHeaderPos.forEach(
         function (item) {
           if (item.headerPos - 100 < scrollTop) {
-            // console.log(scrollTop + '------------' + item.headerPos);
             this.setState(() => {
               return {
                 currentStep: item.key,
                 scrollPos: scrollTop,
               };
+            },()=>{
+              console.log(this.state.currentStep)
             });
           }
         }.bind(this)
