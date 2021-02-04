@@ -4,6 +4,10 @@
     border-radius: 0.25rem;
     min-width: 20rem;
     width: 33.33%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 .darkmode .projectcard{
     border:1px solid #4F4F4F;
@@ -35,9 +39,17 @@
 .tag + .tag:nth-child(4n){
     margin-top:0.5rem;
 }
+.showall .tag + .tag:nth-child(4n + 2):not(:nth-child(2)),
+.showall .tag + .tag:nth-child(4n + 1):not(:nth-child(1)),
+.showall .tag + .tag:nth-child(4n){
+    margin-top:0;
+}
 
 .description{
     padding-top:1rem;
+    max-height:13rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .projectlinks{

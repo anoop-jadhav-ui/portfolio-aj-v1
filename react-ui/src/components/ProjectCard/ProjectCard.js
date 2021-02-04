@@ -6,6 +6,7 @@ import weblink from '../../assets/weblink.svg';
 const ProjectCard = (props) => {
     return (
         <div className="projectcard">
+            <div>
             <div className="header h4 bold">
                 {props.data.projectName}
             </div>
@@ -20,6 +21,7 @@ const ProjectCard = (props) => {
             </div>
             <div className="description">
                 {props.data.description}
+            </div>
             </div>
             <div className="footer">
             <div className="projectlinks">
