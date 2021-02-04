@@ -7,7 +7,7 @@ class Summary extends React.Component {
   state = {
     mainLogoUrl: ""
   };
-  
+
   render() {
     return (
       <div
@@ -17,7 +17,7 @@ class Summary extends React.Component {
       >
        
         {
-          <img className="mainlogo" src={MainLogo} alt="main logo" />
+          MainLogo && <img className="mainlogo" src={MainLogo} alt="main logo" />
         }
       
        
