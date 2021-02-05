@@ -1,4 +1,4 @@
-import React, {useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 
 import LeftPane from "../LeftPane/LeftPane";
 import MainBody from "../MainBody/MainBody";
@@ -110,6 +110,7 @@ function MainbodyWrapper(props) {
     } else {
       setDarkMode(false);
     }
+
   }
   return (
     <div className={`App summary row no-gutters fade show ${darkMode ? 'darkmode' : ''}`}>
@@ -152,7 +153,6 @@ function MainbodyWrapper(props) {
         toggleLoader={props.toggleLoader}
         dbData={props.dbData}
         darkMode={darkMode}
-        scrollPos={props.scrollPos}
       ></MainBody>
     </div>
   );

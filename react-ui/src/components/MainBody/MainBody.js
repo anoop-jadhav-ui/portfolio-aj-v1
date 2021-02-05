@@ -14,7 +14,6 @@ import Projects from '../Projects/Projects'
 
 class MainBody extends React.Component {
 componentDidMount(){
-  console.log(this.props.rightPaneRef)
   window.addEventListener('scroll', this.props.changeCurrentStepBasedOnScrollCalculation);
 }
 
@@ -25,7 +24,7 @@ render() {
   return (
     <div className="main-body row justify-content-center text" >
 
-      <Summary currentStep={this.props.currentStep} dbData={this.props.dbData}  imageData={this.props.imageData} darkMode={this.props.darkMode} class="" scrollPos={this.props.scrollPos}/>
+      <Summary currentStep={this.props.currentStep} dbData={this.props.dbData}  imageData={this.props.imageData} darkMode={this.props.darkMode} class=""/>
       <Projects currentStep={this.props.currentStep} projects={this.props.dbData.projects} class=""/>
       <Education currentStep={this.props.currentStep} dbData={this.props.dbData} imageData={this.props.imageData} class=""/>
       <WorkExperience currentStep={this.props.currentStep} dbData={this.props.dbData} imageData={this.props.imageData} class=""/>

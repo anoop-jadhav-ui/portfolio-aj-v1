@@ -29,7 +29,7 @@
     background-color: rgba(219, 219, 219, 0.5);
     padding:1rem;
     right:0;
-    top:45vH;
+    top:50%;
     transform: translateY(-50%);
     border-radius: 0.25rem 0 0  0.25rem;
     animation: slideIn 1s ease-in-out forwards;
@@ -52,31 +52,11 @@
     height:1.5rem;
 }
 
-.rightpane.increaseheight{
-    border-radius: 0.25rem 0.25rem 0 0 ;
-}
-.rightpane.increaseheight::after{
-    content:'';
-    position: absolute;
-    top:100%;
-    right: 0;
-    height:0;
-    width:3.5rem;
-    background-color: rgba(219, 219, 219, 0.5);
-    border-radius: 0 0 0.25rem 0.25rem;
-    animation: slideInRightPaneExtensionFromTop 0.5s ease-in-out forwards;
-}
-
 @media (max-width: 1200px) { 
     .rightpane{
-        top:45vH;
+        top:25%;
         width: 4rem;
     }
-    .rightpane.increaseheight::after{
-        width:4rem;
-        animation: slideInRightPaneExtensionFromTop 0.5s ease-in-out forwards;
-    }
-
     .rightpane .contactimg{
         width: 2rem;
         height:2rem;
@@ -96,16 +76,5 @@
     }
     100%{
         right:0;
-    }
-}
-
-
-@keyframes slideInRightPaneExtensionFromTop{
-    0%{
-       height:0;
-
-    }
-    100%{
-        height:3.5rem;
     }
 }
