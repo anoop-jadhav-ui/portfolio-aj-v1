@@ -6,6 +6,7 @@ import Portfolio from "../Portfolio/Portfolio";
 import leftPaneData from "../LeftPane/leftPaneData";
 import ToggleButton from "../ToggleButton/ToggleButton"
 import ContactIcons from '../ContactIcons/ContactIcons'
+// import BgAnimations from '../BgAnimations/BgAnimations'
 import {
   BrowserRouter as Router,
   Switch,
@@ -40,14 +41,14 @@ function loop() {
     }
   }
 
-  var crossButtonPortfolio = document.querySelector(".close-button");
-  if (crossButtonPortfolio != undefined) {
-    if (isElementInViewport(crossButtonPortfolio)) {
-      document.querySelector(".skip-button").classList.add("hide");
-    } else {
-      document.querySelector(".skip-button").classList.remove("hide");
-    }
-  }
+  // var crossButtonPortfolio = document.querySelector(".close-button");
+  // if (crossButtonPortfolio != undefined) {
+  //   if (isElementInViewport(crossButtonPortfolio)) {
+  //     document.querySelector(".skip-button").classList.add("hide");
+  //   } else {
+  //     document.querySelector(".skip-button").classList.remove("hide");
+  //   }
+  // }
 
   scroll(loop);
 }
@@ -117,6 +118,7 @@ function MainbodyWrapper(props) {
         <img src={KnowMoreButton} alt="Mobile back to work button" />
         <span className="red pl-2">Back to Work</span>{" "}
       </Link> */}
+      {/* <BgAnimations/> */}
       <div className="darkModeWrapper">
         <div className="darkModeButton" onClick={toDarkMode} >
           <div className={ `light ${ !darkMode && 'bold'}`}>Light</div>
@@ -124,7 +126,11 @@ function MainbodyWrapper(props) {
           <div className={ `dark ${ darkMode && 'bold'}`}>Dark</div>
         </div>
       </div>
+      
       <ContactIcons data={props.dbData} className="rightpane"/>
+
+      
+
       {props.showLoader && <Loader />}
       <LeftPane
         imageData={props.imageData}
@@ -319,8 +325,6 @@ class App extends React.Component {
                 currentStep: item.key,
                 scrollPos: scrollTop,
               };
-            },()=>{
-              console.log(this.state.currentStep)
             });
           }
         }.bind(this)

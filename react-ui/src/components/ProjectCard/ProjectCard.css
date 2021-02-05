@@ -11,6 +11,7 @@
 }
 .projectcard:hover{
    background-color: #f7f7f7;
+   transform: scale(0.96);
 }
 .darkmode .projectcard{
     border:1px solid #4F4F4F;

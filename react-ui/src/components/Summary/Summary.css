@@ -2,8 +2,44 @@
     transition: all 1s ease-in-out ;
     animation: zoomIn 1s ease-in-out forwards;
 }
+
+.mainlogo:hover .eyebrow.right{
+
+    transform-origin: 50% 50%;
+    animation: eyebrowmovementRight 0.25s ease-in-out 2;
+} 
+ .mainlogo:hover .eyebrow.left{
+    transform-origin: 50% 50%;
+    animation: eyebrowmovementLeft 0.25s ease-in-out 2;
+}
+
 .darkmode .mainlogo{
     filter: invert(94%) sepia(93%) saturate(0%) hue-rotate(122deg) brightness(103%) contrast(90%);
+}
+
+@keyframes eyebrowmovementRight{
+    0%{
+        transform: translateY(0);
+    }
+    80%{
+        transform: rotate(6deg) translateY(-5px);
+
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+@keyframes eyebrowmovementLeft{
+    0%{
+        transform: translateY(0);
+    }
+    80%{
+        transform: rotate(-6deg) translateY(-5px);
+
+    }
+    100%{
+        transform: translateY(0);
+    }
 }
 
 

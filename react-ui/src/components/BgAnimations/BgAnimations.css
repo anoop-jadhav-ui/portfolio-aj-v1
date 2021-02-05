@@ -1,0 +1,19 @@
+
+.boxes .first{
+    position: absolute;
+    bottom: 10rem;
+    right: 0;
+}
+.boxes .second{
+    position: fixed;
+    bottom: 8rem;
+    right: 2rem;
+}
+.background{
+    position: absolute;
+    z-index: -1;
+    height: 100vH;
+    width: 100vW;
+    left: 0;
+    top: 0;
+}
