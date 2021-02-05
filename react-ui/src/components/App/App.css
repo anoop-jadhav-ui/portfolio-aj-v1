@@ -229,19 +229,17 @@ color:#F2C94C;
     }
 }
 
-.show-on-scroll{
+.show-on-scroll:not(.summary){
     opacity: 0;
     transform: translateY(2rem);
     
     transition: all 600ms ease-in;
 }
 
-.is-visible{
+.is-visible:not(.summary){
     opacity: 1;
     transform: translateY(0);
 }
-
-
 
 .darkModeWrapper{
     position: fixed;
