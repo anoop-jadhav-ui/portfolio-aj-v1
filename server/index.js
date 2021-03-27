@@ -4,6 +4,7 @@ const cluster = require('cluster');
 const numCPUs = require('os').cpus().length;
 var cors = require('cors')
 var bodyParser=require("body-parser");
+const serverless = require('serverless-http');
 
 
 require('dotenv').config();
@@ -93,3 +94,7 @@ if (!isDev && cluster.isMaster) {
     console.error(`Node ${isDev ? 'dev server' : 'cluster worker ' + process.pid}: listening on port ${PORT}`);
   });
 }
+
+
+module.exports.handler = serverless(app);
+

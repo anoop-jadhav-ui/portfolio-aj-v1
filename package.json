@@ -18,7 +18,8 @@
     "dotenv": "^8.2.0",
     "express": "^4.16.4",
     "firebase": "^7.24.0",
-    "node-mailjet": "^3.3.1"
+    "node-mailjet": "^3.3.1",
+    "serverless-http": "^2.7.0"
   },
   "repository": {
     "type": "git",
@@ -30,6 +31,5 @@
     "create-react-app",
     "react"
   ],
-  "license": "MIT",
-  "devDependencies": {}
+  "license": "MIT"
 }
