@@ -1,23 +1,21 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 import LeftPane from "../LeftPane/LeftPane";
 import MainBody from "../MainBody/MainBody";
-import Portfolio from "../Portfolio/Portfolio";
+// import Portfolio from "../Portfolio/Portfolio";
 import leftPaneData from "../LeftPane/leftPaneData";
 import ToggleButton from "../ToggleButton/ToggleButton"
 import ContactIcons from '../ContactIcons/ContactIcons'
 // import BgAnimations from '../BgAnimations/BgAnimations'
 import {
   BrowserRouter as Router,
-  Switch,
-  Route,
-  withRouter,
+  Route
 } from "react-router-dom";
 import "./App.css";
-import KnowMoreButton from "../../assets/arrow-icon.svg";
+// import KnowMoreButton from "../../assets/arrow-icon.svg";
 
 import Loader from "../Loader/Loader";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import firebase from "../firebaseConfig.js";
 
 // Detect request animation frame
@@ -74,33 +72,33 @@ function isElementInViewport(el) {
 }
 
 // Portfolio wrapper component
-function PortfolioWrapper(props) {
-  return (
-    <div className="portfolio row no-gutters">
-      {props.showLoader && <Loader />}
-      {
-        /*!(
-         Object.keys(props.imageData).length === 0 &&
-         props.imageData.constructor === Object
+// function PortfolioWrapper(props) {
+//   return (
+//     <div className="portfolio row no-gutters">
+//       {props.showLoader && <Loader />}
+//       {
+//         /*!(
+//          Object.keys(props.imageData).length === 0 &&
+//          props.imageData.constructor === Object
        
-      )*/
-        props.imageData != undefined &&
-          Object.keys(props.imageData.portfolio).length > 0 ? (
-            <Portfolio
-              currentStep={props.currentStep}
-              changeStep={props.changeStep}
-              toggleLoader={props.toggleLoader}
-              dbData={props.dbData}
-              imageData={props.imageData}
-              setClickedItem={props.setClickedItem}
-            />
-          ) : (
-            <Loader />
-          )
-      }
-    </div>
-  );
-}
+//       )*/
+//         props.imageData != undefined &&
+//           Object.keys(props.imageData.portfolio).length > 0 ? (
+//             <Portfolio
+//               currentStep={props.currentStep}
+//               changeStep={props.changeStep}
+//               toggleLoader={props.toggleLoader}
+//               dbData={props.dbData}
+//               imageData={props.imageData}
+//               setClickedItem={props.setClickedItem}
+//             />
+//           ) : (
+//             <Loader />
+//           )
+//       }
+//     </div>
+//   );
+// }
 // Mainbody wrapper component
 function MainbodyWrapper(props) {
   let [darkMode, setDarkMode] = useState(false);
@@ -139,7 +137,6 @@ function MainbodyWrapper(props) {
         changeStep={props.changeStep}
         leftPaneItems={props.leftPaneItems}
         fetchHeaderPositions={props.fetchHeaderPositions}
-        toggleLoader={props.toggleLoader}
         darkMode={darkMode}
       ></LeftPane>
       <MainBody
@@ -150,7 +147,6 @@ function MainbodyWrapper(props) {
         changeCurrentStepBasedOnScrollCalculation={
           props.changeCurrentStepBasedOnScrollCalculation
         }
-        toggleLoader={props.toggleLoader}
         dbData={props.dbData}
         darkMode={darkMode}
       ></MainBody>
@@ -184,7 +180,7 @@ class App extends React.Component {
     });
     // console.log(this.state.menuClickedItem);
 
-    if (clickedItem == "Contacts") {
+    if (clickedItem === "Contacts") {
       setTimeout(() => {
         this.changeStep(7, event, false);
       }, 300);
@@ -277,7 +273,7 @@ class App extends React.Component {
   }
 
   toggleLoader = (toggleValue) => {
-    if (toggleValue == undefined || toggleValue == null) {
+    if (toggleValue) {
       this.setState((prevState) => {
         return {
           showLoader: !prevState.showLoader,
@@ -340,7 +336,7 @@ class App extends React.Component {
       };
     });
     //scroll to element logic
-    if (skip != false) event.preventDefault();
+    if (!skip) event.preventDefault();
     var leftPaneItemClass = this.state.leftPaneItems[newStep].class;
     var ele = document.getElementsByClassName(leftPaneItemClass);
     if (ele[0])

@@ -1,6 +1,5 @@
 import React from 'react'
 import './Hobbies.css'
-import drawings from './drawings'
 function Hobbies(props) {
 
     return <div className={"show-on-scroll col-md-7 page-1 text-left section hobbies-interests " + props.class}>

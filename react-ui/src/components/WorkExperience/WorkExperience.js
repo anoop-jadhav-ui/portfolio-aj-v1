@@ -1,8 +1,6 @@
 import React from "react";
 import "./WorkExperience.css";
 
-import KnowMoreButton from "../../assets/arrow-icon.svg";
-
 function WorkExperience(props) {
   return (
     <div

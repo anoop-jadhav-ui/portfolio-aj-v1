@@ -68,10 +68,10 @@ class Portfolio extends React.Component {
         inline: "nearest",
       });
   }
-  imageOnScroll(event) {
-    var ele = document.querySelector(".portfolio-image-wrapper");
-    // console.log("scrolling...");
-  }
+  // imageOnScroll(event) {
+  //   // var ele = document.querySelector(".portfolio-image-wrapper");
+  //   // console.log("scrolling...");
+  // }
 
   render() {
     return (

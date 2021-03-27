@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import MainLogo from '../../assets/main-logo.svg'
-import MainLogoDark from '../../assets/main-logo-dark.svg'
+import React from "react";
+// import MainLogo from '../../assets/main-logo.svg'
+// import MainLogoDark from '../../assets/main-logo-dark.svg'
 import "./Summary.css";
 
 class Summary extends React.Component {

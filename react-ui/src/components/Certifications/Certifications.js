@@ -19,7 +19,7 @@ function Certifications(props) {
           return <div className="subsection-data" key={key}>
               <span className="h3 grey1 bold">{ele.name}</span>
               <div className="red default-text mt-1">
-                <a href={ele.urlToCertificate} target="_Blank">
+                <a href={ele.urlToCertificate} target="_Blank" rel="noopener noreferrer">
                   View LinkedIn profile
                 </a>
               </div>
@@ -36,7 +36,7 @@ function Certifications(props) {
           return <div className="subsection-data" key={key}>
               <span className="h3 grey1 bold">{ele.name}</span>
               <div className="red default-text mt-1">
-                <a href={ele.urlToCertificate} target="_Blank">
+                <a href={ele.urlToCertificate} target="_Blank" rel="noopener noreferrer">
                   View LinkedIn profile
                 </a>
               </div>

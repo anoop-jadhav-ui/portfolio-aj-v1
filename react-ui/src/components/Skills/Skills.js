@@ -19,7 +19,7 @@ function Skills(props){
             <div className="section-title grey4 h2 bold">Skills</div>
 
             {
-                props.dbData.skills != undefined ? <div className="subsection">
+                props.dbData.skills ? <div className="subsection">
                     <div className="subsection-title uppercase body-text grey3 letterspacing-1">Development</div>
                     <div className="subsection-data">
                     {
@@ -37,7 +37,7 @@ function Skills(props){
                 '' 
             }
             {
-                props.dbData.skills != undefined ? <div className="subsection">
+                props.dbData.skills ? <div className="subsection">
                     <div className="subsection-title uppercase body-text grey3 letterspacing-1">Design</div>
                     <div className="subsection-data">
                     {

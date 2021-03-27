@@ -54,7 +54,7 @@
 
 @media (max-width: 1200px) { 
     .rightpane{
-        top:25%;
+        top:45vH;
         width: 4rem;
     }
     .rightpane .contactimg{
