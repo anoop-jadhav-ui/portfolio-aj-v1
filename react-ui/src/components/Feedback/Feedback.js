@@ -22,7 +22,7 @@ class Feedback extends React.Component {
 
             axios({
                 method: "post",
-                url: "/mail",
+                url: "https://portfolio-mailserver.herokuapp.com/mail",
                 data: {
                     //userName: email,
                     userEmail: 'anoopjadhav@gmail.com',
