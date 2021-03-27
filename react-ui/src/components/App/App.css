@@ -13,7 +13,7 @@ body{
     transition: background-color 0.5s ease-in-out;
 }
 .darkmode.App{
-    background-color: #333333;;
+    background-color: #181A20;/*333333*/
     color:#F2F2F2;
 }
 
