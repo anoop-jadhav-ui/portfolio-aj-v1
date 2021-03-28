@@ -7,7 +7,8 @@ class Feedback extends React.Component {
     state = {
         message: '',
         messageSent: false,
-        messageFailure: false
+        messageFailure: false,
+        messageSending: false
     }
     handleChange = e => {
         this.setState({ [e.target.name]: e.target.value })
@@ -18,8 +19,12 @@ class Feedback extends React.Component {
         event.preventDefault();
         var { message } = this.state;
 
+        this.setState(() => {
+            return {
+                messageSending: true
+            }
+        })
         if (message !== '') {
-
             axios({
                 method: "post",
                 url: "https://portfolio-mailserver.herokuapp.com/mail",
@@ -37,7 +42,8 @@ class Feedback extends React.Component {
 
                 this.setState(() => {
                     return {
-                        messageSent: true
+                        messageSent: true,
+                        messageSending: false
                     }
                 })
 
@@ -60,7 +66,8 @@ class Feedback extends React.Component {
 
                     this.setState(() => {
                         return {
-                            messageFailure: true
+                            messageFailure: true,
+                            messageSending: false
                         }
                     })
 
@@ -72,9 +79,23 @@ class Feedback extends React.Component {
                         })
                     }, 3000)
 
-
-                    alert("Message failed to send.");
                 }
+            }).catch(err => {
+                this.setState(() => {
+                    return {
+                        messageFailure: true,
+                        messageSending: false
+                    }
+                })
+
+                setTimeout(() => {
+                    this.setState(() => {
+                        return {
+                            messageFailure: false
+                        }
+                    })
+                }, 3000)
+
             })
         }
     }
@@ -87,7 +108,8 @@ class Feedback extends React.Component {
             <div className="section-title grey4 h2 bold">Feedback</div>
             <form id="contact-form" className="subsection" onSubmit={this.sendEmail.bind(this)} method="POST">
                 {this.state.messageSent && <div className="default-text success-banner mb-2">Thank you for your feedback</div>}
-                {this.state.messageFailure && <div className="default-text error-banner mb-2">Sorry Couldn't send your message. Please retry.</div>}
+                {this.state.messageFailure && <div className="default-text error-banner mb-2">Sorry Couldn't send your message. Please try again later.</div>}
+                {this.state.messageSending && <div className="default-text neutral-banner mb-2">Submitting your feedback...</div>}
 
                 <div className="subsection-data">
                     <div className="subsection-title body-text letterspacing-1">Please provide a constructive feedback.</div>
