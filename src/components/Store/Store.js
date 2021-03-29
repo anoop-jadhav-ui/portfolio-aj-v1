@@ -3,9 +3,11 @@ import createSagaMiddleware from 'redux-saga'
 
 import mySaga from './Saga'
 import DataReducer from './Reducers/DataReducer'
+import FeedbackReducer from './Reducers/FeedbackReducer'
 
 let combinedReducers = combineReducers({
-    dr: DataReducer
+    dr: DataReducer,
+    fr : FeedbackReducer
 })
 
 // Create the saga middleware

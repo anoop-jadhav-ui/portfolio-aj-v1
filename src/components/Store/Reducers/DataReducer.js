@@ -11,13 +11,13 @@ function Reducer(state = initState, action) {
         }
         case 'FETCH_FAILED': return {
             data: {},
-            ...initState
+            ...state
         }
         case 'TOGGLE_LOADER': return {
-            ...initState,
+            ...state,
             showLoader: action.data
         }
-        default: return initState
+        default: return state
     }
 }
 
