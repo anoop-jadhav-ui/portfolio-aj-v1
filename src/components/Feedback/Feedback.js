@@ -1,14 +1,12 @@
 import React from 'react'
 import './Feedback.css'
-import axios from 'axios'
+import axiosInstance from '../axios'
 
 
 class Feedback extends React.Component {
     state = {
         message: '',
-        messageSent: false,
-        messageFailure: false,
-        messageSending: false
+        messageStatus: ''
     }
     handleChange = e => {
         this.setState({ [e.target.name]: e.target.value })
@@ -21,29 +19,18 @@ class Feedback extends React.Component {
 
         this.setState(() => {
             return {
-                messageSending: true
+                messageStatus: 'neutral'
             }
         })
         if (message !== '') {
-            axios({
-                method: "post",
-                url: "https://portfolio-mailserver.herokuapp.com/mail",
-                data: {
-                    //userName: email,
-                    userEmail: 'anoopjadhav@gmail.com',
-                    userMessage: "Message : " + message
-                },
-                headers: {
-                    'Access-Control-Allow-Origin': '*',
-                    'Content-Type': 'application/json',
-                }
-
+            axiosInstance.post('/mail',{
+                userEmail: 'anoopjadhav@gmail.com',
+                userMessage: "Message : " + message
             }).then((response) => {
 
                 this.setState(() => {
                     return {
-                        messageSent: true,
-                        messageSending: false
+                        messageStatus: 'success'
                     }
                 })
 
@@ -51,30 +38,25 @@ class Feedback extends React.Component {
                     setTimeout(() => {
                         this.setState(() => {
                             return {
-                                messageSent: false
-                            }
-                        })
-                        this.resetForm()
-                        this.setState(() => {
-                            return {
+                                messageStatus: '',
                                 message: ''
                             }
                         })
+                        this.resetForm()
                     }, 3000)
 
                 } else if (response.data.msg === 'fail') {
 
                     this.setState(() => {
                         return {
-                            messageFailure: true,
-                            messageSending: false
+                            messageStatus: 'failed'
                         }
                     })
 
                     setTimeout(() => {
                         this.setState(() => {
                             return {
-                                messageFailure: false
+                                messageStatus: ''
                             }
                         })
                     }, 3000)
@@ -83,15 +65,14 @@ class Feedback extends React.Component {
             }).catch(err => {
                 this.setState(() => {
                     return {
-                        messageFailure: true,
-                        messageSending: false
+                        messageStatus: 'failed'
                     }
                 })
 
                 setTimeout(() => {
                     this.setState(() => {
                         return {
-                            messageFailure: false
+                            messageStatus: ''
                         }
                     })
                 }, 3000)
@@ -107,9 +88,9 @@ class Feedback extends React.Component {
         return <div className={"show-on-scroll col-md-7 page-1 text-left section feedback " + this.props.class}>
             <div className="section-title grey4 h2 bold">Feedback</div>
             <form id="contact-form" className="subsection" onSubmit={this.sendEmail.bind(this)} method="POST">
-                {this.state.messageSent && <div className="default-text success-banner mb-2">Thank you for your feedback</div>}
-                {this.state.messageFailure && <div className="default-text error-banner mb-2">Sorry Couldn't send your message. Please try again later.</div>}
-                {this.state.messageSending && <div className="default-text neutral-banner mb-2">Submitting your feedback...</div>}
+                {this.state.messageStatus === 'success' && <div className="default-text success-banner mb-2">Thank you for your feedback</div>}
+                {this.state.messageStatus === 'failed'  && <div className="default-text error-banner mb-2">Sorry Couldn't send your message. Please try again later.</div>}
+                {this.state.messageStatus === 'neutral'  && <div className="default-text neutral-banner mb-2">Submitting your feedback...</div>}
 
                 <div className="subsection-data">
                     <div className="subsection-title body-text letterspacing-1">Please provide a constructive feedback.</div>
