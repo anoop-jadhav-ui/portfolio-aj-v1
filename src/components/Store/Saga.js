@@ -1,7 +1,8 @@
-import { call, put, takeLatest } from 'redux-saga/effects'
-
+import { call, put, takeLatest, all, fork, delay } from 'redux-saga/effects'
 import fetchData from "../firebaseConfig.js";
 
+
+//Data Sagas 
 function* fetchInitialData(action) {
     try {
         const data = yield call(fetchData);
@@ -20,8 +21,24 @@ function* fetchInitialData(action) {
     }
 }
 
-function* mySaga() {
+function* dataSaga() {
     yield takeLatest("FETCH_INIT_DATA", fetchInitialData);
 }
 
-export default mySaga;
+
+//Banner Sagas 
+function* updateBanner(action) {
+    yield put({
+        type: "UPDATE_BANNER_ASYNC", data: action.data
+    });
+}
+
+function* feedbackSaga() {
+    yield takeLatest("UPDATE_BANNER", updateBanner);
+}
+
+export default function* rootSaga() {
+    yield all([
+        fork(dataSaga), fork(feedbackSaga)
+    ])
+};
