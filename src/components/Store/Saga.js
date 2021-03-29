@@ -1,4 +1,4 @@
-import { call, put, takeLatest, all, fork, delay } from 'redux-saga/effects'
+import { call, put, takeLatest, all, fork } from 'redux-saga/effects'
 import fetchData from "../firebaseConfig.js";
 
 
