@@ -25,8 +25,8 @@ const ProjectCard = (props) => {
             </div>
             <div className="footer">
             <div className="projectlinks">
-                { props.data.github && <a href={props.data.github}><img className="contactimg" title="view project on github" src={github} alt="github"/></a>}
-                { props.data.url && <a href={props.data.url}><img className="contactimg" title="open app" src={weblink} alt="github"/></a> } 
+                { props.data.github && <a href={props.data.github} target="_blank" rel="noopener noreferrer"><img className="contactimg" title="view project on github" src={github} alt="github"/></a>}
+                { props.data.url && <a href={props.data.url} target="_blank" rel="noopener noreferrer"><img className="contactimg" title="open app" src={weblink} alt="github"/></a> } 
             </div>
             <div className={`projectstatus ${props.data.status}`}>
                 <div className="statuscircle"></div>
