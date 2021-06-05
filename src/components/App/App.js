@@ -8,7 +8,6 @@ import ContactIcons from '../ContactIcons/ContactIcons'
 import ErrorBoundary from '../ErrorBoundary/ErrorBoundary'
 
 import "./App.css";
-
 import Loader from "../Loader/Loader";
 
 // Detect request animation frame

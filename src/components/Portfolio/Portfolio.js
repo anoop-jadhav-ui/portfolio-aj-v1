@@ -8,7 +8,7 @@ import linkedIn from "../../assets/linkedin.svg";
 
 import closeButtonImage from "../../assets/cross-icon.svg";
 
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 class Portfolio extends React.Component {
   state = {
@@ -156,7 +156,7 @@ class Portfolio extends React.Component {
                             {ele.portfolioData.description}
                           </div>
                           <div className="red label">Click to view more</div>
-                        
+
                         </div>
                       </div>
                     )}
