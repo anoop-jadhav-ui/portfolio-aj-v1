@@ -1,9 +1,9 @@
-import React from 'react'
+import { Component } from 'react';
 import './Contact.css'
 import axios from 'axios'
 import ContactIcons from '../ContactIcons/ContactIcons'
 
-class Contact extends React.Component {
+class Contact extends Component {
     state = {
         email: '',
         message: '',

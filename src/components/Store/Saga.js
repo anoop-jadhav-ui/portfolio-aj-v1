@@ -1,17 +1,23 @@
 import { call, put, takeLatest, all, fork } from 'redux-saga/effects'
 import fetchData from "../firebaseConfig.js";
-
+import leftPaneData from "../LeftPane/leftPaneData.js"
 
 //Data Sagas 
 function* fetchInitialData(action) {
     try {
         const data = yield call(fetchData);
+
         if (data) {
+
+            const leftPaneDataObj = yield call(leftPaneData, data.appFeatureAvailability)
+
             yield put({
                 type: "FETCH_SUCCEEDED", data: {
-                    data: data
+                    data: data,
+                    leftPaneData: leftPaneDataObj
                 }
             });
+
         } else {
             yield put({ type: "FETCH_FAILED", data: data });
         }

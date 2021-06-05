@@ -1,4 +1,3 @@
-import React from 'react'
 import './ToggleButton.css'
 
 const ToggleButton = (props) => {

@@ -1,4 +1,3 @@
-import React from 'react'
 import './ProjectCard.css'
 import github from '../../assets/github.svg';
 import weblink from '../../assets/weblink.svg';

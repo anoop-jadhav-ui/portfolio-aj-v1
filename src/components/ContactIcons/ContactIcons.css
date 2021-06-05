@@ -1,78 +1,79 @@
-.horizontally-placed{
-    display:flex;
-    margin-top:0;
+.horizontally-placed {
+  display: flex;
+  margin-top: 0;
 }
-.horizontally-placed .subsection-data + .subsection-data{
-    padding-left:3rem;
+.horizontally-placed .subsection-data + .subsection-data {
+  padding-left: 3rem;
 }
 
-.darkmode .contactimg{
-    filter: invert(100%) sepia(5%) saturate(320%) hue-rotate(241deg) brightness(120%) contrast(90%);
+.darkmode .contactimg {
+  filter: invert(100%) sepia(5%) saturate(320%) hue-rotate(241deg)
+    brightness(120%) contrast(90%);
 }
-.contactimg{
+.contactimg {
+  width: 2rem;
+  height: 2rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.contactimg:hover {
+  filter: invert(51%) sepia(21%) saturate(5271%) hue-rotate(328deg)
+    brightness(99%) contrast(86%);
+  transform: scale(1.2);
+}
+
+.rightpane {
+  width: 3.5rem;
+  flex-wrap: wrap;
+  position: fixed;
+  background-color: var(--grey-background);
+  padding: 1rem;
+  right: 0;
+  top: 10rem;
+  /* transform: translateY(-50%); */
+  border-radius: 0.25rem 0 0 0.25rem;
+  animation: slideIn 1s ease-in-out forwards;
+  z-index: 999999;
+}
+.darkmode .rightpane {
+  background-color: var(--grey-background-darkmode);
+}
+.rightpane.horizontally-placed .subsection-data {
+  margin-top: 0;
+}
+
+.rightpane.horizontally-placed .subsection-data + .subsection-data {
+  padding-left: 0;
+  margin-top: 1.5rem;
+}
+
+.rightpane .contactimg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+@media (max-width: 1200px) {
+  .rightpane {
+    top: 45vh;
+    width: 4rem;
+  }
+  .rightpane .contactimg {
     width: 2rem;
-    height:2rem;
-    transition: all 0.3s ease-in-out;
+    height: 2rem;
+  }
+  .rightpane.horizontally-placed .subsection-data + .subsection-data {
+    margin-top: 2rem;
+  }
 }
 
-.contactimg:hover{
-    filter: invert(51%) sepia(21%) saturate(5271%) hue-rotate(328deg) brightness(99%) contrast(86%);
-    transform: scale(1.2);
-}
-
-.rightpane{
-    width: 3.5rem;
-    flex-wrap: wrap;
-    position: fixed;
-    background-color: rgba(219, 219, 219, 0.5);
-    padding:1rem;
-    right:0;
-    top:50%;
-    transform: translateY(-50%);
-    border-radius: 0.25rem 0 0  0.25rem;
-    animation: slideIn 1s ease-in-out forwards;
-    z-index: 999999;
-}
-.darkmode .rightpane{
-    background-color: rgba(219, 219, 219, 0.2);
-}
-.rightpane.horizontally-placed .subsection-data{
-    margin-top:0;
-}
-
-.rightpane.horizontally-placed .subsection-data + .subsection-data{
-    padding-left:0;
-    margin-top:1.5rem;
-}
-
-.rightpane .contactimg{
-    width: 1.5rem;
-    height:1.5rem;
-}
-
-@media (max-width: 1200px) { 
-    .rightpane{
-        top:45vH;
-        width: 4rem;
-    }
-    .rightpane .contactimg{
-        width: 2rem;
-        height:2rem;
-    }
-    .rightpane.horizontally-placed .subsection-data + .subsection-data{
-        margin-top:2rem;
-    }
-
-}
-
-@keyframes slideIn{
-    0%{
-        right:-2.5rem;
-    }
-    80%{
-        right:0.5rem;
-    }
-    100%{
-        right:0;
-    }
+@keyframes slideIn {
+  0% {
+    right: -2.5rem;
+  }
+  80% {
+    right: 0.5rem;
+  }
+  100% {
+    right: 0;
+  }
 }

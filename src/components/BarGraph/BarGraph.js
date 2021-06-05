@@ -1,7 +1,7 @@
-import React from 'react';
+import { Component } from 'react';
 import './BarGraph.css';
 
-class BarGraph extends React.Component {
+class BarGraph extends Component {
   render() {
     return <div className={'bar-graph ' + this.props.class}>
     {

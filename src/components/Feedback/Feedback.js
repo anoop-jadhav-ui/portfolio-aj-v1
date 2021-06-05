@@ -1,9 +1,9 @@
-import React from 'react'
+import { Component, Fragment } from 'react';
 import axiosInstance from '../axios'
 import { connect } from 'react-redux'
 import Banner from '../Banner/Banner'
 
-class Feedback extends React.Component {
+class Feedback extends Component {
 
     handleChange = e => {
         this.props.updateMessage(e.target.value)
@@ -55,23 +55,25 @@ class Feedback extends React.Component {
         return errMessage !== '' && <Banner type={this.props.messageStatus} text={errMessage} closeBanner={() => this.props.updateBannerStatus('')}/>
     }
     render() {
-        return <React.Fragment>
-            {
-                this.showBanner()
-            }
-            <div className={"show-on-scroll col-md-7 page-1 text-left section feedback " + this.props.class}>
-                <div className="section-title grey4 h2 bold">Feedback</div>
-                <form id="contact-form" className="subsection" onSubmit={(event) => this.sendEmail(event)} method="POST">
-                    <div className="subsection-data">
-                        <div className="subsection-title body-text letterspacing-1">Please provide a constructive feedback.</div>
-                        <div className="red body-text mt-2">
-                            <textarea className="" type="type" name="message" value={this.props.message} placeholder={this.props.message} onChange={this.handleChange} />
+        return (
+            <Fragment>
+                {
+                    this.showBanner()
+                }
+                <div className={"show-on-scroll col-md-7 page-1 text-left section feedback " + this.props.class}>
+                    <div className="section-title grey4 h2 bold">Feedback</div>
+                    <form id="contact-form" className="subsection" onSubmit={(event) => this.sendEmail(event)} method="POST">
+                        <div className="subsection-data">
+                            <div className="subsection-title body-text letterspacing-1">Please provide a constructive feedback.</div>
+                            <div className="red body-text mt-2">
+                                <textarea className="" type="type" name="message" value={this.props.message} placeholder={this.props.message} onChange={this.handleChange} />
+                            </div>
+                            <div className="text-left mt-3"><button type="submit">Send</button></div>
                         </div>
-                        <div className="text-left mt-3"><button type="submit">Send</button></div>
-                    </div>
-                </form>
-            </div>
-        </React.Fragment>
+                    </form>
+                </div>
+            </Fragment>
+        );
     }
 
 }

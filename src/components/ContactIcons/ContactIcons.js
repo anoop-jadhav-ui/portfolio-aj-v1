@@ -1,4 +1,3 @@
-import React from 'react'
 import './ContactIcons.css'
 
 import email from '../../assets/email.svg';

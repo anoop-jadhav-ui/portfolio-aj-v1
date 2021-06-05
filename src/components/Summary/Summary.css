@@ -1,4 +1,4 @@
-.mainlogo{
+/* .mainlogo{
     transition: all 1s ease-in-out ;
     animation: zoomIn 1s ease-in-out forwards;
 }
@@ -15,45 +15,44 @@
 
 .darkmode .mainlogo{
     filter: invert(94%) sepia(93%) saturate(0%) hue-rotate(122deg) brightness(103%) contrast(90%);
+} */
+
+.mainlogo {
+  width: 20rem;
+  height: 20rem;
+  border-radius: 50%;
+}
+@keyframes eyebrowmovementRight {
+  0% {
+    transform: translateY(0);
+  }
+  80% {
+    transform: rotate(6deg) translateY(-5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes eyebrowmovementLeft {
+  0% {
+    transform: translateY(0);
+  }
+  80% {
+    transform: rotate(-6deg) translateY(-5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
-@keyframes eyebrowmovementRight{
-    0%{
-        transform: translateY(0);
-    }
-    80%{
-        transform: rotate(6deg) translateY(-5px);
-
-    }
-    100%{
-        transform: translateY(0);
-    }
+@keyframes zoomIn {
+  0% {
+    transform: scale(0);
+  }
+  80% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
-@keyframes eyebrowmovementLeft{
-    0%{
-        transform: translateY(0);
-    }
-    80%{
-        transform: rotate(-6deg) translateY(-5px);
-
-    }
-    100%{
-        transform: translateY(0);
-    }
-}
-
-
-@keyframes zoomIn{
-    0%{
-        transform: scale(0);
-    }
-    80%{
-        transform: scale(1.1);
-    }
-    100%{
-        transform: scale(1);
-    }
-}
-
-
-

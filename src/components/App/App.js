@@ -1,8 +1,8 @@
-import React from "react";
+import { Component } from "react";
 import { connect } from "react-redux"
 import LeftPane from "../LeftPane/LeftPane";
 import MainBody from "../MainBody/MainBody";
-import leftPaneData from "../LeftPane/leftPaneData";
+// import leftPaneData from "../LeftPane/leftPaneData";
 import ToggleButton from "../ToggleButton/ToggleButton"
 import ContactIcons from '../ContactIcons/ContactIcons'
 import ErrorBoundary from '../ErrorBoundary/ErrorBoundary'
@@ -51,12 +51,12 @@ function isElementInViewport(el) {
   );
 }
 
-class App extends React.Component {
+class App extends Component {
   state = {
     darkMode: false,
     currentStep: 1,
     /*Variables used for transitions*/
-    leftPaneItems: leftPaneData,
+    leftPaneItems: [],
     scrollPos: 0,
     menuClickedItem: ""
   };
@@ -75,7 +75,7 @@ class App extends React.Component {
   }
 
   fetchHeaderPositions = () => {
-    var leftPaneItemsWithHeaderPos = this.state.leftPaneItems;
+    var leftPaneItemsWithHeaderPos = this.props.leftPaneData;
     leftPaneItemsWithHeaderPos.forEach(function (item) {
       var element = document.getElementsByClassName(item.class)[0];
       if (element) {
@@ -163,14 +163,14 @@ class App extends React.Component {
                 </div>
               </div>
               <ContactIcons data={this.props.dbData} className="rightpane" />
-              <LeftPane
+              {this.props.leftPaneData && <LeftPane
                 toggleLoader={this.props.toggleLoader}
                 currentStep={this.state.currentStep}
                 changeStep={this.changeStep}
                 leftPaneItems={this.state.leftPaneItems}
                 fetchHeaderPositions={this.fetchHeaderPositions}
                 darkMode={this.state.darkMode}
-              ></LeftPane>
+              ></LeftPane>}
               <MainBody
                 toggleLoader={this.props.toggleLoader}
                 currentStep={this.state.currentStep}
@@ -178,6 +178,7 @@ class App extends React.Component {
                 changeCurrentStepBasedOnScrollCalculation={this.changeCurrentStepBasedOnScrollCalculation}
                 dbData={this.props.dbData}
                 darkMode={this.state.darkMode}
+                leftPaneData={this.props.leftPaneData}
               ></MainBody>
             </div> : <Loader />
         }
@@ -190,6 +191,7 @@ class App extends React.Component {
 function mapStateToProps(state) {
   return {
     dbData: state.dr.data,
+    leftPaneData: state.dr.leftPaneData,
     showLoader: state.dr.showLoader
   }
 }

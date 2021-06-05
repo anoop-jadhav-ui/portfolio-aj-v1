@@ -1,5 +1,6 @@
 const initState = {
     data: {},
+    leftPaneData: [],
     showLoader: false
 }
 
@@ -7,11 +8,13 @@ function Reducer(state = initState, action) {
     switch (action.type) {
         case 'FETCH_SUCCEEDED': return {
             data: action.data.data,
+            leftPaneData: action.data.leftPaneData,
             showLoader: false
         }
         case 'FETCH_FAILED': return {
+            ...state,
             data: {},
-            ...state
+            leftPaneData: {}
         }
         case 'TOGGLE_LOADER': return {
             ...state,

@@ -1,4 +1,4 @@
-import React from 'react';
+import { Component } from 'react';
 import './LeftPane.css';
 
 // import { Link } from 'react-router-dom'
@@ -8,7 +8,7 @@ function LeftPaneItems(props) {
     item.label !== 'Work' &&
     // <li key={item.key} className={props.data.currentStep === item.key ? 'bold grey2' : 'grey4'}><Link to='/'>{item.label}</Link></li>
     // :
-    <li key={item.key} className={props.data.currentStep === item.key ? 'bold grey2' : 'grey4'}>
+    <li key={item.key} className={props.data.currentStep === item.key ? 'bold grey1' : 'grey3'}>
       <span href="" onClick={(e) => props.data.changeStep(item.key, e)}>{item.label}</span>
     </li>
   )
@@ -16,7 +16,7 @@ function LeftPaneItems(props) {
 }
 
 
-class LeftPane extends React.Component {
+class LeftPane extends Component {
   componentDidMount() {
     // if (this.state.currentStep == 1 && this.state.fetchFlag) {
     setTimeout(() => {
@@ -41,6 +41,7 @@ class LeftPane extends React.Component {
     }, 100)
 
   }
+
   render() {
     return <div className="left-pane position-fixed  d-none d-md-block">
       {/* {!this.props.darkMode ? 

@@ -1,4 +1,4 @@
-import React from "react";
+import { Component } from "react";
 import "./Portfolio.css";
 import headerLogo from "../../assets/leftpane-logo-dark.svg";
 import facebook from "../../assets/facebook.svg";
@@ -10,7 +10,7 @@ import closeButtonImage from "../../assets/cross-icon.svg";
 
 // import { Link } from "react-router-dom";
 
-class Portfolio extends React.Component {
+class Portfolio extends Component {
   state = {
     currentImage: "",
     currentStep: this.props.currentStep,

@@ -1,5 +1,5 @@
 import './BgAnimations.css'
-import React, { useEffect, useState} from 'react'
+import { useEffect, useState } from 'react';
 import PatternBox from './PatternBox'
 const BgAnimations = (props) => {
 

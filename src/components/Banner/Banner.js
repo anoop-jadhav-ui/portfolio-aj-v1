@@ -1,4 +1,3 @@
-import React from 'react'
 import './Banner.css'
 const Banner = (props) => {
     return <div className={`default-text banner ${props.type}-banner mb-2`}>

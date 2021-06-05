@@ -1,20 +1,21 @@
-import React, {useState, useEffect} from "react";
+import { useState, useEffect } from "react";
 // import KnowMoreButton from "../../assets/arrow-icon.svg";
 import BarGraph from "../BarGraph/BarGraph";
 import "./Education.css";
-import leftPaneData from '../LeftPane/leftPaneData'
+// import leftPaneData from '../LeftPane/leftPaneData'
 
 function Education(props) {
   let [sectionStep, setSectionStep] = useState();
-  useEffect(()=>{
-      let key = 0;
-      leftPaneData.forEach(ele=>{
-          if(ele.label === 'Education'){
-              key = ele.key;
-          }
-      })
-      setSectionStep(parseInt(key));
-  },[])
+
+  useEffect(() => {
+    let key = 0;
+    props.leftPaneData.forEach(ele => {
+      if (ele.label === 'Education') {
+        key = ele.key;
+      }
+    })
+    setSectionStep(parseInt(key));
+  }, [])
 
   return (
     <div
@@ -26,7 +27,7 @@ function Education(props) {
       <div className="section-title grey4 h2 bold">Education</div>
 
       <div className="subsection">
-        {props.dbData.education.map((ele,key) => {
+        {props.dbData.education.map((ele, key) => {
           return (
             <div className="subsection-wrappers" key={key}>
               <div className="subsection-title uppercase body-text grey3 letterspacing-1 mt-2">
