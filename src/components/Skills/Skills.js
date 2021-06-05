@@ -14,7 +14,7 @@ function Skills(props) {
             }
         })
         setSectionStep(parseInt(key));
-    }, [])
+    }, [props.leftPaneData])
     return <div className={"show-on-scroll col-md-7 page-1 text-left section skills " + props.class} >
         <div className="section-title grey4 h2 bold">Skills</div>
 

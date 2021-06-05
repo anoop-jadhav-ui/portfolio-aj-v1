@@ -15,7 +15,7 @@ function Education(props) {
       }
     })
     setSectionStep(parseInt(key));
-  }, [])
+  }, [props.leftPaneData])
 
   return (
     <div
