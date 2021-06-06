@@ -1,14 +1,14 @@
 .ToggleButton {
   position: relative;
-  width: 40px;
+  width: 36px;
   height: 1rem;
   display: flex;
   align-items: center;
 }
 
 .circle {
-  width: 18px;
-  height: 18px;
+  width: 17px;
+  height: 17px;
 
   border-radius: 50%;
 
@@ -22,7 +22,7 @@
 .bar {
   height: 20px;
   width: 100%;
-  border-radius: 10px;
+  border-radius: 50px;
   padding: 2px;
 }
 
@@ -38,5 +38,5 @@
 }
 #off .circle {
   background-color: #bdbdbd;
-  left: 1px;
+  left: 2px;
 }

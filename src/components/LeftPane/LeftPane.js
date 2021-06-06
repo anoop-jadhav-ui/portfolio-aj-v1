@@ -17,6 +17,12 @@ function LeftPaneItems(props) {
 
 
 class LeftPane extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      leftPaneVisible: true
+    }
+  }
   componentDidMount() {
     // if (this.state.currentStep == 1 && this.state.fetchFlag) {
     setTimeout(() => {
@@ -41,9 +47,19 @@ class LeftPane extends Component {
     }, 100)
 
   }
+  toggleLeftPane() {
+    this.setState(
+      {
+        leftPaneVisible: !this.state.leftPaneVisible
+      }
+    )
+  }
 
   render() {
-    return <div className="left-pane position-fixed  d-none d-md-block">
+    return <div className={`left-pane position-fixed d-none d-md-block ${this.state.leftPaneVisible ? 'open' : 'closed'}`}>
+      <div className="toggle-button" onClick={this.toggleLeftPane.bind(this)}>
+        <div className="arrow"></div>
+      </div>
       <ul className="menu body-text grey4">
         {<LeftPaneItems data={this.props} />}
       </ul>

@@ -1,12 +1,16 @@
 
-import { shallow } from 'enzyme';
-import App from './App';
+// import { configure, shallow, mount } from 'enzyme';
+// import Adapter from '@wojtekmaj/enzyme-adapter-react-17'
+// configure({ adapter: new Adapter() })
 
+// import App from './App';
+// import Store from '../Store/Store'
+// import { Provider } from 'react-redux'
 
-describe('<App />', () => {
-  it("renders <App /> Component", () => {
-    const wrapper = shallow(<App />);
-    expect(wrapper.find("Anoop Jadhav"));
-  })
-
-})
+// describe('<Portfolio App Testing/>', () => {
+//   it('calls componentDidMount', () => {
+//     const wrapper = mount(<Provider store={Store}><App /></Provider>);
+//     expect(App.prototype.componentDidMount).to.have.property('callCount', 1);
+//     App.prototype.componentDidMount.restore();
+//   })
+// })
