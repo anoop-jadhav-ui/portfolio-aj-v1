@@ -1,6 +1,6 @@
-import { Component } from 'react';
+import React, { Component } from 'react';
 import './LeftPane.css';
-
+import ContactIcons from '../ContactIcons/ContactIcons'
 // import { Link } from 'react-router-dom'
 
 function LeftPaneItems(props) {
@@ -44,13 +44,10 @@ class LeftPane extends Component {
 
   render() {
     return <div className="left-pane position-fixed  d-none d-md-block">
-      {/* {!this.props.darkMode ? 
-      <img src={LightLogo} alt="logo" /> : <img src={DarkLogo} alt="logo" />
-  } */}
       <ul className="menu body-text grey4">
         {<LeftPaneItems data={this.props} />}
       </ul>
-
+      <ContactIcons data={this.props.dbData} className="inside-leftpane" />
     </div>
   }
 

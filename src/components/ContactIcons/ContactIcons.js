@@ -7,7 +7,7 @@ import insta from '../../assets/insta.svg';
 
 const ContactIcons = (props) => {
     return (
-        <div className={ "horizontally-placed " + props.className }>
+        <div className={"horizontally-placed " + props.className}>
             <div className="subsection-data">
                 <a href={"mailto: " + props.data.contactDetails.emailId} title="Email Address"><img className="contactimg" src={email} alt="contact img"></img></a>
             </div>

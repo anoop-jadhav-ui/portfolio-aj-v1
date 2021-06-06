@@ -5,6 +5,20 @@
 :root {
   --grey-background: rgba(219, 219, 219, 0.2);
   --grey-background-darkmode: rgba(219, 219, 219, 0.1);
+
+  --grey1: #333333;
+  --grey1-darkmode: #f2f2f2;
+
+  --grey2: #4f4f4f;
+  --grey2-darkmode: #bdbdbd;
+
+  --grey3: #828282;
+
+  --grey4: #bdbdbd;
+
+  --grey5: #e0e0e0;
+
+  --grey6: #f2f2f2;
 }
 html {
   font-size: 16px;
@@ -123,33 +137,33 @@ ul > li a:hover {
 
 /*Colors*/
 .grey1 {
-  color: #333333;
+  color: var(--grey1);
 }
 .darkmode .grey1 {
-  color: #f2f2f2;
+  color: var(--grey1-darkmode);
 }
 .grey2,
 .grey2 > a {
-  color: #4f4f4f !important;
+  color: var(--grey2) !important;
 }
 
 .grey3 {
-  color: #828282;
+  color: var(--grey3);
 }
 .grey4,
 .grey4 > a {
-  color: #bdbdbd !important;
+  color: var(--grey4) !important;
 }
 .darkmode .grey2,
 .darkmode .grey2 > a {
-  color: #bdbdbd !important;
+  color: var(--grey2-darkmode) !important;
 }
 
 .grey5 {
-  color: #e0e0e0;
+  color: var(--grey5);
 }
 .grey6 {
-  color: #f2f2f2;
+  color: var(--grey6);
 }
 .red,
 .red > a {

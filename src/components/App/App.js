@@ -4,7 +4,7 @@ import LeftPane from "../LeftPane/LeftPane";
 import MainBody from "../MainBody/MainBody";
 // import leftPaneData from "../LeftPane/leftPaneData";
 import ToggleButton from "../ToggleButton/ToggleButton"
-import ContactIcons from '../ContactIcons/ContactIcons'
+
 import ErrorBoundary from '../ErrorBoundary/ErrorBoundary'
 
 import "./App.css";
@@ -161,7 +161,6 @@ class App extends Component {
                 <div className={`dark ${this.state.darkMode && 'bold'}`}>Dark</div>
               </div>
             </div>
-            <ContactIcons data={this.props.dbData} className="rightpane" />
             {this.props.leftPaneData && <LeftPane
               toggleLoader={this.props.toggleLoader}
               currentStep={this.state.currentStep}
@@ -169,6 +168,7 @@ class App extends Component {
               leftPaneItems={this.state.leftPaneItems}
               fetchHeaderPositions={this.fetchHeaderPositions}
               darkMode={this.state.darkMode}
+              dbData={this.props.dbData}
             ></LeftPane>}
             <MainBody
               toggleLoader={this.props.toggleLoader}
