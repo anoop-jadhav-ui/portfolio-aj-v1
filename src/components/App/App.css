@@ -56,10 +56,33 @@ body {
 }
 .h2 {
   font-size: 2rem; /*32px*/
+  display: inline;
+  position: relative;
+  /* animation: backgroundSlideOut 1s ease-in-out forwards; */
 }
+.h2:before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: -1.5rem;
+  width: 0.35rem;
+  height: 100%;
+  background: var(--red);
+}
+
+/* @keyframes backgroundSlideOut {
+  0% {
+    background: none;
+  }
+  100% {
+    background: var(--red);
+  }
+} */
+
 .h3 {
   font-size: 1.5rem; /*24*/
 }
+
 .h4 {
   font-size: 1.25rem; /*20px*/
 }
@@ -303,7 +326,7 @@ ul > li a:hover {
 
 /* Medium devices (tablets, 768px and up)*/
 @media (max-width: 1200px) {
-  html {
+  :root {
     font-size: 11px;
   }
   .App {
