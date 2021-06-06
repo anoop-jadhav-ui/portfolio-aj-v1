@@ -29,7 +29,7 @@ class Summary extends Component {
           <path d="M161.831 229.614L149.921 259.975L132.739 277.255H64.9873L48.7816 260.952L35.8951 229.614L10.7078 202.572L12.1722 229.614L23.3991 265.735L53.4676 296.097V296.389L69.5757 312.009L99.5466 312.4L129.42 312.009L174.23 265.735L185.554 229.614L187.116 202.572L161.831 229.614Z" fill="#333333" />
         </svg> */}
 
-        <img src={myImage} className="mainlogo" alt="mi Baburao" />
+        <img src={myImage} className="mainlogo" alt="mi Baburao" loading="eager" />
 
 
         <div className="h1 bold main-title grey-1">
