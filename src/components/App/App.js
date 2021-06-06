@@ -1,4 +1,4 @@
-import { Component } from "react";
+import React, { Component } from "react";
 import { connect } from "react-redux"
 import LeftPane from "../LeftPane/LeftPane";
 import MainBody from "../MainBody/MainBody";
@@ -153,34 +153,34 @@ class App extends Component {
     return (
       <ErrorBoundary>
         {
-          this.props.dbData && Object.keys(this.props.dbData).length > 0 ?
-            <div className={`App summary row no-gutters fade show ${this.state.darkMode ? 'darkmode' : ''}`}>
-              <div className="darkModeWrapper">
-                <div className="darkModeButton" onClick={() => this.toDarkMode()} >
-                  <div className={`light ${!this.state.darkMode && 'bold'}`}>Light</div>
-                  <ToggleButton onClick={() => this.toDarkMode()} value={this.state.darkMode} />
-                  <div className={`dark ${this.state.darkMode && 'bold'}`}>Dark</div>
-                </div>
+          this.props.showLoader ? <Loader /> : <div className={`App summary row no-gutters fade show ${this.state.darkMode ? 'darkmode' : ''}`}>
+            <div className="darkModeWrapper">
+              <div className="darkModeButton" onClick={() => this.toDarkMode()} >
+                <div className={`light ${!this.state.darkMode && 'bold'}`}>Light</div>
+                <ToggleButton onClick={() => this.toDarkMode()} value={this.state.darkMode} />
+                <div className={`dark ${this.state.darkMode && 'bold'}`}>Dark</div>
               </div>
-              <ContactIcons data={this.props.dbData} className="rightpane" />
-              {this.props.leftPaneData && <LeftPane
-                toggleLoader={this.props.toggleLoader}
-                currentStep={this.state.currentStep}
-                changeStep={this.changeStep}
-                leftPaneItems={this.state.leftPaneItems}
-                fetchHeaderPositions={this.fetchHeaderPositions}
-                darkMode={this.state.darkMode}
-              ></LeftPane>}
-              <MainBody
-                toggleLoader={this.props.toggleLoader}
-                currentStep={this.state.currentStep}
-                changeStep={this.changeStep}
-                changeCurrentStepBasedOnScrollCalculation={this.changeCurrentStepBasedOnScrollCalculation}
-                dbData={this.props.dbData}
-                darkMode={this.state.darkMode}
-                leftPaneData={this.props.leftPaneData}
-              ></MainBody>
-            </div> : <Loader />
+            </div>
+            <ContactIcons data={this.props.dbData} className="rightpane" />
+            {this.props.leftPaneData && <LeftPane
+              toggleLoader={this.props.toggleLoader}
+              currentStep={this.state.currentStep}
+              changeStep={this.changeStep}
+              leftPaneItems={this.state.leftPaneItems}
+              fetchHeaderPositions={this.fetchHeaderPositions}
+              darkMode={this.state.darkMode}
+            ></LeftPane>}
+            <MainBody
+              toggleLoader={this.props.toggleLoader}
+              currentStep={this.state.currentStep}
+              changeStep={this.changeStep}
+              changeCurrentStepBasedOnScrollCalculation={this.changeCurrentStepBasedOnScrollCalculation}
+              dbData={this.props.dbData}
+              darkMode={this.state.darkMode}
+              leftPaneData={this.props.leftPaneData}
+            ></MainBody>
+          </div>
+
         }
       </ErrorBoundary>
     )

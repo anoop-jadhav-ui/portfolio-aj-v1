@@ -1,7 +1,7 @@
 const initState = {
     data: {},
     leftPaneData: [],
-    showLoader: false
+    showLoader: true
 }
 
 function Reducer(state = initState, action) {

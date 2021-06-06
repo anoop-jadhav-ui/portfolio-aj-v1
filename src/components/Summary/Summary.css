@@ -18,10 +18,16 @@
 } */
 
 .mainlogo {
+  opacity: 0;
   width: 20rem;
   height: 20rem;
   border-radius: 50%;
+  transition: opacity 0.5s ease-in-out;
 }
+.loaded {
+  opacity: 1;
+}
+
 @keyframes eyebrowmovementRight {
   0% {
     transform: translateY(0);
