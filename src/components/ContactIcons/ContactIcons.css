@@ -44,9 +44,9 @@
   border-top: 1px solid var(--grey5);
 }
 
-/* .darkmode .rightpane {
-  background-color: var(--grey-background-darkmode);
-} */
+.darkmode .inside-leftpane {
+  border-top: 1px solid var(--grey-background-darkmode);
+}
 .inside-leftpane.horizontally-placed .subsection-data {
   margin-top: 0;
 }

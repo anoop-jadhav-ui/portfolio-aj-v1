@@ -156,9 +156,7 @@ class App extends Component {
           this.props.showLoader ? <Loader /> : <div className={`App summary row no-gutters fade show ${this.state.darkMode ? 'darkmode' : ''}`}>
             <div className="darkModeWrapper">
               <div className="darkModeButton" onClick={() => this.toDarkMode()} >
-                <div className={`light ${!this.state.darkMode && 'bold'}`}>Light</div>
-                <ToggleButton onClick={() => this.toDarkMode()} value={this.state.darkMode} />
-                <div className={`dark ${this.state.darkMode && 'bold'}`}>Dark</div>
+                <ToggleButton onClick={() => this.toDarkMode()} value={this.state.darkMode} trueLabel="Dark" falseLabel="Light" />
               </div>
             </div>
             {this.props.leftPaneData && <LeftPane
