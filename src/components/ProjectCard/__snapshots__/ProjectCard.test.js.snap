@@ -1,0 +1,82 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MyComponent should render correctly in "debug" mode 1`] = `
+<div
+  className="projectcard"
+>
+  <div>
+    <div
+      className="header h4 bold"
+    >
+      Guest Tracker
+    </div>
+    <div
+      className="tags"
+    >
+      <div
+        className="tag label"
+        key="0"
+        title="React Js"
+      >
+        React Js
+      </div>
+      <div
+        className="tag label"
+        key="1"
+        title="Firebase"
+      >
+        Firebase
+      </div>
+    </div>
+    <div
+      className="description"
+    >
+      A React App to manage guests or organize an event. The idea behind creation of this app was to manage the guests or events in this covid pandemic situation because of the limition on the number of guests allowed by the government authorities.
+    </div>
+  </div>
+  <div
+    className="footer"
+  >
+    <div
+      className="projectlinks"
+    >
+      <a
+        href="https://github.com/Anoopjadhav/guest-tracker"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <img
+          alt="github"
+          className="contactimg"
+          src="github.svg"
+          title="view project on github"
+        />
+      </a>
+      <a
+        href="https://guesttracker.netlify.app"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <img
+          alt="github"
+          className="contactimg"
+          src="weblink.svg"
+          title="open app"
+        />
+      </a>
+    </div>
+    <div
+      className="projectstatus Complete"
+    >
+      <div
+        className="statuscircle"
+      />
+      <div
+        className="label"
+      >
+        Complete
+      </div>
+    </div>
+  </div>
+</div>
+`;

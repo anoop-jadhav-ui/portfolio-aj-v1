@@ -52,7 +52,7 @@ class Feedback extends Component {
                 break;
         }
 
-        return errMessage !== '' && <Banner type={this.props.messageStatus} text={errMessage} closeBanner={() => this.props.updateBannerStatus('')}/>
+        return errMessage !== '' && <Banner type={this.props.messageStatus} text={errMessage} closeBanner={() => this.props.updateBannerStatus('')} />
     }
     render() {
         return (
@@ -94,3 +94,4 @@ function mapDispatchToProps(dispatch) {
 
 
 export default connect(mapStateToProps, mapDispatchToProps)(Feedback);
+export { Feedback };

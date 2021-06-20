@@ -1,0 +1,113 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MyComponent should render correctly in "debug" mode 1`] = `
+<div
+  className="show-on-scroll col-md-7 page-1 text-left section work-experience undefined"
+>
+  <div
+    className="section-title grey4 h2 bold"
+  >
+    Work Experience
+  </div>
+  <div
+    className="subsection"
+  >
+    <div
+      className="subsection-data"
+      key="0"
+    >
+      <span
+        className="h3 grey1 bold"
+      >
+        Thoughtworks
+      </span>
+      <div
+        className="label grey3 light mt-1 letterspacing-2 row no-gutters align-items-center"
+      >
+        <span
+          className="pr-3"
+        >
+          Currently Working
+        </span>
+        <span
+          className="dot"
+        />
+        <span
+          className="pl-3"
+        >
+          2 Months
+        </span>
+      </div>
+      <div
+        className="mt-3 grey-1 body-text"
+      >
+        Thoughtworks has been my dream company since college days because of its work culture. It is widely know for the intellectual minds who are solving complex problem using technology. I am really excited to work on new challenges here in Thoughtworks.
+      </div>
+    </div>
+    <div
+      className="subsection-data"
+      key="1"
+    >
+      <span
+        className="h3 grey1 bold"
+      >
+        Deloitte
+      </span>
+      <div
+        className="label grey3 light mt-1 letterspacing-2 row no-gutters align-items-center"
+      >
+        <span
+          className="pr-3"
+        >
+          2016-2021
+        </span>
+        <span
+          className="dot"
+        />
+        <span
+          className="pl-3"
+        >
+          4 Years
+        </span>
+      </div>
+      <div
+        className="mt-3 grey-1 body-text"
+      >
+        In Deloitte, I started with a public sector project for State of Michigan where we built a custom application on salesforce using salesforce lightning components. Along with the project I worked on several Firm initiatives built on React Js - One of the major project being Elixir where we build a React app for non developers similar to wordpress/squarespace having the drag and drop functionality to generate salesforce components. Due to the open culture in Deloitte, I also got the opportunity to work on design projects which involved in-house web/mobile app design, several posters, mailers, infographics, brochure designs and branding. 
+      </div>
+    </div>
+    <div
+      className="subsection-data"
+      key="2"
+    >
+      <span
+        className="h3 grey1 bold"
+      >
+        Cognizant
+      </span>
+      <div
+        className="label grey3 light mt-1 letterspacing-2 row no-gutters align-items-center"
+      >
+        <span
+          className="pr-3"
+        >
+          2014-2016
+        </span>
+        <span
+          className="dot"
+        />
+        <span
+          className="pl-3"
+        >
+          2 Years
+        </span>
+      </div>
+      <div
+        className="mt-3 grey-1 body-text"
+      >
+        Initially started my career in Cognizant as a SAP BASIS consultant. but due to my interest in web technologies I switched to a UI Developer role and worked on various projects using tools and technologies like Angular JS 1.x., React Js, Jquery, Bootstrap, Git etc.
+      </div>
+    </div>
+  </div>
+</div>
+`;

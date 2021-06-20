@@ -1,7 +1,9 @@
+
 * {
   margin: 0;
   padding: 0;
 }
+
 :root {
   --grey-background: rgba(219, 219, 219, 0.2);
   --grey-background-darkmode: rgba(219, 219, 219, 0.1);
@@ -25,9 +27,7 @@
   font-size: 18px;
 }
 
-body {
-  font-family: "Montserrat", "Open Sans", "Helvetica";
-}
+
 .App {
   padding: 5.25rem;
   transition: background-color 0.5s ease-in-out;

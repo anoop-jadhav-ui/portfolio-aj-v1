@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MyComponent should render correctly in "debug" mode 1`] = `
+<div
+  className="show-on-scroll col-md-7 page-1 text-left section projects undefined"
+>
+  <div
+    className="section-title grey4 h2 bold"
+  >
+    Recent Projects
+  </div>
+  <div
+    className="subsection projectsectionbody showsome"
+  />
+  <div
+    className="default-text red scroll-text thin"
+    onClick={[Function]}
+  >
+    View All Projects
+  </div>
+</div>
+`;

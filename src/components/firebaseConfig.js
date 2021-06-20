@@ -1,4 +1,5 @@
-import * as firebase from 'firebase'
+import firebase from '@firebase/app'
+import '@firebase/database'
 
 var config = {
     apiKey: process.env.REACT_APP_FIREBASE_KEY,
@@ -11,6 +12,7 @@ var config = {
     measurementId: process.env.REACT_APP_MEASUREMENT_ID
 };
 
+console.log(config);
 firebase.initializeApp(config);
 
 let firebaseData = new Promise((resolve,reject) => {

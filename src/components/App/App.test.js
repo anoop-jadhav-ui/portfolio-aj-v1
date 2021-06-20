@@ -1,16 +1,27 @@
+import React from 'react';
+import { shallow } from 'enzyme';
+import { App } from './App';
 
-// import { configure, shallow, mount } from 'enzyme';
-// import Adapter from '@wojtekmaj/enzyme-adapter-react-17'
-// configure({ adapter: new Adapter() })
+import dummyData from '../TestData/testData.json'
 
-// import App from './App';
-// import Store from '../Store/Store'
-// import { Provider } from 'react-redux'
-
-// describe('<Portfolio App Testing/>', () => {
-//   it('calls componentDidMount', () => {
-//     const wrapper = mount(<Provider store={Store}><App /></Provider>);
-//     expect(App.prototype.componentDidMount).to.have.property('callCount', 1);
-//     App.prototype.componentDidMount.restore();
-//   })
-// })
+describe('MyComponent', () => {
+    it('should render correctly in "debug" mode', () => {
+        let props = {
+            dbData: dummyData,
+            leftPaneData: [
+                {
+                    class: "summary",
+                    headerPos: 0,
+                    id: "summary",
+                    key: 0,
+                    label: "Summary"
+                }
+            ],
+            showLoader: false,
+            toggleLoader: jest.fn(),
+            fetchData: jest.fn()
+        }
+        const component = shallow(<App {...props} />);
+        expect(component).toMatchSnapshot();
+    });
+});

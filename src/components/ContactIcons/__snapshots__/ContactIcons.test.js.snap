@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MyComponent should render correctly in "debug" mode 1`] = `
+<div
+  className="horizontally-placed undefined"
+>
+  <div
+    className="subsection-data"
+  >
+    <a
+      href="mailto: anoopjadhav@gmail.com"
+      title="Email Address"
+    >
+      <img
+        alt="contact img"
+        className="contactimg"
+        src="email.svg"
+      />
+    </a>
+  </div>
+  <div
+    className="subsection-data"
+  >
+    <a
+      href="https://www.linkedin.com/in/anoop-jadhav-44528258"
+      rel="noopener noreferrer"
+      target="_blank"
+      title="Linkedin"
+    >
+      <img
+        alt="linkedin img"
+        className="contactimg"
+        src="linkedin.svg"
+      />
+    </a>
+  </div>
+  <div
+    className="subsection-data"
+  >
+    <a
+      href="https://www.instagram.com/anoop.designs"
+      rel="noopener noreferrer"
+      target="_blank"
+      title="Instagram"
+    >
+      <img
+        alt="Instagram img"
+        className="contactimg"
+        src="insta.svg"
+      />
+    </a>
+  </div>
+  <div
+    className="subsection-data"
+  >
+    <a
+      href="https://github.com/Anoopjadhav"
+      rel="noopener noreferrer"
+      target="_blank"
+      title="Github"
+    >
+      <img
+        alt="github img"
+        className="contactimg"
+        src="github.svg"
+      />
+    </a>
+  </div>
+</div>
+`;

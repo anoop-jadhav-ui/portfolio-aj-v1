@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MyComponent should render correctly in "debug" mode 1`] = `
+<div
+  className="show-on-scroll col-md-7 page-1 text-center undefined"
+>
+  <img
+    alt="mi Baburao"
+    className="mainlogo loading"
+    loading="eager"
+    onError={[Function]}
+    onLoad={[Function]}
+    src="AnoopJadhav.png"
+  />
+  <div
+    className="h1 bold main-title grey-1"
+  >
+    Anoop Jadhav
+  </div>
+  <div
+    className="h4 uppercase letterspacing-1 red bold"
+  >
+    UI DEVELOPER
+  </div>
+  <div
+    className="body-text summary-text"
+  >
+    A passionate UI Developer with around 6 years of experience using tools and technologies like HTML, CSS, JavaScript, React Js, Vue Js, Salesforce Lightning Components, Salesforce LWC,  Adobe Illustrator, Adobe XD, Figma, and Sketch.
+  </div>
+  <div
+    className="default-text red scroll-text thin"
+  >
+    Scroll to Know more
+  </div>
+</div>
+`;

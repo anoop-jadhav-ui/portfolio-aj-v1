@@ -1,28 +1,12 @@
-import { Component } from 'react';
+import React, { Component } from 'react';
+
 import './Loader.css'
 class Loader extends Component {
     state = {
         quote: '',
         author: ''
     }
-    componentDidMount() {
 
-        // fetch('https://api.quotable.io/random')
-        //     .then(response => response.json())
-        //     .then(data => {
-        //         //console.log(`${data.content} —${data.author}`)
-
-        //         this.setState(() => {
-        //             return {
-        //                 quote: data.content,
-        //                 author: data.author
-        //             }
-        //         })
-
-        //     })
-
-
-    }
     render() {
         return <div className="loader">
             <div className="svg-wrapper">

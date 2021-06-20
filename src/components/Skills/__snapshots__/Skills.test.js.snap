@@ -1,0 +1,151 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MyComponent should render correctly in "debug" mode 1`] = `
+<div
+  className="show-on-scroll col-md-7 page-1 text-left section skills undefined"
+>
+  <div
+    className="section-title grey4 h2 bold"
+  >
+    Skills
+  </div>
+  <div
+    className="subsection"
+  >
+    <div
+      className="subsection-title uppercase body-text grey3 letterspacing-1"
+    >
+      Development
+    </div>
+    <div
+      className="subsection-data"
+    >
+      <div
+        className="skill-bar-wrapper row no-gutters align-items-center"
+        key="0"
+      >
+        <div
+          className="skill-label grey-1 body-text bold col-md-3"
+        >
+          HTML
+        </div>
+        <BarGraph
+          class="col-md-9"
+          value="80"
+        />
+      </div>
+      <div
+        className="skill-bar-wrapper row no-gutters align-items-center"
+        key="1"
+      >
+        <div
+          className="skill-label grey-1 body-text bold col-md-3"
+        >
+          CSS
+        </div>
+        <BarGraph
+          class="col-md-9"
+          value="80"
+        />
+      </div>
+      <div
+        className="skill-bar-wrapper row no-gutters align-items-center"
+        key="2"
+      >
+        <div
+          className="skill-label grey-1 body-text bold col-md-3"
+        >
+          JavaScript
+        </div>
+        <BarGraph
+          class="col-md-9"
+          value="80"
+        />
+      </div>
+      <div
+        className="skill-bar-wrapper row no-gutters align-items-center"
+        key="3"
+      >
+        <div
+          className="skill-label grey-1 body-text bold col-md-3"
+        >
+          React Js
+        </div>
+        <BarGraph
+          class="col-md-9"
+          value="80"
+        />
+      </div>
+      <div
+        className="skill-bar-wrapper row no-gutters align-items-center"
+        key="4"
+      >
+        <div
+          className="skill-label grey-1 body-text bold col-md-3"
+        >
+          Salesforce LWC
+        </div>
+        <BarGraph
+          class="col-md-9"
+          value="60"
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    className="subsection"
+  >
+    <div
+      className="subsection-title uppercase body-text grey3 letterspacing-1"
+    >
+      Design
+    </div>
+    <div
+      className="subsection-data"
+    >
+      <div
+        className="skill-bar-wrapper row no-gutters align-items-center"
+        key="0"
+      >
+        <div
+          className="skill-label grey-1 body-text bold col-md-3"
+        >
+          Adobe Illustrator
+        </div>
+        <BarGraph
+          class="col-md-9"
+          value="40"
+        />
+      </div>
+      <div
+        className="skill-bar-wrapper row no-gutters align-items-center"
+        key="1"
+      >
+        <div
+          className="skill-label grey-1 body-text bold col-md-3"
+        >
+          Figma
+        </div>
+        <BarGraph
+          class="col-md-9"
+          value="80"
+        />
+      </div>
+      <div
+        className="skill-bar-wrapper row no-gutters align-items-center"
+        key="2"
+      >
+        <div
+          className="skill-label grey-1 body-text bold col-md-3"
+        >
+          Adobe XD
+        </div>
+        <BarGraph
+          class="col-md-9"
+          value="50"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;

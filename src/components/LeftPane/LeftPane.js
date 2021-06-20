@@ -1,13 +1,10 @@
 import React, { Component } from 'react';
 import './LeftPane.css';
 import ContactIcons from '../ContactIcons/ContactIcons'
-// import { Link } from 'react-router-dom'
 
 function LeftPaneItems(props) {
   var listItems = props.data.leftPaneItems.map((item) =>
     item.label !== 'Work' &&
-    // <li key={item.key} className={props.data.currentStep === item.key ? 'bold grey2' : 'grey4'}><Link to='/'>{item.label}</Link></li>
-    // :
     <li key={item.key} className={props.data.currentStep === item.key ? 'bold grey1' : 'grey3'}>
       <span href="" onClick={(e) => props.data.changeStep(item.key, e)}>{item.label}</span>
     </li>
@@ -71,3 +68,4 @@ class LeftPane extends Component {
 }
 
 export default LeftPane;
+export { LeftPane };
