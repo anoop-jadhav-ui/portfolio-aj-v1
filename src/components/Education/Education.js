@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 // import KnowMoreButton from "../../assets/arrow-icon.svg";
 import BarGraph from "../BarGraph/BarGraph";
 import "./Education.css";
@@ -9,13 +9,13 @@ function Education(props) {
 
   useEffect(() => {
     let key = 0;
-    props.leftPaneData.forEach(ele => {
-      if (ele.label === 'Education') {
+    props.leftPaneData.forEach((ele) => {
+      if (ele.label === "Education") {
         key = ele.key;
       }
-    })
+    });
     setSectionStep(parseInt(key));
-  }, [props.leftPaneData])
+  }, [props.leftPaneData]);
 
   return (
     <div

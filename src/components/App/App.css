@@ -1,4 +1,3 @@
-
 * {
   margin: 0;
   padding: 0;
@@ -27,7 +26,6 @@
   font-size: 18px;
 }
 
-
 .App {
   padding: 5.25rem;
   transition: background-color 0.5s ease-in-out;
@@ -42,7 +40,7 @@
 }
 
 .bold {
-  font-weight: bold;
+  font-weight: bold !important;
 }
 .letterspacing-1 {
   letter-spacing: 1px;
@@ -69,16 +67,6 @@
   height: 100%;
   background: var(--red);
 }
-
-/* @keyframes backgroundSlideOut {
-  0% {
-    background: none;
-  }
-  100% {
-    background: var(--red);
-  }
-} */
-
 .h3 {
   font-size: 1.5rem; /*24*/
 }

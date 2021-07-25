@@ -1,3 +1,4 @@
+import React from "react";
 import "./Certifications.css";
 
 function Certifications(props) {
@@ -15,16 +16,21 @@ function Certifications(props) {
         </div>
 
         {props.dbData.certifications.development.map((ele, key) => {
-          return <div className="subsection-data" key={key}>
-            <span className="h3 grey1 bold">{ele.name}</span>
-            <div className="red default-text mt-1">
-              <a href={ele.urlToCertificate} target="_Blank" rel="noopener noreferrer">
-                View LinkedIn profile
+          return (
+            <div className="subsection-data" key={key}>
+              <span className="h3 grey1 bold">{ele.name}</span>
+              <div className="red default-text mt-1">
+                <a
+                  href={ele.urlToCertificate}
+                  target="_Blank"
+                  rel="noopener noreferrer"
+                >
+                  View LinkedIn profile
                 </a>
+              </div>
+              <div className="mt-2 grey-1 body-text">{ele.summary}</div>
             </div>
-            <div className="mt-2 grey-1 body-text">{ele.summary}</div>
-          </div>
-
+          );
         })}
       </div>
       <div className="subsection">
@@ -32,16 +38,21 @@ function Certifications(props) {
           Design
         </div>
         {props.dbData.certifications.design.map((ele, key) => {
-          return <div className="subsection-data" key={key}>
-            <span className="h3 grey1 bold">{ele.name}</span>
-            <div className="red default-text mt-1">
-              <a href={ele.urlToCertificate} target="_Blank" rel="noopener noreferrer">
-                View LinkedIn profile
+          return (
+            <div className="subsection-data" key={key}>
+              <span className="h3 grey1 bold">{ele.name}</span>
+              <div className="red default-text mt-1">
+                <a
+                  href={ele.urlToCertificate}
+                  target="_Blank"
+                  rel="noopener noreferrer"
+                >
+                  View LinkedIn profile
                 </a>
+              </div>
+              <div className="mt-2 grey-1 body-text">{ele.summary}</div>
             </div>
-            <div className="mt-2 grey-1 body-text">{ele.summary}</div>
-          </div>
-
+          );
         })}
       </div>
     </div>
