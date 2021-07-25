@@ -18,18 +18,18 @@ let props = {
       headerPos: 0,
       id: "summary",
       key: 0,
-      label: "Summary"
-    }
+      label: "Summary",
+    },
   ],
   showLoader: false,
   toggleLoader: jest.fn(),
-  fetchData: jest.fn().mockReturnValueOnce(dummyData)
+  fetchData: jest.fn().mockReturnValueOnce(dummyData),
 };
 
 test("Should render App", async () => {
   let props = {
     toggleLoader: jest.fn(),
-    fetchData: jest.fn().mockReturnValueOnce(dummyData)
+    fetchData: jest.fn().mockReturnValueOnce(dummyData),
   };
   render(<App {...props} />);
 });

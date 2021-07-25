@@ -9,31 +9,31 @@ module.exports = {
   output: {
     filename: "bundle.js",
     path: path.resolve(__dirname, "./dist"),
-    publicPath: ""
+    publicPath: "",
   },
   devServer: {
     contentBase: path.resolve(__dirname, "./dist"),
     index: "index.html",
     port: "9000",
-    writeToDisk: true
+    writeToDisk: true,
   },
   module: {
     rules: [
       {
         test: /\.(svg)$/,
-        type: "asset/inline"
+        type: "asset/inline",
       },
       {
         test: /\.(ttf)$/,
-        type: "asset/resource"
+        type: "asset/resource",
       },
       {
         test: /\.(png|jpg)$/,
-        type: "asset/resource"
+        type: "asset/resource",
       },
       {
         test: /\.(css)$/,
-        use: ["style-loader", "css-loader"]
+        use: ["style-loader", "css-loader"],
       },
       {
         test: /\.js$/,
@@ -45,30 +45,30 @@ module.exports = {
               presets: ["@babel/preset-env", "@babel/preset-react"],
               plugins: [
                 "@babel/plugin-syntax-dynamic-import",
-                "@babel/plugin-proposal-class-properties"
-              ]
-            }
+                "@babel/plugin-proposal-class-properties",
+              ],
+            },
           },
           {
-            loader: "eslint-loader"
-          }
-        ]
-      }
-    ]
+            loader: "eslint-loader",
+          },
+        ],
+      },
+    ],
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.join(__dirname, "src", "index.html")
+      template: path.join(__dirname, "src", "index.html"),
     }),
     new CleanWebpackPlugin({
       cleanOnceBeforeBuildPatterns: [
         "**/*",
-        path.join(process.cwd(), "build/**/*")
-      ]
+        path.join(process.cwd(), "build/**/*"),
+      ],
     }),
     new webpack.ProvidePlugin({
       process: "process/browser",
-      React: "react"
+      React: "react",
     }),
     new webpack.EnvironmentPlugin({
       REACT_APP_FIREBASE_KEY: "AIzaSyBcfmHiwjgUjgya5oma3cZRqtlRqDPpmSY",
@@ -79,7 +79,7 @@ module.exports = {
       REACT_APP_STORAGE_BUCKET: "dev-anoops-portfolio.appspot.com",
       REACT_APP_SENDER_ID: "879863340049",
       REACT_APP_APP_ID: "1:879863340049:web:bbfe831cd53e1329fc65b0",
-      REACT_APP_MEASUREMENT_ID: "G-YL01N06BFG"
-    })
-  ]
+      REACT_APP_MEASUREMENT_ID: "G-YL01N06BFG",
+    }),
+  ],
 };

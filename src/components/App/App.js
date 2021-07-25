@@ -57,13 +57,13 @@ class App extends Component {
     /*Variables used for transitions*/
     leftPaneItems: [],
     scrollPos: 0,
-    menuClickedItem: ""
+    menuClickedItem: "",
   };
 
   setClickedItem = (clickedItem) => {
     this.setState(() => {
       return {
-        menuClickedItem: clickedItem
+        menuClickedItem: clickedItem,
       };
     });
   };
@@ -84,7 +84,7 @@ class App extends Component {
     });
     this.setState(() => {
       return {
-        leftPaneItems: leftPaneItemsWithHeaderPos
+        leftPaneItems: leftPaneItemsWithHeaderPos,
       };
     });
   };
@@ -104,7 +104,7 @@ class App extends Component {
             this.setState(() => {
               return {
                 currentStep: item.key,
-                scrollPos: scrollTop
+                scrollPos: scrollTop,
               };
             });
           }
@@ -116,7 +116,7 @@ class App extends Component {
   changeStep = (newStep, event, skip) => {
     this.setState(() => {
       return {
-        currentStep: newStep
+        currentStep: newStep,
       };
     });
     //scroll to element logic
@@ -127,7 +127,7 @@ class App extends Component {
       ele[0].scrollIntoView({
         behavior: "smooth",
         block: "start",
-        inline: "nearest"
+        inline: "nearest",
       });
   };
 
@@ -135,13 +135,13 @@ class App extends Component {
     if (!this.state.darkMode) {
       this.setState(() => {
         return {
-          darkMode: true
+          darkMode: true,
         };
       });
     } else {
       this.setState(() => {
         return {
-          darkMode: false
+          darkMode: false,
         };
       });
     }
@@ -201,14 +201,14 @@ function mapStateToProps(state) {
   return {
     dbData: state.dr.data,
     leftPaneData: state.dr.leftPaneData,
-    showLoader: state.dr.showLoader
+    showLoader: state.dr.showLoader,
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
     fetchData: () => dispatch({ type: "FETCH_INIT_DATA" }),
-    toggleLoader: (value) => dispatch({ type: "TOGGLE_LOADER", data: value })
+    toggleLoader: (value) => dispatch({ type: "TOGGLE_LOADER", data: value }),
   };
 }
 
