@@ -1,35 +1,38 @@
-import React, { Component } from 'react';
-import './LeftPane.css';
-import ContactIcons from '../ContactIcons/ContactIcons'
-// import { Link } from 'react-router-dom'
+import React, { Component } from "react";
+import "./LeftPane.css";
+import ContactIcons from "../ContactIcons/ContactIcons";
 
 function LeftPaneItems(props) {
-  var listItems = props.data.leftPaneItems.map((item) =>
-    item.label !== 'Work' &&
-    // <li key={item.key} className={props.data.currentStep === item.key ? 'bold grey2' : 'grey4'}><Link to='/'>{item.label}</Link></li>
-    // :
-    <li key={item.key} className={props.data.currentStep === item.key ? 'bold grey1' : 'grey3'}>
-      <span href="" onClick={(e) => props.data.changeStep(item.key, e)}>{item.label}</span>
-    </li>
-  )
-  return listItems
+  var listItems = props.data.leftPaneItems.map(
+    (item) =>
+      item.label !== "Work" && (
+        <li
+          key={item.key}
+          className={
+            props.data.currentStep === item.key ? "bold grey1" : "grey3"
+          }
+        >
+          <span href="" onClick={(e) => props.data.changeStep(item.key, e)}>
+            {item.label}
+          </span>
+        </li>
+      )
+  );
+  return listItems;
 }
-
 
 class LeftPane extends Component {
   constructor(props) {
     super(props);
     this.state = {
       leftPaneVisible: true
-    }
+    };
   }
   componentDidMount() {
-    // if (this.state.currentStep == 1 && this.state.fetchFlag) {
     setTimeout(() => {
-      var ele = document.getElementsByClassName('summary')
+      var ele = document.getElementsByClassName("summary");
       try {
-        if (ele[0])
-          ele[0].scrollIntoView()
+        if (ele[0]) ele[0].scrollIntoView();
       } catch (e) {
         console.log(e);
       }
@@ -37,37 +40,42 @@ class LeftPane extends Component {
       this.setState(() => {
         return {
           currentStep: 1
-        }
-      })
-    }, 100)
+        };
+      });
+    }, 100);
 
     setTimeout(() => {
       this.props.fetchHeaderPositions();
       //function to fetch all the header positions
-    }, 100)
-
+    }, 100);
   }
   toggleLeftPane() {
-    this.setState(
-      {
-        leftPaneVisible: !this.state.leftPaneVisible
-      }
-    )
+    this.setState({
+      leftPaneVisible: !this.state.leftPaneVisible
+    });
   }
 
   render() {
-    return <div className={`left-pane position-fixed d-none d-md-block ${this.state.leftPaneVisible ? 'open' : 'closed'}`}>
-      <div className="toggle-button" onClick={this.toggleLeftPane.bind(this)}>
-        <div className="arrow"></div>
+    return (
+      <div
+        className={`left-pane position-fixed d-none d-md-block ${
+          this.state.leftPaneVisible ? "open" : "closed"
+        }`}
+      >
+        <div className="toggle-button" onClick={this.toggleLeftPane.bind(this)}>
+          <div className="arrow"></div>
+        </div>
+        <ul className="menu body-text grey4">
+          {<LeftPaneItems data={this.props} />}
+        </ul>
+        <ContactIcons
+          contactDetails={this.props.dbData.contactDetails}
+          className="inside-leftpane"
+        />
       </div>
-      <ul className="menu body-text grey4">
-        {<LeftPaneItems data={this.props} />}
-      </ul>
-      <ContactIcons data={this.props.dbData} className="inside-leftpane" />
-    </div>
+    );
   }
-
-
 }
 
 export default LeftPane;
+export { LeftPane };

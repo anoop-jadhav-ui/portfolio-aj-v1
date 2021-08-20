@@ -1,104 +1,104 @@
-.projectcard{
-    border:1px solid #E0E0E0;
-    padding:1.5rem 1rem !important;
-    border-radius: 0.25rem;
-    min-width: 20rem;
-    width: 33.33%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    cursor: pointer;
+.projectcard {
+  border: 1px solid #e0e0e0;
+  padding: 1.5rem 1rem !important;
+  border-radius: 0.25rem;
+  min-width: 20rem;
+  width: 33.33%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
 }
-.projectcard:hover{
-   background-color: #f7f7f7;
+.projectcard:hover {
+  background-color: #f7f7f7;
 }
-.darkmode .projectcard{
-    border:1px solid #4F4F4F;
-    transition: border 0.5s ease-in-out;
+.darkmode .projectcard {
+  border: 1px solid #4f4f4f;
+  transition: border 0.5s ease-in-out;
 }
-.darkmode .projectcard:hover{
-    background-color: #4F4F4F;
- }
-
-.tags{
-    display:flex;
-   
-    flex-wrap: wrap;
+.darkmode .projectcard:hover {
+  background-color: #4f4f4f;
 }
 
-.tag{
-    font-size: 0.65rem !important;
-    color:#f2f2f2;
-    font-weight: bold;
-    background-color: #EB5757;
-    padding:1px 0.5rem;
-    border-radius: 20px;
-    margin-right:0.5rem;
-    width:4rem;
-    text-align: center;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    cursor: pointer;
+.tags {
+  display: flex;
+
+  flex-wrap: wrap;
+}
+
+.tag {
+  font-size: 0.65rem !important;
+  color: #f2f2f2;
+  font-weight: bold;
+  background-color: #eb5757;
+  padding: 1px 0.5rem;
+  border-radius: 20px;
+  margin-right: 0.5rem;
+  width: 4rem;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
 }
 .tag + .tag:nth-child(4n + 2):not(:nth-child(2)),
 .tag + .tag:nth-child(4n + 1):not(:nth-child(1)),
-.tag + .tag:nth-child(4n){
-    margin-top:0.5rem;
+.tag + .tag:nth-child(4n) {
+  margin-top: 0.5rem;
 }
 .showall .tag + .tag:nth-child(4n + 2):not(:nth-child(2)),
 .showall .tag + .tag:nth-child(4n + 1):not(:nth-child(1)),
-.showall .tag + .tag:nth-child(4n){
-    margin-top:0;
+.showall .tag + .tag:nth-child(4n) {
+  margin-top: 0;
 }
 
-.description{
-    padding-top:1rem;
-    max-height:13rem;
-    overflow: hidden;
-    text-overflow: ellipsis;
+.description {
+  padding-top: 1rem;
+  max-height: 13rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.projectlinks{
-    display: flex;
+.projectlinks {
+  display: flex;
 }
-.projectlinks .contactimg{
-    width:1.5rem;
-}
-
-.projectlinks a + a{
-   margin-left: 1rem;
+.projectlinks .contactimg {
+  width: 1.5rem;
 }
 
-.projectcard .footer{
-display: flex;
-justify-content: space-between;
-padding-top:1rem;
+.projectlinks a + a {
+  margin-left: 1rem;
 }
 
-.projectstatus{
-display: flex;
-align-items: center;
+.projectcard .footer {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 1rem;
 }
 
-.statuscircle{
-    border-radius: 50%;
-    height:0.75rem;
-    width:0.75rem;
-    margin-right: 0.5rem;
+.projectstatus {
+  display: flex;
+  align-items: center;
 }
-.projectstatus .label::first-letter{
-    text-transform: uppercase;
+
+.statuscircle {
+  border-radius: 50%;
+  height: 0.75rem;
+  width: 0.75rem;
+  margin-right: 0.5rem;
 }
-.projectstatus.Progress .statuscircle{
-    background-color: #F2C94C;
+.projectstatus .label::first-letter {
+  text-transform: uppercase;
 }
-.projectstatus.Complete .statuscircle{
-    background-color: #27AE60;
+.projectstatus.Progress .statuscircle {
+  background-color: #f2c94c;
 }
-.projectstatus.Complete .label{
-    color: #27AE60;
+.projectstatus.Complete .statuscircle {
+  background-color: #27ae60;
 }
-.projectstatus.Progress .label{
-    color: #F2C94C;
+.projectstatus.Complete .label {
+  color: #27ae60;
+}
+.projectstatus.Progress .label {
+  color: #f2c94c;
 }

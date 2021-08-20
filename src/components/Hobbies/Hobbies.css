@@ -1,57 +1,53 @@
-.subsection + .subsection{
-    margin-top:6rem;
+.subsection + .subsection {
+  margin-top: 6rem;
 }
 
-.imgcarousel{
-    display: flex;
-    overflow-y: scroll;
-    padding-bottom: 0.5rem;;
+.imgcarousel {
+  display: flex;
+  overflow-y: scroll;
+  padding-bottom: 0.5rem;
 }
-.drawings{
-    width:40%;
+.drawings {
+  width: 40%;
 }
-.drawings + .drawings{
-   margin-left: 1rem;
+.drawings + .drawings {
+  margin-left: 1rem;
 }
-
-
 
 /* width */
 .imgcarousel::-webkit-scrollbar {
-width: 0;
-height:4px;
+  width: 0;
+  height: 4px;
 }
 
 /* Track */
 .imgcarousel::-webkit-scrollbar-track {
-background: white;
+  background: white;
 }
 
 /* Handle */
 .imgcarousel::-webkit-scrollbar-thumb {
-background: #f2f2f2;
-border-radius: 10px;
+  background: #f2f2f2;
+  border-radius: 10px;
 }
 
 /* Handle on hover */
 .imgcarousel::-webkit-scrollbar-thumb:hover {
-background: #333333;
+  background: #333333;
 }
-
 
 /* Track */
 .darkmode .imgcarousel::-webkit-scrollbar-track {
-background: #333333;
-
+  background: #333333;
 }
 
 /* Handle */
-.darkmode  .imgcarousel::-webkit-scrollbar-thumb {
-background: #4F4F4F;
-border-radius: 10px;
+.darkmode .imgcarousel::-webkit-scrollbar-thumb {
+  background: #4f4f4f;
+  border-radius: 10px;
 }
 
 /* Handle on hover */
-.darkmode  .imgcarousel::-webkit-scrollbar-thumb:hover {
-background: #333333;
+.darkmode .imgcarousel::-webkit-scrollbar-thumb:hover {
+  background: #333333;
 }

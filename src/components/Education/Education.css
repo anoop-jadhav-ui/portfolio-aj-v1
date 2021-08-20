@@ -1,21 +1,21 @@
-.subsection{
-    margin-top:2.75rem;
+.subsection {
+  margin-top: 2.75rem;
 }
-.subsection-wrappers + .subsection-wrappers{
-    margin-top:3rem;
+.subsection-wrappers + .subsection-wrappers {
+  margin-top: 3rem;
 }
-.education .subsection-data{
-    margin-top:1rem;
-    margin-bottom:2rem;
+.education .subsection-data {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
 }
-.education-bars{
-    margin-top:2rem;
-    margin-bottom: 2rem;
+.education-bars {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
-.know-more-button{
-    display: flex;
-    justify-content: flex-end;
+.know-more-button {
+  display: flex;
+  justify-content: flex-end;
 }
 .know-more-button > img {
-    width: 2rem;
+  width: 2rem;
 }

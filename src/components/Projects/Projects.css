@@ -1,78 +1,72 @@
-.projectsectionbody{
-    display:flex;
-    width: 100%;
-    padding-bottom: 0.5rem;
-    transition: all 0.5s ease-in-out;
+.projectsectionbody {
+  display: flex;
+  width: 100%;
+  padding-bottom: 0.5rem;
+  transition: all 0.5s ease-in-out;
 }
-.showall{
-    flex-wrap: wrap;
+.showall {
+  flex-wrap: wrap;
 }
-.showall .projectcard{
-    width: 100%;;
+.showall .projectcard {
+  width: 100%;
 }
-.showsome{
-    flex-wrap: nowrap;
-    overflow-y: scroll;
+.showsome {
+  flex-wrap: nowrap;
+  overflow-y: scroll;
 }
 
 /* .projectsectionbody::-webkit-scrollbar {
     display: none;
 } */
 
-.projectcard + .projectcard{
-    margin-left: 0.5rem;
+.projectcard + .projectcard {
+  margin-left: 0.5rem;
 }
 
-.showall .projectcard + .projectcard{
-    margin-top:0.5rem;
-    margin-left: 0;
+.showall .projectcard + .projectcard {
+  margin-top: 0.5rem;
+  margin-left: 0;
 }
 
-.projects .scroll-text{
-    padding-top:1.5rem;
-    cursor: pointer;
+.projects .scroll-text {
+  padding-top: 1.5rem;
+  cursor: pointer;
 }
-
 
 /* width */
 .projectsectionbody::-webkit-scrollbar {
-width: 0;
-height:4px;
+  width: 0;
+  height: 4px;
 }
 
 /* Track */
 .projectsectionbody::-webkit-scrollbar-track {
-background: white;
+  background: white;
 }
 
 /* Handle */
 .projectsectionbody::-webkit-scrollbar-thumb {
-background: #f2f2f2;
-border-radius: 10px;
+  background: #f2f2f2;
+  border-radius: 10px;
 }
 
 /* Handle on hover */
 .projectsectionbody::-webkit-scrollbar-thumb:hover {
-background: #333333;
+  background: #333333;
 }
-
 
 /* Track */
 .darkmode .projectsectionbody::-webkit-scrollbar-track {
-background: #333333;
-
+  background: #333333;
 }
 
 /* Handle */
-.darkmode  .projectsectionbody::-webkit-scrollbar-thumb {
-background: #4F4F4F;
-border-radius: 10px;
+.darkmode .projectsectionbody::-webkit-scrollbar-thumb {
+  background: #4f4f4f;
+  border-radius: 10px;
 }
 
 /* Handle on hover */
-.darkmode  .projectsectionbody::-webkit-scrollbar-thumb:hover {
-background: #333333;
+.darkmode .projectsectionbody::-webkit-scrollbar-thumb:hover {
+  background: #333333;
 }
-
-
-  

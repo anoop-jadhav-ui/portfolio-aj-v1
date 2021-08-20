@@ -1,48 +1,56 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 
 const PatternBox = (props) => {
+  let [boxesElements, setBoxesElements] = useState([]);
 
-    let [boxesElements, setBoxesElements] = useState([])
+  useEffect(() => {
+    setBoxesElements(returnBoxes());
+  }, []);
 
-    useEffect(()=>{
-        setBoxesElements(returnBoxes());
-    },[]);
+  function returnBoxes() {
+    let boxHeight = props.height;
+    let boxWidth = props.width;
+    let distance = props.distanceBetweenBoxes;
+    let boxDOMEle = [];
 
-    function returnBoxes() {
-        let boxHeight = props.height;
-        let boxWidth = props.width;
-        let distance = props.distanceBetweenBoxes;
-        let boxDOMEle = [];
+    let xBoxPos = 0;
+    let yBoxPos = 0;
 
-        let xBoxPos = 0;
-        let yBoxPos = 0;
-        
-        for (let i = 0; i < boxHeight; i++) {
-            xBoxPos= 0;
-            for(let j=0;j < boxWidth;j++){
-                boxDOMEle.push(
-                    <rect x={xBoxPos} y={yBoxPos} width={props.boxsize} height={props.boxsize} fill={props.color} />
-                )
-                xBoxPos += parseInt(distance);
-            }
-            yBoxPos += parseInt(distance);
-        }
-
-        return boxDOMEle;
-
+    for (let i = 0; i < boxHeight; i++) {
+      xBoxPos = 0;
+      for (let j = 0; j < boxWidth; j++) {
+        boxDOMEle.push(
+          <rect
+            x={xBoxPos}
+            y={yBoxPos}
+            width={props.boxsize}
+            height={props.boxsize}
+            fill={props.color}
+          />
+        );
+        xBoxPos += parseInt(distance);
+      }
+      yBoxPos += parseInt(distance);
     }
 
-    return (
-        <svg className={props.className} width="369" height="369" viewBox="0 0 369 369" fill="none" xmlns="http://www.w3.org/2000/svg">
-            {boxesElements.map(ele => ele)}
-        </svg>
+    return boxDOMEle;
+  }
 
-    )
-}
+  return (
+    <svg
+      className={props.className}
+      width="369"
+      height="369"
+      viewBox="0 0 369 369"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      {boxesElements.map((ele) => ele)}
+    </svg>
+  );
+};
 
 export default PatternBox;
-
-
 
 // <rect x="0" y="0" width={props.boxsize} height={props.boxsize} fill={props.color} />
 // <rect x="20" width={props.boxsize} height={props.boxsize} fill={props.color} />

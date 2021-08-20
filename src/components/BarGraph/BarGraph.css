@@ -1,24 +1,24 @@
-.bar-graph{
-    background: #F2F2F2;
-    height:2.25rem;
-    border-radius: 0.25rem;
-    overflow: hidden;
-    transition: background-color 0.5s ease-in-out;
+.bar-graph {
+  background: #f2f2f2;
+  height: 2.25rem;
+  border-radius: 0.25rem;
+  overflow: hidden;
+  transition: background-color 0.5s ease-in-out;
 }
-.darkmode .bar-graph{
-    background-color: #4F4F4F;
+.darkmode .bar-graph {
+  background-color: #4f4f4f;
 }
-.filled{
-    display: block;
-    height:2.25rem;
-    background: linear-gradient(101.14deg, #F2994A 0.99%, #EB5757 177.11%);
-    border-radius: 0.25rem;
-    cursor: pointer;
+.filled {
+  display: block;
+  height: 2.25rem;
+  background: linear-gradient(101.14deg, #f2994a 0.99%, #eb5757 177.11%);
+  border-radius: 0.25rem;
+  cursor: pointer;
 }
 
-.show-on-scroll .filled{
-    transition: all 900ms ease-in-out;
+.show-on-scroll .filled {
+  transition: all 900ms ease-in-out;
 }
-.show-on-scroll.is-visible .filled{
-    transition: all 900ms ease-in-out;
+.show-on-scroll.is-visible .filled {
+  transition: all 900ms ease-in-out;
 }

@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
 }
+
 :root {
   --grey-background: rgba(219, 219, 219, 0.2);
   --grey-background-darkmode: rgba(219, 219, 219, 0.1);
@@ -25,9 +26,6 @@
   font-size: 18px;
 }
 
-body {
-  font-family: "Montserrat", "Open Sans", "Helvetica";
-}
 .App {
   padding: 5.25rem;
   transition: background-color 0.5s ease-in-out;
@@ -42,7 +40,7 @@ body {
 }
 
 .bold {
-  font-weight: bold;
+  font-weight: bold !important;
 }
 .letterspacing-1 {
   letter-spacing: 1px;
@@ -69,16 +67,6 @@ body {
   height: 100%;
   background: var(--red);
 }
-
-/* @keyframes backgroundSlideOut {
-  0% {
-    background: none;
-  }
-  100% {
-    background: var(--red);
-  }
-} */
-
 .h3 {
   font-size: 1.5rem; /*24*/
 }
