@@ -1,7 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-const Dotenv = require("dotenv-webpack");
 const webpack = require("webpack");
 
 module.exports = {
@@ -67,6 +66,19 @@ module.exports = {
         path.join(process.cwd(), "build/**/*")
       ]
     }),
-    new Dotenv()
+     new webpack.EnvironmentPlugin({
+      REACT_APP_FIREBASE_KEY: JSON.stringify(process.env.REACT_APP_FIREBASE_KEY),
+      REACT_APP_AUTH_DOMAIN: JSON.stringify(process.env.REACT_APP_AUTH_DOMAIN),
+      REACT_APP_DATABASE_URL: JSON.stringify(process.env.REACT_APP_DATABASE_URL),
+      REACT_APP_PROJECT_ID: JSON.stringify(process.env.REACT_APP_PROJECT_ID),
+      REACT_APP_STORAGE_BUCKET: JSON.stringify(process.env.REACT_APP_STORAGE_BUCKET),
+      REACT_APP_SENDER_ID: JSON.stringify(process.env.REACT_APP_SENDER_ID),
+      REACT_APP_APP_ID: JSON.stringify(process.env.REACT_APP_APP_ID),
+      REACT_APP_MEASUREMENT_ID: JSON.stringify(process.env.REACT_APP_MEASUREMENT_ID),
+    }),
+    new webpack.ProvidePlugin({
+      process: "process/browser",
+      React: "react",
+    })
   ]
 };

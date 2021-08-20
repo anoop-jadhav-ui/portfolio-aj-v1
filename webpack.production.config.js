@@ -8,9 +8,10 @@ module.exports = {
   mode: "production",
   entry: "./src/index.js",
   output: {
-    filename: "bundle.[contenthash].js",
+    filename: "[name].[contenthash].js",
     path: path.resolve(__dirname, "./dist"),
-    publicPath: ""
+    publicPath: "",
+    clean : true
   },
   devServer: { contentBase: path.join(__dirname, "src") },
   module: {
@@ -42,7 +43,8 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.join(__dirname, "src", "index.html")
+      template: path.join(__dirname, "src", "index.html"),
+      title: 'caching'
     }),
     new MiniCSSExtractPlugin({
       filename: "styles.[contenthash].css"
@@ -52,6 +54,25 @@ module.exports = {
         "**/*",
         path.join(process.cwd(), "build/**/*")
       ]
+    }),
+     new webpack.EnvironmentPlugin({
+      REACT_APP_FIREBASE_KEY: JSON.stringify(process.env.REACT_APP_FIREBASE_KEY),
+      REACT_APP_AUTH_DOMAIN: JSON.stringify(process.env.REACT_APP_AUTH_DOMAIN),
+      REACT_APP_DATABASE_URL: JSON.stringify(process.env.REACT_APP_DATABASE_URL),
+      REACT_APP_PROJECT_ID: JSON.stringify(process.env.REACT_APP_PROJECT_ID),
+      REACT_APP_STORAGE_BUCKET: JSON.stringify(process.env.REACT_APP_STORAGE_BUCKET),
+      REACT_APP_SENDER_ID: JSON.stringify(process.env.REACT_APP_SENDER_ID),
+      REACT_APP_APP_ID: JSON.stringify(process.env.REACT_APP_APP_ID),
+      REACT_APP_MEASUREMENT_ID: JSON.stringify(process.env.REACT_APP_MEASUREMENT_ID),
+    }),
+    new webpack.ProvidePlugin({
+      process: "process/browser",
+      React: "react",
     })
-  ]
+  ],
+  optimization : {
+    splitChunks : {
+      chunks : 'all'
+    }
+  }
 };
