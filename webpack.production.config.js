@@ -25,6 +25,16 @@ module.exports = {
         type: "asset/resource"
       },
       {
+        test: /\.(ttf)$/,
+        use : {
+          loader : "file-loader",
+          options: {
+            name: '[name].[ext]',
+            outputPath: 'fonts/'
+          }
+        }
+      },
+      {
         test: /\.(css)$/,
         use: [MiniCSSExtractPlugin.loader, "css-loader"]
       },
