@@ -25,7 +25,7 @@ class LeftPane extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      leftPaneVisible: true,
+      leftPaneVisible: true
     };
   }
   componentDidMount() {
@@ -39,7 +39,7 @@ class LeftPane extends Component {
 
       this.setState(() => {
         return {
-          currentStep: 1,
+          currentStep: 1
         };
       });
     }, 100);
@@ -51,7 +51,7 @@ class LeftPane extends Component {
   }
   toggleLeftPane() {
     this.setState({
-      leftPaneVisible: !this.state.leftPaneVisible,
+      leftPaneVisible: !this.state.leftPaneVisible
     });
   }
 
@@ -68,7 +68,10 @@ class LeftPane extends Component {
         <ul className="menu body-text grey4">
           {<LeftPaneItems data={this.props} />}
         </ul>
-        <ContactIcons data={this.props.dbData} className="inside-leftpane" />
+        <ContactIcons
+          contactDetails={this.props.dbData.contactDetails}
+          className="inside-leftpane"
+        />
       </div>
     );
   }

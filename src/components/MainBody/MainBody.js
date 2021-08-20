@@ -61,8 +61,7 @@ class MainBody extends Component {
         {this.props.dbData.appFeatureAvailability.certifications && (
           <Certifications
             currentStep={this.props.currentStep}
-            dbData={this.props.dbData}
-            imageData={this.props.imageData}
+            certifications={this.props.dbData.certifications}
           />
         )}
         {this.props.dbData.appFeatureAvailability.skills && (
@@ -92,9 +91,7 @@ class MainBody extends Component {
         {this.props.dbData.appFeatureAvailability.contactDetails && (
           <Contact
             currentStep={this.props.currentStep}
-            dbData={this.props.dbData}
-            imageData={this.props.imageData}
-            leftPaneData={this.props.leftPaneData}
+            contactDetails={this.props.dbData.contactDetails}
           />
         )}
       </div>

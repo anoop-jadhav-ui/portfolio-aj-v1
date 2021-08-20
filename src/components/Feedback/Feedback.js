@@ -17,7 +17,7 @@ class Feedback extends Component {
         axiosInstance
           .post("/mail", {
             userEmail: "anoopjadhav@gmail.com",
-            userMessage: "Message : " + this.props.message,
+            userMessage: "Message : " + this.props.message
           })
           .then((response) => {
             if (response.data.msg === "success") {
@@ -36,10 +36,6 @@ class Feedback extends Component {
       this.props.updateBannerStatus("");
     }
   };
-
-  resetForm() {
-    document.getElementById("contact-form").reset();
-  }
 
   showBanner() {
     let errMessage;
@@ -62,6 +58,7 @@ class Feedback extends Component {
     return (
       errMessage !== "" && (
         <Banner
+          data-testid="banner"
           type={this.props.messageStatus}
           text={errMessage}
           closeBanner={() => this.props.updateBannerStatus("")}
@@ -92,6 +89,7 @@ class Feedback extends Component {
               </div>
               <div className="red body-text mt-2">
                 <textarea
+                  data-testid="feedback-box"
                   className=""
                   type="type"
                   name="message"
@@ -101,7 +99,9 @@ class Feedback extends Component {
                 />
               </div>
               <div className="text-left mt-3">
-                <button type="submit">Send</button>
+                <button type="submit" data-testid="feedback-button">
+                  Send
+                </button>
               </div>
             </div>
           </form>
@@ -114,7 +114,7 @@ class Feedback extends Component {
 function mapStateToProps(state) {
   return {
     message: state.fr.message,
-    messageStatus: state.fr.messageStatus,
+    messageStatus: state.fr.messageStatus
   };
 }
 
@@ -122,7 +122,7 @@ function mapDispatchToProps(dispatch) {
   return {
     updateMessage: (value) => dispatch({ type: "UPDATE_MESSAGE", data: value }),
     updateBannerStatus: (value) =>
-      dispatch({ type: "UPDATE_BANNER", data: value }),
+      dispatch({ type: "UPDATE_BANNER", data: value })
   };
 }
 

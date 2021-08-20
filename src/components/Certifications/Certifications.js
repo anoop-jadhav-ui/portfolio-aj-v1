@@ -1,12 +1,11 @@
 import React from "react";
 import "./Certifications.css";
 
-function Certifications(props) {
+function Certifications({ certifications }) {
   return (
     <div
       className={
-        "show-on-scroll col-md-7 page-1 text-left section certifications " +
-        props.class
+        "show-on-scroll col-md-7 page-1 text-left section certifications "
       }
     >
       <div className="section-title grey4 h2 bold">Certifications</div>
@@ -15,10 +14,12 @@ function Certifications(props) {
           Development
         </div>
 
-        {props.dbData.certifications.development.map((ele, key) => {
+        {certifications.development.map((ele, key) => {
           return (
             <div className="subsection-data" key={key}>
-              <span className="h3 grey1 bold">{ele.name}</span>
+              <span className="h3 grey1 bold" data-testid="name">
+                {ele.name}
+              </span>
               <div className="red default-text mt-1">
                 <a
                   href={ele.urlToCertificate}
@@ -37,7 +38,7 @@ function Certifications(props) {
         <div className="subsection-title uppercase body-text grey3 letterspacing-1">
           Design
         </div>
-        {props.dbData.certifications.design.map((ele, key) => {
+        {certifications.design.map((ele, key) => {
           return (
             <div className="subsection-data" key={key}>
               <span className="h3 grey1 bold">{ele.name}</span>
@@ -60,3 +61,5 @@ function Certifications(props) {
 }
 
 export default Certifications;
+
+export { Certifications };
