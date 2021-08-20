@@ -22,7 +22,6 @@ class ErrorBoundary extends Component {
       // You can render any custom fallback UI
       return (
         <div className="error">
-          {" "}
           Something went wrong. Please try again later.
         </div>
       );
