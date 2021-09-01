@@ -1,54 +1,53 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
 import myImage from "../../assets/AnoopJadhav.png";
 import "./Summary.css";
+import Loader from '../Loader/Loader'
 
-class Summary extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { imageStatus: "loading", mainLogoUrl: "" };
+export default ({ dbData }) => {
+
+  const [imageLoading, setImageLoading] = useState(false);
+
+  function handleImageLoaded() {
+    setImageLoading(true)
   }
 
-  handleImageLoaded() {
-    this.setState({ imageStatus: "loaded" });
+  function handleImageErrored() {
+    setImageLoading(false)
   }
 
-  handleImageErrored() {
-    this.setState({ imageStatus: "failed to load" });
-  }
-
-  render() {
-    return (
+  return (
+    <>
+      {!imageLoading && <Loader />}
       <div
         className={
-          "show-on-scroll col-md-7 page-1 text-center " + this.props.class
+          "show-on-scroll col-md-7 page-1 text-center "
         }
       >
         <div className="mainlogo-wrapper">
-        <img
-          src={myImage}
-          className={`mainlogo ${this.state.imageStatus}`}
-          alt="mi Baburao"
-          loading="eager"
-          onLoad={this.handleImageLoaded.bind(this)}
-          onError={this.handleImageErrored.bind(this)}
-        />
+          <img
+            src={myImage}
+            className={`mainlogo ${imageLoading && 'loaded'}`}
+            alt="mi Baburao"
+            loading="eager"
+            onLoad={handleImageLoaded}
+            onError={handleImageErrored}
+          />
         </div>
 
         <div className="h1 bold main-title grey-1">
-          {this.props.dbData.overview.name}
+          {dbData.overview.name}
         </div>
         <div className="h4 uppercase letterspacing-1 red bold">
-          {this.props.dbData.overview.title}
+          {dbData.overview.title}
         </div>
         <div className="body-text summary-text">
-          {this.props.dbData.overview.summary}
+          {dbData.overview.summary}
         </div>
         <div className="default-text red scroll-text thin">
           Scroll to Know more
         </div>
       </div>
-    );
-  }
+    </>
+  );
 }
-
-export default Summary;

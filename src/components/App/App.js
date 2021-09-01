@@ -69,7 +69,6 @@ class App extends Component {
   };
 
   componentDidMount() {
-    this.props.toggleLoader(true);
     this.props.fetchData();
   }
 
