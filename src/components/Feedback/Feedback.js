@@ -76,7 +76,7 @@ class Feedback extends Component {
             this.props.class
           }
         >
-          <div className="section-title grey4 h2 bold">Feedback</div>
+          <div className="section-title h2 bold">Feedback</div>
           <form
             id="contact-form"
             className="subsection"

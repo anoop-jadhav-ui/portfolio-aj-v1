@@ -7,7 +7,7 @@ const Contact = ({ contactDetails }) => {
     <div
       className={"show-on-scroll col-md-7 page-1 text-left section contactme "}
     >
-      <div className="section-title grey4 h2 bold">Contact Details</div>
+      <div className="section-title h2 bold">Contact Details</div>
 
       <div className="subsection">
         <div>

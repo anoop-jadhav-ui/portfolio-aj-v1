@@ -8,7 +8,7 @@ function Hobbies(props) {
         props.class
       }
     >
-      <div className="section-title grey4 h2 bold">Hobbies & Interests</div>
+      <div className="section-title h2 bold">Hobbies & Interests</div>
       <div className="subsection">
         {props.dbData.hobbies.map((ele, key) => {
           return (

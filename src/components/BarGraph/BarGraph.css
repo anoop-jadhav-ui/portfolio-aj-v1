@@ -6,7 +6,7 @@
   transition: background-color 0.5s ease-in-out;
 }
 .darkmode .bar-graph {
-  background-color: #4f4f4f;
+  background-color: var(--grey-background-darkmode);
 }
 .filled {
   display: block;

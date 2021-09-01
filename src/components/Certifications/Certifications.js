@@ -8,7 +8,7 @@ function Certifications({ certifications }) {
         "show-on-scroll col-md-7 page-1 text-left section certifications "
       }
     >
-      <div className="section-title grey4 h2 bold">Certifications</div>
+      <div className="section-title h2 bold">Certifications</div>
       <div className="subsection">
         <div className="subsection-title uppercase body-text grey3 letterspacing-1">
           Development

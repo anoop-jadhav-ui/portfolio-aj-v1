@@ -24,7 +24,7 @@ function Education(props) {
         props.class
       }
     >
-      <div className="section-title grey4 h2 bold">Education</div>
+      <div className="section-title h2 bold">Education</div>
 
       <div className="subsection">
         {props.dbData.education.map((ele, key) => {

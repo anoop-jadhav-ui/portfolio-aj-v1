@@ -19,7 +19,7 @@ function Skills(props) {
         "show-on-scroll col-md-7 page-1 text-left section skills " + props.class
       }
     >
-      <div className="section-title grey4 h2 bold">Skills</div>
+      <div className="section-title h2 bold">Skills</div>
 
       {props.dbData.skills ? (
         <div className="subsection">

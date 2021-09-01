@@ -9,7 +9,7 @@ function WorkExperience(props) {
         props.class
       }
     >
-      <div className="section-title grey4 h2 bold">Work Experience</div>
+      <div className="section-title h2 bold">Work Experience</div>
 
       <div className="subsection">
         {props.dbData.experience.map((ele, key) => {
