@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./LeftPane.css";
 import ContactIcons from "../ContactIcons/ContactIcons";
-
+import Constants from '../constants'
 function LeftPaneItems(props) {
   var listItems = props.data.leftPaneItems.map(
     (item) =>
@@ -25,7 +25,7 @@ class LeftPane extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      leftPaneVisible: true
+      leftPaneVisible: Constants.DEFAULT_LEFTPANEL_VISIBLE
     };
   }
   componentDidMount() {

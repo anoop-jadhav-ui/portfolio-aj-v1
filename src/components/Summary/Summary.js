@@ -23,6 +23,7 @@ class Summary extends Component {
           "show-on-scroll col-md-7 page-1 text-center " + this.props.class
         }
       >
+        <div className="mainlogo-wrapper">
         <img
           src={myImage}
           className={`mainlogo ${this.state.imageStatus}`}
@@ -31,6 +32,7 @@ class Summary extends Component {
           onLoad={this.handleImageLoaded.bind(this)}
           onError={this.handleImageErrored.bind(this)}
         />
+        </div>
 
         <div className="h1 bold main-title grey-1">
           {this.props.dbData.overview.name}
