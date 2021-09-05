@@ -137,13 +137,16 @@ class App extends Component {
           darkMode: true,
         };
       });
+      document.querySelector('body').classList.add('darkmode');
     } else {
       this.setState(() => {
         return {
           darkMode: false,
         };
       });
+      document.querySelector('body').classList.remove('darkmode');
     }
+    
   }
 
   render() {
@@ -153,9 +156,7 @@ class App extends Component {
           <Loader />
         ) : (
           <div
-            className={`App summary row no-gutters fade show ${
-              this.state.darkMode ? "darkmode" : ""
-            }`}
+            className={`App summary row no-gutters fade show`}
           >
             <div className="darkModeWrapper">
               <div className="darkModeButton" onClick={() => this.toDarkMode()}>

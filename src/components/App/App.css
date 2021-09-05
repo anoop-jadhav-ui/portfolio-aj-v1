@@ -4,36 +4,72 @@
 }
 
 :root {
-  --main-dark-background : #111112;
-  --grey-background: rgba(219, 219, 219, 0.2);
-  --grey-background-darkmode: rgba(219, 219, 219, 0.1);
-
-  --grey1: #333333;
-  --grey1-darkmode: #f2f2f2;
-
-  --grey2: #4f4f4f;
-  --grey2-darkmode: #bdbdbd;
-
-  --grey3: #828282;
-
-  --grey4: #bdbdbd;
-
-  --grey5: #e0e0e0;
-
-  --grey6: #f2f2f2;
-
-  --red: #eb5757;
-
   font-size: 18px;
 }
 
-.App {
-  padding: 5.25rem;
-  transition: background-color 0.5s ease-in-out;
+body{
+  --app-background : white;
+  --input-background: #dbdbdb33;
+
+  --grey1: #333333;
+  --grey2: #4f4f4f;
+  --grey3: #828282;
+  --grey4: #bdbdbd;
+  --grey5: #e0e0e0;
+  --grey6: #f2f2f2;;
+
+  --red: #eb5757;
+  --orange: #f2994a;
+  --light-orange:#ffaeae;
+  --yellow: #f2c94c;
+  --green: #27ae60;
+  
+  background-color: var(--app-background) !important;
+  color:var(--grey1);
 }
-.darkmode.App {
-  background-color: var(--main-dark-background); /* #181A20;*/
-  color: #f2f2f2;
+
+body.darkmode {
+  --app-background : #212122;
+  --input-background:#262627;
+
+  --grey6: #333333;
+  --grey5: #4f4f4f;
+  --grey4: #828282;
+  --grey3: #bdbdbd;
+  --grey2: #e0e0e0;
+  --grey1: #f2f2f2;
+
+  color:var(--grey1);
+
+}
+
+.App {
+  position: relative;
+  padding: 5.25rem;
+}
+
+.App:before{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height:100%;
+  top:0;
+  left: 0;
+  background : repeating-conic-gradient(from 45deg at 40% 20%, transparent 0 180deg, var(--app-background) 180deg 270deg, transparent 270deg 360deg);
+  background-size:120% 80%;
+  z-index: -1;
+}
+.App:after{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height:100%;
+  top:0;
+  left: 0;
+  background : repeating-conic-gradient(from 0deg at 60% 60%, transparent 0 45deg, var(--app-background) 45deg 135deg, transparent 135deg 360deg);
+  background-size:100% 80%;
+
+  z-index: -1;
 }
 
 .uppercase {
@@ -51,55 +87,43 @@
 }
 /*Type*/
 .h1 {
-  font-size: 2.75rem; /*44px*/
+  font-size: 2.75rem; 
 }
 .h2 {
-  font-size: 2rem; /*32px*/
+  font-size: 2rem; 
   display: inline;
   position: relative;
-  /* animation: backgroundSlideOut 1s ease-in-out forwards; */
 }
-
-/* .h2:before {
-  content: "_";
-  display: block;
-  position: absolute;
-  right: -1.5rem;
-  -webkit-text-stroke: 1px var(--red);
-  color:var(--red);
-} */
-
-
 
 
 .h3 {
-  font-size: 1.5rem; /*24*/
+  font-size: 1.5rem; 
 }
 
 .h4 {
-  font-size: 1.25rem; /*20px*/
+  font-size: 1.25rem; 
 }
 .body-text {
-  font-size: 1rem; /*18px*/
+  font-size: 1rem; 
 }
 .default-text {
   font-size: 1rem;
 }
 .label {
-  font-size: 0.875rem; /*14px*/
+  font-size: 0.875rem; 
 }
 input {
   width: 100%;
-  border: 1px solid #bdbdbd;
+  border: 1px solid var(--grey4);
   height: 2.5rem;
   padding: 0 1rem;
   border-radius: 0.25rem;
   transition: background-color 0.5s ease-in-out;
+  background: var(--input-background);
 }
 .darkmode input {
-  background-color: #4f4f4f;
   border: none;
-  color: #f2f2f2;
+  color: var(--grey6);
 }
 .darkmode textarea:focus,
 .darkmode input:focus {
@@ -107,16 +131,16 @@ input {
 }
 textarea {
   width: 100%;
-  border: 1px solid #bdbdbd;
+  border: 1px solid var(--grey4);
   height: 6.5rem;
   padding: 0.5rem 1rem;
   border-radius: 0.25rem;
   transition: background-color 0.5s ease-in-out;
+  background: var(--input-background);
 }
 .darkmode textarea {
-  background-color: var(--grey-background-darkmode);
   border: none;
-  color: #f2f2f2;
+  color: var(--grey6);
 }
 button {
   background: var(--red);
@@ -150,7 +174,7 @@ ul > li a:hover {
   font-weight: bold;
 }
 ul > li a:hover {
-  color: #4f4f4f !important;
+  color:var(--grey2) !important;
 }
 
 /*Colors*/
@@ -158,7 +182,7 @@ ul > li a:hover {
   color: var(--grey1);
 }
 .darkmode .grey1 {
-  color: var(--grey1-darkmode);
+  color: var(--grey1);
 }
 .grey2,
 .grey2 > a {
@@ -172,10 +196,6 @@ ul > li a:hover {
 .grey4 > a {
   color: var(--grey4) !important;
 }
-.darkmode .grey2,
-.darkmode .grey2 > a {
-  color: var(--grey2-darkmode) !important;
-}
 
 .grey5 {
   color: var(--grey5);
@@ -188,18 +208,18 @@ ul > li a:hover {
   color: var(--red);
 }
 .orange {
-  color: #f2994a;
+  color: var(--orange);
 }
 .yellow {
-  color: #f2c94c;
+  color: var(--yellow);
 }
 .green {
-  color: #27ae60;
+  color: var(--green);
 }
 .success-banner {
   padding: 0.5rem 1rem;
   color: white !important;
-  background: #27ae60;
+  background: var(--green);
   border-radius: 0.25rem;
 }
 .error-banner {
@@ -211,7 +231,7 @@ ul > li a:hover {
 .neutral-banner {
   padding: 0.5rem 1rem;
   color: white !important;
-  background: #828282;
+  background: var(--grey3);
   border-radius: 0.25rem;
 }
 .col,
@@ -296,32 +316,13 @@ ul > li a:hover {
   color: var(--red);
 }
 
-/* @supports (-webkit-text-stroke: 1px black) {
-  .section-title{
-    -webkit-text-stroke: 1px black;
-    color: white;
-    letter-spacing: 1px;
-  }
-}
-@supports (-webkit-text-stroke: 1px white) {
-  .darkmode .section-title{
-    -webkit-text-stroke: 1px white;
-    color: var(--main-dark-background);
-  }
-} */
-
-
-
 
 .dot {
   height: 4px;
   width: 4px;
   display: inline-block;
   border-radius: 50%;
-  background: #e0e0e0;
-}
-.darkmode .dot {
-  background-color: #4f4f4f;
+  background: var(--grey5);
 }
 
 /*Summary*/
@@ -397,7 +398,7 @@ ul > li a:hover {
 .darkModeButton {
   display: flex;
   align-items: center;
-  color: #bdbdbd;
+  color: var(--grey4);
 }
 .darkModeButton .light {
   padding-right: 0.5rem;
@@ -414,16 +415,16 @@ ul > li a:hover {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #f2f2f2;
+  background: var(--grey6);
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #bdbdbd;
+  background: var(--grey4);
   border-radius: 10px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #333333;
+  background: var(--grey1);
 }

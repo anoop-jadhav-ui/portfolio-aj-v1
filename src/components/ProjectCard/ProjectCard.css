@@ -1,5 +1,5 @@
 .projectcard {
-  border: 1px solid #e0e0e0;
+  border: 1px solid var(--grey5);
   padding: 1.5rem 1rem !important;
   border-radius: 0.25rem;
   min-width: 20rem;
@@ -10,14 +10,14 @@
   cursor: pointer;
 }
 .projectcard:hover {
-  background-color: #f7f7f7;
+  background-color: var(--grey6);
 }
 .darkmode .projectcard {
-  border: 1px solid #4f4f4f;
+  border: 1px solid var(--grey2);
   transition: border 0.5s ease-in-out;
 }
 .darkmode .projectcard:hover {
-  background-color: #4f4f4f;
+  background-color: var(--grey2);
 }
 
 .tags {
@@ -28,9 +28,9 @@
 
 .tag {
   font-size: 0.65rem !important;
-  color: #f2f2f2;
+  color: var(--grey6);
   font-weight: bold;
-  background-color: #eb5757;
+  background-color: var(--red);
   padding: 1px 0.5rem;
   border-radius: 20px;
   margin-right: 0.5rem;
@@ -91,14 +91,14 @@
   text-transform: uppercase;
 }
 .projectstatus.Progress .statuscircle {
-  background-color: #f2c94c;
+  background-color: var(--orange);
 }
 .projectstatus.Complete .statuscircle {
-  background-color: #27ae60;
+  background-color: var(--green);
 }
 .projectstatus.Complete .label {
-  color: #27ae60;
+  color: var(--green);
 }
 .projectstatus.Progress .label {
-  color: #f2c94c;
+  color: var(--orange);
 }

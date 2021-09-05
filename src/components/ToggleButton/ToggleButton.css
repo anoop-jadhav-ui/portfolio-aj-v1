@@ -27,16 +27,16 @@
 }
 
 #on .bar {
-  background-color: #ffaeae;
+  background-color: var(--light-orange);
 }
 #off .bar {
-  background-color: #e0e0e0;
+  background-color: var(--grey5);
 }
 #on .circle {
-  background-color: #eb5757;
+  background-color: var(--red);
   left: calc(100% - 19px);
 }
 #off .circle {
-  background-color: #bdbdbd;
+  background-color: var(--grey4);
   left: 2px;
 }

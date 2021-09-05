@@ -1,17 +1,15 @@
 .bar-graph {
-  background: #f2f2f2;
+  background: var(--input-background);
   height: 2.25rem;
   border-radius: 0.25rem;
   overflow: hidden;
-  transition: background-color 0.5s ease-in-out;
+  transition: background-color 0.5s ease-in;
 }
-.darkmode .bar-graph {
-  background-color: var(--grey-background-darkmode);
-}
+
 .filled {
   display: block;
   height: 2.25rem;
-  background: linear-gradient(101.14deg, #f2994a 0.99%, #eb5757 177.11%);
+  background: linear-gradient(101.14deg, var(--orange) 0.99%, var(--red) 177.11%);
   border-radius: 0.25rem;
   cursor: pointer;
 }

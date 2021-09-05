@@ -9,7 +9,7 @@
 
 .menu li.bold::before {
   content: "";
-  border-left: 3px solid #eb5757;
+  border-left: 3px solid var(--red);
   position: relative;
   left: -1rem;
 }
@@ -20,22 +20,20 @@
 .left-pane {
   position: relative;
   top: 10rem;
-  background-color: var(--grey-background);
+  background-color: var(--input-background);
   border-radius: 0.25rem;
   padding: 1rem 2rem;
 
   width: 14.5rem;
-  box-shadow: 0px 4px 8px 1px rgba(0, 0, 0, 0.08);
-  
+  box-shadow: 0px 4px 8px 1px rgba(0, 0, 0, 0.08); 
 }
+
 .left-pane.open {
   animation: slideInFromLeft 1s ease-in-out forwards;
 }
+
 .left-pane.closed {
   animation: slideOutToLeft 1s ease-in-out forwards;
-}
-.darkmode .left-pane {
-  background-color: var(--grey-background-darkmode);
 }
 
 @keyframes slideInFromLeft {
@@ -78,16 +76,12 @@
 
 .left-pane.open .toggle-button {
   right: 0;
-  background-color: var(--grey-background);
+  background-color: var(--input-background);
 }
 .left-pane.closed .toggle-button {
   right: -2rem;
   background-color: var(--red);
   box-shadow: 0px 4px 8px 1px rgba(0, 0, 0, 0.08);
-}
-
-.darkmode .toggle-button {
-  background-color: var(--grey-background-darkmode);
 }
 
 .arrow {

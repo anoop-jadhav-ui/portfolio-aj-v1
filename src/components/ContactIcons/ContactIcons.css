@@ -22,18 +22,6 @@
   transform: scale(1.2);
 }
 
-/* .rightpane {
-  width: 3.5rem;
-  flex-wrap: wrap;
-  position: fixed;
-  background-color: var(--grey-background);
-  padding: 1rem;
-  right: 0;
-  top: 10rem;
-  border-radius: 0.25rem 0 0 0.25rem;
-  animation: slideIn 1s ease-in-out forwards;
-  z-index: 999999;
-} */
 
 .inside-leftpane {
   margin-top: 2.5rem;
@@ -44,9 +32,6 @@
   border-top: 1px solid var(--grey5);
 }
 
-.darkmode .inside-leftpane {
-  border-top: 1px solid var(--grey-background-darkmode);
-}
 .inside-leftpane.horizontally-placed .subsection-data {
   margin-top: 0;
 }

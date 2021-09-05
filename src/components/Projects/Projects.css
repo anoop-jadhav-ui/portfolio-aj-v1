@@ -46,27 +46,27 @@
 
 /* Handle */
 .projectsectionbody::-webkit-scrollbar-thumb {
-  background: #f2f2f2;
+  background: var(--grey6);
   border-radius: 10px;
 }
 
 /* Handle on hover */
 .projectsectionbody::-webkit-scrollbar-thumb:hover {
-  background: #333333;
+  background: var(--grey6);
 }
 
 /* Track */
 .darkmode .projectsectionbody::-webkit-scrollbar-track {
-  background: #333333;
+  background: var(--grey6);
 }
 
 /* Handle */
 .darkmode .projectsectionbody::-webkit-scrollbar-thumb {
-  background: #4f4f4f;
+  background: var(--grey2);
   border-radius: 10px;
 }
 
 /* Handle on hover */
 .darkmode .projectsectionbody::-webkit-scrollbar-thumb:hover {
-  background: #333333;
+  background: var(--grey1);
 }
