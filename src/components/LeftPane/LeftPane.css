@@ -29,11 +29,11 @@
 }
 
 .left-pane.open {
-  animation: slideInFromLeft 1s ease-in-out forwards;
+  animation: slideInFromLeft 0.5s ease-in-out forwards;
 }
 
 .left-pane.closed {
-  animation: slideOutToLeft 1s ease-in-out forwards;
+  animation: slideOutToLeft 0.5s ease-in-out forwards;
 }
 
 @keyframes slideInFromLeft {
