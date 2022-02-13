@@ -54,7 +54,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: path.join(__dirname, "src", "index.html"),
-      title: 'caching'
+      favicon: './public/favicon.ico',
     }),
     new MiniCSSExtractPlugin({
       filename: "styles.[contenthash].css"
