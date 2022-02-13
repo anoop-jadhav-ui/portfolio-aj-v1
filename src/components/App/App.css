@@ -9,7 +9,8 @@
 
 body{
   --app-background : white;
-  --input-background: #dbdbdb33;
+  /*--input-background: #dbdbdb33;*/
+  --input-background: white;
 
   --grey1: #333333;
   --grey2: #4f4f4f;
@@ -23,7 +24,7 @@ body{
   --light-orange:#ffaeae;
   --yellow: #f2c94c;
   --green: #27ae60;
-  
+
   background-color: var(--app-background) !important;
   color:var(--grey1);
 }
@@ -87,30 +88,30 @@ body.darkmode {
 }
 /*Type*/
 .h1 {
-  font-size: 2.75rem; 
+  font-size: 2.75rem;
 }
 .h2 {
-  font-size: 2rem; 
+  font-size: 2rem;
   display: inline;
   position: relative;
 }
 
 
 .h3 {
-  font-size: 1.5rem; 
+  font-size: 1.5rem;
 }
 
 .h4 {
-  font-size: 1.25rem; 
+  font-size: 1.25rem;
 }
 .body-text {
-  font-size: 1rem; 
+  font-size: 1rem;
 }
 .default-text {
   font-size: 1rem;
 }
 .label {
-  font-size: 0.875rem; 
+  font-size: 0.875rem;
 }
 input {
   width: 100%;
