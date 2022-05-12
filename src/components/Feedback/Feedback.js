@@ -84,11 +84,11 @@ class Feedback extends Component {
             method="POST"
           >
             <div className="subsection-data">
-              <div className="subsection-title body-text letterspacing-1">
+              <label for="feedback-box" className="subsection-title body-text letterspacing-1">
                 Please provide a constructive feedback.
-              </div>
+              </label>
               <div className="red body-text mt-2">
-                <textarea
+                <textarea id="feedback-box"
                   data-testid="feedback-box"
                   className=""
                   type="type"
@@ -96,6 +96,7 @@ class Feedback extends Component {
                   value={this.props.message}
                   placeholder={this.props.message}
                   onChange={this.handleChange}
+
                 />
               </div>
               <div className="text-left mt-3">
