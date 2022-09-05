@@ -2,19 +2,19 @@
 
 @font-face {
   font-family: 'Poppins';
-  src: url('./assets/Poppins/Poppins-Bold.ttf') format('truetype');
+  src: url('./assets/Poppins-woff/Poppins-Bold.woff') format('woff');
   font-weight: bold;
   font-style: normal;
 }
 @font-face {
   font-family: 'Poppins';
-  src: url('./assets/Poppins/Poppins-Light.ttf') format('truetype');
+  src: url('./assets/Poppins-woff/Poppins-Light.woff') format('woff');
   font-weight: light;
   font-style: normal;
 }
 @font-face {
   font-family: 'Poppins';
-  src: url('./assets/Poppins/Poppins-Regular.ttf') format('truetype');
+  src: url('./assets/Poppins-woff/Poppins-Regular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
