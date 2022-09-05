@@ -10,8 +10,8 @@ module.exports = {
   output: {
     filename: "[name].[contenthash].js",
     path: path.resolve(__dirname, "./dist"),
-    publicPath: "",
-    clean : true
+    clean : true,
+    publicPath: "/"
   },
   devServer: { contentBase: path.join(__dirname, "src") },
   module: {
@@ -36,7 +36,12 @@ module.exports = {
       },
       {
         test: /\.(css)$/,
-        use: [MiniCSSExtractPlugin.loader, "css-loader"]
+        use: [MiniCSSExtractPlugin.loader, {
+          loader : "css-loader",
+          options: {
+           url: false
+          }
+        }]
       },
       {
         test: /\.js$/,

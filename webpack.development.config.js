@@ -1,27 +1,28 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCSSExtractPlugin = require("mini-css-extract-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const webpack = require("webpack");
 
 module.exports = {
-  mode: "development",
+  mode: "production",
   entry: "./src/index.js",
   output: {
-    filename: "bundle.js",
+    filename: "[name].[contenthash].js",
     path: path.resolve(__dirname, "./dist"),
-    publicPath: ""
+    clean : true,
+    publicPath: "/"
   },
-  devServer: {
-    contentBase: path.resolve(__dirname, "./dist"),
-    index: "index.html",
-    port: "9000",
-    writeToDisk: true
-  },
+  devServer: { contentBase: path.join(__dirname, "src") },
   module: {
     rules: [
       {
         test: /\.(svg)$/,
         type: "asset/inline"
+      },
+      {
+        test: /\.(png|jpg)$/,
+        type: "asset/resource"
       },
       {
         test: /\.(ttf)$/,
@@ -34,37 +35,34 @@ module.exports = {
         }
       },
       {
-        test: /\.(png|jpg)$/,
-        type: "asset/resource"
-      },
-      {
         test: /\.(css)$/,
-        use: ["style-loader", "css-loader"]
+        use: [MiniCSSExtractPlugin.loader, {
+          loader : "css-loader",
+          options: {
+            url: false
+          }
+        }]
       },
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: [
-          {
-            loader: "babel-loader",
-            options: {
-              presets: ["@babel/preset-env", "@babel/preset-react"],
-              plugins: [
-                "@babel/plugin-syntax-dynamic-import",
-                "@babel/plugin-proposal-class-properties"
-              ]
-            }
-          },
-          {
-            loader: "eslint-loader"
+        use: {
+          loader: "babel-loader",
+          options: {
+            presets: ["@babel/preset-react", "@babel/env"],
+            plugins: []
           }
-        ]
+        }
       }
     ]
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.join(__dirname, "src", "index.html")
+      template: path.join(__dirname, "src", "index.html"),
+      favicon: './public/favicon.ico',
+    }),
+    new MiniCSSExtractPlugin({
+      filename: "styles.[contenthash].css"
     }),
     new CleanWebpackPlugin({
       cleanOnceBeforeBuildPatterns: [
@@ -72,7 +70,7 @@ module.exports = {
         path.join(process.cwd(), "build/**/*")
       ]
     }),
-     new webpack.EnvironmentPlugin({
+    new webpack.EnvironmentPlugin({
       REACT_APP_FIREBASE_KEY: JSON.stringify(process.env.REACT_APP_FIREBASE_KEY),
       REACT_APP_AUTH_DOMAIN: JSON.stringify(process.env.REACT_APP_AUTH_DOMAIN),
       REACT_APP_DATABASE_URL: JSON.stringify(process.env.REACT_APP_DATABASE_URL),
@@ -86,5 +84,10 @@ module.exports = {
       process: "process/browser",
       React: "react",
     })
-  ]
+  ],
+  optimization : {
+    splitChunks : {
+      chunks : 'all'
+    }
+  }
 };
