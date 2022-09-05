@@ -10,7 +10,7 @@ module.exports = {
   output: {
     filename: "[name].[contenthash].js",
     path: path.resolve(__dirname, "./dist"),
-    clean : true,
+    clean: true,
     publicPath: "/"
   },
   devServer: { contentBase: path.join(__dirname, "src") },
@@ -26,8 +26,8 @@ module.exports = {
       },
       {
         test: /\.(ttf)$/,
-        use : {
-          loader : "file-loader",
+        use: {
+          loader: "file-loader",
           options: {
             name: '[name].[ext]',
             outputPath: 'fonts/',
@@ -38,9 +38,9 @@ module.exports = {
       {
         test: /\.(css)$/,
         use: [MiniCSSExtractPlugin.loader, {
-          loader : "css-loader",
+          loader: "css-loader",
           options: {
-           url: false
+            url: false
           }
         }]
       },
@@ -71,7 +71,7 @@ module.exports = {
         path.join(process.cwd(), "build/**/*")
       ]
     }),
-     new webpack.EnvironmentPlugin({
+    new webpack.EnvironmentPlugin({
       REACT_APP_FIREBASE_KEY: JSON.stringify(process.env.REACT_APP_FIREBASE_KEY),
       REACT_APP_AUTH_DOMAIN: JSON.stringify(process.env.REACT_APP_AUTH_DOMAIN),
       REACT_APP_DATABASE_URL: JSON.stringify(process.env.REACT_APP_DATABASE_URL),
@@ -86,9 +86,9 @@ module.exports = {
       React: "react",
     })
   ],
-  optimization : {
-    splitChunks : {
-      chunks : 'all'
+  optimization: {
+    splitChunks: {
+      chunks: 'all'
     }
   }
 };

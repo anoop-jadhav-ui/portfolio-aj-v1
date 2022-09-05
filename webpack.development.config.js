@@ -1,7 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCSSExtractPlugin = require("mini-css-extract-plugin");
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const webpack = require("webpack");
 
 module.exports = {
@@ -10,10 +9,15 @@ module.exports = {
   output: {
     filename: "[name].[contenthash].js",
     path: path.resolve(__dirname, "./dist"),
-    clean : true,
+    clean: true,
     publicPath: "/"
   },
-  devServer: { contentBase: path.join(__dirname, "src") },
+  devServer: {
+    contentBase: path.resolve(__dirname, "./dist"),
+    index: "index.html",
+    port: "9000",
+    writeToDisk: true
+  },
   module: {
     rules: [
       {
@@ -26,8 +30,8 @@ module.exports = {
       },
       {
         test: /\.(ttf)$/,
-        use : {
-          loader : "file-loader",
+        use: {
+          loader: "file-loader",
           options: {
             name: '[name].[ext]',
             outputPath: 'fonts/',
@@ -38,7 +42,7 @@ module.exports = {
       {
         test: /\.(css)$/,
         use: [MiniCSSExtractPlugin.loader, {
-          loader : "css-loader",
+          loader: "css-loader",
           options: {
             url: false
           }
@@ -65,12 +69,6 @@ module.exports = {
     new MiniCSSExtractPlugin({
       filename: "styles.[contenthash].css"
     }),
-    new CleanWebpackPlugin({
-      cleanOnceBeforeBuildPatterns: [
-        "**/*",
-        path.join(process.cwd(), "build/**/*")
-      ]
-    }),
     new webpack.EnvironmentPlugin({
       REACT_APP_FIREBASE_KEY: JSON.stringify(process.env.REACT_APP_FIREBASE_KEY),
       REACT_APP_AUTH_DOMAIN: JSON.stringify(process.env.REACT_APP_AUTH_DOMAIN),
@@ -85,10 +83,5 @@ module.exports = {
       process: "process/browser",
       React: "react",
     })
-  ],
-  optimization : {
-    splitChunks : {
-      chunks : 'all'
-    }
-  }
+  ]
 };

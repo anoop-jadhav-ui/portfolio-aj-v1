@@ -1,28 +1,27 @@
 /* @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"); */
 
-
 @font-face {
-  font-family: Montserrat;
-  src: url('./assets/Montserrat/Montserrat-Bold.ttf');
+  font-family: Poppins;
+  src: url('./assets/Poppins/Poppins-Bold.ttf');
   font-weight: bold;
   font-style: normal;
 }
 @font-face {
-  font-family: Montserrat;
-  src: url('./assets/Montserrat/Montserrat-Light.ttf');
+  font-family: Poppins;
+  src: url('./assets/Poppins/Poppins-Light.ttf');
   font-weight: light;
   font-style: normal;
 }
 @font-face {
-  font-family: Montserrat;
-  src: url('./assets/Montserrat/Montserrat-Regular.ttf');
+  font-family: Poppins;
+  src: url('./assets/Poppins/Poppins-Regular.ttf');
   font-weight: normal;
   font-style: normal;
 }
 
 body {
   margin: 0;
-  font-family: "Montserrat", "Open Sans", "Helvetica" !important;
+  font-family: "Poppins", "Open Sans", "Helvetica" !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

@@ -6,7 +6,8 @@
 /build
 /.pnp
 .pnp.js
-/.idea
+.idea
+/.idea/workspace.xml
 
 # testing
 /coverage

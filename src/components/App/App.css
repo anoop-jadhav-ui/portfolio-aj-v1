@@ -9,8 +9,8 @@
 
 body{
   --app-background : white;
-  /*--input-background: #dbdbdb33;*/
-  --input-background: white;
+  --input-background: #dbdbdb33;
+  /* --input-background: white; */
 
   --grey1: #333333;
   --grey2: #4f4f4f;
