@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0c7043d0-df3e-46f1-97b7-d27bdefc0688" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.development.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.development.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.production.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.production.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +46,7 @@
       <option name="presentableId" value="Default" />
       <updated>1662312915813</updated>
       <workItem from="1662312924919" duration="2224000" />
-      <workItem from="1662353815315" duration="680000" />
+      <workItem from="1662353815315" duration="1944000" />
     </task>
     <servers />
   </component>
