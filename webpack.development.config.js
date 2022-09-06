@@ -1,10 +1,11 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCSSExtractPlugin = require("mini-css-extract-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const webpack = require("webpack");
 
 module.exports = {
-  mode: "production",
+  mode: "development",
   entry: "./src/index.js",
   output: {
     filename: "[name].[contenthash].js",
@@ -15,8 +16,9 @@ module.exports = {
   devServer: {
     contentBase: path.resolve(__dirname, "./dist"),
     index: "index.html",
-    port: "9000",
-    writeToDisk: true
+    port: "8080",
+    writeToDisk: true,
+    hot: true,
   },
   module: {
     rules: [
@@ -58,6 +60,12 @@ module.exports = {
     new MiniCSSExtractPlugin({
       filename: "styles.[contenthash].css"
     }),
+    new CleanWebpackPlugin({
+      cleanOnceBeforeBuildPatterns: [
+        "**/*",
+        path.join(process.cwd(), "build/**/*")
+      ]
+    }),
     new webpack.EnvironmentPlugin({
       REACT_APP_FIREBASE_KEY: JSON.stringify(process.env.REACT_APP_FIREBASE_KEY),
       REACT_APP_AUTH_DOMAIN: JSON.stringify(process.env.REACT_APP_AUTH_DOMAIN),
@@ -72,5 +80,10 @@ module.exports = {
       process: "process/browser",
       React: "react",
     })
-  ]
+  ],
+  optimization: {
+    splitChunks: {
+      chunks: 'all'
+    }
+  }
 };
