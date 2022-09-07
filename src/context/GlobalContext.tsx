@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 import { initialProfileData, ProfileData } from "../types/profileDataTypes";
-import fetchData from "../helpers/firebaseConfig";
+import fetchData from "../helpers/fetchData";
 import getFilteredLeftPaneData, {
   LeftPaneMenuItem,
 } from "../components/Organisms/LeftPane/leftPaneData";
