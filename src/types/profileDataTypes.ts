@@ -70,6 +70,8 @@ export interface ExperienceDetails {
   name: string;
   summary: string;
   totalYears: string;
+  fromDate: string;
+  toDate: string;
 }
 
 export interface HobbyDetails {

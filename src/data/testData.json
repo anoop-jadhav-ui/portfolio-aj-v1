@@ -84,19 +84,25 @@
       "fromToDates": "Currently Working",
       "name": "Thoughtworks",
       "summary": "Thoughtworks has been my dream company since college days because of its work culture. It is widely known for the intellectual minds who are solving complex problem using technology. I am really excited to work on new challenges here in Thoughtworks.",
-      "totalYears": "6 Months"
+      "totalYears": "",
+      "fromDate": "10 May 2021",
+      "toDate": "Present"
     },
     {
-      "fromToDates": "2017-2021",
+      "fromToDates": "Feb 2017 - April 2021",
       "name": "Deloitte",
       "summary": "In Deloitte, I started with a public sector project for State of Michigan where we built a custom application on salesforce using salesforce lightning components. Along with the project I worked on several Firm initiatives built on React Js - One of the major project being Elixir where we build a React app for non developers similar to wordpress/squarespace having the drag and drop functionality to generate salesforce components. Due to the open culture in Deloitte, I also got the opportunity to work on design projects which involved in-house web/mobile app design, several posters, mailers, infographics, brochure designs and branding. ",
-      "totalYears": "4 Years"
+      "totalYears": "",
+      "fromDate": "06 Feb 2017",
+      "toDate": "29 April 2021"
     },
     {
-      "fromToDates": "2014-2016",
+      "fromToDates": "Aug 2014 - Jan 2016",
       "name": "Cognizant",
       "summary": "Initially started my career in Cognizant as a SAP BASIS consultant. but due to my interest in web technologies I switched to a UI Developer role and worked on various projects using tools and technologies like Angular JS 1.x., React Js, Jquery, Bootstrap, Git etc.",
-      "totalYears": "2 Years"
+      "totalYears": "",
+      "fromDate": "28 Aug 2014",
+      "toDate": "17 Jan 2017"
     }
   ],
   "hobbies": [
