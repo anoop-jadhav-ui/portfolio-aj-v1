@@ -1,8 +1,7 @@
-import React, { useRef, useState } from "react";
-import LeftPane from "../LeftPane/LeftPane";
+import React, { useRef } from "react";
 import MainBody from "../MainBody/MainBody";
 import ToggleButton from "../ToggleButton/ToggleButton";
-
+import DarkModeToggle from "react-dark-mode-toggle";
 import ErrorBoundary from "../ErrorBoundary/ErrorBoundary";
 
 import "./App.css";
@@ -12,9 +11,9 @@ import { useGlobalContext } from "../../context/GlobalContext";
 import TopScrollBar from "../TopScrollBar/TopScrollBar";
 
 export const App = () => {
-  const [currentStep, setCurrentStep] = useState<number>(1);
+  // const [currentStep, setCurrentStep] = useState<number>(1);
   const { darkMode, setDarkMode } = useTheme();
-  const { isProfileDataLoaded, profileData, leftPaneData } = useGlobalContext();
+  const { isProfileDataLoaded } = useGlobalContext();
   const AppRef = useRef<HTMLDivElement>(null);
   const toDarkMode = () => {
     setDarkMode(!darkMode);
@@ -30,12 +29,17 @@ export const App = () => {
           <div className={"App summary row no-gutters fade show"} ref={AppRef}>
             <div className="darkModeWrapper">
               <div className="darkModeButton" onClick={() => toDarkMode()}>
-                <ToggleButton
-                  onClick={() => toDarkMode()}
-                  value={darkMode}
-                  trueLabel="Dark"
-                  falseLabel="Light"
+                <DarkModeToggle
+                  onChange={toDarkMode}
+                  checked={darkMode}
+                  size={50}
                 />
+                {/* <ToggleButton*/}
+                {/*  onClick={toDarkMode}*/}
+                {/*  value={darkMode}*/}
+                {/*  trueLabel="Dark"*/}
+                {/*  falseLabel="Light"*/}
+                {/* />*/}
               </div>
             </div>
             {/* {leftPaneData && (*/}

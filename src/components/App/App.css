@@ -48,40 +48,6 @@ body.darkmode {
   padding: 5.25rem;
 }
 
-.App:before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background: repeating-conic-gradient(
-    from 45deg at 40% 20%,
-    transparent 0 180deg,
-    var(--app-background) 180deg 270deg,
-    transparent 270deg 360deg
-  );
-  background-size: 120% 80%;
-  z-index: -1;
-}
-.App:after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background: repeating-conic-gradient(
-    from 0deg at 60% 60%,
-    transparent 0 45deg,
-    var(--app-background) 45deg 135deg,
-    transparent 135deg 360deg
-  );
-  background-size: 100% 80%;
-
-  z-index: -1;
-}
-
 .uppercase {
   text-transform: uppercase;
 }

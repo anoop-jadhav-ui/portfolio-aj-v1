@@ -18,13 +18,6 @@
 .projectcard:hover {
   background-color: var(--grey6);
 }
-.darkmode .projectcard {
-  border: 1px solid var(--grey2);
-  transition: border 0.5s ease-in-out;
-}
-.darkmode .projectcard:hover {
-  background-color: var(--grey2);
-}
 
 .tags {
   display: flex;
@@ -47,16 +40,6 @@
   white-space: nowrap;
   cursor: pointer;
 }
-/*.tag + .tag:nth-child(4n + 2):not(:nth-child(2)),*/
-/*.tag + .tag:nth-child(4n + 1):not(:nth-child(1)),*/
-/*.tag + .tag:nth-child(4n) {*/
-/*  margin-top: 0.5rem;*/
-/*}*/
-/*.showall .tag + .tag:nth-child(4n + 2):not(:nth-child(2)),*/
-/*.showall .tag + .tag:nth-child(4n + 1):not(:nth-child(1)),*/
-/*.showall .tag + .tag:nth-child(4n) {*/
-/*  margin-top: 0;*/
-/*}*/
 
 .description {
   padding-top: 1rem;
