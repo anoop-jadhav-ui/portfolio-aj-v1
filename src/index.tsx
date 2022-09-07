@@ -1,10 +1,10 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
-import App from "./components/App/App";
+import App from "./App/App";
 
 import "./index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Providers from "./Providers";
+import Providers from "./context/Providers";
 
 const container = document.getElementById("root");
 const root = createRoot(container!);

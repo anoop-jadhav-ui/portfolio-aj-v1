@@ -1,9 +1,9 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
-import { initialProfileData, ProfileData } from "../Types/profileDataTypes";
-import fetchData from "../firebaseConfig";
+import { initialProfileData, ProfileData } from "../types/profileDataTypes";
+import fetchData from "../helpers/firebaseConfig";
 import getFilteredLeftPaneData, {
   LeftPaneMenuItem,
-} from "../components/LeftPane/leftPaneData";
+} from "../components/Organisms/LeftPane/leftPaneData";
 
 interface GlobalContextType {
   profileData: ProfileData;
