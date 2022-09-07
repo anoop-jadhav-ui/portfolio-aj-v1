@@ -7,7 +7,7 @@ import { BarGraph } from "./BarGraph";
 let props = {
   value: "60",
   currentStep: "1",
-  sectionStep: "1"
+  sectionStep: "1",
 };
 
 test("Should render Bar Graph Correctly", async () => {

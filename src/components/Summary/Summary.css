@@ -7,87 +7,35 @@
   /* animation: circularSpin 5s infinite ease-in; */
 }
 
-.mainlogo-wrapper{
+.mainlogo-wrapper {
   position: relative;
   box-sizing: content-box;
 }
 
-/* .mainlogo-wrapper:before{
+.mainlogo-wrapper:after {
   content: "";
-  position: absolute;
-  top:50%;
-  left: 50%;
-  transform: translateX(-50%) translateY(-50%);
-  width:20.5rem;
-  height:20.5rem;
-  border-radius: 50%;
-  border-left: 4px solid var(--red);
-  border-right : 4px solid transparent;
-  border-top : 4px solid transparent;
-  border-bottom: 4px solid transparent;
-  z-index: -1;
-  animation: rotateImgBg1 1s infinite cubic-bezier(0.7, 0.4, 0.6, 0.7);
-}
-
-.mainlogo-wrapper:after{
-  content: "";
-  position: absolute;
-  top:50%;
-  left: 50%;
-  transform: translateX(-50%) translateY(-50%) rotate(30deg);
-  width:21rem;
-  height:21rem;
-  border-radius: 50%;
-  border-left: 16px solid var(--app-background-light-mode);
-  border-right : 16px solid transparent;
-  border-top : 16px solid transparent;
-  border-bottom: 16px solid transparent;
-  z-index: -1;
-  animation: rotateImgBg2 1s infinite cubic-bezier(0.7, 0.4, 0.6, 0.7);
-} */
-
-/* @keyframes rotateImgBg1 {
-  0%{
-    transform: translateX(-50%) translateY(-50%) rotate(0deg);
-  }
-  100%{
-    transform: translateX(-50%) translateY(-50%) rotate(360deg);
-  }
-}
-@keyframes rotateImgBg2 {
-  0%{
-    transform: translateX(-50%) translateY(-50%) rotate(30deg);
-  }
-  100%{
-    transform: translateX(-50%) translateY(-50%) rotate(390deg);
-  }
-} */
-
-
-.mainlogo-wrapper:after{
-  content:'';
   position: absolute;
   width: 20rem;
   height: 20rem;
-  border:2px solid var(--red);
+  border: 2px solid var(--red);
   border-radius: 50%;
-  top:50%;
+  top: 50%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
-  animation: borders 3s infinite linear;
+  animation: borders 6s infinite linear;
 }
 
-.mainlogo-wrapper:before{
-  content:'';
+.mainlogo-wrapper:before {
+  content: "";
   position: absolute;
   width: 20rem;
   height: 20rem;
-  border:2px solid var(--red);
+  border: 2px solid var(--red);
   border-radius: 50%;
-  top:50%;
+  top: 50%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
-  animation: borders 3s infinite 1.5s linear;
+  animation: borders 6s infinite 3s linear;
   opacity: 0;
 }
 
@@ -95,14 +43,13 @@
   opacity: 1;
 }
 
-
 @keyframes borders {
-  0%{
+  0% {
     width: 20rem;
     height: 20rem;
     opacity: 1;
   }
-  100%{
+  100% {
     width: 24rem;
     height: 24rem;
     opacity: 0;

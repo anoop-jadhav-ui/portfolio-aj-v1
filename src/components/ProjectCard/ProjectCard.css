@@ -2,13 +2,19 @@
   border: 1px solid var(--grey5);
   padding: 1.5rem 1rem !important;
   border-radius: 0.25rem;
-  min-width: 20rem;
-  width: 33.33%;
+  width: 49%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   cursor: pointer;
 }
+
+@media (max-width: 1200px) {
+  .projectcard {
+    width: 100%;
+  }
+}
+
 .projectcard:hover {
   background-color: var(--grey6);
 }
@@ -22,8 +28,9 @@
 
 .tags {
   display: flex;
-
   flex-wrap: wrap;
+  align-items: center;
+  grid-gap: 0.5rem;
 }
 
 .tag {
@@ -33,7 +40,6 @@
   background-color: var(--red);
   padding: 1px 0.5rem;
   border-radius: 20px;
-  margin-right: 0.5rem;
   width: 4rem;
   text-align: center;
   overflow: hidden;
@@ -41,16 +47,16 @@
   white-space: nowrap;
   cursor: pointer;
 }
-.tag + .tag:nth-child(4n + 2):not(:nth-child(2)),
-.tag + .tag:nth-child(4n + 1):not(:nth-child(1)),
-.tag + .tag:nth-child(4n) {
-  margin-top: 0.5rem;
-}
-.showall .tag + .tag:nth-child(4n + 2):not(:nth-child(2)),
-.showall .tag + .tag:nth-child(4n + 1):not(:nth-child(1)),
-.showall .tag + .tag:nth-child(4n) {
-  margin-top: 0;
-}
+/*.tag + .tag:nth-child(4n + 2):not(:nth-child(2)),*/
+/*.tag + .tag:nth-child(4n + 1):not(:nth-child(1)),*/
+/*.tag + .tag:nth-child(4n) {*/
+/*  margin-top: 0.5rem;*/
+/*}*/
+/*.showall .tag + .tag:nth-child(4n + 2):not(:nth-child(2)),*/
+/*.showall .tag + .tag:nth-child(4n + 1):not(:nth-child(1)),*/
+/*.showall .tag + .tag:nth-child(4n) {*/
+/*  margin-top: 0;*/
+/*}*/
 
 .description {
   padding-top: 1rem;

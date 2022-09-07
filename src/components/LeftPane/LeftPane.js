@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./LeftPane.css";
 import ContactIcons from "../ContactIcons/ContactIcons";
-import Constants from '../constants'
+import Constants from "../../constants";
 function LeftPaneItems(props) {
   var listItems = props.data.leftPaneItems.map(
     (item) =>
@@ -25,7 +25,7 @@ class LeftPane extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      leftPaneVisible: Constants.DEFAULT_LEFTPANEL_VISIBLE
+      leftPaneVisible: Constants.DEFAULT_LEFTPANEL_VISIBLE,
     };
   }
   componentDidMount() {
@@ -39,7 +39,7 @@ class LeftPane extends Component {
 
       this.setState(() => {
         return {
-          currentStep: 1
+          currentStep: 1,
         };
       });
     }, 100);
@@ -51,7 +51,7 @@ class LeftPane extends Component {
   }
   toggleLeftPane() {
     this.setState({
-      leftPaneVisible: !this.state.leftPaneVisible
+      leftPaneVisible: !this.state.leftPaneVisible,
     });
   }
 

@@ -9,7 +9,11 @@
 .filled {
   display: block;
   height: 2.25rem;
-  background: linear-gradient(101.14deg, var(--orange) 0.99%, var(--red) 177.11%);
+  background: linear-gradient(
+    101.14deg,
+    var(--orange) 0.99%,
+    var(--red) 177.11%
+  );
   border-radius: 0.25rem;
   cursor: pointer;
 }

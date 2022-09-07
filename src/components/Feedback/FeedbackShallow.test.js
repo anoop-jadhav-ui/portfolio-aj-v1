@@ -26,7 +26,7 @@ const props = {
   message: "",
   messageStatus: "",
   updateMessage: jest.fn(),
-  updateBannerStatus: jest.fn()
+  updateBannerStatus: jest.fn(),
 };
 
 test("Submit if feedback message is not empty", async () => {

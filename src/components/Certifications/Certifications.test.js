@@ -9,21 +9,21 @@ const testDataCertifications = {
     {
       name: "Test Name",
       summary: "Test Summary",
-      urlToCertificate: "Test URL"
-    }
+      urlToCertificate: "Test URL",
+    },
   ],
   development: [
     {
       name: "Test Name",
       summary: "Test Summary",
-      urlToCertificate: "Test URL"
-    }
-  ]
+      urlToCertificate: "Test URL",
+    },
+  ],
 };
 
 let props = {
   certifications: testDataCertifications,
-  currentStep: 1
+  currentStep: 1,
 };
 
 test("Should render Certifications Correctly", async () => {

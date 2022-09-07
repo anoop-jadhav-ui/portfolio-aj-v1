@@ -9,12 +9,12 @@ const contactDetails = {
   emailId: "anoopjadhav@gmail.com",
   github: "https://github.com/Anoopjadhav",
   instaId: "anoop.designs",
-  linkedin: "https://www.linkedin.com/in/anoop-jadhav-44528258"
+  linkedin: "https://www.linkedin.com/in/anoop-jadhav-44528258",
 };
 
 let props = {
   contactDetails: contactDetails,
-  currentStep: 1
+  currentStep: 1,
 };
 
 test("Should render Contact Icons Correctly", async () => {

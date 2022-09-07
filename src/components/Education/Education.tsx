@@ -1,0 +1,43 @@
+import React from "react";
+import BarGraph from "../BarGraph/BarGraph";
+import "./Education.css";
+import { useGlobalContext } from "../../context/GlobalContext";
+
+function Education() {
+  const { profileData } = useGlobalContext();
+  const { education } = profileData;
+  return (
+    <div className="col-md-7 page-1 text-left section education ">
+      <div className="section-title h2 bold">Education</div>
+
+      <div className="subsection">
+        {education.map((educationDetail, key) => {
+          return (
+            <div className="subsection-wrappers" key={key}>
+              <div className="subsection-title uppercase body-text grey3 letterspacing-1 mt-2">
+                {educationDetail.type}
+              </div>
+              <div className="subsection-data">
+                <span className="h3 grey1 bold">
+                  {educationDetail.institute}
+                </span>
+                <span className="h3 grey3 light">
+                  , {educationDetail.place}
+                </span>
+                <div className="education-bars">
+                  <BarGraph
+                    value={educationDetail.percentage}
+                    currentStep={1}
+                    sectionStep={1}
+                  />
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+export default Education;

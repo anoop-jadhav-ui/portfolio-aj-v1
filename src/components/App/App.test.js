@@ -15,7 +15,7 @@ import { render, fireEvent, waitFor, screen } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 // the component to test
 import { App } from "./App";
-import dummyData from "../TestData/testData.json";
+import dummyData from "../../TestData/testData.json";
 
 let props = {
   dbData: dummyData,
@@ -25,19 +25,19 @@ let props = {
       headerPos: 0,
       id: "summary",
       key: 0,
-      label: "Summary"
-    }
+      label: "Summary",
+    },
   ],
   showLoader: false,
   toggleLoader: jest.fn(),
-  fetchData: jest.fn().mockReturnValueOnce(dummyData)
+  fetchData: jest.fn().mockReturnValueOnce(dummyData),
 };
 
 export function createTestStore() {
   const store = createStore(
     combineReducers({
       dr: DataReducer,
-      fr: FeedbackReducer
+      fr: FeedbackReducer,
     })
   );
   return store;

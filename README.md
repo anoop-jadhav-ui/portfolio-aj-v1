@@ -1,11 +1,27 @@
-## Portfolio web app for showcasing my design work
+## Portfolio web app
 
-URL : (https://anoopjadhav.netlify.app)
+click to view the final app - https://anoopjadhav.vercel.app
 
-### Run the React UI
+###Tech stack
+React Js, Firebase
 
-# Initial setup
-npm install
+### Setup
 
-# Start the server
-npm start
+```bash
+# install dependencies
+$ yarn
+
+# run dev server
+$ yarn dev
+
+# run production
+$ yarn start
+
+# build production
+$ yarn build
+
+# run unit tests
+$ yarn test
+```
+
+Reachout to - anoopjadhav@gmail.com for more info.

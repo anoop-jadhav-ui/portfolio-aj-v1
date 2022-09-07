@@ -7,8 +7,8 @@
   font-size: 18px;
 }
 
-body{
-  --app-background : white;
+body {
+  --app-background: white;
   --input-background: #dbdbdb33;
   /* --input-background: white; */
 
@@ -17,21 +17,21 @@ body{
   --grey3: #828282;
   --grey4: #bdbdbd;
   --grey5: #e0e0e0;
-  --grey6: #f2f2f2;;
+  --grey6: #f2f2f2;
 
   --red: #eb5757;
   --orange: #f2994a;
-  --light-orange:#ffaeae;
+  --light-orange: #ffaeae;
   --yellow: #f2c94c;
   --green: #27ae60;
 
   background-color: var(--app-background) !important;
-  color:var(--grey1);
+  color: var(--grey1);
 }
 
 body.darkmode {
-  --app-background : #212122;
-  --input-background:#262627;
+  --app-background: #212122;
+  --input-background: #262627;
 
   --grey6: #333333;
   --grey5: #4f4f4f;
@@ -40,8 +40,7 @@ body.darkmode {
   --grey2: #e0e0e0;
   --grey1: #f2f2f2;
 
-  color:var(--grey1);
-
+  color: var(--grey1);
 }
 
 .App {
@@ -49,26 +48,36 @@ body.darkmode {
   padding: 5.25rem;
 }
 
-.App:before{
+.App:before {
   content: "";
   position: absolute;
   width: 100%;
-  height:100%;
-  top:0;
+  height: 100%;
+  top: 0;
   left: 0;
-  background : repeating-conic-gradient(from 45deg at 40% 20%, transparent 0 180deg, var(--app-background) 180deg 270deg, transparent 270deg 360deg);
-  background-size:120% 80%;
+  background: repeating-conic-gradient(
+    from 45deg at 40% 20%,
+    transparent 0 180deg,
+    var(--app-background) 180deg 270deg,
+    transparent 270deg 360deg
+  );
+  background-size: 120% 80%;
   z-index: -1;
 }
-.App:after{
+.App:after {
   content: "";
   position: absolute;
   width: 100%;
-  height:100%;
-  top:0;
+  height: 100%;
+  top: 0;
   left: 0;
-  background : repeating-conic-gradient(from 0deg at 60% 60%, transparent 0 45deg, var(--app-background) 45deg 135deg, transparent 135deg 360deg);
-  background-size:100% 80%;
+  background: repeating-conic-gradient(
+    from 0deg at 60% 60%,
+    transparent 0 45deg,
+    var(--app-background) 45deg 135deg,
+    transparent 135deg 360deg
+  );
+  background-size: 100% 80%;
 
   z-index: -1;
 }
@@ -95,7 +104,6 @@ body.darkmode {
   display: inline;
   position: relative;
 }
-
 
 .h3 {
   font-size: 1.5rem;
@@ -175,7 +183,7 @@ ul > li a:hover {
   font-weight: bold;
 }
 ul > li a:hover {
-  color:var(--grey2) !important;
+  color: var(--grey2) !important;
 }
 
 /*Colors*/
@@ -313,10 +321,9 @@ ul > li a:hover {
   padding-top: 8.25rem;
 }
 
-.section-title{
+.section-title {
   color: var(--red);
 }
-
 
 .dot {
   height: 4px;

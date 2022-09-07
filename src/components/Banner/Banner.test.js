@@ -7,7 +7,7 @@ import { Banner } from "./Banner";
 let props = {
   text: "banner test for testing",
   type: "error",
-  closeBanner: jest.fn()
+  closeBanner: jest.fn(),
 };
 
 test("Should render Banner and close banner method called on click ", async () => {

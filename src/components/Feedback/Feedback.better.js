@@ -34,7 +34,7 @@ test("Submit if feedback message is not empty", async () => {
 
   const feedbackBox = screen.getByTestId("feedback-box");
   fireEvent.change(feedbackBox, {
-    target: { value: "Some Random Feedback Message" }
+    target: { value: "Some Random Feedback Message" },
   });
 
   fireEvent.click(screen.getByTestId("feedback-button"));
@@ -61,7 +61,7 @@ test("Do not Submit if feedback message is empty", async () => {
 
   const feedbackBox = screen.getByTestId("feedback-box");
   fireEvent.change(feedbackBox, {
-    target: { value: "" }
+    target: { value: "" },
   });
 
   fireEvent.click(screen.getByTestId("feedback-button"));
@@ -85,7 +85,7 @@ test("Do not Submit if Server throws an error", async () => {
   );
   const feedbackBox = screen.getByTestId("feedback-box");
   fireEvent.change(feedbackBox, {
-    target: { value: "Some value " }
+    target: { value: "Some value " },
   });
 
   fireEvent.click(screen.getByTestId("feedback-button"));
@@ -119,7 +119,7 @@ test("Do not Submit if Server fails to update feedback", async () => {
   );
   const feedbackBox = screen.getByTestId("feedback-box");
   fireEvent.change(feedbackBox, {
-    target: { value: "Some value " }
+    target: { value: "Some value " },
   });
 
   fireEvent.click(screen.getByTestId("feedback-button"));
