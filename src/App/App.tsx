@@ -1,6 +1,5 @@
 import React, { useRef } from "react";
 import MainBody from "../components/Organisms/MainBody/MainBody";
-import ToggleButton from "../components/Atoms/ToggleButton/ToggleButton";
 import DarkModeToggle from "react-dark-mode-toggle";
 import ErrorBoundary from "../components/Molecules/ErrorBoundary/ErrorBoundary";
 
@@ -11,7 +10,6 @@ import { useGlobalContext } from "../context/GlobalContext";
 import TopScrollBar from "../components/Atoms/TopScrollBar/TopScrollBar";
 
 export const App = () => {
-  // const [currentStep, setCurrentStep] = useState<number>(1);
   const { darkMode, setDarkMode } = useTheme();
   const { isProfileDataLoaded } = useGlobalContext();
   const AppRef = useRef<HTMLDivElement>(null);

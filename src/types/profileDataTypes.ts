@@ -66,7 +66,6 @@ export interface EducationDetails {
 }
 
 export interface ExperienceDetails {
-  fromToDates: string;
   name: string;
   summary: string;
   totalYears: string;
