@@ -4,10 +4,7 @@ const MiniCSSExtractPlugin = require("mini-css-extract-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const webpack = require("webpack");
 
-const mode = process.env.NODE_ENV || "development";
-
 module.exports = {
-  mode: mode,
   entry: "./src/index.tsx",
   output: {
     filename: "bundle.js",
@@ -16,13 +13,6 @@ module.exports = {
     publicPath: "/",
   },
   target: "web",
-  devtool: "source-map",
-  devServer: {
-    contentBase: path.resolve(__dirname, "./dist"),
-    index: "index.html",
-    port: "8080",
-    writeToDisk: true,
-  },
   module: {
     rules: [
       {
