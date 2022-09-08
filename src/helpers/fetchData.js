@@ -36,14 +36,17 @@ let firebaseData = new Promise((resolve, reject) => {
 
 export default function fetchData() {
   /* GET DATA FROM FIREBASE */
-  // eslint-disable-next-line no-undef
-  console.log(process.env.NODE_ENV);
-  // eslint-disable-next-line no-undef
-  if (process.env.NODE_ENV === "development") {
+  try {
+    // eslint-disable-next-line no-undef
+    if (process.env.NODE_ENV === "development") {
+      return testProfileData;
+    } else {
+      return firebaseData.then((result) => {
+        return result;
+      });
+    }
+  } catch (err) {
+    console.log(err);
     return testProfileData;
-  } else {
-    return firebaseData.then((result) => {
-      return result;
-    });
   }
 }
