@@ -33,7 +33,6 @@ const Summary = () => {
   }
   return (
     <>
-      {!imageLoading && <Loader />}
       <div className="col-md-7 page-1 text-center ">
         <div className="mainlogo-wrapper">
           <img

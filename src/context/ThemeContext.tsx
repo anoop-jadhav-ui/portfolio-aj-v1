@@ -1,10 +1,5 @@
-import React, {
-  createContext,
-  ReactNode,
-  useContext,
-  useEffect,
-  useState,
-} from "react";
+import React, { createContext, ReactNode, useContext, useEffect } from "react";
+import usePersistState from "../hooks/usePersistState";
 
 interface ThemeContextType {
   darkMode: boolean;
@@ -22,16 +17,16 @@ export const ThemeContext = createContext<ThemeContextType>(defaultTheme);
 export const useTheme = () => useContext(ThemeContext);
 
 const ThemeContextProvider = ({ children }: { children: ReactNode }) => {
-  const [darkMode, setDarkMode] = useState<boolean>(false);
+  const [darkMode, setDarkMode] = usePersistState<boolean>("DarkMode", false);
 
-  useEffect(() => {
-    if (
-      window.matchMedia &&
-      window.matchMedia("(prefers-color-scheme: dark)").matches
-    ) {
-      setDarkMode(true);
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (
+  //     window.matchMedia &&
+  //     window.matchMedia("(prefers-color-scheme: dark)").matches
+  //   ) {
+  //     setDarkMode(true);
+  //   }
+  // }, []);
 
   useEffect(() => {
     darkMode
