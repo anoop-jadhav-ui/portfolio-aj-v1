@@ -24,7 +24,10 @@ export const App = () => {
       ) : (
         <>
           <TopScrollBar AppRef={AppRef} />
-          <div className={"App summary row no-gutters fade show"} ref={AppRef}>
+          <div
+            className={"App row no-gutters fade show justify-content-center"}
+            ref={AppRef}
+          >
             <div className="darkModeWrapper">
               <div className="darkModeButton" onClick={() => toDarkMode()}>
                 <DarkModeToggle
