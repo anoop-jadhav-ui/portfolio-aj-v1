@@ -35,7 +35,6 @@ let firebaseData = new Promise((resolve, reject) => {
 });
 
 export default function fetchData() {
-  /* GET DATA FROM FIREBASE */
   try {
     // eslint-disable-next-line no-undef
     if (process.env.NODE_ENV === "development") {

@@ -2,7 +2,6 @@ import React, { useMemo, useState } from "react";
 import lightImage from "../../../assets/portfolio-app-img-light-min.png";
 import darkImage from "../../../assets/portfolio-app-img-dark-min.png";
 import "./Summary.css";
-import Loader from "../../Atoms/Loader/Loader";
 import { useGlobalContext } from "../../../context/GlobalContext";
 import { useTheme } from "../../../context/ThemeContext";
 import moment from "moment/moment";
@@ -13,15 +12,20 @@ const Summary = () => {
   const { darkMode } = useTheme();
   const { overview, experience } = profileData;
 
-  const totalExperience = useMemo(() => {
-    return experience
-      .map((exp) => {
-        const fromDate = moment(exp.fromDate);
-        const toDate = exp.toDate !== "Present" ? moment(exp.toDate) : moment();
-        return moment(toDate).diff(fromDate, "year", true);
-      })
-      .reduce((a, b) => a + b)
-      .toFixed(1);
+  const totalExperience = useMemo((): string => {
+    try {
+      return experience
+        .map((exp) => {
+          const fromDate = moment(exp.fromDate);
+          const toDate =
+            exp.toDate !== "Present" ? moment(exp.toDate) : moment();
+          return moment(toDate).diff(fromDate, "year", true);
+        })
+        .reduce((a, b) => a + b)
+        .toFixed(1);
+    } catch (err) {
+      return String(moment().year() - 2014);
+    }
   }, [experience]);
 
   function handleImageLoaded() {
