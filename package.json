@@ -19,6 +19,7 @@
     "react": "^18.2.0",
     "react-dark-mode-toggle": "^0.2.0",
     "react-dom": "^18.2.0",
+    "react-page-scroll-progress-bar": "^2.0.1",
     "react-scripts": "^4.0.3",
     "typescript": "^4.8.2"
   },
@@ -71,7 +72,6 @@
     "msw": "^0.30.1",
     "path": "^0.12.7",
     "prettier": "2.3.2",
-    "react-test-renderer": "^17.0.2",
     "ts-loader": "^9.3.1",
     "webpack": "^5.39.1",
     "webpack-cli": "^4.7.2",

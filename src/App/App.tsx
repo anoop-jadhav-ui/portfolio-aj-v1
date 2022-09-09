@@ -2,12 +2,11 @@ import React, { useRef } from "react";
 import MainBody from "../components/Organisms/MainBody/MainBody";
 import DarkModeToggle from "react-dark-mode-toggle";
 import ErrorBoundary from "../components/Molecules/ErrorBoundary/ErrorBoundary";
-
+import PageScrollProgressBar from "react-page-scroll-progress-bar";
 import "./App.css";
 import Loader from "../components/Atoms/Loader/Loader";
 import { useTheme } from "../context/ThemeContext";
 import { useGlobalContext } from "../context/GlobalContext";
-import TopScrollBar from "../components/Atoms/TopScrollBar/TopScrollBar";
 
 export const App = () => {
   const { darkMode, setDarkMode } = useTheme();
@@ -23,7 +22,7 @@ export const App = () => {
         <Loader />
       ) : (
         <>
-          <TopScrollBar AppRef={AppRef} />
+          <PageScrollProgressBar container={AppRef.current} />
           <div
             className={"App row no-gutters fade show justify-content-center"}
             ref={AppRef}
