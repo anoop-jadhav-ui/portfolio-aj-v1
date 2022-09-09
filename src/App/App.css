@@ -350,23 +350,10 @@ ul > li a:hover {
 
 .darkModeWrapper {
   position: fixed;
-  top: -1.5rem;
+  top: 1rem;
   right: 1rem;
   cursor: pointer;
   z-index: 999;
-  animation: slideInFromTop 1s ease-in-out forwards;
-}
-
-@keyframes slideInFromTop {
-  0% {
-    top: -1.5rem;
-  }
-  80% {
-    top: 1.5rem;
-  }
-  100% {
-    top: 1rem;
-  }
 }
 
 .darkModeButton {

@@ -7,6 +7,7 @@ import "./App.css";
 import Loader from "../components/Atoms/Loader/Loader";
 import { useTheme } from "../context/ThemeContext";
 import { useGlobalContext } from "../context/GlobalContext";
+import { DarkModeSwitch } from "react-toggle-dark-mode";
 
 export const App = () => {
   const { darkMode, setDarkMode } = useTheme();
@@ -29,10 +30,11 @@ export const App = () => {
           >
             <div className="darkModeWrapper">
               <div className="darkModeButton" onClick={() => toDarkMode()}>
-                <DarkModeToggle
-                  onChange={toDarkMode}
+                <DarkModeSwitch
                   checked={darkMode}
-                  size={50}
+                  onChange={toDarkMode}
+                  size={30}
+                  sunColor="#FFCC66"
                 />
               </div>
             </div>
