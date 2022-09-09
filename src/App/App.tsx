@@ -1,6 +1,5 @@
 import React, { useRef } from "react";
 import MainBody from "../components/Organisms/MainBody/MainBody";
-import DarkModeToggle from "react-dark-mode-toggle";
 import ErrorBoundary from "../components/Molecules/ErrorBoundary/ErrorBoundary";
 import PageScrollProgressBar from "react-page-scroll-progress-bar";
 import "./App.css";
