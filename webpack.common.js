@@ -19,6 +19,7 @@ module.exports = {
         test: /\.(svg)$/,
         type: "asset/inline",
       },
+      { test: /\.(woff|woff2|eot|ttf)$/, loader: "url-loader" },
       {
         test: /\.(png|jpg)$/,
         type: "asset/resource",

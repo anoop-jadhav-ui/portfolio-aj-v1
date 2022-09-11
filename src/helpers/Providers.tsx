@@ -1,6 +1,6 @@
-import { GlobalContextProvider } from "./GlobalContext";
+import { GlobalContextProvider } from "../context/GlobalContext";
 import React, { ReactNode } from "react";
-import ThemeContextProvider from "./ThemeContext";
+import ThemeContextProvider from "../context/ThemeContext";
 
 const Providers = ({ children }: { children: ReactNode }) => {
   return (

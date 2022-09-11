@@ -4,7 +4,7 @@ import App from "./App/App";
 
 import "./index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Providers from "./context/Providers";
+import Providers from "./helpers/Providers";
 
 const container = document.getElementById("root");
 const root = createRoot(container!);

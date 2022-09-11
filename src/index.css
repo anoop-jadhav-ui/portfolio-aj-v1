@@ -1,6 +1,34 @@
+@font-face {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("./assets/Poppins/Poppins-Regular.woff") format("woff"),
+    url("./assets/Poppins/Poppins-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: Poppins-Bold;
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("./assets/Poppins/Poppins-Bold.woff") format("woff"),
+    url("./assets/Poppins/Poppins-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: Poppins-Black;
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url("./assets/Poppins/Poppins-Black.ttf") format("truetype"),
+    url("./assets/Poppins/Poppins-Black.woff") format("woff");
+}
+
 body {
   margin: 0;
   font-family: "Poppins", sans-serif !important;
+  font-weight: normal !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
