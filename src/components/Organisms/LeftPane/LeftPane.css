@@ -1,6 +1,30 @@
-.menu {
-  margin: 1rem 0;
+.left-pane {
+  position: relative;
+  top: 10rem;
+  /*background-color: var(--input-background);*/
+  border-radius: 0.25rem;
+  border: 1px solid var(--grey5);
+  width: 14.5rem;
+  /*box-shadow: 0px 4px 8px 1px rgba(0, 0, 0, 0.08);*/
 }
+
+.left-pane.open {
+  animation: slideInFromLeft 0.5s ease-in-out forwards;
+}
+
+.left-pane.closed {
+  animation: slideOutToLeft 0.5s ease-in-out forwards;
+}
+
+ul.menu {
+  padding: 0 1rem 1.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  grid-gap: 0.8125rem;
+  margin-bottom: 0;
+}
+
 .menu li {
   list-style: none;
   cursor: pointer;
@@ -12,28 +36,6 @@
   border-left: 3px solid var(--red);
   position: relative;
   left: -1rem;
-}
-.menu li + li {
-  margin-top: 1rem;
-}
-
-.left-pane {
-  position: relative;
-  top: 10rem;
-  background-color: var(--input-background);
-  border-radius: 0.25rem;
-  padding: 1rem 2rem;
-
-  width: 14.5rem;
-  box-shadow: 0px 4px 8px 1px rgba(0, 0, 0, 0.08);
-}
-
-.left-pane.open {
-  animation: slideInFromLeft 0.5s ease-in-out forwards;
-}
-
-.left-pane.closed {
-  animation: slideOutToLeft 0.5s ease-in-out forwards;
 }
 
 @keyframes slideInFromLeft {
@@ -60,10 +62,20 @@
   }
 }
 
+.left-pane-header-container {
+  display: flex;
+  justify-content: space-between;
+}
+.left-pane-header {
+  font-size: 0.8125rem;
+  padding: 1rem 1.5rem;
+  color: var(--red);
+}
+
 .toggle-button {
-  height: 2rem;
-  width: 2rem;
-  position: absolute;
+  /*height: 2rem;*/
+  width: 3rem;
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -76,8 +88,8 @@
 
 .left-pane.open .toggle-button {
   right: 0;
-  background-color: var(--input-background);
 }
+
 .left-pane.closed .toggle-button {
   right: -2rem;
   background-color: var(--red);

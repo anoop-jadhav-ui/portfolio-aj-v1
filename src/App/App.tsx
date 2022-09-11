@@ -8,10 +8,11 @@ import { useTheme } from "../context/ThemeContext";
 import { useGlobalContext } from "../context/GlobalContext";
 import { DarkModeSwitch } from "react-toggle-dark-mode";
 import ToggleButton from "../components/Atoms/ToggleButton/ToggleButton";
+import LeftPane from "../components/Organisms/LeftPane/LeftPane";
 
 export const App = () => {
   const { darkMode, setDarkMode } = useTheme();
-  const { isProfileDataLoaded } = useGlobalContext();
+  const { isProfileDataLoaded, leftPaneData } = useGlobalContext();
   const AppRef = useRef<HTMLDivElement>(null);
   const toDarkMode = () => {
     setDarkMode(!darkMode);
@@ -42,15 +43,7 @@ export const App = () => {
                 />
               </div>
             </div>
-            {/* {leftPaneData && (*/}
-            {/*  <LeftPane*/}
-            {/*    toggleLoader={isProfileDataLoaded}*/}
-            {/*    currentStep={currentStep}*/}
-            {/*    leftPaneItems={leftPaneData}*/}
-            {/*    darkMode={darkMode}*/}
-            {/*    dbData={profileData}*/}
-            {/*  ></LeftPane>*/}
-            {/* )}*/}
+            {leftPaneData && <LeftPane />}
             <MainBody />
           </div>
         </>
