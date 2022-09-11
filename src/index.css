@@ -1,13 +1,28 @@
 * {
-  margin: 0;
-  font-family: "Montserrat", sans-serif !important;
-  /*font-family: "Poppins", sans-serif !important;*/
+  --font-family-headers: "Montserrat", sans-serif !important;
+  --font-family-text: "Poppins", sans-serif !important;
+  --font-family-code: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: geometricPrecision;
+  font-family: var(--font-family-text);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5 {
+  font-family: var(--font-family-headers);
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  font-family: var(--font-family-code);
 }
