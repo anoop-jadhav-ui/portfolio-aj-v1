@@ -9,7 +9,7 @@ function Projects() {
 
   return (
     <div className="col-md-7 page-1 text-left section projects">
-      <div className="section-title grey4 h2 bold">Fun Learning Projects</div>
+      <div className="section-title h2 bold">Fun Learning Projects</div>
 
       <div className="subsection projectsectionbody">
         {projects.map((projectDetails, index) => {
