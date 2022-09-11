@@ -23,7 +23,10 @@ export const App = () => {
         <Loader />
       ) : (
         <>
-          <PageScrollProgressBar container={AppRef.current} />
+          <PageScrollProgressBar
+            container={AppRef.current}
+            bgColor="transparent"
+          />
           <div
             className={"App row no-gutters fade show justify-content-center"}
             ref={AppRef}

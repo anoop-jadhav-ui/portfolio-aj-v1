@@ -9,14 +9,17 @@
   cursor: pointer;
 }
 
+.projectcard:hover {
+  background-color: var(--grey6);
+}
+
 @media (max-width: 1200px) {
   .projectcard {
     width: 100%;
   }
-}
-
-.projectcard:hover {
-  background-color: var(--grey6);
+  .projectcard:hover {
+    background-color: transparent;
+  }
 }
 
 .tags {
