@@ -91,9 +91,11 @@ ul.menu {
 }
 
 .left-pane.closed .toggle-button {
-  right: -2rem;
-  background-color: var(--red);
-  box-shadow: 0px 4px 8px 1px rgba(0, 0, 0, 0.08);
+  right: -2.5rem;
+  /*background-color: var(--red);*/
+  /*box-shadow: 0px 4px 8px 1px rgba(0, 0, 0, 0.08);*/
+  border-radius: 0.25rem;
+  border: 1px solid var(--grey5);
 }
 
 .arrow {
@@ -102,16 +104,15 @@ ul.menu {
   display: block;
   width: 0.6rem;
   height: 0.6rem;
-}
-.left-pane.open .arrow {
-  transform: rotate(-45deg);
+
   border-left: 2px solid var(--red);
   border-top: 2px solid var(--red);
 }
+.left-pane.open .arrow {
+  transform: rotate(-45deg);
+}
 .left-pane.closed .arrow {
   transform: rotate(135deg);
-  border-left: 2px solid var(--grey6);
-  border-top: 2px solid var(--grey6);
 }
 
 /* Medium devices (tablets, 768px and up)*/
