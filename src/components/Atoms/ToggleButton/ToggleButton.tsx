@@ -1,10 +1,8 @@
 import React from "react";
-import "./ToggleButton.css";
+import styles from "./ToggleButton.module.css";
 interface ToggleButtonProps {
   onClick: () => void;
   value: boolean;
-  trueLabel: string;
-  falseLabel: string;
 }
 const ToggleButton = ({ onClick, value }: ToggleButtonProps) => {
   function clickHandler() {
@@ -13,11 +11,11 @@ const ToggleButton = ({ onClick, value }: ToggleButtonProps) => {
   return (
     <div
       id={value ? "on" : "off"}
-      className="ToggleButton"
+      className={styles.toggleButton}
       onClick={clickHandler}
     >
-      <div className="bar">
-        <div className="circle"></div>
+      <div className={styles.bar}>
+        <div className={styles.circle}></div>
       </div>
     </div>
   );

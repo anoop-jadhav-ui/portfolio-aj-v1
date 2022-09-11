@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: "Poppins", "Open Sans", "Helvetica" !important;
+  font-family: "Poppins", sans-serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

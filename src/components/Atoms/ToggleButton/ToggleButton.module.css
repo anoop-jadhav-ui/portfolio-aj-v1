@@ -1,21 +1,20 @@
-.ToggleButton {
+.toggleButton {
   position: relative;
   width: 36px;
   height: 1rem;
   display: flex;
   align-items: center;
+  --on: #eb5757;
+  --off: #e0e0e0;
 }
 
 .circle {
   width: 17px;
   height: 17px;
-
   border-radius: 50%;
-
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-
   transition: all 0.3s ease-in;
 }
 
@@ -27,16 +26,16 @@
 }
 
 #on .bar {
-  background-color: var(--light-orange);
+  background-color: var(--on);
 }
 #off .bar {
-  background-color: var(--grey5);
+  background-color: var(--off);
 }
 #on .circle {
-  background-color: var(--red);
+  background-color: var(--on);
   left: calc(100% - 19px);
 }
 #off .circle {
-  background-color: var(--grey4);
+  background-color: var(--off);
   left: 2px;
 }

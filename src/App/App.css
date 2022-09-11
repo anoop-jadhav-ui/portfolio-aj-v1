@@ -122,7 +122,7 @@ button {
   color: white;
   padding: 0.6rem 2rem;
   border: 0;
-  border-radius: 0.25rem;
+  border-radius: 0.25rem !important;
   font-weight: bold;
 }
 

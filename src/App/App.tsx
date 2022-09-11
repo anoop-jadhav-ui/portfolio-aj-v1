@@ -7,6 +7,7 @@ import Loader from "../components/Atoms/Loader/Loader";
 import { useTheme } from "../context/ThemeContext";
 import { useGlobalContext } from "../context/GlobalContext";
 import { DarkModeSwitch } from "react-toggle-dark-mode";
+import ToggleButton from "../components/Atoms/ToggleButton/ToggleButton";
 
 export const App = () => {
   const { darkMode, setDarkMode } = useTheme();
@@ -27,14 +28,15 @@ export const App = () => {
             className={"App row no-gutters fade show justify-content-center"}
             ref={AppRef}
           >
+            <ToggleButton onClick={toDarkMode} value={darkMode}></ToggleButton>
             <div className="darkModeWrapper">
               <div className="darkModeButton" onClick={() => toDarkMode()}>
-                <DarkModeSwitch
-                  checked={darkMode}
-                  onChange={toDarkMode}
-                  size={30}
-                  sunColor="#FFCC66"
-                />
+                {/* <DarkModeSwitch*/}
+                {/*  checked={darkMode}*/}
+                {/*  onChange={toDarkMode}*/}
+                {/*  size={30}*/}
+                {/*  sunColor="#FFCC66"*/}
+                {/* />*/}
               </div>
             </div>
             {/* {leftPaneData && (*/}
