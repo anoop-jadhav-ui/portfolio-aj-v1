@@ -19,7 +19,17 @@ module.exports = {
         test: /\.(svg)$/,
         type: "asset/inline",
       },
-      { test: /\.(woff|woff2|eot|ttf)$/, loader: "url-loader" },
+      {
+        test: /\.(woff|woff2|eot|ttf)$/,
+        use: {
+          loader: "file-loader",
+          options: {
+            name: "[name].[ext]",
+            outputPath: "fonts/",
+          },
+        },
+      },
+      // { test: /\.(woff|woff2|eot|ttf)$/, loader: "asset/resource" },
       {
         test: /\.(png|jpg)$/,
         type: "asset/resource",

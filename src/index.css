@@ -1,36 +1,47 @@
-@font-face {
-  font-family: Poppins;
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("./assets/Poppins/Poppins-Regular.woff") format("woff"),
-    url("./assets/Poppins/Poppins-Regular.ttf") format("truetype");
-}
+/*@font-face {*/
+/*  font-family: Poppins;*/
+/*  font-style: normal;*/
+/*  font-weight: 400;*/
+/*  font-display: swap;*/
+/*  src: url("./assets/Poppins/Poppins-Regular.woff2") format("woff2"),*/
+/*  url("./assets/Poppins/Poppins-Regular.woff") format("woff"),*/
+/*  url("./assets/Poppins/Poppins-Regular.ttf") format("truetype");*/
 
-@font-face {
-  font-family: Poppins-Bold;
-  font-style: normal;
-  font-weight: 800;
-  font-display: swap;
-  src: url("./assets/Poppins/Poppins-Bold.woff") format("woff"),
-    url("./assets/Poppins/Poppins-Bold.ttf") format("truetype");
-}
+/*}*/
 
-@font-face {
-  font-family: Poppins-Black;
-  font-style: normal;
-  font-weight: 900;
-  font-display: swap;
-  src: url("./assets/Poppins/Poppins-Black.ttf") format("truetype"),
-    url("./assets/Poppins/Poppins-Black.woff") format("woff");
-}
+/*@font-face {*/
+/*  font-family: Poppins-Bold;*/
+/*  font-style: normal;*/
+/*  font-weight: 800;*/
+/*  font-display: swap;*/
+/*  src: url("./assets/Poppins/Poppins-Bold.woff2") format("woff2"),*/
+/*  url("./assets/Poppins/Poppins-Bold.woff") format("woff"),*/
+/*  url("./assets/Poppins/Poppins-Bold.ttf") format("truetype");*/
+/*}*/
 
-body {
+/*@font-face {*/
+/*  font-family: 'Montserrat';*/
+/*  font-style: normal;*/
+/*  font-weight: normal;*/
+/*  src: url("./assets/Montserrat/static/Montserrat-Regular.woff2") format("woff2"),*/
+/*  url("./assets/Montserrat/static/Montserrat-Regular.ttf") format("truetype");*/
+/*}*/
+
+/*@font-face {*/
+/*  font-family: 'Montserrat';*/
+/*  font-style: normal;*/
+/*  font-weight: bold;*/
+/*  src: url("./assets/Montserrat/static/Montserrat-Bold.woff2") format("woff2"),*/
+/*  url("./assets/Montserrat/static/Montserrat-Bold.ttf") format("truetype");*/
+/*}*/
+
+* {
   margin: 0;
-  font-family: "Poppins", sans-serif !important;
-  font-weight: normal !important;
+  font-family: "Montserrat", sans-serif !important;
+  /*font-family: "Poppins", sans-serif !important;*/
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: geometricPrecision;
 }
 
 code {

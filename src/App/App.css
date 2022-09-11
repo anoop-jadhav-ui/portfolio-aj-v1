@@ -53,7 +53,7 @@ body.darkmode {
 }
 
 .bold {
-  font-weight: 900 !important;
+  font-weight: bold !important;
 }
 .letterspacing-1 {
   letter-spacing: 1px;
