@@ -114,7 +114,6 @@ textarea {
   background: var(--input-background);
 }
 .darkmode textarea {
-  border: none;
   color: var(--grey6);
 }
 button {

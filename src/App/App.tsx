@@ -31,12 +31,12 @@ export const App = () => {
             <ToggleButton onClick={toDarkMode} value={darkMode}></ToggleButton>
             <div className="darkModeWrapper">
               <div className="darkModeButton" onClick={() => toDarkMode()}>
-                {/* <DarkModeSwitch*/}
-                {/*  checked={darkMode}*/}
-                {/*  onChange={toDarkMode}*/}
-                {/*  size={30}*/}
-                {/*  sunColor="#FFCC66"*/}
-                {/* />*/}
+                <DarkModeSwitch
+                  checked={darkMode}
+                  onChange={toDarkMode}
+                  size={30}
+                  sunColor="#FFCC66"
+                />
               </div>
             </div>
             {/* {leftPaneData && (*/}
