@@ -9,6 +9,8 @@ interface GlobalContextType {
   profileData: ProfileData;
   isProfileDataLoaded: boolean;
   leftPaneData: Array<LeftPaneMenuItem>;
+  currentSectionInView: string;
+  setCurrentSectionInView: (currentSectionInView: string) => void;
 }
 type GlobalContextProps = {
   children: React.ReactNode;
@@ -17,6 +19,10 @@ const defaultGobalContext: GlobalContextType = {
   profileData: initialProfileData,
   isProfileDataLoaded: false,
   leftPaneData: [],
+  currentSectionInView: "summary",
+  setCurrentSectionInView: (currentSectionInView) => {
+    /* TODO document why this method 'setDarkMode' is empty */
+  },
 };
 
 const GlobalContext = createContext<GlobalContextType>(defaultGobalContext);
@@ -30,6 +36,8 @@ export const GlobalContextProvider = (props: GlobalContextProps) => {
     useState<boolean>(false);
 
   const [leftPaneData, setLeftPaneData] = useState<Array<LeftPaneMenuItem>>([]);
+  const [currentSectionInView, setCurrentSectionInView] =
+    useState<string>("summary");
 
   useEffect(() => {
     (async () => {
@@ -48,6 +56,8 @@ export const GlobalContextProvider = (props: GlobalContextProps) => {
         profileData,
         isProfileDataLoaded,
         leftPaneData,
+        currentSectionInView,
+        setCurrentSectionInView,
       }}
     >
       {children}

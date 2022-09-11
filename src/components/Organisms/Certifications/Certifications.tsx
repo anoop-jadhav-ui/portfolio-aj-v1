@@ -2,13 +2,14 @@ import React from "react";
 import "./Certifications.css";
 import { useGlobalContext } from "../../../context/GlobalContext";
 import { CertificateDetails } from "../../../types/profileDataTypes";
+import SectionVisibilityHOC from "../SectionInViewWrapper/SectionVisibilityHOC";
 
 const Certifications = () => {
   const { profileData } = useGlobalContext();
   const { certifications } = profileData;
   const { development, design } = certifications;
   return (
-    <div className={"col-md-7 page-1 text-left section certifications"}>
+    <>
       <div className="section-title h2 bold">Certifications</div>
       <div className="subsection">
         <div className="subsection-title uppercase body-text grey3 letterspacing-1">
@@ -63,10 +64,8 @@ const Certifications = () => {
           );
         })}
       </div>
-    </div>
+    </>
   );
 };
 
-export default Certifications;
-
-export { Certifications };
+export default SectionVisibilityHOC(Certifications, "certifications");

@@ -2,15 +2,15 @@ import React from "react";
 import BarGraph from "../../Atoms/BarGraph/BarGraph";
 import "./Skills.css";
 import { useGlobalContext } from "../../../context/GlobalContext";
+import SectionVisibilityHOC from "../SectionInViewWrapper/SectionVisibilityHOC";
 
 const Skills = () => {
   const { profileData } = useGlobalContext();
   const { skills } = profileData;
   const { development, design } = skills;
   return (
-    <div className="col-md-7 page-1 text-left section skills">
+    <>
       <div className="section-title h2 bold">Skills</div>
-
       <div className="subsection">
         <div className="subsection-title uppercase body-text grey3 letterspacing-1">
           Development
@@ -61,8 +61,8 @@ const Skills = () => {
           })}
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
-export default Skills;
+export default SectionVisibilityHOC(Skills, "skills");

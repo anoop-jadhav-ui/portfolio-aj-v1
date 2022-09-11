@@ -1,6 +1,7 @@
 import React, { ChangeEventHandler, FormEvent, useState } from "react";
 import axiosInstance from "../../../helpers/axios";
 import Banner from "../../Atoms/Banner/Banner";
+import SectionVisibilityHOC from "../SectionInViewWrapper/SectionVisibilityHOC";
 
 const Feedback = () => {
   const [message, updateMessage] = useState<string>();
@@ -69,42 +70,40 @@ const Feedback = () => {
   return (
     <>
       {showBanner()}
-      <div className="col-md-7 page-1 text-left section feedback ">
-        <div className="section-title h2 bold">Feedback</div>
-        <form
-          id="contact-form"
-          className="subsection"
-          onSubmit={(event) => sendEmail(event)}
-          method="POST"
-        >
-          <div className="subsection-data">
-            <label
-              htmlFor="feedback-box"
-              className="subsection-title body-text letterspacing-1"
-            >
-              Please provide a constructive feedback.
-            </label>
-            <div className="red body-text mt-2">
-              <textarea
-                id="feedback-box"
-                data-testid="feedback-box"
-                className=""
-                name="message"
-                value={message}
-                placeholder={message}
-                onChange={handleChange}
-              />
-            </div>
-            <div className="text-left mt-3">
-              <button type="submit" data-testid="feedback-button">
-                Send
-              </button>
-            </div>
+      <div className="section-title h2 bold">Feedback</div>
+      <form
+        id="contact-form"
+        className="subsection"
+        onSubmit={(event) => sendEmail(event)}
+        method="POST"
+      >
+        <div className="subsection-data">
+          <label
+            htmlFor="feedback-box"
+            className="subsection-title body-text letterspacing-1"
+          >
+            Please provide a constructive feedback.
+          </label>
+          <div className="red body-text mt-2">
+            <textarea
+              id="feedback-box"
+              data-testid="feedback-box"
+              className=""
+              name="message"
+              value={message}
+              placeholder={message}
+              onChange={handleChange}
+            />
           </div>
-        </form>
-      </div>
+          <div className="text-left mt-3">
+            <button type="submit" data-testid="feedback-button">
+              Send
+            </button>
+          </div>
+        </div>
+      </form>
     </>
   );
 };
 
-export default Feedback;
+export default SectionVisibilityHOC(Feedback, "feedback");

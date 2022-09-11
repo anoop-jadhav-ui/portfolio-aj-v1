@@ -5,6 +5,7 @@ import "./Summary.css";
 import { useGlobalContext } from "../../../context/GlobalContext";
 import { useTheme } from "../../../context/ThemeContext";
 import moment from "moment/moment";
+import SectionVisibilityHOC from "../SectionInViewWrapper/SectionVisibilityHOC";
 
 const Summary = () => {
   const [imageLoading, setImageLoading] = useState(false);
@@ -35,36 +36,32 @@ const Summary = () => {
     console.error("Error while loading the profile image");
     setImageLoading(false);
   }
+
   return (
     <>
-      <div className="col-md-7 page-1 text-center ">
-        <div className="mainlogo-wrapper">
-          <img
-            src={darkMode ? darkImage : lightImage}
-            className={`mainlogo ${imageLoading && "loaded"}`}
-            alt="mi Baburao"
-            loading="eager"
-            onLoad={handleImageLoaded}
-            onError={handleImageErrored}
-          />
-        </div>
+      <div className="mainlogo-wrapper">
+        <img
+          src={darkMode ? darkImage : lightImage}
+          className={`mainlogo ${imageLoading && "loaded"}`}
+          alt="mi Baburao"
+          loading="eager"
+          onLoad={handleImageLoaded}
+          onError={handleImageErrored}
+        />
+      </div>
 
-        <div className="h1 bold main-title grey-1">{overview.name}</div>
-        <div className="h4 uppercase letterspacing-1 red bold">
-          {overview.title}
-        </div>
-        <div className="body-text summary-text">
-          {overview.summary.replace(
-            "{totalYearsOfExperience}",
-            totalExperience
-          )}
-        </div>
-        <div className="default-text red scroll-text thin">
-          Scroll to Know more
-        </div>
+      <div className="h1 bold main-title grey-1">{overview.name}</div>
+      <div className="h4 uppercase letterspacing-1 red bold">
+        {overview.title}
+      </div>
+      <div className="body-text summary-text">
+        {overview.summary.replace("{totalYearsOfExperience}", totalExperience)}
+      </div>
+      <div className="default-text red scroll-text thin">
+        Scroll to Know more
       </div>
     </>
   );
 };
 
-export default Summary;
+export default SectionVisibilityHOC(Summary, "summary");

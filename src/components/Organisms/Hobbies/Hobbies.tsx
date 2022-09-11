@@ -1,11 +1,12 @@
 import React from "react";
 import "./Hobbies.css";
 import { useGlobalContext } from "../../../context/GlobalContext";
+import SectionVisibilityHOC from "../SectionInViewWrapper/SectionVisibilityHOC";
 function Hobbies() {
   const { profileData } = useGlobalContext();
   const { hobbies } = profileData;
   return (
-    <div className="col-md-7 page-1 text-left section hobbies-interests ">
+    <>
       <div className="section-title h2 bold">Hobbies & Interests</div>
       <div className="subsection">
         {hobbies.map((hobby, key) => {
@@ -17,8 +18,8 @@ function Hobbies() {
           );
         })}
       </div>
-    </div>
+    </>
   );
 }
 
-export default Hobbies;
+export default SectionVisibilityHOC(Hobbies, "hobbies-interests");

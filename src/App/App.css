@@ -282,7 +282,7 @@ ul > li a:hover {
 }
 
 /*Section spacing*/
-.section {
+.section + .section {
   padding-top: 8.25rem;
 }
 

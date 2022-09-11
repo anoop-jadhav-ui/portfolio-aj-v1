@@ -2,14 +2,14 @@ import React from "react";
 import BarGraph from "../../Atoms/BarGraph/BarGraph";
 import "./Education.css";
 import { useGlobalContext } from "../../../context/GlobalContext";
+import SectionVisibilityHOC from "../SectionInViewWrapper/SectionVisibilityHOC";
 
 function Education() {
   const { profileData } = useGlobalContext();
   const { education } = profileData;
   return (
-    <div className="col-md-7 page-1 text-left section education ">
+    <>
       <div className="section-title h2 bold">Education</div>
-
       <div className="subsection">
         {education.map((educationDetail, key) => {
           return (
@@ -36,8 +36,7 @@ function Education() {
           );
         })}
       </div>
-    </div>
+    </>
   );
 }
-
-export default Education;
+export default SectionVisibilityHOC(Education, "education");

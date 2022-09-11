@@ -3,22 +3,18 @@ import "./LeftPane.css";
 import ContactIcons from "../../Molecules/ContactIcons/ContactIcons";
 import usePersistState from "../../../hooks/usePersistState";
 import { useGlobalContext } from "../../../context/GlobalContext";
-
-interface LeftPaneMenuItemProps {
-  label: string;
-}
-const LeftPaneItem = ({ label }: LeftPaneMenuItemProps) => {
-  return <li className="grey3">{label}</li>;
-};
+import LeftPaneItem from "../../Atoms/LeftPaneItem/LeftPaneItem";
 
 const LeftPane = () => {
   const [leftPaneVisible, setLeftPaneVisibility] = usePersistState(
     "leftPaneVisibility",
     false
   );
+  const { currentSectionInView } = useGlobalContext();
   const toggleLeftPane = () => {
     setLeftPaneVisibility(!leftPaneVisible);
   };
+
   const { leftPaneData } = useGlobalContext();
   return (
     <div
@@ -38,7 +34,12 @@ const LeftPane = () => {
       <ul className="menu body-text grey3">
         {leftPaneData.map((leftPaneItem) => {
           return (
-            <LeftPaneItem key={leftPaneItem.id} label={leftPaneItem.label} />
+            <LeftPaneItem
+              key={leftPaneItem.id}
+              label={leftPaneItem.label}
+              isSelected={currentSectionInView === leftPaneItem.class}
+              sectionClass={leftPaneItem.class}
+            />
           );
         })}
       </ul>

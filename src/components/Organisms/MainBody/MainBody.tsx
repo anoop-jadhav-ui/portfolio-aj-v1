@@ -12,9 +12,14 @@ import Contact from "../Contact/Contact";
 import Projects from "../Projects/Projects";
 import { useGlobalContext } from "../../../context/GlobalContext";
 
+export interface SectionProps {
+  sectionRef: HTMLDivElement;
+}
+
 const MainBody = () => {
   const { profileData } = useGlobalContext();
   const { appFeatureAvailability } = profileData;
+
   const {
     projects,
     experience,
