@@ -13,13 +13,12 @@
 .contactimg {
   width: 2rem;
   height: 2rem;
-  transition: all 0.3s ease-in-out;
 }
 
 .contactimg:hover {
   filter: invert(51%) sepia(21%) saturate(5271%) hue-rotate(328deg)
     brightness(99%) contrast(86%);
-  transform: scale(1.2);
+  transform: scale(1.1);
 }
 
 .inside-leftpane {
@@ -41,8 +40,8 @@
 }
 
 .inside-leftpane .contactimg {
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 1.3rem;
+  height: 1.3rem;
 }
 
 @media (max-width: 1200px) {
