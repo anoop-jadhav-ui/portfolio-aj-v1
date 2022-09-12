@@ -16,7 +16,7 @@ const leftPaneDataObj: Array<LeftPaneMenuItem> = [
   },
   {
     class: "projects",
-    label: "Recent Projects",
+    label: "Fun Learning Projects",
     id: "projects",
     headerPos: 0,
   },

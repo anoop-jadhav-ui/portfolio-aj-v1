@@ -2,7 +2,7 @@ import React from "react";
 import BarGraph from "../../Atoms/BarGraph/BarGraph";
 import "./Skills.css";
 import { useGlobalContext } from "../../../context/GlobalContext";
-import SectionVisibilityHOC from "../SectionInViewWrapper/SectionVisibilityHOC";
+import SectionVisibilityHOC from "../SectionVisibilityHOC/SectionVisibilityHOC";
 
 const Skills = () => {
   const { profileData } = useGlobalContext();

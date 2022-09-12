@@ -3,7 +3,7 @@ import "./WorkExperience.css";
 import { useGlobalContext } from "../../../context/GlobalContext";
 import moment from "moment/moment";
 import { ExperienceDetails } from "../../../types/profileDataTypes";
-import SectionVisibilityHOC from "../SectionInViewWrapper/SectionVisibilityHOC";
+import SectionVisibilityHOC from "../SectionVisibilityHOC/SectionVisibilityHOC";
 
 const WorkExperience = () => {
   const { profileData } = useGlobalContext();

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import MainBody from "../components/Organisms/MainBody/MainBody";
 import ErrorBoundary from "../components/Molecules/ErrorBoundary/ErrorBoundary";
 import PageScrollProgressBar from "react-page-scroll-progress-bar";
@@ -11,14 +11,9 @@ import ToggleButton from "../components/Atoms/ToggleButton/ToggleButton";
 import LeftPane from "../components/Organisms/LeftPane/LeftPane";
 
 export const App = () => {
-  const { darkMode, setDarkMode } = useTheme();
-  const { isProfileDataLoaded, leftPaneData, currentSectionInView } =
-    useGlobalContext();
+  const { darkMode, setDarkMode, isMobile } = useTheme();
+  const { isProfileDataLoaded, leftPaneData } = useGlobalContext();
   const AppRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    console.log(currentSectionInView);
-  }, [currentSectionInView]);
 
   const toDarkMode = () => {
     setDarkMode(!darkMode);
@@ -49,7 +44,7 @@ export const App = () => {
                 />
               </div>
             </div>
-            {leftPaneData && <LeftPane />}
+            {!isMobile && leftPaneData && <LeftPane />}
             <MainBody />
           </div>
         </>

@@ -5,7 +5,7 @@ import "./Summary.css";
 import { useGlobalContext } from "../../../context/GlobalContext";
 import { useTheme } from "../../../context/ThemeContext";
 import moment from "moment/moment";
-import SectionVisibilityHOC from "../SectionInViewWrapper/SectionVisibilityHOC";
+import SectionVisibilityHOC from "../SectionVisibilityHOC/SectionVisibilityHOC";
 
 const Summary = () => {
   const [imageLoading, setImageLoading] = useState(false);

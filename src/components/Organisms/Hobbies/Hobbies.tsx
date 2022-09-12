@@ -1,7 +1,7 @@
 import React from "react";
 import "./Hobbies.css";
 import { useGlobalContext } from "../../../context/GlobalContext";
-import SectionVisibilityHOC from "../SectionInViewWrapper/SectionVisibilityHOC";
+import SectionVisibilityHOC from "../SectionVisibilityHOC/SectionVisibilityHOC";
 function Hobbies() {
   const { profileData } = useGlobalContext();
   const { hobbies } = profileData;

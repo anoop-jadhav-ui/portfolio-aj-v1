@@ -1,7 +1,7 @@
 import React, { ChangeEventHandler, FormEvent, useState } from "react";
 import axiosInstance from "../../../helpers/axios";
 import Banner from "../../Atoms/Banner/Banner";
-import SectionVisibilityHOC from "../SectionInViewWrapper/SectionVisibilityHOC";
+import SectionVisibilityHOC from "../SectionVisibilityHOC/SectionVisibilityHOC";
 
 const Feedback = () => {
   const [message, updateMessage] = useState<string>();

@@ -1,7 +1,7 @@
 import React from "react";
 import "./Contact.css";
 import ContactIcons from "../../Molecules/ContactIcons/ContactIcons";
-import SectionVisibilityHOC from "../SectionInViewWrapper/SectionVisibilityHOC";
+import SectionVisibilityHOC from "../SectionVisibilityHOC/SectionVisibilityHOC";
 
 const Contact = () => {
   return (

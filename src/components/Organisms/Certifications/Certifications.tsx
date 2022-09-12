@@ -2,7 +2,7 @@ import React from "react";
 import "./Certifications.css";
 import { useGlobalContext } from "../../../context/GlobalContext";
 import { CertificateDetails } from "../../../types/profileDataTypes";
-import SectionVisibilityHOC from "../SectionInViewWrapper/SectionVisibilityHOC";
+import SectionVisibilityHOC from "../SectionVisibilityHOC/SectionVisibilityHOC";
 
 const Certifications = () => {
   const { profileData } = useGlobalContext();

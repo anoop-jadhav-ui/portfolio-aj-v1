@@ -2,7 +2,7 @@ import React from "react";
 import ProjectCard from "../../Molecules/ProjectCard/ProjectCard";
 import "./Projects.css";
 import { useGlobalContext } from "../../../context/GlobalContext";
-import SectionVisibilityHOC from "../SectionInViewWrapper/SectionVisibilityHOC";
+import SectionVisibilityHOC from "../SectionVisibilityHOC/SectionVisibilityHOC";
 
 function Projects() {
   const { profileData } = useGlobalContext();

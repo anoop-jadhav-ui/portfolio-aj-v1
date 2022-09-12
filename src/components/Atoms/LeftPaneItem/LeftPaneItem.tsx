@@ -11,7 +11,7 @@ const LeftPaneItem = ({
   sectionClass,
 }: LeftPaneMenuItemProps) => {
   const scrollIntoSectionView = (): void => {
-    const element = document.getElementsByClassName(`${sectionClass}-view`);
+    const element = document.getElementsByClassName(`${sectionClass}`);
     if (element[0]) {
       element[0].scrollIntoView({
         behavior: "smooth",
