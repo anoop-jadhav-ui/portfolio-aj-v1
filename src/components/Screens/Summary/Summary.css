@@ -4,7 +4,6 @@
   height: 20rem;
   border-radius: 50%;
   transition: opacity 0.3s ease-in-out;
-  /* animation: circularSpin 5s infinite ease-in; */
 }
 
 .mainlogo-wrapper {
@@ -15,9 +14,6 @@
 .mainlogo-wrapper:after {
   content: "";
   position: absolute;
-  width: 20rem;
-  height: 20rem;
-  border: 2px solid var(--red);
   border-radius: 50%;
   top: 50%;
   left: 50%;
@@ -28,15 +24,11 @@
 .mainlogo-wrapper:before {
   content: "";
   position: absolute;
-  width: 20rem;
-  height: 20rem;
-  border: 2px solid var(--red);
   border-radius: 50%;
   top: 50%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
   animation: borders 6s infinite 3s linear;
-  opacity: 0;
 }
 
 .loaded {
@@ -47,11 +39,11 @@
   0% {
     width: 20rem;
     height: 20rem;
-    opacity: 1;
+    border: 2px solid var(--red);
   }
   100% {
     width: 24rem;
     height: 24rem;
-    opacity: 0;
+    border: 2px solid transparent;
   }
 }
