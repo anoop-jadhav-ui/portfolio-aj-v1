@@ -1,13 +1,14 @@
 import React from "react";
 import "./Hobbies.css";
 import { useGlobalContext } from "../../../context/GlobalContext";
-import SectionVisibilityHOC from "../SectionVisibilityHOC/SectionVisibilityHOC";
+import SectionVisibilityHOC from "../../Organisms/SectionVisibilityHOC/SectionVisibilityHOC";
+import T from "../../../translations/en_IN";
 function Hobbies() {
   const { profileData } = useGlobalContext();
   const { hobbies } = profileData;
   return (
     <>
-      <div className="section-title h2 bold">Hobbies & Interests</div>
+      <div className="section-title h2 bold">{T.HOBBIES_AND_INTERESTS}</div>
       <div className="subsection">
         {hobbies.map((hobby, key) => {
           return (

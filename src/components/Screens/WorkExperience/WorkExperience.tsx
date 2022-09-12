@@ -3,8 +3,8 @@ import "./WorkExperience.css";
 import { useGlobalContext } from "../../../context/GlobalContext";
 import moment from "moment/moment";
 import { ExperienceDetails } from "../../../types/profileDataTypes";
-import SectionVisibilityHOC from "../SectionVisibilityHOC/SectionVisibilityHOC";
-
+import SectionVisibilityHOC from "../../Organisms/SectionVisibilityHOC/SectionVisibilityHOC";
+import T from "../../../translations/en_IN";
 const WorkExperience = () => {
   const { profileData } = useGlobalContext();
   const { experience } = profileData;
@@ -47,7 +47,7 @@ const WorkExperience = () => {
 
   return (
     <>
-      <div className="section-title h2 bold">Work Experience</div>
+      <div className="section-title h2 bold">{T.WORK_EXPERIENCE}</div>
       <div className="subsection">
         {calculatedExperience.map((experienceDetail, key) => {
           return (

@@ -2,14 +2,14 @@ import React from "react";
 import BarGraph from "../../Atoms/BarGraph/BarGraph";
 import "./Education.css";
 import { useGlobalContext } from "../../../context/GlobalContext";
-import SectionVisibilityHOC from "../SectionVisibilityHOC/SectionVisibilityHOC";
-
+import SectionVisibilityHOC from "../../Organisms/SectionVisibilityHOC/SectionVisibilityHOC";
+import T from "../../../translations/en_IN";
 function Education() {
   const { profileData } = useGlobalContext();
   const { education } = profileData;
   return (
     <>
-      <div className="section-title h2 bold">Education</div>
+      <div className="section-title h2 bold">{T.EDUCATION}</div>
       <div className="subsection">
         {education.map((educationDetail, key) => {
           return (

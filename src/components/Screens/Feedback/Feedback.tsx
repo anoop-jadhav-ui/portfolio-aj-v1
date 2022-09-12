@@ -1,7 +1,8 @@
 import React, { ChangeEventHandler, FormEvent, useState } from "react";
 import axiosInstance from "../../../helpers/axios";
 import Banner from "../../Atoms/Banner/Banner";
-import SectionVisibilityHOC from "../SectionVisibilityHOC/SectionVisibilityHOC";
+import SectionVisibilityHOC from "../../Organisms/SectionVisibilityHOC/SectionVisibilityHOC";
+import T from "../../../translations/en_IN";
 
 const Feedback = () => {
   const [message, updateMessage] = useState<string>();
@@ -70,7 +71,7 @@ const Feedback = () => {
   return (
     <>
       {showBanner()}
-      <div className="section-title h2 bold">Feedback</div>
+      <div className="section-title h2 bold">{T.FEEDBACK}</div>
       <form
         id="contact-form"
         className="subsection"
@@ -82,7 +83,7 @@ const Feedback = () => {
             htmlFor="feedback-box"
             className="subsection-title body-text letterspacing-1"
           >
-            Please provide a constructive feedback.
+            {T.FEEDBACK_MESSAGE}
           </label>
           <div className="red body-text mt-2">
             <textarea

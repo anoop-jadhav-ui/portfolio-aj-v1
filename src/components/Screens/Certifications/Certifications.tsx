@@ -2,18 +2,18 @@ import React from "react";
 import "./Certifications.css";
 import { useGlobalContext } from "../../../context/GlobalContext";
 import { CertificateDetails } from "../../../types/profileDataTypes";
-import SectionVisibilityHOC from "../SectionVisibilityHOC/SectionVisibilityHOC";
-
+import SectionVisibilityHOC from "../../Organisms/SectionVisibilityHOC/SectionVisibilityHOC";
+import T from "../../../translations/en_IN";
 const Certifications = () => {
   const { profileData } = useGlobalContext();
   const { certifications } = profileData;
   const { development, design } = certifications;
   return (
     <>
-      <div className="section-title h2 bold">Certifications</div>
+      <div className="section-title h2 bold">{T.CERTIFICATIONS}</div>
       <div className="subsection">
         <div className="subsection-title uppercase body-text grey3 letterspacing-1">
-          Development
+          {T.DEVELOPMENT}
         </div>
 
         {development.map(
@@ -42,7 +42,7 @@ const Certifications = () => {
       </div>
       <div className="subsection">
         <div className="subsection-title uppercase body-text grey3 letterspacing-1">
-          Design
+          {T.DESIGN}
         </div>
         {design.map((certificateDetail: CertificateDetails, key: number) => {
           return (
@@ -54,7 +54,7 @@ const Certifications = () => {
                   target="_Blank"
                   rel="noopener noreferrer"
                 >
-                  View LinkedIn profile
+                  {T.VIEW_LINKEDIN_PROFILE}
                 </a>
               </div>
               <div className="mt-2 grey-1 body-text">

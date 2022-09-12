@@ -5,8 +5,8 @@ import "./Summary.css";
 import { useGlobalContext } from "../../../context/GlobalContext";
 import { useTheme } from "../../../context/ThemeContext";
 import moment from "moment/moment";
-import SectionVisibilityHOC from "../SectionVisibilityHOC/SectionVisibilityHOC";
-
+import SectionVisibilityHOC from "../../Organisms/SectionVisibilityHOC/SectionVisibilityHOC";
+import T from "../../../translations/en_IN";
 const Summary = () => {
   const [imageLoading, setImageLoading] = useState(false);
   const { profileData } = useGlobalContext();
@@ -58,7 +58,7 @@ const Summary = () => {
         {overview.summary.replace("{totalYearsOfExperience}", totalExperience)}
       </div>
       <div className="default-text red scroll-text thin">
-        Scroll to Know more
+        {T.SCROLL_TO_KNOW_MORE}
       </div>
     </>
   );

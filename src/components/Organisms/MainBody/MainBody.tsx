@@ -1,15 +1,15 @@
 import React from "react";
 
 import "./MainBody.css";
-import Summary from "../Summary/Summary";
-import Education from "../Education/Education";
-import WorkExperience from "../WorkExperience/WorkExperience";
-import Certifications from "../Certifications/Certifications";
-import Skills from "../Skills/Skills";
-import Hobbies from "../Hobbies/Hobbies";
-import Feedback from "../Feedback/Feedback";
-import Contact from "../Contact/Contact";
-import Projects from "../Projects/Projects";
+import Summary from "../../Screens/Summary/Summary";
+import Education from "../../Screens/Education/Education";
+import WorkExperience from "../../Screens/WorkExperience/WorkExperience";
+import Certifications from "../../Screens/Certifications/Certifications";
+import Skills from "../../Screens/Skills/Skills";
+import Hobbies from "../../Screens/Hobbies/Hobbies";
+import Feedback from "../../Screens/Feedback/Feedback";
+import Contact from "../../Screens/Contact/Contact";
+import Projects from "../../Screens/Projects/Projects";
 import { useGlobalContext } from "../../../context/GlobalContext";
 
 export interface SectionProps {

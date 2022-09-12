@@ -1,17 +1,14 @@
 import React from "react";
 import "./Contact.css";
 import ContactIcons from "../../Molecules/ContactIcons/ContactIcons";
-import SectionVisibilityHOC from "../SectionVisibilityHOC/SectionVisibilityHOC";
-
+import SectionVisibilityHOC from "../../Organisms/SectionVisibilityHOC/SectionVisibilityHOC";
+import T from "../../../translations/en_IN";
 const Contact = () => {
   return (
     <>
-      <div className="section-title h2 bold">Contact Details</div>
+      <div className="section-title h2 bold">{T.CONTACT_DETAILS}</div>
       <div className="subsection">
-        <div>
-          Reach out to me on Email/LinkedIn or checkout some of my work on
-          Instagram/Github -
-        </div>
+        <div>{T.CONTACT_DETAILS_MESSAGE}</div>
         <ContactIcons className="" />
       </div>
     </>

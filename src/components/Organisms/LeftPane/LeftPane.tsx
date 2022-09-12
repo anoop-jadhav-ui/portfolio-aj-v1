@@ -26,8 +26,12 @@ const LeftPane = () => {
         <div className="left-pane-header bold uppercase letterspacing-1">
           Skip to section
         </div>
-        <div className="toggle-button" onClick={toggleLeftPane}>
-          <div className="arrow"></div>
+        <div
+          className="toggle-button"
+          title="Toggle sidebar"
+          onClick={toggleLeftPane}
+        >
+          <div className="arrow" />
         </div>
       </div>
 

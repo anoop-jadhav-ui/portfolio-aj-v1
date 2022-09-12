@@ -2,18 +2,18 @@ import React from "react";
 import BarGraph from "../../Atoms/BarGraph/BarGraph";
 import "./Skills.css";
 import { useGlobalContext } from "../../../context/GlobalContext";
-import SectionVisibilityHOC from "../SectionVisibilityHOC/SectionVisibilityHOC";
-
+import SectionVisibilityHOC from "../../Organisms/SectionVisibilityHOC/SectionVisibilityHOC";
+import T from "../../../translations/en_IN";
 const Skills = () => {
   const { profileData } = useGlobalContext();
   const { skills } = profileData;
   const { development, design } = skills;
   return (
     <>
-      <div className="section-title h2 bold">Skills</div>
+      <div className="section-title h2 bold">{T.SKILLS}</div>
       <div className="subsection">
         <div className="subsection-title uppercase body-text grey3 letterspacing-1">
-          Development
+          {T.DEVELOPMENT}
         </div>
         <div className="subsection-data">
           {development.map((skill, key) => {
@@ -38,7 +38,7 @@ const Skills = () => {
       </div>
       <div className="subsection">
         <div className="subsection-title uppercase body-text grey3 letterspacing-1">
-          Design
+          {T.DESIGN}
         </div>
         <div className="subsection-data">
           {design.map((skill, key) => {

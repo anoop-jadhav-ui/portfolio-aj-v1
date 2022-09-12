@@ -35,7 +35,11 @@ export const App = () => {
           >
             <ToggleButton onClick={toDarkMode} value={darkMode}></ToggleButton>
             <div className="darkModeWrapper">
-              <div className="darkModeButton" onClick={() => toDarkMode()}>
+              <div
+                className="darkModeButton"
+                onClick={() => toDarkMode()}
+                title="Toggle dark mode"
+              >
                 <DarkModeSwitch
                   checked={darkMode}
                   onChange={toDarkMode}
