@@ -8,9 +8,6 @@
 }
 
 body {
-  --input-background: #dbdbdb33;
-  /* --input-background: white; */
-
   --grey0: white;
   --grey1: #333333;
   --grey2: #4f4f4f;
@@ -21,6 +18,7 @@ body {
   --grey7: #212122;
 
   --app-background: var(--grey0);
+  --input-background: var(--grey0);
 
   --red: #eb5757;
   --dark-red: #b03535;
@@ -121,6 +119,7 @@ textarea {
   transition: background-color 0.5s ease-in-out;
   background: var(--input-background);
 }
+
 .darkmode textarea {
   color: var(--grey6);
 }
