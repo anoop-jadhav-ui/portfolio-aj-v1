@@ -6,6 +6,7 @@ import React, {
   useState,
 } from "react";
 import usePersistState from "../hooks/usePersistState";
+import { isMobile as isDeviceMobile } from "react-device-detect";
 
 interface ThemeContextType {
   darkMode: boolean;
@@ -28,37 +29,8 @@ const ThemeContextProvider = ({ children }: { children: ReactNode }) => {
   const [darkMode, setDarkMode] = usePersistState<boolean>("DarkMode", false);
   const [isMobile, setIsMobile] = useState<boolean>(false);
 
-  function detectBrowser() {
-    const userAgent = navigator.userAgent;
-    if (userAgent.match(/chrome|chromium|crios/i)) {
-      return "Chrome";
-    } else if (userAgent.match(/firefox|fxios/i)) {
-      return "Firefox";
-    } else if (userAgent.match(/safari/i)) {
-      return "Safari";
-    } else if (userAgent.match(/opr\//i)) {
-      return "Opera";
-    } else if (userAgent.match(/edg/i)) {
-      return "Edge";
-    } else if (userAgent.match(/android/i)) {
-      return "Android";
-    } else if (userAgent.match(/iphone/i)) {
-      return "iPhone";
-    } else {
-      return "Unknown";
-    }
-  }
-
   useEffect(() => {
-    const browser = detectBrowser();
-
-    if (["Android", "iPhone"].includes(browser)) {
-      // content for touch-screen (mobile) devices
-      setIsMobile(true);
-    } else {
-      // everything else (desktop)\
-      setIsMobile(false);
-    }
+    setIsMobile(isDeviceMobile);
   }, []);
 
   useEffect(() => {
