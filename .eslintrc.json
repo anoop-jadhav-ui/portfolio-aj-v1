@@ -24,7 +24,9 @@
     "quotes": ["error", "double"],
     "no-duplicate-imports": "error",
     "no-trailing-spaces": "error",
-    "react/display-name": "off"
+    "react/display-name": "off",
+    "@typescript-eslint/no-empty-function": "off",
+    "@typescript-eslint/ban-ts-comment": "off"
   },
   "settings": {
     "react": {

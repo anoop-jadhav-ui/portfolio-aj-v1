@@ -1,0 +1,30 @@
+.button {
+  padding: 0.6rem 1.5rem;
+  border-radius: 0.25rem !important;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.brand {
+  background: var(--red);
+  color: white;
+  border: 0;
+}
+.brand:hover {
+  background: var(--dark-red);
+}
+.label + .icon {
+  padding-left: 0.5rem;
+}
+.icon {
+  position: relative;
+}
+.neutral {
+  border: 1px solid var(--grey5);
+  color: var(--red);
+  background: white;
+}
+.neutral:hover {
+  background: var(--grey6);
+}

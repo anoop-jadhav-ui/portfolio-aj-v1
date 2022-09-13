@@ -14,14 +14,14 @@
     "babel-polyfill": "^6.26.0",
     "bootstrap": "^4.6.0",
     "dotenv": "^8.2.0",
-    "firebase": "^8.6.8",
+    "firebase": "^9.9.4",
     "moment": "^2.29.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-icons": "^4.4.0",
     "react-page-scroll-progress-bar": "^2.0.1",
     "react-scripts": "^4.0.3",
-    "react-toggle-dark-mode": "^1.1.0",
-    "typescript": "^4.8.2"
+    "react-toggle-dark-mode": "^1.1.0"
   },
   "scripts": {
     "webpack": "webpack",
@@ -73,6 +73,7 @@
     "path": "^0.12.7",
     "prettier": "2.3.2",
     "ts-loader": "^9.3.1",
+    "typescript": "^4.8.2",
     "webpack": "^5.39.1",
     "webpack-cli": "^4.7.2",
     "webpack-dev-server": "^3.11.1",

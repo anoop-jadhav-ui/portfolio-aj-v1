@@ -3,13 +3,13 @@ import axiosInstance from "../../../helpers/axios";
 import Banner from "../../Atoms/Banner/Banner";
 import SectionVisibilityHOC from "../../Organisms/SectionVisibilityHOC/SectionVisibilityHOC";
 import T from "../../../translations/en_IN";
-
+import Button from "../../Atoms/Button/Button";
+import { RiMailSendLine } from "react-icons/ri";
 const Feedback = () => {
   const [message, updateMessage] = useState<string>();
   const [bannerStatus, updateBannerStatus] = useState<string>();
 
   const handleChange: ChangeEventHandler<Element> = (event) => {
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     updateMessage(event.target.value);
   };
@@ -97,9 +97,12 @@ const Feedback = () => {
             />
           </div>
           <div className="text-left mt-3">
-            <button type="submit" data-testid="feedback-button">
-              Send
-            </button>
+            <Button
+              type="submit"
+              testID="feedback-button"
+              label={T.SEND}
+              Icon={RiMailSendLine}
+            />
           </div>
         </div>
       </form>

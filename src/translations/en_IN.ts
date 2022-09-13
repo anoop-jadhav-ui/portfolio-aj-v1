@@ -23,4 +23,6 @@ export default {
 
   DEVELOPMENT: "Development",
   DESIGN: "Design",
+
+  DOWNLOAD_CV: "Download CV",
 };

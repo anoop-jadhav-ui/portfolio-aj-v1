@@ -102,6 +102,7 @@ module.exports = {
       REACT_APP_MEASUREMENT_ID: JSON.stringify(
         process.env.REACT_APP_MEASUREMENT_ID
       ),
+      RESUME_FILENAME: JSON.stringify(process.env.RESUME_FILENAME),
     }),
     new webpack.ProvidePlugin({
       process: "process/browser",

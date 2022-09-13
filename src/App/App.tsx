@@ -9,7 +9,10 @@ import { useGlobalContext } from "../context/GlobalContext";
 import { DarkModeSwitch } from "react-toggle-dark-mode";
 import ToggleButton from "../components/Atoms/ToggleButton/ToggleButton";
 import LeftPane from "../components/Organisms/LeftPane/LeftPane";
-
+import Button from "../components/Atoms/Button/Button";
+import T from "../translations/en_IN";
+import { CgSoftwareDownload } from "react-icons/cg";
+import DownloadCV from "../components/Molecules/DownloadCV/DownloadCV";
 export const App = () => {
   const { darkMode, setDarkMode, isMobile } = useTheme();
   const { isProfileDataLoaded, leftPaneData } = useGlobalContext();
@@ -33,6 +36,8 @@ export const App = () => {
             className={"App row no-gutters fade show justify-content-center"}
             ref={AppRef}
           >
+            <DownloadCV />
+
             <ToggleButton onClick={toDarkMode} value={darkMode}></ToggleButton>
             <div className="darkModeWrapper">
               <div

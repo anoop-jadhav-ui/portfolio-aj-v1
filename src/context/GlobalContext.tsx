@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 import { initialProfileData, ProfileData } from "../types/profileDataTypes";
-import fetchData from "../helpers/fetchData";
+import fetchProfileData from "../helpers/fetchProfileData";
 import getFilteredLeftPaneData, {
   LeftPaneMenuItem,
 } from "../components/Organisms/LeftPane/leftPaneData";
@@ -41,7 +41,7 @@ export const GlobalContextProvider = (props: GlobalContextProps) => {
 
   useEffect(() => {
     (async () => {
-      const fetchedProfileData = await fetchData();
+      const fetchedProfileData = await fetchProfileData();
       setProfileData(fetchedProfileData);
       setLeftPaneData(
         getFilteredLeftPaneData(fetchedProfileData.appFeatureAvailability)
