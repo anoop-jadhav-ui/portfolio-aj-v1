@@ -17,9 +17,15 @@
 .label + .icon {
   padding-left: 0.5rem;
 }
+
 .icon {
   position: relative;
 }
+
+.with-label .icon {
+  top: -1px;
+}
+
 .neutral {
   border: 1px solid var(--grey5);
   color: var(--red);

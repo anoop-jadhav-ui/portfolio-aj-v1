@@ -20,7 +20,7 @@ const Button = ({
   return (
     <button
       onClick={onClick}
-      className={`${variant} button`}
+      className={`${variant} button ${label ? "with-label" : "no-label"}`}
       type={type}
       data-testid={testID}
     >
