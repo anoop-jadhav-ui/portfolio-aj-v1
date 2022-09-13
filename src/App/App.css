@@ -8,16 +8,19 @@
 }
 
 body {
-  --app-background: white;
   --input-background: #dbdbdb33;
   /* --input-background: white; */
 
+  --grey0: white;
   --grey1: #333333;
   --grey2: #4f4f4f;
   --grey3: #828282;
   --grey4: #bdbdbd;
   --grey5: #e0e0e0;
   --grey6: #f2f2f2;
+  --grey7: #212122;
+
+  --app-background: var(--grey0);
 
   --red: #eb5757;
   --dark-red: #b03535;
@@ -31,15 +34,19 @@ body {
 }
 
 body.darkmode {
-  --app-background: #212122;
   --input-background: #262627;
 
+  --lightest: #212122;
+  --darkest: white;
+
+  --grey7: white;
   --grey6: #333333;
   --grey5: #4f4f4f;
   --grey4: #828282;
   --grey3: #bdbdbd;
   --grey2: #e0e0e0;
   --grey1: #f2f2f2;
+  --grey0: #212122;
 
   color: var(--grey1);
 }

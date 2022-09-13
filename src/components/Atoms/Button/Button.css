@@ -23,7 +23,7 @@
 .neutral {
   border: 1px solid var(--grey5);
   color: var(--red);
-  background: white;
+  background: var(--grey0);
 }
 .neutral:hover {
   background: var(--grey6);
