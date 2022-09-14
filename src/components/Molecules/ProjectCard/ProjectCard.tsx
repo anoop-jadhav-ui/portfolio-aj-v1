@@ -1,5 +1,5 @@
 import React from "react";
-import "./ProjectCard.css";
+import "./ProjectCard.scss";
 import github from "../../../assets/github.svg";
 import weblink from "../../../assets/weblink.svg";
 import { ProjectDetails } from "../../../types/profileDataTypes";

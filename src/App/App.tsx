@@ -2,17 +2,14 @@ import React, { useRef } from "react";
 import MainBody from "../components/Organisms/MainBody/MainBody";
 import ErrorBoundary from "../components/Molecules/ErrorBoundary/ErrorBoundary";
 import PageScrollProgressBar from "react-page-scroll-progress-bar";
-import "./CommonStyles.css";
+import "./CommonStyles.scss";
 import Loader from "../components/Atoms/Loader/Loader";
 import { useTheme } from "../context/ThemeContext";
 import { useGlobalContext } from "../context/GlobalContext";
 import { DarkModeSwitch } from "react-toggle-dark-mode";
-import ToggleButton from "../components/Atoms/ToggleButton/ToggleButton";
 import LeftPane from "../components/Organisms/LeftPane/LeftPane";
-import Button from "../components/Atoms/Button/Button";
-import T from "../translations/en_IN";
-import { CgSoftwareDownload } from "react-icons/cg";
 import DownloadCV from "../components/Molecules/DownloadCV/DownloadCV";
+
 export const App = () => {
   const { darkMode, setDarkMode, isMobile } = useTheme();
   const { isProfileDataLoaded, leftPaneData } = useGlobalContext();
@@ -37,8 +34,6 @@ export const App = () => {
             ref={AppRef}
           >
             <DownloadCV />
-
-            <ToggleButton onClick={toDarkMode} value={darkMode}></ToggleButton>
             <div className="darkModeWrapper">
               <div
                 className="darkModeButton"

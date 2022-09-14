@@ -1,5 +1,5 @@
 import React from "react";
-import "./Banner.styles.scss";
+import "./Banner.scss";
 
 export type BannerStatus = "success" | "neutral" | "error";
 

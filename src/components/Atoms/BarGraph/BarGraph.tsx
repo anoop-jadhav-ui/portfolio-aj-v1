@@ -1,5 +1,5 @@
 import React from "react";
-import "./BarGraph.styles.scss";
+import "./BarGraph.scss";
 
 interface BarGraphProps {
   value: string;

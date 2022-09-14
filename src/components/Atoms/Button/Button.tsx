@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Button.styles.scss";
+import "./Button.scss";
 import { IconType } from "react-icons";
 
 interface ButtonProps {
