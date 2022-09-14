@@ -1,12 +1,13 @@
 import React, { useMemo, useState } from "react";
 import lightImage from "../../../assets/portfolio-app-img-light-min.png";
 import darkImage from "../../../assets/portfolio-app-img-dark-min.png";
-import "./Summary.scss";
 import { useGlobalContext } from "../../../context/GlobalContext";
 import { useTheme } from "../../../context/ThemeContext";
 import moment from "moment/moment";
 import SectionVisibilityHOC from "../../Organisms/SectionVisibilityHOC/SectionVisibilityHOC";
 import T from "../../../translations/en_IN";
+import * as S from "./Summary.styles";
+
 const Summary = () => {
   const [imageLoading, setImageLoading] = useState(false);
   const { profileData } = useGlobalContext();
@@ -39,16 +40,16 @@ const Summary = () => {
 
   return (
     <>
-      <div className="mainlogo-wrapper">
-        <img
+      <S.MainLogoWrapper>
+        <S.MainLogo
           src={darkMode ? darkImage : lightImage}
-          className={`mainlogo ${imageLoading && "loaded"}`}
           alt="mi Baburao"
           loading="eager"
           onLoad={handleImageLoaded}
           onError={handleImageErrored}
+          data-loaded={imageLoading}
         />
-      </div>
+      </S.MainLogoWrapper>
 
       <div className="h1 bold main-title grey-1">{overview.name}</div>
       <div className="h4 uppercase letterspacing-1 red bold">

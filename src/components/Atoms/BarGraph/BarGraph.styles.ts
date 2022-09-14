@@ -1,12 +1,14 @@
-.bar-graph {
+import styled from "styled-components";
+
+export const BarGraph = styled.div`
   background: var(--input-background);
   height: 2.25rem;
   border-radius: 0.25rem;
   overflow: hidden;
   transition: background-color 0.5s ease-in;
-}
+`;
 
-.filled {
+export const Bar = styled.div`
   display: block;
   height: 2.25rem;
   background: linear-gradient(
@@ -16,11 +18,4 @@
   );
   border-radius: 0.25rem;
   cursor: pointer;
-}
-
-.show-on-scroll .filled {
-  transition: all 900ms ease-in-out;
-}
-.show-on-scroll.is-visible .filled {
-  transition: all 900ms ease-in-out;
-}
+`;
