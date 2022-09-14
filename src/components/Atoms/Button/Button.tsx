@@ -1,9 +1,4 @@
-import React, {
-  MouseEventHandler,
-  SyntheticEvent,
-  useRef,
-  useState,
-} from "react";
+import React, { useState } from "react";
 import "./Button.css";
 import { IconType } from "react-icons";
 

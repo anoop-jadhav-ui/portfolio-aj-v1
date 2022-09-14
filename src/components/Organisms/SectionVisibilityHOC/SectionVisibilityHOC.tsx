@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useRef } from "react";
 import useScrollPosition from "../../../hooks/useScrollPosition";
 import { useGlobalContext } from "../../../context/GlobalContext";
-import styles from "./SectionVisibilityHOC.module.css";
+import "./SectionVisibilityHOC.scss";
 import { useTheme } from "../../../context/ThemeContext";
 const SectionVisibilityHOC =
   (Component: () => JSX.Element, sectionName: string) => () => {
@@ -41,7 +41,7 @@ const SectionVisibilityHOC =
       <div className={`${sectionName} col-md-7 ${textAlignment} section`}>
         {/* Element to check if the section is in view port*/}
         {!isMobile && (
-          <div ref={compRef} className={styles.sectionFloatingElement}></div>
+          <div ref={compRef} className="sectionFloatingElement"></div>
         )}
         <Component />
       </div>

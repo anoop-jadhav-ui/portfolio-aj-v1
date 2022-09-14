@@ -1,5 +1,5 @@
 import React from "react";
-import "./Contact.css";
+import "./Contact.scss";
 import ContactIcons from "../../Molecules/ContactIcons/ContactIcons";
 import SectionVisibilityHOC from "../../Organisms/SectionVisibilityHOC/SectionVisibilityHOC";
 import T from "../../../translations/en_IN";

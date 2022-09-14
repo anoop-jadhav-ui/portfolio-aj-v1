@@ -1,7 +1,7 @@
 import React, { useMemo, useState } from "react";
 import lightImage from "../../../assets/portfolio-app-img-light-min.png";
 import darkImage from "../../../assets/portfolio-app-img-dark-min.png";
-import "./Summary.css";
+import "./Summary.scss";
 import { useGlobalContext } from "../../../context/GlobalContext";
 import { useTheme } from "../../../context/ThemeContext";
 import moment from "moment/moment";

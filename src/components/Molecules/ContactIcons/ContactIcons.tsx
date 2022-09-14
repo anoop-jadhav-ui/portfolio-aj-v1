@@ -1,5 +1,5 @@
 import React from "react";
-import "./ContactIcons.css";
+import "./ContactIcons.scss";
 
 import email from "../../../assets/email.svg";
 import linkedinImg from "../../../assets/linkedin.svg";

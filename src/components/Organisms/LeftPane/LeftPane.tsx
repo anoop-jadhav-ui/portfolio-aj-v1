@@ -1,5 +1,5 @@
 import React from "react";
-import "./LeftPane.css";
+import "./LeftPane.scss";
 import ContactIcons from "../../Molecules/ContactIcons/ContactIcons";
 import usePersistState from "../../../hooks/usePersistState";
 import { useGlobalContext } from "../../../context/GlobalContext";

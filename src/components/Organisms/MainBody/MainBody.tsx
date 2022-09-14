@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./MainBody.css";
+import "./MainBody.scss";
 import Summary from "../../Screens/Summary/Summary";
 import Education from "../../Screens/Education/Education";
 import WorkExperience from "../../Screens/WorkExperience/WorkExperience";

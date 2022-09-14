@@ -1,5 +1,5 @@
 import React from "react";
-import "./Certifications.css";
+import "./Certifications.scss";
 import { useGlobalContext } from "../../../context/GlobalContext";
 import { CertificateDetails } from "../../../types/profileDataTypes";
 import SectionVisibilityHOC from "../../Organisms/SectionVisibilityHOC/SectionVisibilityHOC";

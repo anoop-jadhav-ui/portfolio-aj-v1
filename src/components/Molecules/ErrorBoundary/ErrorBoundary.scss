@@ -1,0 +1,19 @@
+.error {
+  text-align: center;
+  font-weight: bold;
+  padding: 3rem;
+  display: flex;
+  place-content: center;
+  height: 100vh;
+  flex-wrap: wrap;
+}
+.error svg {
+  width: 3em;
+  height: 3em;
+  fill: var(--red);
+}
+
+.error-message {
+  padding-top: 1.5rem;
+  width: 100%;
+}

@@ -25,4 +25,5 @@ export default {
   DESIGN: "Design",
 
   DOWNLOAD_CV: "Download CV",
+  PAGE_LOAD_ERROR: "Oops ! Something went wrong. Please try again",
 };

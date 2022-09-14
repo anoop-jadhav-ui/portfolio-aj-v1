@@ -2,7 +2,7 @@ import Button from "../../Atoms/Button/Button";
 import { CgSoftwareDownload } from "react-icons/cg";
 import T from "../../../translations/en_IN";
 import React from "react";
-import "./DownloadCV.css";
+import "./DownloadCV.scss";
 import getResumeFileURL from "../../../helpers/getStorageFile";
 import { downloadFile } from "../../../helpers/downloadFile";
 import { useTheme } from "../../../context/ThemeContext";
