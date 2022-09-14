@@ -1,13 +1,21 @@
 import React, { ChangeEventHandler, FormEvent, useState } from "react";
 import axiosInstance from "../../../helpers/axios";
-import Banner from "../../Atoms/Banner/Banner";
+import Banner, { BannerStatus } from "../../Atoms/Banner/Banner";
 import SectionVisibilityHOC from "../../Organisms/SectionVisibilityHOC/SectionVisibilityHOC";
 import T from "../../../translations/en_IN";
 import Button from "../../Atoms/Button/Button";
 import { RiMailSendLine } from "react-icons/ri";
+
 const Feedback = () => {
   const [message, updateMessage] = useState<string>();
-  const [bannerStatus, updateBannerStatus] = useState<string>();
+  const [bannerStatus, updateBannerStatus] = useState<BannerStatus>("neutral");
+  const [showBanner, setShowBanner] = useState(false);
+
+  const getBannerMessage = {
+    success: "Thank you for your feedback",
+    error: "Sorry Couldn't send your message. Please try again later.",
+    neutral: "Submitting your feedback...",
+  };
 
   const handleChange: ChangeEventHandler<Element> = (event) => {
     // @ts-ignore
@@ -16,8 +24,9 @@ const Feedback = () => {
 
   const sendEmail = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    try {
-      if (message) {
+    if (message) {
+      try {
+        setShowBanner(true);
         updateBannerStatus("neutral");
         const response = await axiosInstance.post("/mail", {
           userEmail: "anoopjadhav@gmail.com",
@@ -26,51 +35,32 @@ const Feedback = () => {
 
         if (response.data.msg === "success") {
           updateBannerStatus("success");
-          updateMessage("");
         } else if (response.data.msg === "fail") {
-          throw new Error("Response Error");
+          updateBannerStatus("error");
         }
-      } else {
-        updateBannerStatus("");
+        updateMessage("");
+      } catch (e: any) {
+        updateMessage("");
+        updateBannerStatus("error");
+        console.error(e.message as unknown as string);
       }
-    } catch (e) {
-      updateBannerStatus("");
     }
-  };
-
-  const showBanner = () => {
-    let errMessage;
-    switch (bannerStatus) {
-      case "success":
-        errMessage = "Thank you for your feedback";
-        break;
-      case "error":
-        errMessage =
-          "Sorry Couldn't send your message. Please try again later.";
-        break;
-      case "neutral":
-        errMessage = "Submitting your feedback...";
-        break;
-      default:
-        errMessage = "";
-        break;
-    }
-
-    return (
-      errMessage !== "" && (
-        <Banner
-          data-testid="banner"
-          type={bannerStatus}
-          text={errMessage}
-          closeBanner={() => updateBannerStatus("")}
-        />
-      )
-    );
   };
 
   return (
     <>
-      {showBanner()}
+      {showBanner && (
+        <Banner
+          data-testid="banner"
+          type={bannerStatus}
+          text={getBannerMessage[bannerStatus]}
+          closeBanner={() => {
+            updateMessage("");
+            updateBannerStatus("neutral");
+            setShowBanner(false);
+          }}
+        />
+      )}
       <div className="section-title h2 bold">{T.FEEDBACK}</div>
       <form
         id="contact-form"

@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import MainBody from "../components/Organisms/MainBody/MainBody";
 import ErrorBoundary from "../components/Molecules/ErrorBoundary/ErrorBoundary";
 import PageScrollProgressBar from "react-page-scroll-progress-bar";
-import "./App.css";
+import "./CommonStyles.css";
 import Loader from "../components/Atoms/Loader/Loader";
 import { useTheme } from "../context/ThemeContext";
 import { useGlobalContext } from "../context/GlobalContext";

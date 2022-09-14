@@ -25,11 +25,7 @@ function Education() {
                   , {educationDetail.place}
                 </span>
                 <div className="education-bars">
-                  <BarGraph
-                    value={educationDetail.percentage}
-                    currentStep={1}
-                    sectionStep={1}
-                  />
+                  <BarGraph value={educationDetail.percentage} />
                 </div>
               </div>
             </div>

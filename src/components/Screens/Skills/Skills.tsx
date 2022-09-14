@@ -25,12 +25,7 @@ const Skills = () => {
                 <div className="skill-label grey-1 body-text bold col-md-3">
                   {skill.skillName}
                 </div>
-                <BarGraph
-                  class="col-md-9"
-                  value={skill.skillValue}
-                  currentStep={1}
-                  sectionStep={1}
-                />
+                <BarGraph className="col-md-9" value={skill.skillValue} />
               </div>
             );
           })}
@@ -50,12 +45,7 @@ const Skills = () => {
                 <div className="skill-label grey-1 body-text bold col-md-3">
                   {skill.skillName}
                 </div>
-                <BarGraph
-                  class="col-md-9"
-                  value={skill.skillValue}
-                  currentStep={1}
-                  sectionStep={1}
-                />
+                <BarGraph className="col-md-9" value={skill.skillValue} />
               </div>
             );
           })}
