@@ -1,10 +1,36 @@
+:root {
+  font-size: 20px;
+}
+
 * {
   margin: 0;
   padding: 0;
+  --font-family-headers: "Montserrat", sans-serif !important;
+  --font-family-text: "Poppins", sans-serif !important;
+  --font-family-code: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: geometricPrecision;
+  font-family: var(--font-family-text);
 }
 
-:root {
-  font-size: 20px;
+h1,
+h2,
+h3,
+h4,
+h5,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5 {
+  font-family: var(--font-family-headers);
+}
+
+code {
+  font-family: var(--font-family-code);
 }
 
 body {
@@ -47,11 +73,6 @@ body.darkmode {
   --grey0: #212122;
 
   color: var(--grey1);
-}
-
-.App {
-  position: relative;
-  padding: 5.25rem 2rem;
 }
 
 .uppercase {
@@ -110,6 +131,7 @@ input {
 .darkmode input:focus {
   outline-color: grey;
 }
+
 textarea {
   width: 100%;
   border: 1px solid var(--grey4);
@@ -189,24 +211,7 @@ ul > li a:hover {
 .green {
   color: var(--green);
 }
-.success-banner {
-  padding: 0.5rem 1rem;
-  color: white !important;
-  background: var(--green);
-  border-radius: 0.25rem;
-}
-.error-banner {
-  padding: 0.5rem 1rem;
-  color: white !important;
-  background: var(--red);
-  border-radius: 0.25rem;
-}
-.neutral-banner {
-  padding: 0.5rem 1rem;
-  color: white !important;
-  background: var(--grey3);
-  border-radius: 0.25rem;
-}
+
 .col,
 .col-1,
 .col-10,
@@ -314,11 +319,7 @@ ul > li a:hover {
 /* Medium devices (tablets, 768px and up)*/
 @media (max-width: 1200px) {
   :root {
-    font-size: 11px;
-  }
-  .App {
-    padding: 1rem 1rem 5rem 1rem;
-    padding-top: 6rem;
+    font-size: 13px;
   }
   .letterspacing-1 {
     letter-spacing: 1px;
@@ -344,26 +345,6 @@ ul > li a:hover {
 .is-visible {
   opacity: 1;
   transform: translateY(0);
-}
-
-.darkModeWrapper {
-  position: fixed;
-  top: 1rem;
-  right: 1rem;
-  cursor: pointer;
-  z-index: 999;
-}
-
-.darkModeButton {
-  display: flex;
-  align-items: center;
-  color: var(--grey4);
-}
-.darkModeButton .light {
-  padding-right: 0.5rem;
-}
-.darkModeButton .dark {
-  padding-left: 0.5rem;
 }
 
 /* width */

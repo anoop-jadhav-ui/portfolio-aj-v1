@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import MainBody from "../components/Organisms/MainBody/MainBody";
 import ErrorBoundary from "../components/Molecules/ErrorBoundary/ErrorBoundary";
 import PageScrollProgressBar from "react-page-scroll-progress-bar";
-import "../CommonStyles.scss";
+import "./App.scss";
 import Loader from "../components/Atoms/Loader/Loader";
 import { useTheme } from "../context/ThemeContext";
 import { useGlobalContext } from "../context/GlobalContext";
@@ -34,19 +34,13 @@ export const App = () => {
             ref={AppRef}
           >
             <DownloadCV />
-            <div className="darkModeWrapper">
-              <div
-                className="darkModeButton"
-                onClick={() => toDarkMode()}
-                title="Toggle dark mode"
-              >
-                <DarkModeSwitch
-                  checked={darkMode}
-                  onChange={toDarkMode}
-                  size={30}
-                  sunColor="#FFCC66"
-                />
-              </div>
+            <div className="darkModeWrapper" title="Toggle dark mode">
+              <DarkModeSwitch
+                checked={darkMode}
+                onChange={toDarkMode}
+                size={30}
+                sunColor="#FFCC66"
+              />
             </div>
             {!isMobile && leftPaneData && <LeftPane />}
             <MainBody />
