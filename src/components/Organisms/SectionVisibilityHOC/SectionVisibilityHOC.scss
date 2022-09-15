@@ -6,3 +6,12 @@
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
 }
+
+/*Section spacing*/
+.section + .section {
+  padding-top: 8.25rem;
+}
+
+.section-title {
+  color: var(--red);
+}
