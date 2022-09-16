@@ -184,7 +184,7 @@ body {
     border: 1px solid var(--grey5);
     height: 2.5rem;
     padding: 0 1rem;
-    border-radius: 0.25rem;
+    //border-radius: 0.25rem;
     transition: background-color 0.5s ease-in-out;
     background: var(--input-background);
   }
@@ -193,7 +193,7 @@ body {
     border: 1px solid var(--grey5);
     height: 6.5rem;
     padding: 0.5rem 1rem;
-    border-radius: 0.25rem;
+    //border-radius: 0.25rem;
     transition: background-color 0.5s ease-in-out;
     background: var(--input-background);
   }
@@ -226,7 +226,7 @@ body {
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background: var(--grey4);
-  border-radius: 10px;
+  //border-radius: 10px;
 }
 
 /* Handle on hover */
