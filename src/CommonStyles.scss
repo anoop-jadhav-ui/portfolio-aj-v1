@@ -197,21 +197,6 @@ body {
     transition: background-color 0.5s ease-in-out;
     background: var(--input-background);
   }
-  // Dark Mode Common CSS
-  &.darkmode {
-    input {
-      border: none;
-      color: var(--grey6);
-    }
-    textarea:focus,
-    input:focus {
-      outline-color: grey;
-    }
-
-    textarea {
-      color: var(--grey6);
-    }
-  }
 }
 
 /* Medium devices (tablets, 768px and up)*/
