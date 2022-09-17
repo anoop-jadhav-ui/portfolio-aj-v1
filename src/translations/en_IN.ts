@@ -31,4 +31,7 @@ export default {
   SORRY_COULDNT_SEND_MSG:
     "Sorry Couldn't send your message. Please try again later.",
   SUBMITTING_FEEDBACK: "Submitting your feedback...",
+
+  HELLO: "Hello,",
+  I_AM: "I am",
 };

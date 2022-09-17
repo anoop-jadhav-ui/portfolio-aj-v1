@@ -1,14 +1,15 @@
 import React, { useMemo, useState } from "react";
 import lightImage from "../../../assets/portfolio-app-img-light-min.png";
 import darkImage from "../../../assets/portfolio-app-img-dark-min.png";
-import "./Summary.scss";
+import "./SummaryMobile.scss";
 import { useGlobalContext } from "../../../context/GlobalContext";
 import { useTheme } from "../../../context/ThemeContext";
 import moment from "moment/moment";
 import SectionVisibilityHOC from "../../Organisms/SectionVisibilityHOC/SectionVisibilityHOC";
 import T from "../../../translations/en_IN";
 import constants from "../../../helpers/constants";
-const Summary = () => {
+import DownloadCV from "../../Molecules/DownloadCV/DownloadCV";
+const SummaryMobile = () => {
   const [imageLoading, setImageLoading] = useState(false);
   const { profileData } = useGlobalContext();
   const { darkMode } = useTheme();
@@ -39,7 +40,7 @@ const Summary = () => {
   }
 
   return (
-    <>
+    <div className="summary-mobile">
       <div className="mainlogo-wrapper">
         <img
           src={darkMode ? darkImage : lightImage}
@@ -61,8 +62,12 @@ const Summary = () => {
       <div className="default-text red scroll-text thin">
         {T.SCROLL_TO_KNOW_MORE}
       </div>
-    </>
+      <DownloadCV />
+    </div>
   );
 };
 
-export default SectionVisibilityHOC(Summary, constants.classNames.SUMMARY);
+export default SectionVisibilityHOC(
+  SummaryMobile,
+  constants.classNames.SUMMARY
+);

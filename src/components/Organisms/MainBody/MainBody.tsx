@@ -1,7 +1,7 @@
 import React from "react";
 
 import "./MainBody.scss";
-import Summary from "../../Screens/Summary/Summary";
+import SummaryMobile from "../../Screens/SummaryMobile/SummaryMobile";
 import Education from "../../Screens/Education/Education";
 import WorkExperience from "../../Screens/WorkExperience/WorkExperience";
 import Certifications from "../../Screens/Certifications/Certifications";
@@ -11,6 +11,8 @@ import Feedback from "../../Screens/Feedback/Feedback";
 import Contact from "../../Screens/Contact/Contact";
 import Projects from "../../Screens/Projects/Projects";
 import { useGlobalContext } from "../../../context/GlobalContext";
+import { useTheme } from "../../../context/ThemeContext";
+import SummaryDesktop from "../../Screens/SummaryDesktop/SummaryDesktop";
 
 export interface SectionProps {
   sectionRef: HTMLDivElement;
@@ -19,6 +21,7 @@ export interface SectionProps {
 const MainBody = () => {
   const { profileData } = useGlobalContext();
   const { appFeatureAvailability } = profileData;
+  const { isMobile } = useTheme();
 
   const {
     projects,
@@ -32,7 +35,8 @@ const MainBody = () => {
   } = appFeatureAvailability;
   return (
     <div className="main-body row justify-content-center text">
-      <Summary />
+      {isMobile && <SummaryMobile />}
+      {!isMobile && <SummaryDesktop />}
       {projects && <Projects />}
       {experience && <WorkExperience />}
       {education && <Education />}

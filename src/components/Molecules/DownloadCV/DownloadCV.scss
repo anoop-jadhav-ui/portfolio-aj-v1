@@ -1,11 +1,17 @@
 .download-cv {
-  position: fixed;
-  bottom: 1rem;
-  right: 1rem;
-  z-index: 1;
-}
+  &.mobile {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    z-index: 1;
+  }
 
-.download-cv svg {
-  width: 1.2em;
-  height: 1.2em;
+  &.desktop {
+    margin-top: 2rem;
+  }
+
+  svg {
+    width: 1.2em;
+    height: 1.2em;
+  }
 }

@@ -8,7 +8,6 @@ import { useTheme } from "../context/ThemeContext";
 import { useGlobalContext } from "../context/GlobalContext";
 import { DarkModeSwitch } from "react-toggle-dark-mode";
 import LeftPane from "../components/Organisms/LeftPane/LeftPane";
-import DownloadCV from "../components/Molecules/DownloadCV/DownloadCV";
 
 export const App = () => {
   const { darkMode, setDarkMode, isMobile } = useTheme();
@@ -33,7 +32,6 @@ export const App = () => {
             className={"App row no-gutters fade show justify-content-center"}
             ref={AppRef}
           >
-            <DownloadCV />
             <div className="darkModeWrapper" title="Toggle dark mode">
               <DarkModeSwitch
                 checked={darkMode}

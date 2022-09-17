@@ -15,7 +15,7 @@ const DownloadCV = () => {
   };
 
   return (
-    <div className="download-cv">
+    <div className={`download-cv ${isMobile ? "mobile" : "desktop"}`}>
       <Button
         onClick={downloadCVHandler}
         variant="neutral"
