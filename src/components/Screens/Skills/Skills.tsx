@@ -6,7 +6,7 @@ import SectionVisibilityHOC from "../../Organisms/SectionVisibilityHOC/SectionVi
 import T from "../../../translations/en_IN";
 import constants from "../../../helpers/constants";
 const Skills = () => {
-  const { profileData } = useGlobalContext();
+  const { profileData, currentSectionInView } = useGlobalContext();
   const { skills } = profileData;
   const { development, design } = skills;
   return (
@@ -26,7 +26,11 @@ const Skills = () => {
                 <div className="skill-label grey-1 body-text bold col-md-3">
                   {skill.skillName}
                 </div>
-                <BarGraph className="col-md-9" value={skill.skillValue} />
+                <BarGraph
+                  className="col-md-9"
+                  value={skill.skillValue}
+                  animate={currentSectionInView == constants.classNames.SKILLS}
+                />
               </div>
             );
           })}
@@ -46,7 +50,11 @@ const Skills = () => {
                 <div className="skill-label grey-1 body-text bold col-md-3">
                   {skill.skillName}
                 </div>
-                <BarGraph className="col-md-9" value={skill.skillValue} />
+                <BarGraph
+                  className="col-md-9"
+                  value={skill.skillValue}
+                  animate={currentSectionInView == constants.classNames.SKILLS}
+                />
               </div>
             );
           })}

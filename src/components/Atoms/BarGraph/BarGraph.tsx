@@ -4,8 +4,9 @@ import "./BarGraph.scss";
 interface BarGraphProps {
   value: string;
   className?: string;
+  animate?: boolean;
 }
-const BarGraph = ({ value, className }: BarGraphProps) => {
+const BarGraph = ({ value, className = "", animate }: BarGraphProps) => {
   return (
     <div className={`bar-graph ${className}`} data-testid="bar-graph">
       {value ? (
@@ -13,7 +14,7 @@ const BarGraph = ({ value, className }: BarGraphProps) => {
           data-testid="bar"
           className="filled"
           title={value + "%"}
-          style={{ width: value + "%" }}
+          style={{ width: `${animate ? value : "0"}%` }}
         />
       ) : (
         ""

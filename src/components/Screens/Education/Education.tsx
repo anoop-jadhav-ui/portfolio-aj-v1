@@ -9,8 +9,6 @@ function Education() {
   const { profileData, currentSectionInView } = useGlobalContext();
   const { education } = profileData;
 
-  // console.log(currentSectionInView);
-
   return (
     <>
       <div className="section-title h2 bold">{T.EDUCATION}</div>
@@ -29,7 +27,12 @@ function Education() {
                   , {educationDetail.place}
                 </span>
                 <div className="education-bars">
-                  <BarGraph value={educationDetail.percentage} />
+                  <BarGraph
+                    value={educationDetail.percentage}
+                    animate={
+                      currentSectionInView == constants.classNames.EDUCATION
+                    }
+                  />
                 </div>
               </div>
             </div>
