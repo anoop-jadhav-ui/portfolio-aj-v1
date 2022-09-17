@@ -28,7 +28,7 @@
 /* Handle */
 .imgcarousel::-webkit-scrollbar-thumb {
   background: var(--grey6);
-  //border-radius: 10px;
+  border-radius: 10px;
 }
 
 /* Handle on hover */
@@ -44,7 +44,7 @@
 /* Handle */
 .darkmode .imgcarousel::-webkit-scrollbar-thumb {
   background: var(--grey2);
-  //border-radius: 10px;
+  border-radius: 10px;
 }
 
 /* Handle on hover */

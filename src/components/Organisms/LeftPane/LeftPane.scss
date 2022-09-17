@@ -2,7 +2,7 @@
   position: relative;
   top: 10rem;
   /*background-color: var(--input-background);*/
-  //border-radius: 0.25rem;
+  border-radius: 0.25rem;
   border: 1px solid var(--grey5);
   width: 14.5rem;
   /*box-shadow: 0px 4px 8px 1px rgba(0, 0, 0, 0.08);*/
@@ -81,7 +81,7 @@ ul.menu {
 }
 .left-pane.closed .toggle-button {
   right: -2.5rem;
-  //border-radius: 0.25rem;
+  border-radius: 0.25rem;
   border: 1px solid var(--grey5);
 }
 .left-pane.closed .toggle-button:hover {
