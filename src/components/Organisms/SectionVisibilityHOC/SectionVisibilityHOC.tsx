@@ -38,10 +38,10 @@ const SectionVisibilityHOC =
     }, [sectionName]);
 
     return (
-      <div className={`${sectionName} col-md-7 ${textAlignment} section`}>
+      <div className={`${sectionName} ${textAlignment} section`}>
         {/* Element to check if the section is in view port*/}
         {!isMobile && (
-          <div ref={compRef} className="sectionFloatingElement"></div>
+          <div ref={compRef} className="section-floating-element"></div>
         )}
         <Component />
       </div>

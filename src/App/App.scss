@@ -1,7 +1,6 @@
 .App {
   position: relative;
-  padding: 5.25rem 2rem;
-
+  padding: 5.25rem 8rem;
   .darkModeWrapper {
     position: fixed;
     top: 1rem;
@@ -10,10 +9,17 @@
     z-index: 999;
   }
 }
+
 /* Medium devices (tablets, 768px and up)*/
 @media (max-width: 1200px) {
   .App {
     padding: 1rem 1rem 5rem 1rem;
     padding-top: 6rem;
+  }
+}
+
+@media (min-width: 1900px) {
+  .App {
+    padding: 5.25rem 20rem;
   }
 }

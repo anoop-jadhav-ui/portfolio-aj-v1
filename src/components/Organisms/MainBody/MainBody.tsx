@@ -34,7 +34,7 @@ const MainBody = () => {
     contactDetails,
   } = appFeatureAvailability;
   return (
-    <div className="main-body row justify-content-center text">
+    <div className="main-body justify-content-center text">
       {isMobile && <SummaryMobile />}
       {!isMobile && <SummaryDesktop />}
       {projects && <Projects />}
