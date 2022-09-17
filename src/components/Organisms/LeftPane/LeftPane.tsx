@@ -4,7 +4,7 @@ import ContactIcons from "../../Molecules/ContactIcons/ContactIcons";
 import usePersistState from "../../../hooks/usePersistState";
 import { useGlobalContext } from "../../../context/GlobalContext";
 import LeftPaneItem from "../../Atoms/LeftPaneItem/LeftPaneItem";
-
+import { BiLeftArrow } from "react-icons/bi";
 const LeftPane = () => {
   const [leftPaneVisible, setLeftPaneVisibility] = usePersistState(
     "leftPaneVisibility",
@@ -31,7 +31,7 @@ const LeftPane = () => {
           title="Toggle sidebar"
           onClick={toggleLeftPane}
         >
-          <div className="arrow" />
+          <BiLeftArrow className="arrow" title="toggle leftpane" />
         </div>
       </div>
 

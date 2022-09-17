@@ -1,8 +1,7 @@
 import React from "react";
 import "./ProjectCard.scss";
-import github from "../../../assets/github.svg";
-import weblink from "../../../assets/weblink.svg";
 import { ProjectDetails } from "../../../types/profileDataTypes";
+import { FiExternalLink, FiGithub } from "react-icons/fi";
 
 const ProjectCard = ({
   projectDetails,
@@ -33,12 +32,7 @@ const ProjectCard = ({
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img
-                className="contactimg"
-                title="view project on github"
-                src={github}
-                alt="github"
-              />
+              <FiGithub className="contactimg" title="github link" />
             </a>
           )}
           {projectDetails.url && (
@@ -47,12 +41,7 @@ const ProjectCard = ({
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img
-                className="contactimg"
-                title="open app"
-                src={weblink}
-                alt="github"
-              />
+              <FiExternalLink className="contactimg" title="application link" />
             </a>
           )}
         </div>

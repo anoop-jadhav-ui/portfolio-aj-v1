@@ -35,21 +35,26 @@
       right: 0;
     }
     .arrow {
-      transform: rotate(-45deg);
+      width: 1rem;
+      height: 1rem;
+      fill: var(--red);
     }
   }
   &.closed {
     animation: slideOutToLeft 0.5s ease-in-out forwards;
     .toggle-button {
-      right: -2.5rem;
-      border-radius: 0.25rem;
+      right: -3rem;
+      border-radius: 0 0.25rem 0.25rem 0;
       border: 1px solid var(--grey5);
       &:hover {
         background: var(--grey6);
       }
     }
     .arrow {
-      transform: rotate(135deg);
+      transform: rotate(180deg);
+      width: 1.5rem;
+      height: 1.5rem;
+      fill: var(--red);
     }
   }
 
@@ -96,17 +101,6 @@
       top: 0;
       cursor: pointer;
       transition: right 0.5s linear;
-    }
-
-    .arrow {
-      position: relative;
-      left: 0.1rem;
-      display: block;
-      width: 0.6rem;
-      height: 0.6rem;
-
-      border-left: 2px solid var(--red);
-      border-top: 2px solid var(--red);
     }
   }
 }

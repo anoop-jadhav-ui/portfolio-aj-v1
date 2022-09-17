@@ -11,7 +11,7 @@ const ContactIcons = ({ className }: { className: string }) => {
     <div className={"horizontally-placed " + className}>
       <div className="subsection-data">
         <a href={"mailto: " + emailId} title="Email Address">
-          <FiMail className="contactimg" />
+          <FiMail className="contactimg" title="email address" />
         </a>
       </div>
       <div className="subsection-data">
@@ -21,7 +21,7 @@ const ContactIcons = ({ className }: { className: string }) => {
           target="_blank"
           title="Linkedin"
         >
-          <FiLinkedin className="contactimg" />
+          <FiLinkedin className="contactimg" title="linkedin link" />
         </a>
       </div>
       <div className="subsection-data">
@@ -31,7 +31,7 @@ const ContactIcons = ({ className }: { className: string }) => {
           target="_blank"
           title="Instagram"
         >
-          <FiInstagram className="contactimg" />
+          <FiInstagram className="contactimg" title="instagram link" />
         </a>
       </div>
 
@@ -43,7 +43,7 @@ const ContactIcons = ({ className }: { className: string }) => {
           rel="noopener noreferrer"
           title="Github"
         >
-          <FiGithub className="contactimg" />
+          <FiGithub className="contactimg" title="github link" />
         </a>
       </div>
     </div>
