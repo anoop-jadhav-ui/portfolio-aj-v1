@@ -27,12 +27,7 @@ function Education() {
                   , {educationDetail.place}
                 </span>
                 <div className="education-bars">
-                  <BarGraph
-                    value={educationDetail.percentage}
-                    animate={
-                      currentSectionInView == constants.classNames.EDUCATION
-                    }
-                  />
+                  <BarGraph value={educationDetail.percentage} animate={true} />
                 </div>
               </div>
             </div>

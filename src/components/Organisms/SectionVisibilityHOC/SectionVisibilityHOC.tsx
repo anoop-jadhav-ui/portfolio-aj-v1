@@ -4,7 +4,7 @@ import { useGlobalContext } from "../../../context/GlobalContext";
 import "./SectionVisibilityHOC.scss";
 import { useTheme } from "../../../context/ThemeContext";
 const SectionVisibilityHOC =
-  (Component: () => JSX.Element, sectionClassName: string) => () => {
+  (Component: () => JSX.Element, sectionName: string) => () => {
     const compRef = useRef<HTMLDivElement>(null);
     const { isMobile } = useTheme();
     const { scrollPosition } = useScrollPosition();
@@ -25,18 +25,20 @@ const SectionVisibilityHOC =
     };
 
     useEffect(() => {
-      const currentComponent = compRef?.current;
-      if (currentComponent && isElementInViewport(currentComponent)) {
-        setCurrentSectionInView(sectionClassName);
+      if (!isMobile) {
+        const currentComponent = compRef?.current;
+        if (currentComponent && isElementInViewport(currentComponent)) {
+          setCurrentSectionInView(sectionName);
+        }
       }
     }, [scrollPosition, compRef]);
 
     const textAlignment = useMemo<string>(() => {
-      return sectionClassName === "summary" ? "text-center" : "text-left";
-    }, [sectionClassName]);
+      return sectionName === "summary" ? "text-center" : "text-left";
+    }, [sectionName]);
 
     return (
-      <div className={`${sectionClassName} col-md-7 ${textAlignment} section`}>
+      <div className={`${sectionName} col-md-7 ${textAlignment} section`}>
         {/* Element to check if the section is in view port*/}
         {!isMobile && (
           <div ref={compRef} className="sectionFloatingElement"></div>

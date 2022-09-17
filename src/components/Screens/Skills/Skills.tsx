@@ -29,7 +29,7 @@ const Skills = () => {
                 <BarGraph
                   className="col-md-9"
                   value={skill.skillValue}
-                  animate={currentSectionInView == constants.classNames.SKILLS}
+                  animate={true}
                 />
               </div>
             );
@@ -53,7 +53,7 @@ const Skills = () => {
                 <BarGraph
                   className="col-md-9"
                   value={skill.skillValue}
-                  animate={currentSectionInView == constants.classNames.SKILLS}
+                  animate={true}
                 />
               </div>
             );
