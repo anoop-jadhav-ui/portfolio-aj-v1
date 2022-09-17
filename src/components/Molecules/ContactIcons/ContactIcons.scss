@@ -11,14 +11,14 @@
     brightness(120%) contrast(90%);
 }
 .contactimg {
-  width: 2rem;
-  height: 2rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  stroke: var(--grey1);
 }
 
 .contactimg:hover {
   filter: invert(51%) sepia(21%) saturate(5271%) hue-rotate(328deg)
     brightness(99%) contrast(86%);
-  transform: scale(1.1);
 }
 
 .inside-leftpane {

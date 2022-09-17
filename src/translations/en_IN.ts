@@ -26,4 +26,9 @@ export default {
 
   DOWNLOAD_CV: "Download CV",
   PAGE_LOAD_ERROR: "Oops ! Something went wrong. Please try again",
+
+  THANK_YOU_FOR_FEEDBACK: "Thank you for your feedback.",
+  SORRY_COULDNT_SEND_MSG:
+    "Sorry Couldn't send your message. Please try again later.",
+  SUBMITTING_FEEDBACK: "Submitting your feedback...",
 };

@@ -5,22 +5,26 @@ import SectionVisibilityHOC from "../../Organisms/SectionVisibilityHOC/SectionVi
 import T from "../../../translations/en_IN";
 import Button from "../../Atoms/Button/Button";
 import { RiMailSendLine } from "react-icons/ri";
+import { useGlobalContext } from "../../../context/GlobalContext";
 
 const Feedback = () => {
   const [message, updateMessage] = useState<string>();
   const [bannerStatus, updateBannerStatus] = useState<BannerStatus>("neutral");
   const [showBanner, setShowBanner] = useState(false);
 
+  const { profileData } = useGlobalContext();
+  const { contactDetails } = profileData;
+  const { emailId } = contactDetails;
+
   const getBannerMessage = {
-    success: "Thank you for your feedback",
-    error: "Sorry Couldn't send your message. Please try again later.",
-    neutral: "Submitting your feedback...",
+    success: T.THANK_YOU_FOR_FEEDBACK,
+    error: T.SORRY_COULDNT_SEND_MSG,
+    neutral: T.SUBMITTING_FEEDBACK,
   };
 
-  const handleChange: ChangeEventHandler<Element> = (event) => {
-    // @ts-ignore
-    updateMessage(event.target.value);
-  };
+  function onFeedbackInputChange(e: React.FormEvent<HTMLTextAreaElement>) {
+    updateMessage((e.target as HTMLTextAreaElement).value);
+  }
 
   const sendEmail = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -29,7 +33,7 @@ const Feedback = () => {
         setShowBanner(true);
         updateBannerStatus("neutral");
         const response = await axiosInstance.post("/mail", {
-          userEmail: "anoopjadhav@gmail.com",
+          userEmail: emailId,
           userMessage: "Message : " + message,
         });
 
@@ -83,7 +87,7 @@ const Feedback = () => {
               name="message"
               value={message}
               placeholder={message}
-              onChange={handleChange}
+              onChange={onFeedbackInputChange}
             />
           </div>
           <div className="text-left mt-3">
