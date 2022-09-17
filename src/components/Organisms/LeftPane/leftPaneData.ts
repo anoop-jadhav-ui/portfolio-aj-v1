@@ -1,4 +1,5 @@
 import { FeatureToggles } from "../../../types/profileDataTypes";
+import constants from "../../../helpers/constants";
 
 export type LeftPaneMenuItem = {
   class: string;
@@ -9,55 +10,55 @@ export type LeftPaneMenuItem = {
 
 const leftPaneDataObj: Array<LeftPaneMenuItem> = [
   {
-    class: "summary",
+    class: constants.classNames.SUMMARY,
     label: "Summary",
     id: "summary",
     headerPos: 0,
   },
   {
-    class: "projects",
+    class: constants.classNames.PROJECTS,
     label: "Fun Learning Projects",
     id: "projects",
     headerPos: 0,
   },
   {
-    class: "work-experience",
+    class: constants.classNames.WORK_EXPERIENCE,
     label: "Work Experience",
     id: "experience",
     headerPos: 0,
   },
   {
-    class: "education",
+    class: constants.classNames.EDUCATION,
     label: "Education",
     id: "education",
     headerPos: 0,
   },
   {
-    class: "certifications",
+    class: constants.classNames.CERTIFICATIONS,
     label: "Certifications",
     id: "certifications",
     headerPos: 0,
   },
   {
-    class: "skills",
+    class: constants.classNames.SKILLS,
     label: "Skills",
     id: "skills",
     headerPos: 0,
   },
   {
-    class: "hobbies-interests",
+    class: constants.classNames.HOBBIES,
     label: "Hobbies & Interests",
     id: "hobbies",
     headerPos: 0,
   },
   {
-    class: "feedback",
+    class: constants.classNames.FEEDBACK,
     label: "Feedback",
     id: "feedback",
     headerPos: 0,
   },
   {
-    class: "contactme",
+    class: constants.classNames.CONTACT_ME,
     label: "Contact Details",
     id: "contactDetails",
     headerPos: 0,

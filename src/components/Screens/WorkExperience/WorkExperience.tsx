@@ -5,6 +5,7 @@ import moment from "moment/moment";
 import { ExperienceDetails } from "../../../types/profileDataTypes";
 import SectionVisibilityHOC from "../../Organisms/SectionVisibilityHOC/SectionVisibilityHOC";
 import T from "../../../translations/en_IN";
+import constants from "../../../helpers/constants";
 const WorkExperience = () => {
   const { profileData } = useGlobalContext();
   const { experience } = profileData;
@@ -74,4 +75,7 @@ const WorkExperience = () => {
   );
 };
 
-export default SectionVisibilityHOC(WorkExperience, "work-experience");
+export default SectionVisibilityHOC(
+  WorkExperience,
+  constants.classNames.WORK_EXPERIENCE
+);

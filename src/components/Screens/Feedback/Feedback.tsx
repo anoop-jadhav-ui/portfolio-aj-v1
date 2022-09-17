@@ -8,6 +8,7 @@ import { RiMailSendLine } from "react-icons/ri";
 import { useGlobalContext } from "../../../context/GlobalContext";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
 import "./Feedback.scss";
+import constants from "../../../helpers/constants";
 const Feedback = () => {
   const [message, updateMessage] = useState<string>();
   const [bannerStatus, updateBannerStatus] = useState<BannerStatus>("neutral");
@@ -112,4 +113,4 @@ const Feedback = () => {
   );
 };
 
-export default SectionVisibilityHOC(Feedback, "feedback");
+export default SectionVisibilityHOC(Feedback, constants.classNames.FEEDBACK);

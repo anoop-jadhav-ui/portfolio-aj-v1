@@ -3,6 +3,7 @@ import "./Contact.scss";
 import ContactIcons from "../../Molecules/ContactIcons/ContactIcons";
 import SectionVisibilityHOC from "../../Organisms/SectionVisibilityHOC/SectionVisibilityHOC";
 import T from "../../../translations/en_IN";
+import constants from "../../../helpers/constants";
 const Contact = () => {
   return (
     <>
@@ -15,4 +16,4 @@ const Contact = () => {
   );
 };
 
-export default SectionVisibilityHOC(Contact, "contactme");
+export default SectionVisibilityHOC(Contact, constants.classNames.CONTACT_ME);

@@ -7,6 +7,7 @@ import { useTheme } from "../../../context/ThemeContext";
 import moment from "moment/moment";
 import SectionVisibilityHOC from "../../Organisms/SectionVisibilityHOC/SectionVisibilityHOC";
 import T from "../../../translations/en_IN";
+import constants from "../../../helpers/constants";
 const Summary = () => {
   const [imageLoading, setImageLoading] = useState(false);
   const { profileData } = useGlobalContext();
@@ -64,4 +65,4 @@ const Summary = () => {
   );
 };
 
-export default SectionVisibilityHOC(Summary, "summary");
+export default SectionVisibilityHOC(Summary, constants.classNames.SUMMARY);

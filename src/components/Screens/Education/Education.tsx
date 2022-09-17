@@ -4,9 +4,13 @@ import "./Education.scss";
 import { useGlobalContext } from "../../../context/GlobalContext";
 import SectionVisibilityHOC from "../../Organisms/SectionVisibilityHOC/SectionVisibilityHOC";
 import T from "../../../translations/en_IN";
+import constants from "../../../helpers/constants";
 function Education() {
-  const { profileData } = useGlobalContext();
+  const { profileData, currentSectionInView } = useGlobalContext();
   const { education } = profileData;
+
+  // console.log(currentSectionInView);
+
   return (
     <>
       <div className="section-title h2 bold">{T.EDUCATION}</div>
@@ -35,4 +39,4 @@ function Education() {
     </>
   );
 }
-export default SectionVisibilityHOC(Education, "education");
+export default SectionVisibilityHOC(Education, constants.classNames.EDUCATION);

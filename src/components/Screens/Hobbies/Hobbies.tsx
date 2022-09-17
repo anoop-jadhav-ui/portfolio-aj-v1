@@ -3,6 +3,7 @@ import "./Hobbies.scss";
 import { useGlobalContext } from "../../../context/GlobalContext";
 import SectionVisibilityHOC from "../../Organisms/SectionVisibilityHOC/SectionVisibilityHOC";
 import T from "../../../translations/en_IN";
+import constants from "../../../helpers/constants";
 function Hobbies() {
   const { profileData } = useGlobalContext();
   const { hobbies } = profileData;
@@ -23,4 +24,4 @@ function Hobbies() {
   );
 }
 
-export default SectionVisibilityHOC(Hobbies, "hobbies-interests");
+export default SectionVisibilityHOC(Hobbies, constants.classNames.HOBBIES);
