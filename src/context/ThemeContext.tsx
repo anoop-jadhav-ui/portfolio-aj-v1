@@ -26,11 +26,22 @@ export const ThemeContext = createContext<ThemeContextType>(defaultTheme);
 export const useTheme = () => useContext(ThemeContext);
 
 const ThemeContextProvider = ({ children }: { children: ReactNode }) => {
-  const [darkMode, setDarkMode] = usePersistState<boolean>("DarkMode", false);
+  const [darkMode, setDarkMode] = usePersistState<boolean | undefined>(
+    "DarkMode",
+    undefined
+  );
   const [isMobile, setIsMobile] = useState<boolean>(false);
 
   useEffect(() => {
     setIsMobile(isDeviceMobile);
+
+    if (
+      darkMode === undefined &&
+      window.matchMedia &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches
+    ) {
+      setDarkMode(true);
+    }
   }, []);
 
   useEffect(() => {
@@ -42,7 +53,7 @@ const ThemeContextProvider = ({ children }: { children: ReactNode }) => {
   return (
     <ThemeContext.Provider
       value={{
-        darkMode,
+        darkMode: !!darkMode,
         setDarkMode,
         isMobile,
       }}
