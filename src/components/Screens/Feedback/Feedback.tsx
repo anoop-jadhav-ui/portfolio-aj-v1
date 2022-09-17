@@ -1,4 +1,4 @@
-import React, { ChangeEventHandler, FormEvent, useState } from "react";
+import React, { FormEvent, useState } from "react";
 import axiosInstance from "../../../helpers/axios";
 import Banner, { BannerStatus } from "../../Atoms/Banner/Banner";
 import SectionVisibilityHOC from "../../Organisms/SectionVisibilityHOC/SectionVisibilityHOC";
@@ -6,7 +6,8 @@ import T from "../../../translations/en_IN";
 import Button from "../../Atoms/Button/Button";
 import { RiMailSendLine } from "react-icons/ri";
 import { useGlobalContext } from "../../../context/GlobalContext";
-
+import { AiOutlineLoading3Quarters } from "react-icons/ai";
+import "./Feedback.scss";
 const Feedback = () => {
   const [message, updateMessage] = useState<string>();
   const [bannerStatus, updateBannerStatus] = useState<BannerStatus>("neutral");
@@ -43,10 +44,10 @@ const Feedback = () => {
           updateBannerStatus("error");
         }
         updateMessage("");
-      } catch (e: any) {
+      } catch (e: unknown) {
         updateMessage("");
         updateBannerStatus("error");
-        console.error(e.message as unknown as string);
+        console.error((e as DOMException).message as unknown as string);
       }
     }
   };
@@ -92,10 +93,17 @@ const Feedback = () => {
           </div>
           <div className="text-left mt-3">
             <Button
+              className={
+                bannerStatus === "neutral" && showBanner ? "loading" : ""
+              }
               type="submit"
               testID="feedback-button"
               label={T.SEND}
-              Icon={RiMailSendLine}
+              Icon={
+                bannerStatus === "neutral" && showBanner
+                  ? AiOutlineLoading3Quarters
+                  : RiMailSendLine
+              }
             />
           </div>
         </div>

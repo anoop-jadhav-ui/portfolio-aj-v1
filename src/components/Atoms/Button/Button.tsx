@@ -9,6 +9,7 @@ interface ButtonProps {
   Icon?: IconType;
   type?: "button" | "submit" | "reset" | undefined;
   testID?: string;
+  className?: string;
 }
 
 interface ClickPosition {
@@ -23,6 +24,7 @@ const Button = ({
   Icon,
   type = "button",
   testID,
+  className,
 }: ButtonProps) => {
   const [clickPosition, setCickPosition] = useState<ClickPosition>();
 
@@ -38,7 +40,9 @@ const Button = ({
   return (
     <button
       onClick={animateClick}
-      className={`${variant} button ${label ? "with-label" : "no-label"}`}
+      className={`${variant} button ${className} ${
+        label ? "with-label" : "no-label"
+      }`}
       type={type}
       data-testid={testID}
       style={
