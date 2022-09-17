@@ -187,6 +187,7 @@ body {
     border-radius: 0.25rem;
     transition: background-color 0.5s ease-in-out;
     background: var(--input-background);
+    color: var(--grey1);
   }
   textarea {
     width: 100%;
@@ -196,6 +197,7 @@ body {
     border-radius: 0.25rem;
     transition: background-color 0.5s ease-in-out;
     background: var(--input-background);
+    color: var(--grey1);
   }
 }
 

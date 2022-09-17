@@ -1,5 +1,4 @@
 import React, { useMemo } from "react";
-import "./WorkExperience.scss";
 import { useGlobalContext } from "../../../context/GlobalContext";
 import moment from "moment/moment";
 import { ExperienceDetails } from "../../../types/profileDataTypes";

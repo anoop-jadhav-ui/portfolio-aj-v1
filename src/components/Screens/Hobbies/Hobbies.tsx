@@ -1,5 +1,4 @@
 import React from "react";
-import "./Hobbies.scss";
 import { useGlobalContext } from "../../../context/GlobalContext";
 import SectionVisibilityHOC from "../../Organisms/SectionVisibilityHOC/SectionVisibilityHOC";
 import T from "../../../translations/en_IN";

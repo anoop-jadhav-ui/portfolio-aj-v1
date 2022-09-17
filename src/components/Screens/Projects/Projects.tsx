@@ -12,7 +12,7 @@ function Projects() {
   return (
     <>
       <div className="section-title h2 bold">{T.FUN_LEARNING_PROJECTS}</div>
-      <div className="subsection projectsectionbody">
+      <div className="subsection project-section-body">
         {projects.map((projectDetails, index) => {
           return <ProjectCard key={index} projectDetails={projectDetails} />;
         })}
