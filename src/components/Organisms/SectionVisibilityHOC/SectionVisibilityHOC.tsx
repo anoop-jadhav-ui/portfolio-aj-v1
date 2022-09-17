@@ -25,11 +25,9 @@ const SectionVisibilityHOC =
     };
 
     useEffect(() => {
-      if (!isMobile) {
-        const currentComponent = compRef?.current;
-        if (currentComponent && isElementInViewport(currentComponent)) {
-          setCurrentSectionInView(sectionClassName);
-        }
+      const currentComponent = compRef?.current;
+      if (currentComponent && isElementInViewport(currentComponent)) {
+        setCurrentSectionInView(sectionClassName);
       }
     }, [scrollPosition, compRef]);
 
