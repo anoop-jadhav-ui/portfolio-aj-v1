@@ -15,9 +15,10 @@ export default {
 
   SEND: "Send",
 
-  FEEDBACK_MESSAGE: "Please provide a constructive feedback.",
+  FEEDBACK_MESSAGE:
+    "Please leave a constructive feedback as this will help me improve.",
   CONTACT_DETAILS_MESSAGE:
-    "Reach out to me on Email/LinkedIn or checkout some of my work on Instagram/Github -",
+    "Feel free to reach out to me on following platforms. Also please checkout my work on instagram and github. ",
 
   VIEW_LINKEDIN_PROFILE: "View LinkedIn Profile",
 
