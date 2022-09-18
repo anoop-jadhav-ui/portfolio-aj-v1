@@ -217,37 +217,6 @@ body {
     background: var(--input-background);
     color: var(--grey1);
   }
-
-  .typewriter {
-    width: 12ch;
-    overflow: hidden; /* Ensures the content is not revealed until the animation */
-    border-right: 4px solid transparent; /* The typwriter cursor */
-    white-space: nowrap; /* Keeps the content on a single line */
-    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-    letter-spacing: 0; /* Adjust as needed */
-    animation: typing 1.5s steps(28, end), blink-caret 0.75s step-end infinite;
-  }
-
-  /* The typing effect */
-  @keyframes typing {
-    from {
-      width: 0;
-    }
-    to {
-      width: 12ch;
-    }
-  }
-
-  /* The typewriter cursor effect */
-  @keyframes blink-caret {
-    from,
-    to {
-      border-color: transparent;
-    }
-    50% {
-      border-color: var(--primary-color);
-    }
-  }
 }
 
 /* Medium devices (tablets, 768px and up)*/
