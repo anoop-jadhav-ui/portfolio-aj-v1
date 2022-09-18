@@ -63,7 +63,6 @@
     padding-top: 0;
 
     &.typewriter {
-      width: 13ch;
       overflow: hidden; /* Ensures the content is not revealed until the animation */
       border-right: 4px solid transparent; /* The typwriter cursor */
       white-space: nowrap; /* Keeps the content on a single line */
@@ -79,7 +78,7 @@
         width: 0;
       }
       to {
-        width: 13ch;
+        width: 11ch;
       }
     }
 
