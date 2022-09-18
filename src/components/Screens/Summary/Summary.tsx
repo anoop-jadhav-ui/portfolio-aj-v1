@@ -53,8 +53,12 @@ const Summary = () => {
         />
       </div>
 
-      <div className="bold red hello">{T.HELLO} I am </div>
-      <div className="h1 bold main-title grey-1">{overview.name}</div>
+      <div className="bold red hello">
+        {T.HELLO} {T.I_AM}
+      </div>
+      <div className="h1 bold main-title grey-1 typewriter">
+        {overview.name}
+      </div>
       {/* <div className="h4 uppercase letterspacing-1 red bold">*/}
       {/*  {overview.title}*/}
       {/* </div>*/}
