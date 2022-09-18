@@ -53,9 +53,9 @@ const SummaryDesktop = () => {
         />
       </div>
       <div className="right-division">
-        <div className="bold red hello">{T.HELLO}</div>
+        <div className="bold primary-color hello">{T.HELLO}</div>
         <div className="h1 bold main-title grey-1">{`${overview.name}`}</div>
-        <div className="h4 letterspacing-1 red bold title">
+        <div className="h4 letterspacing-1 primary-color bold title">
           {overview.title}
         </div>
         <div className="body-text summary-text">

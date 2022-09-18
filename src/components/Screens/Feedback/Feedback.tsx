@@ -81,7 +81,7 @@ const Feedback = () => {
           >
             {T.FEEDBACK_MESSAGE}
           </label>
-          <div className="red body-text mt-2">
+          <div className="primary-color body-text mt-2">
             <textarea
               id="feedback-box"
               data-testid="feedback-box"

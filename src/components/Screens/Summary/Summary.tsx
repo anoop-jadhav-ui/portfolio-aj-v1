@@ -53,13 +53,10 @@ const Summary = () => {
         />
       </div>
 
-      <div className="bold red hello">{T.HELLO}</div>
+      <div className="bold primary-color hello">{T.HELLO}</div>
       <div className="h1 bold main-title grey-1 typewriter">
         {overview.name}
       </div>
-      {/* <div className="h4 uppercase letterspacing-1 red bold">*/}
-      {/*  {overview.title}*/}
-      {/* </div>*/}
       <div className="body-text summary-text">
         {parse(
           overview.summary.replace("{totalYearsOfExperience}", totalExperience)

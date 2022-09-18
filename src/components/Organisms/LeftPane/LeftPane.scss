@@ -38,7 +38,7 @@
     .arrow {
       width: 1rem;
       height: 1rem;
-      fill: var(--red);
+      fill: var(--primary-color);
     }
   }
   &.closed {
@@ -55,7 +55,7 @@
       transform: rotate(180deg);
       width: 1.5rem;
       height: 1.5rem;
-      fill: var(--red);
+      fill: var(--primary-color);
     }
   }
 
@@ -75,7 +75,7 @@
         color: var(--grey1);
         &:before {
           content: "";
-          border-left: 3px solid var(--red);
+          border-left: 3px solid var(--primary-color);
           position: relative;
           left: -1rem;
         }
@@ -90,7 +90,7 @@
     .left-pane-header {
       font-size: 0.8125rem;
       padding: 1rem 1.5rem;
-      color: var(--red);
+      color: var(--primary-color);
     }
 
     .toggle-button {

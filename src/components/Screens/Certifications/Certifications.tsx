@@ -23,7 +23,7 @@ const Certifications = () => {
                 <span className="h3 grey1 bold" data-testid="name">
                   {certificateDetail.name}
                 </span>
-                <div className="red default-text mt-1">
+                <div className="primary-color default-text mt-1">
                   <a
                     href={certificateDetail.urlToCertificate}
                     target="_Blank"
@@ -48,7 +48,7 @@ const Certifications = () => {
           return (
             <div className="subsection-data" key={key}>
               <span className="h3 grey1 bold">{certificateDetail.name}</span>
-              <div className="red default-text mt-1">
+              <div className="primary-color default-text mt-1">
                 <a
                   href={certificateDetail.urlToCertificate}
                   target="_Blank"

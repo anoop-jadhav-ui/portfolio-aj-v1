@@ -41,6 +41,11 @@ body {
   --yellow: #f2c94c;
   --green: #27ae60;
 
+  // Primary & Accent color variations
+
+  --primary-color: var(--red);
+  --accent-color: var(--orange);
+
   //font variables
   --font-family-headers: "Montserrat", sans-serif !important;
   --font-family-text: "Poppins", sans-serif !important;
@@ -141,7 +146,7 @@ body {
 
   a:hover,
   ul > li a:hover {
-    color: var(--red);
+    color: var(--primary-color);
     text-decoration: none;
     font-weight: bold;
   }
@@ -170,9 +175,9 @@ body {
   .grey6 {
     color: var(--grey6);
   }
-  .red,
-  .red > a {
-    color: var(--red);
+  .primary-color,
+  .primary-color > a {
+    color: var(--primary-color);
   }
   .orange {
     color: var(--orange);
@@ -240,7 +245,7 @@ body {
       border-color: transparent;
     }
     50% {
-      border-color: var(--red);
+      border-color: var(--primary-color);
     }
   }
 }
@@ -271,7 +276,7 @@ body {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: var(--red);
+  background: var(--primary-color);
   border-radius: 10px;
 }
 

@@ -2,7 +2,7 @@
   0% {
     width: calc(var(--image-width) + 1rem);
     height: calc(var(--image-width) + 1rem);
-    border: 2px solid var(--red);
+    border: 2px solid var(--primary-color);
   }
   100% {
     width: calc(var(--image-width) + 4rem);
@@ -66,11 +66,11 @@
     padding-top: 1.5rem;
     span {
       font-weight: bold;
-      color: var(--red);
+      color: var(--primary-color);
     }
 
     span:nth-child(1) {
-      background: var(--red);
+      background: var(--primary-color);
       padding: 0 0.5rem;
       color: var(--grey0);
       font-weight: bold;

@@ -13,8 +13,7 @@
 }
 
 .contactimg:hover {
-  filter: invert(51%) sepia(21%) saturate(5271%) hue-rotate(328deg)
-    brightness(99%) contrast(86%);
+  stroke: var(--primary-color);
 }
 
 .inside-leftpane {

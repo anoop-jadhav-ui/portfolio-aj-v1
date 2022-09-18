@@ -2,7 +2,7 @@
   0% {
     width: calc(var(--image-size) + 1rem);
     height: calc(var(--image-size) + 1rem);
-    border: 2px solid var(--red);
+    border: 2px solid var(--primary-color);
   }
   100% {
     width: calc(var(--image-size) + 4rem);
