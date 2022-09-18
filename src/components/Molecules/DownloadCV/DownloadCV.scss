@@ -1,14 +1,5 @@
 .download-cv {
-  &.mobile {
-    position: fixed;
-    bottom: 1rem;
-    right: 1rem;
-    z-index: 1;
-  }
-
-  &.desktop {
-    margin-top: 2rem;
-  }
+  margin-top: 3.5rem;
 
   svg {
     width: 1.2em;

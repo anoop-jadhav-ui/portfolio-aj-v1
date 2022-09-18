@@ -1,7 +1,7 @@
 import React, { useMemo, useState } from "react";
 import lightImage from "../../../assets/portfolio-app-img-light-min.png";
 import darkImage from "../../../assets/portfolio-app-img-dark-min.png";
-import "./SummaryDesktop.scss";
+import "./Summary.scss";
 import { useGlobalContext } from "../../../context/GlobalContext";
 import { useTheme } from "../../../context/ThemeContext";
 import moment from "moment/moment";
@@ -9,7 +9,7 @@ import SectionVisibilityHOC from "../../Organisms/SectionVisibilityHOC/SectionVi
 import T from "../../../translations/en_IN";
 import constants from "../../../helpers/constants";
 import DownloadCV from "../../Molecules/DownloadCV/DownloadCV";
-const SummaryDesktop = () => {
+const Summary = () => {
   const [imageLoading, setImageLoading] = useState(false);
   const { profileData } = useGlobalContext();
   const { darkMode } = useTheme();
@@ -40,7 +40,7 @@ const SummaryDesktop = () => {
   }
 
   return (
-    <div className="summary-desktop">
+    <div className="summary-mobile">
       <div className="mainlogo-wrapper">
         <img
           src={darkMode ? darkImage : lightImage}
@@ -51,25 +51,17 @@ const SummaryDesktop = () => {
           onError={handleImageErrored}
         />
       </div>
-      <div className="right-division">
-        <div className="bold red hello">{T.HELLO}</div>
-        <div className="h1 bold main-title grey-1">{`${T.I_AM} ${overview.name}`}</div>
-        <div className="h4 letterspacing-1 red bold title">
-          {overview.title}
-        </div>
-        <div className="body-text summary-text">
-          {overview.summary.replace(
-            "{totalYearsOfExperience}",
-            totalExperience
-          )}
-        </div>
-        <DownloadCV />
+
+      <div className="h1 bold main-title grey-1">{overview.name}</div>
+      <div className="h4 uppercase letterspacing-1 red bold">
+        {overview.title}
       </div>
+      <div className="body-text summary-text">
+        {overview.summary.replace("{totalYearsOfExperience}", totalExperience)}
+      </div>
+      <DownloadCV />
     </div>
   );
 };
 
-export default SectionVisibilityHOC(
-  SummaryDesktop,
-  constants.classNames.SUMMARY
-);
+export default SectionVisibilityHOC(Summary, constants.classNames.SUMMARY);

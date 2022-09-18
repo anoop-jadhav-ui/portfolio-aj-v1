@@ -5,7 +5,7 @@ import { IconType } from "react-icons";
 interface ButtonProps {
   label?: string;
   onClick?: () => void;
-  variant?: "neutral" | "brand";
+  variant?: "neutral" | "brand" | "base";
   Icon?: IconType;
   type?: "button" | "submit" | "reset" | undefined;
   testID?: string;

@@ -5,44 +5,56 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-.button:active {
-  content: "";
-  position: relative;
-}
 
-.button:active:after {
-  content: "";
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(1, 1, 1, 0.1);
-  position: absolute;
-}
+  &.with-label .icon {
+    top: -1px;
+  }
 
-.brand {
-  background: var(--red);
-  color: white;
-  border: 0;
-}
-.brand:hover {
-  background: var(--dark-red);
-}
-.label + .icon {
-  padding-left: 0.5rem;
-}
-.icon {
-  position: relative;
-}
-.with-label .icon {
-  top: -1px;
-}
-.neutral {
-  border: 1px solid var(--grey5);
-  color: var(--red);
-  background: var(--grey0);
-}
-.neutral:hover {
-  background: var(--grey6);
+  &.brand {
+    background: var(--red);
+    color: white;
+    border: 0;
+
+    &:hover {
+      background: var(--dark-red);
+    }
+  }
+
+  &.neutral {
+    border: 1px solid var(--grey5);
+    color: var(--red);
+    background: var(--grey0);
+
+    &:hover {
+      background: var(--grey6);
+    }
+  }
+
+  &.base {
+    border: none;
+    background: none;
+    color: var(--red);
+  }
+
+  &:active {
+    content: "";
+    position: relative;
+
+    &:after {
+      content: "";
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(1, 1, 1, 0.1);
+      position: absolute;
+    }
+  }
+
+  .label + .icon {
+    padding-left: 0.5rem;
+  }
+  .icon {
+    position: relative;
+  }
 }

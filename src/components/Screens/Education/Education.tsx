@@ -26,9 +26,9 @@ function Education() {
                 <span className="h3 grey3 light">
                   , {educationDetail.place}
                 </span>
-                <div className="education-bars">
-                  <BarGraph value={educationDetail.percentage} animate={true} />
-                </div>
+                {/* <div className="education-bars">*/}
+                {/*  <BarGraph value={educationDetail.percentage} animate={true} />*/}
+                {/* </div>*/}
               </div>
             </div>
           );

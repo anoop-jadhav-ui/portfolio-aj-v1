@@ -7,91 +7,91 @@
   flex-direction: column;
   justify-content: space-between;
   cursor: pointer;
-}
 
-.projectcard:hover {
-  background-color: var(--grey6);
+  &:hover {
+    background-color: var(--grey6);
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    grid-gap: 0.5rem;
+    .tag {
+      font-size: 0.65rem !important;
+      color: var(--grey6);
+      font-weight: bold;
+      background-color: var(--red);
+      padding: 1px 0.5rem;
+      border-radius: 0.25rem;
+      width: 4rem;
+      text-align: center;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      cursor: pointer;
+    }
+  }
+
+  .description {
+    padding-top: 1rem;
+    max-height: 13rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 0.8125rem;
+  }
+
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1rem;
+
+    .projectlinks {
+      display: flex;
+      .contactimg {
+        width: 1.2rem;
+      }
+    }
+
+    a + a {
+      margin-left: 1rem;
+    }
+  }
+
+  .projectstatus {
+    display: flex;
+    align-items: center;
+
+    &.Progress .statuscircle {
+      background-color: var(--orange);
+    }
+    &.Complete .statuscircle {
+      background-color: var(--green);
+    }
+    &.Complete .label {
+      color: var(--green);
+    }
+    &.Progress .label {
+      color: var(--orange);
+    }
+    .label::first-letter {
+      text-transform: uppercase;
+    }
+  }
+
+  .statuscircle {
+    border-radius: 50%;
+    height: 0.75rem;
+    width: 0.75rem;
+    margin-right: 0.5rem;
+  }
 }
 
 @media (max-width: 1200px) {
   .projectcard {
     width: 100%;
+    &:hover {
+      background-color: transparent;
+    }
   }
-  .projectcard:hover {
-    background-color: transparent;
-  }
-}
-
-.tags {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  grid-gap: 0.5rem;
-}
-
-.tag {
-  font-size: 0.65rem !important;
-  color: var(--grey6);
-  font-weight: bold;
-  background-color: var(--red);
-  padding: 1px 0.5rem;
-  border-radius: 0.25rem;
-  width: 4rem;
-  text-align: center;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  cursor: pointer;
-}
-
-.description {
-  padding-top: 1rem;
-  max-height: 13rem;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  font-size: 0.8125rem;
-}
-
-.projectlinks {
-  display: flex;
-}
-.projectlinks .contactimg {
-  width: 1.5rem;
-}
-
-.projectlinks a + a {
-  margin-left: 1rem;
-}
-
-.projectcard .footer {
-  display: flex;
-  justify-content: space-between;
-  padding-top: 1rem;
-}
-
-.projectstatus {
-  display: flex;
-  align-items: center;
-}
-
-.statuscircle {
-  border-radius: 50%;
-  height: 0.75rem;
-  width: 0.75rem;
-  margin-right: 0.5rem;
-}
-.projectstatus .label::first-letter {
-  text-transform: uppercase;
-}
-.projectstatus.Progress .statuscircle {
-  background-color: var(--orange);
-}
-.projectstatus.Complete .statuscircle {
-  background-color: var(--green);
-}
-.projectstatus.Complete .label {
-  color: var(--green);
-}
-.projectstatus.Progress .label {
-  color: var(--orange);
 }
