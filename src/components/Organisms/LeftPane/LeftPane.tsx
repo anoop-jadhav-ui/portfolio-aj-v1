@@ -8,7 +8,7 @@ import { BiLeftArrow } from "react-icons/bi";
 const LeftPane = () => {
   const [leftPaneVisible, setLeftPaneVisibility] = usePersistState(
     "leftPaneVisibility",
-    false
+    true
   );
   const { currentSectionInView } = useGlobalContext();
   const toggleLeftPane = () => {

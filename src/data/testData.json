@@ -118,7 +118,7 @@
   ],
   "overview": {
     "name": "Anoop Jadhav",
-    "summary": "A passionate UI Developer with around 8.0 years of experience in designing and developing web & mobile applications using tools and technologies like HTML, CSS, JavaScript, React Js, React Native, Salesforce Lightning Components, Salesforce LWC, Adobe Illustrator and Figma.",
+    "summary": "A passionate <span>UI Developer</span> with around <span>{totalYearsOfExperience} years</span> of experience in <span>designing and developing web & mobile applications</span> using tools and technologies like HTML, CSS, JavaScript, React Js, React Native, Salesforce Lightning Components, Salesforce LWC, Adobe Illustrator and Figma.",
     "title": "UI DEVELOPER"
   },
   "portfolioData": [

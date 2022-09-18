@@ -60,13 +60,25 @@
   }
 
   .main-title {
-    padding-top: 2.75rem;
+    padding-top: 0rem;
   }
   .summary-text {
     padding-top: 1.5rem;
+    span {
+      font-weight: bold;
+      color: var(--red);
+    }
+
+    span:nth-child(1) {
+      background: var(--red);
+      padding: 0 0.5rem;
+      color: var(--grey0);
+      font-weight: bold;
+    }
   }
-  .scroll-text {
-    padding-top: 4.75rem;
-    padding-top: 4.75rem;
+
+  .hello {
+    padding-top: 3.75rem;
+    letter-spacing: 1px;
   }
 }

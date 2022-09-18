@@ -9,6 +9,7 @@ import SectionVisibilityHOC from "../../Organisms/SectionVisibilityHOC/SectionVi
 import T from "../../../translations/en_IN";
 import constants from "../../../helpers/constants";
 import DownloadCV from "../../Molecules/DownloadCV/DownloadCV";
+import parse from "html-react-parser";
 const Summary = () => {
   const [imageLoading, setImageLoading] = useState(false);
   const { profileData } = useGlobalContext();
@@ -52,12 +53,15 @@ const Summary = () => {
         />
       </div>
 
+      <div className="bold red hello">{T.HELLO} I am </div>
       <div className="h1 bold main-title grey-1">{overview.name}</div>
-      <div className="h4 uppercase letterspacing-1 red bold">
-        {overview.title}
-      </div>
+      {/* <div className="h4 uppercase letterspacing-1 red bold">*/}
+      {/*  {overview.title}*/}
+      {/* </div>*/}
       <div className="body-text summary-text">
-        {overview.summary.replace("{totalYearsOfExperience}", totalExperience)}
+        {parse(
+          overview.summary.replace("{totalYearsOfExperience}", totalExperience)
+        )}
       </div>
       <DownloadCV />
     </div>
