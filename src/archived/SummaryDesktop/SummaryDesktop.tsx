@@ -9,6 +9,7 @@ import SectionVisibilityHOC from "../../components/Organisms/SectionVisibilityHO
 import T from "../../translations/en_IN";
 import constants from "../../helpers/constants";
 import DownloadCV from "../../components/Molecules/DownloadCV/DownloadCV";
+
 const SummaryDesktop = () => {
   const [imageLoading, setImageLoading] = useState(false);
   const { profileData } = useGlobalContext();
@@ -53,7 +54,7 @@ const SummaryDesktop = () => {
       </div>
       <div className="right-division">
         <div className="bold red hello">{T.HELLO}</div>
-        <div className="h1 bold main-title grey-1">{`${T.I_AM} ${overview.name}`}</div>
+        <div className="h1 bold main-title grey-1">{`${overview.name}`}</div>
         <div className="h4 letterspacing-1 red bold title">
           {overview.title}
         </div>
