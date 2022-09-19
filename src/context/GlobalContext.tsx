@@ -1,4 +1,9 @@
-import React, { createContext, useContext, useEffect, useState } from "react";
+import React, {
+  createContext,
+  useContext,
+  useLayoutEffect,
+  useState,
+} from "react";
 import { initialProfileData, ProfileData } from "../types/profileDataTypes";
 import fetchProfileData from "../helpers/fetchProfileData";
 import getFilteredLeftPaneData, {
@@ -39,7 +44,7 @@ export const GlobalContextProvider = (props: GlobalContextProps) => {
   const [currentSectionInView, setCurrentSectionInView] =
     useState<string>("summary");
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     (async () => {
       const fetchedProfileData = await fetchProfileData();
       setProfileData(fetchedProfileData);
