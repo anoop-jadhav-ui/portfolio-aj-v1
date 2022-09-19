@@ -21,14 +21,14 @@
 }
 
 body {
-  // colors
-  --grey1: #333333;
+  /* grey values */
+  --grey1: #212122; /* darkest */
   --grey2: #4f4f4f;
   --grey3: #828282;
   --grey4: #bdbdbd;
   --grey5: #e0e0e0;
   --grey6: #f2f2f2;
-  --grey7: white;
+  --grey7: white; /* lightest */
 
   --app-background: var(--grey7);
   --input-background: var(--grey7);
@@ -50,13 +50,20 @@ body {
     monospace;
 
   &.darkmode {
-    --grey7: #212122;
-    --grey6: #333333;
-    --grey5: #4f4f4f;
-    --grey4: #828282;
-    --grey3: #bdbdbd;
-    --grey2: #e0e0e0;
-    --grey1: #f2f2f2;
+    //--grey7: #212122;
+    //--grey6: #333333;
+    //--grey5: #4f4f4f;
+    //--grey4: #828282;
+    //--grey3: #bdbdbd;
+    //--grey2: #e0e0e0;
+    //--grey1: #f2f2f2;
+    --grey7: #212122; /* darkest */
+    --grey6: #4f4f4f;
+    --grey5: #828282;
+    --grey4: #bdbdbd;
+    --grey3: #e0e0e0;
+    --grey2: #f2f2f2;
+    --grey1: white; /* lightest */
 
     --input-background: var(--grey7);
     color: var(--grey1);
