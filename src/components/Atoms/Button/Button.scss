@@ -12,7 +12,7 @@
 
   &.brand {
     background: var(--primary-color);
-    color: var(--grey0);
+    color: var(--grey7);
     border: 0;
     position: relative;
 
@@ -36,7 +36,7 @@
   &.neutral {
     border: 1px solid var(--grey5);
     color: var(--primary-color);
-    background: var(--grey0);
+    background: var(--grey7);
     position: relative;
 
     &:before {

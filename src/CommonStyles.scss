@@ -22,27 +22,24 @@
 
 body {
   // colors
-  --grey0: white;
   --grey1: #333333;
   --grey2: #4f4f4f;
   --grey3: #828282;
   --grey4: #bdbdbd;
   --grey5: #e0e0e0;
   --grey6: #f2f2f2;
-  --grey7: #212122;
+  --grey7: white;
 
-  --app-background: var(--grey0);
-  --input-background: var(--grey0);
+  --app-background: var(--grey7);
+  --input-background: var(--grey7);
 
   --red: #eb5757;
-  --dark-red: #b03535;
+  // banner colors
   --orange: #f2994a;
-  --light-orange: #ffaeae;
   --yellow: #f2c94c;
   --green: #27ae60;
 
   // Primary & Accent color variations
-
   --primary-color: var(--red);
   --accent-color: var(--orange);
 
@@ -53,20 +50,15 @@ body {
     monospace;
 
   &.darkmode {
-    --input-background: #262627;
-
-    --lightest: #212122;
-    --darkest: white;
-
-    --grey7: white;
+    --grey7: #212122;
     --grey6: #333333;
     --grey5: #4f4f4f;
     --grey4: #828282;
     --grey3: #bdbdbd;
     --grey2: #e0e0e0;
     --grey1: #f2f2f2;
-    --grey0: #212122;
 
+    --input-background: var(--grey7);
     color: var(--grey1);
   }
 
