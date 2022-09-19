@@ -2,6 +2,13 @@
   font-size: 20px;
 }
 
+// Desktop
+@media (min-width: 1280px) and (max-width: 1791px) {
+  :root {
+    font-size: 16px;
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -37,13 +44,6 @@ body {
     monospace;
 
   &.darkmode {
-    //--grey7: #212122;
-    //--grey6: #333333;
-    //--grey5: #4f4f4f;
-    //--grey4: #828282;
-    //--grey3: #bdbdbd;
-    //--grey2: #e0e0e0;
-    //--grey1: #f2f2f2;
     --grey7: #212122; /* darkest */
     --grey6: #333333;
     --grey5: #828282;

@@ -1,6 +1,5 @@
 .App {
   position: relative;
-  padding: 5.25rem 12rem;
   .darkModeWrapper {
     position: fixed;
     top: 1rem;
@@ -10,20 +9,35 @@
   }
 }
 
-/* Medium devices (tablets, 768px and up)*/
-@media (max-width: 1200px) {
+// Mobile
+@media (max-width: 768px) {
   .App {
     padding: 1rem 1rem 5rem 1rem;
     padding-top: 6rem;
   }
 }
+// Tablet
+@media (max-width: 1279px) {
+  .App {
+    padding: 5.25rem 20rem;
+  }
+}
 
+// Desktop
+@media (min-width: 1280px) and (max-width: 1791px) {
+  .App {
+    padding: 5.25rem 16rem;
+  }
+}
+
+// Large Desktop
 @media (min-width: 1792px) and (max-width: 1899px) {
   .App {
     padding: 5.25rem 16rem;
   }
 }
 
+// X Large Desktop
 @media (min-width: 1900px) {
   .App {
     padding: 5.25rem 20rem;
