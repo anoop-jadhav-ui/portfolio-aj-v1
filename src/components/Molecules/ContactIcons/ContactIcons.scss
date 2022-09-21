@@ -7,13 +7,19 @@
 }
 
 .contactimg {
-  width: 2rem;
-  height: 2rem;
-  stroke: var(--grey1);
+  width: 1.5rem;
+  height: 1.5rem;
+  stroke: var(--primary-color);
 }
 
 .contactimg:hover {
-  stroke: var(--primary-color);
+  stroke: hsla(
+    var(--primary-hue),
+    var(--primary-saturation),
+    78%,
+    var(--primary-alpha)
+  );
+  //stroke: hsla(0,84%, 78%, 100%);
 }
 
 .inside-leftpane {

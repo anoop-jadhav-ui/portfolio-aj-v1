@@ -33,8 +33,18 @@ body {
   --yellow: #f2c94c;
   --green: #27ae60;
 
+  --primary-hue: 0;
+  --primary-saturation: 84%;
+  --primary-light: 64%;
+  --primary-alpha: 100%;
+
   // Primary & Accent color variations
-  --primary-color: var(--red);
+  --primary-color: hsla(
+    var(--primary-hue),
+    var(--primary-saturation),
+    var(--primary-light),
+    var(--primary-alpha)
+  );
   --accent-color: var(--orange);
 
   //font variables
