@@ -9,6 +9,7 @@
     "@types/node": "^18.7.15",
     "@types/react": "^18.0.18",
     "@types/react-dom": "^18.0.6",
+    "animate.css": "^4.1.1",
     "axios": "^0.21.0",
     "babel": "^6.23.0",
     "babel-polyfill": "^6.26.0",

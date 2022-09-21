@@ -8,6 +8,7 @@ import { useTheme } from "../context/ThemeContext";
 import { useGlobalContext } from "../context/GlobalContext";
 import { DarkModeSwitch } from "react-toggle-dark-mode";
 import LeftPane from "../components/Organisms/LeftPane/LeftPane";
+import "animate.css";
 
 export const App = () => {
   const { darkMode, setDarkMode, isMobile } = useTheme();
