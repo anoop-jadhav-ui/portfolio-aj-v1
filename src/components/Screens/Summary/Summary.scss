@@ -20,6 +20,8 @@
   .mainlogo-wrapper {
     position: relative;
     box-sizing: content-box;
+    border-radius: 50%;
+    background: var(--grey7);
 
     &:after {
       content: "";

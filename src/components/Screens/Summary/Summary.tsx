@@ -1,19 +1,17 @@
 import React, { useMemo, useState } from "react";
-import lightImage from "../../../assets/portfolio-app-img-light-min.png";
-import darkImage from "../../../assets/portfolio-app-img-dark-min.png";
+import portfolioImage from "../../../assets/portfolio-app-img.png";
 import "./Summary.scss";
 import { useGlobalContext } from "../../../context/GlobalContext";
-import { useTheme } from "../../../context/ThemeContext";
 import moment from "moment/moment";
 import SectionVisibilityHOC from "../../Organisms/SectionVisibilityHOC/SectionVisibilityHOC";
 import T from "../../../translations/en_IN";
 import constants from "../../../helpers/constants";
 import DownloadCV from "../../Molecules/DownloadCV/DownloadCV";
 import parse from "html-react-parser";
+
 const Summary = () => {
   const [imageLoading, setImageLoading] = useState(false);
   const { profileData } = useGlobalContext();
-  const { darkMode } = useTheme();
   const { overview, experience } = profileData;
 
   const totalExperience = useMemo((): string => {
@@ -44,7 +42,7 @@ const Summary = () => {
     <div className="summary-mobile">
       <div className="mainlogo-wrapper">
         <img
-          src={darkMode ? darkImage : lightImage}
+          src={portfolioImage}
           className={`mainlogo ${imageLoading && "loaded"}`}
           alt="mi Baburao"
           loading="eager"

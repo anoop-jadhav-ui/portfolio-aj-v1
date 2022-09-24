@@ -30,7 +30,6 @@ body {
   --app-background: var(--grey10);
   --input-background: var(--grey10);
 
-  --red: #f05454;
   // banner colors
   --orange: #f2994a;
   --yellow: #f2c94c;
@@ -223,7 +222,7 @@ body {
     height: 2.5rem;
     padding: 0 1rem;
     border-radius: 0.25rem;
-    transition: background-color 0.5s ease-in-out;
+    //transition: background-color 0.5s ease-in-out;
     background: var(--input-background);
     color: var(--grey1);
   }
@@ -233,7 +232,7 @@ body {
     height: 6.5rem;
     padding: 0.5rem 1rem;
     border-radius: 0.25rem;
-    transition: background-color 0.5s ease-in-out;
+    //transition: background-color 0.5s ease-in-out;
     background: var(--input-background);
     color: var(--grey1);
   }

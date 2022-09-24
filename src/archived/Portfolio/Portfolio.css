@@ -208,7 +208,7 @@
 .social-icon {
   width: 20px;
   height: 20px;
-  transition: transform 100ms ease-in;
+  /*transition: transform 100ms ease-in;*/
 }
 .social-icon + .social-icon {
   margin-left: 1.5rem;
