@@ -4,6 +4,7 @@ import { CertificateDetails } from "../../../types/profileDataTypes";
 import SectionVisibilityHOC from "../../Organisms/SectionVisibilityHOC/SectionVisibilityHOC";
 import T from "../../../translations/en_IN";
 import constants from "../../../helpers/constants";
+
 const Certifications = () => {
   const { profileData } = useGlobalContext();
   const { certifications } = profileData;

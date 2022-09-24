@@ -1,17 +1,27 @@
 import React from "react";
 import "./ContactIcons.scss";
 import { useGlobalContext } from "../../../context/GlobalContext";
-import { FiGithub, FiInstagram, FiLinkedin, FiMail } from "react-icons/fi";
+import UseAnimations from "react-useanimations";
+import email from "react-useanimations/lib/mail";
+import linkedIn from "react-useanimations/lib/linkedin";
+import instagram from "react-useanimations/lib/instagram";
+import githubIcon from "react-useanimations/lib/github";
 
 const ContactIcons = ({ className }: { className: string }) => {
   const { profileData } = useGlobalContext();
   const { contactDetails } = profileData;
   const { emailId, linkedin, instaId, github } = contactDetails;
+  const ICON_SIZE = className === "inside-leftpane" ? 32 : 48;
+
   return (
     <div className={"horizontally-placed " + className}>
       <div className="subsection-data">
         <a href={"mailto: " + emailId} title="Email Address">
-          <FiMail className="contactimg" title="email address" />
+          <UseAnimations
+            size={ICON_SIZE}
+            animation={email}
+            strokeColor="var(--primary-color)"
+          />
         </a>
       </div>
       <div className="subsection-data">
@@ -21,7 +31,11 @@ const ContactIcons = ({ className }: { className: string }) => {
           target="_blank"
           title="Linkedin"
         >
-          <FiLinkedin className="contactimg" title="linkedin link" />
+          <UseAnimations
+            size={ICON_SIZE}
+            animation={linkedIn}
+            strokeColor="var(--primary-color)"
+          />
         </a>
       </div>
       <div className="subsection-data">
@@ -31,7 +45,11 @@ const ContactIcons = ({ className }: { className: string }) => {
           target="_blank"
           title="Instagram"
         >
-          <FiInstagram className="contactimg" title="instagram link" />
+          <UseAnimations
+            size={ICON_SIZE}
+            animation={instagram}
+            strokeColor="var(--primary-color)"
+          />
         </a>
       </div>
 
@@ -43,7 +61,11 @@ const ContactIcons = ({ className }: { className: string }) => {
           rel="noopener noreferrer"
           title="Github"
         >
-          <FiGithub className="contactimg" title="github link" />
+          <UseAnimations
+            size={ICON_SIZE}
+            animation={githubIcon}
+            strokeColor="var(--primary-color)"
+          />
         </a>
       </div>
     </div>

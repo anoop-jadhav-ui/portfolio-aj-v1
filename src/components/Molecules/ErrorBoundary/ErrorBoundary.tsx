@@ -1,7 +1,9 @@
 import React, { ErrorInfo } from "react";
 import "./ErrorBoundary.scss";
-import { BiMessageError as ErrorIcon } from "react-icons/bi";
 import T from "../../../translations/en_IN";
+
+import UseAnimations from "react-useanimations";
+import alertOctagon from "react-useanimations/lib/alertOctagon";
 
 interface Props {
   children: React.ReactNode;
@@ -30,7 +32,11 @@ class ErrorBoundary extends React.Component<Props, { hasError: boolean }> {
       return (
         <div className="error">
           <div>
-            <ErrorIcon title={T.PAGE_LOAD_ERROR}></ErrorIcon>
+            <UseAnimations
+              size={88}
+              animation={alertOctagon}
+              strokeColor="var(--primary-color)"
+            />
           </div>
           <div className="error-message">{T.PAGE_LOAD_ERROR}</div>
           later.

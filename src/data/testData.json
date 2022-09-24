@@ -61,7 +61,7 @@
   "contactDetails": {
     "contactNumber": "(+91) 9028665267",
     "emailId": "anoopjadhav@gmail.com",
-    "github": "https://github.com/Anoopjadhav",
+    "github": "https://github.com/anoop-jadhav-ui",
     "instaId": "anoop.designs",
     "linkedin": "https://www.linkedin.com/in/anoop-jadhav-44528258"
   },
@@ -175,7 +175,7 @@
   "projects": [
     {
       "description": "A React App to manage guests or organize an event. The idea behind creation of this app was to manage the guests or events in this covid pandemic situation because of the limition on the number of guests allowed by the government authorities.",
-      "github": "https://github.com/Anoopjadhav/guest-tracker",
+      "github": "https://github.com/anoop-jadhav-ui/guest-tracker",
       "priority": 999,
       "projectName": "Guest Tracker",
       "status": "In Progress",
@@ -184,7 +184,7 @@
     },
     {
       "description": "Visualize sorting in real time using this app built using React. As of now Bubble sort and Insertion sort visualization is complete. I will be adding merge sort and quick sort very soon. The idea behind this tool was to understand how hooks like useState, useRef, useEffect work in React.",
-      "github": "https://github.com/Anoopjadhav/sorting-visual",
+      "github": "https://github.com/anoop-jadhav-ui/sorting-visual",
       "priority": 999,
       "projectName": "Sort Visualizer",
       "status": "In Progress",
@@ -193,7 +193,7 @@
     },
     {
       "description": "Tic Tac Toe Game created using React Js for mobile device. As of now playing on a single mobile device is complete but in the future it will allow users to play online. ",
-      "github": "https://github.com/Anoopjadhav/tic-tac-toe",
+      "github": "https://github.com/anoop-jadhav-ui/tic-tac-toe",
       "priority": 999,
       "projectName": "Tic Tac Toe",
       "status": "In Progress",
@@ -202,7 +202,7 @@
     },
     {
       "description": "This app which you are viewing currently is my portfolio web app project created to showcase my design and development work. This is created using React Js (frontend), Node & Express Js (server side scripting), Firebase(database) and Figma (Design)",
-      "github": "https://github.com/Anoopjadhav/portfolio-aj",
+      "github": "https://github.com/anoop-jadhav-ui/portfolio-aj",
       "priority": 999,
       "projectName": "My Portfolio Web App",
       "status": "Complete",
