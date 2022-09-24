@@ -10,7 +10,12 @@
     height: 2.25rem;
     background: linear-gradient(
       101.14deg,
-      var(--accent-color) 0.99%,
+      hsl(
+          calc(var(--primary-hue) + 25),
+          var(--primary-saturation),
+          var(--primary-light)
+        )
+        0.99%,
       var(--primary-color) 177.11%
     );
     border-radius: 0.25rem;
