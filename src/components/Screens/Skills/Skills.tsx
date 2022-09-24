@@ -5,15 +5,16 @@ import { useGlobalContext } from "../../../context/GlobalContext";
 import SectionVisibilityHOC from "../../Organisms/SectionVisibilityHOC/SectionVisibilityHOC";
 import T from "../../../translations/en_IN";
 import constants from "../../../helpers/constants";
+
 const Skills = () => {
-  const { profileData, currentSectionInView } = useGlobalContext();
+  const { profileData } = useGlobalContext();
   const { skills } = profileData;
   const { development, design } = skills;
   return (
     <>
       <div className="section-title h2 bold">{T.SKILLS}</div>
       <div className="subsection">
-        <div className="subsection-title uppercase body-text grey3 letterspacing-1">
+        <div className="subsection-title uppercase body-text grey5 letterspacing-1">
           {T.DEVELOPMENT}
         </div>
         <div className="subsection-data">
@@ -37,7 +38,7 @@ const Skills = () => {
         </div>
       </div>
       <div className="subsection">
-        <div className="subsection-title uppercase body-text grey3 letterspacing-1">
+        <div className="subsection-title uppercase body-text grey5 letterspacing-1">
           {T.DESIGN}
         </div>
         <div className="subsection-data">

@@ -182,7 +182,7 @@
     display: block;
     position: relative;
     box-shadow: none;
-    border: 1px solid var(--grey5);
+    border: 1px solid var(--grey7);
     border-top: 0;
   }
   .thumbnail-image:hover {

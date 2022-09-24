@@ -12,7 +12,7 @@ const Certifications = () => {
     <>
       <div className="section-title h2 bold">{T.CERTIFICATIONS}</div>
       <div className="subsection">
-        <div className="subsection-title uppercase body-text grey3 letterspacing-1">
+        <div className="subsection-title uppercase body-text grey5 letterspacing-1">
           {T.DEVELOPMENT}
         </div>
 
@@ -41,7 +41,7 @@ const Certifications = () => {
         )}
       </div>
       <div className="subsection">
-        <div className="subsection-title uppercase body-text grey3 letterspacing-1">
+        <div className="subsection-title uppercase body-text grey5 letterspacing-1">
           {T.DESIGN}
         </div>
         {design.map((certificateDetail: CertificateDetails, key: number) => {

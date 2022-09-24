@@ -35,7 +35,7 @@ const LeftPane = () => {
         </div>
       </div>
 
-      <ul className="menu body-text grey3">
+      <ul className="menu body-text grey5">
         {leftPaneData.map((leftPaneItem) => {
           return (
             <LeftPaneItem

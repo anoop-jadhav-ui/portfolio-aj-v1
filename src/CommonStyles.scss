@@ -16,16 +16,19 @@
 
 body {
   /* grey values */
-  --grey1: #212122; /* darkest */
-  --grey2: #333333;
-  --grey3: #828282;
-  --grey4: #bdbdbd;
-  --grey5: #e0e0e0;
-  --grey6: #f2f2f2;
-  --grey7: white; /* lightest */
+  --grey1: #0f172a; /* darkest */
+  --grey2: #1e293b;
+  --grey3: #334155;
+  --grey4: #475569;
+  --grey5: #64748b;
+  --grey6: #94a3b8;
+  --grey7: #cbd5e1;
+  --grey8: #e2e8f0;
+  --grey9: #f1f5f9;
+  --grey10: #f8fafc; /* lightest */
 
-  --app-background: var(--grey7);
-  --input-background: var(--grey7);
+  --app-background: var(--grey10);
+  --input-background: var(--grey10);
 
   --red: #f05454;
   // banner colors
@@ -45,6 +48,7 @@ body {
     var(--primary-light),
     var(--primary-alpha)
   );
+
   --accent-color: var(--orange);
 
   //font variables
@@ -54,16 +58,16 @@ body {
     monospace;
 
   &.darkmode {
-    --grey7: #212122; /* darkest */
-    --grey6: #333333;
-    --grey5: #828282;
-    --grey4: #bdbdbd;
-    --grey3: #e0e0e0;
-    --grey2: #f2f2f2;
-    --grey1: white; /* lightest */
-
-    --input-background: var(--grey7);
-    color: var(--grey1);
+    --grey10: #0f172a; /* darkest */
+    --grey9: #1e293b;
+    --grey8: #334155;
+    --grey7: #475569;
+    --grey6: #64748b;
+    --grey5: #94a3b8;
+    --grey4: #cbd5e1;
+    --grey3: #e2e8f0;
+    --grey2: #f1f5f9;
+    --grey1: #f8fafc; /* lightest */
   }
 
   // body bg color and font color
@@ -151,25 +155,45 @@ body {
   }
 
   /*Colors*/
-  .grey1 {
+  .grey1,
+  .grey1 > a {
     color: var(--grey1);
   }
   .grey2,
   .grey2 > a {
     color: var(--grey2) !important;
   }
-  .grey3 {
+  .grey3,
+  .grey3 > a {
     color: var(--grey3);
   }
   .grey4,
   .grey4 > a {
     color: var(--grey4) !important;
   }
-  .grey5 {
-    color: var(--grey5);
+  .grey5,
+  .grey5 > a {
+    color: var(--grey5) !important;
   }
-  .grey6 {
-    color: var(--grey6);
+  .grey6,
+  .grey6 > a {
+    color: var(--grey6) !important;
+  }
+  .grey7,
+  .grey7 > a {
+    color: var(--grey7) !important;
+  }
+  .grey8,
+  .grey8 > a {
+    color: var(--grey8) !important;
+  }
+  .grey9,
+  .grey9 > a {
+    color: var(--grey9) !important;
+  }
+  .grey10,
+  .grey10 > a {
+    color: var(--grey10) !important;
   }
   .primary-color,
   .primary-color > a {
@@ -195,7 +219,7 @@ body {
 
   input {
     width: 100%;
-    border: 1px solid var(--grey5);
+    border: 1px solid var(--grey7);
     height: 2.5rem;
     padding: 0 1rem;
     border-radius: 0.25rem;
@@ -205,7 +229,7 @@ body {
   }
   textarea {
     width: 100%;
-    border: 1px solid var(--grey5);
+    border: 1px solid var(--grey7);
     height: 6.5rem;
     padding: 0.5rem 1rem;
     border-radius: 0.25rem;

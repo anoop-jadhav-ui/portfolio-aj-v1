@@ -28,6 +28,7 @@ export const App = () => {
           <PageScrollProgressBar
             container={AppRef.current}
             bgColor="transparent"
+            color="var(--primary-color)"
           />
           <div
             className={"App row no-gutters fade show justify-content-center"}
@@ -38,7 +39,7 @@ export const App = () => {
                 checked={darkMode}
                 onChange={toDarkMode}
                 size={30}
-                sunColor="#FFCC66"
+                sunColor="var(--primary-color)"
               />
             </div>
             {!isMobile && leftPaneData && <LeftPane />}

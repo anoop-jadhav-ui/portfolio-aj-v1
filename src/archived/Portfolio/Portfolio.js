@@ -148,7 +148,7 @@ class Portfolio extends Component {
                               {ele.portfolioData.title}
                             </span>
                             <span className="dot"></span>
-                            <span className="pl-3 grey3 label">
+                            <span className="pl-3 grey5 label">
                               {ele.portfolioData.type}
                             </span>
                           </div>

@@ -1,5 +1,5 @@
 .projectcard {
-  border: 1px solid var(--grey5);
+  border: 1px solid var(--grey7);
   padding: 1.5rem 1rem !important;
   border-radius: 0.25rem;
   width: 49%;
@@ -9,7 +9,7 @@
   cursor: pointer;
 
   &:hover {
-    background-color: var(--grey6);
+    background-color: var(--grey9);
   }
 
   .tags {
@@ -19,7 +19,7 @@
     grid-gap: 0.5rem;
     .tag {
       font-size: 0.65rem !important;
-      color: var(--grey6);
+      color: var(--grey10);
       font-weight: bold;
       background-color: var(--primary-color);
       padding: 1px 0.5rem;

@@ -1,9 +1,9 @@
 .bar-graph {
-  background: var(--grey6);
+  background: var(--grey9);
   height: 2.25rem;
   border-radius: 0.25rem;
   overflow: hidden;
-  transition: background-color 0.5s ease-in;
+  //transition: background-color 0.5s ease-in;
 
   .filled {
     display: block;
