@@ -9,6 +9,7 @@ import { useGlobalContext } from "../context/GlobalContext";
 import { DarkModeSwitch } from "react-toggle-dark-mode";
 import LeftPane from "../components/Organisms/LeftPane/LeftPane";
 import "animate.css";
+import Stars from "../components/Organisms/Stars/Stars";
 
 export const App = () => {
   const { darkMode, setDarkMode, isMobile } = useTheme();
@@ -30,6 +31,7 @@ export const App = () => {
             bgColor="transparent"
             color="var(--primary-color)"
           />
+          <Stars />
           <div
             className={"App row no-gutters fade show justify-content-center"}
             ref={AppRef}
