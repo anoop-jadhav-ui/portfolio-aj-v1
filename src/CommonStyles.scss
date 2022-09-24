@@ -221,8 +221,7 @@ body {
     height: 2.5rem;
     padding: 0 1rem;
     border-radius: 0.25rem;
-    //transition: background-color 0.5s ease-in-out;
-    background: var(--input-background);
+    background: transparent;
     color: var(--grey1);
   }
   textarea {
@@ -231,8 +230,7 @@ body {
     height: 6.5rem;
     padding: 0.5rem 1rem;
     border-radius: 0.25rem;
-    //transition: background-color 0.5s ease-in-out;
-    background: var(--input-background);
+    background: transparent;
     color: var(--grey1);
   }
 }

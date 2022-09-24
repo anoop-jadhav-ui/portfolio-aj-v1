@@ -1,14 +1,14 @@
 @function multiple-box-shadow($n) {
-  $value: "#{random(2000)}px #{random(2000)}px #FFF";
+  $value: "#{random(2000)}px #{random(2000)}px var(--grey5)";
   @for $i from 2 through $n {
     $value: "#{$value} , #{random(2000)}px #{random(2000)}px var(--grey5)";
   }
   @return unquote($value);
 }
 
-$shadows-small: multiple-box-shadow(700);
-$shadows-medium: multiple-box-shadow(200);
-$shadows-big: multiple-box-shadow(100);
+$shadows-small: multiple-box-shadow(500);
+$shadows-medium: multiple-box-shadow(150);
+$shadows-big: multiple-box-shadow(60);
 
 .stars-effect {
   height: 100vh;
