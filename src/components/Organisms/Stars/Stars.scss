@@ -73,7 +73,7 @@ $shadows-big: multiple-box-shadow(60);
 
 @keyframes animStar {
   from {
-    transform: translateY(0px);
+    transform: translateY(0);
   }
   to {
     transform: translateY(calc(-1 * var(--page-height)));
