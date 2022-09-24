@@ -71,6 +71,7 @@
       list-style: none;
       cursor: pointer;
       font-size: 16px;
+      color: var(--grey5);
       &.bold {
         color: var(--grey1);
         &:before {
