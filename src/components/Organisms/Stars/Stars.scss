@@ -1,5 +1,5 @@
 @function multiple-box-shadow($n) {
-  $value: "#{random(2000)}px #{random(2000)}px var(--grey5)";
+  $value: "#{random(2000)}px #{random(2000)}px var(--grey6)";
   @for $i from 2 through $n {
     $value: "#{$value} , #{random(2000)}px #{random(2000)}px var(--grey5)";
   }
