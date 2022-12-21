@@ -29,7 +29,7 @@
     "test": "vitest",
     "coverage": "vitest run --coverage",
     "prepare": "husky install",
-    "format": "yarn rome format .",
+    "format": "yarn rome format . --write",
     "check": "yarn rome check ."
   },
   "devDependencies": {
