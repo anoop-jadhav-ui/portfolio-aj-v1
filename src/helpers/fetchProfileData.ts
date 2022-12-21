@@ -20,7 +20,7 @@ const firebaseData = new Promise((resolve, reject) => {
 export default function fetchProfileData() {
   try {
     // eslint-disable-next-line no-undef
-    if (process.env.NODE_ENV === "development") {
+    if (import.meta.env.NODE_ENV === "development") {
       return testProfileData;
     } else {
       return firebaseData.then((result) => {

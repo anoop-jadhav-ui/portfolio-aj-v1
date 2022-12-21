@@ -4,17 +4,13 @@
   "private": true,
   "proxy": "http://localhost:5000/",
   "dependencies": {
-    "@babel/polyfill": "^7.12.1",
     "@types/jest": "^29.0.0",
     "@types/node": "^18.7.15",
     "@types/react": "^18.0.18",
     "@types/react-dom": "^18.0.6",
     "animate.css": "^4.1.1",
     "axios": "^0.21.0",
-    "babel": "^6.23.0",
-    "babel-polyfill": "^6.26.0",
     "bootstrap": "^4.6.0",
-    "dotenv": "^8.2.0",
     "firebase": "^9.9.4",
     "html-react-parser": "^3.0.4",
     "moment": "^2.29.4",
@@ -37,28 +33,15 @@
     "lint-fix": "yarn prettier --write .",
     "eslint": "eslint --ignore-path .eslintignore --ext .js,.ts .",
     "eslint-fix": "yarn eslint --fix",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "format": "prettier --write ."
   },
   "devDependencies": {
-    "@babel/core": "^7.14.6",
-    "@babel/plugin-proposal-class-properties": "^7.14.5",
-    "@babel/plugin-syntax-dynamic-import": "^7.8.3",
-    "@babel/plugin-syntax-jsx": "^7.14.5",
-    "@babel/plugin-transform-runtime": "^7.12.1",
-    "@babel/preset-env": "^7.14.5",
-    "@babel/preset-react": "^7.14.5",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.0.0",
-    "@types/webpack-merge": "^5.0.0",
     "@typescript-eslint/eslint-plugin": "^5.36.2",
     "@typescript-eslint/parser": "^5.36.2",
     "@vitejs/plugin-react": "^3.0.0",
-    "babel-jest": "^26.6.3",
-    "babel-loader": "^8.1.0",
-    "babel-plugin-transform-runtime": "^6.23.0",
-    "clean-webpack-plugin": "^4.0.0-alpha.0",
-    "css-loader": "^6.7.1",
-    "dotenv-webpack": "^7.0.3",
     "eslint": "^8.23.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-import-resolver-typescript": "^3.5.0",
@@ -66,27 +49,13 @@
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.31.7",
-    "file-loader": "^6.1.1",
-    "html-webpack-plugin": "^5.3.1",
     "husky": "^8.0.1",
     "jest": "^26.6.0",
-    "mini-css-extract-plugin": "^0.11.3",
     "prettier": "2.3.2",
     "sass": "^1.54.9",
-    "sass-loader": "^13.0.2",
-    "ts-loader": "^9.3.1",
     "typescript": "^4.8.2",
     "vite": "^4.0.2",
-    "vite-plugin-checker": "^0.5.2",
-    "webpack": "^5.39.1",
-    "webpack-cli": "^4.7.2",
-    "webpack-dev-server": "^3.11.1",
-    "webpack-merge": "^5.8.0"
-  },
-  "jest": {
-    "snapshotSerializers": [
-      "enzyme-to-json/serializer"
-    ]
+    "vite-plugin-checker": "^0.5.2"
   },
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown"
