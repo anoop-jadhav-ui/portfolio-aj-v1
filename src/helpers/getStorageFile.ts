@@ -3,7 +3,7 @@ import firebaseStorage from "./firebaseStorage";
 
 const pathReference = ref(
   firebaseStorage,
-  `resume/${import.meta.env.RESUME_FILENAME}`
+  `resume/${import.meta.env.VITE_RESUME_FILENAME}`
 );
 
 // const httpsReference = ref(
