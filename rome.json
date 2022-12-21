@@ -1,0 +1,30 @@
+{
+  "$schema": "./node_modules/rome/configuration_schema.json",
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": true,
+      "a11y": {
+        "useKeyWithMouseEvents": "off",
+        "useKeyWithClickEvents": "off"
+      }
+    }
+  },
+  "formatter": {
+    "enabled": true,
+    "formatWithErrors": true,
+    "indentStyle": "tab",
+    "indentSize": 2,
+    "lineWidth": 80
+  },
+  "files": {
+    "ignore": [
+      "node_modules",
+      "dist",
+      "__mocks__",
+      ".husky",
+      ".idea",
+      "src/archived"
+    ]
+  }
+}

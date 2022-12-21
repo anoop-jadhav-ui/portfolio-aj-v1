@@ -10,54 +10,59 @@ import DownloadCV from "../../Molecules/DownloadCV/DownloadCV";
 import parse from "html-react-parser";
 
 const Summary = () => {
-    const [imageLoading, setImageLoading] = useState(false);
-    const { profileData } = useGlobalContext();
-    const { overview, experience } = profileData;
+  const [imageLoading, setImageLoading] = useState(false);
+  const { profileData } = useGlobalContext();
+  const { overview, experience } = profileData;
 
-    const totalExperience = useMemo((): string => {
-        try {
-            return experience
-                .map(exp => {
-                    const fromDate = moment(exp.fromDate);
-                    const toDate = exp.toDate !== "Present" ? moment(exp.toDate) : moment();
-                    return moment(toDate).diff(fromDate, "year", true);
-                })
-                .reduce((a, b) => a + b)
-                .toFixed(1);
-        } catch (err) {
-            return String(moment().year() - 2014);
-        }
-    }, [experience]);
-
-    function handleImageLoaded() {
-        setImageLoading(true);
+  const totalExperience = useMemo((): string => {
+    try {
+      return experience
+        .map((exp) => {
+          const fromDate = moment(exp.fromDate);
+          const toDate =
+            exp.toDate !== "Present" ? moment(exp.toDate) : moment();
+          return moment(toDate).diff(fromDate, "year", true);
+        })
+        .reduce((a, b) => a + b)
+        .toFixed(1);
+    } catch (err) {
+      return String(moment().year() - 2014);
     }
-    function handleImageErrored() {
-        console.error("Error while loading the profile image");
-        setImageLoading(false);
-    }
+  }, [experience]);
 
-    return (
-        <div className="summary-mobile">
-            <div className="mainlogo-wrapper">
-                <img
-                    src={portfolioImage}
-                    className={`mainlogo ${imageLoading && "loaded"}`}
-                    alt="mi Baburao"
-                    loading="eager"
-                    onLoad={handleImageLoaded}
-                    onError={handleImageErrored}
-                />
-            </div>
+  function handleImageLoaded() {
+    setImageLoading(true);
+  }
+  function handleImageErrored() {
+    console.error("Error while loading the profile image");
+    setImageLoading(false);
+  }
 
-            <div className="bold primary-color hello">{T.HELLO}</div>
-            <div className="h1 bold main-title grey-1 typewriter">{overview.name}</div>
-            <div className="body-text summary-text">
-                {parse(overview.summary.replace("{totalYearsOfExperience}", totalExperience))}
-            </div>
-            <DownloadCV />
-        </div>
-    );
+  return (
+    <div className="summary-mobile">
+      <div className="mainlogo-wrapper">
+        <img
+          src={portfolioImage}
+          className={`mainlogo ${imageLoading && "loaded"}`}
+          alt="mi Baburao"
+          loading="eager"
+          onLoad={handleImageLoaded}
+          onError={handleImageErrored}
+        />
+      </div>
+
+      <div className="bold primary-color hello">{T.HELLO}</div>
+      <div className="h1 bold main-title grey-1 typewriter">
+        {overview.name}
+      </div>
+      <div className="body-text summary-text">
+        {parse(
+          overview.summary.replace("{totalYearsOfExperience}", totalExperience)
+        )}
+      </div>
+      <DownloadCV />
+    </div>
+  );
 };
 
 export default SectionVisibilityHOC(Summary, constants.classNames.SUMMARY);

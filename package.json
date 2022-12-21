@@ -1,68 +1,55 @@
 {
-    "name": "portfolio-aj",
-    "version": "0.1.0",
-    "private": true,
-    "proxy": "http://localhost:5000/",
-    "dependencies": {
-        "@types/jest": "^29.0.0",
-        "@types/node": "^18.7.15",
-        "@types/react": "^18.0.18",
-        "@types/react-dom": "^18.0.6",
-        "animate.css": "^4.1.1",
-        "axios": "^0.21.0",
-        "bootstrap": "^4.6.0",
-        "firebase": "^9.9.4",
-        "html-react-parser": "^3.0.4",
-        "moment": "^2.29.4",
-        "react": "^18.2.0",
-        "react-device-detect": "^2.2.2",
-        "react-dom": "^18.2.0",
-        "react-icons": "^4.4.0",
-        "react-page-scroll-progress-bar": "^3.0.1",
-        "react-scripts": "^4.0.3",
-        "react-toggle-dark-mode": "^1.1.1",
-        "react-useanimations": "^2.0.8"
-    },
-    "scripts": {
-        "webpack": "webpack",
-        "start": "vite --config vite.config.ts",
-        "build": "vite build --config vite.config.ts",
-        "test": "vitest",
-        "coverage": "vitest run --coverage",
-        "lint": "yarn prettier --check .",
-        "lint-fix": "yarn prettier --write .",
-        "eslint": "eslint --ignore-path .eslintignore --ext .js,.ts .",
-        "eslint-fix": "yarn eslint --fix",
-        "prepare": "husky install",
-        "format": "prettier --write ."
-    },
-    "devDependencies": {
-        "@testing-library/jest-dom": "^5.16.5",
-        "@testing-library/react": "^13.4.0",
-        "@typescript-eslint/eslint-plugin": "^5.36.2",
-        "@typescript-eslint/parser": "^5.36.2",
-        "@vitejs/plugin-react": "^3.0.0",
-        "eslint": "^8.23.0",
-        "eslint-config-prettier": "^8.5.0",
-        "eslint-import-resolver-typescript": "^3.5.0",
-        "eslint-loader": "^4.0.2",
-        "eslint-plugin-import": "^2.26.0",
-        "eslint-plugin-prettier": "^4.2.1",
-        "eslint-plugin-react": "^7.31.7",
-        "husky": "^8.0.1",
-        "jest": "^26.6.0",
-        "prettier": "2.3.2",
-        "sass": "^1.54.9",
-        "typescript": "^4.8.2",
-        "vite": "^4.0.2",
-        "vite-plugin-checker": "^0.5.2",
-        "vitest": "^0.26.2"
-    },
-    "lint-staged": {
-        "**/*": "prettier --write --ignore-unknown"
-    },
-    "volta": {
-        "node": "16.17.0",
-        "yarn": "1.22.19"
-    }
+  "name": "portfolio-aj",
+  "version": "0.1.0",
+  "private": true,
+  "proxy": "http://localhost:5000/",
+  "dependencies": {
+    "@types/jest": "^29.0.0",
+    "@types/node": "^18.7.15",
+    "@types/react": "^18.0.18",
+    "@types/react-dom": "^18.0.6",
+    "animate.css": "^4.1.1",
+    "axios": "^0.21.0",
+    "bootstrap": "^4.6.0",
+    "firebase": "^9.9.4",
+    "html-react-parser": "^3.0.4",
+    "moment": "^2.29.4",
+    "react": "^18.2.0",
+    "react-device-detect": "^2.2.2",
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.4.0",
+    "react-page-scroll-progress-bar": "^3.0.1",
+    "react-toggle-dark-mode": "^1.1.1",
+    "react-useanimations": "^2.0.8"
+  },
+  "scripts": {
+    "webpack": "webpack",
+    "start": "vite --config vite.config.ts",
+    "build": "vite build --config vite.config.ts",
+    "test": "vitest",
+    "coverage": "vitest run --coverage",
+    "prepare": "husky install",
+    "format": "yarn rome format . --write",
+    "check": "yarn rome check ."
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@vitejs/plugin-react": "^3.0.0",
+    "husky": "^8.0.1",
+    "jest": "^26.6.0",
+    "rome": "^11.0.0",
+    "sass": "^1.54.9",
+    "typescript": "^4.8.2",
+    "vite": "^4.0.2",
+    "vite-plugin-checker": "^0.5.2",
+    "vitest": "^0.26.2"
+  },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
+  },
+  "volta": {
+    "node": "16.17.0",
+    "yarn": "1.22.19"
+  }
 }

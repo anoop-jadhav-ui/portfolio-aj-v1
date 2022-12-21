@@ -1,22 +1,22 @@
 import { useEffect, useState } from "react";
 
 type useDOMReturnType = {
-    scrollPosition: number;
+  scrollPosition: number;
 };
 const useScrollPosition = (): useDOMReturnType => {
-    const [scrollPosition, setScrollPosition] = useState(0);
-    const handleScroll = () => {
-        setScrollPosition(window.scrollY);
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const handleScroll = () => {
+    setScrollPosition(window.scrollY);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
     };
+  }, []);
 
-    useEffect(() => {
-        window.addEventListener("scroll", handleScroll, { passive: true });
-        return () => {
-            window.removeEventListener("scroll", handleScroll);
-        };
-    }, []);
-
-    return { scrollPosition };
+  return { scrollPosition };
 };
 
 export default useScrollPosition;

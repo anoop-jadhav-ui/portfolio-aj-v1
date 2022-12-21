@@ -8,7 +8,7 @@ import "./BootstrapOverrideStyles.scss";
 const container = document.getElementById("root");
 const root = createRoot(container!);
 root.render(
-    <Providers>
-        <App />
-    </Providers>,
+  <Providers>
+    <App />
+  </Providers>
 );
