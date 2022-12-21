@@ -17,6 +17,14 @@
     "indentSize": 2,
     "lineWidth": 80
   },
+  "javascript": {
+    "formatter": {
+      "quoteStyle": "double",
+      "quoteProperties": "asNeeded",
+      "trailingComma": "none",
+      "semicolons": "always"
+    }
+  },
   "files": {
     "ignore": [
       "node_modules",
