@@ -1,14 +1,14 @@
-import React, { useMemo, useState } from 'react';
-import lightImage from '../../assets/portfolio-app-img-light-min.png';
-import darkImage from '../../assets/portfolio-app-img-dark-min.png';
-import './SummaryDesktop.scss';
-import { useGlobalContext } from '../../context/GlobalContext';
-import { useTheme } from '../../context/ThemeContext';
-import moment from 'moment/moment';
-import SectionVisibilityHOC from '../../components/Organisms/SectionVisibilityHOC/SectionVisibilityHOC';
-import T from '../../translations/en_IN';
-import constants from '../../helpers/constants';
-import DownloadCV from '../../components/Molecules/DownloadCV/DownloadCV';
+import React, { useMemo, useState } from "react";
+import lightImage from "../../assets/portfolio-app-img-light-min.png";
+import darkImage from "../../assets/portfolio-app-img-dark-min.png";
+import "./SummaryDesktop.scss";
+import { useGlobalContext } from "../../context/GlobalContext";
+import { useTheme } from "../../context/ThemeContext";
+import moment from "moment/moment";
+import SectionVisibilityHOC from "../../components/Organisms/SectionVisibilityHOC/SectionVisibilityHOC";
+import T from "../../translations/en_IN";
+import constants from "../../helpers/constants";
+import DownloadCV from "../../components/Molecules/DownloadCV/DownloadCV";
 
 const SummaryDesktop = () => {
     const [imageLoading, setImageLoading] = useState(false);
@@ -21,8 +21,8 @@ const SummaryDesktop = () => {
             return experience
                 .map(exp => {
                     const fromDate = moment(exp.fromDate);
-                    const toDate = exp.toDate !== 'Present' ? moment(exp.toDate) : moment();
-                    return moment(toDate).diff(fromDate, 'year', true);
+                    const toDate = exp.toDate !== "Present" ? moment(exp.toDate) : moment();
+                    return moment(toDate).diff(fromDate, "year", true);
                 })
                 .reduce((a, b) => a + b)
                 .toFixed(1);
@@ -35,7 +35,7 @@ const SummaryDesktop = () => {
         setImageLoading(true);
     }
     function handleImageErrored() {
-        console.error('Error while loading the profile image');
+        console.error("Error while loading the profile image");
         setImageLoading(false);
     }
 
@@ -44,7 +44,7 @@ const SummaryDesktop = () => {
             <div className="mainlogo-wrapper">
                 <img
                     src={darkMode ? darkImage : lightImage}
-                    className={`mainlogo ${imageLoading && 'loaded'}`}
+                    className={`mainlogo ${imageLoading && "loaded"}`}
                     alt="mi Baburao"
                     loading="eager"
                     onLoad={handleImageLoaded}
@@ -56,7 +56,7 @@ const SummaryDesktop = () => {
                 <div className="h1 bold main-title grey-1">{`${overview.name}`}</div>
                 <div className="h4 letterspacing-1 primary-color bold title">{overview.title}</div>
                 <div className="body-text summary-text">
-                    {overview.summary.replace('{totalYearsOfExperience}', totalExperience)}
+                    {overview.summary.replace("{totalYearsOfExperience}", totalExperience)}
                 </div>
                 <DownloadCV />
             </div>

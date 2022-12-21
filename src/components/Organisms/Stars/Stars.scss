@@ -1,7 +1,7 @@
 @function multiple-box-shadow($n) {
-    $value: '#{random(2000)}px #{random(2000)}px var(--grey6)';
+    $value: "#{random(2000)}px #{random(2000)}px var(--grey6)";
     @for $i from 2 through $n {
-        $value: '#{$value} , #{random(2000)}px #{random(2000)}px var(--grey5)';
+        $value: "#{$value} , #{random(2000)}px #{random(2000)}px var(--grey5)";
     }
     @return unquote($value);
 }
@@ -25,7 +25,7 @@ $shadows-big: multiple-box-shadow(60);
     animation: animStar 50s linear infinite;
 
     &:after {
-        content: ' ';
+        content: " ";
         position: absolute;
         top: var(--page-height);
         width: 1px;
@@ -43,7 +43,7 @@ $shadows-big: multiple-box-shadow(60);
     animation: animStar 100s linear infinite;
 
     &:after {
-        content: ' ';
+        content: " ";
         position: absolute;
         top: var(--page-height);
         width: 2px;
@@ -61,7 +61,7 @@ $shadows-big: multiple-box-shadow(60);
     animation: animStar 150s linear infinite;
 
     &:after {
-        content: ' ';
+        content: " ";
         position: absolute;
         top: var(--page-height);
         width: 3px;

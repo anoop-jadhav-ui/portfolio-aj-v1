@@ -1,14 +1,14 @@
-import React from 'react';
-import './Banner.scss';
+import React from "react";
+import "./Banner.scss";
 
-export type BannerStatus = 'success' | 'neutral' | 'error';
+export type BannerStatus = "success" | "neutral" | "error";
 
 interface BannerProps {
     type: BannerStatus;
     text: string;
     closeBanner: () => void;
 }
-const Banner = ({ type = 'success', text, closeBanner }: BannerProps) => {
+const Banner = ({ type = "success", text, closeBanner }: BannerProps) => {
     return (
         <div className={`default-text banner ${type}-banner mb-2`} data-testid="banner">
             <div className="banner-text" data-testid="banner-text">

@@ -75,7 +75,7 @@
             &.bold {
                 color: var(--grey1);
                 &:before {
-                    content: '';
+                    content: "";
                     border-left: 3px solid var(--primary-color);
                     position: relative;
                     left: -1rem;

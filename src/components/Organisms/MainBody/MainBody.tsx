@@ -1,16 +1,16 @@
-import React from 'react';
+import React from "react";
 
-import './MainBody.scss';
-import Summary from '../../Screens/Summary/Summary';
-import Education from '../../Screens/Education/Education';
-import WorkExperience from '../../Screens/WorkExperience/WorkExperience';
-import Certifications from '../../Screens/Certifications/Certifications';
-import Skills from '../../Screens/Skills/Skills';
-import Hobbies from '../../Screens/Hobbies/Hobbies';
-import Feedback from '../../Screens/Feedback/Feedback';
-import Contact from '../../Screens/Contact/Contact';
-import Projects from '../../Screens/Projects/Projects';
-import { useGlobalContext } from '../../../context/GlobalContext';
+import "./MainBody.scss";
+import Summary from "../../Screens/Summary/Summary";
+import Education from "../../Screens/Education/Education";
+import WorkExperience from "../../Screens/WorkExperience/WorkExperience";
+import Certifications from "../../Screens/Certifications/Certifications";
+import Skills from "../../Screens/Skills/Skills";
+import Hobbies from "../../Screens/Hobbies/Hobbies";
+import Feedback from "../../Screens/Feedback/Feedback";
+import Contact from "../../Screens/Contact/Contact";
+import Projects from "../../Screens/Projects/Projects";
+import { useGlobalContext } from "../../../context/GlobalContext";
 
 export interface SectionProps {
     sectionRef: HTMLDivElement;

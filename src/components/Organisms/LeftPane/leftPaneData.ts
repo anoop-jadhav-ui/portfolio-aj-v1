@@ -1,5 +1,5 @@
-import { FeatureToggles } from '../../../types/profileDataTypes';
-import constants from '../../../helpers/constants';
+import { FeatureToggles } from "../../../types/profileDataTypes";
+import constants from "../../../helpers/constants";
 
 export type LeftPaneMenuItem = {
     class: string;
@@ -11,56 +11,56 @@ export type LeftPaneMenuItem = {
 const leftPaneDataObj: Array<LeftPaneMenuItem> = [
     {
         class: constants.classNames.SUMMARY,
-        label: 'Summary',
-        id: 'summary',
+        label: "Summary",
+        id: "summary",
         headerPos: 0,
     },
     {
         class: constants.classNames.PROJECTS,
-        label: 'Fun Learning Projects',
-        id: 'projects',
+        label: "Fun Learning Projects",
+        id: "projects",
         headerPos: 0,
     },
     {
         class: constants.classNames.WORK_EXPERIENCE,
-        label: 'Work Experience',
-        id: 'experience',
+        label: "Work Experience",
+        id: "experience",
         headerPos: 0,
     },
     {
         class: constants.classNames.EDUCATION,
-        label: 'Education',
-        id: 'education',
+        label: "Education",
+        id: "education",
         headerPos: 0,
     },
     {
         class: constants.classNames.CERTIFICATIONS,
-        label: 'Certifications',
-        id: 'certifications',
+        label: "Certifications",
+        id: "certifications",
         headerPos: 0,
     },
     {
         class: constants.classNames.SKILLS,
-        label: 'Skills',
-        id: 'skills',
+        label: "Skills",
+        id: "skills",
         headerPos: 0,
     },
     {
         class: constants.classNames.HOBBIES,
-        label: 'Hobbies & Interests',
-        id: 'hobbies',
+        label: "Hobbies & Interests",
+        id: "hobbies",
         headerPos: 0,
     },
     {
         class: constants.classNames.FEEDBACK,
-        label: 'Feedback',
-        id: 'feedback',
+        label: "Feedback",
+        id: "feedback",
         headerPos: 0,
     },
     {
         class: constants.classNames.CONTACT_ME,
-        label: 'Contact Details',
-        id: 'contactDetails',
+        label: "Contact Details",
+        id: "contactDetails",
         headerPos: 0,
     },
 ];

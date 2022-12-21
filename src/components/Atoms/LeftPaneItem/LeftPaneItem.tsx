@@ -1,4 +1,4 @@
-import React, { MouseEventHandler } from 'react';
+import React, { MouseEventHandler } from "react";
 
 interface LeftPaneMenuItemProps {
     label: string;
@@ -10,15 +10,15 @@ const LeftPaneItem = ({ label, isSelected, sectionClass }: LeftPaneMenuItemProps
         const element = document.getElementsByClassName(`${sectionClass}`);
         if (element[0]) {
             element[0].scrollIntoView({
-                behavior: 'smooth',
-                block: 'start',
-                inline: 'nearest',
+                behavior: "smooth",
+                block: "start",
+                inline: "nearest",
             });
         }
     };
     return (
         <li
-            className={`grey3 ${isSelected && 'bold'}`}
+            className={`grey3 ${isSelected && "bold"}`}
             onClick={scrollIntoSectionView as unknown as MouseEventHandler<HTMLLIElement>}
         >
             {label}

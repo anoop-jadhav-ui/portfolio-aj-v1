@@ -1,9 +1,9 @@
-import React, { ErrorInfo } from 'react';
-import './ErrorBoundary.scss';
-import T from '../../../translations/en_IN';
+import React, { ErrorInfo } from "react";
+import "./ErrorBoundary.scss";
+import T from "../../../translations/en_IN";
 
-import UseAnimations from 'react-useanimations';
-import alertOctagon from 'react-useanimations/lib/alertOctagon';
+import UseAnimations from "react-useanimations";
+import alertOctagon from "react-useanimations/lib/alertOctagon";
 
 interface Props {
     children: React.ReactNode;

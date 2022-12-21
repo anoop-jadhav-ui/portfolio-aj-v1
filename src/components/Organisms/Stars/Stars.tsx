@@ -1,5 +1,5 @@
-import React from 'react';
-import './Stars.scss';
+import React from "react";
+import "./Stars.scss";
 
 export const Stars = () => {
     return (

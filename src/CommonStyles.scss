@@ -45,9 +45,9 @@ body {
     --accent-color: var(--orange);
 
     //font variables
-    --font-family-headers: 'Montserrat', sans-serif !important;
-    --font-family-text: 'Poppins', sans-serif !important;
-    --font-family-code: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+    --font-family-headers: "Montserrat", sans-serif !important;
+    --font-family-text: "Poppins", sans-serif !important;
+    --font-family-code: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 
     &.darkmode {
         --grey10: #18181b;

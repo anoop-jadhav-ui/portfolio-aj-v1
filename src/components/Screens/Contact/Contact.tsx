@@ -1,8 +1,8 @@
-import React from 'react';
-import ContactIcons from '../../Molecules/ContactIcons/ContactIcons';
-import SectionVisibilityHOC from '../../Organisms/SectionVisibilityHOC/SectionVisibilityHOC';
-import T from '../../../translations/en_IN';
-import constants from '../../../helpers/constants';
+import React from "react";
+import ContactIcons from "../../Molecules/ContactIcons/ContactIcons";
+import SectionVisibilityHOC from "../../Organisms/SectionVisibilityHOC/SectionVisibilityHOC";
+import T from "../../../translations/en_IN";
+import constants from "../../../helpers/constants";
 const Contact = () => {
     return (
         <>

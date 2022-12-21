@@ -1,17 +1,17 @@
-import React, { FormEvent, useState } from 'react';
-import axiosInstance from '../../../helpers/axios';
-import Banner, { BannerStatus } from '../../Atoms/Banner/Banner';
-import SectionVisibilityHOC from '../../Organisms/SectionVisibilityHOC/SectionVisibilityHOC';
-import T from '../../../translations/en_IN';
-import Button from '../../Atoms/Button/Button';
-import { RiMailSendLine } from 'react-icons/ri';
-import { useGlobalContext } from '../../../context/GlobalContext';
-import { AiOutlineLoading3Quarters } from 'react-icons/ai';
-import './Feedback.scss';
-import constants from '../../../helpers/constants';
+import React, { FormEvent, useState } from "react";
+import axiosInstance from "../../../helpers/axios";
+import Banner, { BannerStatus } from "../../Atoms/Banner/Banner";
+import SectionVisibilityHOC from "../../Organisms/SectionVisibilityHOC/SectionVisibilityHOC";
+import T from "../../../translations/en_IN";
+import Button from "../../Atoms/Button/Button";
+import { RiMailSendLine } from "react-icons/ri";
+import { useGlobalContext } from "../../../context/GlobalContext";
+import { AiOutlineLoading3Quarters } from "react-icons/ai";
+import "./Feedback.scss";
+import constants from "../../../helpers/constants";
 const Feedback = () => {
     const [message, updateMessage] = useState<string>();
-    const [bannerStatus, updateBannerStatus] = useState<BannerStatus>('neutral');
+    const [bannerStatus, updateBannerStatus] = useState<BannerStatus>("neutral");
     const [showBanner, setShowBanner] = useState(false);
 
     const { profileData } = useGlobalContext();
@@ -33,21 +33,21 @@ const Feedback = () => {
         if (message) {
             try {
                 setShowBanner(true);
-                updateBannerStatus('neutral');
-                const response = await axiosInstance.post('/mail', {
+                updateBannerStatus("neutral");
+                const response = await axiosInstance.post("/mail", {
                     userEmail: emailId,
-                    userMessage: 'Message : ' + message,
+                    userMessage: "Message : " + message,
                 });
 
-                if (response.data.msg === 'success') {
-                    updateBannerStatus('success');
-                } else if (response.data.msg === 'fail') {
-                    updateBannerStatus('error');
+                if (response.data.msg === "success") {
+                    updateBannerStatus("success");
+                } else if (response.data.msg === "fail") {
+                    updateBannerStatus("error");
                 }
-                updateMessage('');
+                updateMessage("");
             } catch (e: unknown) {
-                updateMessage('');
-                updateBannerStatus('error');
+                updateMessage("");
+                updateBannerStatus("error");
                 console.error((e as DOMException).message as unknown as string);
             }
         }
@@ -61,8 +61,8 @@ const Feedback = () => {
                     type={bannerStatus}
                     text={getBannerMessage[bannerStatus]}
                     closeBanner={() => {
-                        updateMessage('');
-                        updateBannerStatus('neutral');
+                        updateMessage("");
+                        updateBannerStatus("neutral");
                         setShowBanner(false);
                     }}
                 />
@@ -86,11 +86,11 @@ const Feedback = () => {
                     </div>
                     <div className="text-left mt-3">
                         <Button
-                            className={bannerStatus === 'neutral' && showBanner ? 'loading' : ''}
+                            className={bannerStatus === "neutral" && showBanner ? "loading" : ""}
                             type="submit"
                             testID="feedback-button"
                             label={T.SEND}
-                            Icon={bannerStatus === 'neutral' && showBanner ? AiOutlineLoading3Quarters : RiMailSendLine}
+                            Icon={bannerStatus === "neutral" && showBanner ? AiOutlineLoading3Quarters : RiMailSendLine}
                         />
                     </div>
                 </div>

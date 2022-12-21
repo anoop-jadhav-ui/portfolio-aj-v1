@@ -51,11 +51,11 @@ export interface Contact {
 }
 
 const defaultContact: Contact = {
-    contactNumber: '',
-    emailId: '',
-    github: '',
-    instaId: '',
-    linkedin: '',
+    contactNumber: "",
+    emailId: "",
+    github: "",
+    instaId: "",
+    linkedin: "",
 };
 
 export interface EducationDetails {
@@ -85,9 +85,9 @@ export interface Overview {
 }
 
 const defaultOverview: Overview = {
-    name: '',
-    summary: '',
-    title: '',
+    name: "",
+    summary: "",
+    title: "",
 };
 
 export interface ProjectDetails {

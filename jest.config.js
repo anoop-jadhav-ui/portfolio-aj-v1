@@ -5,10 +5,10 @@
 
 module.exports = {
     clearMocks: true,
-    coverageDirectory: 'coverage',
-    testEnvironment: 'jsdom',
+    coverageDirectory: "coverage",
+    testEnvironment: "jsdom",
     moduleNameMapper: {
-        '\\.(css|scss)$': '<rootDir>/__mocks__/styleMock.js',
+        "\\.(css|scss)$": "<rootDir>/__mocks__/styleMock.js",
     },
     coverageThreshold: {
         global: {
@@ -19,9 +19,9 @@ module.exports = {
         },
     },
     transform: {
-        '^.+\\.js$': '<rootDir>/node_modules/babel-jest',
-        '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
-            '<rootDir>/__mocks__/fileTransform.js',
+        "^.+\\.js$": "<rootDir>/node_modules/babel-jest",
+        "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$":
+            "<rootDir>/__mocks__/fileTransform.js",
     },
-    testPathIgnorePatterns: ['/node_modules/', '/public/'],
+    testPathIgnorePatterns: ["/node_modules/", "/public/"],
 };

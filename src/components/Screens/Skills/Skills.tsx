@@ -1,10 +1,10 @@
-import React from 'react';
-import BarGraph from '../../Atoms/BarGraph/BarGraph';
-import './Skills.scss';
-import { useGlobalContext } from '../../../context/GlobalContext';
-import SectionVisibilityHOC from '../../Organisms/SectionVisibilityHOC/SectionVisibilityHOC';
-import T from '../../../translations/en_IN';
-import constants from '../../../helpers/constants';
+import React from "react";
+import BarGraph from "../../Atoms/BarGraph/BarGraph";
+import "./Skills.scss";
+import { useGlobalContext } from "../../../context/GlobalContext";
+import SectionVisibilityHOC from "../../Organisms/SectionVisibilityHOC/SectionVisibilityHOC";
+import T from "../../../translations/en_IN";
+import constants from "../../../helpers/constants";
 
 const Skills = () => {
     const { profileData } = useGlobalContext();

@@ -1,7 +1,7 @@
-import React, { createContext, useContext, useLayoutEffect, useState } from 'react';
-import { initialProfileData, ProfileData } from '../types/profileDataTypes';
-import fetchProfileData from '../helpers/fetchProfileData';
-import getFilteredLeftPaneData, { LeftPaneMenuItem } from '../components/Organisms/LeftPane/leftPaneData';
+import React, { createContext, useContext, useLayoutEffect, useState } from "react";
+import { initialProfileData, ProfileData } from "../types/profileDataTypes";
+import fetchProfileData from "../helpers/fetchProfileData";
+import getFilteredLeftPaneData, { LeftPaneMenuItem } from "../components/Organisms/LeftPane/leftPaneData";
 
 interface GlobalContextType {
     profileData: ProfileData;
@@ -17,7 +17,7 @@ const defaultGobalContext: GlobalContextType = {
     profileData: initialProfileData,
     isProfileDataLoaded: false,
     leftPaneData: [],
-    currentSectionInView: 'summary',
+    currentSectionInView: "summary",
     setCurrentSectionInView: currentSectionInView => {
         /* TODO document why this method 'setDarkMode' is empty */
     },
@@ -32,7 +32,7 @@ export const GlobalContextProvider = (props: GlobalContextProps) => {
     const [isProfileDataLoaded, setIsProfileDataLoaded] = useState<boolean>(false);
 
     const [leftPaneData, setLeftPaneData] = useState<Array<LeftPaneMenuItem>>([]);
-    const [currentSectionInView, setCurrentSectionInView] = useState<string>('summary');
+    const [currentSectionInView, setCurrentSectionInView] = useState<string>("summary");
 
     useLayoutEffect(() => {
         (async () => {

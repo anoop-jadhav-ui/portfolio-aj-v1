@@ -1,7 +1,7 @@
-import React from 'react';
-import './ProjectCard.scss';
-import { ProjectDetails } from '../../../types/profileDataTypes';
-import { FiExternalLink, FiGithub } from 'react-icons/fi';
+import React from "react";
+import "./ProjectCard.scss";
+import { ProjectDetails } from "../../../types/profileDataTypes";
+import { FiExternalLink, FiGithub } from "react-icons/fi";
 
 const ProjectCard = ({ projectDetails }: { projectDetails: ProjectDetails }) => {
     return (

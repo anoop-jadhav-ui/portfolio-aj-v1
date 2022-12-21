@@ -25,7 +25,7 @@
         height: var(--image-size);
 
         &:after {
-            content: '';
+            content: "";
             position: absolute;
 
             border-radius: 50%;
@@ -38,7 +38,7 @@
         }
 
         &:before {
-            content: '';
+            content: "";
             position: absolute;
 
             border-radius: 50%;

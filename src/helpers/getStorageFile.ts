@@ -1,5 +1,5 @@
-import { getDownloadURL, ref } from 'firebase/storage';
-import firebaseStorage from './firebaseStorage';
+import { getDownloadURL, ref } from "firebase/storage";
+import firebaseStorage from "./firebaseStorage";
 
 const pathReference = ref(firebaseStorage, `resume/${import.meta.env.RESUME_FILENAME}`);
 

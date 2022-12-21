@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState } from "react";
 
 function usePersistState<T>(key: string, defaultValue: T): [T, (value: T) => void] {
     const [value, setValue] = useState<T>(() => {

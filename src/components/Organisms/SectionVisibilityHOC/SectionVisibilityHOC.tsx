@@ -1,7 +1,7 @@
-import React, { useEffect, useMemo, useRef } from 'react';
-import useScrollPosition from '../../../hooks/useScrollPosition';
-import { useGlobalContext } from '../../../context/GlobalContext';
-import './SectionVisibilityHOC.scss';
+import React, { useEffect, useMemo, useRef } from "react";
+import useScrollPosition from "../../../hooks/useScrollPosition";
+import { useGlobalContext } from "../../../context/GlobalContext";
+import "./SectionVisibilityHOC.scss";
 
 const SectionVisibilityHOC = (Component: () => JSX.Element, sectionName: string) => () => {
     const compRef = useRef<HTMLDivElement>(null);
@@ -26,7 +26,7 @@ const SectionVisibilityHOC = (Component: () => JSX.Element, sectionName: string)
     }, [scrollPosition, compRef]);
 
     const textAlignment = useMemo<string>(() => {
-        return sectionName === 'summary' ? 'text-center' : 'text-left';
+        return sectionName === "summary" ? "text-center" : "text-left";
     }, [sectionName]);
 
     return (
