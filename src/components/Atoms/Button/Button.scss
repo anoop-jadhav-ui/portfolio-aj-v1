@@ -1,71 +1,71 @@
 .button {
-  padding: 0.6rem 1.5rem;
-  border-radius: 0.25rem !important;
-  font-weight: bold;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    padding: 0.6rem 1.5rem;
+    border-radius: 0.25rem !important;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-  &.with-label .icon {
-    top: -1px;
-  }
-
-  &.brand {
-    background: var(--primary-color);
-    color: var(--grey10);
-    border: 0;
-    position: relative;
-
-    &:before {
-      content: "";
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
+    &.with-label .icon {
+        top: -1px;
     }
 
-    &:hover:before {
-      background: rgba(0, 0, 0, 0.15);
-    }
-    &:active:before {
-      background: rgba(0, 0, 0, 0.25);
-    }
-  }
+    &.brand {
+        background: var(--primary-color);
+        color: var(--grey10);
+        border: 0;
+        position: relative;
 
-  &.neutral {
-    border: 1px solid var(--grey7);
-    color: var(--primary-color);
-    background: var(--grey10);
-    position: relative;
+        &:before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
 
-    &:before {
-      content: "";
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
+        &:hover:before {
+            background: rgba(0, 0, 0, 0.15);
+        }
+        &:active:before {
+            background: rgba(0, 0, 0, 0.25);
+        }
     }
 
-    &:hover:before {
-      background: rgba(0, 0, 0, 0.15);
-    }
-    &:active:before {
-      background: rgba(0, 0, 0, 0.25);
-    }
-  }
+    &.neutral {
+        border: 1px solid var(--grey7);
+        color: var(--primary-color);
+        background: var(--grey10);
+        position: relative;
 
-  &.base {
-    border: none;
-    background: none;
-    color: var(--primary-color);
-  }
+        &:before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
 
-  .label + .icon {
-    padding-left: 0.5rem;
-  }
-  .icon {
-    position: relative;
-  }
+        &:hover:before {
+            background: rgba(0, 0, 0, 0.15);
+        }
+        &:active:before {
+            background: rgba(0, 0, 0, 0.25);
+        }
+    }
+
+    &.base {
+        border: none;
+        background: none;
+        color: var(--primary-color);
+    }
+
+    .label + .icon {
+        padding-left: 0.5rem;
+    }
+    .icon {
+        position: relative;
+    }
 }

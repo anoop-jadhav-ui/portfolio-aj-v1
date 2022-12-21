@@ -1,1 +1,1 @@
-Object.defineProperty(window, "requestAnimationFrame", { value: 0 });
+Object.defineProperty(window, 'requestAnimationFrame', { value: 0 });

@@ -1,115 +1,115 @@
 @keyframes slideInFromLeft {
-  0% {
-    left: min(-14.5rem, -230.517px);
-  }
-  80% {
-    left: 1rem;
-  }
-  100% {
-    left: 0;
-  }
+    0% {
+        left: min(-14.5rem, -230.517px);
+    }
+    80% {
+        left: 1rem;
+    }
+    100% {
+        left: 0;
+    }
 }
 @keyframes slideOutToLeft {
-  0% {
-    left: 0;
-  }
-  80% {
-    left: min(-15.5rem, -246.517px);
-  }
-  100% {
-    left: min(-14.5rem, -230.517px);
-  }
+    0% {
+        left: 0;
+    }
+    80% {
+        left: min(-15.5rem, -246.517px);
+    }
+    100% {
+        left: min(-14.5rem, -230.517px);
+    }
 }
 
 .left-pane {
-  position: fixed;
-  top: 10rem;
-  border-radius: 0.25rem;
-  border: 1px solid var(--grey7);
-  width: 14.5rem;
-  animation: slideInFromLeft 0.5s ease-in-out forwards;
-  background: var(--grey10);
-  z-index: 1;
-  &.open {
+    position: fixed;
+    top: 10rem;
+    border-radius: 0.25rem;
+    border: 1px solid var(--grey7);
+    width: 14.5rem;
     animation: slideInFromLeft 0.5s ease-in-out forwards;
-    .toggle-button {
-      right: 0;
-    }
-    .arrow {
-      width: 1rem;
-      height: 1rem;
-      fill: var(--primary-color);
-    }
-  }
-  &.closed {
-    animation: slideOutToLeft 0.5s ease-in-out forwards;
-    .toggle-button {
-      right: -3rem;
-      border-radius: 0 0.25rem 0.25rem 0;
-      border: 1px solid var(--grey7);
-      &:hover {
-        background: var(--grey9);
-      }
-    }
-    .arrow {
-      transform: rotate(180deg);
-      width: 1.5rem;
-      height: 1.5rem;
-      fill: var(--primary-color);
-    }
-  }
-
-  ul.menu {
-    padding: 0 1rem 1.5rem 1.5rem;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    grid-gap: 0.8125rem;
-    margin-bottom: 0;
-
-    li {
-      list-style: none;
-      cursor: pointer;
-      font-size: 16px;
-      color: var(--grey5);
-      &.bold {
-        color: var(--grey1);
-        &:before {
-          content: "";
-          border-left: 3px solid var(--primary-color);
-          position: relative;
-          left: -1rem;
+    background: var(--grey10);
+    z-index: 1;
+    &.open {
+        animation: slideInFromLeft 0.5s ease-in-out forwards;
+        .toggle-button {
+            right: 0;
         }
-      }
+        .arrow {
+            width: 1rem;
+            height: 1rem;
+            fill: var(--primary-color);
+        }
     }
-  }
-
-  .left-pane-header-container {
-    display: flex;
-    justify-content: space-between;
-
-    .left-pane-header {
-      font-size: 0.8125rem;
-      padding: 1rem 1.5rem;
-      color: var(--primary-color);
+    &.closed {
+        animation: slideOutToLeft 0.5s ease-in-out forwards;
+        .toggle-button {
+            right: -3rem;
+            border-radius: 0 0.25rem 0.25rem 0;
+            border: 1px solid var(--grey7);
+            &:hover {
+                background: var(--grey9);
+            }
+        }
+        .arrow {
+            transform: rotate(180deg);
+            width: 1.5rem;
+            height: 1.5rem;
+            fill: var(--primary-color);
+        }
     }
 
-    .toggle-button {
-      width: 3rem;
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      top: 0;
-      cursor: pointer;
-      transition: right 0.5s linear;
+    ul.menu {
+        padding: 0 1rem 1.5rem 1.5rem;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        grid-gap: 0.8125rem;
+        margin-bottom: 0;
+
+        li {
+            list-style: none;
+            cursor: pointer;
+            font-size: 16px;
+            color: var(--grey5);
+            &.bold {
+                color: var(--grey1);
+                &:before {
+                    content: '';
+                    border-left: 3px solid var(--primary-color);
+                    position: relative;
+                    left: -1rem;
+                }
+            }
+        }
     }
-  }
+
+    .left-pane-header-container {
+        display: flex;
+        justify-content: space-between;
+
+        .left-pane-header {
+            font-size: 0.8125rem;
+            padding: 1rem 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .toggle-button {
+            width: 3rem;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            top: 0;
+            cursor: pointer;
+            transition: right 0.5s linear;
+        }
+    }
 }
 
 /* Medium devices (tablets, 768px and up)*/
 @media (max-width: 1200px) {
-  .left-pane {
-    display: none !important;
-  }
+    .left-pane {
+        display: none !important;
+    }
 }

@@ -1,19 +1,19 @@
 .error {
-  text-align: center;
-  font-weight: bold;
-  padding: 3rem;
-  display: flex;
-  place-content: center;
-  height: 100vh;
-  flex-wrap: wrap;
+    text-align: center;
+    font-weight: bold;
+    padding: 3rem;
+    display: flex;
+    place-content: center;
+    height: 100vh;
+    flex-wrap: wrap;
 }
 .error svg {
-  width: 3em;
-  height: 3em;
-  fill: var(--primary-color);
+    width: 3em;
+    height: 3em;
+    fill: var(--primary-color);
 }
 
 .error-message {
-  padding-top: 1.5rem;
-  width: 100%;
+    padding-top: 1.5rem;
+    width: 100%;
 }

@@ -1,36 +1,36 @@
 .loader {
-  width: 100%;
-  height: 100vh;
-  z-index: 10;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background: var(--grey10);
-  padding: 3rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    width: 100%;
+    height: 100vh;
+    z-index: 10;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: var(--grey10);
+    padding: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .loader svg {
-  width: 100%;
+    width: 100%;
 }
 .loading-text {
-  width: 100%;
-  font-weight: bold;
-  color: var(--grey1);
-  transform: translateX(0.4rem);
+    width: 100%;
+    font-weight: bold;
+    color: var(--grey1);
+    transform: translateX(0.4rem);
 }
 .quote-text {
-  width: 30rem;
+    width: 30rem;
 }
 .expand-in {
-  animation: expand 1s linear;
+    animation: expand 1s linear;
 }
 @keyframes expand {
-  0% {
-    height: 0;
-  }
-  100% {
-    height: 2rem;
-  }
+    0% {
+        height: 0;
+    }
+    100% {
+        height: 2rem;
+    }
 }

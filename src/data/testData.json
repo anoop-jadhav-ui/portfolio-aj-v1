@@ -1,199 +1,199 @@
 {
-  "appFeatureAvailability": {
-    "certifications": true,
-    "contactDetails": true,
-    "education": true,
-    "experience": true,
-    "feedback": true,
-    "hobbies": true,
-    "overview": true,
-    "projects": true,
-    "skills": true,
-    "summary": true
-  },
-  "certifications": {
-    "design": [
-      {
-        "name": "Drawing Vector Graphics: Iconography",
-        "summary": "Lynda.com - Deke McClelland",
-        "urlToCertificate": "https://www.linkedin.com/in/anoop-jadhav-44528258/"
-      },
-      {
-        "name": "Illustrator CC 2017 One-on-One Fundamentals",
-        "summary": "Lynda.com - Deke McClelland",
-        "urlToCertificate": "https://www.linkedin.com/in/anoop-jadhav-44528258/"
-      },
-      {
-        "name": "Creating a Design System with Sketch",
-        "summary": "Lynda.com - Deke McClelland",
-        "urlToCertificate": "https://www.linkedin.com/in/anoop-jadhav-44528258/"
-      },
-      {
-        "name": "Learning Graphic Design: Layouts, Presentations, Cropping Photographs, Things Every Designer Should Know",
-        "summary": "John McWade",
-        "urlToCertificate": "https://www.linkedin.com/in/anoop-jadhav-44528258/"
-      }
+    "appFeatureAvailability": {
+        "certifications": true,
+        "contactDetails": true,
+        "education": true,
+        "experience": true,
+        "feedback": true,
+        "hobbies": true,
+        "overview": true,
+        "projects": true,
+        "skills": true,
+        "summary": true
+    },
+    "certifications": {
+        "design": [
+            {
+                "name": "Drawing Vector Graphics: Iconography",
+                "summary": "Lynda.com - Deke McClelland",
+                "urlToCertificate": "https://www.linkedin.com/in/anoop-jadhav-44528258/"
+            },
+            {
+                "name": "Illustrator CC 2017 One-on-One Fundamentals",
+                "summary": "Lynda.com - Deke McClelland",
+                "urlToCertificate": "https://www.linkedin.com/in/anoop-jadhav-44528258/"
+            },
+            {
+                "name": "Creating a Design System with Sketch",
+                "summary": "Lynda.com - Deke McClelland",
+                "urlToCertificate": "https://www.linkedin.com/in/anoop-jadhav-44528258/"
+            },
+            {
+                "name": "Learning Graphic Design: Layouts, Presentations, Cropping Photographs, Things Every Designer Should Know",
+                "summary": "John McWade",
+                "urlToCertificate": "https://www.linkedin.com/in/anoop-jadhav-44528258/"
+            }
+        ],
+        "development": [
+            {
+                "name": "React Js Hackerrank Certification",
+                "summary": "React Js - Basic Hackerrank certifcation.",
+                "urlToCertificate": "https://www.linkedin.com/in/anoop-jadhav-44528258/"
+            },
+            {
+                "name": "Microsoft Technology Associate - Web Development Fundamentals",
+                "summary": "Started my journey as a UI developer in my college days where I opted for this certification which involved learning HTML, CSS, JavaScript and .Net Fundamentals.",
+                "urlToCertificate": "https://www.linkedin.com/in/anoop-jadhav-44528258/"
+            },
+            {
+                "name": "HTML5: Structure, Syntax, and Semantics",
+                "summary": "Lynda.com",
+                "urlToCertificate": "https://www.linkedin.com/in/anoop-jadhav-44528258/"
+            },
+            {
+                "name": "Learning Git and GitHub",
+                "summary": "Lynda.com",
+                "urlToCertificate": "https://www.linkedin.com/in/anoop-jadhav-44528258/"
+            }
+        ]
+    },
+    "contactDetails": {
+        "contactNumber": "(+91) 9028665267",
+        "emailId": "anoopjadhav@gmail.com",
+        "github": "https://github.com/anoop-jadhav-ui",
+        "instaId": "anoop.designs",
+        "linkedin": "https://www.linkedin.com/in/anoop-jadhav-44528258"
+    },
+    "education": [
+        {
+            "institute": "MIT Academy of Engineering",
+            "percentage": "64",
+            "place": "Alandi",
+            "type": "Bachelors in Computer Science & Engineering"
+        },
+        {
+            "institute": "Army Public School",
+            "percentage": "77",
+            "place": "Kirkee",
+            "type": "higher secondary"
+        }
     ],
-    "development": [
-      {
-        "name": "React Js Hackerrank Certification",
-        "summary": "React Js - Basic Hackerrank certifcation.",
-        "urlToCertificate": "https://www.linkedin.com/in/anoop-jadhav-44528258/"
-      },
-      {
-        "name": "Microsoft Technology Associate - Web Development Fundamentals",
-        "summary": "Started my journey as a UI developer in my college days where I opted for this certification which involved learning HTML, CSS, JavaScript and .Net Fundamentals.",
-        "urlToCertificate": "https://www.linkedin.com/in/anoop-jadhav-44528258/"
-      },
-      {
-        "name": "HTML5: Structure, Syntax, and Semantics",
-        "summary": "Lynda.com",
-        "urlToCertificate": "https://www.linkedin.com/in/anoop-jadhav-44528258/"
-      },
-      {
-        "name": "Learning Git and GitHub",
-        "summary": "Lynda.com",
-        "urlToCertificate": "https://www.linkedin.com/in/anoop-jadhav-44528258/"
-      }
-    ]
-  },
-  "contactDetails": {
-    "contactNumber": "(+91) 9028665267",
-    "emailId": "anoopjadhav@gmail.com",
-    "github": "https://github.com/anoop-jadhav-ui",
-    "instaId": "anoop.designs",
-    "linkedin": "https://www.linkedin.com/in/anoop-jadhav-44528258"
-  },
-  "education": [
-    {
-      "institute": "MIT Academy of Engineering",
-      "percentage": "64",
-      "place": "Alandi",
-      "type": "Bachelors in Computer Science & Engineering"
-    },
-    {
-      "institute": "Army Public School",
-      "percentage": "77",
-      "place": "Kirkee",
-      "type": "higher secondary"
-    }
-  ],
-  "experience": [
-    {
-      "name": "Thoughtworks",
-      "summary": "Thoughtworks has been my dream company since college days because of its work culture. It is widely known for the intellectual minds who are solving complex problem using technology. I am really excited to work on new challenges here in Thoughtworks.",
-      "totalYears": "",
-      "fromDate": "10 May 2021",
-      "toDate": "Present"
-    },
-    {
-      "name": "Deloitte",
-      "summary": "In Deloitte, I started with a public sector project for State of Michigan where we built a custom application on salesforce using salesforce lightning components. Along with the project I worked on several Firm initiatives built on React Js - One of the major project being Elixir where we build a React app for non developers similar to wordpress/squarespace having the drag and drop functionality to generate salesforce components. Due to the open culture in Deloitte, I also got the opportunity to work on design projects which involved in-house web/mobile app design, several posters, mailers, infographics, brochure designs and branding. ",
-      "totalYears": "",
-      "fromDate": "06 Feb 2017",
-      "toDate": "29 April 2021"
-    },
-    {
-      "name": "Cognizant",
-      "summary": "Initially started my career in Cognizant as a SAP BASIS consultant. but due to my interest in web technologies I switched to a UI Developer role and worked on various projects using tools and technologies like Angular JS 1.x., React Js, Jquery, Bootstrap, Git etc.",
-      "totalYears": "",
-      "fromDate": "28 Aug 2014",
-      "toDate": "17 Jan 2017"
-    }
-  ],
-  "hobbies": [
-    {
-      "name": "Drawing",
-      "summary": "Since my childhood I was always passionate about drawing. I really enjoyed Art & Crafts classes in my school. I loved drawing Pokemon characters, cars and bikes. Later I was lost in the world of competition but still managed to keep my interest as we had engineering drawing, AutoCAD in the curriculum. Now I have started learning digital drawing. Please check my instagram profile for some of my work."
-    },
-    {
-      "name": "Trekking",
-      "summary": "Usually in the monsoons, I prefer going for small treks to take a break from work and the daily routine. The colossal mountains and lush green pastures always fascinates me. Being surrounded by mountains and trees always revives and rejuvenates me. I have completed various treks in the Western ghats/Sahyadri region like Torna, Rajmachi, Sudhagad, Korigad, Kalsubai, Vikat Gad, Mahuli Gad, Visapur, Sihagad, Vasota jungle trek, Tung & Tikona, Tadiandamol trek and the mighty Katraj to Sihagad night trek."
-    },
-    {
-      "name": "Bike Riding",
-      "summary": "From the day I have bought the RE classic 350 I have developed this unstoppable urge of going new places riding my bike. I usually travel Mumbai - Pune on bike. The Most memorable bike trip would be Leh Ladakh - Khardungla and Changla Pass. The stunning view, endless empty roads full of twist and turns. Also the steep ascends, and bad road condition makes Chang La and Khardungla one of the most challenging roads to drive upon."
-    }
-  ],
-  "overview": {
-    "name": "Anoop Jadhav",
-    "summary": "A passionate <span>UI Developer</span> with around <span>{totalYearsOfExperience} years</span> of experience in <span>designing and developing web & mobile applications</span> using tools and technologies like HTML, CSS, JavaScript, React Js, React Native, Salesforce Lightning Components, Salesforce LWC, Adobe Illustrator and Figma.",
-    "title": "UI DEVELOPER"
-  },
-  "projects": [
-    {
-      "description": "A React App to manage guests or organize an event. The idea behind creation of this app was to manage the guests or events in this covid pandemic situation because of the limition on the number of guests allowed by the government authorities.",
-      "github": "https://github.com/anoop-jadhav-ui/guest-tracker",
-      "priority": 999,
-      "projectName": "Guest Tracker",
-      "status": "In Progress",
-      "tags": ["React Js", "Firebase"],
-      "url": "https://guesttracker.netlify.app"
-    },
-    {
-      "description": "Visualize sorting in real time using this app built using React. As of now Bubble sort and Insertion sort visualization is complete. I will be adding merge sort and quick sort very soon. The idea behind this tool was to understand how hooks like useState, useRef, useEffect work in React.",
-      "github": "https://github.com/anoop-jadhav-ui/sorting-visual",
-      "priority": 999,
-      "projectName": "Sort Visualizer",
-      "status": "In Progress",
-      "tags": ["React Js"],
-      "url": "https://react-sort-visualizer.netlify.app"
-    },
-    {
-      "description": "Tic Tac Toe Game created using React Js for mobile device. As of now playing on a single mobile device is complete but in the future it will allow users to play online. ",
-      "github": "https://github.com/anoop-jadhav-ui/tic-tac-toe",
-      "priority": 999,
-      "projectName": "Tic Tac Toe",
-      "status": "In Progress",
-      "tags": ["React Js"],
-      "url": "https://crossandzero.netlify.app"
-    },
-    {
-      "description": "This app which you are viewing currently is my portfolio web app project created to showcase my design and development work. This is created using React Js (frontend), Node & Express Js (server side scripting), Firebase(database) and Figma (Design)",
-      "github": "https://github.com/anoop-jadhav-ui/portfolio-aj",
-      "priority": 999,
-      "projectName": "My Portfolio Web App",
-      "status": "Complete",
-      "tags": ["React Js", "Firebase", "Node Js", "Express Js", "Figma"],
-      "url": "https://anoopjadhav.vercel.app"
-    }
-  ],
-  "skills": {
-    "design": [
-      {
-        "skillName": "Adobe Illustrator",
-        "skillValue": "40"
-      },
-      {
-        "skillName": "Figma",
-        "skillValue": "80"
-      }
+    "experience": [
+        {
+            "name": "Thoughtworks",
+            "summary": "Thoughtworks has been my dream company since college days because of its work culture. It is widely known for the intellectual minds who are solving complex problem using technology. I am really excited to work on new challenges here in Thoughtworks.",
+            "totalYears": "",
+            "fromDate": "10 May 2021",
+            "toDate": "Present"
+        },
+        {
+            "name": "Deloitte",
+            "summary": "In Deloitte, I started with a public sector project for State of Michigan where we built a custom application on salesforce using salesforce lightning components. Along with the project I worked on several Firm initiatives built on React Js - One of the major project being Elixir where we build a React app for non developers similar to wordpress/squarespace having the drag and drop functionality to generate salesforce components. Due to the open culture in Deloitte, I also got the opportunity to work on design projects which involved in-house web/mobile app design, several posters, mailers, infographics, brochure designs and branding. ",
+            "totalYears": "",
+            "fromDate": "06 Feb 2017",
+            "toDate": "29 April 2021"
+        },
+        {
+            "name": "Cognizant",
+            "summary": "Initially started my career in Cognizant as a SAP BASIS consultant. but due to my interest in web technologies I switched to a UI Developer role and worked on various projects using tools and technologies like Angular JS 1.x., React Js, Jquery, Bootstrap, Git etc.",
+            "totalYears": "",
+            "fromDate": "28 Aug 2014",
+            "toDate": "17 Jan 2017"
+        }
     ],
-    "development": [
-      {
-        "skillName": "HTML",
-        "skillValue": "80"
-      },
-      {
-        "skillName": "CSS",
-        "skillValue": "80"
-      },
-      {
-        "skillName": "JavaScript",
-        "skillValue": "80"
-      },
-      {
-        "skillName": "React Js",
-        "skillValue": "80"
-      },
-      {
-        "skillName": "React Native",
-        "skillValue": "60"
-      },
-      {
-        "skillName": "Salesforce LWC",
-        "skillValue": "60"
-      }
-    ]
-  }
+    "hobbies": [
+        {
+            "name": "Drawing",
+            "summary": "Since my childhood I was always passionate about drawing. I really enjoyed Art & Crafts classes in my school. I loved drawing Pokemon characters, cars and bikes. Later I was lost in the world of competition but still managed to keep my interest as we had engineering drawing, AutoCAD in the curriculum. Now I have started learning digital drawing. Please check my instagram profile for some of my work."
+        },
+        {
+            "name": "Trekking",
+            "summary": "Usually in the monsoons, I prefer going for small treks to take a break from work and the daily routine. The colossal mountains and lush green pastures always fascinates me. Being surrounded by mountains and trees always revives and rejuvenates me. I have completed various treks in the Western ghats/Sahyadri region like Torna, Rajmachi, Sudhagad, Korigad, Kalsubai, Vikat Gad, Mahuli Gad, Visapur, Sihagad, Vasota jungle trek, Tung & Tikona, Tadiandamol trek and the mighty Katraj to Sihagad night trek."
+        },
+        {
+            "name": "Bike Riding",
+            "summary": "From the day I have bought the RE classic 350 I have developed this unstoppable urge of going new places riding my bike. I usually travel Mumbai - Pune on bike. The Most memorable bike trip would be Leh Ladakh - Khardungla and Changla Pass. The stunning view, endless empty roads full of twist and turns. Also the steep ascends, and bad road condition makes Chang La and Khardungla one of the most challenging roads to drive upon."
+        }
+    ],
+    "overview": {
+        "name": "Anoop Jadhav",
+        "summary": "A passionate <span>UI Developer</span> with around <span>{totalYearsOfExperience} years</span> of experience in <span>designing and developing web & mobile applications</span> using tools and technologies like HTML, CSS, JavaScript, React Js, React Native, Salesforce Lightning Components, Salesforce LWC, Adobe Illustrator and Figma.",
+        "title": "UI DEVELOPER"
+    },
+    "projects": [
+        {
+            "description": "A React App to manage guests or organize an event. The idea behind creation of this app was to manage the guests or events in this covid pandemic situation because of the limition on the number of guests allowed by the government authorities.",
+            "github": "https://github.com/anoop-jadhav-ui/guest-tracker",
+            "priority": 999,
+            "projectName": "Guest Tracker",
+            "status": "In Progress",
+            "tags": ["React Js", "Firebase"],
+            "url": "https://guesttracker.netlify.app"
+        },
+        {
+            "description": "Visualize sorting in real time using this app built using React. As of now Bubble sort and Insertion sort visualization is complete. I will be adding merge sort and quick sort very soon. The idea behind this tool was to understand how hooks like useState, useRef, useEffect work in React.",
+            "github": "https://github.com/anoop-jadhav-ui/sorting-visual",
+            "priority": 999,
+            "projectName": "Sort Visualizer",
+            "status": "In Progress",
+            "tags": ["React Js"],
+            "url": "https://react-sort-visualizer.netlify.app"
+        },
+        {
+            "description": "Tic Tac Toe Game created using React Js for mobile device. As of now playing on a single mobile device is complete but in the future it will allow users to play online. ",
+            "github": "https://github.com/anoop-jadhav-ui/tic-tac-toe",
+            "priority": 999,
+            "projectName": "Tic Tac Toe",
+            "status": "In Progress",
+            "tags": ["React Js"],
+            "url": "https://crossandzero.netlify.app"
+        },
+        {
+            "description": "This app which you are viewing currently is my portfolio web app project created to showcase my design and development work. This is created using React Js (frontend), Node & Express Js (server side scripting), Firebase(database) and Figma (Design)",
+            "github": "https://github.com/anoop-jadhav-ui/portfolio-aj",
+            "priority": 999,
+            "projectName": "My Portfolio Web App",
+            "status": "Complete",
+            "tags": ["React Js", "Firebase", "Node Js", "Express Js", "Figma"],
+            "url": "https://anoopjadhav.vercel.app"
+        }
+    ],
+    "skills": {
+        "design": [
+            {
+                "skillName": "Adobe Illustrator",
+                "skillValue": "40"
+            },
+            {
+                "skillName": "Figma",
+                "skillValue": "80"
+            }
+        ],
+        "development": [
+            {
+                "skillName": "HTML",
+                "skillValue": "80"
+            },
+            {
+                "skillName": "CSS",
+                "skillValue": "80"
+            },
+            {
+                "skillName": "JavaScript",
+                "skillValue": "80"
+            },
+            {
+                "skillName": "React Js",
+                "skillValue": "80"
+            },
+            {
+                "skillName": "React Native",
+                "skillValue": "60"
+            },
+            {
+                "skillName": "Salesforce LWC",
+                "skillValue": "60"
+            }
+        ]
+    }
 }

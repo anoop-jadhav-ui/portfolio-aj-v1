@@ -1,117 +1,116 @@
 @keyframes borders {
-  0% {
-    width: calc(var(--image-width) + 1rem);
-    height: calc(var(--image-width) + 1rem);
-    border: 2px solid var(--primary-color);
-  }
-  100% {
-    width: calc(var(--image-width) + 4rem);
-    height: calc(var(--image-width) + 4rem);
-    border: 2px solid transparent;
-  }
+    0% {
+        width: calc(var(--image-width) + 1rem);
+        height: calc(var(--image-width) + 1rem);
+        border: 2px solid var(--primary-color);
+    }
+    100% {
+        width: calc(var(--image-width) + 4rem);
+        height: calc(var(--image-width) + 4rem);
+        border: 2px solid transparent;
+    }
 }
 
 .summary-mobile {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  --image-width: 16rem;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    --image-width: 16rem;
 
-  .mainlogo-wrapper {
-    position: relative;
-    box-sizing: content-box;
-    border-radius: 50%;
-    background: var(--grey8);
+    .mainlogo-wrapper {
+        position: relative;
+        box-sizing: content-box;
+        border-radius: 50%;
+        background: var(--grey8);
 
-    &:after {
-      content: "";
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translateX(-50%) translateY(-50%);
-      width: var(--image-width);
-      height: var(--image-width);
-      border-radius: 50%;
-      animation: borders 6s infinite linear;
+        &:after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            width: var(--image-width);
+            height: var(--image-width);
+            border-radius: 50%;
+            animation: borders 6s infinite linear;
+        }
+
+        &:before {
+            content: '';
+            position: absolute;
+            width: var(--image-width);
+            height: var(--image-width);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+
+            transform: translateX(-50%) translateY(-50%);
+            animation: borders 6s infinite 3s linear;
+        }
+
+        .mainlogo {
+            opacity: 0;
+            width: var(--image-width);
+            height: var(--image-width);
+            border-radius: 50%;
+            transition: opacity 0.3s ease-in-out;
+
+            &.loaded {
+                opacity: 1;
+            }
+        }
     }
 
-    &:before {
-      content: "";
-      position: absolute;
-      width: var(--image-width);
-      height: var(--image-width);
-      border-radius: 50%;
-      top: 50%;
-      left: 50%;
+    .main-title {
+        padding-top: 0;
 
-      transform: translateX(-50%) translateY(-50%);
-      animation: borders 6s infinite 3s linear;
+        &.typewriter {
+            overflow: hidden; /* Ensures the content is not revealed until the animation */
+            border-right: 4px solid transparent; /* The typwriter cursor */
+            white-space: nowrap; /* Keeps the content on a single line */
+            margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+            letter-spacing: 0; /* Adjust as needed */
+            animation: typing 1.5s steps(24, start), blink-caret 0.75s step-end infinite;
+        }
+
+        /* The typing effect */
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+            to {
+                width: 11ch;
+            }
+        }
+
+        /* The typewriter cursor effect */
+        @keyframes blink-caret {
+            from,
+            to {
+                border-color: transparent;
+            }
+            50% {
+                border-color: var(--primary-color);
+            }
+        }
+    }
+    .summary-text {
+        padding-top: 1.5rem;
+        span {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        span:nth-child(1) {
+            background: var(--primary-color);
+            padding: 0 0.5rem;
+            color: var(--grey10);
+            font-weight: bold;
+        }
     }
 
-    .mainlogo {
-      opacity: 0;
-      width: var(--image-width);
-      height: var(--image-width);
-      border-radius: 50%;
-      transition: opacity 0.3s ease-in-out;
-
-      &.loaded {
-        opacity: 1;
-      }
+    .hello {
+        padding-top: 3.75rem;
+        letter-spacing: 1px;
     }
-  }
-
-  .main-title {
-    padding-top: 0;
-
-    &.typewriter {
-      overflow: hidden; /* Ensures the content is not revealed until the animation */
-      border-right: 4px solid transparent; /* The typwriter cursor */
-      white-space: nowrap; /* Keeps the content on a single line */
-      margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-      letter-spacing: 0; /* Adjust as needed */
-      animation: typing 1.5s steps(24, start),
-        blink-caret 0.75s step-end infinite;
-    }
-
-    /* The typing effect */
-    @keyframes typing {
-      from {
-        width: 0;
-      }
-      to {
-        width: 11ch;
-      }
-    }
-
-    /* The typewriter cursor effect */
-    @keyframes blink-caret {
-      from,
-      to {
-        border-color: transparent;
-      }
-      50% {
-        border-color: var(--primary-color);
-      }
-    }
-  }
-  .summary-text {
-    padding-top: 1.5rem;
-    span {
-      font-weight: bold;
-      color: var(--primary-color);
-    }
-
-    span:nth-child(1) {
-      background: var(--primary-color);
-      padding: 0 0.5rem;
-      color: var(--grey10);
-      font-weight: bold;
-    }
-  }
-
-  .hello {
-    padding-top: 3.75rem;
-    letter-spacing: 1px;
-  }
 }

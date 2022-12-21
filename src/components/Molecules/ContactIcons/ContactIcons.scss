@@ -1,72 +1,67 @@
 .horizontally-placed {
-  display: flex;
-  margin-top: 0;
+    display: flex;
+    margin-top: 0;
 }
 .horizontally-placed .subsection-data + .subsection-data {
-  padding-left: 3rem;
+    padding-left: 3rem;
 }
 
 .contactimg {
-  width: 1.5rem;
-  height: 1.5rem;
-  stroke: var(--primary-color);
+    width: 1.5rem;
+    height: 1.5rem;
+    stroke: var(--primary-color);
 }
 
 .contactimg:hover {
-  stroke: hsla(
-    var(--primary-hue),
-    var(--primary-saturation),
-    78%,
-    var(--primary-alpha)
-  );
-  //stroke: hsla(0,84%, 78%, 100%);
+    stroke: hsla(var(--primary-hue), var(--primary-saturation), 78%, var(--primary-alpha));
+    //stroke: hsla(0,84%, 78%, 100%);
 }
 
 .inside-leftpane {
-  padding: 1rem 1.5rem;
-  position: relative;
-  border-top: 1px solid var(--grey7);
+    padding: 1rem 1.5rem;
+    position: relative;
+    border-top: 1px solid var(--grey7);
 
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
 }
 
 .inside-leftpane .subsection-data {
-  margin-top: 0;
+    margin-top: 0;
 }
 
 .inside-leftpane .subsection-data + .subsection-data {
-  padding-left: 1rem;
+    padding-left: 1rem;
 }
 
 .inside-leftpane .contactimg {
-  width: 1.3rem;
-  height: 1.3rem;
+    width: 1.3rem;
+    height: 1.3rem;
 }
 
 @media (max-width: 1200px) {
-  .rightpane {
-    top: 45vh;
-    width: 4rem;
-  }
-  .rightpane .contactimg {
-    width: 2rem;
-    height: 2rem;
-  }
-  .rightpane.horizontally-placed .subsection-data + .subsection-data {
-    margin-top: 2rem;
-  }
+    .rightpane {
+        top: 45vh;
+        width: 4rem;
+    }
+    .rightpane .contactimg {
+        width: 2rem;
+        height: 2rem;
+    }
+    .rightpane.horizontally-placed .subsection-data + .subsection-data {
+        margin-top: 2rem;
+    }
 }
 
 @keyframes slideIn {
-  0% {
-    right: -2.5rem;
-  }
-  80% {
-    right: 0.5rem;
-  }
-  100% {
-    right: 0;
-  }
+    0% {
+        right: -2.5rem;
+    }
+    80% {
+        right: 0.5rem;
+    }
+    100% {
+        right: 0;
+    }
 }
