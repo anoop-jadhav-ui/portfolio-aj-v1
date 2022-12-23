@@ -1,9 +1,9 @@
 [[redirects]]
-    from = “/*”
-    to = “/index.html”
+    from = "/*"
+    to = "/index.html"
     status = 200
 
 [[headers]]
-    for = “/"
+    for = "/"
 [headers.values]
-    Access-Control-Allow-Origin = "”
+    Access-Control-Allow-Origin = ""
