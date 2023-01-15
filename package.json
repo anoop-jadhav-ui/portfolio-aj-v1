@@ -4,10 +4,13 @@
   "private": true,
   "proxy": "http://localhost:5000/",
   "dependencies": {
+    "@react-three/drei": "^9.52.0",
+    "@react-three/fiber": "^8.10.0",
     "@types/jest": "^29.0.0",
     "@types/node": "^18.7.15",
     "@types/react": "^18.0.18",
     "@types/react-dom": "^18.0.6",
+    "@types/three": "^0.148.0",
     "animate.css": "^4.1.1",
     "axios": "^0.21.0",
     "bootstrap": "^4.6.0",
@@ -20,7 +23,8 @@
     "react-icons": "^4.4.0",
     "react-page-scroll-progress-bar": "^3.0.1",
     "react-toggle-dark-mode": "^1.1.1",
-    "react-useanimations": "^2.0.8"
+    "react-useanimations": "^2.0.8",
+    "three": "^0.148.0"
   },
   "scripts": {
     "webpack": "webpack",
