@@ -28,7 +28,7 @@ export const useTheme = () => useContext(ThemeContext);
 const ThemeContextProvider = ({ children }: { children: ReactNode }) => {
   const [darkMode, setDarkMode] = usePersistState<boolean | undefined>(
     "DarkMode",
-    undefined
+    true
   );
   const [isMobile, setIsMobile] = useState<boolean>(false);
 

@@ -1,9 +1,10 @@
-import { PerspectiveCamera } from "@react-three/drei";
+import { useTheme } from "../../../context/ThemeContext";
+import { checkScrollSpeed } from "./scrollUtils";
+import { OrbitControls, PerspectiveCamera, Stats } from "@react-three/drei";
 import { Canvas, useFrame } from "@react-three/fiber";
 import React, { useMemo, useRef } from "react";
 import * as THREE from "three";
 import { InstancedMesh, PointLight, Vector3 } from "three";
-import { useTheme } from "../../../context/ThemeContext";
 
 const cameraPosVector = new Vector3(0, 0, 200);
 
@@ -17,7 +18,7 @@ const Star = () => {
 
   const light = useRef<PointLight>(null);
   const mesh = useRef<InstancedMesh>(null);
-  const count = 9000;
+  const count = 6000;
 
   const particles = useMemo(() => {
     const temp = [];
@@ -26,7 +27,7 @@ const Star = () => {
       const x = Random(-100, 100);
       const y = Random(-100, 100);
       const z = Random(-100, 100);
-      const speed = Random(0.01, 1) / 5;
+      const speed = Random(0.01, 1) / 3;
 
       temp.push({ time, x, y, z, speed });
     }

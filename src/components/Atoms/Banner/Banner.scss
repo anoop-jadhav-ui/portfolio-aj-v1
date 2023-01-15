@@ -55,11 +55,18 @@
     background: var(--primary-color);
     border-radius: 0.25rem;
 }
+
 .neutral-banner {
     padding: 0.5rem 1rem;
     color: white !important;
-    background: var(--grey3);
+    background: var(--grey5);
     border-radius: 0.25rem;
+}
+
+.darkmode {
+    .neutral-banner {
+        background: var(--grey8);
+    }
 }
 
 /* Medium devices (tablets, 768px and up)*/

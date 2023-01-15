@@ -95,7 +95,6 @@ body {
     ::marker {
         color: var(--primary-color);
     }
-    // Other common css
 
     .uppercase {
         text-transform: uppercase;
@@ -111,7 +110,7 @@ body {
         letter-spacing: 2px;
     }
 
-    /*Type*/
+    /* Type */
     .h1 {
         font-size: 2.75rem;
     }
@@ -225,11 +224,8 @@ body {
         color: var(--grey1);
         caret-color: var(--primary-color);
         accent-color: var(--primary-color);
-         &:focus-visible {
-            outline: 1px solid var(--primary-color);
-            border: 1px solid var(--primary-color);
-        }
     }
+
     textarea {
         width: 100%;
         border: 1px solid var(--grey7);
@@ -240,11 +236,8 @@ body {
         color: var(--grey1);
         caret-color: var(--primary-color);
         accent-color: var(--primary-color);
-        &:focus-visible {
-            outline: 1px solid var(--primary-color);
-            border: 1px solid var(--primary-color);
-        }
     }
+
 }
 
 /* Medium devices (tablets, 768px and up)*/
@@ -260,7 +253,7 @@ body {
     }
 }
 
-/* width */
+/* Width */
 ::-webkit-scrollbar {
     width: 4px;
     height: 4px;

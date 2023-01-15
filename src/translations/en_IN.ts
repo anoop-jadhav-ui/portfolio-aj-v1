@@ -30,7 +30,7 @@ export default {
 
   THANK_YOU_FOR_FEEDBACK: "Thank you for your feedback.",
   SORRY_COULDNT_SEND_MSG:
-    "Sorry Couldn't send your message. Please try again later.",
+    "Sorry couldn't send your message. Please try again later.",
   SUBMITTING_FEEDBACK: "Submitting your feedback...",
 
   HELLO: "Hello, I am",
