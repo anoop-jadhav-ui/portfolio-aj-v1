@@ -1,97 +1,97 @@
 .projectcard {
-    border: 1px solid var(--grey7);
-    padding: 1.5rem 1rem !important;
-    border-radius: 0.25rem;
-    width: 49%;
+  border: 1px solid var(--grey7);
+  padding: 1.5rem 1rem !important;
+  border-radius: 0.25rem;
+  width: calc(100% / 2 - (1rem / 2));
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--grey9);
+  }
+
+  .tags {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    grid-gap: 0.5rem;
+    .tag {
+      font-size: 0.65rem !important;
+      color: var(--grey10);
+      font-weight: bold;
+      background-color: var(--primary-color);
+      padding: 1px 0.5rem;
+      border-radius: 0.25rem;
+      width: 4rem;
+      text-align: center;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      cursor: pointer;
+    }
+  }
+
+  .description {
+    padding-top: 1rem;
+    max-height: 13rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 0.8125rem;
+  }
+
+  .footer {
+    display: flex;
     justify-content: space-between;
-    cursor: pointer;
+    padding-top: 1rem;
 
-    &:hover {
-        background-color: var(--grey9);
+    .projectlinks {
+      display: flex;
+      .contactimg {
+        width: 1.2rem;
+      }
     }
 
-    .tags {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        grid-gap: 0.5rem;
-        .tag {
-            font-size: 0.65rem !important;
-            color: var(--grey10);
-            font-weight: bold;
-            background-color: var(--primary-color);
-            padding: 1px 0.5rem;
-            border-radius: 0.25rem;
-            width: 4rem;
-            text-align: center;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-            cursor: pointer;
-        }
+    a + a {
+      margin-left: 1rem;
     }
+  }
 
-    .description {
-        padding-top: 1rem;
-        max-height: 13rem;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        font-size: 0.8125rem;
+  .projectstatus {
+    display: flex;
+    align-items: center;
+
+    &.Progress .statuscircle {
+      background-color: var(--orange);
     }
-
-    .footer {
-        display: flex;
-        justify-content: space-between;
-        padding-top: 1rem;
-
-        .projectlinks {
-            display: flex;
-            .contactimg {
-                width: 1.2rem;
-            }
-        }
-
-        a + a {
-            margin-left: 1rem;
-        }
+    &.Complete .statuscircle {
+      background-color: var(--green);
     }
-
-    .projectstatus {
-        display: flex;
-        align-items: center;
-
-        &.Progress .statuscircle {
-            background-color: var(--orange);
-        }
-        &.Complete .statuscircle {
-            background-color: var(--green);
-        }
-        &.Complete .label {
-            color: var(--green);
-        }
-        &.Progress .label {
-            color: var(--orange);
-        }
-        .label::first-letter {
-            text-transform: uppercase;
-        }
+    &.Complete .label {
+      color: var(--green);
     }
-
-    .statuscircle {
-        border-radius: 50%;
-        height: 0.75rem;
-        width: 0.75rem;
-        margin-right: 0.5rem;
+    &.Progress .label {
+      color: var(--orange);
     }
+    .label::first-letter {
+      text-transform: uppercase;
+    }
+  }
+
+  .statuscircle {
+    border-radius: 50%;
+    height: 0.75rem;
+    width: 0.75rem;
+    margin-right: 0.5rem;
+  }
 }
 
 @media (max-width: 1200px) {
-    .projectcard {
-        width: 100%;
-        &:hover {
-            background-color: transparent;
-        }
+  .projectcard {
+    width: 100%;
+    &:hover {
+      background-color: transparent;
     }
+  }
 }

@@ -1,95 +1,26 @@
 .articlecard {
   border: 1px solid var(--grey7);
-  padding: 1.5rem 1rem !important;
   border-radius: 0.25rem;
-  width: 49%;
+  overflow: hidden;
+  width: calc(100% / 3 - (1rem / 3));
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   cursor: pointer;
+  box-sizing: border-box;
 
   &:hover {
     background-color: var(--grey9);
   }
-
-  .tags {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    grid-gap: 0.5rem;
-    .tag {
-      font-size: 0.65rem !important;
-      color: var(--grey10);
-      font-weight: bold;
-      background-color: var(--primary-color);
-      padding: 1px 0.5rem;
-      border-radius: 0.25rem;
-      width: 4rem;
-      text-align: center;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-      cursor: pointer;
-    }
-  }
-
-  .description {
-    padding-top: 1rem;
-    max-height: 13rem;
-    overflow: hidden;
-    text-overflow: ellipsis;
+  .date {
     font-size: 0.8125rem;
-  }
-
-  .footer {
-    display: flex;
-    justify-content: space-between;
-    padding-top: 1rem;
-
-    .projectlinks {
-      display: flex;
-      .contactimg {
-        width: 1.2rem;
-      }
-    }
-
-    a + a {
-      margin-left: 1rem;
-    }
-  }
-
-  .projectstatus {
-    display: flex;
-    align-items: center;
-
-    &.Progress .statuscircle {
-      background-color: var(--orange);
-    }
-    &.Complete .statuscircle {
-      background-color: var(--green);
-    }
-    &.Complete .label {
-      color: var(--green);
-    }
-    &.Progress .label {
-      color: var(--orange);
-    }
-    .label::first-letter {
-      text-transform: uppercase;
-    }
-  }
-
-  .statuscircle {
-    border-radius: 50%;
-    height: 0.75rem;
-    width: 0.75rem;
-    margin-right: 0.5rem;
+    color: var(--grey5);
   }
 }
 
 @media (max-width: 1200px) {
-  .projectcard {
-    width: 100%;
+  .articlecard {
+    width: calc(100% / 2 - (1rem / 2));
+
     &:hover {
       background-color: transparent;
     }

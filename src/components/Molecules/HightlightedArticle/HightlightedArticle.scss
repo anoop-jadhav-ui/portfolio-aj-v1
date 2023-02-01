@@ -1,0 +1,48 @@
+.highlighted-articlecard {
+  border: 1px solid var(--grey7);
+  border-radius: 0.25rem;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+
+  .article-image {
+    width: 60%;
+  }
+
+  &:hover {
+    background-color: var(--grey9);
+  }
+  .content {
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    .description {
+      font-size: 0.8125rem;
+    }
+    .date {
+      color: var(--grey5);
+      font-size: 0.8125rem;
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .highlighted-articlecard {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    &:hover {
+      background-color: transparent;
+    }
+    .article-image {
+      width: 100%;
+    }
+    .content {
+      width: 100%;
+      padding: 1rem !important;
+    }
+  }
+}

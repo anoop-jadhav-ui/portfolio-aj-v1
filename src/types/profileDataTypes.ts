@@ -87,3 +87,15 @@ export interface ProfileData {
   projects: Array<ProjectDetails>;
   skills: Skills;
 }
+
+export interface RecentArticle {
+  title: string;
+  coverImage: string;
+  brief: string;
+  slug: string;
+  dateAdded: string;
+  dateFeatured: string;
+  popularity: number;
+  totalReactions: number;
+  replyCount: number;
+}

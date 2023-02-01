@@ -1,11 +1,11 @@
 import React from "react";
 import { RecentArticle } from "../../../types/profileDataTypes";
-import "./ArticleCard.scss";
+import "./HightlightedArticle.scss";
 
 interface ArticleCardProps {
   articleDetails: RecentArticle;
 }
-const ArticleCard = ({ articleDetails }: ArticleCardProps) => {
+const HightlightedArticle = ({ articleDetails }: ArticleCardProps) => {
   const redirectToBlogPage = () => {
     const URL = `${import.meta.env.VITE_HASHNODE_BLOG_URL}\\${
       articleDetails.slug
@@ -13,7 +13,7 @@ const ArticleCard = ({ articleDetails }: ArticleCardProps) => {
     window.open(URL, "_blank");
   };
   return (
-    <div className="articlecard" onClick={redirectToBlogPage}>
+    <div className="highlighted-articlecard mb-2" onClick={redirectToBlogPage}>
       <div className="article-image">
         <img
           src={articleDetails.coverImage}
@@ -21,9 +21,12 @@ const ArticleCard = ({ articleDetails }: ArticleCardProps) => {
           alt={articleDetails.title}
         />
       </div>
-      <div className="px-3 pb-2 pt-2">
-        <div className="mb-0 bold title">{articleDetails.title}</div>
-        <div className="date pt-2">
+      <div className="content p-4 pl-3 pr-3">
+        <div>
+          <div className="header h4 bold">{articleDetails.title}</div>
+          <div className="description pt-2">{articleDetails.brief}</div>
+        </div>
+        <div className="date pt-4">
           {new Date(articleDetails.dateAdded).toDateString()}
         </div>
       </div>
@@ -31,4 +34,4 @@ const ArticleCard = ({ articleDetails }: ArticleCardProps) => {
   );
 };
 
-export default ArticleCard;
+export default HightlightedArticle;

@@ -16,6 +16,12 @@ const leftPaneDataObj: Array<LeftPaneMenuItem> = [
     headerPos: 0,
   },
   {
+    class: constants.classNames.RECENT_ARTICLES,
+    label: "Recent Articles",
+    id: "recentArticles",
+    headerPos: 0,
+  },
+  {
     class: constants.classNames.PROJECTS,
     label: "Fun Learning Projects",
     id: "projects",

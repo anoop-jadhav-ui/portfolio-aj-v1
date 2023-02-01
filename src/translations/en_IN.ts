@@ -2,6 +2,7 @@ export default {
   SCROLL_TO_KNOW_MORE: "Scroll to know more",
   SKIP_TO_SECTION: "Skip to section",
   FUN_LEARNING_PROJECTS: "Fun Learning Projects",
+  RECENT_ARTICLES: "Recent Articles",
   WORK_EXPERIENCE: "Work Experience",
   EDUCATION: "Education",
   CERTIFICATIONS: "Certifications",
@@ -34,4 +35,6 @@ export default {
   SUBMITTING_FEEDBACK: "Submitting your feedback...",
 
   HELLO: "Hello, I am",
+
+  VIEW_ALL: "View All",
 };

@@ -18,7 +18,7 @@ const Star = () => {
 
   const light = useRef<PointLight>(null);
   const mesh = useRef<InstancedMesh>(null);
-  const count = 6000;
+  const count = 2000;
 
   const particles = useMemo(() => {
     const temp = [];

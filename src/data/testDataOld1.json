@@ -141,6 +141,15 @@
       "url": "https://react-sort-visualizer.netlify.app"
     },
     {
+      "description": "Tic Tac Toe Game created using React Js for mobile device. As of now playing on a single mobile device is complete but in the future it will allow users to play online. ",
+      "github": "https://github.com/anoop-jadhav-ui/tic-tac-toe",
+      "priority": 999,
+      "projectName": "Tic Tac Toe",
+      "status": "In Progress",
+      "tags": ["React Js"],
+      "url": "https://crossandzero.netlify.app"
+    },
+    {
       "description": "This app which you are viewing currently is my portfolio web app project created to showcase my design and development work. This is created using React Js (frontend), Node & Express Js (server side scripting), Firebase(database) and Figma (Design)",
       "github": "https://github.com/anoop-jadhav-ui/portfolio-aj",
       "priority": 999,

@@ -1,21 +1,22 @@
 import React from "react";
-import "./LeftPane.scss";
-import ContactIcons from "../../Molecules/ContactIcons/ContactIcons";
-import usePersistState from "../../../hooks/usePersistState";
-import { useGlobalContext } from "../../../context/GlobalContext";
-import LeftPaneItem from "../../Atoms/LeftPaneItem/LeftPaneItem";
 import { BiLeftArrow } from "react-icons/bi";
+
+import { useGlobalContext } from "../../../context/GlobalContext";
+import usePersistState from "../../../hooks/usePersistState";
+import LeftPaneItem from "../../Atoms/LeftPaneItem/LeftPaneItem";
+import ContactIcons from "../../Molecules/ContactIcons/ContactIcons";
+import "./LeftPane.scss";
+
 const LeftPane = () => {
+  const { leftPaneData, currentSectionInView } = useGlobalContext();
   const [leftPaneVisible, setLeftPaneVisibility] = usePersistState(
     "leftPaneVisibility",
     false
   );
-  const { currentSectionInView } = useGlobalContext();
   const toggleLeftPane = () => {
     setLeftPaneVisibility(!leftPaneVisible);
   };
 
-  const { leftPaneData } = useGlobalContext();
   return (
     <div
       className={`left-pane position-fixed d-none d-md-block ${

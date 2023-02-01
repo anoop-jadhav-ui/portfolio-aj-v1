@@ -1,12 +1,11 @@
+import React from "react";
 import { useGlobalContext } from "../../../context/GlobalContext";
 import constants from "../../../helpers/constants";
 import T from "../../../translations/en_IN";
-import BarGraph from "../../Atoms/BarGraph/BarGraph";
 import SectionVisibilityHOC from "../../Organisms/SectionVisibilityHOC/SectionVisibilityHOC";
 import "./Education.scss";
-import React from "react";
 function Education() {
-  const { profileData, currentSectionInView } = useGlobalContext();
+  const { profileData } = useGlobalContext();
   const { education } = profileData;
 
   return (
@@ -26,9 +25,6 @@ function Education() {
                 <span className="h3 grey5 light">
                   , {educationDetail.place}
                 </span>
-                {/* <div className="education-bars">*/}
-                {/*  <BarGraph value={educationDetail.percentage} animate={true} />*/}
-                {/* </div>*/}
               </div>
             </div>
           );

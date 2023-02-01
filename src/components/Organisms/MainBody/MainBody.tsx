@@ -38,6 +38,7 @@ const MainBody = () => {
     contactDetails,
     recentArticles,
   } = appFeatureAvailability;
+
   return (
     <div className="main-body justify-content-center text">
       <Summary />
