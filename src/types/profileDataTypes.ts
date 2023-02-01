@@ -10,21 +10,8 @@ export interface FeatureToggles {
   projects: boolean;
   skills: boolean;
   summary: boolean;
+  recentArticles: boolean;
 }
-
-const defaultFeatureToggles: FeatureToggles = {
-  certifications: false,
-  contactDetails: false,
-  education: false,
-  experience: false,
-  feedback: false,
-  hobbies: false,
-  overview: false,
-  portfolioData: false,
-  projects: false,
-  skills: false,
-  summary: false,
-};
 
 export interface CertificateDetails {
   name: string;
@@ -37,11 +24,6 @@ export interface Certifications {
   development: Array<CertificateDetails>;
 }
 
-const defaultCertifications: Certifications = {
-  design: [],
-  development: [],
-};
-
 export interface Contact {
   contactNumber: string;
   emailId: string;
@@ -49,14 +31,6 @@ export interface Contact {
   instaId: string;
   linkedin: string;
 }
-
-const defaultContact: Contact = {
-  contactNumber: "",
-  emailId: "",
-  github: "",
-  instaId: "",
-  linkedin: "",
-};
 
 export interface EducationDetails {
   institute: string;
@@ -84,12 +58,6 @@ export interface Overview {
   title: string;
 }
 
-const defaultOverview: Overview = {
-  name: "",
-  summary: "",
-  title: "",
-};
-
 export interface ProjectDetails {
   description: string;
   github: string;
@@ -108,11 +76,6 @@ export interface Skills {
   development: Array<SkillDetails>;
 }
 
-const defaultSkills: Skills = {
-  design: [],
-  development: [],
-};
-
 export interface ProfileData {
   appFeatureAvailability: FeatureToggles;
   certifications: Certifications;
@@ -124,15 +87,3 @@ export interface ProfileData {
   projects: Array<ProjectDetails>;
   skills: Skills;
 }
-
-export const initialProfileData: ProfileData = {
-  appFeatureAvailability: defaultFeatureToggles,
-  certifications: defaultCertifications,
-  contactDetails: defaultContact,
-  education: [],
-  experience: [],
-  hobbies: [],
-  overview: defaultOverview,
-  projects: [],
-  skills: defaultSkills,
-};

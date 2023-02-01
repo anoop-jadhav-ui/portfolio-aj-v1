@@ -20,9 +20,11 @@ const firebaseData = new Promise((resolve, reject) => {
 export default function fetchProfileData() {
   try {
     // eslint-disable-next-line no-undef
-    if (import.meta.env.NODE_ENV === "development") {
+    if (import.meta.env.MODE === "development") {
+      console.log("Loading local data. Skipping the api call.");
       return testProfileData;
     } else {
+      console.log("Making an actual api call");
       return firebaseData.then((result) => {
         return result;
       });

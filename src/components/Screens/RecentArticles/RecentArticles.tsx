@@ -4,8 +4,8 @@ import constants from "../../../helpers/constants";
 import T from "../../../translations/en_IN";
 import ProjectCard from "../../Molecules/ProjectCard/ProjectCard";
 import SectionVisibilityHOC from "../../Organisms/SectionVisibilityHOC/SectionVisibilityHOC";
-import "./Projects.scss";
-function Projects() {
+import "./RecentArticles.scss";
+function RecentArticles() {
   const { profileData } = useGlobalContext();
   const { projects } = profileData;
 
@@ -23,4 +23,7 @@ function Projects() {
   );
 }
 
-export default SectionVisibilityHOC(Projects, constants.classNames.PROJECTS);
+export default SectionVisibilityHOC(
+  RecentArticles,
+  constants.classNames.PROJECTS
+);

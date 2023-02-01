@@ -4,11 +4,12 @@ import React, {
   useLayoutEffect,
   useState,
 } from "react";
-import { initialProfileData, ProfileData } from "../types/profileDataTypes";
-import fetchProfileData from "../helpers/fetchProfileData";
 import getFilteredLeftPaneData, {
   LeftPaneMenuItem,
 } from "../components/Organisms/LeftPane/leftPaneData";
+import { initialProfileData } from "../helpers/defaultValues";
+import fetchProfileData from "../helpers/fetchProfileData";
+import { ProfileData } from "../types/profileDataTypes";
 
 interface GlobalContextType {
   profileData: ProfileData;

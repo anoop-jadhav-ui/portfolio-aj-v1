@@ -1,15 +1,15 @@
-import React, { useRef } from "react";
-import MainBody from "../components/Organisms/MainBody/MainBody";
-import ErrorBoundary from "../components/Molecules/ErrorBoundary/ErrorBoundary";
-import PageScrollProgressBar from "react-page-scroll-progress-bar";
-import "./App.scss";
-import Loader from "../components/Atoms/Loader/Loader";
-import { useTheme } from "../context/ThemeContext";
-import { useGlobalContext } from "../context/GlobalContext";
-import { DarkModeSwitch } from "react-toggle-dark-mode";
-import LeftPane from "../components/Organisms/LeftPane/LeftPane";
 import "animate.css";
+import React, { useRef } from "react";
+import PageScrollProgressBar from "react-page-scroll-progress-bar";
+import { DarkModeSwitch } from "react-toggle-dark-mode";
+import Loader from "../components/Atoms/Loader/Loader";
+import ErrorBoundary from "../components/Molecules/ErrorBoundary/ErrorBoundary";
+import LeftPane from "../components/Organisms/LeftPane/LeftPane";
+import MainBody from "../components/Organisms/MainBody/MainBody";
 import Stars from "../components/Organisms/Stars/Stars";
+import { useGlobalContext } from "../context/GlobalContext";
+import { useTheme } from "../context/ThemeContext";
+import "./App.scss";
 
 export const App = () => {
   const { darkMode, setDarkMode, isMobile } = useTheme();

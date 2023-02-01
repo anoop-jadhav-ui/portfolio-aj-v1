@@ -28,7 +28,8 @@
   },
   "scripts": {
     "webpack": "webpack",
-    "start": "vite --config vite.config.ts",
+    "start": "vite --config vite.config.ts --mode production",
+    "dev": "vite --config vite.config.ts --mode development",
     "build": "vite build --config vite.config.ts",
     "test": "vitest",
     "coverage": "vitest run --coverage",

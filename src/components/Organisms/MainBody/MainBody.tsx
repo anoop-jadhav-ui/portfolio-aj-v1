@@ -1,7 +1,7 @@
 import React, { lazy, Suspense } from "react";
-
+import { useGlobalContext } from "../../../context/GlobalContext";
+import Loader from "../../Atoms/Loader/Loader";
 import "./MainBody.scss";
-
 const Summary = lazy(() => import("../../Screens/Summary/Summary"));
 const Education = lazy(() => import("../../Screens/Education/Education"));
 const WorkExperience = lazy(
@@ -15,9 +15,9 @@ const Hobbies = lazy(() => import("../../Screens/Hobbies/Hobbies"));
 const Feedback = lazy(() => import("../../Screens/Feedback/Feedback"));
 const Contact = lazy(() => import("../../Screens/Contact/Contact"));
 const Projects = lazy(() => import("../../Screens/Projects/Projects"));
-
-import { useGlobalContext } from "../../../context/GlobalContext";
-import Loader from "../../Atoms/Loader/Loader";
+const RecentArticles = lazy(
+  () => import("../../Screens/RecentArticles/RecentArticles")
+);
 
 export interface SectionProps {
   sectionRef: HTMLDivElement;
@@ -36,11 +36,13 @@ const MainBody = () => {
     hobbies,
     feedback,
     contactDetails,
+    recentArticles,
   } = appFeatureAvailability;
   return (
     <div className="main-body justify-content-center text">
       <Summary />
       <Suspense fallback={<Loader />}>
+        {recentArticles && <RecentArticles />}
         {projects && <Projects />}
         {experience && <WorkExperience />}
         {education && <Education />}

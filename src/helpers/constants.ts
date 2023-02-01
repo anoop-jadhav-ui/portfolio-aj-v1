@@ -3,6 +3,8 @@ export const constants = {
 
   classNames: {
     SUMMARY: "summary",
+    BLOGS: "blogs",
+    RECENT_ARTICLES: "recent-articles",
     PROJECTS: "projects",
     WORK_EXPERIENCE: "work-experience",
     EDUCATION: "education",
