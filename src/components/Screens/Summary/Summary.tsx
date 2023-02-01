@@ -3,7 +3,7 @@ import portfolioImage from "../../../assets/portfolio-app-img.png";
 import "./Summary.scss";
 import { useGlobalContext } from "../../../context/GlobalContext";
 import moment from "moment/moment";
-import SectionVisibilityHOC from "../../Organisms/SectionVisibilityHOC/SectionVisibilityHOC";
+import SectionVisibilityHOC from "../../Organisms/SectionWrapper/SectionWrapper";
 import T from "../../../translations/en_IN";
 import constants from "../../../helpers/constants";
 import DownloadCV from "../../Molecules/DownloadCV/DownloadCV";

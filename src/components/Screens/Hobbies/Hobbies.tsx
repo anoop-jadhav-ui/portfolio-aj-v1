@@ -1,8 +1,8 @@
 import React from "react";
 import { useGlobalContext } from "../../../context/GlobalContext";
-import SectionVisibilityHOC from "../../Organisms/SectionVisibilityHOC/SectionVisibilityHOC";
-import T from "../../../translations/en_IN";
 import constants from "../../../helpers/constants";
+import T from "../../../translations/en_IN";
+import SectionWrapper from "../../Organisms/SectionWrapper/SectionWrapper";
 function Hobbies() {
   const { profileData } = useGlobalContext();
   const { hobbies } = profileData;
@@ -23,4 +23,4 @@ function Hobbies() {
   );
 }
 
-export default SectionVisibilityHOC(Hobbies, constants.classNames.HOBBIES);
+export default SectionWrapper(Hobbies, constants.classNames.HOBBIES);

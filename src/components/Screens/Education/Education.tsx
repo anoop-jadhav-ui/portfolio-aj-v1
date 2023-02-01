@@ -2,7 +2,7 @@ import React from "react";
 import { useGlobalContext } from "../../../context/GlobalContext";
 import constants from "../../../helpers/constants";
 import T from "../../../translations/en_IN";
-import SectionVisibilityHOC from "../../Organisms/SectionVisibilityHOC/SectionVisibilityHOC";
+import SectionWrapper from "../../Organisms/SectionWrapper/SectionWrapper";
 import "./Education.scss";
 function Education() {
   const { profileData } = useGlobalContext();
@@ -33,4 +33,4 @@ function Education() {
     </>
   );
 }
-export default SectionVisibilityHOC(Education, constants.classNames.EDUCATION);
+export default SectionWrapper(Education, constants.classNames.EDUCATION);

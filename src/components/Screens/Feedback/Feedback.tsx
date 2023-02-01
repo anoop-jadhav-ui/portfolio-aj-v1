@@ -1,14 +1,14 @@
 import React, { FormEvent, useState } from "react";
-import axiosInstance from "../../../helpers/axios";
-import Banner, { BannerStatus } from "../../Atoms/Banner/Banner";
-import SectionVisibilityHOC from "../../Organisms/SectionVisibilityHOC/SectionVisibilityHOC";
-import T from "../../../translations/en_IN";
-import Button from "../../Atoms/Button/Button";
+import { AiOutlineLoading3Quarters } from "react-icons/ai";
 import { RiMailSendLine } from "react-icons/ri";
 import { useGlobalContext } from "../../../context/GlobalContext";
-import { AiOutlineLoading3Quarters } from "react-icons/ai";
-import "./Feedback.scss";
+import axiosInstance from "../../../helpers/axios";
 import constants from "../../../helpers/constants";
+import T from "../../../translations/en_IN";
+import Banner, { BannerStatus } from "../../Atoms/Banner/Banner";
+import Button from "../../Atoms/Button/Button";
+import SectionWrapper from "../../Organisms/SectionWrapper/SectionWrapper";
+import "./Feedback.scss";
 const Feedback = () => {
   const [message, updateMessage] = useState<string>();
   const [bannerStatus, updateBannerStatus] = useState<BannerStatus>("neutral");
@@ -113,4 +113,4 @@ const Feedback = () => {
   );
 };
 
-export default SectionVisibilityHOC(Feedback, constants.classNames.FEEDBACK);
+export default SectionWrapper(Feedback, constants.classNames.FEEDBACK);

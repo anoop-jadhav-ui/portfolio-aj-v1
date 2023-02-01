@@ -1,8 +1,8 @@
 import React from "react";
-import ContactIcons from "../../Molecules/ContactIcons/ContactIcons";
-import SectionVisibilityHOC from "../../Organisms/SectionVisibilityHOC/SectionVisibilityHOC";
-import T from "../../../translations/en_IN";
 import constants from "../../../helpers/constants";
+import T from "../../../translations/en_IN";
+import ContactIcons from "../../Molecules/ContactIcons/ContactIcons";
+import SectionWrapper from "../../Organisms/SectionWrapper/SectionWrapper";
 const Contact = () => {
   return (
     <>
@@ -15,4 +15,4 @@ const Contact = () => {
   );
 };
 
-export default SectionVisibilityHOC(Contact, constants.classNames.CONTACT_ME);
+export default SectionWrapper(Contact, constants.classNames.CONTACT_ME);

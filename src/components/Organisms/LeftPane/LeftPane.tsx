@@ -2,17 +2,19 @@ import React from "react";
 import { BiLeftArrow } from "react-icons/bi";
 
 import { useGlobalContext } from "../../../context/GlobalContext";
+import { useSectionInViewContext } from "../../../context/SectionInViewContext";
 import usePersistState from "../../../hooks/usePersistState";
 import LeftPaneItem from "../../Atoms/LeftPaneItem/LeftPaneItem";
 import ContactIcons from "../../Molecules/ContactIcons/ContactIcons";
 import "./LeftPane.scss";
-
 const LeftPane = () => {
-  const { leftPaneData, currentSectionInView } = useGlobalContext();
+  const { leftPaneData } = useGlobalContext();
+  const { currentSectionInView } = useSectionInViewContext();
   const [leftPaneVisible, setLeftPaneVisibility] = usePersistState(
     "leftPaneVisibility",
     false
   );
+
   const toggleLeftPane = () => {
     setLeftPaneVisibility(!leftPaneVisible);
   };

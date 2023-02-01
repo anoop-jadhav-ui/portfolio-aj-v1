@@ -3,7 +3,7 @@ import { useGlobalContext } from "../../../context/GlobalContext";
 import constants from "../../../helpers/constants";
 import T from "../../../translations/en_IN";
 import ProjectCard from "../../Molecules/ProjectCard/ProjectCard";
-import SectionVisibilityHOC from "../../Organisms/SectionVisibilityHOC/SectionVisibilityHOC";
+import SectionWrapper from "../../Organisms/SectionWrapper/SectionWrapper";
 import "./Projects.scss";
 function Projects() {
   const { profileData } = useGlobalContext();
@@ -23,4 +23,4 @@ function Projects() {
   );
 }
 
-export default SectionVisibilityHOC(Projects, constants.classNames.PROJECTS);
+export default SectionWrapper(Projects, constants.classNames.PROJECTS);

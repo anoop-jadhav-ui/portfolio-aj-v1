@@ -2,7 +2,7 @@ import React, { useMemo } from "react";
 import { useGlobalContext } from "../../../context/GlobalContext";
 import moment from "moment/moment";
 import { ExperienceDetails } from "../../../types/profileDataTypes";
-import SectionVisibilityHOC from "../../Organisms/SectionVisibilityHOC/SectionVisibilityHOC";
+import SectionVisibilityHOC from "../../Organisms/SectionWrapper/SectionWrapper";
 import T from "../../../translations/en_IN";
 import constants from "../../../helpers/constants";
 const WorkExperience = () => {

@@ -1,9 +1,9 @@
 import React from "react";
 import { useGlobalContext } from "../../../context/GlobalContext";
-import { CertificateDetails } from "../../../types/profileDataTypes";
-import SectionVisibilityHOC from "../../Organisms/SectionVisibilityHOC/SectionVisibilityHOC";
-import T from "../../../translations/en_IN";
 import constants from "../../../helpers/constants";
+import T from "../../../translations/en_IN";
+import { CertificateDetails } from "../../../types/profileDataTypes";
+import SectionWrapper from "../../Organisms/SectionWrapper/SectionWrapper";
 
 const Certifications = () => {
   const { profileData } = useGlobalContext();
@@ -69,7 +69,7 @@ const Certifications = () => {
   );
 };
 
-export default SectionVisibilityHOC(
+export default SectionWrapper(
   Certifications,
   constants.classNames.CERTIFICATIONS
 );
