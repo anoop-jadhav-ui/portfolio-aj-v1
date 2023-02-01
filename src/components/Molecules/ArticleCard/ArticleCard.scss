@@ -19,7 +19,7 @@
 
 @media (max-width: 1200px) {
   .articlecard {
-    width: calc(100% / 2 - (1rem / 2));
+    width: 100%;
 
     &:hover {
       background-color: transparent;
