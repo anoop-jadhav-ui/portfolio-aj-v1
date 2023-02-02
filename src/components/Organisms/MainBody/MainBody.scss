@@ -1,31 +1,19 @@
-.main-body {
-    padding: 1rem;
-    //margin: 0;
-}
 .main-title {
-    padding-top: 2.75rem;
+  padding-top: 2.75rem;
 }
 .summary-text {
-    padding-top: 2.5rem;
+  padding-top: 2.5rem;
 }
 .scroll-text {
-    padding-top: 2.75rem;
+  padding-top: 2.75rem;
 }
 .hide {
-    opacity: 0;
-    transition: height 200ms ease-in-out;
-    transition: opacity 200ms ease-in-out;
+  opacity: 0;
+  transition: height 200ms ease-in-out;
+  transition: opacity 200ms ease-in-out;
 }
 .show {
-    opacity: 1;
-    transition: height 200ms ease-in-out;
-    transition: opacity 200ms ease-in-out;
-}
-
-/* Medium devices (tablets, 768px and up)*/
-@media (max-width: 1200px) {
-    .main-body {
-        padding: 0;
-        //margin: 0;
-    }
+  opacity: 1;
+  transition: height 200ms ease-in-out;
+  transition: opacity 200ms ease-in-out;
 }

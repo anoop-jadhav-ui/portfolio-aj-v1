@@ -1,45 +1,58 @@
 .App {
-    position: relative;
-    .darkModeWrapper {
-        position: fixed;
-        top: 1rem;
-        right: 1rem;
-        cursor: pointer;
-        z-index: 999;
-    }
+  --app-max-width: 1200px;
+
+  max-width: var(--app-max-width);
+  width: 100%;
+  position: relative;
+
+  margin: auto;
+  .darkModeWrapper {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    cursor: pointer;
+    z-index: 999;
+  }
+}
+
+#top-scroll-bar {
+  z-index: 101;
 }
 
 // Mobile
 @media (max-width: 768px) {
-    .App {
-        padding: 1rem 1rem 5rem 1rem;
-        padding-top: 6rem;
-    }
+  .App {
+    --app-max-width: 100%;
+    // padding: 1rem 1rem 5rem 1rem;
+    padding: 6rem 1rem;
+  }
 }
 // Tablet
 @media (max-width: 1279px) and (min-width: 769px) {
-    .App {
-        padding: 5.25rem 20rem;
-    }
+  .App {
+    --app-max-width: 600px;
+    padding: 5.25rem 1rem;
+  }
 }
 
 // Desktop
 @media (min-width: 1280px) and (max-width: 1791px) {
-    .App {
-        padding: 5.25rem 16rem;
-    }
+  .App {
+    --app-max-width: 800px;
+    padding: 5.25rem 1rem;
+  }
 }
 
 // Large Desktop
 @media (min-width: 1792px) and (max-width: 1899px) {
-    .App {
-        padding: 5.25rem 16rem;
-    }
+  .App {
+    padding: 5.25rem 1rem;
+  }
 }
 
 // X Large Desktop
 @media (min-width: 1900px) {
-    .App {
-        padding: 5.25rem 20rem;
-    }
+  .App {
+    padding: 8.25rem 1rem;
+  }
 }

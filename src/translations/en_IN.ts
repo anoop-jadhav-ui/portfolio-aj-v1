@@ -37,4 +37,8 @@ export default {
   HELLO: "Hello, I am",
 
   VIEW_ALL: "View All",
+
+  BLOGS: "Blogs",
+
+  HOME: "Home",
 };

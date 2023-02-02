@@ -1,0 +1,53 @@
+.header {
+  transition: all 150ms ease-in;
+
+  z-index: 100;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  .header-wrapper {
+    transition: all 150ms ease-in;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    max-width: var(--app-max-width);
+    margin: auto;
+
+    padding: 1rem;
+
+    .menu {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+
+      .menuItem {
+        a {
+          font-size: 0.8125rem;
+          color: var(--grey1);
+          &:hover {
+            color: var(--primary-color);
+          }
+        }
+      }
+    }
+  }
+
+  &.overlayHeader {
+    background-color: var(--grey9);
+    padding: 0 1rem;
+
+    .header-wrapper {
+      padding: 0.25rem 0;
+
+      .darkModeSwitch svg {
+        height: 1.5rem;
+        width: 1.5rem;
+      }
+    }
+  }
+}

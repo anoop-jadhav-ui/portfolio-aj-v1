@@ -2,6 +2,7 @@ import React, { lazy, Suspense } from "react";
 import { useProfileDataContext } from "../../../context/ProfileDataContext";
 import Copyright from "../../Atoms/Copyright/Copyright";
 import Loader from "../../Atoms/Loader/Loader";
+import Header from "../../Molecules/Header/Header";
 import "./MainBody.scss";
 const Summary = lazy(() => import("../../Screens/Summary/Summary"));
 const Education = lazy(() => import("../../Screens/Education/Education"));
@@ -43,6 +44,7 @@ const MainBody = () => {
 
   return (
     <div className="main-body justify-content-center text">
+      <Header />
       <Summary />
       <Suspense fallback={<Loader />}>
         {recentArticles && <RecentArticles />}

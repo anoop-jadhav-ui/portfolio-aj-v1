@@ -3,7 +3,7 @@ import { useSectionInViewContext } from "../../../context/SectionInViewContext";
 import useScrollPosition from "../../../hooks/useScrollPosition";
 import "./SectionWrapper.scss";
 
-const isElementInViewport = (el: HTMLDivElement) => {
+export const isElementInViewport = (el: HTMLDivElement) => {
   const rect = el.getBoundingClientRect();
   return (
     (rect.top <= 0 && rect.bottom >= 0) ||

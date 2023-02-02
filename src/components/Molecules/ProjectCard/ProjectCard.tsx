@@ -11,7 +11,7 @@ const ProjectCard = ({
   return (
     <div className="projectcard">
       <div>
-        <div className="header h4 bold">{projectDetails.projectName}</div>
+        <div className="h4 bold">{projectDetails.projectName}</div>
         <div className="tags">
           {projectDetails.tags?.map((ele, index) => {
             return (
