@@ -27,14 +27,11 @@ export const RecentArticleContextProvider = (
 
   useEffect(() => {
     (async () => {
-      let errorWhileLoadingArticles = false;
-
       try {
         const recentArticles = await getRecentArticles();
         setRecentArticles(recentArticles);
       } catch (e) {
         console.log(e);
-        errorWhileLoadingArticles = true;
       }
     })();
   }, []);

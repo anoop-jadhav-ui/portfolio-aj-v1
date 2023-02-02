@@ -53,7 +53,7 @@ const WorkExperience = () => {
           return (
             <div key={String(key)} className="subsection-data">
               <span className="h3 grey1 bold">{experienceDetail.name}</span>
-              <div className="label grey5 light mt-1 letterspacing-2 row no-gutters align-items-center">
+              <div className="label primary-color light mt-1 letterspacing-2 row no-gutters align-items-center">
                 <span className="pr-3">
                   {getFromToDates(
                     experienceDetail.fromDate,

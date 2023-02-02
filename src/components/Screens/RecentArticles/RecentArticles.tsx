@@ -11,7 +11,7 @@ import "./RecentArticles.scss";
 
 function RecentArticles() {
   const { recentArticles } = useRecentArticleContext();
-  console.count("Recent Article");
+  console.count("Recent Article Section");
   return (
     <>
       {recentArticles?.length > 0 && (
