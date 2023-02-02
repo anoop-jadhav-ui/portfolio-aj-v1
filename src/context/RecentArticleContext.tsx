@@ -1,4 +1,9 @@
-import React, { createContext, useContext, useEffect, useState } from "react";
+import React, {
+  createContext,
+  useContext,
+  useLayoutEffect,
+  useState,
+} from "react";
 import { getRecentArticles } from "../helpers/hashnodeApi";
 import { RecentArticle } from "../types/profileDataTypes";
 
@@ -25,7 +30,7 @@ export const RecentArticleContextProvider = (
     []
   );
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     (async () => {
       try {
         const recentArticles = await getRecentArticles();
@@ -37,6 +42,7 @@ export const RecentArticleContextProvider = (
   }, []);
 
   console.count("Recent Article Context");
+
   return (
     <RecentArticleContext.Provider
       value={{

@@ -1,4 +1,9 @@
-import React, { createContext, useContext, useEffect, useState } from "react";
+import React, {
+  createContext,
+  useContext,
+  useLayoutEffect,
+  useState,
+} from "react";
 import getFilteredLeftPaneData, {
   LeftPaneMenuItem,
 } from "../components/Organisms/LeftPane/leftPaneData";
@@ -37,7 +42,7 @@ export const GlobalContextProvider = (props: GlobalContextProps) => {
     useState<boolean>(false);
   const [leftPaneData, setLeftPaneData] = useState<Array<LeftPaneMenuItem>>([]);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     (async () => {
       let errorWhileLoadingArticles = false;
       try {

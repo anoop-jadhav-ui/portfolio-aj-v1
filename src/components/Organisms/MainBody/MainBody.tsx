@@ -39,6 +39,8 @@ const MainBody = () => {
     recentArticles,
   } = appFeatureAvailability;
 
+  console.count("Main Body");
+
   return (
     <div className="main-body justify-content-center text">
       <Summary />
