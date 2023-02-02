@@ -62,7 +62,7 @@ const Star = () => {
       />
       <instancedMesh ref={mesh} args={[undefined, undefined, count]}>
         <sphereGeometry args={[0.05]} />
-        <dodecahedronBufferGeometry args={[0.05, 0]} />
+        <dodecahedronGeometry args={[0.05, 0]} />
         {/* <meshPhongMaterial color="whitesmoke" /> */}
         <meshBasicMaterial color={`${color}`} />
       </instancedMesh>

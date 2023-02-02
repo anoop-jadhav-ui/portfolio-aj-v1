@@ -13,7 +13,6 @@ import "./RecentArticles.scss";
 function RecentArticles() {
   const { recentArticles } = useRecentArticleContext();
   const { isMobile } = useTheme();
-  console.count("Recent Article Section");
   return (
     <>
       {recentArticles?.length > 0 && (

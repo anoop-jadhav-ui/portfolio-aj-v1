@@ -51,7 +51,6 @@ export const ProfileDataContextProvider = ({
     })();
   }, []);
 
-  console.count("Global Context");
   return (
     <ProfileDataContext.Provider
       value={{

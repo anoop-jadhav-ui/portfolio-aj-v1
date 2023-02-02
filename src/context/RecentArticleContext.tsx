@@ -40,8 +40,6 @@ export const RecentArticleContextProvider = ({
     })();
   }, []);
 
-  console.count("Recent Article Context");
-
   return (
     <RecentArticleContext.Provider
       value={{
