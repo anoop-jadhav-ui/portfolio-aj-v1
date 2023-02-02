@@ -1,5 +1,6 @@
 import React, { lazy, Suspense } from "react";
 import { useProfileDataContext } from "../../../context/ProfileDataContext";
+import Copyright from "../../Atoms/Copyright/Copyright";
 import Loader from "../../Atoms/Loader/Loader";
 import "./MainBody.scss";
 const Summary = lazy(() => import("../../Screens/Summary/Summary"));
@@ -53,6 +54,7 @@ const MainBody = () => {
         {hobbies && <Hobbies />}
         {feedback && <Feedback />}
         {contactDetails && <Contact />}
+        <Copyright />
       </Suspense>
     </div>
   );
