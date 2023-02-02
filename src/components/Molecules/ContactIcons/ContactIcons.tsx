@@ -1,6 +1,6 @@
 import React from "react";
 import "./ContactIcons.scss";
-import { useGlobalContext } from "../../../context/GlobalContext";
+import { useProfileDataContext } from "../../../context/ProfileDataContext";
 import UseAnimations from "react-useanimations";
 import email from "react-useanimations/lib/mail";
 import linkedIn from "react-useanimations/lib/linkedin";
@@ -8,8 +8,9 @@ import instagram from "react-useanimations/lib/instagram";
 import githubIcon from "react-useanimations/lib/github";
 
 const ContactIcons = ({ className }: { className: string }) => {
-  const { profileData } = useGlobalContext();
-  const { contactDetails } = profileData;
+  const {
+    profileData: { contactDetails },
+  } = useProfileDataContext();
   const { emailId, linkedin, instaId, github } = contactDetails;
   const ICON_SIZE = className === "inside-leftpane" ? 32 : 48;
 

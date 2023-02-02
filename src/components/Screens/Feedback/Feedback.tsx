@@ -1,7 +1,7 @@
 import React, { FormEvent, useState } from "react";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
 import { RiMailSendLine } from "react-icons/ri";
-import { useGlobalContext } from "../../../context/GlobalContext";
+import { useProfileDataContext } from "../../../context/ProfileDataContext";
 import axiosInstance from "../../../helpers/axios";
 import constants from "../../../helpers/constants";
 import T from "../../../translations/en_IN";
@@ -14,8 +14,10 @@ const Feedback = () => {
   const [bannerStatus, updateBannerStatus] = useState<BannerStatus>("neutral");
   const [showBanner, setShowBanner] = useState(false);
 
-  const { profileData } = useGlobalContext();
-  const { contactDetails } = profileData;
+  const {
+    profileData: { contactDetails },
+  } = useProfileDataContext();
+
   const { emailId } = contactDetails;
 
   const getBannerMessage = {

@@ -1,6 +1,7 @@
 import React from "react";
 import { MdArrowRightAlt } from "react-icons/md";
 import { useRecentArticleContext } from "../../../context/RecentArticleContext";
+import { useTheme } from "../../../context/ThemeContext";
 import constants from "../../../helpers/constants";
 import T from "../../../translations/en_IN";
 import Button from "../../Atoms/Button/Button";
@@ -11,6 +12,7 @@ import "./RecentArticles.scss";
 
 function RecentArticles() {
   const { recentArticles } = useRecentArticleContext();
+  const { isMobile } = useTheme();
   console.count("Recent Article Section");
   return (
     <>
@@ -21,7 +23,7 @@ function RecentArticles() {
             <HightlightedArticle articleDetails={recentArticles[0]} />
             <div className="recent-articles-section-body">
               {recentArticles
-                .slice(0, 4)
+                .slice(0, isMobile ? 3 : 4)
                 .filter((article) => article.slug !== recentArticles[0].slug)
                 .map((article, index) => {
                   return (

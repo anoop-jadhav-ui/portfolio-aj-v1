@@ -1,13 +1,14 @@
 import React, { useMemo } from "react";
-import { useGlobalContext } from "../../../context/GlobalContext";
+import { useProfileDataContext } from "../../../context/ProfileDataContext";
 import moment from "moment/moment";
 import { ExperienceDetails } from "../../../types/profileDataTypes";
 import SectionVisibilityHOC from "../../Organisms/SectionWrapper/SectionWrapper";
 import T from "../../../translations/en_IN";
 import constants from "../../../helpers/constants";
 const WorkExperience = () => {
-  const { profileData } = useGlobalContext();
-  const { experience } = profileData;
+  const {
+    profileData: { experience },
+  } = useProfileDataContext();
 
   const calculatedExperience = useMemo((): Array<ExperienceDetails> => {
     return experience.map((exp): ExperienceDetails => {

@@ -22,10 +22,9 @@ const RecentArticleContext =
 
 export const useRecentArticleContext = () => useContext(RecentArticleContext);
 
-export const RecentArticleContextProvider = (
-  props: RecentArticleContextProps
-) => {
-  const { children } = props;
+export const RecentArticleContextProvider = ({
+  children,
+}: RecentArticleContextProps) => {
   const [recentArticles, setRecentArticles] = useState<Array<RecentArticle>>(
     []
   );

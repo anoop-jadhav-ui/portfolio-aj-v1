@@ -1,12 +1,13 @@
 import React from "react";
-import { useGlobalContext } from "../../../context/GlobalContext";
+import { useProfileDataContext } from "../../../context/ProfileDataContext";
 import constants from "../../../helpers/constants";
 import T from "../../../translations/en_IN";
 import SectionWrapper from "../../Organisms/SectionWrapper/SectionWrapper";
 import "./Education.scss";
 function Education() {
-  const { profileData } = useGlobalContext();
-  const { education } = profileData;
+  const {
+    profileData: { education },
+  } = useProfileDataContext();
 
   return (
     <>

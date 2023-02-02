@@ -1,11 +1,12 @@
 import React from "react";
-import { useGlobalContext } from "../../../context/GlobalContext";
+import { useProfileDataContext } from "../../../context/ProfileDataContext";
 import constants from "../../../helpers/constants";
 import T from "../../../translations/en_IN";
 import SectionWrapper from "../../Organisms/SectionWrapper/SectionWrapper";
 function Hobbies() {
-  const { profileData } = useGlobalContext();
-  const { hobbies } = profileData;
+  const {
+    profileData: { hobbies },
+  } = useProfileDataContext();
   return (
     <>
       <div className="section-title h2 bold">{T.HOBBIES_AND_INTERESTS}</div>

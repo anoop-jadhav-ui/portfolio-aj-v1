@@ -1,13 +1,14 @@
 import React from "react";
-import { useGlobalContext } from "../../../context/GlobalContext";
+import { useProfileDataContext } from "../../../context/ProfileDataContext";
 import constants from "../../../helpers/constants";
 import T from "../../../translations/en_IN";
 import { CertificateDetails } from "../../../types/profileDataTypes";
 import SectionWrapper from "../../Organisms/SectionWrapper/SectionWrapper";
 
 const Certifications = () => {
-  const { profileData } = useGlobalContext();
-  const { certifications } = profileData;
+  const {
+    profileData: { certifications },
+  } = useProfileDataContext();
   const { development, design } = certifications;
   return (
     <>

@@ -1,5 +1,5 @@
 import React, { lazy, Suspense } from "react";
-import { useGlobalContext } from "../../../context/GlobalContext";
+import { useProfileDataContext } from "../../../context/ProfileDataContext";
 import Loader from "../../Atoms/Loader/Loader";
 import "./MainBody.scss";
 const Summary = lazy(() => import("../../Screens/Summary/Summary"));
@@ -24,8 +24,9 @@ export interface SectionProps {
 }
 
 const MainBody = () => {
-  const { profileData } = useGlobalContext();
-  const { appFeatureAvailability } = profileData;
+  const {
+    profileData: { appFeatureAvailability },
+  } = useProfileDataContext();
 
   const {
     projects,

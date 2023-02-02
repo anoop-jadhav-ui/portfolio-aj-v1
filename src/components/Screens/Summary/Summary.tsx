@@ -1,17 +1,17 @@
+import parse from "html-react-parser";
+import moment from "moment/moment";
 import React, { useMemo, useState } from "react";
 import portfolioImage from "../../../assets/portfolio-app-img.png";
-import "./Summary.scss";
-import { useGlobalContext } from "../../../context/GlobalContext";
-import moment from "moment/moment";
-import SectionVisibilityHOC from "../../Organisms/SectionWrapper/SectionWrapper";
-import T from "../../../translations/en_IN";
+import { useProfileDataContext } from "../../../context/ProfileDataContext";
 import constants from "../../../helpers/constants";
+import T from "../../../translations/en_IN";
 import DownloadCV from "../../Molecules/DownloadCV/DownloadCV";
-import parse from "html-react-parser";
+import SectionVisibilityHOC from "../../Organisms/SectionWrapper/SectionWrapper";
+import "./Summary.scss";
 
 const Summary = () => {
   const [imageLoading, setImageLoading] = useState(false);
-  const { profileData } = useGlobalContext();
+  const { profileData } = useProfileDataContext();
   const { overview, experience } = profileData;
 
   const totalExperience = useMemo((): string => {

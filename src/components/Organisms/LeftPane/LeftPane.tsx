@@ -1,14 +1,14 @@
 import React from "react";
 import { BiLeftArrow } from "react-icons/bi";
 
-import { useGlobalContext } from "../../../context/GlobalContext";
+import { useProfileDataContext } from "../../../context/ProfileDataContext";
 import { useSectionInViewContext } from "../../../context/SectionInViewContext";
 import usePersistState from "../../../hooks/usePersistState";
 import LeftPaneItem from "../../Atoms/LeftPaneItem/LeftPaneItem";
 import ContactIcons from "../../Molecules/ContactIcons/ContactIcons";
 import "./LeftPane.scss";
 const LeftPane = () => {
-  const { leftPaneData } = useGlobalContext();
+  const { leftPaneData } = useProfileDataContext();
   const { currentSectionInView } = useSectionInViewContext();
   const [leftPaneVisible, setLeftPaneVisibility] = usePersistState(
     "leftPaneVisibility",

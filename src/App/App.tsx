@@ -7,13 +7,13 @@ import ErrorBoundary from "../components/Molecules/ErrorBoundary/ErrorBoundary";
 import LeftPane from "../components/Organisms/LeftPane/LeftPane";
 import MainBody from "../components/Organisms/MainBody/MainBody";
 import Stars from "../components/Organisms/Stars/Stars";
-import { useGlobalContext } from "../context/GlobalContext";
+import { useProfileDataContext } from "../context/ProfileDataContext";
 import { useTheme } from "../context/ThemeContext";
 import "./App.scss";
 
 export const App = () => {
   const { darkMode, setDarkMode, isMobile } = useTheme();
-  const { isProfileDataLoaded, leftPaneData } = useGlobalContext();
+  const { isProfileDataLoaded, leftPaneData } = useProfileDataContext();
   const AppRef = useRef<HTMLDivElement>(null);
 
   const toDarkMode = () => {
@@ -46,7 +46,6 @@ export const App = () => {
             </div>
 
             {!isMobile && leftPaneData && <LeftPane />}
-
             <MainBody />
           </div>
         </>

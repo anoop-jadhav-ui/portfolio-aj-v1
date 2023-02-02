@@ -2,7 +2,10 @@
   border: 1px solid var(--grey7);
   border-radius: 0.25rem;
   overflow: hidden;
-  width: calc(100% / 3 - (1rem / 3));
+  --no-of-article-cards: 3;
+  width: calc(
+    100% / var(--no-of-article-cards) - (1rem / var(--no-of-article-cards))
+  );
   display: flex;
   flex-direction: column;
   cursor: pointer;
@@ -19,7 +22,7 @@
 
 @media (max-width: 1200px) {
   .articlecard {
-    width: 100%;
+    --no-of-article-cards: 2;
 
     &:hover {
       background-color: transparent;

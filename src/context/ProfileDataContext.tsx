@@ -9,33 +9,29 @@ import getFilteredLeftPaneData, {
 } from "../components/Organisms/LeftPane/leftPaneData";
 import { initialProfileData } from "../helpers/defaultValues";
 import fetchProfileData from "../helpers/fetchProfileData";
-import { getRecentArticles } from "../helpers/hashnodeApi";
-import { ProfileData, RecentArticle } from "../types/profileDataTypes";
+import { ProfileData } from "../types/profileDataTypes";
 
-interface GlobalContextType {
-  recentArticles: Array<RecentArticle>;
+interface ProfileDataContextType {
   profileData: ProfileData;
   isProfileDataLoaded: boolean;
   leftPaneData: Array<LeftPaneMenuItem>;
 }
-type GlobalContextProps = {
+type ProfileDataContextProps = {
   children: React.ReactNode;
 };
-const defaultGobalContext: GlobalContextType = {
-  recentArticles: [],
+const defaultGobalContext: ProfileDataContextType = {
   profileData: initialProfileData,
   isProfileDataLoaded: false,
   leftPaneData: [],
 };
 
-const GlobalContext = createContext<GlobalContextType>(defaultGobalContext);
-export const useGlobalContext = () => useContext(GlobalContext);
+const ProfileDataContext =
+  createContext<ProfileDataContextType>(defaultGobalContext);
+export const useProfileDataContext = () => useContext(ProfileDataContext);
 
-export const GlobalContextProvider = (props: GlobalContextProps) => {
-  const { children } = props;
-  const [recentArticles, setRecentArticles] = useState<Array<RecentArticle>>(
-    []
-  );
+export const ProfileDataContextProvider = ({
+  children,
+}: ProfileDataContextProps) => {
   const [profileData, setProfileData] =
     useState<ProfileData>(initialProfileData);
   const [isProfileDataLoaded, setIsProfileDataLoaded] =
@@ -44,21 +40,11 @@ export const GlobalContextProvider = (props: GlobalContextProps) => {
 
   useLayoutEffect(() => {
     (async () => {
-      let errorWhileLoadingArticles = false;
-      try {
-        const recentArticles = await getRecentArticles();
-        setRecentArticles(recentArticles);
-      } catch (e) {
-        console.log(e);
-        errorWhileLoadingArticles = true;
-      }
-
       const fetchedProfileData = await fetchProfileData();
       setProfileData(fetchedProfileData);
       setLeftPaneData(
         getFilteredLeftPaneData({
           ...fetchedProfileData.appFeatureAvailability,
-          recentArticles: !errorWhileLoadingArticles,
         })
       );
       setIsProfileDataLoaded(true);
@@ -67,15 +53,14 @@ export const GlobalContextProvider = (props: GlobalContextProps) => {
 
   console.count("Global Context");
   return (
-    <GlobalContext.Provider
+    <ProfileDataContext.Provider
       value={{
-        recentArticles,
         profileData,
         isProfileDataLoaded,
         leftPaneData,
       }}
     >
       {children}
-    </GlobalContext.Provider>
+    </ProfileDataContext.Provider>
   );
 };

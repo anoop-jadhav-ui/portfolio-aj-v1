@@ -1,14 +1,15 @@
 import React from "react";
 import BarGraph from "../../Atoms/BarGraph/BarGraph";
 import "./Skills.scss";
-import { useGlobalContext } from "../../../context/GlobalContext";
+import { useProfileDataContext } from "../../../context/ProfileDataContext";
 import SectionVisibilityHOC from "../../Organisms/SectionWrapper/SectionWrapper";
 import T from "../../../translations/en_IN";
 import constants from "../../../helpers/constants";
 
 const Skills = () => {
-  const { profileData } = useGlobalContext();
-  const { skills } = profileData;
+  const {
+    profileData: { skills },
+  } = useProfileDataContext();
   const { development, design } = skills;
   return (
     <>
