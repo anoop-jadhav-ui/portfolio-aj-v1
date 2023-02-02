@@ -14,7 +14,7 @@ function RecentArticles() {
 
   return (
     <>
-      {recentArticles?.length > 0 ? (
+      {recentArticles?.length > 0 && (
         <>
           <div className="section-title h2 bold">{T.RECENT_ARTICLES}</div>
           <div className="subsection">
@@ -45,8 +45,6 @@ function RecentArticles() {
             </a>
           </div>
         </>
-      ) : (
-        <div> Loading...</div>
       )}
     </>
   );
