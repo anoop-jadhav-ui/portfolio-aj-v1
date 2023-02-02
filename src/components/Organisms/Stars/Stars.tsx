@@ -1,10 +1,9 @@
-import { useTheme } from "../../../context/ThemeContext";
-import { checkScrollSpeed } from "./scrollUtils";
-import { OrbitControls, PerspectiveCamera, Stats } from "@react-three/drei";
+import { PerspectiveCamera } from "@react-three/drei";
 import { Canvas, useFrame } from "@react-three/fiber";
 import React, { useMemo, useRef } from "react";
 import * as THREE from "three";
 import { InstancedMesh, PointLight, Vector3 } from "three";
+import { useTheme } from "../../../context/ThemeContext";
 
 const cameraPosVector = new Vector3(0, 0, 200);
 
@@ -63,7 +62,6 @@ const Star = () => {
       <instancedMesh ref={mesh} args={[undefined, undefined, count]}>
         <sphereGeometry args={[0.05]} />
         <dodecahedronGeometry args={[0.05, 0]} />
-        {/* <meshPhongMaterial color="whitesmoke" /> */}
         <meshBasicMaterial color={`${color}`} />
       </instancedMesh>
     </>
