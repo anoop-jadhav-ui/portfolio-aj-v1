@@ -1,6 +1,6 @@
 import React from "react";
 import { MdArrowRightAlt } from "react-icons/md";
-import { useGlobalContext } from "../../../context/GlobalContext";
+import { useRecentArticleContext } from "../../../context/RecentArticleContext";
 import constants from "../../../helpers/constants";
 import T from "../../../translations/en_IN";
 import Button from "../../Atoms/Button/Button";
@@ -10,8 +10,8 @@ import SectionWrapper from "../../Organisms/SectionWrapper/SectionWrapper";
 import "./RecentArticles.scss";
 
 function RecentArticles() {
-  const { recentArticles } = useGlobalContext();
-
+  const { recentArticles } = useRecentArticleContext();
+  console.count("Recent Article");
   return (
     <>
       {recentArticles?.length > 0 && (

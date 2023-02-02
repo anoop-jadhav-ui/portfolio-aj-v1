@@ -60,6 +60,7 @@ export const GlobalContextProvider = (props: GlobalContextProps) => {
     })();
   }, []);
 
+  console.count("Global Context");
   return (
     <GlobalContext.Provider
       value={{
