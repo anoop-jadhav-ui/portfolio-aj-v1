@@ -8,7 +8,7 @@ import "./Header.scss";
 
 export default function Header() {
   const headerRef = useRef<HTMLDivElement>(null);
-  const { darkMode, setDarkMode } = useTheme();
+  const { darkMode, setDarkMode, isMobile } = useTheme();
   const { scrollPosition } = useScrollPosition();
 
   const isOverlayHeader = useMemo(() => {
@@ -31,7 +31,7 @@ export default function Header() {
       <div className="header-wrapper">
         <Logo />
         <div className="menu">
-          <div className="menuItem">
+          <div className="menuItem selected">
             <a href="/"> {T.HOME}</a>
           </div>
           <div className="menuItem">
@@ -48,7 +48,7 @@ export default function Header() {
               <DarkModeSwitch
                 checked={darkMode}
                 onChange={toDarkMode}
-                size={30}
+                size={isMobile ? 20 : 24}
                 sunColor="var(--primary-color)"
               />
             </div>

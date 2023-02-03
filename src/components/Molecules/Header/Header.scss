@@ -33,6 +33,14 @@
             color: var(--primary-color);
           }
         }
+        &.selected {
+          a {
+            color: var(--primary-color);
+            font-weight: bold;
+            text-decoration: underline;
+            text-underline-offset: 0.9rem;
+          }
+        }
       }
     }
   }
@@ -46,8 +54,6 @@
 
       .darkModeSwitch svg {
         transition: all 150ms ease-in;
-        height: 1.5rem;
-        width: 1.5rem;
       }
     }
   }

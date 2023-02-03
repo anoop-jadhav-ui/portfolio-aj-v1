@@ -50,6 +50,8 @@ body {
 
   --accent-color: var(--orange);
 
+  --border-radius: 0;
+
   //font variables
   --font-family-headers: "Montserrat", sans-serif !important;
   --font-family-text: "Poppins", sans-serif !important;
@@ -226,7 +228,7 @@ body {
     border: 1px solid var(--grey7);
     height: 2.5rem;
     padding: 0 1rem;
-    border-radius: 0.25rem;
+    border-radius: var(--border-radius);
     background: transparent;
     color: var(--grey1);
     caret-color: var(--primary-color);
@@ -238,7 +240,7 @@ body {
     border: 1px solid var(--grey7);
     height: 6.5rem;
     padding: 0.5rem 1rem;
-    border-radius: 0.25rem;
+    border-radius: var(--border-radius);
     background: transparent;
     color: var(--grey1);
     caret-color: var(--primary-color);

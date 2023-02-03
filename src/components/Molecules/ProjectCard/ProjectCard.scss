@@ -1,7 +1,7 @@
 .projectcard {
   border: 1px solid var(--grey7);
   padding: 1.5rem 1rem !important;
-  border-radius: 0.25rem;
+  border-radius: var(--border-radius);
   width: calc(100% / 2 - (1rem / 2));
   display: flex;
   flex-direction: column;
@@ -23,7 +23,7 @@
       font-weight: bold;
       background-color: var(--primary-color);
       padding: 1px 0.5rem;
-      border-radius: 0.25rem;
+      border-radius: 0.1rem;
       width: 4rem;
       text-align: center;
       overflow: hidden;

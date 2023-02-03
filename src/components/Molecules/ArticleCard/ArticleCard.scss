@@ -1,6 +1,6 @@
 .articlecard {
   border: 1px solid var(--grey7);
-  border-radius: 0.25rem;
+  border-radius: var(--border-radius);
   overflow: hidden;
   --no-of-article-cards: 3;
   width: calc(
