@@ -1,6 +1,7 @@
 import "animate.css";
 import React, { useRef } from "react";
 import PageScrollProgressBar from "react-page-scroll-progress-bar";
+import Copyright from "../components/Atoms/Copyright/Copyright";
 import Loader from "../components/Atoms/Loader/Loader";
 import ErrorBoundary from "../components/Molecules/ErrorBoundary/ErrorBoundary";
 import LeftPane from "../components/Organisms/LeftPane/LeftPane";
@@ -34,6 +35,7 @@ export const App = () => {
             {!isMobile && leftPaneData && <LeftPane />}
             <MainBody />
           </div>
+          <Copyright />
         </>
       )}
     </ErrorBoundary>

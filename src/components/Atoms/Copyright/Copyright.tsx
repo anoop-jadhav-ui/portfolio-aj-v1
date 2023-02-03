@@ -3,7 +3,11 @@ import "./Copyright.scss";
 export default function Copyright() {
   return (
     <div className="copyright">
-      {`All rights reserved © Anoop Jadhav ${new Date().getFullYear()}`}
+      <span>
+        All rights reserved <span className="primary-color">©</span> Anoop
+        Jadhav
+      </span>
+      <span>{` ${new Date().getFullYear()}`}</span>
     </div>
   );
 }

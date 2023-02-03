@@ -42,9 +42,10 @@
     padding: 0 1rem;
 
     .header-wrapper {
-      padding: 0.25rem 0;
+      padding: 0;
 
       .darkModeSwitch svg {
+        transition: all 150ms ease-in;
         height: 1.5rem;
         width: 1.5rem;
       }

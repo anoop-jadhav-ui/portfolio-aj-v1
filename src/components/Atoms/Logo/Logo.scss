@@ -3,6 +3,12 @@
   font-weight: bold;
   display: flex;
   align-items: center;
+  color: var(--grey1);
+
+  &:hover {
+    color: var(--grey1);
+  }
+
   :last-child {
     color: var(--primary-color);
     font-size: 1.7rem;

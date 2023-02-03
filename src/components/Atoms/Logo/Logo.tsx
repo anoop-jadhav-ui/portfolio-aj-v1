@@ -2,9 +2,9 @@ import React from "react";
 import "./Logo.scss";
 export function Logo() {
   return (
-    <div className="logo">
+    <a className="logo" href="/">
       <div>AnoopJadhav</div>
       <div>.</div>
-    </div>
+    </a>
   );
 }
