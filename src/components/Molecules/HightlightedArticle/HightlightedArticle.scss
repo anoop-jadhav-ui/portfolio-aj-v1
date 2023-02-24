@@ -8,6 +8,10 @@
 
   .article-image {
     width: 60%;
+    height: 100%;
+    img {
+      object-fit: cover;
+    }
   }
 
   &:hover {
