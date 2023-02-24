@@ -6,6 +6,13 @@
   justify-content: space-between;
   cursor: pointer;
 
+  &:hover {
+    perspective-origin: center;
+    transform: rotate3d(0, -1, 0, 2deg);
+    transform-style: preserve-3d;
+    transition: all 0.25s ease-in;
+  }
+
   .article-image {
     width: 60%;
     img {

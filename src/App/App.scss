@@ -5,6 +5,8 @@
   width: 100%;
   position: relative;
 
+  padding: 5.25rem 1rem;
+
   margin: auto;
   .darkModeWrapper {
     position: fixed;
@@ -23,32 +25,28 @@
 @media (max-width: 768px) {
   .App {
     --app-max-width: 100%;
-    // padding: 1rem 1rem 5rem 1rem;
     padding: 6rem 1rem;
   }
 }
 // Tablet
 @media (max-width: 1279px) and (min-width: 769px) {
   .App {
-    --app-max-width: 600px;
-    padding: 5.25rem 1rem;
+    --app-max-width: 1000px;
   }
 }
 
 // Desktop
 @media (min-width: 1280px) and (max-width: 1791px) {
   .App {
-    --app-max-width: 800px;
-    padding: 5.25rem 1rem;
+    --app-max-width: 900px;
   }
 }
 
 // Large Desktop
-@media (min-width: 1792px) and (max-width: 1899px) {
-  .App {
-    padding: 5.25rem 1rem;
-  }
-}
+// @media (min-width: 1792px) and (max-width: 1899px) {
+//   .App {
+//   }
+// }
 
 // X Large Desktop
 @media (min-width: 1900px) {
