@@ -1,3 +1,4 @@
+@import "../../../mixins";
 @keyframes slideInFromLeft {
   0% {
     left: min(-14.5rem, -230.517px);
@@ -28,7 +29,8 @@
   border: 1px solid var(--grey7);
   width: 14.5rem;
   animation: slideInFromLeft 0.5s ease-in-out forwards;
-  background: var(--grey10);
+  @include card-bg;
+
   z-index: 1;
   &.open {
     animation: slideInFromLeft 0.5s ease-in-out forwards;

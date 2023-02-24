@@ -1,3 +1,5 @@
+@import "../../../mixins";
+
 .header {
   transition: all 150ms ease-in;
 
@@ -46,7 +48,7 @@
   }
 
   &.overlayHeader {
-    background-color: var(--grey9);
+    @include blur-bg;
     padding: 0 1rem;
 
     .header-wrapper {
@@ -57,4 +59,8 @@
       }
     }
   }
+}
+
+.light .overlayHeader {
+  background-color: var(--grey9);
 }

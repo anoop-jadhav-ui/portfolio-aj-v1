@@ -1,5 +1,7 @@
+@import "../../../mixins";
+
 .bar-graph {
-  background: var(--grey9);
+  @include card-bg;
   height: 2.25rem;
   border-radius: var(--border-radius);
   overflow: hidden;

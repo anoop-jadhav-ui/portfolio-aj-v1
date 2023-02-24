@@ -3,6 +3,7 @@ import React, {
   ReactNode,
   useContext,
   useEffect,
+  useLayoutEffect,
   useState,
 } from "react";
 import usePersistState from "../hooks/usePersistState";
@@ -14,15 +15,9 @@ interface ThemeContextType {
   isMobile: boolean;
 }
 
-const defaultTheme: ThemeContextType = {
-  darkMode: false,
-  setDarkMode: () => {
-    /* TODO document why this method 'setDarkMode' is empty */
-  },
-  isMobile: false,
-};
-
-export const ThemeContext = createContext<ThemeContextType>(defaultTheme);
+export const ThemeContext = createContext<ThemeContextType>(
+  {} as ThemeContextType
+);
 export const useTheme = () => useContext(ThemeContext);
 
 const ThemeContextProvider = ({ children }: { children: ReactNode }) => {
@@ -34,20 +29,31 @@ const ThemeContextProvider = ({ children }: { children: ReactNode }) => {
 
   useEffect(() => {
     setIsMobile(isDeviceMobile);
-
-    if (
-      darkMode === undefined &&
+    const isDark =
       window.matchMedia &&
-      window.matchMedia("(prefers-color-scheme: dark)").matches
-    ) {
-      setDarkMode(true);
-    }
+      window.matchMedia("(prefers-color-scheme: dark)").matches;
+    setDarkMode(isDark);
+    console.log("default color scheme ", isDark ? "" : "🌃");
+  }, []);
+
+  useLayoutEffect(() => {
+    window
+      .matchMedia("(prefers-color-scheme: dark)")
+      .addEventListener("change", function (e) {
+        const isDark = e.matches;
+        setDarkMode(isDark);
+        console.log("color scheme changed to ", isDark ? "🌻" : "🌃");
+      });
   }, []);
 
   useEffect(() => {
-    darkMode
-      ? document.querySelector("body")?.classList.add("darkmode")
-      : document.querySelector("body")?.classList.remove("darkmode");
+    if (darkMode) {
+      document.querySelector("body")?.classList.add("dark");
+      document.querySelector("body")?.classList.remove("light");
+    } else {
+      document.querySelector("body")?.classList.add("light");
+      document.querySelector("body")?.classList.remove("dark");
+    }
   }, [darkMode]);
 
   return (

@@ -1,3 +1,4 @@
+@import "../../../mixins";
 .projectcard {
   border: 1px solid var(--grey7);
   padding: 1.5rem 1rem !important;
@@ -9,7 +10,7 @@
   cursor: pointer;
 
   &:hover {
-    background-color: var(--grey9);
+    @include card-bg;
   }
 
   .tags {

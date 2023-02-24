@@ -1,3 +1,4 @@
+@import "./mixins";
 :root {
   font-size: 20px;
 }
@@ -58,7 +59,9 @@ body {
   --font-family-code: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 
-  &.darkmode {
+  --is-dark: false;
+
+  &.dark {
     --grey10: #18181b;
     --grey9: #27272a;
     --grey8: #3f3f46;
@@ -69,6 +72,8 @@ body {
     --grey3: #e4e4e7;
     --grey2: #f4f4f5;
     --grey1: #fafafa;
+
+    --is-dark: true;
   }
 
   // body bg color and font color
@@ -236,12 +241,12 @@ body {
   }
 
   textarea {
+    @include card-bg;
     width: 100%;
     border: 1px solid var(--grey7);
     height: 6.5rem;
     padding: 0.5rem 1rem;
     border-radius: var(--border-radius);
-    background: transparent;
     color: var(--grey1);
     caret-color: var(--primary-color);
     accent-color: var(--primary-color);
