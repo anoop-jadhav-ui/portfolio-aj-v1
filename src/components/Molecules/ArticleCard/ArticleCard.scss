@@ -15,6 +15,7 @@
 
   &:hover {
     @include card-bg;
+    border: 1px solid var(--primary-color);
   }
   .date {
     font-size: 0.8125rem;

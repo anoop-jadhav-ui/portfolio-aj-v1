@@ -17,6 +17,7 @@
   }
   &:hover {
     @include card-bg;
+    border: 1px solid var(--primary-color);
   }
   .content {
     width: 40%;
