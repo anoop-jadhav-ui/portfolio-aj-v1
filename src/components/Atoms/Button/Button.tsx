@@ -38,27 +38,29 @@ const Button = ({
   };
 
   return (
-    <button
-      onClick={animateClick}
-      className={`${variant} button ${className} ${
-        label ? "with-label" : "no-label"
-      }`}
-      type={type}
-      data-testid={testID}
-      style={
-        {
-          "--button-x": clickPosition?.x,
-          "--button-y": clickPosition?.y,
-        } as React.CSSProperties
-      }
-    >
-      {label && <span className="label">{label}</span>}
-      {Icon && (
-        <span className="icon">
-          <Icon />
-        </span>
-      )}
-    </button>
+    <div className="buttonContainer">
+      <button
+        onClick={animateClick}
+        className={`${variant} button ${className} ${
+          label ? "with-label" : "no-label"
+        }`}
+        type={type}
+        data-testid={testID}
+        style={
+          {
+            "--button-x": clickPosition?.x,
+            "--button-y": clickPosition?.y,
+          } as React.CSSProperties
+        }
+      >
+        {label && <span className="label">{label}</span>}
+        {Icon && (
+          <span className="icon">
+            <Icon />
+          </span>
+        )}
+      </button>
+    </div>
   );
 };
 
