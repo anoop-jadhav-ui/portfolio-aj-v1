@@ -13,7 +13,7 @@ const ArticleCard = ({ articleDetails }: ArticleCardProps) => {
     window.open(URL, "_blank");
   };
   return (
-    <div className="articlecard" onClick={redirectToBlogPage}>
+    <div className="articlecard" onClick={redirectToBlogPage} tabIndex={0}>
       <div className="article-image">
         <img
           src={articleDetails.coverImage}

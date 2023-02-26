@@ -13,7 +13,11 @@ const HightlightedArticle = ({ articleDetails }: ArticleCardProps) => {
     window.open(URL, "_blank");
   };
   return (
-    <div className="highlighted-articlecard mb-2" onClick={redirectToBlogPage}>
+    <div
+      className="highlighted-articlecard mb-2"
+      onClick={redirectToBlogPage}
+      tabIndex={0}
+    >
       <div className="article-image">
         <img
           src={articleDetails.coverImage}

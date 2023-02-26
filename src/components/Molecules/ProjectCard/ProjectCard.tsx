@@ -9,7 +9,12 @@ const ProjectCard = ({
   projectDetails: ProjectDetails;
 }) => {
   return (
-    <div className="projectcard">
+    <div
+      className="projectcard"
+      onClick={() => {
+        window.open(projectDetails.github, "_blank");
+      }}
+    >
       <div>
         <div className="h4 bold">{projectDetails.projectName}</div>
         <div className="tags">
