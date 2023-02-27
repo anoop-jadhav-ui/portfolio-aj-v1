@@ -12,7 +12,7 @@ const ProjectCard = ({
     <div
       className="projectcard"
       onClick={() => {
-        window.open(projectDetails.github, "_blank");
+        window.open(projectDetails.url, "_blank");
       }}
     >
       <div>
