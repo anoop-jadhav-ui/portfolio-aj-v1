@@ -1,6 +1,6 @@
 ## Portfolio web app
 
-click to view the final app - https://anoopjadhav.vercel.app
+click to view the final app - https://anoopjadhav.in
 
 ###Tech stack
 React Js, Firebase
