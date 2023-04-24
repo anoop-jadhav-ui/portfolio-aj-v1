@@ -8,6 +8,7 @@ import T from "../../../translations/en_IN";
 import DownloadCV from "../../Molecules/DownloadCV/DownloadCV";
 import SectionVisibilityHOC from "../../Organisms/SectionWrapper/SectionWrapper";
 import "./Summary.scss";
+import ContactMeButton from "../../Molecules/ContactMeButton/ContactMeButton";
 
 const Summary = () => {
   const [imageLoading, setImageLoading] = useState(false);
@@ -60,7 +61,10 @@ const Summary = () => {
           overview.summary.replace("{totalYearsOfExperience}", totalExperience)
         )}
       </div>
-      <DownloadCV />
+      <div className="summary-buttons">
+        <DownloadCV />
+        <ContactMeButton />
+      </div>
     </div>
   );
 };

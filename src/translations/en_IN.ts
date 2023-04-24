@@ -9,6 +9,7 @@ export default {
   SKILLS: "Skills",
   HOBBIES_AND_INTERESTS: "Hobbies & Interests",
   FEEDBACK: "Feedback",
+
   CONTACT_DETAILS: "Contact Details",
 
   IN_PROGRESS: "In Progress",
@@ -41,4 +42,6 @@ export default {
   BLOGS: "Blogs",
 
   HOME: "Home",
+
+  CONTACT_ME: "Contact Me",
 };

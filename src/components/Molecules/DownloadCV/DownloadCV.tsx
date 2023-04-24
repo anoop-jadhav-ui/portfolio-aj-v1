@@ -16,7 +16,7 @@ const DownloadCV = () => {
     <div className="download-cv">
       <Button
         onClick={downloadCVHandler}
-        variant="neutral"
+        variant="brand"
         Icon={CgSoftwareDownload}
         label={T.DOWNLOAD_CV}
       />
