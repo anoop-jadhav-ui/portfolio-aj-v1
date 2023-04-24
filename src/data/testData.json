@@ -5,7 +5,7 @@
     "education": true,
     "experience": true,
     "feedback": true,
-    "hobbies": true,
+    "hobbies": false,
     "overview": true,
     "projects": true,
     "skills": true,
@@ -118,10 +118,28 @@
   ],
   "overview": {
     "name": "Anoop Jadhav",
-    "summary": "A passionate <span>UI Developer</span> with around <span>{totalYearsOfExperience} years</span> of experience in <span>designing and developing web & mobile applications</span> using tools and technologies like HTML, CSS, JavaScript, React Js, React Native, Salesforce Lightning Components, Salesforce LWC, Adobe Illustrator and Figma.",
+    "summary": "A passionate <span>UI Developer</span> with around <span>{totalYearsOfExperience} years</span> of experience in <span>designing and developing web & mobile applications</span> using tools and technologies like React, React Native, Figma, Blender etc.",
     "title": "UI DEVELOPER"
   },
   "projects": [
+    {
+      "description": "I used Blender and React Three Fiber to create a 3D model, which I then animated with React Fiber Spring. To facilitate easy debugging and updating, I also included leva that allows direct manipulation of the model within the browser.",
+      "github": "https://github.com/anoop-jadhav-ui/threejs-model",
+      "priority": 999,
+      "projectName": "Blender 3D Model",
+      "status": "Complete",
+      "tags": ["React Js", "React Three Fibre", "Threejs"],
+      "url": "https://threejs-model-psi.vercel.app/"
+    },
+    {
+      "description": "I developed this app using a basic 3D model to explore how to configure Blender models in real-time directly within a web browser.",
+      "github": "https://github.com/anoop-jadhav-ui/ringProblem",
+      "priority": 999,
+      "projectName": "Ring Configurator",
+      "status": "In Progress",
+      "tags": ["React Js", "React Three Fibre", "Threejs"],
+      "url": "https://ring-problem.vercel.app/"
+    },
     {
       "description": "A React App to manage guests or organize an event. The idea behind creation of this app was to manage the guests or events in this covid pandemic situation because of the limition on the number of guests allowed by the government authorities.",
       "github": "https://github.com/anoop-jadhav-ui/guest-tracker",
@@ -147,7 +165,7 @@
       "projectName": "My Portfolio Web App",
       "status": "Complete",
       "tags": ["React Js", "Firebase", "Node Js", "Express Js", "Figma"],
-      "url": "https://anoopjadhav.vercel.app"
+      "url": "https://anoopjadhav.in"
     }
   ],
   "skills": {
@@ -159,6 +177,10 @@
       {
         "skillName": "Figma",
         "skillValue": "80"
+      },
+      {
+        "skillName": "Blender",
+        "skillValue": "30"
       }
     ],
     "development": [
@@ -183,8 +205,8 @@
         "skillValue": "60"
       },
       {
-        "skillName": "Salesforce LWC",
-        "skillValue": "60"
+        "skillName": "Threejs",
+        "skillValue": "40"
       }
     ]
   }
