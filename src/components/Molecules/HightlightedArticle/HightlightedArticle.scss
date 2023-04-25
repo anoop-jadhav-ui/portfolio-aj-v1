@@ -7,6 +7,7 @@
   display: flex;
   justify-content: space-between;
   cursor: pointer;
+  margin-bottom: 0.5rem;
 
   .article-image {
     width: 60%;
@@ -24,12 +25,16 @@
     display: flex;
     justify-content: space-between;
     flex-direction: column;
+    padding: 1.5rem 1rem;
+
     .description {
       font-size: 0.8125rem;
+      padding-top: 0.5rem;
     }
     .date {
       color: var(--grey5);
       font-size: 0.8125rem;
+      padding-top: 2rem;
     }
   }
 }

@@ -31,7 +31,7 @@ function RecentArticles() {
                 })}
             </div>
           </div>
-          <div className="mt-4 text-center">
+          <div className="view-all-button text-center">
             <a
               href={import.meta.env.VITE_HASHNODE_BLOG_URL}
               target="_blank"

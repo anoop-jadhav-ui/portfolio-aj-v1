@@ -4,6 +4,7 @@ import constants from "../../../helpers/constants";
 import T from "../../../translations/en_IN";
 import { CertificateDetails } from "../../../types/profileDataTypes";
 import SectionWrapper from "../../Organisms/SectionWrapper/SectionWrapper";
+import "./Certifications.scss";
 
 const Certifications = () => {
   const {
@@ -13,7 +14,7 @@ const Certifications = () => {
   return (
     <>
       <div className="section-title h2 bold">{T.CERTIFICATIONS}</div>
-      <div className="subsection">
+      <div className="subsection certifications-content">
         <div className="subsection-title uppercase body-text grey5 letterspacing-1">
           {T.DEVELOPMENT}
         </div>
@@ -25,7 +26,7 @@ const Certifications = () => {
                 <span className="h3 grey1 bold" data-testid="name">
                   {certificateDetail.name}
                 </span>
-                <div className="primary-color default-text mt-1">
+                <div className="primary-color default-text">
                   <a
                     href={certificateDetail.urlToCertificate}
                     target="_Blank"
@@ -34,7 +35,7 @@ const Certifications = () => {
                     View LinkedIn profile
                   </a>
                 </div>
-                <div className="mt-2 grey-1 body-text">
+                <div className="grey-1 body-text summary-text">
                   {certificateDetail.summary}
                 </div>
               </div>
@@ -42,7 +43,7 @@ const Certifications = () => {
           }
         )}
       </div>
-      <div className="subsection">
+      <div className="subsection certifications-content">
         <div className="subsection-title uppercase body-text grey5 letterspacing-1">
           {T.DESIGN}
         </div>
@@ -50,7 +51,7 @@ const Certifications = () => {
           return (
             <div className="subsection-data" key={String(key)}>
               <span className="h3 grey1 bold">{certificateDetail.name}</span>
-              <div className="primary-color default-text mt-1">
+              <div className="primary-color default-text">
                 <a
                   href={certificateDetail.urlToCertificate}
                   target="_Blank"
@@ -59,7 +60,7 @@ const Certifications = () => {
                   {T.VIEW_LINKEDIN_PROFILE}
                 </a>
               </div>
-              <div className="mt-2 grey-1 body-text">
+              <div className="grey-1 body-text summary-text">
                 {certificateDetail.summary}
               </div>
             </div>

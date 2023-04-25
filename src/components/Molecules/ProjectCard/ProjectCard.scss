@@ -1,7 +1,7 @@
 @import "../../../mixins";
-.projectcard {
+.project-card {
   border: 1px solid var(--grey7);
-  padding: 1.5rem 1rem !important;
+  padding: 1rem 1rem;
   border-radius: var(--border-radius);
   width: calc(100% / 2 - (1rem / 2));
   display: flex;
@@ -19,6 +19,7 @@
     flex-wrap: wrap;
     align-items: center;
     grid-gap: 0.5rem;
+    padding-top: 0.5rem;
     .tag {
       font-size: 0.65rem !important;
       color: var(--grey10);

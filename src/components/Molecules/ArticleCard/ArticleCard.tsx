@@ -13,7 +13,7 @@ const ArticleCard = ({ articleDetails }: ArticleCardProps) => {
     window.open(URL, "_blank");
   };
   return (
-    <div className="articlecard" onClick={redirectToBlogPage} tabIndex={0}>
+    <div className="article-card" onClick={redirectToBlogPage} tabIndex={0}>
       <div className="article-image">
         <img
           src={articleDetails.coverImage}
@@ -21,9 +21,9 @@ const ArticleCard = ({ articleDetails }: ArticleCardProps) => {
           alt={articleDetails.title}
         />
       </div>
-      <div className="px-3 pb-2 pt-2">
-        <div className="mb-0 bold title">{articleDetails.title}</div>
-        <div className="date pt-2">
+      <div className="article-content">
+        <div className="bold">{articleDetails.title}</div>
+        <div className="date">
           {new Date(articleDetails.dateAdded).toDateString()}
         </div>
       </div>

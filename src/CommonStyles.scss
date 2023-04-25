@@ -82,6 +82,7 @@ body {
 
   // font setup
   font-family: var(--font-family-text);
+  line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: geometricPrecision;
@@ -124,6 +125,10 @@ body {
     letter-spacing: 2px;
   }
 
+  .text-center {
+    text-align: center;
+  }
+
   /* Type */
   .h1 {
     font-size: 2.75rem;
@@ -153,6 +158,10 @@ body {
   }
   ul > li {
     text-decoration: none !important;
+  }
+
+  a {
+    text-decoration: none;
   }
 
   a:hover,
@@ -250,6 +259,26 @@ body {
     color: var(--grey1);
     caret-color: var(--primary-color);
     accent-color: var(--primary-color);
+  }
+
+  .subsection-data + .subsection-data {
+    margin-top: 2rem;
+  }
+
+  .subsection-wrappers + .subsection-wrappers {
+    margin-top: 3rem;
+  }
+
+  .subsection {
+    padding-top: 2rem;
+  }
+
+  .subsection + .subsection {
+    margin-top: 4rem;
+  }
+
+  .subsection-title {
+    margin-bottom: 1rem;
   }
 }
 

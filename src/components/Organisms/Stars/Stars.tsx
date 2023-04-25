@@ -1,6 +1,6 @@
 import { PerspectiveCamera } from "@react-three/drei";
 import { Canvas, useFrame } from "@react-three/fiber";
-import React, { useMemo, useRef } from "react";
+import React, { useMemo, useRef, useTransition } from "react";
 import * as THREE from "three";
 import { InstancedMesh, PointLight, Vector3 } from "three";
 import { useTheme } from "../../../context/ThemeContext";
@@ -12,6 +12,7 @@ function Random(min: number, max: number) {
 }
 
 const Star = () => {
+  const [, startTransition] = useTransition();
   const { darkMode } = useTheme();
   const color = darkMode === true ? "white" : "black";
 
@@ -36,14 +37,16 @@ const Star = () => {
   const dummy = useMemo(() => new THREE.Object3D(), []);
 
   useFrame(() => {
-    particles.forEach((particle, index) => {
-      let { x, y, z, speed } = particle;
-      const t = (particle.time += speed);
-      dummy.position.set(x, y, z + (t % 100));
-      dummy.updateMatrix();
-      mesh.current?.setMatrixAt(index, dummy.matrix);
+    startTransition(() => {
+      particles.forEach((particle, index) => {
+        let { x, y, z, speed } = particle;
+        const t = (particle.time += speed);
+        dummy.position.set(x, y, z + (t % 100));
+        dummy.updateMatrix();
+        mesh.current?.setMatrixAt(index, dummy.matrix);
+      });
+      if (mesh.current) mesh.current.instanceMatrix.needsUpdate = true;
     });
-    if (mesh.current) mesh.current.instanceMatrix.needsUpdate = true;
   });
 
   return (
@@ -69,30 +72,21 @@ const Star = () => {
 };
 export const Stars = () => {
   return (
-    <>
-      <Canvas
-        style={{
-          height: "100vH",
-          position: "fixed",
-          top: "0",
-          left: "0",
-          background: "var(--background)",
-        }}
-      >
-        <>
-          <PerspectiveCamera makeDefault position={cameraPosVector} />
-          <Star />
-          {/* <gridHelper
-            args={[100, 50, "blue", "darkblue"]}
-            position={[0, 0, 0]}
-            rotation={[-Math.PI / 2, 0, 0]}
-          />
-          <axesHelper args={[100]} /> */}
-          {/* <OrbitControls /> */}
-          {/* <Stats /> */}
-        </>
-      </Canvas>
-    </>
+    <Canvas
+      style={{
+        height: "100vH",
+        position: "fixed",
+        top: "0",
+        left: "0",
+        background: "var(--background)",
+      }}
+      frameloop="always"
+    >
+      <>
+        <PerspectiveCamera makeDefault position={cameraPosVector} />
+        <Star />
+      </>
+    </Canvas>
   );
 };
 

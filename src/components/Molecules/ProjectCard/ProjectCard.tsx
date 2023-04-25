@@ -9,7 +9,7 @@ const ProjectCard = ({
   projectDetails: ProjectDetails;
 }) => {
   return (
-    <div className="projectcard">
+    <div className="project-card">
       <div>
         <div className="h4 bold">{projectDetails.projectName}</div>
         <div className="tags">

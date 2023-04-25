@@ -14,7 +14,7 @@ const HightlightedArticle = ({ articleDetails }: ArticleCardProps) => {
   };
   return (
     <div
-      className="highlighted-articlecard mb-2"
+      className="highlighted-articlecard"
       onClick={redirectToBlogPage}
       tabIndex={0}
     >
@@ -25,12 +25,12 @@ const HightlightedArticle = ({ articleDetails }: ArticleCardProps) => {
           alt={articleDetails.title}
         />
       </div>
-      <div className="content p-4 pl-3 pr-3">
+      <div className="content">
         <div>
-          <div className="h4 bold">{articleDetails.title}</div>
-          <div className="description pt-2">{articleDetails.brief}</div>
+          <div className="h4 bold title">{articleDetails.title}</div>
+          <div className="description">{articleDetails.brief}</div>
         </div>
-        <div className="date pt-4">
+        <div className="date">
           {new Date(articleDetails.dateAdded).toDateString()}
         </div>
       </div>

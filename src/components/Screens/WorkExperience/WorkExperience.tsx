@@ -5,6 +5,8 @@ import { ExperienceDetails } from "../../../types/profileDataTypes";
 import SectionVisibilityHOC from "../../Organisms/SectionWrapper/SectionWrapper";
 import T from "../../../translations/en_IN";
 import constants from "../../../helpers/constants";
+import "./WorkExperience.scss";
+
 const WorkExperience = () => {
   const {
     profileData: { experience },
@@ -49,22 +51,22 @@ const WorkExperience = () => {
   return (
     <>
       <div className="section-title h2 bold">{T.WORK_EXPERIENCE}</div>
-      <div className="subsection">
+      <div className="subsection work-experience-content">
         {calculatedExperience.map((experienceDetail, key) => {
           return (
             <div key={String(key)} className="subsection-data">
               <span className="h3 grey1 bold">{experienceDetail.name}</span>
-              <div className="label primary-color light mt-1 letterspacing-2 row no-gutters align-items-center">
-                <span className="pr-3">
+              <div className="label primary-color letterspacing-2">
+                <span>
                   {getFromToDates(
                     experienceDetail.fromDate,
                     experienceDetail.toDate
                   )}
                 </span>
                 <span className="dot" />
-                <span className="pl-3">{experienceDetail.totalYears}</span>
+                <span>{experienceDetail.totalYears}</span>
               </div>
-              <div className="mt-3 grey-1 body-text">
+              <div className="summary grey-1 body-text">
                 {experienceDetail.summary}
               </div>
             </div>

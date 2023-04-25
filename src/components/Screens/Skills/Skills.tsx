@@ -14,7 +14,7 @@ const Skills = () => {
   return (
     <>
       <div className="section-title h2 bold">{T.SKILLS}</div>
-      <div className="subsection">
+      <div className="subsection skills-content">
         <div className="subsection-title uppercase body-text grey5 letterspacing-1">
           {T.DEVELOPMENT}
         </div>
@@ -25,20 +25,16 @@ const Skills = () => {
                 key={String(key)}
                 className="skill-bar-wrapper row no-gutters align-items-center"
               >
-                <div className="skill-label grey-1 body-text bold col-md-3">
+                <div className="skill-label grey-1 body-text bold">
                   {skill.skillName}
                 </div>
-                <BarGraph
-                  className="col-md-9"
-                  value={skill.skillValue}
-                  animate={true}
-                />
+                <BarGraph value={skill.skillValue} animate={true} />
               </div>
             );
           })}
         </div>
       </div>
-      <div className="subsection">
+      <div className="subsection skills-content">
         <div className="subsection-title uppercase body-text grey5 letterspacing-1">
           {T.DESIGN}
         </div>
@@ -49,14 +45,10 @@ const Skills = () => {
                 key={String(key)}
                 className="skill-bar-wrapper row no-gutters align-items-center"
               >
-                <div className="skill-label grey-1 body-text bold col-md-3">
+                <div className="skill-label grey-1 body-text bold">
                   {skill.skillName}
                 </div>
-                <BarGraph
-                  className="col-md-9"
-                  value={skill.skillValue}
-                  animate={true}
-                />
+                <BarGraph value={skill.skillValue} animate={true} />
               </div>
             );
           })}

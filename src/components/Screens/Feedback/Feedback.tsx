@@ -9,6 +9,7 @@ import Banner, { BannerStatus } from "../../Atoms/Banner/Banner";
 import Button from "../../Atoms/Button/Button";
 import SectionWrapper from "../../Organisms/SectionWrapper/SectionWrapper";
 import "./Feedback.scss";
+
 const Feedback = () => {
   const [message, updateMessage] = useState<string>();
   const [bannerStatus, updateBannerStatus] = useState<BannerStatus>("neutral");
@@ -72,7 +73,7 @@ const Feedback = () => {
       <div className="section-title h2 bold">{T.FEEDBACK}</div>
       <form
         id="contact-form"
-        className="subsection"
+        className="subsection feedback-content"
         onSubmit={(event) => sendEmail(event)}
         method="POST"
       >
@@ -83,7 +84,7 @@ const Feedback = () => {
           >
             {T.FEEDBACK_MESSAGE}
           </label>
-          <div className="primary-color body-text mt-2">
+          <div className="primary-color body-text">
             <textarea
               id="feedback-box"
               data-testid="feedback-box"
@@ -94,21 +95,20 @@ const Feedback = () => {
               onChange={onFeedbackInputChange}
             />
           </div>
-          <div className="text-left mt-3">
-            <Button
-              className={
-                bannerStatus === "neutral" && showBanner ? "loading" : ""
-              }
-              type="submit"
-              testID="feedback-button"
-              label={T.SEND}
-              Icon={
-                bannerStatus === "neutral" && showBanner
-                  ? AiOutlineLoading3Quarters
-                  : RiMailSendLine
-              }
-            />
-          </div>
+
+          <Button
+            className={
+              bannerStatus === "neutral" && showBanner ? "loading" : ""
+            }
+            type="submit"
+            testID="feedback-button"
+            label={T.SEND}
+            Icon={
+              bannerStatus === "neutral" && showBanner
+                ? AiOutlineLoading3Quarters
+                : RiMailSendLine
+            }
+          />
         </div>
       </form>
     </>
