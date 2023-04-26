@@ -39,8 +39,16 @@
           a {
             color: var(--primary-color);
             font-weight: bold;
-            text-decoration: underline;
-            text-underline-offset: 0.9rem;
+            position: relative;
+
+            &:after {
+              content: "•";
+              font-size: 1rem;
+              position: absolute;
+              top: 70%;
+              left: 50%;
+              transform: translateX(-50%);
+            }
           }
         }
       }
