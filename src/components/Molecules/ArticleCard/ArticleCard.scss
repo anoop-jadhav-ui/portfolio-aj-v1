@@ -4,10 +4,12 @@
   border: 1px solid var(--grey7);
   border-radius: var(--border-radius);
   overflow: hidden;
-  --no-of-article-cards: 3;
   width: calc(
     100% / var(--no-of-article-cards) - (1rem / var(--no-of-article-cards))
   );
+
+  --no-of-article-cards: 3;
+
   display: flex;
   flex-direction: column;
   cursor: pointer;
@@ -29,7 +31,7 @@
 }
 
 @media (max-width: 1200px) {
-  .articlecard {
+  .article-card {
     --no-of-article-cards: 2;
 
     &:hover {
