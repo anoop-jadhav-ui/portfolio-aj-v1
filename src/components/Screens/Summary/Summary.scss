@@ -128,3 +128,11 @@
     letter-spacing: 1px;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .summary-mobile {
+    .summary-text {
+      font-size: 1.25rem;
+    }
+  }
+}
