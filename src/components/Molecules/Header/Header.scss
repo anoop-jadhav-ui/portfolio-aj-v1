@@ -28,6 +28,10 @@
       gap: 2rem;
 
       .menuItem {
+        .darkModeSwitch {
+          position: relative;
+          top: 0.25rem;
+        }
         a {
           font-size: 0.8125rem;
           color: var(--grey1);
