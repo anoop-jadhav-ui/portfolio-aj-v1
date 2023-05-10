@@ -7,13 +7,13 @@ import "./Skills3D.scss";
 import { Loader } from "@react-three/drei";
 
 const HtmlModel = React.lazy(() => import("../../Atoms/3DModels/HtmlModel"));
-// const CSSModel = React.lazy(() => import("../../Atoms/3DModels/CSSModel"));
-// const JsModel = React.lazy(() => import("../../Atoms/3DModels/JsModel"));
-// const ReactModel = React.lazy(() => import("../../Atoms/3DModels/ReactModel"));
-// const FigmaModel = React.lazy(() => import("../../Atoms/3DModels/FigmaModel"));
-// const BlenderModel = React.lazy(
-//   () => import("../../Atoms/3DModels/BlenderModel")
-// );
+const CSSModel = React.lazy(() => import("../../Atoms/3DModels/CSSModel"));
+const JsModel = React.lazy(() => import("../../Atoms/3DModels/JsModel"));
+const ReactModel = React.lazy(() => import("../../Atoms/3DModels/ReactModel"));
+const FigmaModel = React.lazy(() => import("../../Atoms/3DModels/FigmaModel"));
+const BlenderModel = React.lazy(
+  () => import("../../Atoms/3DModels/BlenderModel")
+);
 
 const Skills3D = () => {
   const {
@@ -27,11 +27,11 @@ const Skills3D = () => {
         <div className="skills-3d-grid">
           <Suspense fallback={<Loader />}>
             <HtmlModel scale={1.5} />
-            {/* <JsModel scale={1.5} />
+            <JsModel scale={1.5} />
             <CSSModel scale={1.5} />
             <ReactModel scale={0.5} />
             <FigmaModel scale={0.65} />
-            <BlenderModel scale={1} /> */}
+            <BlenderModel scale={1} />
           </Suspense>
         </div>
       </div>
