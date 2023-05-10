@@ -3,6 +3,7 @@ import { useProfileDataContext } from "../../../context/ProfileDataContext";
 import Loader from "../../Atoms/Loader/Loader";
 import Header from "../../Molecules/Header/Header";
 import "./MainBody.scss";
+
 const Summary = lazy(() => import("../../Screens/Summary/Summary"));
 const Education = lazy(() => import("../../Screens/Education/Education"));
 const WorkExperience = lazy(
@@ -11,7 +12,7 @@ const WorkExperience = lazy(
 const Certifications = lazy(
   () => import("../../Screens/Certifications/Certifications")
 );
-const Skills = lazy(() => import("../../Screens/Skills/Skills"));
+const Skills3D = lazy(() => import("../../Screens/Skills3D/Skills3D"));
 const Hobbies = lazy(() => import("../../Screens/Hobbies/Hobbies"));
 const Feedback = lazy(() => import("../../Screens/Feedback/Feedback"));
 const Contact = lazy(() => import("../../Screens/Contact/Contact"));
@@ -49,9 +50,10 @@ const MainBody = () => {
         {recentArticles && <RecentArticles />}
         {projects && <Projects />}
         {experience && <WorkExperience />}
+        {skills && <Skills3D />}
         {education && <Education />}
         {certifications && <Certifications />}
-        {skills && <Skills />}
+        {/* {skills && <Skills />} */}
         {hobbies && <Hobbies />}
         {feedback && <Feedback />}
         {contactDetails && <Contact />}

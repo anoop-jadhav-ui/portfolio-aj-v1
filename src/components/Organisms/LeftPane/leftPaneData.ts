@@ -34,6 +34,12 @@ const leftPaneDataObj: Array<LeftPaneMenuItem> = [
     headerPos: 0,
   },
   {
+    class: constants.classNames.SKILLS,
+    label: "Skills",
+    id: "skills",
+    headerPos: 0,
+  },
+  {
     class: constants.classNames.EDUCATION,
     label: "Education",
     id: "education",
@@ -43,12 +49,6 @@ const leftPaneDataObj: Array<LeftPaneMenuItem> = [
     class: constants.classNames.CERTIFICATIONS,
     label: "Certifications",
     id: "certifications",
-    headerPos: 0,
-  },
-  {
-    class: constants.classNames.SKILLS,
-    label: "Skills",
-    id: "skills",
     headerPos: 0,
   },
   {

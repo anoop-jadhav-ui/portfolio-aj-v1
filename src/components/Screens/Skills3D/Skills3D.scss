@@ -1,0 +1,9 @@
+.skills-content {
+  .subsection-title {
+    margin-bottom: 2rem;
+  }
+  .skills-3d-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
