@@ -27,7 +27,7 @@ const reactBlueMaterial = new THREE.MeshPhysicalMaterial({
 
 function ReactModel(props: JSX.IntrinsicElements["group"]) {
   const { nodes, materials } = useGLTF(
-    "../../../assets/3dModels/react-transformed.glb"
+    "/react-transformed.glb"
   ) as unknown as GLTFResult;
   return (
     <group {...props} dispose={null}>
@@ -67,7 +67,7 @@ function ReactModel(props: JSX.IntrinsicElements["group"]) {
   );
 }
 
-useGLTF.preload("../../../assets/3dModels/react-transformed.glb");
+useGLTF.preload("/react-transformed.glb");
 
 export default CanvasHOC(ReactModel, "React Js", {
   rotation: [0, -Math.PI / 9, 0],
