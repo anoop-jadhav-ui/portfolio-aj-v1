@@ -13,19 +13,8 @@ export default () => {
         typescript: true,
       }),
     ],
-    build: {
-      outDir: "../dist",
-      emptyOutDir: true,
-    },
     server: {
-      port: 8000,
-    },
-    root: "./src",
-    test: {
-      globals: true,
-      environment: "jsdom",
-      exclude: ["**/node_modules/**", "**/dist/**", ".idea", ".git"],
-      setupFiles: ["./setupTests.ts"],
+      port: 3000,
     },
   });
 };

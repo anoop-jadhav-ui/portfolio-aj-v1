@@ -30,7 +30,7 @@ const html5Material = new THREE.MeshPhysicalMaterial({
 
 function HtmlModel(props: JSX.IntrinsicElements["group"]) {
   const { nodes } = useGLTF(
-    "/assets/3dModels/htmlCssJs-transformed.glb"
+    "/src/assets/3dModels/htmlCssJs-transformed.glb"
   ) as unknown as GLTFResult;
 
   return (
@@ -51,6 +51,6 @@ function HtmlModel(props: JSX.IntrinsicElements["group"]) {
   );
 }
 
-useGLTF.preload("/assets/3dModels/htmlCssJs-transformed.glb");
+useGLTF.preload("/src/assets/3dModels/htmlCssJs-transformed.glb");
 
 export default CanvasHOC(HtmlModel, "HTML");
