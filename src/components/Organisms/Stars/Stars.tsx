@@ -1,6 +1,6 @@
 import { PerspectiveCamera } from "@react-three/drei";
 import { Canvas, useFrame } from "@react-three/fiber";
-import React, { useMemo, useRef, useTransition } from "react";
+import React, { useLayoutEffect, useMemo, useRef, useTransition } from "react";
 import * as THREE from "three";
 import { InstancedMesh, PointLight, Vector3 } from "three";
 import { useTheme } from "../../../context/ThemeContext";
@@ -18,7 +18,7 @@ const Star = () => {
 
   const light = useRef<PointLight>(null);
   const mesh = useRef<InstancedMesh>(null);
-  const count = 2000;
+  const count = 1000;
 
   const particles = useMemo(() => {
     const temp = [];
@@ -80,7 +80,8 @@ export const Stars = () => {
         left: "0",
         background: "var(--background)",
       }}
-      frameloop="always"
+      flat
+      shadows={false}
     >
       <>
         <PerspectiveCamera makeDefault position={cameraPosVector} />
