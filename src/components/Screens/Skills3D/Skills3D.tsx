@@ -1,10 +1,9 @@
+import { Loader } from "@react-three/drei";
 import React, { Suspense } from "react";
-import { useProfileDataContext } from "../../../context/ProfileDataContext";
 import constants from "../../../helpers/constants";
 import T from "../../../translations/en_IN";
-import SectionVisibilityHOC from "../../Organisms/SectionWrapper/SectionWrapper";
 import "./Skills3D.scss";
-import { Loader } from "@react-three/drei";
+import SectionVisibilityHOC from "../../Organisms/SectionWrapper/SectionWrapper";
 
 const HtmlModel = React.lazy(() => import("../../Atoms/3DModels/HtmlModel"));
 const CSSModel = React.lazy(() => import("../../Atoms/3DModels/CSSModel"));
@@ -16,10 +15,6 @@ const BlenderModel = React.lazy(
 );
 
 const Skills3D = () => {
-  const {
-    profileData: { skills },
-  } = useProfileDataContext();
-  const { development, design } = skills;
   return (
     <>
       <div className="section-title h2 bold">{T.SKILLS}</div>

@@ -49,4 +49,4 @@ function CssModel(props: JSX.IntrinsicElements["group"]) {
 
 export default CanvasHOC(CssModel, "CSS");
 
-useGLTF.preload("/3dModels/htmlCssJs-transformed.glb");
+useGLTF.preload("/htmlCssJs-transformed.glb");

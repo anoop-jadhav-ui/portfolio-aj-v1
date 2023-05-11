@@ -35,7 +35,6 @@ const MainBody = () => {
     experience,
     education,
     certifications,
-    skills,
     hobbies,
     feedback,
     contactDetails,
@@ -50,10 +49,9 @@ const MainBody = () => {
         {recentArticles && <RecentArticles />}
         {projects && <Projects />}
         {experience && <WorkExperience />}
-        {skills && <Skills3D />}
+        <Skills3D />
         {education && <Education />}
         {certifications && <Certifications />}
-        {/* {skills && <Skills />} */}
         {hobbies && <Hobbies />}
         {feedback && <Feedback />}
         {contactDetails && <Contact />}
