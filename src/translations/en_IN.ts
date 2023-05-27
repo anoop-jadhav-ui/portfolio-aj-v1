@@ -17,8 +17,7 @@ export default {
 
   SEND: "Send",
 
-  FEEDBACK_MESSAGE:
-    "Please leave a constructive feedback as this will help me improve.",
+  FEEDBACK_MESSAGE: "Leave Your Message Here.",
   CONTACT_DETAILS_MESSAGE:
     "Feel free to reach out to me on following platforms. Also please checkout my work on instagram and github. ",
 

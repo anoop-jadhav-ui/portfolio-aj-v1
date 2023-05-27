@@ -11,7 +11,9 @@ import SectionWrapper from "../../Organisms/SectionWrapper/SectionWrapper";
 import "./Feedback.scss";
 
 const Feedback = () => {
-  const [message, updateMessage] = useState<string>();
+  const [message, updateMessage] = useState<string>("");
+  const [name, updateName] = useState<string>("");
+
   const [bannerStatus, updateBannerStatus] = useState<BannerStatus>("neutral");
   const [showBanner, setShowBanner] = useState(false);
 
@@ -30,6 +32,9 @@ const Feedback = () => {
   function onFeedbackInputChange(e: React.FormEvent<HTMLTextAreaElement>) {
     updateMessage((e.target as HTMLTextAreaElement).value);
   }
+  function onNameInputChange(e: React.FormEvent<HTMLInputElement>) {
+    updateName((e.target as HTMLInputElement).value);
+  }
 
   const sendEmail = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -39,19 +44,20 @@ const Feedback = () => {
         updateBannerStatus("neutral");
         const response = await axiosInstance.post("/mail", {
           userEmail: emailId,
-          userMessage: `Message : ${message}`,
+          userMessage: message,
+          userName: name,
         });
 
         if (response.data.msg === "success") {
           updateBannerStatus("success");
+
+          updateMessage("");
+          updateName("");
         } else if (response.data.msg === "fail") {
           updateBannerStatus("error");
         }
-        updateMessage("");
       } catch (e: unknown) {
-        updateMessage("");
         updateBannerStatus("error");
-        console.error((e as DOMException).message as unknown as string);
       }
     }
   };
@@ -78,21 +84,26 @@ const Feedback = () => {
         method="POST"
       >
         <div className="subsection-data">
-          <label
-            htmlFor="feedback-box"
-            className="subsection-title body-text letterspacing-1"
-          >
+          <label htmlFor="feedback-box" className="subsection-title body-text">
             {T.FEEDBACK_MESSAGE}
           </label>
           <div className="primary-color body-text">
+            <input
+              id="name"
+              value={name}
+              placeholder="Your Name"
+              name="name"
+              onChange={onNameInputChange}
+              required
+            />
             <textarea
               id="feedback-box"
-              data-testid="feedback-box"
-              className=""
-              name="message"
               value={message}
-              placeholder={message}
+              className=""
+              placeholder="Your Message"
+              name="message"
               onChange={onFeedbackInputChange}
+              required
             />
           </div>
 

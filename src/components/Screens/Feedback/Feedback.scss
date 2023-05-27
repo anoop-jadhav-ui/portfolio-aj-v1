@@ -3,10 +3,16 @@
     margin-bottom: 1rem;
     display: block;
   }
+
+  input + textarea {
+    margin-top: 1rem;
+  }
+
   .buttonContainer {
     margin-top: 1rem;
   }
 }
+
 .loading .icon svg {
   animation: rotate360 1s linear infinite;
 }
