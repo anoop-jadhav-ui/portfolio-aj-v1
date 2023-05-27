@@ -3,6 +3,7 @@ import { useProfileDataContext } from "../../../context/ProfileDataContext";
 import Loader from "../../Atoms/Loader/Loader";
 import Header from "../../Molecules/Header/Header";
 import "./MainBody.scss";
+import Delayed from "../../Atoms/Delayed/Delayed";
 
 const Summary = lazy(() => import("../../Screens/Summary/Summary"));
 const Education = lazy(() => import("../../Screens/Education/Education"));
@@ -49,7 +50,9 @@ const MainBody = () => {
         {recentArticles && <RecentArticles />}
         {projects && <Projects />}
         {experience && <WorkExperience />}
-        <Skills3D />
+        <Delayed delay={2000}>
+          <Skills3D />
+        </Delayed>
         {education && <Education />}
         {certifications && <Certifications />}
         {hobbies && <Hobbies />}
