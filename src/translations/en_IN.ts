@@ -17,7 +17,8 @@ export default {
 
   SEND: "Send",
 
-  FEEDBACK_MESSAGE: "Please leave Your Message Here.",
+  FEEDBACK_MESSAGE:
+    "Thanks for visiting my portfolio app. Please drop a constructive feedback as this will help me improve.",
   CONTACT_DETAILS_MESSAGE:
     "Feel free to reach out to me on following platforms. Also please checkout my work on instagram and github. ",
 
