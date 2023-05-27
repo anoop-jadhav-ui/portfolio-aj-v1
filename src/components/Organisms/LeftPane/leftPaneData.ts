@@ -58,9 +58,9 @@ const leftPaneDataObj: Array<LeftPaneMenuItem> = [
     headerPos: 0,
   },
   {
-    class: constants.classNames.FEEDBACK,
-    label: "Feedback",
-    id: "feedback",
+    class: constants.classNames.MESSAGE_FORM,
+    label: "Get In Touch",
+    id: "messageForm",
     headerPos: 0,
   },
   {

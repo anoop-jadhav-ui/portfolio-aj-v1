@@ -15,7 +15,7 @@ const Certifications = lazy(
 );
 const Skills3D = lazy(() => import("../../Screens/Skills3D/Skills3D"));
 const Hobbies = lazy(() => import("../../Screens/Hobbies/Hobbies"));
-const Feedback = lazy(() => import("../../Screens/Feedback/Feedback"));
+const MessageForm = lazy(() => import("../../Screens/MessageForm/MessageForm"));
 const Contact = lazy(() => import("../../Screens/Contact/Contact"));
 const Projects = lazy(() => import("../../Screens/Projects/Projects"));
 const RecentArticles = lazy(
@@ -37,7 +37,7 @@ const MainBody = () => {
     education,
     certifications,
     hobbies,
-    feedback,
+    messageForm,
     contactDetails,
     recentArticles,
   } = appFeatureAvailability;
@@ -56,7 +56,7 @@ const MainBody = () => {
         {education && <Education />}
         {certifications && <Certifications />}
         {hobbies && <Hobbies />}
-        {feedback && <Feedback />}
+        {messageForm && <MessageForm />}
         {contactDetails && <Contact />}
       </Suspense>
     </div>

@@ -8,7 +8,7 @@ export default {
   CERTIFICATIONS: "Certifications",
   SKILLS: "Skills",
   HOBBIES_AND_INTERESTS: "Hobbies & Interests",
-  FEEDBACK: "Feedback",
+  MESSAGE_FORM_TITLE: "Get in Touch",
 
   CONTACT_DETAILS: "Contact Details",
 
@@ -17,8 +17,8 @@ export default {
 
   SEND: "Send",
 
-  FEEDBACK_MESSAGE:
-    "Thanks for visiting my portfolio app. Please drop a constructive feedback as this will help me improve.",
+  MESSAGE_FORM_SUBTITLE:
+    "Get in touch with me today and let's start a conversation about your project or inquiry!",
   CONTACT_DETAILS_MESSAGE:
     "Feel free to reach out to me on following platforms. Also please checkout my work on instagram and github. ",
 
@@ -30,10 +30,10 @@ export default {
   DOWNLOAD_CV: "Download CV",
   PAGE_LOAD_ERROR: "Oops ! Something went wrong. Please try again",
 
-  THANK_YOU_FOR_FEEDBACK: "Thank you for your feedback.",
+  MESSAGE_SENT_SUCCESS: "Message sent successfully.",
   SORRY_COULDNT_SEND_MSG:
     "Sorry couldn't send your message. Please try again later.",
-  SUBMITTING_FEEDBACK: "Submitting your feedback...",
+  SENDING_MESSAGE: "Sending your message...",
 
   HELLO: "Hello, I am",
 

@@ -4,7 +4,7 @@
     "contactDetails": true,
     "education": true,
     "experience": true,
-    "feedback": true,
+    "messageForm": true,
     "hobbies": false,
     "overview": true,
     "projects": true,
@@ -40,7 +40,7 @@
     }
   ],
   "contactDetails": {
-    "contactNumber": "(+91) 9028665267",
+    "contactNumber": "(+91) 7718944156",
     "emailId": "anoopjadhav@gmail.com",
     "github": "https://github.com/anoop-jadhav-ui",
     "instaId": "anoop.dev",
