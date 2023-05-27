@@ -22,10 +22,7 @@ const defaultFeatureToggles: FeatureToggles = {
   recentArticles: false,
 };
 
-const defaultCertifications: Certifications = {
-  design: [],
-  development: [],
-};
+const defaultCertifications: Certifications = [];
 
 const defaultContact: Contact = {
   contactNumber: "",

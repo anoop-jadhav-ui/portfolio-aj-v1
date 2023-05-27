@@ -8,56 +8,37 @@
     "hobbies": false,
     "overview": true,
     "projects": true,
-    "skills": true,
+    "skills": false,
     "summary": true,
     "recentArticles": true
   },
-  "certifications": {
-    "design": [
-      {
-        "name": "Drawing Vector Graphics: Iconography",
-        "summary": "Lynda.com - Deke McClelland",
-        "urlToCertificate": "https://www.linkedin.com/in/anoop-jadhav-44528258/"
-      },
-      {
-        "name": "Illustrator CC 2017 One-on-One Fundamentals",
-        "summary": "Lynda.com - Deke McClelland",
-        "urlToCertificate": "https://www.linkedin.com/in/anoop-jadhav-44528258/"
-      },
-      {
-        "name": "Creating a Design System with Sketch",
-        "summary": "Lynda.com - Deke McClelland",
-        "urlToCertificate": "https://www.linkedin.com/in/anoop-jadhav-44528258/"
-      },
-      {
-        "name": "Learning Graphic Design: Layouts, Presentations, Cropping Photographs, Things Every Designer Should Know",
-        "summary": "John McWade",
-        "urlToCertificate": "https://www.linkedin.com/in/anoop-jadhav-44528258/"
-      }
-    ],
-    "development": [
-      {
-        "name": "React Js Hackerrank Certification",
-        "summary": "React Js - Basic Hackerrank certifcation.",
-        "urlToCertificate": "https://www.linkedin.com/in/anoop-jadhav-44528258/"
-      },
-      {
-        "name": "Microsoft Technology Associate - Web Development Fundamentals",
-        "summary": "Started my journey as a UI developer in my college days where I opted for this certification which involved learning HTML, CSS, JavaScript and .Net Fundamentals.",
-        "urlToCertificate": "https://www.linkedin.com/in/anoop-jadhav-44528258/"
-      },
-      {
-        "name": "HTML5: Structure, Syntax, and Semantics",
-        "summary": "Lynda.com",
-        "urlToCertificate": "https://www.linkedin.com/in/anoop-jadhav-44528258/"
-      },
-      {
-        "name": "Learning Git and GitHub",
-        "summary": "Lynda.com",
-        "urlToCertificate": "https://www.linkedin.com/in/anoop-jadhav-44528258/"
-      }
-    ]
-  },
+  "certifications": [
+    {
+      "name": "JavaScript (Basic)",
+      "summary": "Hackerrank.com",
+      "urlToCertificate": "https://www.hackerrank.com/certificates/b3e84c63b9a0"
+    },
+    {
+      "name": "JavaScript (Intermediate)",
+      "summary": "Hackerrank.com",
+      "urlToCertificate": "https://www.hackerrank.com/certificates/d7658d7858e9"
+    },
+    {
+      "name": "React Js (Basic)",
+      "summary": "Hackerrank.com",
+      "urlToCertificate": "https://www.hackerrank.com/certificates/22cc457da9f4"
+    },
+    {
+      "name": "HTML5: Structure, Syntax, and Semantics",
+      "summary": "Lynda.com",
+      "urlToCertificate": "https://www.linkedin.com/in/anoop-jadhav-44528258/"
+    },
+    {
+      "name": "Learning Git and GitHub",
+      "summary": "Lynda.com",
+      "urlToCertificate": "https://www.linkedin.com/in/anoop-jadhav-44528258/"
+    }
+  ],
   "contactDetails": {
     "contactNumber": "(+91) 9028665267",
     "emailId": "anoopjadhav@gmail.com",

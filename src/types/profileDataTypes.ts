@@ -19,10 +19,7 @@ export interface CertificateDetails {
   urlToCertificate: string;
 }
 
-export interface Certifications {
-  design: Array<CertificateDetails>;
-  development: Array<CertificateDetails>;
-}
+export type Certifications = Array<CertificateDetails>;
 
 export interface Contact {
   contactNumber: string;
