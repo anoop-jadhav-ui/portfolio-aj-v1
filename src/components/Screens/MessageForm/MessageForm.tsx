@@ -70,7 +70,6 @@ const MessageForm = () => {
           type={bannerStatus}
           text={getBannerMessage[bannerStatus]}
           closeBanner={() => {
-            updateMessage("");
             updateBannerStatus("neutral");
             setShowBanner(false);
           }}
