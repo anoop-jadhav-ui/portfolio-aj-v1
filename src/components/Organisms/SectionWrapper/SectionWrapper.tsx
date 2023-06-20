@@ -35,9 +35,7 @@ const SectionInViewIdentifier = ({ sectionName }: { sectionName: string }) => {
 const SectionWrapper =
   (Component: () => JSX.Element, sectionName: string) => () => {
     return (
-      <div
-        className={`${sectionName} section animate__animated animate__fadeIn`}
-      >
+      <div className={`${sectionName} section`}>
         <SectionInViewIdentifier sectionName={sectionName} />
         <Component />
       </div>

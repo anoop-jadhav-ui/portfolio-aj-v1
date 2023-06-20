@@ -1,19 +1,20 @@
 .banner {
   margin: 2rem;
   position: fixed;
-  top: 1rem;
+  bottom: 1rem;
   left: 50%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 40%;
 
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   border-radius: var(--border-radius);
   padding: 0.5rem 1rem;
   color: white !important;
 
   transform: translateX(-50%);
-  z-index: 100001;
+  z-index: 200;
 
   &.success-banner {
     background: var(--green);
@@ -67,7 +68,7 @@
 /* Medium devices (tablets, 768px and up)*/
 @media (max-width: 1200px) {
   .banner {
-    top: 0;
+    bottom: 0;
     left: 0;
     padding: 1rem !important;
     margin-top: 1rem;

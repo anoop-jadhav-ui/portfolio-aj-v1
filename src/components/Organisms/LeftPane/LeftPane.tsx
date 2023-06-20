@@ -21,7 +21,7 @@ const LeftPane = () => {
 
   return (
     <div
-      className={`left-pane position-fixed d-none d-md-block ${
+      className={`left-pane position-fixed ${
         leftPaneVisible ? "open" : "closed"
       }`}
     >
