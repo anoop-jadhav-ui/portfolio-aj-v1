@@ -8,7 +8,7 @@
     "hobbies": false,
     "overview": true,
     "projects": true,
-    "skills": false,
+    "skills": true,
     "summary": true,
     "recentArticles": true
   },
@@ -186,7 +186,7 @@
         "skillValue": "60"
       },
       {
-        "skillName": "Threejs",
+        "skillName": "Three.js",
         "skillValue": "40"
       }
     ]

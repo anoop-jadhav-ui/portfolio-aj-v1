@@ -2,8 +2,8 @@ import React, { lazy, Suspense } from "react";
 import { useProfileDataContext } from "../../../context/ProfileDataContext";
 import Loader from "../../Atoms/Loader/Loader";
 import Header from "../../Molecules/Header/Header";
+import Skills from "../../Screens/Skills/Skills";
 import "./MainBody.scss";
-import Delayed from "../../Atoms/Delayed/Delayed";
 
 const Summary = lazy(() => import("../../Screens/Summary/Summary"));
 const Education = lazy(() => import("../../Screens/Education/Education"));
@@ -40,6 +40,7 @@ const MainBody = () => {
     messageForm,
     contactDetails,
     recentArticles,
+    skills,
   } = appFeatureAvailability;
 
   return (
@@ -50,9 +51,7 @@ const MainBody = () => {
         {recentArticles && <RecentArticles />}
         {projects && <Projects />}
         {experience && <WorkExperience />}
-        <Delayed delay={2000}>
-          <Skills3D />
-        </Delayed>
+        {skills && <Skills />}
         {education && <Education />}
         {certifications && <Certifications />}
         {hobbies && <Hobbies />}
