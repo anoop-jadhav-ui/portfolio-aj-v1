@@ -21,10 +21,7 @@ const Skills = () => {
         <div className="subsection-data">
           {development.map((skill, key) => {
             return (
-              <div
-                key={String(key)}
-                className="skill-bar-wrapper row no-gutters align-items-center"
-              >
+              <div key={String(key)} className="skill-bar-wrapper">
                 <div className="skill-label grey-1 body-text bold">
                   {skill.skillName}
                 </div>
@@ -41,10 +38,7 @@ const Skills = () => {
         <div className="subsection-data">
           {design.map((skill, key) => {
             return (
-              <div
-                key={String(key)}
-                className="skill-bar-wrapper row no-gutters align-items-center"
-              >
+              <div key={String(key)} className="skill-bar-wrapper">
                 <div className="skill-label grey-1 body-text bold">
                   {skill.skillName}
                 </div>
