@@ -1,5 +1,7 @@
 .buttonContainer {
   perspective: 320px;
+  perspective-origin: bottom;
+
   display: inline-block;
   padding-bottom: 0.5rem;
 
@@ -13,27 +15,36 @@
     position: relative;
 
     transition: 0.1s linear;
-    transform-origin: center;
     transform-style: preserve-3d;
+    transform-origin: center;
 
     &:after {
       content: "";
       position: absolute;
       width: 100%;
       height: 100%;
+      box-sizing: border-box;
+
       border: 1px solid var(--primary-color);
       border-radius: var(--border-radius);
+
       top: 0;
       left: 0;
-      transform: translate3d(0, 0, -1rem);
+
+      transform: translateZ(-1rem);
+    }
+
+    &.safari:after {
+      display: none;
     }
 
     &:hover {
+      cursor: pointer;
       transform: rotate3d(1, 0, 0, 24deg);
     }
 
     &:active {
-      transform: translate3d(0, 0, -2rem);
+      transform: translateZ(-1rem);
     }
 
     &.with-label .icon {

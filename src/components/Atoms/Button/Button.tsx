@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import "./Button.scss";
 import { IconType } from "react-icons";
+import useBrowserType from "../../../hooks/useBrowserType";
+import "./Button.scss";
 
 interface ButtonProps {
   label?: string;
@@ -37,11 +38,13 @@ const Button = ({
     onClick?.();
   };
 
+  const browser = useBrowserType();
+
   return (
     <div className="buttonContainer">
       <button
         onClick={animateClick}
-        className={`${variant} button ${className} ${
+        className={`${variant} ${browser} button ${className} ${
           label ? "with-label" : "no-label"
         }`}
         type={type}
