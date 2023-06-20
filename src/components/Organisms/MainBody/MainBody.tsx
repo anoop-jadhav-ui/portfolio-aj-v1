@@ -2,9 +2,9 @@ import React, { lazy, Suspense } from "react";
 import { useProfileDataContext } from "../../../context/ProfileDataContext";
 import Loader from "../../Atoms/Loader/Loader";
 import Header from "../../Molecules/Header/Header";
-import Skills from "../../Screens/Skills/Skills";
 import "./MainBody.scss";
 
+const Skills = lazy(() => import("../../Screens/Skills/Skills"));
 const Summary = lazy(() => import("../../Screens/Summary/Summary"));
 const Education = lazy(() => import("../../Screens/Education/Education"));
 const WorkExperience = lazy(
