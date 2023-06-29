@@ -3,11 +3,10 @@ import React, {
   ReactNode,
   useContext,
   useEffect,
-  useLayoutEffect,
   useState,
 } from "react";
-import usePersistState from "../hooks/usePersistState";
 import { isMobile as isDeviceMobile } from "react-device-detect";
+import usePersistState from "../hooks/usePersistState";
 
 interface ThemeContextType {
   darkMode: boolean;
@@ -34,15 +33,15 @@ const ThemeContextProvider = ({ children }: { children: ReactNode }) => {
     console.log("color scheme ", isDark ? "🌃" : "🌻");
   }, []);
 
-  useLayoutEffect(() => {
-    window
-      .matchMedia("(prefers-color-scheme: dark)")
-      .addEventListener("change", function (e) {
-        const isDark = e.matches;
-        setDarkMode(isDark);
-        console.log("color scheme changed to ", isDark ? "🌻" : "🌃");
-      });
-  }, []);
+  // useLayoutEffect(() => {
+  //   window
+  //     .matchMedia("(prefers-color-scheme: dark)")
+  //     .addEventListener("change", function (e) {
+  //       const isDark = e.matches;
+  //       setDarkMode(isDark);
+  //       console.log("color scheme changed to ", isDark ? "🌻" : "🌃");
+  //     });
+  // }, []);
 
   useEffect(() => {
     if (darkMode) {
@@ -52,6 +51,7 @@ const ThemeContextProvider = ({ children }: { children: ReactNode }) => {
       document.querySelector("body")?.classList.add("light");
       document.querySelector("body")?.classList.remove("dark");
     }
+    console.log("color scheme changed to ", darkMode ? "🌃" : "🌻");
   }, [darkMode]);
 
   return (
