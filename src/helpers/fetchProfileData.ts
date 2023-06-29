@@ -8,7 +8,6 @@ export default async function fetchProfileData() {
       console.log("Loading local data. Skipping the api call.");
       return testProfileData;
     } else {
-      console.log("Making an actual api call");
       const dbRef = ref(getDatabase(firebaseApp));
       const snapshot = await get(child(dbRef, "/"));
       if (snapshot.exists()) {

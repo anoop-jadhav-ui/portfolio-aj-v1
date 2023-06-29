@@ -31,7 +31,7 @@ const ThemeContextProvider = ({ children }: { children: ReactNode }) => {
     setIsMobile(isDeviceMobile);
     const isDark = window?.matchMedia("(prefers-color-scheme: dark)").matches;
     setDarkMode(isDark);
-    console.log("default color scheme ", isDark ? "" : "🌃");
+    console.log("color scheme ", isDark ? "🌃" : "🌻");
   }, []);
 
   useLayoutEffect(() => {
