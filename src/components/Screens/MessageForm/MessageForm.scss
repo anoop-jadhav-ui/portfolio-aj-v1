@@ -1,16 +1,13 @@
 .message-content {
   .subsection-title {
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
     display: block;
-  }
-
-  input + textarea {
-    margin-top: 1rem;
   }
 
   .buttonContainer {
     margin-top: 1rem;
   }
+
   .form-wrapper {
     display: grid;
     gap: 1rem;
@@ -58,5 +55,19 @@
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+
+// Mobile
+@media (max-width: 768px) {
+  .message-content {
+    .form-wrapper {
+      grid-template-columns: 1fr;
+      .input-form-control {
+        &:last-child {
+          grid-column: span 1;
+        }
+      }
+    }
   }
 }
