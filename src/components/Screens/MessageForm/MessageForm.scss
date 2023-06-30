@@ -28,7 +28,7 @@
 
       input.highlight-error,
       textarea.highlight-error {
-        border: 2px solid var(--primary-color);
+        border: var(--border-width) solid var(--primary-color);
       }
 
       label {

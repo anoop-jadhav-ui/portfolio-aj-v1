@@ -241,7 +241,7 @@ body {
   input {
     @include card-bg;
     width: 100%;
-    border: 2px solid var(--grey7);
+    border: var(--border-width) solid var(--grey7);
     height: 2.5rem;
     padding: 0 1rem;
     border-radius: var(--border-radius);
@@ -253,7 +253,7 @@ body {
   textarea {
     @include card-bg;
     width: 100%;
-    border: 2px solid var(--grey7);
+    border: var(--border-width) solid var(--grey7);
     height: 6.5rem;
     padding: 0.5rem 1rem;
     border-radius: var(--border-radius);
