@@ -26,7 +26,7 @@
   position: fixed;
   top: 10rem;
   border-radius: var(--border-radius);
-  border: 1px solid var(--grey7);
+  border: var(--border-width) solid var(--grey7);
   width: 14.5rem;
   animation: slideInFromLeft 0.5s ease-in-out forwards;
   @include card-bg;
@@ -48,10 +48,10 @@
     .toggle-button {
       right: -3rem;
       border-radius: 0 var(--border-radius) var(--border-radius) 0;
-      border: 1px solid var(--grey7);
+      border: var(--border-width) solid var(--grey7);
       &:hover {
         background: var(--grey9);
-        border: 1px solid var(--primary-color);
+        border: var(--border-width) solid var(--primary-color);
       }
     }
     .arrow {

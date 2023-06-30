@@ -1,7 +1,7 @@
 @import "../../../mixins";
 
 .article-card {
-  border: 1px solid var(--grey7);
+  border: var(--border-width) solid var(--grey7);
   border-radius: var(--border-radius);
   overflow: hidden;
   width: calc(
@@ -17,7 +17,7 @@
 
   &:hover {
     @include card-bg;
-    border: 1px solid var(--primary-color);
+    border: var(--border-width) solid var(--primary-color);
   }
 
   .article-content {

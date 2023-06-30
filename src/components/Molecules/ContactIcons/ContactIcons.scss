@@ -30,7 +30,7 @@
 .inside-leftpane {
   padding: 1rem 1.5rem;
   position: relative;
-  border-top: 1px solid var(--grey7);
+  border-top: var(--border-width) solid var(--grey7);
 
   width: 100%;
   display: flex;

@@ -25,7 +25,7 @@
       height: 100%;
       box-sizing: border-box;
 
-      border: 1px solid var(--primary-color);
+      border: var(--border-width) solid var(--primary-color);
       border-radius: var(--border-radius);
 
       top: 0;
@@ -58,7 +58,7 @@
     }
 
     &.neutral {
-      border: 1px solid var(--grey7);
+      border: var(--border-width) solid var(--grey7);
       color: var(--primary-color);
       background: var(--grey10);
     }
