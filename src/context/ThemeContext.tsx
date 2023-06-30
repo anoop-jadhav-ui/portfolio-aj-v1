@@ -30,7 +30,6 @@ const ThemeContextProvider = ({ children }: { children: ReactNode }) => {
     setIsMobile(isDeviceMobile);
     const isDark = window?.matchMedia("(prefers-color-scheme: dark)").matches;
     setDarkMode(isDark);
-    console.log("color scheme ", isDark ? "🌃" : "🌻");
   }, []);
 
   // useLayoutEffect(() => {
@@ -39,7 +38,6 @@ const ThemeContextProvider = ({ children }: { children: ReactNode }) => {
   //     .addEventListener("change", function (e) {
   //       const isDark = e.matches;
   //       setDarkMode(isDark);
-  //       console.log("color scheme changed to ", isDark ? "🌻" : "🌃");
   //     });
   // }, []);
 
@@ -51,7 +49,7 @@ const ThemeContextProvider = ({ children }: { children: ReactNode }) => {
       document.querySelector("body")?.classList.add("light");
       document.querySelector("body")?.classList.remove("dark");
     }
-    console.log("color scheme changed to ", darkMode ? "🌃" : "🌻");
+    console.log("color scheme", darkMode ? "🌑" : "🌞");
   }, [darkMode]);
 
   return (
