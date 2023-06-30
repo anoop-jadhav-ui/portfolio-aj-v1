@@ -283,6 +283,13 @@ body {
   }
 }
 
+// Mobile
+@media (max-width: 768px) {
+  body {
+    --border-width: 1px;
+  }
+}
+
 /* Medium devices (tablets, 768px and up)*/
 @media (max-width: 1200px) {
   :root {

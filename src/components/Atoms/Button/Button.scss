@@ -52,6 +52,7 @@
     }
 
     &.brand {
+      border: var(--border-width) solid var(--primary-color);
       background: var(--primary-color);
       color: var(--grey10);
       border: 0;
