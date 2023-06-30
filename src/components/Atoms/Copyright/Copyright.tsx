@@ -3,7 +3,8 @@ import "./Copyright.scss";
 export default function Copyright() {
   return (
     <div className="copyright">
-      <span>Copyright &copy; {new Date().getFullYear()} Anoop Jadhav</span>
+      Made with <span className="heart primary-color">❤</span> by{" "}
+      <span className="bold primary-color name">Anoop Jadhav</span>
     </div>
   );
 }
