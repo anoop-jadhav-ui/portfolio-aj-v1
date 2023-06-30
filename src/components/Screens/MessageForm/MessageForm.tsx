@@ -93,7 +93,7 @@ const MessageForm = () => {
               <label htmlFor="name">Full Name</label>
               <input
                 {...register("name", {
-                  required: "Please enter your full name.",
+                  required: "Please enter your full name",
                 })}
                 placeholder="John Cena"
                 name="name"
@@ -110,7 +110,7 @@ const MessageForm = () => {
               <label htmlFor="email">Email Address</label>
               <input
                 {...register("email", {
-                  required: "Please enter your email address.",
+                  required: "Please enter your email address",
                   validate: {
                     maxLength: (v) =>
                       v.length <= 50 ||
@@ -136,7 +136,7 @@ const MessageForm = () => {
               <label htmlFor="message">Message</label>
               <textarea
                 {...register("message", {
-                  required: "Please enter your message.",
+                  required: "Please enter your message",
                 })}
                 placeholder="Tell me more about your project, needs and timeline."
                 name="message"
