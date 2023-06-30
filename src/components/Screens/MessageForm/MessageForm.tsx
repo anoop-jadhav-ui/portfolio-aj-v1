@@ -95,7 +95,7 @@ const MessageForm = () => {
                 {...register("name", {
                   required: "Please enter your full name",
                 })}
-                placeholder="John Cena"
+                placeholder="John Doe"
                 name="name"
                 id="name"
                 className={Boolean(errors.name) ? "highlight-error" : ""}
@@ -120,7 +120,7 @@ const MessageForm = () => {
                       "Email address must be a valid address",
                   },
                 })}
-                placeholder="johncena@gmail.com"
+                placeholder="johndoe007@gmail.com"
                 name="email"
                 type="email"
                 id="email"
