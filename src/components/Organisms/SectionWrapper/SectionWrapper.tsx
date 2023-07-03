@@ -1,6 +1,5 @@
-import React, { useEffect, useRef } from "react";
+import React, { useCallback, useEffect, useRef } from "react";
 import { useSectionInViewContext } from "../../../context/SectionInViewContext";
-import useScrollPosition from "../../../hooks/useScrollPosition";
 import "./SectionWrapper.scss";
 
 export const isElementInViewport = (el: HTMLDivElement) => {
@@ -18,24 +17,43 @@ export const isElementInViewport = (el: HTMLDivElement) => {
 };
 
 const SectionInViewIdentifier = ({ sectionName }: { sectionName: string }) => {
-  const { scrollPosition } = useScrollPosition();
   const { setCurrentSectionInView } = useSectionInViewContext();
   const compRef = useRef<HTMLDivElement>(null);
 
+  const handleIntersection = useCallback(
+    (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setCurrentSectionInView(sectionName);
+        }
+      });
+    },
+    []
+  );
+
   useEffect(() => {
-    const currentComponent = compRef?.current;
-    if (currentComponent && isElementInViewport(currentComponent)) {
-      setCurrentSectionInView(sectionName);
+    let observer: IntersectionObserver;
+    if (compRef.current) {
+      observer = new IntersectionObserver(handleIntersection);
+      observer.observe(compRef.current);
     }
-  }, [scrollPosition]);
+    return () => {
+      observer?.disconnect();
+    };
+  }, [compRef.current]);
 
   return <div ref={compRef} className="section-floating-element" />;
 };
 
 const SectionWrapper =
   (Component: () => JSX.Element, sectionName: string) => () => {
+    const { currentSectionInView } = useSectionInViewContext();
     return (
-      <div className={`${sectionName} section`}>
+      <div
+        className={`${sectionName} section ${
+          sectionName === currentSectionInView ? "section-in-view" : ""
+        }`}
+      >
         <SectionInViewIdentifier sectionName={sectionName} />
         <Component />
       </div>

@@ -13,7 +13,6 @@ const WorkExperience = lazy(
 const Certifications = lazy(
   () => import("../../Screens/Certifications/Certifications")
 );
-const Skills3D = lazy(() => import("../../Screens/Skills3D/Skills3D"));
 const Hobbies = lazy(() => import("../../Screens/Hobbies/Hobbies"));
 const MessageForm = lazy(() => import("../../Screens/MessageForm/MessageForm"));
 const Contact = lazy(() => import("../../Screens/Contact/Contact"));
