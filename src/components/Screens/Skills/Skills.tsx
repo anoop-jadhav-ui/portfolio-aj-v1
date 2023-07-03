@@ -1,11 +1,11 @@
 import React from "react";
-import BarGraph from "../../Atoms/BarGraph/BarGraph";
-import "./Skills.scss";
 import { useProfileDataContext } from "../../../context/ProfileDataContext";
-import SectionVisibilityHOC from "../../Organisms/SectionWrapper/SectionWrapper";
-import T from "../../../translations/en_IN";
-import constants from "../../../helpers/constants";
 import { useSectionInViewContext } from "../../../context/SectionInViewContext";
+import constants from "../../../helpers/constants";
+import T from "../../../translations/en_IN";
+import BarGraph from "../../Atoms/BarGraph/BarGraph";
+import SectionVisibilityHOC from "../../Organisms/SectionWrapper/SectionWrapper";
+import "./Skills.scss";
 
 const Skills = () => {
   const {

@@ -2,25 +2,26 @@
   width: 3rem;
   height: 3rem;
   position: absolute;
-  top: 50%;
+  top: calc(50% + var(--section-padding));
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
   // border: 1px solid red;
 }
 
 .section {
+  --section-padding: 8.25rem;
   position: relative;
-  transform: translateY(2rem);
+  // transform: translateY(1.5rem);
   transition: transform 0.3s ease-in-out;
 
-  &.section-in-view {
-    transform: translateY(0);
-  }
+  // &.section-in-view {
+  //   transform: translateY(0);
+  // }
 }
 
 /*Section spacing*/
 .section + .section {
-  padding-top: 8.25rem;
+  padding-top: var(--section-padding);
 }
 
 .section-title {
