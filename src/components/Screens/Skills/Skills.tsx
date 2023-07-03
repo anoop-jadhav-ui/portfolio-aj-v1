@@ -5,12 +5,17 @@ import { useProfileDataContext } from "../../../context/ProfileDataContext";
 import SectionVisibilityHOC from "../../Organisms/SectionWrapper/SectionWrapper";
 import T from "../../../translations/en_IN";
 import constants from "../../../helpers/constants";
+import { useSectionInViewContext } from "../../../context/SectionInViewContext";
 
 const Skills = () => {
   const {
     profileData: { skills },
   } = useProfileDataContext();
   const { development, design } = skills;
+  const { currentSectionInView } = useSectionInViewContext();
+
+  const isSkillsSectionVisible =
+    currentSectionInView === constants.classNames.SKILLS;
   return (
     <>
       <div className="section-title h2 bold">{T.SKILLS}</div>
@@ -25,7 +30,10 @@ const Skills = () => {
                 <div className="skill-label grey-1 body-text bold">
                   {skill.skillName}
                 </div>
-                <BarGraph value={skill.skillValue} animate={true} />
+                <BarGraph
+                  value={skill.skillValue}
+                  animate={isSkillsSectionVisible}
+                />
               </div>
             );
           })}
@@ -42,7 +50,10 @@ const Skills = () => {
                 <div className="skill-label grey-1 body-text bold">
                   {skill.skillName}
                 </div>
-                <BarGraph value={skill.skillValue} animate={true} />
+                <BarGraph
+                  value={skill.skillValue}
+                  animate={isSkillsSectionVisible}
+                />
               </div>
             );
           })}
