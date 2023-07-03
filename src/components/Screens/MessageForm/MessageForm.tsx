@@ -98,7 +98,7 @@ const MessageForm = () => {
                 placeholder="John Doe"
                 name="name"
                 id="name"
-                className={Boolean(errors.name) ? "highlight-error" : ""}
+                className={errors.name ? "highlight-error" : ""}
               />
               {errors.name && (
                 <span className="error-message-label">
@@ -124,7 +124,7 @@ const MessageForm = () => {
                 name="email"
                 type="email"
                 id="email"
-                className={Boolean(errors.email) ? "highlight-error" : ""}
+                className={errors.email ? "highlight-error" : ""}
               />
               {errors.email && (
                 <span className="error-message-label">
@@ -140,7 +140,7 @@ const MessageForm = () => {
                 })}
                 placeholder="Tell me more about your project, needs and timeline."
                 name="message"
-                className={Boolean(errors.message) ? "highlight-error" : ""}
+                className={errors.message ? "highlight-error" : ""}
               />
               {errors.message && (
                 <span className="error-message-label">

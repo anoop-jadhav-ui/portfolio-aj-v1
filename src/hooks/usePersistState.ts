@@ -5,11 +5,11 @@ function usePersistState<T>(
   defaultValue: T
 ): [T, (value: T) => void] {
   const [value, setValue] = useState<T>(() => {
-    const returnVal = localStorage.getItem(key);
+    const returnVal = sessionStorage.getItem(key);
     if (returnVal) {
       return JSON.parse(returnVal);
     } else {
-      localStorage.setItem(key, JSON.stringify(defaultValue));
+      sessionStorage.setItem(key, JSON.stringify(defaultValue));
       return defaultValue;
     }
   });
@@ -17,7 +17,7 @@ function usePersistState<T>(
   return [
     value,
     (newValue) => {
-      localStorage.setItem(key, JSON.stringify(newValue));
+      sessionStorage.setItem(key, JSON.stringify(newValue));
       setValue(newValue);
     },
   ];

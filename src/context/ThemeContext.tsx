@@ -28,18 +28,7 @@ const ThemeContextProvider = ({ children }: { children: ReactNode }) => {
 
   useEffect(() => {
     setIsMobile(isDeviceMobile);
-    const isDark = window?.matchMedia("(prefers-color-scheme: dark)").matches;
-    setDarkMode(isDark);
   }, []);
-
-  // useLayoutEffect(() => {
-  //   window
-  //     .matchMedia("(prefers-color-scheme: dark)")
-  //     .addEventListener("change", function (e) {
-  //       const isDark = e.matches;
-  //       setDarkMode(isDark);
-  //     });
-  // }, []);
 
   useEffect(() => {
     if (darkMode) {
