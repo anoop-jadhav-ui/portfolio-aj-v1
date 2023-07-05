@@ -138,7 +138,7 @@ const MessageForm = () => {
                 {...register("message", {
                   required: "Please enter your message",
                 })}
-                placeholder="Tell me more about your project, needs and timeline."
+                placeholder="Tell me more about your project needs and timeline."
                 name="message"
                 className={errors.message ? "highlight-error" : ""}
               />
