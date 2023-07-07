@@ -1,13 +1,15 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { BiLeftArrow } from "react-icons/bi";
-
 import { useProfileDataContext } from "../../../context/ProfileDataContext";
 import { useSectionInViewContext } from "../../../context/SectionInViewContext";
 import usePersistState from "../../../hooks/usePersistState";
 import LeftPaneItem from "../../Atoms/LeftPaneItem/LeftPaneItem";
 import ContactIcons from "../../Molecules/ContactIcons/ContactIcons";
 import "./LeftPane.scss";
+
 const LeftPane = () => {
+  const { t } = useTranslation();
   const { leftPaneData } = useProfileDataContext();
   const { currentSectionInView } = useSectionInViewContext();
   const [leftPaneVisible, setLeftPaneVisibility] = usePersistState(
@@ -27,7 +29,7 @@ const LeftPane = () => {
     >
       <div className="left-pane-header-container">
         <div className="left-pane-header bold uppercase letterspacing-1">
-          Skip to section
+          {t("skipToSection")}
         </div>
         <div
           className="toggle-button"

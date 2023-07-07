@@ -33,7 +33,7 @@ export default function Header() {
         <Logo />
         <div className="menu">
           <div className="menuItem selected">
-            <a href="/"> {t("HOME")}</a>
+            <a href="/"> {t("home")}</a>
           </div>
           <div className="menuItem">
             <a
@@ -41,7 +41,7 @@ export default function Header() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              {t("BLOGS")}
+              {t("blogs")}
             </a>
           </div>
           <div className="menuItem">

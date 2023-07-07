@@ -21,7 +21,7 @@ export const App = () => {
   const { t } = useTranslation();
 
   return (
-    <ErrorBoundary errorMessage={t("PAGE_LOAD_ERROR")}>
+    <ErrorBoundary errorMessage={t("pageLoadError")}>
       {!isProfileDataLoaded ? (
         <Loader />
       ) : (

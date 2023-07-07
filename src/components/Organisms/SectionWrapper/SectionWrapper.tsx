@@ -52,7 +52,7 @@ const SectionWrapper =
     const { currentSectionInView } = useSectionInViewContext();
     const { t } = useTranslation();
     return (
-      <ErrorBoundary errorMessage={t("SECTION_LOAD_ERROR")}>
+      <ErrorBoundary errorMessage={t("sectionLoadError")}>
         <div
           className={`${sectionName} section ${
             sectionName === currentSectionInView ? "section-in-view" : ""

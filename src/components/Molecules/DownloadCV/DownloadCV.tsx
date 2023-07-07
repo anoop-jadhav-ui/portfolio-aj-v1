@@ -19,7 +19,7 @@ const DownloadCV = () => {
         onClick={downloadCVHandler}
         variant="brand"
         Icon={CgSoftwareDownload}
-        label={t("DOWNLOAD_CV")}
+        label={t("downloadCv")}
       />
     </div>
   );

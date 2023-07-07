@@ -53,7 +53,7 @@ const Summary = () => {
         />
       </div>
 
-      <div className="bold primary-color hello">{t("HELLO")}</div>
+      <div className="bold primary-color hello">{t("hello")}</div>
       <div className="h1 bold main-title grey-1 typewriter">
         {overview.name}
       </div>

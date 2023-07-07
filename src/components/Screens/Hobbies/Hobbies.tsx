@@ -11,7 +11,7 @@ function Hobbies() {
   const { t } = useTranslation();
   return (
     <>
-      <div className="section-title h2 bold">{t("HOBBIES_AND_INTERESTS")}</div>
+      <div className="section-title h2 bold">{t("hobbiesAndInterests")}</div>
       <div className="subsection">
         {hobbies.map((hobby, key) => {
           return (

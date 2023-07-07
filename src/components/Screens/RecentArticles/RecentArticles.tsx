@@ -18,7 +18,7 @@ function RecentArticles() {
     <>
       {recentArticles?.length > 0 && (
         <>
-          <div className="section-title h2 bold">{t("RECENT_ARTICLES")}</div>
+          <div className="section-title h2 bold">{t("recentArticles")}</div>
           <div className="subsection">
             <HightlightedArticle articleDetails={recentArticles[0]} />
             <div className="recent-articles-section-body">
@@ -41,7 +41,7 @@ function RecentArticles() {
               <Button
                 variant="neutral"
                 Icon={MdArrowRightAlt}
-                label={t("VIEW_ALL")}
+                label={t("viewAll")}
                 className="mx-auto"
               />
             </a>

@@ -18,7 +18,7 @@ const Skills3D = () => {
   const { t } = useTranslation();
   return (
     <>
-      <div className="section-title h2 bold">{t("SKILLS")}</div>
+      <div className="section-title h2 bold">{t("skills")}</div>
       <div className="subsection skills-content">
         <div className="skills-3d-grid">
           <Suspense fallback={<Loader />}>

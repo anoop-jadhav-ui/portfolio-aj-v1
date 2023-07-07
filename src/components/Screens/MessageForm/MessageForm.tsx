@@ -39,9 +39,9 @@ const MessageForm = () => {
   const [showBanner, setShowBanner] = useState(false);
 
   const getBannerMessage = {
-    success: t("MESSAGE_SENT_SUCCESS"),
-    error: t("SORRY_COULDNT_SEND_MSG"),
-    neutral: t("SENDING_MESSAGE"),
+    success: t("messageSentSuccess"),
+    error: t("sorryCouldntSendMsg"),
+    neutral: t("sendingMessage"),
   };
 
   const successHandler: SubmitHandler<MessageFormType> = async (data) => {
@@ -79,7 +79,7 @@ const MessageForm = () => {
           }}
         />
       )}
-      <div className="section-title h2 bold">{t("MESSAGE_FORM_TITLE")}</div>
+      <div className="section-title h2 bold">{t("messageFormTitle")}</div>
       <form
         id="contact-form"
         className="subsection message-content"
@@ -88,7 +88,7 @@ const MessageForm = () => {
       >
         <div className="subsection-data">
           <p className="subsection-title body-text">
-            {t("MESSAGE_FORM_SUBTITLE")}
+            {t("messageFormSubtitle")}
           </p>
           <div className="primary-color body-text form-wrapper">
             <div className="input-form-control">
@@ -157,7 +157,7 @@ const MessageForm = () => {
               bannerStatus === "neutral" && showBanner ? "loading" : ""
             }
             type="submit"
-            label={t("SEND")}
+            label={t("send")}
             Icon={
               bannerStatus === "neutral" && showBanner
                 ? AiOutlineLoading3Quarters

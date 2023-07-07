@@ -13,7 +13,7 @@ const Certifications = () => {
   const { t } = useTranslation();
   return (
     <>
-      <div className="section-title h2 bold">{t("CERTIFICATIONS")}</div>
+      <div className="section-title h2 bold">{t("certifications")}</div>
       <div className="subsection certifications-content">
         {certifications.map(
           (certificateDetail: CertificateDetails, key: number) => {
@@ -28,7 +28,7 @@ const Certifications = () => {
                     target="_Blank"
                     rel="noopener noreferrer"
                   >
-                    {t("VIEW_VERTIFICATION")}
+                    {t("viewCertification")}
                   </a>
                 </div>
                 <div className="grey-1 body-text summary-text">
