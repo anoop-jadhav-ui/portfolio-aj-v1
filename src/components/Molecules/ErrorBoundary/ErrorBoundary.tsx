@@ -39,7 +39,6 @@ class ErrorBoundary extends React.Component<Props, { hasError: boolean }> {
             />
           </div>
           <div className="error-message">{this.props.errorMessage}</div>
-          later.
         </div>
       );
     } else {
