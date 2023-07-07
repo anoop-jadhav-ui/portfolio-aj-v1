@@ -1,17 +1,18 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { useProfileDataContext } from "../../../context/ProfileDataContext";
 import constants from "../../../helpers/constants";
-import T from "../../../translations/en_IN";
 import SectionWrapper from "../../Organisms/SectionWrapper/SectionWrapper";
 
 function Education() {
   const {
     profileData: { education },
   } = useProfileDataContext();
+  const { t } = useTranslation();
 
   return (
     <>
-      <div className="section-title h2 bold">{T.EDUCATION}</div>
+      <div className="section-title h2 bold">{t("EDUCATION")}</div>
       <div className="subsection education-content">
         {education.map((educationDetail, key) => {
           return (

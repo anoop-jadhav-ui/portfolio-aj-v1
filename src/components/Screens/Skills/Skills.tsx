@@ -1,8 +1,8 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { useProfileDataContext } from "../../../context/ProfileDataContext";
 import { useSectionInViewContext } from "../../../context/SectionInViewContext";
 import constants from "../../../helpers/constants";
-import T from "../../../translations/en_IN";
 import BarGraph from "../../Atoms/BarGraph/BarGraph";
 import SectionVisibilityHOC from "../../Organisms/SectionWrapper/SectionWrapper";
 import "./Skills.scss";
@@ -13,15 +13,16 @@ const Skills = () => {
   } = useProfileDataContext();
   const { development, design } = skills;
   const { currentSectionInView } = useSectionInViewContext();
+  const { t } = useTranslation();
 
   const isSkillsSectionVisible =
     currentSectionInView === constants.classNames.SKILLS;
   return (
     <>
-      <div className="section-title h2 bold">{T.SKILLS}</div>
+      <div className="section-title h2 bold">{t("SKILLS")}</div>
       <div className="subsection skills-content">
         <div className="subsection-title uppercase body-text grey5 letterspacing-1">
-          {T.DEVELOPMENT}
+          {t("DEVELOPMENT")}
         </div>
         <div className="subsection-data">
           {development.map((skill, key) => {
@@ -41,7 +42,7 @@ const Skills = () => {
       </div>
       <div className="subsection skills-content">
         <div className="subsection-title uppercase body-text grey5 letterspacing-1">
-          {T.DESIGN}
+          {t("DESIGN")}
         </div>
         <div className="subsection-data">
           {design.map((skill, key) => {

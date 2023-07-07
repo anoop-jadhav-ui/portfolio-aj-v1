@@ -1,18 +1,21 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { useProfileDataContext } from "../../../context/ProfileDataContext";
 import constants from "../../../helpers/constants";
-import T from "../../../translations/en_IN";
 import ProjectCard from "../../Molecules/ProjectCard/ProjectCard";
 import SectionWrapper from "../../Organisms/SectionWrapper/SectionWrapper";
 import "./Projects.scss";
+
 function Projects() {
   const {
     profileData: { projects },
   } = useProfileDataContext();
 
+  const { t } = useTranslation();
+
   return (
     <>
-      <div className="section-title h2 bold">{T.FUN_LEARNING_PROJECTS}</div>
+      <div className="section-title h2 bold">{t("FUN_LEARNING_PROJECTS")}</div>
       <div className="subsection project-section-body">
         {projects.map((projectDetails, index) => {
           return (

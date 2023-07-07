@@ -1,16 +1,17 @@
-import Button from "../../Atoms/Button/Button";
-import { CgSoftwareDownload } from "react-icons/cg";
-import T from "../../../translations/en_IN";
 import React from "react";
-import "./DownloadCV.scss";
-import getResumeFileURL from "../../../helpers/getStorageFile";
+import { useTranslation } from "react-i18next";
+import { CgSoftwareDownload } from "react-icons/cg";
 import { downloadFile } from "../../../helpers/downloadFile";
+import getResumeFileURL from "../../../helpers/getStorageFile";
+import Button from "../../Atoms/Button/Button";
+import "./DownloadCV.scss";
 
 const DownloadCV = () => {
   const downloadCVHandler = async () => {
     const url = await getResumeFileURL;
     downloadFile(url, "ResumeAnoopJadhav.pdf");
   };
+  const { t } = useTranslation();
 
   return (
     <div className="download-cv">
@@ -18,7 +19,7 @@ const DownloadCV = () => {
         onClick={downloadCVHandler}
         variant="brand"
         Icon={CgSoftwareDownload}
-        label={T.DOWNLOAD_CV}
+        label={t("DOWNLOAD_CV")}
       />
     </div>
   );

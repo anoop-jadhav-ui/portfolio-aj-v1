@@ -1,5 +1,8 @@
+import "../translations/i18next-config";
+
 import "animate.css";
 import React, { useRef } from "react";
+import { useTranslation } from "react-i18next";
 import PageScrollProgressBar from "react-page-scroll-progress-bar";
 import Copyright from "../components/Atoms/Copyright/Copyright";
 import Loader from "../components/Atoms/Loader/Loader";
@@ -9,16 +12,16 @@ import MainBody from "../components/Organisms/MainBody/MainBody";
 import Stars from "../components/Organisms/Stars/Stars";
 import { useProfileDataContext } from "../context/ProfileDataContext";
 import { useTheme } from "../context/ThemeContext";
-import T from "../translations/en_IN";
 import "./App.scss";
 
 export const App = () => {
   const { isMobile } = useTheme();
   const { isProfileDataLoaded, leftPaneData } = useProfileDataContext();
   const AppRef = useRef<HTMLDivElement>(null);
+  const { t } = useTranslation();
 
   return (
-    <ErrorBoundary errorMessage={T.PAGE_LOAD_ERROR}>
+    <ErrorBoundary errorMessage={t("PAGE_LOAD_ERROR")}>
       {!isProfileDataLoaded ? (
         <Loader />
       ) : (

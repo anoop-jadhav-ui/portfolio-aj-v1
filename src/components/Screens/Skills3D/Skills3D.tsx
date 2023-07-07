@@ -1,9 +1,9 @@
 import { Loader } from "@react-three/drei";
 import React, { Suspense } from "react";
+import { useTranslation } from "react-i18next";
 import constants from "../../../helpers/constants";
-import T from "../../../translations/en_IN";
-import "./Skills3D.scss";
 import SectionVisibilityHOC from "../../Organisms/SectionWrapper/SectionWrapper";
+import "./Skills3D.scss";
 
 const HtmlModel = React.lazy(() => import("../../Atoms/3DModels/HtmlModel"));
 const CSSModel = React.lazy(() => import("../../Atoms/3DModels/CSSModel"));
@@ -15,9 +15,10 @@ const BlenderModel = React.lazy(
 );
 
 const Skills3D = () => {
+  const { t } = useTranslation();
   return (
     <>
-      <div className="section-title h2 bold">{T.SKILLS}</div>
+      <div className="section-title h2 bold">{t("SKILLS")}</div>
       <div className="subsection skills-content">
         <div className="skills-3d-grid">
           <Suspense fallback={<Loader />}>

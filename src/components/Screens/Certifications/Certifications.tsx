@@ -1,7 +1,7 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { useProfileDataContext } from "../../../context/ProfileDataContext";
 import constants from "../../../helpers/constants";
-import T from "../../../translations/en_IN";
 import { CertificateDetails } from "../../../types/profileDataTypes";
 import SectionWrapper from "../../Organisms/SectionWrapper/SectionWrapper";
 import "./Certifications.scss";
@@ -10,10 +10,10 @@ const Certifications = () => {
   const {
     profileData: { certifications },
   } = useProfileDataContext();
-
+  const { t } = useTranslation();
   return (
     <>
-      <div className="section-title h2 bold">{T.CERTIFICATIONS}</div>
+      <div className="section-title h2 bold">{t("CERTIFICATIONS")}</div>
       <div className="subsection certifications-content">
         {certifications.map(
           (certificateDetail: CertificateDetails, key: number) => {
@@ -28,7 +28,7 @@ const Certifications = () => {
                     target="_Blank"
                     rel="noopener noreferrer"
                   >
-                    View Certification
+                    {t("VIEW_VERTIFICATION")}
                   </a>
                 </div>
                 <div className="grey-1 body-text summary-text">

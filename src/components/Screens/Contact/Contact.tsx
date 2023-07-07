@@ -1,14 +1,16 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import constants from "../../../helpers/constants";
-import T from "../../../translations/en_IN";
 import ContactIcons from "../../Molecules/ContactIcons/ContactIcons";
 import SectionWrapper from "../../Organisms/SectionWrapper/SectionWrapper";
+
 const Contact = () => {
+  const { t } = useTranslation();
   return (
     <>
-      <div className="section-title h2 bold">{T.CONTACT_DETAILS}</div>
+      <div className="section-title h2 bold">{t("CONTACT_DETAILS")}</div>
       <div className="subsection">
-        <div>{T.CONTACT_DETAILS_MESSAGE}</div>
+        <div>{t("CONTACT_DETAILS_MESSAGE")}</div>
         <ContactIcons className="" />
       </div>
     </>

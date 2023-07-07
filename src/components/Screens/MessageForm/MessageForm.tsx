@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
+import { useTranslation } from "react-i18next";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
 import { RiMailSendLine } from "react-icons/ri";
 import axiosInstance from "../../../helpers/axios";
 import constants from "../../../helpers/constants";
-import T from "../../../translations/en_IN";
 import Banner, { BannerStatus } from "../../Atoms/Banner/Banner";
 import Button from "../../Atoms/Button/Button";
 import SectionWrapper from "../../Organisms/SectionWrapper/SectionWrapper";
@@ -33,13 +33,15 @@ const MessageForm = () => {
     reset,
   } = methods;
 
+  const { t } = useTranslation();
+
   const [bannerStatus, updateBannerStatus] = useState<BannerStatus>("neutral");
   const [showBanner, setShowBanner] = useState(false);
 
   const getBannerMessage = {
-    success: T.MESSAGE_SENT_SUCCESS,
-    error: T.SORRY_COULDNT_SEND_MSG,
-    neutral: T.SENDING_MESSAGE,
+    success: t("MESSAGE_SENT_SUCCESS"),
+    error: t("SORRY_COULDNT_SEND_MSG"),
+    neutral: t("SENDING_MESSAGE"),
   };
 
   const successHandler: SubmitHandler<MessageFormType> = async (data) => {
@@ -77,7 +79,7 @@ const MessageForm = () => {
           }}
         />
       )}
-      <div className="section-title h2 bold">{T.MESSAGE_FORM_TITLE}</div>
+      <div className="section-title h2 bold">{t("MESSAGE_FORM_TITLE")}</div>
       <form
         id="contact-form"
         className="subsection message-content"
@@ -86,7 +88,7 @@ const MessageForm = () => {
       >
         <div className="subsection-data">
           <p className="subsection-title body-text">
-            {T.MESSAGE_FORM_SUBTITLE}
+            {t("MESSAGE_FORM_SUBTITLE")}
           </p>
           <div className="primary-color body-text form-wrapper">
             <div className="input-form-control">
@@ -155,7 +157,7 @@ const MessageForm = () => {
               bannerStatus === "neutral" && showBanner ? "loading" : ""
             }
             type="submit"
-            label={T.SEND}
+            label={t("SEND")}
             Icon={
               bannerStatus === "neutral" && showBanner
                 ? AiOutlineLoading3Quarters

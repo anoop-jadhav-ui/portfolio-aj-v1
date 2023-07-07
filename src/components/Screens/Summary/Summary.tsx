@@ -1,19 +1,20 @@
 import parse from "html-react-parser";
 import moment from "moment/moment";
 import React, { useMemo, useState } from "react";
+import { useTranslation } from "react-i18next";
 import portfolioImage from "../../../assets/portfolio-app-img.png";
 import { useProfileDataContext } from "../../../context/ProfileDataContext";
 import constants from "../../../helpers/constants";
-import T from "../../../translations/en_IN";
+import ContactMeButton from "../../Molecules/ContactMeButton/ContactMeButton";
 import DownloadCV from "../../Molecules/DownloadCV/DownloadCV";
 import SectionVisibilityHOC from "../../Organisms/SectionWrapper/SectionWrapper";
 import "./Summary.scss";
-import ContactMeButton from "../../Molecules/ContactMeButton/ContactMeButton";
 
 const Summary = () => {
   const [imageLoading, setImageLoading] = useState(false);
   const { profileData } = useProfileDataContext();
   const { overview, experience } = profileData;
+  const { t } = useTranslation();
 
   const totalExperience = useMemo((): string => {
     try {
@@ -52,7 +53,7 @@ const Summary = () => {
         />
       </div>
 
-      <div className="bold primary-color hello">{T.HELLO}</div>
+      <div className="bold primary-color hello">{t("HELLO")}</div>
       <div className="h1 bold main-title grey-1 typewriter">
         {overview.name}
       </div>

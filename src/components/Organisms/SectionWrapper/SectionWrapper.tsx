@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useRef } from "react";
+import { useTranslation } from "react-i18next";
 import { useSectionInViewContext } from "../../../context/SectionInViewContext";
-import T from "../../../translations/en_IN";
 import ErrorBoundary from "../../Molecules/ErrorBoundary/ErrorBoundary";
 import "./SectionWrapper.scss";
 
@@ -50,8 +50,9 @@ const SectionInViewIdentifier = ({ sectionName }: { sectionName: string }) => {
 const SectionWrapper =
   (Component: () => JSX.Element, sectionName: string) => () => {
     const { currentSectionInView } = useSectionInViewContext();
+    const { t } = useTranslation();
     return (
-      <ErrorBoundary errorMessage={T.SECTION_LOAD_ERROR}>
+      <ErrorBoundary errorMessage={t("SECTION_LOAD_ERROR")}>
         <div
           className={`${sectionName} section ${
             sectionName === currentSectionInView ? "section-in-view" : ""

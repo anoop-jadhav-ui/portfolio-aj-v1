@@ -1,7 +1,6 @@
 import React from "react";
-import { CgSoftwareDownload } from "react-icons/cg";
+import { useTranslation } from "react-i18next";
 import { BiMessageSquareDetail } from "react-icons/bi";
-import T from "../../../translations/en_IN";
 import Button from "../../Atoms/Button/Button";
 import "./ContactMeButton.scss";
 
@@ -13,6 +12,7 @@ const ContactMeButton = () => {
       inline: "nearest",
     });
   };
+  const { t } = useTranslation();
 
   return (
     <div className="contact-me-button">
@@ -20,7 +20,7 @@ const ContactMeButton = () => {
         onClick={contactMeButtonHandler}
         variant="neutral"
         Icon={BiMessageSquareDetail}
-        label={T.CONTACT_ME}
+        label={t("CONTACT_ME")}
       />
     </div>
   );

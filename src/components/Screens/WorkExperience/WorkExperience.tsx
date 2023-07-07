@@ -1,16 +1,18 @@
-import React, { useMemo } from "react";
-import { useProfileDataContext } from "../../../context/ProfileDataContext";
 import moment from "moment/moment";
+import React, { useMemo } from "react";
+import { useTranslation } from "react-i18next";
+import { useProfileDataContext } from "../../../context/ProfileDataContext";
+import constants from "../../../helpers/constants";
 import { ExperienceDetails } from "../../../types/profileDataTypes";
 import SectionVisibilityHOC from "../../Organisms/SectionWrapper/SectionWrapper";
-import T from "../../../translations/en_IN";
-import constants from "../../../helpers/constants";
 import "./WorkExperience.scss";
 
 const WorkExperience = () => {
   const {
     profileData: { experience },
   } = useProfileDataContext();
+
+  const { t } = useTranslation();
 
   const calculatedExperience = useMemo((): Array<ExperienceDetails> => {
     return experience.map((exp): ExperienceDetails => {
@@ -50,7 +52,7 @@ const WorkExperience = () => {
 
   return (
     <>
-      <div className="section-title h2 bold">{T.WORK_EXPERIENCE}</div>
+      <div className="section-title h2 bold">{t("WORK_EXPERIENCE")}</div>
       <div className="subsection work-experience-content">
         {calculatedExperience.map((experienceDetail, key) => {
           return (
