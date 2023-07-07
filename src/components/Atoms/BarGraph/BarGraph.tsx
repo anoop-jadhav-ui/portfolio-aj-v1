@@ -8,6 +8,7 @@ interface BarGraphProps {
 }
 const BarGraph = ({ value, className = "", animate }: BarGraphProps) => {
   const valuePercentage = `${value}%`;
+
   return (
     <div className={`bar-graph ${className}`} data-testid="bar-graph">
       {value ? (

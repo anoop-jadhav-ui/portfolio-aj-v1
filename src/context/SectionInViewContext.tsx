@@ -3,17 +3,23 @@ import React, { createContext, useContext, useState } from "react";
 interface SectionInViewContextType {
   currentSectionInView: string;
   setCurrentSectionInView: (currentSectionInView: string) => void;
+  isSkillsSectionVisited: boolean;
+  setSkillsSectionVisited: (value: boolean) => void;
 }
+
 type SectionInViewContextProps = {
   children: React.ReactNode;
 };
-const defaultGobalContext: SectionInViewContextType = {
+
+const defaultGobalContext: Partial<SectionInViewContextType> = {
   currentSectionInView: "summary",
-  setCurrentSectionInView: (currentSectionInView: string) => undefined,
+  isSkillsSectionVisited: false,
 };
 
-const SectionInViewContext =
-  createContext<SectionInViewContextType>(defaultGobalContext);
+const SectionInViewContext = createContext<SectionInViewContextType>(
+  defaultGobalContext as SectionInViewContextType
+);
+
 export const useSectionInViewContext = () => useContext(SectionInViewContext);
 
 export const SectionInViewContextProvider = (
@@ -23,11 +29,15 @@ export const SectionInViewContextProvider = (
   const [currentSectionInView, setCurrentSectionInView] =
     useState<string>("summary");
 
+  const [isSkillsSectionVisited, setSkillsSectionVisited] = useState(false);
+
   return (
     <SectionInViewContext.Provider
       value={{
         currentSectionInView,
         setCurrentSectionInView,
+        isSkillsSectionVisited,
+        setSkillsSectionVisited,
       }}
     >
       {children}

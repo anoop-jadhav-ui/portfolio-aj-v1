@@ -12,11 +12,9 @@ const Skills = () => {
     profileData: { skills },
   } = useProfileDataContext();
   const { development, design } = skills;
-  const { currentSectionInView } = useSectionInViewContext();
+  const { isSkillsSectionVisited } = useSectionInViewContext();
   const { t } = useTranslation();
 
-  const isSkillsSectionVisible =
-    currentSectionInView === constants.classNames.SKILLS;
   return (
     <>
       <div className="section-title h2 bold">{t("skills")}</div>
@@ -33,7 +31,7 @@ const Skills = () => {
                 </div>
                 <BarGraph
                   value={skill.skillValue}
-                  animate={isSkillsSectionVisible}
+                  animate={isSkillsSectionVisited}
                 />
               </div>
             );
@@ -53,7 +51,7 @@ const Skills = () => {
                 </div>
                 <BarGraph
                   value={skill.skillValue}
-                  animate={isSkillsSectionVisible}
+                  animate={isSkillsSectionVisited}
                 />
               </div>
             );

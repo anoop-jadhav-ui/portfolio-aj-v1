@@ -1,8 +1,9 @@
-import React, { useCallback, useEffect, useRef } from "react";
+import React, { useCallback, useEffect, useMemo, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { useSectionInViewContext } from "../../../context/SectionInViewContext";
 import ErrorBoundary from "../../Molecules/ErrorBoundary/ErrorBoundary";
 import "./SectionWrapper.scss";
+import constants from "../../../helpers/constants";
 
 export const isElementInViewport = (el: HTMLDivElement) => {
   const rect = el.getBoundingClientRect();
@@ -49,14 +50,28 @@ const SectionInViewIdentifier = ({ sectionName }: { sectionName: string }) => {
 
 const SectionWrapper =
   (Component: () => JSX.Element, sectionName: string) => () => {
-    const { currentSectionInView } = useSectionInViewContext();
+    const {
+      currentSectionInView,
+      setSkillsSectionVisited,
+      isSkillsSectionVisited,
+    } = useSectionInViewContext();
     const { t } = useTranslation();
+
+    useEffect(() => {
+      if (
+        currentSectionInView === constants.classNames.SKILLS &&
+        !isSkillsSectionVisited
+      ) {
+        setSkillsSectionVisited(true);
+      }
+    }, [currentSectionInView]);
+
     return (
       <ErrorBoundary errorMessage={t("sectionLoadError")}>
         <div
           className={`${sectionName} section ${
             sectionName === currentSectionInView ? "section-in-view" : ""
-          }`}
+          } ${isSkillsSectionVisited ? "visited" : ""}`}
         >
           <SectionInViewIdentifier sectionName={sectionName} />
           <Component />
