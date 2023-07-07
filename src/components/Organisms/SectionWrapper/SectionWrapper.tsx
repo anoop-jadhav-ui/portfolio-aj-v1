@@ -1,5 +1,7 @@
 import React, { useCallback, useEffect, useRef } from "react";
 import { useSectionInViewContext } from "../../../context/SectionInViewContext";
+import T from "../../../translations/en_IN";
+import ErrorBoundary from "../../Molecules/ErrorBoundary/ErrorBoundary";
 import "./SectionWrapper.scss";
 
 export const isElementInViewport = (el: HTMLDivElement) => {
@@ -49,14 +51,16 @@ const SectionWrapper =
   (Component: () => JSX.Element, sectionName: string) => () => {
     const { currentSectionInView } = useSectionInViewContext();
     return (
-      <div
-        className={`${sectionName} section ${
-          sectionName === currentSectionInView ? "section-in-view" : ""
-        }`}
-      >
-        <SectionInViewIdentifier sectionName={sectionName} />
-        <Component />
-      </div>
+      <ErrorBoundary errorMessage={T.SECTION_LOAD_ERROR}>
+        <div
+          className={`${sectionName} section ${
+            sectionName === currentSectionInView ? "section-in-view" : ""
+          }`}
+        >
+          <SectionInViewIdentifier sectionName={sectionName} />
+          <Component />
+        </div>
+      </ErrorBoundary>
     );
   };
 

@@ -9,6 +9,7 @@ import MainBody from "../components/Organisms/MainBody/MainBody";
 import Stars from "../components/Organisms/Stars/Stars";
 import { useProfileDataContext } from "../context/ProfileDataContext";
 import { useTheme } from "../context/ThemeContext";
+import T from "../translations/en_IN";
 import "./App.scss";
 
 export const App = () => {
@@ -17,7 +18,7 @@ export const App = () => {
   const AppRef = useRef<HTMLDivElement>(null);
 
   return (
-    <ErrorBoundary>
+    <ErrorBoundary errorMessage={T.PAGE_LOAD_ERROR}>
       {!isProfileDataLoaded ? (
         <Loader />
       ) : (

@@ -28,7 +28,8 @@ export default {
   DESIGN: "Design",
 
   DOWNLOAD_CV: "Download CV",
-  PAGE_LOAD_ERROR: "Oops ! Something went wrong. Please try again",
+  PAGE_LOAD_ERROR: "Oops ! Something went wrong. Please try again later.",
+  SECTION_LOAD_ERROR: "Failed to load this section. Please try again later.",
 
   MESSAGE_SENT_SUCCESS: "Message sent successfully.",
   SORRY_COULDNT_SEND_MSG:

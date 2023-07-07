@@ -120,7 +120,7 @@ const MessageForm = () => {
                       "Email address must be a valid address",
                   },
                 })}
-                placeholder="johndoe007@gmail.com"
+                placeholder="johndoe@gmail.com"
                 name="email"
                 type="email"
                 id="email"

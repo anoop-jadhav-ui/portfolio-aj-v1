@@ -1,12 +1,12 @@
 import React, { ErrorInfo } from "react";
 import "./ErrorBoundary.scss";
-import T from "../../../translations/en_IN";
 
 import UseAnimations from "react-useanimations";
 import alertOctagon from "react-useanimations/lib/alertOctagon";
 
 interface Props {
   children: React.ReactNode;
+  errorMessage: string;
 }
 
 class ErrorBoundary extends React.Component<Props, { hasError: boolean }> {
@@ -38,7 +38,7 @@ class ErrorBoundary extends React.Component<Props, { hasError: boolean }> {
               strokeColor="var(--primary-color)"
             />
           </div>
-          <div className="error-message">{T.PAGE_LOAD_ERROR}</div>
+          <div className="error-message">{this.props.errorMessage}</div>
           later.
         </div>
       );
