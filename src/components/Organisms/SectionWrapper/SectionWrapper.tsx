@@ -68,14 +68,14 @@ const SectionWrapper =
 
     return (
       <ErrorBoundary errorMessage={t("sectionLoadError")}>
-        <div
+        <section
           className={`${sectionName} section ${
             sectionName === currentSectionInView ? "section-in-view" : ""
           } ${isSkillsSectionVisited ? "visited" : ""}`}
         >
           <SectionInViewIdentifier sectionName={sectionName} />
           <Component />
-        </div>
+        </section>
       </ErrorBoundary>
     );
   };
