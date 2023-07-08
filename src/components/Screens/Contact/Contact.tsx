@@ -8,7 +8,9 @@ const Contact = () => {
   const { t } = useTranslation();
   return (
     <>
-      <div className="section-title h2 bold">{t("contactDetails")}</div>
+      <div className="section-title h2 bold">
+        {t("sectionName.contactDetails")}
+      </div>
       <div className="subsection">
         <div>{t("contactDetailsMessage")}</div>
         <ContactIcons className="" />

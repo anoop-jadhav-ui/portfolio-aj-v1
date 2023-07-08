@@ -1,16 +1,19 @@
 {
+  "sectionName": {
+    "funLearningProjects": "Fun Learning Projects",
+    "recentArticles": "Latest Articles",
+    "workExperience": "Work Experience",
+    "education": "Education",
+    "certifications": "Certifications",
+    "skills": "Skills",
+    "hobbiesAndInterests": "Hobbies & Interests",
+    "messageFormTitle": "Get in Touch",
+    "contactDetails": "Contact Details"
+  },
+  "contactMe": "Contact Me",
   "scrollToKnowMore": "Scroll for more information",
   "skipToSection": "Skip to section",
-  "funLearningProjects": "Fun Learning Projects",
-  "recentArticles": "Latest Articles",
-  "workExperience": "Work Experience",
-  "education": "Education",
-  "certifications": "Certifications",
-  "skills": "Skills",
-  "hobbiesAndInterests": "Hobbies & Interests",
-  "messageFormTitle": "Get in Touch",
   "viewCertification": "View Certification",
-  "contactDetails": "Contact Details",
   "inProgress": "In Progress",
   "complete": "Complete",
   "send": "Send",
@@ -28,6 +31,5 @@
   "hello": "Hello, I'm",
   "viewAll": "View All",
   "blogs": "Blogs",
-  "home": "Home",
-  "contactMe": "Contact Me"
+  "home": "Home"
 }

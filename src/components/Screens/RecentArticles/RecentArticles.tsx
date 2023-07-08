@@ -18,7 +18,9 @@ function RecentArticles() {
     <>
       {recentArticles?.length > 0 && (
         <>
-          <div className="section-title h2 bold">{t("recentArticles")}</div>
+          <div className="section-title h2 bold">
+            {t("sectionName.recentArticles")}
+          </div>
           <div className="subsection">
             <HightlightedArticle articleDetails={recentArticles[0]} />
             <div className="recent-articles-section-body">

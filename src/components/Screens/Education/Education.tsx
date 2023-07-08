@@ -12,7 +12,7 @@ function Education() {
 
   return (
     <>
-      <div className="section-title h2 bold">{t("education")}</div>
+      <div className="section-title h2 bold">{t("sectionName.education")}</div>
       <div className="subsection education-content">
         {education.map((educationDetail, key) => {
           return (

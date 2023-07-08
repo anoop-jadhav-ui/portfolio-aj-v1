@@ -15,7 +15,9 @@ function Projects() {
 
   return (
     <>
-      <div className="section-title h2 bold">{t("funLearningProjects")}</div>
+      <div className="section-title h2 bold">
+        {t("sectionName.funLearningProjects")}
+      </div>
       <div className="subsection project-section-body">
         {projects.map((projectDetails, index) => {
           return (

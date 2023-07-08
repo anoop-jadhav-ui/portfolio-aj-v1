@@ -79,7 +79,9 @@ const MessageForm = () => {
           }}
         />
       )}
-      <div className="section-title h2 bold">{t("messageFormTitle")}</div>
+      <div className="section-title h2 bold">
+        {t("sectionName.messageFormTitle")}
+      </div>
       <form
         id="contact-form"
         className="subsection message-content"

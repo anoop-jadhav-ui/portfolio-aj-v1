@@ -17,7 +17,7 @@ const Skills = () => {
 
   return (
     <>
-      <div className="section-title h2 bold">{t("skills")}</div>
+      <div className="section-title h2 bold">{t("sectionName.skills")}</div>
       <div className="subsection skills-content">
         <div className="subsection-title uppercase body-text grey5 letterspacing-1">
           {t("development")}

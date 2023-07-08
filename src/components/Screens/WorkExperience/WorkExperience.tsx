@@ -52,7 +52,9 @@ const WorkExperience = () => {
 
   return (
     <>
-      <div className="section-title h2 bold">{t("workExperience")}</div>
+      <div className="section-title h2 bold">
+        {t("sectionName.workExperience")}
+      </div>
       <div className="subsection work-experience-content">
         {calculatedExperience.map((experienceDetail, key) => {
           return (

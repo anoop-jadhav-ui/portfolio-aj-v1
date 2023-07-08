@@ -13,7 +13,9 @@ const Certifications = () => {
   const { t } = useTranslation();
   return (
     <>
-      <div className="section-title h2 bold">{t("certifications")}</div>
+      <div className="section-title h2 bold">
+        {t("sectionName.certifications")}
+      </div>
       <div className="subsection certifications-content">
         {certifications.map(
           (certificateDetail: CertificateDetails, key: number) => {
