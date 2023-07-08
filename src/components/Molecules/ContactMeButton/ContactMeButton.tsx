@@ -20,7 +20,7 @@ const ContactMeButton = () => {
         onClick={contactMeButtonHandler}
         variant="neutral"
         Icon={BiMessageSquareDetail}
-        label={t("contactMe")}
+        label={t("button.contactMe")}
       />
     </div>
   );

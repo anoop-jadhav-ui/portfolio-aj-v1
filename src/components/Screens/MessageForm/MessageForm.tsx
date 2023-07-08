@@ -165,7 +165,7 @@ const MessageForm = () => {
               bannerStatus === "neutral" && showBanner ? "loading" : ""
             }
             type="submit"
-            label={t("send")}
+            label={t("button.send")}
             Icon={
               bannerStatus === "neutral" && showBanner
                 ? AiOutlineLoading3Quarters

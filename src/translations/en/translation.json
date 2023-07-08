@@ -22,26 +22,28 @@
     "emailAddress": "Email Address",
     "message": "Message"
   },
-  "contactMe": "Contact Me",
+  "button": {
+    "contactMe": "Contact Me",
+    "downloadCv": "Download CV",
+    "send": "Send",
+    "viewAll": "View All"
+  },
   "scrollToKnowMore": "Scroll for more information",
   "skipToSection": "Skip to section",
   "viewCertification": "View Certification",
   "inProgress": "In Progress",
   "complete": "Complete",
-  "send": "Send",
   "messageFormSubtitle": "Reach out to me today and let's start a conversation about your project or inquiry!",
   "contactDetailsMessage": "Feel free to contact me through the following platforms. Also, please check out my work on Instagram and GitHub.",
   "viewLinkedinProfile": "View LinkedIn Profile",
   "development": "Development",
   "design": "Design",
-  "downloadCv": "Download CV",
   "pageLoadError": "Oops! Something went wrong. Please try again later.",
   "sectionLoadError": "Failed to load this section. Please try again later.",
   "messageSentSuccess": "Message sent successfully.",
   "sorryCouldntSendMsg": "Sorry, we couldn't send your message. Please try again later.",
   "sendingMessage": "Sending your message...",
   "hello": "Hello, I'm",
-  "viewAll": "View All",
   "blogs": "Blogs",
   "home": "Home"
 }

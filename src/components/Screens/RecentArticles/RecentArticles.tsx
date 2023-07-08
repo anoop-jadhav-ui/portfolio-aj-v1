@@ -43,7 +43,7 @@ function RecentArticles() {
               <Button
                 variant="neutral"
                 Icon={MdArrowRightAlt}
-                label={t("viewAll")}
+                label={t("button.viewAll")}
                 className="mx-auto"
               />
             </a>
