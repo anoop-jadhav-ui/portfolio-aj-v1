@@ -94,10 +94,12 @@ const MessageForm = () => {
           </p>
           <div className="primary-color body-text form-wrapper">
             <div className="input-form-control">
-              <label htmlFor="name">Full Name</label>
+              <label htmlFor="name">{t("inputs.fullName")}</label>
               <input
                 {...register("name", {
-                  required: "Please enter your full name",
+                  required: t("common.validations.required", {
+                    name: t("inputs.fullName"),
+                  }),
                 })}
                 placeholder="John Doe"
                 name="name"
@@ -111,17 +113,19 @@ const MessageForm = () => {
               )}
             </div>
             <div className="input-form-control">
-              <label htmlFor="email">Email Address</label>
+              <label htmlFor="email">{t("inputs.emailAddress")}</label>
               <input
                 {...register("email", {
-                  required: "Please enter your email address",
+                  required: t("common.validations.required", {
+                    name: t("inputs.emailAddress"),
+                  }),
                   validate: {
                     maxLength: (v) =>
                       v.length <= 50 ||
-                      "Email should have at most 50 characters",
+                      t("common.validations.maxEmailLengthReached"),
                     matchPattern: (v) =>
                       /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(v) ||
-                      "Email address must be a valid address",
+                      t("common.validations.invalidEmailError"),
                   },
                 })}
                 placeholder="johndoe@gmail.com"
@@ -137,10 +141,12 @@ const MessageForm = () => {
               )}
             </div>
             <div className="input-form-control">
-              <label htmlFor="message">Message</label>
+              <label htmlFor="message">{t("inputs.message")}</label>
               <textarea
                 {...register("message", {
-                  required: "Please enter your message",
+                  required: t("common.validations.required", {
+                    name: t("inputs.message"),
+                  }),
                 })}
                 placeholder="Tell me more about your project needs and timeline."
                 name="message"

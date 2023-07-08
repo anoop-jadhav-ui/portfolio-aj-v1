@@ -10,6 +10,18 @@
     "messageFormTitle": "Get in Touch",
     "contactDetails": "Contact Details"
   },
+  "common": {
+    "validations": {
+      "required": "Please enter your {{name}}",
+      "maxEmailLengthReached": "Email should have at most 50 characters",
+      "invalidEmailError": "Email address must be a valid address"
+    }
+  },
+  "inputs": {
+    "fullName": "Full Name",
+    "emailAddress": "Email Address",
+    "message": "Message"
+  },
   "contactMe": "Contact Me",
   "scrollToKnowMore": "Scroll for more information",
   "skipToSection": "Skip to section",
