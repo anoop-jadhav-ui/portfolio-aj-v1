@@ -6,9 +6,4 @@ const pathReference = ref(
   `resume/${import.meta.env.VITE_RESUME_FILENAME}`
 );
 
-// const httpsReference = ref(
-//   firebaseStorage,
-//   `https://firebasestorage.googleapis.com/b/bucket/o/resume/${process.env.RESUME_FILENAME}`
-// );
-
 export default getDownloadURL(pathReference);
