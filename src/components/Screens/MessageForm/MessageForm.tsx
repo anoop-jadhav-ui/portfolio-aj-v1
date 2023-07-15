@@ -124,8 +124,9 @@ const MessageForm = () => {
                       v.length <= 50 ||
                       t("common.validations.maxEmailLengthReached"),
                     matchPattern: (v) =>
-                      /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(v) ||
-                      t("common.validations.invalidEmailError"),
+                      /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(
+                        v
+                      ) || t("common.validations.invalidEmailError"),
                   },
                 })}
                 placeholder="johndoe@gmail.com"
