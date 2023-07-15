@@ -4,27 +4,22 @@
     "contactDetails": true,
     "education": true,
     "experience": true,
-    "messageForm": true,
     "hobbies": false,
+    "messageForm": true,
     "overview": true,
     "projects": true,
+    "recentArticles": true,
     "skills": true,
-    "summary": true,
-    "recentArticles": true
+    "summary": true
   },
   "certifications": [
     {
-      "name": "JavaScript (Basic)",
+      "name": "JavaScript (Basic & Intermediate)",
       "summary": "Hackerrank.com",
       "urlToCertificate": "https://www.hackerrank.com/certificates/b3e84c63b9a0"
     },
     {
-      "name": "JavaScript (Intermediate)",
-      "summary": "Hackerrank.com",
-      "urlToCertificate": "https://www.hackerrank.com/certificates/d7658d7858e9"
-    },
-    {
-      "name": "React Js (Basic)",
+      "name": "React Js Certification",
       "summary": "Hackerrank.com",
       "urlToCertificate": "https://www.hackerrank.com/certificates/22cc457da9f4"
     },
@@ -62,25 +57,25 @@
   ],
   "experience": [
     {
+      "fromDate": "10 May 2021",
       "name": "Thoughtworks",
       "summary": "Thoughtworks has been my dream company since college days because of its work culture. It is widely known for the intellectual minds who are solving complex problem using technology. I am really excited to work on new challenges here in Thoughtworks.",
-      "totalYears": "",
-      "fromDate": "10 May 2021",
-      "toDate": "Present"
+      "toDate": "Present",
+      "totalYears": ""
     },
     {
+      "fromDate": "06 Feb 2017",
       "name": "Deloitte",
       "summary": "In Deloitte, I started with a public sector project for State of Michigan where we built a custom application on salesforce using salesforce lightning components. Along with the project I worked on several Firm initiatives built on React Js - One of the major project being Elixir where we build a React app for non developers similar to wordpress/squarespace having the drag and drop functionality to generate salesforce components. Due to the open culture in Deloitte, I also got the opportunity to work on design projects which involved in-house web/mobile app design, several posters, mailers, infographics, brochure designs and branding. ",
-      "totalYears": "",
-      "fromDate": "06 Feb 2017",
-      "toDate": "29 April 2021"
+      "toDate": "29 April 2021",
+      "totalYears": ""
     },
     {
+      "fromDate": "28 Aug 2014",
       "name": "Cognizant",
       "summary": "Initially started my career in Cognizant as a SAP BASIS consultant. but due to my interest in web technologies I switched to a UI Developer role and worked on various projects using tools and technologies like Angular JS 1.x., React Js, Jquery, Bootstrap, Git etc.",
-      "totalYears": "",
-      "fromDate": "28 Aug 2014",
-      "toDate": "17 Jan 2017"
+      "toDate": "17 Jan 2017",
+      "totalYears": ""
     }
   ],
   "hobbies": [
@@ -117,9 +112,18 @@
       "github": "https://github.com/anoop-jadhav-ui/ringProblem",
       "priority": 999,
       "projectName": "Ring Configurator",
-      "status": "In Progress",
+      "status": "Complete",
       "tags": ["React Js", "React Three Fibre", "Threejs"],
       "url": "https://ring-problem.vercel.app/"
+    },
+    {
+      "description": "This is a pair programming assist tool to collaborate, conquer challenges, and code together seamlessly.",
+      "github": "https://github.com/anoop-jadhav-ui/pp-react-app",
+      "priority": 999,
+      "projectName": "CodeBuddy (Pair Programming)",
+      "status": "In Progress",
+      "tags": ["React Js", "Typescript"],
+      "url": "https://codebuddy-iota.vercel.app/"
     },
     {
       "description": "A React App to manage guests or organize an event. The idea behind creation of this app was to manage the guests or events in this covid pandemic situation because of the limition on the number of guests allowed by the government authorities.",
@@ -151,10 +155,6 @@
   ],
   "skills": {
     "design": [
-      {
-        "skillName": "Adobe Illustrator",
-        "skillValue": "40"
-      },
       {
         "skillName": "Figma",
         "skillValue": "80"

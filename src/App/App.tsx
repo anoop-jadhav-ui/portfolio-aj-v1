@@ -1,6 +1,5 @@
 import "../translations/i18next-config";
 
-import "animate.css";
 import React, { useRef } from "react";
 import { useTranslation } from "react-i18next";
 import PageScrollProgressBar from "react-page-scroll-progress-bar";

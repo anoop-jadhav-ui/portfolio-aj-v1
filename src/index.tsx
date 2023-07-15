@@ -1,10 +1,9 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
 import App from "./App/App";
-import Providers from "./helpers/Providers";
-import "./CommonStyles.scss";
 import "./BootstrapOverrideStyles.scss";
-import { Analytics } from "@vercel/analytics/react";
+import "./CommonStyles.scss";
+import Providers from "./helpers/Providers";
 
 const container = document.getElementById("root");
 const root = createRoot(container!);
@@ -12,6 +11,5 @@ const root = createRoot(container!);
 root.render(
   <Providers>
     <App />
-    <Analytics />
   </Providers>
 );
