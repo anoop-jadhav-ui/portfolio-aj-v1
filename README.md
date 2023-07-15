@@ -2,8 +2,9 @@
 
 click to view the final app - https://anoopjadhav.in
 
-###Tech stack
-React Js, Firebase
+## Tech stack
+
+React, Typescript, SCSS, Firebase
 
 ### Setup
 
