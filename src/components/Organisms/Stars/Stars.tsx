@@ -1,6 +1,6 @@
 import { PerspectiveCamera } from "@react-three/drei";
 import { Canvas, useFrame } from "@react-three/fiber";
-import React, { useLayoutEffect, useMemo, useRef, useTransition } from "react";
+import React, { useMemo, useRef, useTransition } from "react";
 import * as THREE from "three";
 import { InstancedMesh, PointLight, Vector3 } from "three";
 import { useTheme } from "../../../context/ThemeContext";
@@ -39,8 +39,9 @@ const Star = () => {
   useFrame(() => {
     startTransition(() => {
       particles.forEach((particle, index) => {
-        let { x, y, z, speed } = particle;
-        const t = (particle.time += speed);
+        const { x, y, z, speed } = particle;
+        particle.time += speed;
+        const t = particle.time;
         dummy.position.set(x, y, z + (t % 100));
         dummy.updateMatrix();
         mesh.current?.setMatrixAt(index, dummy.matrix);

@@ -2,6 +2,7 @@
   "$schema": "./node_modules/rome/configuration_schema.json",
   "linter": {
     "enabled": true,
+    "ignore": ["*.spec.tsx", "*.spec.ts"],
     "rules": {
       "recommended": true,
       "a11y": {

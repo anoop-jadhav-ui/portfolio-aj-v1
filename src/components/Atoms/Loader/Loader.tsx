@@ -11,6 +11,7 @@ const Loader = () => {
           fill=""
           xmlns="http://www.w3.org/2000/svg"
         >
+          <title>Loader</title>
           <defs>
             <linearGradient id="ttb" y2="1">
               <stop offset="100%" stopOpacity="1" stopColor="#333">

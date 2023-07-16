@@ -2,7 +2,7 @@ import { useMemo } from "react";
 
 const useBrowserType = () => {
   return useMemo(() => {
-    let userAgent = navigator.userAgent;
+    const userAgent = navigator.userAgent;
     let browserName = "none";
     if (userAgent.match(/chrome|chromium|crios/i)) {
       browserName = "chrome";

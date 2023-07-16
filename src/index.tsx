@@ -6,10 +6,11 @@ import "./CommonStyles.scss";
 import Providers from "./helpers/Providers";
 
 const container = document.getElementById("root");
-const root = createRoot(container!);
-
-root.render(
-  <Providers>
-    <App />
-  </Providers>
-);
+if (container) {
+  const root = createRoot(container);
+  root.render(
+    <Providers>
+      <App />
+    </Providers>
+  );
+}
