@@ -45,6 +45,5 @@ $ yarn test --coverage
 ```
 
 <div align="center">
-  <p>&nbsp;</p>
   <img src="https://github.com/anoop-jadhav-ui/portfolio-aj-v1/blob/master/src/assets/readme/githubReadmeFooter.png" alt="Portfolio Logo">
 </div>
