@@ -9,6 +9,7 @@ import Banner, { BannerStatus } from "../../Atoms/Banner/Banner";
 import Button from "../../Atoms/Button/Button";
 import SectionWrapper from "../../Organisms/SectionWrapper/SectionWrapper";
 import "./MessageForm.scss";
+import TopMateSection from "../../Atoms/TopMateSection/TopMateSection";
 
 type MessageFormType = {
   name: string;
@@ -89,6 +90,7 @@ const MessageForm = () => {
         noValidate
       >
         <div className="subsection-data">
+          {/* <TopMateSection /> */}
           <p className="subsection-title body-text">
             {t("messageFormSubtitle")}
           </p>
