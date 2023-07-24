@@ -108,7 +108,7 @@
       "url": "https://threejs-model-psi.vercel.app/"
     },
     {
-      "description": "I developed this app using a basic 3D model to explore how to configure Blender models in real-time directly within a web browser.",
+      "description": "I developed this app using a basic 3D model to explore how to configure Blender models runtime in the browser.",
       "github": "https://github.com/anoop-jadhav-ui/ringProblem",
       "priority": 999,
       "projectName": "Ring Configurator",
@@ -119,8 +119,8 @@
     {
       "description": "This is a pair programming assist tool to collaborate, conquer challenges, and code together seamlessly.",
       "github": "https://github.com/anoop-jadhav-ui/pp-react-app",
-      "priority": 999,
-      "projectName": "CodeBuddy (Pair Programming)",
+      "priority": 1,
+      "projectName": "PairAssist (Pair Programming)",
       "status": "In Progress",
       "tags": ["React Js", "Typescript"],
       "url": "https://codebuddy-iota.vercel.app/"
@@ -144,13 +144,13 @@
       "url": "https://react-sort-visualizer.netlify.app"
     },
     {
-      "description": "This app which you are viewing currently is my portfolio web app project created to showcase my design and development work. This is created using React Js (frontend), Node & Express Js (server side scripting), Firebase(database) and Figma (Design)",
-      "github": "https://github.com/anoop-jadhav-ui/portfolio-aj",
+      "description": "This is my second portfolio web application which I am building to learn Next Js and Three.js. I am using MUI as a design system. Although this is still work in progress, feel free to check out the app and the github repo.",
+      "github": "https://github.com/anoop-jadhav-ui/portfolio-next",
       "priority": 999,
-      "projectName": "My Portfolio Web App",
-      "status": "Complete",
+      "projectName": "NextJs Portfolio App",
+      "status": "In Progress",
       "tags": ["React Js", "Firebase", "Node Js", "Express Js", "Figma"],
-      "url": "https://anoopjadhav.in"
+      "url": "https://portfolio-next-snowy.vercel.app/"
     }
   ],
   "skills": {

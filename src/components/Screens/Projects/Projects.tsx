@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { useProfileDataContext } from "../../../context/ProfileDataContext";
 import constants from "../../../helpers/constants";
@@ -13,13 +13,17 @@ function Projects() {
 
   const { t } = useTranslation();
 
+  const sortedProjects = useMemo(() => {
+    return projects.sort((a, b) => a.priority - b.priority);
+  }, [projects]);
+
   return (
     <>
       <div className="section-title h2 bold">
         {t("sectionName.funLearningProjects")}
       </div>
       <div className="subsection project-section-body">
-        {projects.map((projectDetails, index) => {
+        {sortedProjects.map((projectDetails, index) => {
           return (
             <ProjectCard key={String(index)} projectDetails={projectDetails} />
           );
