@@ -1,15 +1,25 @@
 import React from "react";
-import "./ProjectCard.scss";
-import { ProjectDetails } from "../../../types/profileDataTypes";
 import { FiExternalLink, FiGithub } from "react-icons/fi";
+import { ProjectDetails } from "../../../types/profileDataTypes";
+import "./ProjectCard.scss";
 
 const ProjectCard = ({
   projectDetails,
 }: {
   projectDetails: ProjectDetails;
 }) => {
+  const openGithubLink = (evt: React.MouseEvent<HTMLDivElement>) => {
+    evt.stopPropagation();
+    window.open(projectDetails.github, "_blank", "noopener");
+  };
+
+  const openProjectLink = (evt: React.MouseEvent<HTMLDivElement>) => {
+    evt.stopPropagation();
+    window.open(projectDetails.url, "_blank", "noopener");
+  };
+
   return (
-    <div className="project-card">
+    <div className="project-card" onClick={openProjectLink}>
       <div>
         <div className="h4 bold">{projectDetails.projectName}</div>
         <div className="tags">
@@ -26,22 +36,14 @@ const ProjectCard = ({
       <div className="footer">
         <div className="projectlinks">
           {projectDetails.github && (
-            <a
-              href={projectDetails.github}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <div onClick={openGithubLink} className="link">
               <FiGithub className="contactimg" title="github link" />
-            </a>
+            </div>
           )}
           {projectDetails.url && (
-            <a
-              href={projectDetails.url}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <div onClick={openProjectLink} className="link">
               <FiExternalLink className="contactimg" title="application link" />
-            </a>
+            </div>
           )}
         </div>
         <div className={`projectstatus ${projectDetails.status}`}>
