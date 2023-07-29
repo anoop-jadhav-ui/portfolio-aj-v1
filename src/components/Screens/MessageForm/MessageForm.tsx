@@ -9,7 +9,6 @@ import Banner, { BannerStatus } from "../../Atoms/Banner/Banner";
 import Button from "../../Atoms/Button/Button";
 import SectionWrapper from "../../Organisms/SectionWrapper/SectionWrapper";
 import "./MessageForm.scss";
-import TopMateSection from "../../Atoms/TopMateSection/TopMateSection";
 
 type MessageFormType = {
   name: string;
@@ -23,7 +22,7 @@ const defaultMessageFormState: MessageFormType = {
   message: "",
 };
 
-const MessageForm = () => {
+export const MessageForm = () => {
   const methods = useForm<MessageFormType>({
     defaultValues: defaultMessageFormState,
   });
@@ -153,6 +152,7 @@ const MessageForm = () => {
                 })}
                 placeholder={t("inputs.placeholders.message")}
                 name="message"
+                id="message"
                 className={errors.message ? "highlight-error" : ""}
               />
               {errors.message && (
