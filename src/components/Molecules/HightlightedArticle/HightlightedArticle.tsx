@@ -27,7 +27,7 @@ const HightlightedArticle = ({ articleDetails }: ArticleCardProps) => {
       </div>
       <div className="content">
         <div>
-          <div className="h4 bold title">{articleDetails.title}</div>
+          <div className="h3 bold title">{articleDetails.title}</div>
           <div className="description">{articleDetails.brief}</div>
         </div>
         <div className="date">
