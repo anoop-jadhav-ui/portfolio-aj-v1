@@ -103,7 +103,7 @@ const MessageForm = () => {
                     name: t("inputs.fullName"),
                   }),
                 })}
-                placeholder="John Doe"
+                placeholder={t("inputs.placeholders.fullName")}
                 name="name"
                 id="name"
                 className={errors.name ? "highlight-error" : ""}
@@ -131,7 +131,7 @@ const MessageForm = () => {
                       ) || t("common.validations.invalidEmailError"),
                   },
                 })}
-                placeholder="johndoe@gmail.com"
+                placeholder={t("inputs.placeholders.emailAddress")}
                 name="email"
                 type="email"
                 id="email"
@@ -151,7 +151,7 @@ const MessageForm = () => {
                     name: t("inputs.message"),
                   }),
                 })}
-                placeholder="Tell me more about your project needs and timeline."
+                placeholder={t("inputs.placeholders.message")}
                 name="message"
                 className={errors.message ? "highlight-error" : ""}
               />

@@ -20,7 +20,12 @@
   "inputs": {
     "fullName": "Full Name",
     "emailAddress": "Email Address",
-    "message": "Message"
+    "message": "Message",
+    "placeholders": {
+      "fullName": "Enter your full name",
+      "emailAddress": "Enter your email address",
+      "message": "Tell me more about your project needs and timeline"
+    }
   },
   "button": {
     "contactMe": "Contact Me",

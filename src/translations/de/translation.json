@@ -1,50 +1,55 @@
 {
   "sectionName": {
-    "funLearningProjects": "Fun Learning Projects",
-    "recentArticles": "Latest Articles",
-    "workExperience": "Work Experience",
-    "education": "Education",
-    "certifications": "Certifications",
-    "skills": "Skills",
-    "hobbiesAndInterests": "Hobbies & Interests",
-    "messageFormTitle": "Get in Touch",
-    "contactDetails": "Contact Details"
+    "funLearningProjects": "Lernprojekte zum Spaß",
+    "recentArticles": "Neueste Artikel",
+    "workExperience": "Berufserfahrung",
+    "education": "Bildung",
+    "certifications": "Zertifizierungen",
+    "skills": "Fähigkeiten",
+    "hobbiesAndInterests": "Hobbys & Interessen",
+    "messageFormTitle": "Kontakt aufnehmen",
+    "contactDetails": "Kontaktdetails"
   },
   "common": {
     "validations": {
-      "required": "Please enter your {{name}}",
-      "maxEmailLengthReached": "Email should have at most 50 characters",
-      "invalidEmailError": "Email address must be a valid address"
+      "required": "Bitte geben Sie Ihren {{name}} ein",
+      "maxEmailLengthReached": "E-Mail sollte maximal 50 Zeichen lang sein",
+      "invalidEmailError": "E-Mail-Adresse muss eine gültige Adresse sein"
     }
   },
   "inputs": {
-    "fullName": "Full Name",
-    "emailAddress": "Email Address",
-    "message": "Message"
+    "fullName": "Vollständiger Name",
+    "emailAddress": "E-Mail-Adresse",
+    "message": "Nachricht",
+    "placeholders": {
+      "fullName": "Geben Sie Ihren vollständigen Namen ein",
+      "emailAddress": "Geben Sie Ihre E-Mail-Adresse ein",
+      "message": "Erzählen Sie mir mehr über Ihre Projektanforderungen und den Zeitplan"
+    }
   },
   "button": {
-    "contactMe": "Contact Me",
-    "downloadCv": "Download CV",
-    "send": "Send",
-    "viewAll": "View All"
+    "contactMe": "Kontaktiere mich",
+    "downloadCv": "Lebenslauf herunterladen",
+    "send": "Senden",
+    "viewAll": "Alle anzeigen"
   },
-  "topMateInfo": "For career guidance and resume review, check out my Top Mate profile.",
-  "scrollToKnowMore": "Scroll for more information",
-  "skipToSection": "Skip to section",
-  "viewCertification": "View Certification",
-  "inProgress": "In Progress",
-  "complete": "Complete",
-  "messageFormSubtitle": "Reach out to me today and let's start a conversation about your project or inquiry!",
-  "contactDetailsMessage": "Feel free to contact me through the following platforms. Also, please check out my work on Instagram and GitHub.",
-  "viewLinkedinProfile": "View LinkedIn Profile",
-  "development": "Development",
+  "topMateInfo": "Für Karriereberatung und Lebenslaufprüfung besuchen Sie mein Top Mate-Profil.",
+  "scrollToKnowMore": "Scrollen für weitere Informationen",
+  "skipToSection": "Zum Abschnitt springen",
+  "viewCertification": "Zertifizierung anzeigen",
+  "inProgress": "In Bearbeitung",
+  "complete": "Abgeschlossen",
+  "messageFormSubtitle": "Nehmen Sie heute Kontakt mit mir auf und lassen Sie uns über Ihr Projekt oder Ihre Anfrage sprechen!",
+  "contactDetailsMessage": "Zögern Sie nicht, mich über die folgenden Plattformen zu kontaktieren. Schauen Sie sich auch meine Arbeiten auf Instagram und GitHub an.",
+  "viewLinkedinProfile": "LinkedIn-Profil anzeigen",
+  "development": "Entwicklung",
   "design": "Design",
-  "pageLoadError": "Oops! Something went wrong. Please try again later.",
-  "sectionLoadError": "Failed to load this section. Please try again later.",
-  "messageSentSuccess": "Message sent successfully.",
-  "sorryCouldntSendMsg": "Sorry, we couldn't send your message. Please try again later.",
-  "sendingMessage": "Sending your message...",
-  "hello": "Hello, I'm",
+  "pageLoadError": "Hoppla! Etwas ist schiefgegangen. Bitte versuchen Sie es später erneut.",
+  "sectionLoadError": "Fehler beim Laden dieses Abschnitts. Bitte versuchen Sie es später erneut.",
+  "messageSentSuccess": "Nachricht erfolgreich gesendet.",
+  "sorryCouldntSendMsg": "Entschuldigung, wir konnten Ihre Nachricht nicht senden. Bitte versuchen Sie es später erneut.",
+  "sendingMessage": "Ihre Nachricht wird gesendet...",
+  "hello": "Hallo, ich bin",
   "blogs": "Blogs",
-  "home": "Home"
+  "home": "Startseite"
 }
