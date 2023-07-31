@@ -4,6 +4,7 @@
   border: var(--border-width) solid var(--grey7);
   border-radius: var(--border-radius);
   cursor: pointer;
+  overflow: hidden;
 
   &:hover {
     @include card-bg;
