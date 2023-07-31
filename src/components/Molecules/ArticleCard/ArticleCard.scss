@@ -3,17 +3,7 @@
 .article-card {
   border: var(--border-width) solid var(--grey7);
   border-radius: var(--border-radius);
-  overflow: hidden;
-  width: calc(
-    100% / var(--no-of-article-cards) - (1rem / var(--no-of-article-cards))
-  );
-
-  --no-of-article-cards: 3;
-
-  display: flex;
-  flex-direction: column;
   cursor: pointer;
-  box-sizing: border-box;
 
   &:hover {
     @include card-bg;
@@ -31,11 +21,7 @@
 }
 
 @media (max-width: 1200px) {
-  .article-card {
-    --no-of-article-cards: 2;
-
-    &:hover {
-      background-color: transparent;
-    }
+  .article-card:hover {
+    background-color: transparent;
   }
 }

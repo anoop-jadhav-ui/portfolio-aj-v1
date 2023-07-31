@@ -1,11 +1,18 @@
-.recent-articles-section-body {
-  display: flex;
-  flex-wrap: wrap;
-  padding-bottom: 0.5rem;
+.recent-articles-grid {
+  --no-of-article-columns: 3;
+
+  display: grid;
+  grid-template-columns: repeat(var(--no-of-article-columns), 1fr);
+
   gap: 0.5rem;
-  justify-content: flex-start;
 }
 
 .view-all-button {
-  margin-top: 1rem;
+  margin-top: 1.5rem;
+}
+
+@media (max-width: 1200px) {
+  .recent-articles-grid {
+    --no-of-article-columns: 2;
+  }
 }

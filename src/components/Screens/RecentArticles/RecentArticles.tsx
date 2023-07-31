@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { MdArrowRightAlt } from "react-icons/md";
 import { useRecentArticleContext } from "../../../context/RecentArticleContext";
@@ -14,6 +14,13 @@ function RecentArticles() {
   const { recentArticles } = useRecentArticleContext();
   const { isMobile } = useTheme();
   const { t } = useTranslation();
+
+  const highlightedArticle = recentArticles[0];
+
+  const topRecentArticles = useMemo(() => {
+    return recentArticles.slice(1, isMobile ? 3 : 4);
+  }, [recentArticles, isMobile]);
+
   return (
     <>
       {recentArticles?.length > 0 && (
@@ -22,16 +29,13 @@ function RecentArticles() {
             {t("sectionName.recentArticles")}
           </div>
           <div className="subsection">
-            <HightlightedArticle articleDetails={recentArticles[0]} />
-            <div className="recent-articles-section-body">
-              {recentArticles
-                .slice(0, isMobile ? 3 : 4)
-                .filter((article) => article.slug !== recentArticles[0].slug)
-                .map((article, index) => {
-                  return (
-                    <ArticleCard key={String(index)} articleDetails={article} />
-                  );
-                })}
+            <div className="recent-articles-grid">
+              <HightlightedArticle articleDetails={highlightedArticle} />
+              {topRecentArticles.map((article, index) => {
+                return (
+                  <ArticleCard key={String(index)} articleDetails={article} />
+                );
+              })}
             </div>
           </div>
           <div className="view-all-button text-center">
