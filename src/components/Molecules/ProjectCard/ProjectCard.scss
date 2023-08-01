@@ -3,7 +3,7 @@
   border: var(--border-width) solid var(--grey7);
   padding: 1rem 1rem;
   border-radius: var(--border-radius);
-  width: calc(100% / 2 - (1rem / 2));
+
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -86,10 +86,7 @@
 }
 
 @media (max-width: 1200px) {
-  .project-card {
-    width: 100%;
-    &:hover {
-      background-color: transparent;
-    }
+  .project-card:hover {
+    background-color: transparent;
   }
 }

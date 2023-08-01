@@ -1,7 +1,14 @@
 .project-section-body {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
   width: 100%;
   padding-bottom: 0.5rem;
   grid-gap: 0.5rem;
+}
+
+@media (max-width: 1200px) {
+  .project-section-body {
+    grid-template-columns: 1fr;
+  }
 }
