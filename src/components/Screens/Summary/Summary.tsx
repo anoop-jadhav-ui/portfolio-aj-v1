@@ -1,3 +1,4 @@
+import DOMPurify from "dompurify";
 import parse from "html-react-parser";
 import moment from "moment/moment";
 import React, { useMemo, useState } from "react";
@@ -40,6 +41,13 @@ const Summary = () => {
     setImageLoading(false);
   }
 
+  const overviewSummaryHTML = overview.summary.replace(
+    "{totalYearsOfExperience}",
+    totalExperience
+  );
+
+  const purifiedHTML = DOMPurify.sanitize(overviewSummaryHTML);
+
   return (
     <div className="summary-mobile">
       <div className="mainlogo-wrapper">
@@ -57,11 +65,7 @@ const Summary = () => {
       <div className="h1 bold main-title grey-1 typewriter">
         {overview.name}
       </div>
-      <div className="body-text summary-text">
-        {parse(
-          overview.summary.replace("{totalYearsOfExperience}", totalExperience)
-        )}
-      </div>
+      <div className="body-text summary-text">{parse(purifiedHTML)}</div>
       <div className="summary-buttons">
         <DownloadCV />
         <ContactMeButton />
