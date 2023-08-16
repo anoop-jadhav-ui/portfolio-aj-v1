@@ -3,7 +3,7 @@ import parse from "html-react-parser";
 import moment from "moment/moment";
 import React, { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
-import portfolioImage from "../../../assets/portfolio-app-img.png";
+import portfolioImage from "../../../assets/portfolio-app-img.webp";
 import { useProfileDataContext } from "../../../context/ProfileDataContext";
 import constants from "../../../helpers/constants";
 import ContactMeButton from "../../Molecules/ContactMeButton/ContactMeButton";
