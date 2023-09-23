@@ -1,11 +1,11 @@
 import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import React from "react";
-import { expect, it } from "vitest";
+import { expect, it, vi } from "vitest";
 import axiosInstance from "../../../helpers/axios";
 import TranslationSeed from "../../../testUtils/TranslationSeed";
 import { MessageForm } from "./MessageForm";
 
-jest.mock("../../../helpers/axios");
+vi.mock("../../../helpers/axios");
 
 const ComponentUnderTest = () => {
   return (
@@ -16,7 +16,7 @@ const ComponentUnderTest = () => {
 };
 
 it("shows success banner after successful submission", async () => {
-  jest.spyOn(axiosInstance, "post").mockResolvedValue({
+  vi.spyOn(axiosInstance, "post").mockResolvedValue({
     data: { msg: "success" },
   });
   render(<ComponentUnderTest />);
@@ -40,7 +40,7 @@ it("shows success banner after successful submission", async () => {
 });
 
 it("shows error banner after failed submission", async () => {
-  jest.spyOn(axiosInstance, "post").mockResolvedValue({
+  vi.spyOn(axiosInstance, "post").mockResolvedValue({
     data: { msg: "fail" },
   });
 
@@ -65,7 +65,7 @@ it("shows error banner after failed submission", async () => {
 });
 
 it("shows error banner after api fails", async () => {
-  jest.spyOn(axiosInstance, "post").mockRejectedValue("Error");
+  vi.spyOn(axiosInstance, "post").mockRejectedValue("Error");
 
   render(<ComponentUnderTest />);
 

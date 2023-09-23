@@ -60,7 +60,14 @@ exports[`App > should rende the app in the loading state 1`] = `
       <div
         class="loading-text text-center"
       >
-        Loading...
+        <span>
+          Loading
+        </span>
+        <span
+          class="primary-color"
+        >
+          ...
+        </span>
       </div>
     </div>
   </div>
