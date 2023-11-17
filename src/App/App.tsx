@@ -1,5 +1,5 @@
+import "./App.scss";
 import "../translations/i18next-config";
-
 import React, { useRef } from "react";
 import { useTranslation } from "react-i18next";
 import PageScrollProgressBar from "react-page-scroll-progress-bar";
@@ -11,7 +11,6 @@ import MainBody from "../components/Organisms/MainBody/MainBody";
 import Stars from "../components/Organisms/Stars/Stars";
 import { useProfileDataContext } from "../context/ProfileDataContext";
 import { useTheme } from "../context/ThemeContext";
-import "./App.scss";
 
 export const App = () => {
   const { isMobile } = useTheme();
