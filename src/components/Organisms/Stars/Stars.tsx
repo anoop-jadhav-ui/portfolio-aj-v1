@@ -18,7 +18,7 @@ const Star = () => {
 
   const light = useRef<PointLight>(null);
   const mesh = useRef<InstancedMesh>(null);
-  const count = 1000;
+  const count = 100;
 
   const particles = useMemo(() => {
     const temp = [];
@@ -64,8 +64,8 @@ const Star = () => {
         ]}
       />
       <instancedMesh ref={mesh} args={[undefined, undefined, count]}>
-        <sphereGeometry args={[0.05]} />
-        <dodecahedronGeometry args={[0.05, 0]} />
+        <sphereGeometry args={[0.12]} />
+        <dodecahedronGeometry args={[0.12, 0]} />
         <meshBasicMaterial color={`${color}`} />
       </instancedMesh>
     </>
