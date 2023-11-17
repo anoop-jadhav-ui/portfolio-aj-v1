@@ -1,9 +1,4 @@
-import React, {
-  createContext,
-  useContext,
-  useLayoutEffect,
-  useState,
-} from "react";
+import React, { createContext, useContext, useEffect, useState } from "react";
 import getFilteredLeftPaneData, {
   LeftPaneMenuItem,
 } from "../components/Organisms/LeftPane/leftPaneData";
@@ -38,17 +33,16 @@ export const ProfileDataContextProvider = ({
     useState<boolean>(false);
   const [leftPaneData, setLeftPaneData] = useState<Array<LeftPaneMenuItem>>([]);
 
-  useLayoutEffect(() => {
-    (async () => {
-      const fetchedProfileData = await fetchProfileData();
-      setProfileData(fetchedProfileData);
+  useEffect(() => {
+    fetchProfileData().then((profileData) => {
+      setProfileData(profileData);
       setLeftPaneData(
         getFilteredLeftPaneData({
-          ...fetchedProfileData.appFeatureAvailability,
+          ...profileData.appFeatureAvailability,
         })
       );
       setIsProfileDataLoaded(true);
-    })();
+    });
   }, []);
 
   return (
