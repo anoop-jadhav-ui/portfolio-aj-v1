@@ -13,12 +13,13 @@
   --section-padding: 8.25rem;
   position: relative;
 
-  transform: translateY(1.5rem);
-  transition: transform 0.3s ease-in-out;
+  // slide in animation
+  // transform: translateY(1.5rem);
+  // transition: transform 0.3s ease-in-out;
 
-  &.section-in-view {
-    transform: translateY(0);
-  }
+  // &.section-in-view {
+  //   transform: translateY(0);
+  // }
 }
 
 /*Section spacing*/
