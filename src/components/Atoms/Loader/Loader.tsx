@@ -42,7 +42,7 @@ const Loader = () => {
           />
         </svg>
         <div className="loading-text text-center">
-          <span>Polishing pixels</span>
+          <span>Loading</span>
           {/* <span className="primary-color three-dots">
             <span>.</span>
             <span>.</span>
