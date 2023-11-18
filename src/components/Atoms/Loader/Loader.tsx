@@ -42,12 +42,12 @@ const Loader = () => {
           />
         </svg>
         <div className="loading-text text-center">
-          <span>Loading</span>
-          <span className="primary-color three-dots">
+          <span>Polishing pixels</span>
+          {/* <span className="primary-color three-dots">
             <span>.</span>
             <span>.</span>
             <span>.</span>
-          </span>
+          </span> */}
         </div>
       </div>
     </div>
