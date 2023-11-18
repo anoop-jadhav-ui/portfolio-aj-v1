@@ -14,7 +14,7 @@ const Loader = () => {
           <title>Loader</title>
           <defs>
             <linearGradient id="ttb" y2="1">
-              <stop offset="100%" stopOpacity="1" stopColor="#333">
+              <stop offset="100%" stopOpacity="1" stopColor="var(--grey7)">
                 <animate
                   attributeName="offset"
                   values="0;1;1;0"
@@ -24,7 +24,7 @@ const Loader = () => {
                   begin="0s"
                 />
               </stop>
-              <stop offset="100%" stopOpacity="1" stopColor="#E0E0E0">
+              <stop offset="100%" stopOpacity="1" stopColor="var(--grey1)">
                 <animate
                   attributeName="offset"
                   values="0;1;1;0"
@@ -43,11 +43,11 @@ const Loader = () => {
         </svg>
         <div className="loading-text text-center">
           <span>Loading</span>
-          {/* <span className="primary-color three-dots">
+          <span className="primary-color three-dots">
             <span>.</span>
             <span>.</span>
             <span>.</span>
-          </span> */}
+          </span>
         </div>
       </div>
     </div>
