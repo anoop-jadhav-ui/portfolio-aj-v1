@@ -1,37 +1,38 @@
-import { RecentArticle } from "./../types/profileDataTypes";
+import { RecentArticle, Node } from "./../types/profileDataTypes";
 
 interface HashnodeData {
   data: {
-    user: {
-      publication: {
-        posts: RecentArticle[];
+    publication: {
+      posts: {
+        edges: Node[];
       };
     };
   };
 }
 
 const GET_USER_ARTICLES = `
-    query GetUserArticles($page: Int!) {
-        user(username: "anoopjadhav") {
-            publication {
-                posts(page: $page) {
-                    title
-                    brief
-                    slug
-                    coverImage
-                    dateAdded
-                    dateFeatured
-                    popularity
-                    totalReactions
-                    replyCount
-                }
+  {
+    publication(host: "blog.anoopjadhav.in") {
+      posts(first: 5) {
+        edges {
+          node {
+            title
+            brief
+            slug
+            coverImage{
+              url
             }
+            publishedAt
+            updatedAt
+          }
         }
+      }
     }
+  }
 `;
 
 async function gql(query: unknown, variables = {}): Promise<HashnodeData> {
-  const data = await fetch("https://api.hashnode.com/", {
+  const data = await fetch("https://gql.hashnode.com/", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -47,5 +48,5 @@ async function gql(query: unknown, variables = {}): Promise<HashnodeData> {
 
 export const getRecentArticles = async (): Promise<Array<RecentArticle>> => {
   const result = await gql(GET_USER_ARTICLES, { page: 0 });
-  return result.data.user.publication.posts;
+  return result.data.publication.posts.edges.map((data) => data.node);
 };

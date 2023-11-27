@@ -87,12 +87,15 @@ export interface ProfileData {
 
 export interface RecentArticle {
   title: string;
-  coverImage: string;
   brief: string;
   slug: string;
-  dateAdded: string;
-  dateFeatured: string;
-  popularity: number;
-  totalReactions: number;
-  replyCount: number;
+  coverImage: {
+    url: string;
+  };
+  publishedAt: string;
+  updatedAt: string;
+}
+
+export interface Node {
+  node: RecentArticle;
 }

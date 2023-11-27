@@ -20,7 +20,7 @@ const HightlightedArticle = ({ articleDetails }: ArticleCardProps) => {
     >
       <div className="article-image">
         <img
-          src={articleDetails.coverImage}
+          src={articleDetails.coverImage?.url}
           width="100%"
           alt={articleDetails.title}
         />
@@ -31,7 +31,7 @@ const HightlightedArticle = ({ articleDetails }: ArticleCardProps) => {
           <div className="description">{articleDetails.brief}</div>
         </div>
         <div className="date">
-          {new Date(articleDetails.dateAdded).toDateString()}
+          {new Date(articleDetails.updatedAt).toDateString()}
         </div>
       </div>
     </div>

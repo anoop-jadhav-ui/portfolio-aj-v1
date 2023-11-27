@@ -16,7 +16,7 @@ const ArticleCard = ({ articleDetails }: ArticleCardProps) => {
     <div className="article-card" onClick={redirectToBlogPage} tabIndex={0}>
       <div className="article-image">
         <img
-          src={articleDetails.coverImage}
+          src={articleDetails.coverImage?.url}
           width="100%"
           alt={articleDetails.title}
         />
@@ -24,7 +24,7 @@ const ArticleCard = ({ articleDetails }: ArticleCardProps) => {
       <div className="article-content">
         <div className="bold">{articleDetails.title}</div>
         <div className="date">
-          {new Date(articleDetails.dateAdded).toDateString()}
+          {new Date(articleDetails.updatedAt).toDateString()}
         </div>
       </div>
     </div>
