@@ -24,7 +24,7 @@ const ArticleCard = ({ articleDetails }: ArticleCardProps) => {
       <div className="article-content">
         <div className="bold">{articleDetails.title}</div>
         <div className="date">
-          {new Date(articleDetails.updatedAt).toDateString()}
+          {new Date(articleDetails.publishedAt).toDateString()}
         </div>
       </div>
     </div>

@@ -13,7 +13,7 @@ interface HashnodeData {
 const GET_USER_ARTICLES = `
   {
     publication(host: "blog.anoopjadhav.in") {
-      posts(first: 5) {
+      posts(first: 4) {
         edges {
           node {
             title
