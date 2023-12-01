@@ -21,6 +21,12 @@
   transform: translateX(0.4rem);
   margin-top: 1rem;
 
+  & .secondary {
+    font-weight: normal;
+    font-size: 0.9em;
+    color: var(--primary-color);
+  }
+
   .three-dots {
     padding-left: 0.25rem;
     span {
