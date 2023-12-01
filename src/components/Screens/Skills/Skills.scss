@@ -1,7 +1,17 @@
+.skills-section-header {
+  display: flex;
+  justify-content: space-between;
+}
+
 .skills-content {
   .subsection-title {
     margin-bottom: 2rem;
   }
+  .skills-3d-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
   .skill-bar-wrapper {
     display: flex;
     flex-wrap: wrap;
