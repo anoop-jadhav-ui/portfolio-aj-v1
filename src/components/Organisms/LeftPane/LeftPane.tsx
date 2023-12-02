@@ -1,3 +1,5 @@
+import "./LeftPane.scss";
+
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { BiLeftArrow } from "react-icons/bi";
@@ -6,7 +8,6 @@ import { useSectionInViewContext } from "../../../context/SectionInViewContext";
 import usePersistState from "../../../hooks/usePersistState";
 import LeftPaneItem from "../../Atoms/LeftPaneItem/LeftPaneItem";
 import ContactIcons from "../../Molecules/ContactIcons/ContactIcons";
-import "./LeftPane.scss";
 
 const LeftPane = () => {
   const { t } = useTranslation();
