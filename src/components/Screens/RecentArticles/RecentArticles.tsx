@@ -43,12 +43,14 @@ function RecentArticles() {
               href={import.meta.env.VITE_HASHNODE_BLOG_URL}
               target="_blank"
               rel="noreferrer"
+              aria-label={t("button.viewAll")}
             >
               <Button
                 variant="neutral"
                 Icon={MdArrowRightAlt}
                 label={t("button.viewAll")}
                 className="mx-auto"
+                tabIndex={-1}
               />
             </a>
           </div>

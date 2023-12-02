@@ -11,6 +11,7 @@ interface ButtonProps {
   type?: "button" | "submit" | "reset" | undefined;
   testID?: string;
   className?: string;
+  tabIndex?: number;
 }
 
 interface ClickPosition {
@@ -26,6 +27,7 @@ const Button = ({
   type = "button",
   testID,
   className,
+  tabIndex,
 }: ButtonProps) => {
   const [clickPosition, setCickPosition] = useState<ClickPosition>();
 
@@ -55,6 +57,7 @@ const Button = ({
             "--button-y": clickPosition?.y,
           } as React.CSSProperties
         }
+        tabIndex={tabIndex}
       >
         {label && <span className="label">{label}</span>}
         {Icon && (
