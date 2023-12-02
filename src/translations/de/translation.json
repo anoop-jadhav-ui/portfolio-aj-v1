@@ -51,5 +51,9 @@
   "sendingMessage": "Ihre Nachricht wird gesendet...",
   "hello": "Hallo, ich bin",
   "blogs": "Blogs",
-  "home": "Startseite"
+  "home": "Startseite",
+  "loadingSkillsModel": "3D-Modelle werden geladen",
+  "loadingSkillsMessage": "Vielen Dank für Ihre Geduld.",
+  "loading": "Laden",
+  "loadingMessage": "Vielen Dank für Ihre Geduld."
 }

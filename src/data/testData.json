@@ -4,7 +4,7 @@
     "contactDetails": true,
     "education": true,
     "experience": true,
-    "hobbies": false,
+    "hobbies": true,
     "messageForm": true,
     "overview": true,
     "projects": true,
@@ -13,6 +13,11 @@
     "summary": true
   },
   "certifications": [
+    {
+      "name": "Frontend Developer (React)",
+      "summary": "Hackerrank.com",
+      "urlToCertificate": "https://www.hackerrank.com/certificates/1cc74d43083a"
+    },
     {
       "name": "JavaScript (Basic & Intermediate)",
       "summary": "Hackerrank.com",
@@ -111,7 +116,7 @@
       "description": "I developed this app using a basic 3D model to explore how to configure Blender models runtime in the browser.",
       "github": "https://github.com/anoop-jadhav-ui/ringProblem",
       "priority": 999,
-      "projectName": "Ring Configurator",
+      "projectName": "Configure Ring 3D",
       "status": "Complete",
       "tags": ["React Js", "React Three Fibre", "Threejs"],
       "url": "https://ring-problem.vercel.app/"
@@ -149,7 +154,7 @@
       "priority": 999,
       "projectName": "NextJs Portfolio App",
       "status": "In Progress",
-      "tags": ["React Js", "Firebase", "Node Js", "Express Js", "Figma"],
+      "tags": ["Next Js", "Firebase", null, null, "Typescript"],
       "url": "https://portfolio-next-snowy.vercel.app/"
     }
   ],

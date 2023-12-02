@@ -51,5 +51,9 @@
   "sendingMessage": "आपका संदेश भेजा जा रहा है...",
   "hello": "नमस्ते, मैं हूँ",
   "blogs": "ब्लॉग",
-  "home": "होम"
+  "home": "होम",
+  "loadingSkillsModel": "3D मॉडल लोड हो रहे हैं",
+  "loadingSkillsMessage": "आपकी सहानुभूति के लिए धन्यवाद।",
+  "loading": "लोड हो रहा है",
+  "loadingMessage": "आपकी सहानुभूति के लिए धन्यवाद।"
 }

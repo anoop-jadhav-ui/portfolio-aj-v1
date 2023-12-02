@@ -1,7 +1,13 @@
 import "./Loader.scss";
 import React from "react";
 
-const Loader = () => {
+const Loader = ({
+  loadingText = "Loading",
+  message = "",
+}: {
+  loadingText?: string;
+  message?: string;
+}) => {
   return (
     <div className="loader">
       <div className="svg-wrapper">
@@ -42,8 +48,8 @@ const Loader = () => {
           />
         </svg>
         <div className="loading-text text-center">
-          <span>Loading</span>
-          <div className="secondary">Thank you for your patience.</div>
+          <span>{loadingText}</span>
+          <div className="secondary">{message}</div>
           {/* <span className="primary-color three-dots">
             <span>.</span>
             <span>.</span>

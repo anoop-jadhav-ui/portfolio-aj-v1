@@ -17,8 +17,8 @@ const Skills3D = () => {
     <Suspense
       fallback={
         <SectionLoader
-          label="Loading 3D Models"
-          secondaryLabel="Thank you for your patience."
+          label={t("loadingSkillsModel")}
+          secondaryLabel={t("loadingSkillsMessage")}
         />
       }
     >
