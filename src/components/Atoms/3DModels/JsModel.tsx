@@ -47,6 +47,6 @@ function JsModel(props: JSX.IntrinsicElements["group"]) {
   );
 }
 
-export default CanvasHOC(JsModel, "JavaScript");
-
 useGLTF.preload("/htmlCssJs-transformed.glb");
+
+export default CanvasHOC(JsModel, "JavaScript");

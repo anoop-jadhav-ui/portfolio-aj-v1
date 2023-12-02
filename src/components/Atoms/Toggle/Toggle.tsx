@@ -2,6 +2,7 @@ import React from "react";
 import "./Toggle.scss";
 
 interface ToggleProps {
+  name: string;
   checked: boolean;
   onChange: () => void;
   onLabel: string;
@@ -9,15 +10,34 @@ interface ToggleProps {
 }
 
 const Toggle = ({
+  name = "Toggle",
   checked = false,
   onChange,
   onLabel = "ON",
   offLabel = "OFF",
 }: ToggleProps) => {
   return (
-    <div className="toggle-wrapper" role="checkbox" onClick={onChange}>
-      <div className={`${checked && "highlight"} option`}>{onLabel}</div>
-      <div className={`${!checked && "highlight"} option`}>{offLabel}</div>
+    <div className="toggle-wrapper" role="checkbox">
+      <div className={`${checked && "highlight"} option`}>
+        <label htmlFor="on">{onLabel}</label>
+        <input
+          id="on"
+          type="radio"
+          name={name}
+          checked={checked}
+          onChange={onChange}
+        />
+      </div>
+      <div className={`${!checked && "highlight"} option`}>
+        <label htmlFor="off">{offLabel}</label>
+        <input
+          id="off"
+          type="radio"
+          name={name}
+          checked={!checked}
+          onChange={onChange}
+        />
+      </div>
     </div>
   );
 };
