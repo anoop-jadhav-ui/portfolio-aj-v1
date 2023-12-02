@@ -2,7 +2,7 @@ import React from "react";
 import "./Toggle.scss";
 
 interface ToggleProps {
-  name: string;
+  name?: string;
   checked: boolean;
   onChange: () => void;
   onLabel: string;
