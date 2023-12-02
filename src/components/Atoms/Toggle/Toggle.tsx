@@ -17,7 +17,7 @@ const Toggle = ({
   offLabel = "OFF",
 }: ToggleProps) => {
   return (
-    <div className="toggle-wrapper" role="checkbox">
+    <div className="toggle-wrapper">
       <div className={`${checked && "highlight"} option`}>
         <label htmlFor="on">{onLabel}</label>
         <input
