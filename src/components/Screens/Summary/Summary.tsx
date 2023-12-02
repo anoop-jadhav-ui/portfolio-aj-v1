@@ -1,3 +1,5 @@
+import "./Summary.scss";
+
 import DOMPurify from "dompurify";
 import parse from "html-react-parser";
 import moment from "moment/moment";
@@ -9,7 +11,6 @@ import constants from "../../../helpers/constants";
 import ContactMeButton from "../../Molecules/ContactMeButton/ContactMeButton";
 import DownloadCV from "../../Molecules/DownloadCV/DownloadCV";
 import SectionVisibilityHOC from "../../Organisms/SectionWrapper/SectionWrapper";
-import "./Summary.scss";
 
 const Summary = () => {
   const [imageLoading, setImageLoading] = useState(false);

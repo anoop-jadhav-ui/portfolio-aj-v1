@@ -1,7 +1,8 @@
+import "./Button.scss";
+
 import React, { useState } from "react";
 import { IconType } from "react-icons";
 import useBrowserType from "../../../hooks/useBrowserType";
-import "./Button.scss";
 
 interface ButtonProps {
   label?: string;

@@ -1,5 +1,6 @@
-import React from "react";
 import "./ContactIcons.scss";
+
+import React from "react";
 import { useProfileDataContext } from "../../../context/ProfileDataContext";
 import UseAnimations from "react-useanimations";
 import email from "react-useanimations/lib/mail";

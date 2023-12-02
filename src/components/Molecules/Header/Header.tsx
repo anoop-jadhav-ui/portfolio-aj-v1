@@ -1,10 +1,11 @@
+import "./Header.scss";
+
 import React, { useMemo, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { DarkModeSwitch } from "react-toggle-dark-mode";
 import { useTheme } from "../../../context/ThemeContext";
 import useScrollPosition from "../../../hooks/useScrollPosition";
 import { Logo } from "../../Atoms/Logo/Logo";
-import "./Header.scss";
 
 export default function Header() {
   const headerRef = useRef<HTMLDivElement>(null);

@@ -1,10 +1,11 @@
+import "./Projects.scss";
+
 import React, { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { useProfileDataContext } from "../../../context/ProfileDataContext";
 import constants from "../../../helpers/constants";
 import ProjectCard from "../../Molecules/ProjectCard/ProjectCard";
 import SectionWrapper from "../../Organisms/SectionWrapper/SectionWrapper";
-import "./Projects.scss";
 
 function Projects() {
   const {

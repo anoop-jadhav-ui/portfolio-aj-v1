@@ -1,3 +1,5 @@
+import "./RecentArticles.scss";
+
 import React, { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { MdArrowRightAlt } from "react-icons/md";
@@ -8,7 +10,6 @@ import Button from "../../Atoms/Button/Button";
 import ArticleCard from "../../Molecules/ArticleCard/ArticleCard";
 import HightlightedArticle from "../../Molecules/HightlightedArticle/HightlightedArticle";
 import SectionWrapper from "../../Organisms/SectionWrapper/SectionWrapper";
-import "./RecentArticles.scss";
 
 function RecentArticles() {
   const { recentArticles } = useRecentArticleContext();

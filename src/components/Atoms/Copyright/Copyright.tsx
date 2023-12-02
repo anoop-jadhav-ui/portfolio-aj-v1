@@ -1,5 +1,6 @@
-import React from "react";
 import "./Copyright.scss";
+import React from "react";
+
 export default function Copyright() {
   return (
     <div className="copyright">

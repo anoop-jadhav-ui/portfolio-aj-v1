@@ -1,10 +1,11 @@
+import "./Certifications.scss";
+
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { useProfileDataContext } from "../../../context/ProfileDataContext";
 import constants from "../../../helpers/constants";
 import { CertificateDetails } from "../../../types/profileDataTypes";
 import SectionWrapper from "../../Organisms/SectionWrapper/SectionWrapper";
-import "./Certifications.scss";
 
 const Certifications = () => {
   const {

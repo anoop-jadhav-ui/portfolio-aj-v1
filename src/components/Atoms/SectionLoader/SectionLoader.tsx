@@ -1,5 +1,5 @@
-import React from "react";
 import "./SectionLoader.scss";
+import React from "react";
 
 const SectionLoader = ({
   label = "Loading",

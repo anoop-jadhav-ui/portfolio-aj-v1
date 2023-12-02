@@ -1,8 +1,9 @@
+import "./SectionWrapper.scss";
+
 import React, { useCallback, useEffect, useMemo, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { useSectionInViewContext } from "../../../context/SectionInViewContext";
 import ErrorBoundary from "../../Molecules/ErrorBoundary/ErrorBoundary";
-import "./SectionWrapper.scss";
 import constants from "../../../helpers/constants";
 
 export const isElementInViewport = (el: HTMLDivElement) => {

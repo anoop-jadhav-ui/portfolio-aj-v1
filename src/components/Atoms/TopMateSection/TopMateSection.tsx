@@ -1,9 +1,10 @@
+import Styles from "./TopMateSection.module.css";
+
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { MdArrowRightAlt } from "react-icons/md";
 import UseAnimations from "react-useanimations";
 import alertCircle from "react-useanimations/lib/alertCircle";
-import Styles from "./TopMateSection.module.css";
 
 const TopMateSection = () => {
   const { t } = useTranslation();

@@ -1,3 +1,5 @@
+import "./WorkExperience.scss";
+
 import moment from "moment/moment";
 import React, { useMemo } from "react";
 import { useTranslation } from "react-i18next";
@@ -5,7 +7,6 @@ import { useProfileDataContext } from "../../../context/ProfileDataContext";
 import constants from "../../../helpers/constants";
 import { ExperienceDetails } from "../../../types/profileDataTypes";
 import SectionVisibilityHOC from "../../Organisms/SectionWrapper/SectionWrapper";
-import "./WorkExperience.scss";
 
 const WorkExperience = () => {
   const {

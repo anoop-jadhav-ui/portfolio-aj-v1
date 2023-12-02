@@ -1,3 +1,5 @@
+import "./MessageForm.scss";
+
 import React, { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -8,7 +10,6 @@ import constants from "../../../helpers/constants";
 import Banner, { BannerStatus } from "../../Atoms/Banner/Banner";
 import Button from "../../Atoms/Button/Button";
 import SectionWrapper from "../../Organisms/SectionWrapper/SectionWrapper";
-import "./MessageForm.scss";
 
 type MessageFormType = {
   name: string;

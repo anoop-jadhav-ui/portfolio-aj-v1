@@ -1,5 +1,5 @@
-import React from "react";
 import "./Toggle.scss";
+import React from "react";
 
 interface ToggleProps {
   name?: string;

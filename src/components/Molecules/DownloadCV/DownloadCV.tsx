@@ -1,10 +1,11 @@
+import "./DownloadCV.scss";
+
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { CgSoftwareDownload } from "react-icons/cg";
 import { downloadFile } from "../../../helpers/downloadFile";
 import getResumeFileURL from "../../../helpers/getStorageFile";
 import Button from "../../Atoms/Button/Button";
-import "./DownloadCV.scss";
 
 const DownloadCV = () => {
   const downloadCVHandler = async () => {

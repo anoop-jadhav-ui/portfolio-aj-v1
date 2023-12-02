@@ -1,5 +1,5 @@
-import React from "react";
 import "./Logo.scss";
+import React from "react";
 export function Logo() {
   return (
     <a className="logo" href="/">
