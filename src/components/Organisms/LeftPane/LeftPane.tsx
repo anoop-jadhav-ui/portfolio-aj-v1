@@ -36,6 +36,9 @@ const LeftPane = () => {
           className="toggle-button"
           title="Toggle sidebar"
           onClick={toggleLeftPane}
+          onKeyDown={toggleLeftPane}
+          tabIndex={0}
+          aria-label="skip to section toggle"
         >
           <BiLeftArrow className="arrow" title="toggle leftpane" />
         </div>

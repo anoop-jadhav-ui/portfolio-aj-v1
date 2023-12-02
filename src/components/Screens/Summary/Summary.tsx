@@ -62,7 +62,7 @@ const Summary = () => {
       </div>
 
       <div className="bold primary-color hello">{t("hello")}</div>
-      <div className="h1 bold main-title grey-1 typewriter">
+      <div className="h1 bold main-title grey-1 text-cursor">
         {overview.name}
       </div>
       <div className="body-text summary-text">{parse(purifiedHTML)}</div>
