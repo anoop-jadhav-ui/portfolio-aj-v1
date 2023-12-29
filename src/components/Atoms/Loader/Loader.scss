@@ -19,6 +19,20 @@
   font-weight: bold;
   color: var(--grey1);
   margin-top: 1rem;
+  padding-left: 1rem;
+
+  progress {
+    height: 6px;
+    border: 1px solid transparent;
+    position: relative;
+
+    &::-webkit-progress-bar {
+      background-color: white;
+    }
+    &::-webkit-progress-value {
+      background-color: var(--primary-color);
+    }
+  }
 
   & .secondary {
     font-weight: normal;

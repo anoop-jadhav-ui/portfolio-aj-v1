@@ -49,12 +49,18 @@ const Loader = ({
         </svg>
         <div className="loading-text text-center">
           <span>{loadingText}</span>
-          <div className="secondary">{message}</div>
-          {/* <span className="primary-color three-dots">
+          {/* <progress
+            value={20}
+            max={100}
+            color="var(--primary-color)"
+            className="primary-color"
+          /> */}
+          {/* <div className="secondary">{message}</div> */}
+          <span className="primary-color three-dots">
             <span>.</span>
             <span>.</span>
             <span>.</span>
-          </span> */}
+          </span>
         </div>
       </div>
     </div>
