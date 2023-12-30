@@ -1,6 +1,6 @@
 import React, { Suspense } from "react";
 import { useTranslation } from "react-i18next";
-import SectionLoader from "../../Atoms/SectionLoader/SectionLoader";
+import Loader from "../../Atoms/Loader/Loader";
 
 const HtmlModel = React.lazy(() => import("../../Atoms/3DModels/HtmlModel"));
 const CSSModel = React.lazy(() => import("../../Atoms/3DModels/CSSModel"));
@@ -16,10 +16,7 @@ const Skills3D = () => {
   return (
     <Suspense
       fallback={
-        <SectionLoader
-          label={t("loadingSkillsModel")}
-          secondaryLabel={t("loadingSkillsMessage")}
-        />
+        <Loader isFullScreen={false} message={t("loadingSkillsModel")} />
       }
     >
       <div className="subsection skills-content">

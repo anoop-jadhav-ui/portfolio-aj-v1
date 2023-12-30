@@ -21,7 +21,7 @@ export const App = () => {
   return (
     <ErrorBoundary errorMessage={t("pageLoadError")}>
       {!isProfileDataLoaded ? (
-        <Loader loadingText={t("loading")} message={t("loadingMessage")} />
+        <Loader isFullScreen={true} message={t("loadingMessage")} />
       ) : (
         <>
           <PageScrollProgressBar
