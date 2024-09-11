@@ -1,15 +1,15 @@
-@keyframes borders {
-  0% {
-    width: calc(var(--image-width) + 1rem);
-    height: calc(var(--image-width) + 1rem);
-    border: 2px solid var(--primary-color);
-  }
-  100% {
-    width: calc(var(--image-width) + 4rem);
-    height: calc(var(--image-width) + 4rem);
-    border: 2px solid transparent;
-  }
-}
+// @keyframes borders {
+//   0% {
+//     width: calc(var(--image-width) + 1rem);
+//     height: calc(var(--image-width) + 1rem);
+//     border: 2px solid var(--primary-color);
+//   }
+//   100% {
+//     width: calc(var(--image-width) + 4rem);
+//     height: calc(var(--image-width) + 4rem);
+//     border: 2px solid transparent;
+//   }
+// }
 
 .summary-mobile {
   align-items: center;
@@ -29,40 +29,57 @@
   .mainlogo-wrapper {
     position: relative;
     box-sizing: content-box;
-    border-radius: 50%;
-    background: var(--grey8);
 
-    width: var(--image-width);
-    height: var(--image-width);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+
+    padding: 2rem 2rem 0 2rem;
+
+    border-bottom: 4px solid var(--grey8);
+    overflow: hidden;
 
     &:after {
       content: "";
       position: absolute;
-      top: 50%;
+      top: 90%;
       left: 50%;
+
+      width: 75%;
+      height: calc(75% + 1rem);
+
       transform: translateX(-50%) translateY(-50%);
 
       border-radius: 50%;
-      animation: borders 6s infinite linear;
+
+      z-index: -1;
+
+      background: var(--grey7);
     }
 
     &:before {
       content: "";
       position: absolute;
-
-      border-radius: 50%;
-      top: 50%;
+      top: 90%;
       left: 50%;
 
+      width: calc(80% + 1rem);
+      height: calc(80% + 2rem);
+
       transform: translateX(-50%) translateY(-50%);
-      animation: borders 6s infinite 3s linear;
+
+      border-radius: 50%;
+      background: var(--grey8);
+
+      z-index: -1;
     }
 
     .mainlogo {
       opacity: 0;
       width: 100%;
-      border-radius: 50%;
-      transition: opacity 0.3s ease-in-out;
+
+      width: var(--image-width);
+      height: var(--image-width);
 
       &.loaded {
         opacity: 1;
@@ -103,8 +120,8 @@
   .summary-text {
     font-size: 1.25rem;
     padding-top: 1.5rem;
-    margin: 0 2rem;
-    text-align: center;
+    margin: 0;
+    text-align: left;
 
     span {
       font-weight: bold;

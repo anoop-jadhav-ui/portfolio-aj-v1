@@ -51,25 +51,28 @@ const Summary = () => {
 
   return (
     <div className="summary-mobile">
-      <div className="mainlogo-wrapper">
-        <img
-          src={portfolioImage}
-          className={`mainlogo ${imageLoading && "loaded"}`}
-          alt="mi Baburao"
-          loading="eager"
-          onLoad={handleImageLoaded}
-          onError={handleImageErrored}
-        />
+      <div className="left-section">
+        <div className="bold primary-color hello">{t("hello")}</div>
+        <div className="h1 bold main-title grey-1 text-cursor">
+          {overview.name}
+        </div>
+        <div className="body-text summary-text">{parse(purifiedHTML)}</div>
+        <div className="summary-buttons">
+          <DownloadCV />
+          <ContactMeButton />
+        </div>
       </div>
-
-      <div className="bold primary-color hello">{t("hello")}</div>
-      <div className="h1 bold main-title grey-1 text-cursor">
-        {overview.name}
-      </div>
-      <div className="body-text summary-text">{parse(purifiedHTML)}</div>
-      <div className="summary-buttons">
-        <DownloadCV />
-        <ContactMeButton />
+      <div className="right-section">
+        <div className="mainlogo-wrapper">
+          <img
+            src={portfolioImage}
+            className={`mainlogo ${imageLoading && "loaded"}`}
+            alt="mi Baburao"
+            loading="eager"
+            onLoad={handleImageLoaded}
+            onError={handleImageErrored}
+          />
+        </div>
       </div>
     </div>
   );
