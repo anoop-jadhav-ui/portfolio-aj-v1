@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "proxy": "http://localhost:5000/",
+  "license": "UNLICENSED",
   "dependencies": {
     "@react-three/drei": "^9.79.3",
     "@react-three/fiber": "^8.13.5",
@@ -33,10 +34,13 @@
     "test": "vitest",
     "coverage": "vitest run --coverage",
     "prepare": "husky install",
-    "format": "yarn rome format . --write",
-    "check": "yarn rome check ."
+    "check": "yarn run lint",
+    "lint": "eslint \"src/**/*.{js,jsx,ts,tsx}\"",
+    "lint:fix": "eslint --fix \"src/**/*.{js,jsx,ts,tsx}\"",
+    "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,css,md}\" --config ./.prettierrc.json"
   },
   "devDependencies": {
+    "@eslint/js": "^9.10.0",
     "@testing-library/jest-dom": "^6.1.3",
     "@testing-library/react": "^14.0.0",
     "@types/dompurify": "^3.0.3",
@@ -45,12 +49,16 @@
     "@types/react-dom": "^18.2.7",
     "@types/three": "^0.154.0",
     "@vitejs/plugin-react": "^4.0.4",
+    "eslint": "^9.10.0",
+    "eslint-plugin-react": "^7.35.2",
+    "globals": "^15.9.0",
     "happy-dom": "^12.1.6",
     "husky": "^8.0.3",
     "jsdom": "^22.1.0",
-    "rome": "^12.1.3",
+    "prettier": "^3.3.3",
     "sass": "^1.68.0",
-    "typescript": "^5.1.6",
+    "typescript": "^4.9.4",
+    "typescript-eslint": "^8.5.0",
     "vite": "^4.4.9",
     "vite-plugin-checker": "^0.6.2",
     "vitest": "^0.34.5",
@@ -60,7 +68,7 @@
     "**/*": "prettier --write --ignore-unknown"
   },
   "volta": {
-    "node": "18.16.1",
+    "node": "20.17.0",
     "yarn": "1.22.19"
   }
 }

@@ -1,21 +1,8 @@
-@keyframes borders {
-  0% {
-    width: calc(var(--image-width) + 1rem);
-    height: calc(var(--image-width) + 1rem);
-    border: 2px solid var(--primary-color);
-  }
-  100% {
-    width: calc(var(--image-width) + 4rem);
-    height: calc(var(--image-width) + 4rem);
-    border: 2px solid transparent;
-  }
-}
-
-.summary-mobile {
+.summary-section {
   align-items: center;
   display: flex;
   flex-direction: column;
-  --image-width: 16rem;
+  --image-width: 18rem;
   padding-top: 1rem;
 
   .summary-buttons {
@@ -29,40 +16,66 @@
   .mainlogo-wrapper {
     position: relative;
     box-sizing: content-box;
-    border-radius: 50%;
-    background: var(--grey8);
 
-    width: var(--image-width);
-    height: var(--image-width);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
 
-    &:after {
-      content: "";
+    padding: 0 2rem 0 2rem;
+
+    border-bottom: 4px solid var(--grey8);
+    overflow: hidden;
+
+    @keyframes rotate {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    .ring {
+      width: calc(var(--image-width) + 3rem);
+      height: calc(var(--image-width) + 3rem);
+      top: calc(var(--image-width) / 2 - 1.5rem);
+
       position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translateX(-50%) translateY(-50%);
+      z-index: -1;
 
-      border-radius: 50%;
-      animation: borders 6s infinite linear;
+      animation: rotate 20s linear 0s infinite normal;
+      animation-play-state: paused;
+    }
+
+    &:hover {
+      .ring {
+        animation-play-state: running;
+      }
     }
 
     &:before {
       content: "";
       position: absolute;
-
-      border-radius: 50%;
-      top: 50%;
+      top: var(--image-width);
       left: 50%;
 
+      width: var(--image-width);
+      height: var(--image-width);
+
       transform: translateX(-50%) translateY(-50%);
-      animation: borders 6s infinite 3s linear;
+
+      border-radius: 50%;
+      background: var(--primary-color);
+
+      z-index: -1;
     }
 
     .mainlogo {
       opacity: 0;
       width: 100%;
-      border-radius: 50%;
-      transition: opacity 0.3s ease-in-out;
+
+      width: var(--image-width);
+      height: var(--image-width);
 
       &.loaded {
         opacity: 1;
@@ -103,8 +116,8 @@
   .summary-text {
     font-size: 1.25rem;
     padding-top: 1.5rem;
-    margin: 0 2rem;
-    text-align: center;
+    margin: 0;
+    text-align: left;
 
     span {
       font-weight: bold;

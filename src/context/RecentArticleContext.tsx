@@ -1,52 +1,52 @@
 import React, {
-  createContext,
-  useContext,
-  useLayoutEffect,
-  useState,
-} from "react";
-import { getRecentArticles } from "../helpers/hashnodeApi";
-import { RecentArticle } from "../types/profileDataTypes";
+    createContext,
+    useContext,
+    useLayoutEffect,
+    useState,
+} from 'react'
+import { getRecentArticles } from '../helpers/hashnodeApi'
+import { RecentArticle } from '../types/profileDataTypes'
 
 interface RecentArticleContextType {
-  recentArticles: Array<RecentArticle>;
+    recentArticles: Array<RecentArticle>
 }
 type RecentArticleContextProps = {
-  children: React.ReactNode;
-};
+    children: React.ReactNode
+}
 const defaultGobalContext: RecentArticleContextType = {
-  recentArticles: [],
-};
+    recentArticles: [],
+}
 
 const RecentArticleContext =
-  createContext<RecentArticleContextType>(defaultGobalContext);
+    createContext<RecentArticleContextType>(defaultGobalContext)
 
-export const useRecentArticleContext = () => useContext(RecentArticleContext);
+export const useRecentArticleContext = () => useContext(RecentArticleContext)
 
 export const RecentArticleContextProvider = ({
-  children,
+    children,
 }: RecentArticleContextProps) => {
-  const [recentArticles, setRecentArticles] = useState<Array<RecentArticle>>(
-    []
-  );
+    const [recentArticles, setRecentArticles] = useState<Array<RecentArticle>>(
+        []
+    )
 
-  useLayoutEffect(() => {
-    (async () => {
-      try {
-        const recentArticles = await getRecentArticles();
-        setRecentArticles(recentArticles);
-      } catch (e) {
-        console.log(e);
-      }
-    })();
-  }, []);
+    useLayoutEffect(() => {
+        ;(async () => {
+            try {
+                const recentArticles = await getRecentArticles()
+                setRecentArticles(recentArticles)
+            } catch (e) {
+                console.log(e)
+            }
+        })()
+    }, [])
 
-  return (
-    <RecentArticleContext.Provider
-      value={{
-        recentArticles,
-      }}
-    >
-      {children}
-    </RecentArticleContext.Provider>
-  );
-};
+    return (
+        <RecentArticleContext.Provider
+            value={{
+                recentArticles,
+            }}
+        >
+            {children}
+        </RecentArticleContext.Provider>
+    )
+}

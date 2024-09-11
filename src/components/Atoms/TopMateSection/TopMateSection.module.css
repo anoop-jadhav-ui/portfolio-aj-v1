@@ -1,20 +1,20 @@
 .topmateSection {
-  border: var(--border-width) solid var(--orange);
-  padding: 0.5rem 0.5rem;
-  border-radius: var(--border-radius);
-  cursor: pointer;
+    border: var(--border-width) solid var(--orange);
+    padding: 0.5rem 0.5rem;
+    border-radius: var(--border-radius);
+    cursor: pointer;
 
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
 
-  margin-bottom: 2rem;
+    margin-bottom: 2rem;
 
-  & span {
-    padding-left: 1rem;
-  }
+    & span {
+        padding-left: 1rem;
+    }
 }
 
 .rightArrow {
-  margin-left: 1.5rem;
-  /* transform: rotate(-90deg); */
+    margin-left: 1.5rem;
+    /* transform: rotate(-90deg); */
 }

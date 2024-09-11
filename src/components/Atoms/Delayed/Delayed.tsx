@@ -1,20 +1,20 @@
-import React from "react";
-import { ReactNode, useEffect, useState } from "react";
+import React from 'react'
+import { ReactNode, useEffect, useState } from 'react'
 
 const Delayed = (props: { children: ReactNode; delay: number }) => {
-  const [show, setShow] = useState(false);
+    const [show, setShow] = useState(false)
 
-  useEffect(() => {
-    setTimeout(() => {
-      setShow(true);
-    }, props.delay);
-  });
+    useEffect(() => {
+        setTimeout(() => {
+            setShow(true)
+        }, props.delay)
+    })
 
-  if (!show) {
-    return null;
-  }
+    if (!show) {
+        return null
+    }
 
-  return <>{props.children}</>;
-};
+    return <>{props.children}</>
+}
 
-export default Delayed;
+export default Delayed
