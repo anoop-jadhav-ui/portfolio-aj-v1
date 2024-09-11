@@ -11,11 +11,15 @@ const BarGraph = ({ value, className = '', animate }: BarGraphProps) => {
 
     return (
         <div className={`bar-graph ${className}`} data-testid="bar-graph">
+            <div className="marker marker-1"></div>
+            <div className="marker marker-2"></div>
+            <div className="marker marker-3"></div>
+            <div className="marker marker-4"></div>
             {value ? (
                 <div
                     data-testid="bar"
                     className="filled"
-                    title={valuePercentage}
+                    title={String((Number(value) * 5) / 100) + '☆'}
                     style={{ width: animate ? valuePercentage : '0%' }}
                 />
             ) : (

@@ -7,6 +7,34 @@
   overflow: hidden;
   transition: background-color 0.5s ease-in;
 
+  position: relative;
+
+  .marker{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 2px;
+    height: 60%;
+    border-right: 1px solid var(--grey8);
+  }
+
+  .marker-1{
+       left: 20%;
+  }
+
+  .marker-2{
+       left: 40%;
+  }
+
+  .marker-3{
+       left: 60%;
+  }
+
+  .marker-4{
+       left: 80%;
+  }
+
   .filled {
     display: block;
     height: 2.25rem;
