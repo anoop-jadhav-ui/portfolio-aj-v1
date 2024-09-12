@@ -36,15 +36,17 @@
                 .darkModeSwitch {
                     position: relative;
                     top: 0.25rem;
-                    margin-left: 1rem;
                 }
+
                 a {
                     font-size: 1rem;
                     color: var(--grey1);
+
                     &:hover {
                         color: var(--primary-color);
                     }
                 }
+
                 &.selected {
                     a {
                         color: var(--primary-color);
@@ -83,9 +85,9 @@
 
 
 @media screen and (max-width: 768px) {
-   .header.overlayHeader {
+    .header.overlayHeader {
         padding: 0rem;
         top: 0;
         border-radius: 0;
-   }
+    }
 }

@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next'
 import { DarkModeSwitch } from 'react-toggle-dark-mode'
 import { useTheme } from '../../../context/ThemeContext'
 import useScrollPosition from '../../../hooks/useScrollPosition'
+import ColorPickerSelector from '../../Atoms/ColorPickerSelector/ColorPickerSelector'
 import { Logo } from '../../Atoms/Logo/Logo'
 
 export default function Header() {
@@ -57,6 +58,9 @@ export default function Header() {
                                 sunColor="var(--primary-color)"
                             />
                         </div>
+                    </div>
+                    <div className="menuItem">
+                        <ColorPickerSelector />
                     </div>
                 </div>
             </div>

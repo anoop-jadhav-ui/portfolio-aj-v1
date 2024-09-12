@@ -11,6 +11,8 @@ import usePersistState from '../hooks/usePersistState'
 interface ThemeContextType {
     darkMode: boolean
     setDarkMode: (mode: boolean) => void
+    colorHue: Number
+    setColorHue: (hue: number) => void
     isMobile: boolean
 }
 
@@ -20,6 +22,8 @@ export const ThemeContext = createContext<ThemeContextType>(
 export const useTheme = () => useContext(ThemeContext)
 
 const ThemeContextProvider = ({ children }: { children: ReactNode }) => {
+    const [colorHue, setColorHue] = usePersistState<Number>('ColorHue', 0)
+
     const [darkMode, setDarkMode] = usePersistState<boolean | undefined>(
         'DarkMode',
         true
@@ -41,12 +45,18 @@ const ThemeContextProvider = ({ children }: { children: ReactNode }) => {
         console.log('color scheme', darkMode ? '🌑' : '🌞')
     }, [darkMode])
 
+    useEffect(() => {
+        document.body.style.setProperty('--primary-hue', colorHue.toString())
+    }, [colorHue])
+
     return (
         <ThemeContext.Provider
             value={{
                 darkMode: !!darkMode,
                 setDarkMode,
                 isMobile,
+                colorHue,
+                setColorHue,
             }}
         >
             {children}
