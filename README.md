@@ -18,10 +18,10 @@ Welcome to my portfolio web app, showcasing my projects, skills, and experiences
 
 ## Features
 
-- **Latest Blogs**
-- **Project Showcase**
-- **Skills and Expertise**
-- **Contact Section**
+-   **Latest Blogs**
+-   **Project Showcase**
+-   **Skills and Expertise**
+-   **Contact Section**
 
 ## Setup and Commands
 

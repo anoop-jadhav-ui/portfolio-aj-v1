@@ -1,15 +1,15 @@
 .subsection.work-experience-content {
-  .label {
-    margin-top: 0.25rem;
-    letter-spacing: 2px;
-    display: flex;
-    align-items: center;
+    .label {
+        margin-top: 0.25rem;
+        letter-spacing: 2px;
+        display: flex;
+        align-items: center;
 
-    span + span {
-      margin-left: 1rem;
+        span + span {
+            margin-left: 1rem;
+        }
     }
-  }
-  .summary {
-    padding-top: 0.5rem;
-  }
+    .summary {
+        padding-top: 0.5rem;
+    }
 }

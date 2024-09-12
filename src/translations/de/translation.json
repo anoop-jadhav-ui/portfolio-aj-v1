@@ -1,58 +1,58 @@
 {
-  "sectionName": {
-    "funLearningProjects": "Lernprojekte zum Spaß",
-    "recentArticles": "Neueste Artikel",
-    "workExperience": "Berufserfahrung",
-    "education": "Bildung",
-    "certifications": "Zertifizierungen",
-    "skills": "Fähigkeiten",
-    "hobbiesAndInterests": "Hobbys & Interessen",
-    "messageFormTitle": "Kontakt aufnehmen",
-    "contactDetails": "Kontaktdetails"
-  },
-  "common": {
-    "validations": {
-      "required": "Bitte geben Sie Ihren {{name}} ein",
-      "maxEmailLengthReached": "E-Mail sollte maximal 50 Zeichen lang sein",
-      "invalidEmailError": "E-Mail-Adresse muss eine gültige Adresse sein"
-    }
-  },
-  "inputs": {
-    "fullName": "Vollständiger Name",
-    "emailAddress": "E-Mail-Adresse",
-    "message": "Nachricht",
-    "placeholders": {
-      "fullName": "Geben Sie Ihren vollständigen Namen ein",
-      "emailAddress": "Geben Sie Ihre E-Mail-Adresse ein",
-      "message": "Erzählen Sie mir mehr über Ihre Projektanforderungen und den Zeitplan"
-    }
-  },
-  "button": {
-    "contactMe": "Kontaktiere mich",
-    "downloadCv": "Lebenslauf herunterladen",
-    "send": "Senden",
-    "viewAll": "Alle anzeigen"
-  },
-  "topMateInfo": "Für Karriereberatung und Lebenslaufprüfung besuchen Sie mein Top Mate-Profil.",
-  "scrollToKnowMore": "Scrollen für weitere Informationen",
-  "skipToSection": "Zum Abschnitt springen",
-  "viewCertification": "Zertifizierung anzeigen",
-  "inProgress": "In Bearbeitung",
-  "complete": "Abgeschlossen",
-  "messageFormSubtitle": "Nehmen Sie heute Kontakt mit mir auf und lassen Sie uns über Ihr Projekt oder Ihre Anfrage sprechen!",
-  "contactDetailsMessage": "Zögern Sie nicht, mich über die folgenden Plattformen zu kontaktieren. Schauen Sie sich auch meine Arbeiten auf Instagram und GitHub an.",
-  "viewLinkedinProfile": "LinkedIn-Profil anzeigen",
-  "development": "Entwicklung",
-  "design": "Design",
-  "pageLoadError": "Hoppla! Etwas ist schiefgegangen. Bitte versuchen Sie es später erneut.",
-  "sectionLoadError": "Fehler beim Laden dieses Abschnitts. Bitte versuchen Sie es später erneut.",
-  "messageSentSuccess": "Nachricht erfolgreich gesendet.",
-  "sorryCouldntSendMsg": "Entschuldigung, wir konnten Ihre Nachricht nicht senden. Bitte versuchen Sie es später erneut.",
-  "sendingMessage": "Ihre Nachricht wird gesendet...",
-  "hello": "Hallo, ich bin",
-  "blogs": "Blogs",
-  "home": "Startseite",
-  "loadingSkillsModel": "3D-Modelle werden geladen",
-  "loading": "Laden",
-  "loadingMessage": "Vielen Dank für Ihre Geduld."
+    "sectionName": {
+        "funLearningProjects": "Lernprojekte zum Spaß",
+        "recentArticles": "Neueste Artikel",
+        "workExperience": "Berufserfahrung",
+        "education": "Bildung",
+        "certifications": "Zertifizierungen",
+        "skills": "Fähigkeiten",
+        "hobbiesAndInterests": "Hobbys & Interessen",
+        "messageFormTitle": "Kontakt aufnehmen",
+        "contactDetails": "Kontaktdetails"
+    },
+    "common": {
+        "validations": {
+            "required": "Bitte geben Sie Ihren {{name}} ein",
+            "maxEmailLengthReached": "E-Mail sollte maximal 50 Zeichen lang sein",
+            "invalidEmailError": "E-Mail-Adresse muss eine gültige Adresse sein"
+        }
+    },
+    "inputs": {
+        "fullName": "Vollständiger Name",
+        "emailAddress": "E-Mail-Adresse",
+        "message": "Nachricht",
+        "placeholders": {
+            "fullName": "Geben Sie Ihren vollständigen Namen ein",
+            "emailAddress": "Geben Sie Ihre E-Mail-Adresse ein",
+            "message": "Erzählen Sie mir mehr über Ihre Projektanforderungen und den Zeitplan"
+        }
+    },
+    "button": {
+        "contactMe": "Kontaktiere mich",
+        "downloadCv": "Lebenslauf herunterladen",
+        "send": "Senden",
+        "viewAll": "Alle anzeigen"
+    },
+    "topMateInfo": "Für Karriereberatung und Lebenslaufprüfung besuchen Sie mein Top Mate-Profil.",
+    "scrollToKnowMore": "Scrollen für weitere Informationen",
+    "skipToSection": "Zum Abschnitt springen",
+    "viewCertification": "Zertifizierung anzeigen",
+    "inProgress": "In Bearbeitung",
+    "complete": "Abgeschlossen",
+    "messageFormSubtitle": "Nehmen Sie heute Kontakt mit mir auf und lassen Sie uns über Ihr Projekt oder Ihre Anfrage sprechen!",
+    "contactDetailsMessage": "Zögern Sie nicht, mich über die folgenden Plattformen zu kontaktieren. Schauen Sie sich auch meine Arbeiten auf Instagram und GitHub an.",
+    "viewLinkedinProfile": "LinkedIn-Profil anzeigen",
+    "development": "Entwicklung",
+    "design": "Design",
+    "pageLoadError": "Hoppla! Etwas ist schiefgegangen. Bitte versuchen Sie es später erneut.",
+    "sectionLoadError": "Fehler beim Laden dieses Abschnitts. Bitte versuchen Sie es später erneut.",
+    "messageSentSuccess": "Nachricht erfolgreich gesendet.",
+    "sorryCouldntSendMsg": "Entschuldigung, wir konnten Ihre Nachricht nicht senden. Bitte versuchen Sie es später erneut.",
+    "sendingMessage": "Ihre Nachricht wird gesendet...",
+    "hello": "Hallo, ich bin",
+    "blogs": "Blogs",
+    "home": "Startseite",
+    "loadingSkillsModel": "3D-Modelle werden geladen",
+    "loading": "Laden",
+    "loadingMessage": "Vielen Dank für Ihre Geduld."
 }

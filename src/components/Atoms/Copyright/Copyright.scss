@@ -1,34 +1,34 @@
 .copyright {
-  color: var(--grey5);
-  font-size: 0.8125rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+    color: var(--grey5);
+    font-size: 0.8125rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 
-  text-align: center;
+    text-align: center;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-  .heart {
-    font-size: 1.1rem;
-    padding-left: 0.3rem;
-    padding-right: 0.3rem;
-    animation: pound 0.35s infinite alternate;
-    -webkit-animation: pound 0.35s infinite alternate;
-  }
-  .name {
-    padding-left: 0.3rem;
-  }
+    .heart {
+        font-size: 1.1rem;
+        padding-left: 0.3rem;
+        padding-right: 0.3rem;
+        animation: pound 0.35s infinite alternate;
+        -webkit-animation: pound 0.35s infinite alternate;
+    }
+    .name {
+        padding-left: 0.3rem;
+    }
 }
 
 @-webkit-keyframes pound {
-  to {
-    transform: scale(1.1);
-  }
+    to {
+        transform: scale(1.1);
+    }
 }
 @keyframes pound {
-  to {
-    transform: scale(1.1);
-  }
+    to {
+        transform: scale(1.1);
+    }
 }

@@ -1,55 +1,55 @@
-@import "../../../mixins";
+@import '../../../mixins';
 
 .bar-graph {
-  @include card-bg;
-  height: 2.25rem;
-  border-radius: var(--border-radius);
-  overflow: hidden;
-  transition: background-color 0.5s ease-in;
-
-  position: relative;
-
-  .marker{
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-
-    width: 2px;
-    height: 50%;
-    border-right: 1px solid var(--grey8);
-  }
-
-  .marker-1{
-       left: calc(20% - 1px);
-  }
-
-  .marker-2{
-       left: calc(40% - 1px);
-  }
-
-  .marker-3{
-       left: calc(60% - 1px);
-  }
-
-  .marker-4{
-       left: calc(80% - 1px);
-  }
-
-  .filled {
-    display: block;
+    @include card-bg;
     height: 2.25rem;
-    background: linear-gradient(
-      101.14deg,
-      hsl(
-          calc(var(--primary-hue) + 25),
-          var(--primary-saturation),
-          var(--primary-light)
-        )
-        0.99%,
-      var(--primary-color) 177.11%
-    );
     border-radius: var(--border-radius);
-    transition: width 900ms cubic-bezier(0.5, 1.2, 0.5, 1);
-    cursor: pointer;
-  }
+    overflow: hidden;
+    transition: background-color 0.5s ease-in;
+
+    position: relative;
+
+    .marker {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+
+        width: 2px;
+        height: 50%;
+        border-right: 1px solid var(--grey8);
+    }
+
+    .marker-1 {
+        left: calc(20% - 1px);
+    }
+
+    .marker-2 {
+        left: calc(40% - 1px);
+    }
+
+    .marker-3 {
+        left: calc(60% - 1px);
+    }
+
+    .marker-4 {
+        left: calc(80% - 1px);
+    }
+
+    .filled {
+        display: block;
+        height: 2.25rem;
+        background: linear-gradient(
+            101.14deg,
+            hsl(
+                    calc(var(--primary-hue) + 25),
+                    var(--primary-saturation),
+                    var(--primary-light)
+                )
+                0.99%,
+            var(--primary-color) 177.11%
+        );
+        border-radius: var(--border-radius);
+        transition: width 900ms cubic-bezier(0.5, 1.2, 0.5, 1);
+        cursor: pointer;
+    }
 }

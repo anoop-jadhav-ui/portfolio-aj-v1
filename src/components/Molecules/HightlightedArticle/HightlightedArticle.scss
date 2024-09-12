@@ -1,60 +1,60 @@
-@import "../../../mixins";
+@import '../../../mixins';
 
 .highlighted-articlecard {
-  border: var(--border-width) solid var(--grey7);
-  border-radius: var(--border-radius);
-  overflow: hidden;
-  display: flex;
-  justify-content: space-between;
-  cursor: pointer;
-
-  grid-column: span var(--no-of-article-columns);
-
-  .article-image {
-    width: 60%;
-    img {
-      height: 100%;
-      object-fit: cover;
-    }
-  }
-  &:hover {
-    @include card-bg;
-    border: var(--border-width) solid var(--primary-color);
-  }
-  .content {
-    width: 40%;
+    border: var(--border-width) solid var(--grey7);
+    border-radius: var(--border-radius);
+    overflow: hidden;
     display: flex;
     justify-content: space-between;
-    flex-direction: column;
-    padding: 1.5rem;
+    cursor: pointer;
 
-    .description {
-      font-size: 1rem;
-      padding-top: 0.5rem;
+    grid-column: span var(--no-of-article-columns);
+
+    .article-image {
+        width: 60%;
+        img {
+            height: 100%;
+            object-fit: cover;
+        }
     }
-    .date {
-      color: var(--grey5);
-      font-size: 0.8125rem;
-      padding-top: 2rem;
+    &:hover {
+        @include card-bg;
+        border: var(--border-width) solid var(--primary-color);
     }
-  }
+    .content {
+        width: 40%;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        padding: 1.5rem;
+
+        .description {
+            font-size: 1rem;
+            padding-top: 0.5rem;
+        }
+        .date {
+            color: var(--grey5);
+            font-size: 0.8125rem;
+            padding-top: 2rem;
+        }
+    }
 }
 
 @media (max-width: 1200px) {
-  .highlighted-articlecard {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
+    .highlighted-articlecard {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
 
-    &:hover {
-      background-color: transparent;
+        &:hover {
+            background-color: transparent;
+        }
+        .article-image {
+            width: 100%;
+        }
+        .content {
+            width: 100%;
+            padding: 1rem !important;
+        }
     }
-    .article-image {
-      width: 100%;
-    }
-    .content {
-      width: 100%;
-      padding: 1rem !important;
-    }
-  }
 }

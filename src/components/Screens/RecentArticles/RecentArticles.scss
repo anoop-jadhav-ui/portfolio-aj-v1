@@ -1,18 +1,18 @@
 .recent-articles-grid {
-  --no-of-article-columns: 3;
+    --no-of-article-columns: 3;
 
-  display: grid;
-  grid-template-columns: repeat(var(--no-of-article-columns), 1fr);
+    display: grid;
+    grid-template-columns: repeat(var(--no-of-article-columns), 1fr);
 
-  gap: 0.5rem;
+    gap: 0.5rem;
 }
 
 .view-all-button {
-  margin-top: 1.5rem;
+    margin-top: 1.5rem;
 }
 
 @media (max-width: 1200px) {
-  .recent-articles-grid {
-    --no-of-article-columns: 2;
-  }
+    .recent-articles-grid {
+        --no-of-article-columns: 2;
+    }
 }

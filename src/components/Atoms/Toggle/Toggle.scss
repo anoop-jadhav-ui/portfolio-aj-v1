@@ -1,39 +1,39 @@
 .toggle-wrapper {
-  display: flex;
-  height: 2rem;
-  cursor: pointer;
-
-  .option {
-    width: 50%;
-    border: 2px solid var(--primary-color);
     display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.8125rem;
-    font-weight: bold;
+    height: 2rem;
+    cursor: pointer;
 
-    padding: 1px 0.8rem 0 0.8rem;
-    position: relative;
+    .option {
+        width: 50%;
+        border: 2px solid var(--primary-color);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.8125rem;
+        font-weight: bold;
 
-    &:has(input:focus) {
-      border: 2px solid white;
-    }
+        padding: 1px 0.8rem 0 0.8rem;
+        position: relative;
 
-    input {
-      opacity: 0;
-      position: absolute;
-      cursor: pointer;
-    }
+        &:has(input:focus) {
+            border: 2px solid white;
+        }
 
-    &:first-child {
-      border-radius: 0.25rem 0 0 0.25rem;
-    }
-    &:last-child {
-      border-radius: 0 0.25rem 0.25rem 0;
-    }
+        input {
+            opacity: 0;
+            position: absolute;
+            cursor: pointer;
+        }
 
-    &.highlight {
-      background: var(--primary-color);
+        &:first-child {
+            border-radius: 0.25rem 0 0 0.25rem;
+        }
+        &:last-child {
+            border-radius: 0 0.25rem 0.25rem 0;
+        }
+
+        &.highlight {
+            background: var(--primary-color);
+        }
     }
-  }
 }
