@@ -45,7 +45,7 @@ jobs:
               run: yarn
 
             - name: Lint
-              run: yarn check
+              run: yarn lint
 
     test:
         needs: [install]

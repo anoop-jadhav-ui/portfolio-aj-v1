@@ -34,7 +34,7 @@
         "test": "vitest",
         "coverage": "vitest run --coverage",
         "prepare": "husky install",
-        "check": "yarn run lint",
+        "check": "yarn lint",
         "lint": "eslint \"src/**/*.{js,jsx,ts,tsx}\"",
         "lint:fix": "eslint --fix \"src/**/*.{js,jsx,ts,tsx}\"",
         "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,css,md}\" --config .prettierrc.json"
