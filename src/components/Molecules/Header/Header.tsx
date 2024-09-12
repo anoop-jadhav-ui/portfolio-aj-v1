@@ -53,7 +53,7 @@ export default function Header() {
                             <DarkModeSwitch
                                 checked={darkMode}
                                 onChange={toDarkMode}
-                                size={isMobile ? 20 : 24}
+                                size={isMobile ? 20 : 28}
                                 sunColor="var(--primary-color)"
                             />
                         </div>
