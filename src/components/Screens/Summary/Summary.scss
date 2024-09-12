@@ -36,9 +36,9 @@
     }
 
     .ring {
-      width: calc(var(--image-width) + 3rem);
-      height: calc(var(--image-width) + 3rem);
-      top: calc(var(--image-width) / 2 - 1.5rem);
+      width: calc(var(--image-width) + 2rem);
+      height: calc(var(--image-width) + 2rem);
+      top: calc(var(--image-width) / 2 - 1rem);
 
       position: absolute;
       z-index: -1;
