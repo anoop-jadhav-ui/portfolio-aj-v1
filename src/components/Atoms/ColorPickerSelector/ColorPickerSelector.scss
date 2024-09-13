@@ -1,6 +1,18 @@
 .color-picker-container {
     position: relative;
 
+    .selected-color {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 100ms ease-out;
+
+        &:hover {
+            transform: scale(1.2);
+        }
+    }
+
     .color-picker {
         position: absolute;
         top: 2rem;
@@ -9,7 +21,6 @@
         display: flex;
         flex-direction: column;
         gap: 0.5rem;
-
     }
 
     .color-ball {
