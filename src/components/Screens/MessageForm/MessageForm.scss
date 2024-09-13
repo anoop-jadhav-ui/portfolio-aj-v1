@@ -53,6 +53,7 @@
     0% {
         transform: rotate(0deg);
     }
+
     100% {
         transform: rotate(360deg);
     }
@@ -63,6 +64,7 @@
     .message-content {
         .form-wrapper {
             grid-template-columns: 1fr;
+
             .input-form-control {
                 &:last-child {
                     grid-column: span 1;
