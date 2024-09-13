@@ -3,7 +3,7 @@ import { HiColorSwatch } from 'react-icons/hi'
 import { useTheme } from '../../../context/ThemeContext'
 import './ColorPickerSelector.scss'
 
-const hueList = [0, 45, 90, 135, 180, 225, 270, 315]
+const hueList = [0, 160, 220, 280, 315]
 
 const ColorPickerSelector = () => {
     const { setColorHue, isMobile } = useTheme()
