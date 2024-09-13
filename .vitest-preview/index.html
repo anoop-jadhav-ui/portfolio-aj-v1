@@ -1,0 +1,233 @@
+<html><head><style type="text/css" data-vite-dev-id="/Users/anoopjadhav/Documents/myProjects/portfolio-aj-v1/src/components/Atoms/Banner/Banner.scss">.banner {
+  margin: 2rem;
+  position: fixed;
+  bottom: 1rem;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 40%;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: var(--border-radius);
+  padding: 0.5rem 1rem;
+  color: white !important;
+  transform: translateX(-50%);
+  z-index: 200;
+}
+.banner.success-banner {
+  background: var(--green);
+}
+.banner.error-banner {
+  background: var(--primary-color);
+}
+.banner.neutral-banner {
+  background: var(--grey5);
+}
+.banner .banner-text {
+  width: calc(100% - 2rem);
+  text-align: center;
+}
+.banner .cross {
+  margin-left: 1rem;
+  position: relative;
+  height: 1rem;
+  width: 1rem;
+  cursor: pointer;
+}
+.banner .cross::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 100%;
+  background-color: white;
+  transform: translateX(0.5rem) rotate(45deg);
+}
+.banner .cross::before {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 100%;
+  background-color: white;
+  transform: translateX(0.5rem) rotate(-45deg);
+}
+
+.dark .neutral-banner {
+  background: var(--grey8);
+}
+
+/* Medium devices (tablets, 768px and up)*/
+@media (max-width: 1200px) {
+  .banner {
+    bottom: 0;
+    left: 0;
+    padding: 1rem !important;
+    margin-top: 1rem;
+    width: calc(100% - 2rem);
+    font-weight: bold;
+    transform: translateX(-1rem);
+  }
+}</style><style type="text/css" data-vite-dev-id="/Users/anoopjadhav/Documents/myProjects/portfolio-aj-v1/src/components/Screens/MessageForm/MessageForm.scss">.message-content .subsection-title {
+  margin-bottom: 2rem;
+  display: block;
+}
+.message-content .buttonContainer {
+  margin-top: 1rem;
+}
+.message-content .form-wrapper {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+}
+.message-content .form-wrapper .input-form-control {
+  display: grid;
+}
+.message-content .form-wrapper .input-form-control:has(input:focus, textarea:focus) label {
+  font-weight: bold;
+  color: var(--primary-color);
+}
+.message-content .form-wrapper .input-form-control:last-child {
+  grid-column: span 2;
+}
+.message-content .form-wrapper .input-form-control input.highlight-error,
+.message-content .form-wrapper .input-form-control textarea.highlight-error {
+  border: var(--border-width) solid var(--primary-color);
+}
+.message-content .form-wrapper .input-form-control label {
+  color: var(--grey5);
+  font-size: 0.8125rem;
+  padding-bottom: 0.25rem;
+}
+.message-content .form-wrapper .input-form-control .error-message-label {
+  padding-top: 0.25rem;
+  font-size: 0.8125rem;
+}
+
+.loading .icon svg {
+  animation: rotate360 1s linear infinite;
+}
+
+@keyframes rotate360 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@media (max-width: 768px) {
+  .message-content .form-wrapper {
+    grid-template-columns: 1fr;
+  }
+  .message-content .form-wrapper .input-form-control:last-child {
+    grid-column: span 1;
+  }
+}</style><style type="text/css" data-vite-dev-id="/Users/anoopjadhav/Documents/myProjects/portfolio-aj-v1/src/components/Atoms/Button/Button.scss">.buttonContainer {
+  perspective: 320px;
+  perspective-origin: bottom;
+  display: inline-block;
+  padding-bottom: 0.5rem;
+}
+.buttonContainer .button {
+  padding: 0.6rem 1.5rem;
+  border-radius: var(--border-radius) !important;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  transition: 0.1s linear;
+  transform-style: preserve-3d;
+  transform-origin: center;
+}
+.buttonContainer .button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.buttonContainer .button:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  border: var(--border-width) solid var(--primary-color);
+  border-radius: var(--border-radius);
+  top: 0;
+  left: 0;
+  transform: translateZ(-1rem);
+}
+.buttonContainer .button.safari:after {
+  display: none;
+}
+.buttonContainer .button:hover:not(:disabled) {
+  cursor: pointer;
+  transform: rotate3d(1, 0, 0, 24deg);
+}
+.buttonContainer .button:active:not(:disabled) {
+  transform: translateZ(-1rem);
+}
+.buttonContainer .button.with-label .icon {
+  top: -1px;
+}
+.buttonContainer .button.brand {
+  border: var(--border-width) solid var(--primary-color);
+  background: var(--primary-color);
+  color: var(--grey10);
+  border: 0;
+}
+.buttonContainer .button.neutral {
+  border: var(--border-width) solid var(--grey7);
+  color: var(--primary-color);
+  background: var(--grey10);
+}
+.buttonContainer .button.base {
+  border: none;
+  background: none;
+  color: var(--primary-color);
+}
+.buttonContainer .button .label + .icon {
+  padding-left: 0.5rem;
+}
+.buttonContainer .button .icon {
+  padding-top: 0.25rem;
+}</style><style type="text/css" data-vite-dev-id="/Users/anoopjadhav/Documents/myProjects/portfolio-aj-v1/src/components/Organisms/SectionWrapper/SectionWrapper.scss">.section-floating-element {
+  width: 3rem;
+  height: 3rem;
+  position: absolute;
+  top: calc(50% + var(--section-padding) - 1.5rem);
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.section {
+  --section-padding: 8.25rem;
+  position: relative;
+}
+
+/*Section spacing*/
+.section + .section {
+  padding-top: var(--section-padding);
+}
+
+.section-title {
+  color: var(--primary-color);
+}</style><style type="text/css" data-vite-dev-id="/Users/anoopjadhav/Documents/myProjects/portfolio-aj-v1/src/components/Molecules/ErrorBoundary/ErrorBoundary.scss">.error {
+  text-align: center;
+  font-weight: bold;
+  padding: 3rem;
+  display: flex;
+  place-content: center;
+  height: 100vh;
+  flex-wrap: wrap;
+}
+
+.error svg {
+  width: 3em;
+  height: 3em;
+  fill: var(--primary-color);
+}
+
+.error-message {
+  padding-top: 1.5rem;
+  width: 100%;
+}</style></head><body><div><div class="section-title h2 bold">Get in Touch</div><form id="contact-form" class="subsection message-content" novalidate=""><div class="subsection-data"><p class="subsection-title body-text">Reach out to me today and let's start a conversation about your project or inquiry!</p><div class="primary-color body-text form-wrapper"><div class="input-form-control"><label for="name">Full Name</label><input name="name" placeholder="Enter your full name" id="name" class=""></div><div class="input-form-control"><label for="email">Email Address</label><input name="email" placeholder="Enter your email address" type="email" id="email" class=""></div><div class="input-form-control"><label for="message">Message</label><textarea name="message" placeholder="Tell me more about your project needs and timeline" id="message" class=""></textarea></div></div><div class="buttonContainer"><button class="brand none button  with-label" type="submit"><span class="label">Send</span><span class="icon"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M21 3C21.5523 3 22 3.44772 22 4V20.0066C22 20.5552 21.5447 21 21.0082 21H2.9918C2.44405 21 2 20.5551 2 20.0066V19H20V7.3L12 14.5L2 5.5V4C2 3.44772 2.44772 3 3 3H21ZM8 15V17H0V15H8ZM5 10V12H0V10H5ZM19.5659 5H4.43414L12 11.8093L19.5659 5Z"></path></svg></span></button></div></div></form></div></body></html>

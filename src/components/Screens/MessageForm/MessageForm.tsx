@@ -1,13 +1,15 @@
 import './MessageForm.scss'
 
+import { zodResolver } from '@hookform/resolvers/zod'
 import React, { useState } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import { useTranslation } from 'react-i18next'
 import { AiOutlineLoading3Quarters } from 'react-icons/ai'
 import { RiMailSendLine } from 'react-icons/ri'
+import { z } from 'zod'
+import { useAlertBanner } from '../../../context/AlertBannerContext'
 import axiosInstance from '../../../helpers/axios'
 import constants from '../../../helpers/constants'
-import Banner, { BannerStatus } from '../../Atoms/Banner/Banner'
 import Button from '../../Atoms/Button/Button'
 import SectionWrapper from '../../Organisms/SectionWrapper/SectionWrapper'
 
@@ -17,15 +19,44 @@ type MessageFormType = {
     message: string
 }
 
-const defaultMessageFormState: MessageFormType = {
+const defaultValues: MessageFormType = {
     name: '',
     email: '',
     message: '',
 }
 
 export const MessageForm = () => {
+    const { t } = useTranslation()
+
+    const messageFormSchema = z.object({
+        name: z.string().min(1, {
+            message: t('common.validations.required', {
+                name: t('inputs.fullName'),
+            }),
+        }),
+        email: z
+            .string()
+            .min(1, {
+                message: t('common.validations.required', {
+                    name: t('inputs.emailAddress'),
+                }),
+            })
+            .max(50, {
+                message: t('common.validations.maxEmailLengthReached'),
+            })
+            .email({
+                message: t('common.validations.invalidEmailError'),
+            }),
+        message: z.string().min(1, {
+            message: t('common.validations.required', {
+                name: t('inputs.message'),
+            }),
+        }),
+    })
+
     const methods = useForm<MessageFormType>({
-        defaultValues: defaultMessageFormState,
+        resolver: zodResolver(messageFormSchema),
+        defaultValues,
     })
     const {
         register,
@@ -34,22 +65,13 @@ export const MessageForm = () => {
         reset,
     } = methods
 
-    const { t } = useTranslation()
-
-    const [bannerStatus, updateBannerStatus] = useState<BannerStatus>('neutral')
-    const [showBanner, setShowBanner] = useState(false)
-
-    const getBannerMessage = {
-        success: t('messageSentSuccess'),
-        error: t('sorryCouldntSendMsg'),
-        neutral: t('sendingMessage'),
-    }
+    const { showAlertBanner } = useAlertBanner()
+    const [isLoading, setLoading] = useState(false)
 
     const successHandler: SubmitHandler<MessageFormType> = async (data) => {
         const { name, email, message } = data
         try {
-            setShowBanner(true)
-            updateBannerStatus('neutral')
+            setLoading(true)
             const response = await axiosInstance.post('/mail', {
                 email: email,
                 message: message,
@@ -57,29 +79,20 @@ export const MessageForm = () => {
             })
 
             if (response.data.msg === 'success') {
-                updateBannerStatus('success')
+                showAlertBanner('success', t('messageSentSuccess'))
                 reset()
             } else if (response.data.msg === 'fail') {
-                updateBannerStatus('error')
+                showAlertBanner('error', t('sorryCouldntSendMsg'))
             }
         } catch (e: unknown) {
-            updateBannerStatus('error')
+            showAlertBanner('error', t('sorryCouldntSendMsg'))
+        } finally {
+            setLoading(false)
         }
     }
 
     return (
         <>
-            {showBanner && (
-                <Banner
-                    data-testid="banner"
-                    type={bannerStatus}
-                    text={getBannerMessage[bannerStatus]}
-                    closeBanner={() => {
-                        updateBannerStatus('neutral')
-                        setShowBanner(false)
-                    }}
-                />
-            )}
             <div className="section-title h2 bold">
                 {t('sectionName.messageFormTitle')}
             </div>
@@ -98,11 +111,7 @@ export const MessageForm = () => {
                         <div className="input-form-control">
                             <label htmlFor="name">{t('inputs.fullName')}</label>
                             <input
-                                {...register('name', {
-                                    required: t('common.validations.required', {
-                                        name: t('inputs.fullName'),
-                                    }),
-                                })}
+                                {...register('name')}
                                 placeholder={t('inputs.placeholders.fullName')}
                                 name="name"
                                 id="name"
@@ -119,25 +128,7 @@ export const MessageForm = () => {
                                 {t('inputs.emailAddress')}
                             </label>
                             <input
-                                {...register('email', {
-                                    required: t('common.validations.required', {
-                                        name: t('inputs.emailAddress'),
-                                    }),
-                                    validate: {
-                                        maxLength: (v) =>
-                                            v.length <= 50 ||
-                                            t(
-                                                'common.validations.maxEmailLengthReached'
-                                            ),
-                                        matchPattern: (v) =>
-                                            /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(
-                                                v
-                                            ) ||
-                                            t(
-                                                'common.validations.invalidEmailError'
-                                            ),
-                                    },
-                                })}
+                                {...register('email')}
                                 placeholder={t(
                                     'inputs.placeholders.emailAddress'
                                 )}
@@ -159,11 +150,7 @@ export const MessageForm = () => {
                                 {t('inputs.message')}
                             </label>
                             <textarea
-                                {...register('message', {
-                                    required: t('common.validations.required', {
-                                        name: t('inputs.message'),
-                                    }),
-                                })}
+                                {...register('message')}
                                 placeholder={t('inputs.placeholders.message')}
                                 name="message"
                                 id="message"
@@ -178,17 +165,13 @@ export const MessageForm = () => {
                             )}
                         </div>
                     </div>
-
                     <Button
-                        className={
-                            bannerStatus === 'neutral' && showBanner
-                                ? 'loading'
-                                : ''
-                        }
+                        className={isLoading ? 'loading' : ''}
+                        disabled={isLoading}
                         type="submit"
                         label={t('button.send')}
                         Icon={
-                            bannerStatus === 'neutral' && showBanner
+                            isLoading
                                 ? AiOutlineLoading3Quarters
                                 : RiMailSendLine
                         }

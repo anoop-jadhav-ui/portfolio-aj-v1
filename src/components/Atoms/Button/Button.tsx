@@ -13,6 +13,7 @@ interface ButtonProps {
     testID?: string
     className?: string
     tabIndex?: number
+    disabled?: boolean
 }
 
 interface ClickPosition {
@@ -29,6 +30,7 @@ const Button = ({
     testID,
     className,
     tabIndex,
+    disabled = false,
 }: ButtonProps) => {
     const [clickPosition, setCickPosition] = useState<ClickPosition>()
 
@@ -59,6 +61,7 @@ const Button = ({
                     } as React.CSSProperties
                 }
                 tabIndex={tabIndex}
+                disabled={disabled}
             >
                 {label && <span className="label">{label}</span>}
                 {Icon && (

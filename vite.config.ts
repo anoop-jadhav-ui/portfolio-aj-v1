@@ -20,5 +20,6 @@ export default {
         globals: true,
         environment: 'jsdom',
         setupFiles: ['./test/setupTests.ts'],
+        css: true,
     },
 }

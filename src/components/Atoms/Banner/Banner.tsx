@@ -1,27 +1,25 @@
-import './Banner.scss'
 import React from 'react'
+import { useAlertBanner } from '../../../context/AlertBannerContext'
+import './Banner.scss'
 
 export type BannerStatus = 'success' | 'neutral' | 'error'
 
-interface BannerProps {
-    type: BannerStatus
-    text: string
-    closeBanner: () => void
-}
-const Banner = ({ type = 'success', text, closeBanner }: BannerProps) => {
+const Banner = () => {
+    const { type, message, isAlertBannerVisible, hideAlertBanner } =
+        useAlertBanner()
+
+    if (!isAlertBannerVisible) return null
+
     return (
         <div
             className={`default-text banner ${type}-banner mb-2`}
+            role="alertdialog"
             data-testid="banner"
         >
-            <div className="banner-text" data-testid="banner-text">
-                {text}
+            <div className="banner-text" role="alert">
+                {message}
             </div>
-            <div
-                className="cross"
-                onClick={closeBanner}
-                data-testid="bannerclosebutton"
-            />
+            <div className="cross" onClick={hideAlertBanner} role="button" />
         </div>
     )
 }

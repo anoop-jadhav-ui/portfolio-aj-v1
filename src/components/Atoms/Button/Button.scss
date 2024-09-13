@@ -18,6 +18,11 @@
         transform-style: preserve-3d;
         transform-origin: center;
 
+        &:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
         &:after {
             content: '';
             position: absolute;
@@ -38,12 +43,12 @@
             display: none;
         }
 
-        &:hover {
+        &:hover:not(:disabled) {
             cursor: pointer;
             transform: rotate3d(1, 0, 0, 24deg);
         }
 
-        &:active {
+        &:active:not(:disabled) {
             transform: translateZ(-1rem);
         }
 
@@ -70,7 +75,7 @@
             color: var(--primary-color);
         }
 
-        .label + .icon {
+        .label+.icon {
             padding-left: 0.5rem;
         }
 
