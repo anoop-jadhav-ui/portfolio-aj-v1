@@ -4,9 +4,7 @@ import { expect, it, vi } from 'vitest'
 import AlertBannerProvider from '../../../context/AlertBannerContext'
 import axiosInstance from '../../../helpers/axios'
 import TranslationSeed from '../../../testUtils/TranslationSeed'
-import Banner from '../../Atoms/Banner/Banner'
 import { MessageForm } from './MessageForm'
-import { debug } from 'vitest-preview'
 
 vi.mock('../../../helpers/axios')
 
@@ -36,7 +34,6 @@ it('shows success banner after successful submission', async () => {
         target: { value: 'Hello, world!' },
     })
 
-    debug()
     fireEvent.click(screen.getByRole('button', { name: /Send/i }))
 
     await waitFor(() =>
