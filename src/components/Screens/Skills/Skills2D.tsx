@@ -25,7 +25,7 @@ const Skills2D = () => {
                                 key={String(key)}
                                 className="skill-bar-wrapper"
                             >
-                                <div className="skill-label grey-1 body-text bold">
+                                <div className="skill-label grey-1 h5 bold">
                                     {skill.skillName}
                                 </div>
                                 <BarGraph
@@ -48,7 +48,7 @@ const Skills2D = () => {
                                 key={String(key)}
                                 className="skill-bar-wrapper"
                             >
-                                <div className="skill-label grey-1 body-text bold">
+                                <div className="skill-label grey-1 h5 bold">
                                     {skill.skillName}
                                 </div>
                                 <BarGraph
