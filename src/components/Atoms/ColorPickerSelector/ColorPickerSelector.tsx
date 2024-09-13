@@ -6,7 +6,7 @@ import './ColorPickerSelector.scss'
 const hueList = [0, 45, 90, 135, 180, 225, 270, 315]
 
 const ColorPickerSelector = () => {
-    const { setColorHue } = useTheme()
+    const { setColorHue, isMobile } = useTheme()
     const [isColorPickerOpen, toggleColorPicker] = useState(false)
 
     const onColorSelection: React.MouseEventHandler<HTMLUListElement> = (
@@ -31,7 +31,10 @@ const ColorPickerSelector = () => {
                 }}
                 tabIndex={0}
             >
-                <HiColorSwatch size={28} color="var(--primary-color)" />
+                <HiColorSwatch
+                    size={isMobile ? 22 : 28}
+                    color="var(--primary-color)"
+                />
             </a>
             {isColorPickerOpen && (
                 <ul

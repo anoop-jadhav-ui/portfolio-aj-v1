@@ -16,7 +16,7 @@
     .color-picker {
         position: absolute;
         top: 2rem;
-        right: 0;
+        right: 0.25rem;
 
         display: flex;
         flex-direction: column;
@@ -42,6 +42,20 @@
 
         &.selected-color {
             border: 0;
+        }
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+    .color-picker-container {
+        .color-picker {
+            top: 3rem;
+        }
+
+        .color-ball {
+            height: 2rem;
+            width: 2rem;
         }
     }
 
