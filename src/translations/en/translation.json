@@ -22,9 +22,9 @@
         "emailAddress": "Email Address",
         "message": "Message",
         "placeholders": {
-            "fullName": "Enter your full name",
-            "emailAddress": "Enter your email address",
-            "message": "Tell me more about your project needs and timeline"
+            "fullName": "Enter your full name here",
+            "emailAddress": "Enter your email address here",
+            "message": "Tell me more about your project, your goals, and how I can help."
         }
     },
     "button": {
@@ -39,8 +39,8 @@
     "viewCertification": "View Certification",
     "inProgress": "In Progress",
     "complete": "Complete",
-    "messageFormSubtitle": "Reach out to me today and let's start a conversation about your project or inquiry!",
-    "contactDetailsMessage": "Feel free to contact me through the following platforms. Also, please check out my work on Instagram and GitHub.",
+    "messageFormSubtitle": "Got a project idea or inquiry? Reach out, and let’s bring it to life! Fill out the form below, and I’ll get back to you shortly. Looking forward to hearing from you!",
+    "contactDetailsMessage": "I’m always open to new ideas, collaborations, or just a friendly chat. You can reach me on the following platforms, and don’t forget to check out my latest work on Instagram and GitHub.",
     "viewLinkedinProfile": "View LinkedIn Profile",
     "development": "Development",
     "design": "Design",
