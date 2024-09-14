@@ -7,6 +7,8 @@ import { useProfileDataContext } from '../../../context/ProfileDataContext'
 import constants from '../../../helpers/constants'
 import { ExperienceDetails } from '../../../types/profileDataTypes'
 import SectionVisibilityHOC from '../../Organisms/SectionWrapper/SectionWrapper'
+import DOMPurify from 'dompurify'
+import parse from 'html-react-parser'
 
 const WorkExperience = () => {
     const {
@@ -74,8 +76,10 @@ const WorkExperience = () => {
                                 <span className="dot" />
                                 <span>{experienceDetail.totalYears}</span>
                             </div>
-                            <div className="summary grey-1 body-text">
-                                {experienceDetail.summary}
+                            <div className="summary list grey-1 body-text">
+                                {parse(
+                                    DOMPurify.sanitize(experienceDetail.summary)
+                                )}
                             </div>
                         </div>
                     )

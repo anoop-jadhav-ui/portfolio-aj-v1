@@ -11,5 +11,11 @@
     }
     .summary {
         padding-top: 0.5rem;
+        &.list {
+            li {
+                list-style: square;
+                list-style-position: outside;
+            }
+        }
     }
 }

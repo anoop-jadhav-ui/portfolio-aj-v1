@@ -4,7 +4,7 @@
         "contactDetails": true,
         "education": true,
         "experience": true,
-        "hobbies": true,
+        "hobbies": false,
         "messageForm": true,
         "overview": true,
         "projects": true,
@@ -64,21 +64,21 @@
         {
             "fromDate": "10 May 2021",
             "name": "Thoughtworks",
-            "summary": "Thoughtworks has been my dream company since college days because of its work culture. It is widely known for the intellectual minds who are solving complex problem using technology. I am really excited to work on new challenges here in Thoughtworks.",
+            "summary": "<ul><li>Exploring Next.js and backend technologies like Nest.js, GCP, AWS, etc.</li><li>Exploring Three.js and Blender.</li><li>Currently working on multiple web apps for an E-commerce client.</li><li>Worked on a React Native app for a well-known energy company and supported the app features for a few months.</li><li>Worked as a full stack developer on a food, service, and delivery portal for a client in Germany.</li></ul>",
             "toDate": "Present",
             "totalYears": ""
         },
         {
             "fromDate": "06 Feb 2017",
             "name": "Deloitte",
-            "summary": "In Deloitte, I started with a public sector project for State of Michigan where we built a custom application on salesforce using salesforce lightning components. Along with the project I worked on several Firm initiatives built on React Js - One of the major project being Elixir where we build a React app for non developers similar to wordpress/squarespace having the drag and drop functionality to generate salesforce components. Due to the open culture in Deloitte, I also got the opportunity to work on design projects which involved in-house web/mobile app design, several posters, mailers, infographics, brochure designs and branding. ",
+            "summary": "<ul><li>Worked as UI Developer to build a custom application using Salesforce Aura Components for a public sector project.</li><li>Built a CSS framework for PDF Generation using CSS2 in Visualforce Pages.</li><li>Built a tool to export knowledge articles from Salesforce.</li><li>Built a UI tool that allowed the end user to generate components using drag and drop feature.</li><li>Built custom UI applications on top of standard CRM tool provided by Salesforce using Salesforce Lightning Web Components.</li><li>Also worked as a Visual Designer for several internal projects and events.</li></ul>",
             "toDate": "29 April 2021",
             "totalYears": ""
         },
         {
             "fromDate": "28 Aug 2014",
             "name": "Cognizant",
-            "summary": "Initially started my career in Cognizant as a SAP BASIS consultant. but due to my interest in web technologies I switched to a UI Developer role and worked on various projects using tools and technologies like Angular JS 1.x., React Js, Jquery, Bootstrap, Git etc.",
+            "summary": "<ul><li>Initially started my career as SAP BASIS consultant where major tasks were system monitoring, data archiving, SAP System installation etc.</li><li>Later on moved to UI Development because of my interest towards web development and design. Started with learning SAP UI5, Angular.js along with other web essential languages.</li></ul>",
             "toDate": "17 Jan 2017",
             "totalYears": ""
         }
@@ -104,27 +104,18 @@
     },
     "projects": [
         {
-            "description": "I used Blender and React Three Fiber to create a 3D model, which I then animated with React Fiber Spring. To facilitate easy debugging and updating, I also included leva that allows direct manipulation of the model within the browser.",
+            "description": "I create 3D models with Blender and React Three Fiber, adding animations using React Fiber Spring. For easy debugging and updates, I use Leva, allowing direct model adjustments in the browser.",
             "github": "https://github.com/anoop-jadhav-ui/threejs-model",
-            "priority": 999,
-            "projectName": "Blender 3D Model",
+            "priority": 1,
+            "projectName": "Blender 3D Models",
             "status": "Complete",
             "tags": ["React Js", "React Three Fibre", "Threejs"],
             "url": "https://threejs-model-psi.vercel.app/"
         },
         {
-            "description": "I developed this app using a basic 3D model to explore how to configure Blender models runtime in the browser.",
-            "github": "https://github.com/anoop-jadhav-ui/ringProblem",
-            "priority": 999,
-            "projectName": "Configure Ring 3D",
-            "status": "Complete",
-            "tags": ["React Js", "React Three Fibre", "Threejs"],
-            "url": "https://ring-problem.vercel.app/"
-        },
-        {
             "description": "This is a pair programming assist tool to collaborate, conquer challenges, and code together seamlessly.",
             "github": "https://github.com/anoop-jadhav-ui/pp-react-app",
-            "priority": 1,
+            "priority": 999,
             "projectName": "PairAssist (Pair Programming)",
             "status": "In Progress",
             "tags": ["React Js", "Typescript"],
@@ -138,15 +129,6 @@
             "status": "In Progress",
             "tags": ["React Js", "Firebase"],
             "url": "https://guesttracker.netlify.app"
-        },
-        {
-            "description": "Visualize sorting in real time using this app built using React. As of now Bubble sort and Insertion sort visualization is complete. I will be adding merge sort and quick sort very soon. The idea behind this tool was to understand how hooks like useState, useRef, useEffect work in React.",
-            "github": "https://github.com/anoop-jadhav-ui/sorting-visual",
-            "priority": 999,
-            "projectName": "Sort Visualizer",
-            "status": "In Progress",
-            "tags": ["React Js"],
-            "url": "https://react-sort-visualizer.netlify.app"
         },
         {
             "description": "This is my second portfolio web application which I am building to learn Next Js and Three.js. I am using MUI as a design system. Although this is still work in progress, feel free to check out the app and the github repo.",
@@ -166,32 +148,32 @@
             },
             {
                 "skillName": "Blender",
-                "skillValue": "30"
+                "skillValue": "20"
             }
         ],
         "development": [
             {
                 "skillName": "HTML",
-                "skillValue": "80"
+                "skillValue": "100"
             },
             {
                 "skillName": "CSS",
-                "skillValue": "80"
+                "skillValue": "100"
             },
             {
                 "skillName": "JavaScript",
-                "skillValue": "80"
+                "skillValue": "100"
             },
             {
                 "skillName": "React Js",
-                "skillValue": "80"
+                "skillValue": "100"
             },
             {
                 "skillName": "React Native",
-                "skillValue": "60"
+                "skillValue": "40"
             },
             {
-                "skillName": "Three.js",
+                "skillName": "Next Js",
                 "skillValue": "40"
             }
         ]
