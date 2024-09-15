@@ -4,9 +4,11 @@
     0% {
         transform: translateX(min(-14.5rem, -230.517px));
     }
+
     80% {
         transform: translateX(1rem);
     }
+
     100% {
         transform: translateX(0);
     }
@@ -16,9 +18,11 @@
     0% {
         transform: translateX(0);
     }
+
     80% {
         transform: translateX(min(-15.5rem, -246.517px));
     }
+
     100% {
         transform: translateX(min(-14.5rem, -230.517px));
     }
@@ -27,17 +31,17 @@
 .left-pane {
     position: fixed;
     top: 10rem;
-    left: 0;
-    border-radius: var(--border-radius);
+    left: -2px;
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
     border: var(--border-width) solid var(--grey7);
     width: 14.5rem;
-    animation: slideInFromLeft 0.5s ease-in-out forwards;
+    animation: slideInFromLeft 300ms ease-in-out forwards;
     z-index: 1;
 
     @include card-bg;
 
     &.open {
-        animation: slideInFromLeft 0.5s ease-in-out forwards;
+        animation: slideInFromLeft 300ms ease-in-out forwards;
 
         .toggle-button {
             transform: translateX(0);
@@ -51,7 +55,7 @@
     }
 
     &.closed {
-        animation: slideOutToLeft 0.5s ease-in-out forwards;
+        animation: slideOutToLeft 300ms ease-in-out forwards;
 
         .toggle-button {
             transform: translateX(3rem);
@@ -63,6 +67,7 @@
                 border: var(--border-width) solid var(--primary-color);
             }
         }
+
         .arrow {
             transform: rotate(180deg);
             width: 1.5rem;
@@ -84,8 +89,10 @@
             cursor: pointer;
             font-size: 16px;
             color: var(--grey5);
+
             &.bold {
                 color: var(--grey1);
+
                 &:before {
                     content: '';
                     border-left: 3px solid var(--primary-color);
@@ -116,7 +123,7 @@
 
             cursor: pointer;
 
-            transition: transform 0.5s linear;
+            transition: transform 300ms linear;
         }
     }
 }
