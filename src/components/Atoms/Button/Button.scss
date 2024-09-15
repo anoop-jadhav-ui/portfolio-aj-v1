@@ -75,6 +75,11 @@
             color: var(--primary-color);
         }
 
+        .label {
+            text-transform: uppercase;
+            font-size: 1rem;
+        }
+
         .label+.icon {
             padding-left: 0.5rem;
         }
