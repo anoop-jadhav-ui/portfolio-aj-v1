@@ -20,7 +20,7 @@ const ColorPickerSelector = () => {
         height: `${isMobile ? 34 : 44}px`,
     })
 
-    setSpeed(6)
+    setSpeed(8)
 
     const onColorSelection: React.MouseEventHandler<HTMLUListElement> = (
         evt

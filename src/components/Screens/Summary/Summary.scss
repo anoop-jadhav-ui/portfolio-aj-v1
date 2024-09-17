@@ -8,10 +8,11 @@
         display: flex;
         padding-bottom: 1rem;
 
-        & > div + div {
+        &>div+div {
             margin-left: 1rem;
         }
     }
+
     .mainlogo-wrapper {
         position: relative;
         box-sizing: content-box;
@@ -29,6 +30,7 @@
             0% {
                 transform: rotate(0deg);
             }
+
             100% {
                 transform: rotate(360deg);
             }
@@ -38,6 +40,7 @@
             0% {
                 transform: rotate(45deg);
             }
+
             100% {
                 transform: rotate(-405deg);
             }
@@ -54,7 +57,6 @@
                 height: calc(var(--image-width) + 2rem);
                 top: calc(var(--image-width) / 2 - 1rem);
 
-                animation-play-state: paused;
                 animation-name: rotate-clockwise;
             }
 
@@ -64,14 +66,9 @@
                 top: calc(var(--image-width) / 2 - 2rem);
 
                 animation-name: rotate-anti-clockwise;
-                animation-play-state: paused;
 
                 transform: rotate(45deg);
             }
-        }
-
-        &:hover .ring {
-            animation-play-state: running;
         }
 
         &:before {
@@ -125,15 +122,18 @@
 
         /* The typewriter cursor effect */
         @keyframes blink-caret {
+
             from,
             to {
                 opacity: 0;
             }
+
             50% {
                 opacity: 1;
             }
         }
     }
+
     .summary-text {
         font-size: 1.25rem;
         padding-top: 1.5rem;
