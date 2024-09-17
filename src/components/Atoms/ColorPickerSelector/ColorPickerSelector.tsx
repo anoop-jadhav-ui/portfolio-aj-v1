@@ -1,7 +1,7 @@
 import { useLottie } from 'lottie-react'
 import React, { useEffect, useState } from 'react'
 import { useTheme } from '../../../context/ThemeContext'
-import lottieData from './colorPicker.json'
+import lottieData from './colorPickerLottie.json'
 import './ColorPickerSelector.scss'
 
 const hueList = [0, 220, 280, 315]
@@ -17,7 +17,7 @@ const ColorPickerSelector = () => {
     }
 
     const { View, play, setDirection, setSpeed } = useLottie(options, {
-        height: `${isMobile ? 34 : 42}px`,
+        height: `${isMobile ? 34 : 44}px`,
     })
 
     setSpeed(6)
