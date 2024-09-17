@@ -3,20 +3,16 @@
 
     .selected-color {
         cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: transform 100ms ease-out;
 
-        &:hover {
-            transform: scale(1.2);
+        svg path {
+            fill: var(--primary-color)
         }
     }
 
-    .color-picker {
+    .color-list {
         position: absolute;
-        top: 2rem;
-        right: 0.25rem;
+        top: 2.5rem;
+        right: 0.5rem;
 
         display: flex;
         flex-direction: column;
@@ -49,7 +45,7 @@
 
 @media screen and (max-width: 768px) {
     .color-picker-container {
-        .color-picker {
+        .color-list {
             top: 3rem;
         }
 

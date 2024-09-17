@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
-import { HiColorSwatch } from 'react-icons/hi'
+import { useLottie } from 'lottie-react'
+import React, { useEffect, useState } from 'react'
 import { useTheme } from '../../../context/ThemeContext'
+import lottieData from './colorPicker.json'
 import './ColorPickerSelector.scss'
 
 const hueList = [0, 220, 280, 315]
@@ -8,6 +9,18 @@ const hueList = [0, 220, 280, 315]
 const ColorPickerSelector = () => {
     const { setColorHue, isMobile } = useTheme()
     const [isColorPickerOpen, toggleColorPicker] = useState(false)
+
+    const options = {
+        animationData: lottieData,
+        loop: false,
+        autoplay: false,
+    }
+
+    const { View, play, setDirection, setSpeed } = useLottie(options, {
+        height: `${isMobile ? 34 : 42}px`,
+    })
+
+    setSpeed(6)
 
     const onColorSelection: React.MouseEventHandler<HTMLUListElement> = (
         evt
@@ -19,27 +32,34 @@ const ColorPickerSelector = () => {
         }
     }
 
+    useEffect(() => {
+        if (isColorPickerOpen) {
+            setDirection(1)
+            play()
+        } else {
+            setDirection(-1)
+            play()
+        }
+    }, [isColorPickerOpen])
+
     return (
         <div className="color-picker-container">
             <a
-                className="selected-color"
+                tabIndex={0}
                 onClick={() => toggleColorPicker((prevValue) => !prevValue)}
                 onBlur={(evt) => {
                     if (!evt.relatedTarget) {
                         toggleColorPicker(false)
                     }
                 }}
-                tabIndex={0}
+                className="selected-color"
             >
-                <HiColorSwatch
-                    size={isMobile ? 22 : 28}
-                    color="var(--primary-color)"
-                />
+                {View}
             </a>
             {isColorPickerOpen && (
                 <ul
                     onBlur={() => toggleColorPicker(false)}
-                    className="color-picker"
+                    className="color-list"
                     onClick={onColorSelection}
                     tabIndex={0}
                 >

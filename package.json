@@ -6,6 +6,7 @@
     "license": "UNLICENSED",
     "dependencies": {
         "@hookform/resolvers": "^3.9.0",
+        "@lottiefiles/dotlottie-react": "^0.8.12",
         "@react-three/drei": "^9.79.3",
         "@react-three/fiber": "^8.13.5",
         "axios": "^1.5.0",
@@ -14,6 +15,7 @@
         "html-react-parser": "^4.2.2",
         "i18next": "^23.5.1",
         "i18next-browser-languagedetector": "^7.1.0",
+        "lottie-react": "^2.4.0",
         "moment": "^2.29.4",
         "normalize.css": "^8.0.1",
         "react": "^18.2.0",
