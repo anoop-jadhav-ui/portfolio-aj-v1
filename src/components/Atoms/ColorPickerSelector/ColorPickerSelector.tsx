@@ -16,7 +16,7 @@ const ColorPickerSelector = () => {
             autoplay: false,
         },
         {
-            height: `${isMobile ? 32 : 40}px`,
+            height: `${isMobile ? 28 : 40}px`,
         }
     )
 
