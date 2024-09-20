@@ -46,6 +46,10 @@ export default function Header() {
                             {t('blogs')}
                         </a>
                     </div>
+
+                    <div className="menuItem">
+                        <ColorPickerSelector />
+                    </div>
                     <div className="menuItem">
                         <div
                             className="darkModeSwitch"
@@ -58,9 +62,6 @@ export default function Header() {
                                 sunColor="var(--primary-color)"
                             />
                         </div>
-                    </div>
-                    <div className="menuItem">
-                        <ColorPickerSelector />
                     </div>
                 </div>
             </div>
