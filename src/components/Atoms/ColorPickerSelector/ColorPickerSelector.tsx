@@ -9,15 +9,16 @@ const hueList = [0, 220, 280, 315]
 const ColorPickerSelector = () => {
     const { setColorHue, isMobile } = useTheme()
 
-    const options = {
-        animationData: lottieData,
-        loop: false,
-        autoplay: false,
-    }
-
-    const { View, setSpeed, play, setDirection } = useLottie(options, {
-        height: `${isMobile ? 34 : 44}px`,
-    })
+    const { View, setSpeed, play, setDirection } = useLottie(
+        {
+            animationData: lottieData,
+            loop: false,
+            autoplay: false,
+        },
+        {
+            height: `${isMobile ? 32 : 40}px`,
+        }
+    )
 
     setSpeed(1)
 
