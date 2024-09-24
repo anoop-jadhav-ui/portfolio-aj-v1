@@ -17,7 +17,7 @@
 
     .color-list {
         position: absolute;
-        top: 2.5rem;
+        top: 1.5rem;
         left: 50%;
         transform: translateX(-50%);
 
@@ -26,6 +26,8 @@
         gap: 0.5rem;
 
         visibility: hidden;
+
+        padding: 1rem;
 
         .color-ball {
             cursor: pointer;
@@ -53,10 +55,6 @@
 
 @media screen and (max-width: 768px) {
     .color-picker-container {
-        .color-list {
-            top: 3rem;
-        }
-
         .color-ball {
             height: 2rem;
             width: 2rem;
