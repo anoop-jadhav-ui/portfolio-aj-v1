@@ -11,18 +11,22 @@
     grid-column: span var(--no-of-article-columns);
 
     .article-image {
-        width: 60%;
         img {
-            height: 100%;
+            height: auto;
+            width: 100%;
             object-fit: cover;
+            object-position: left;
         }
     }
+
     &:hover {
         @include card-bg;
         border: var(--border-width) solid var(--primary-color);
     }
+
     .content {
-        width: 40%;
+        grid-column: span 1;
+
         display: flex;
         justify-content: space-between;
         flex-direction: column;
@@ -32,10 +36,11 @@
             font-size: 1rem;
             padding-top: 0.5rem;
         }
+
         .date {
             color: var(--grey5);
             font-size: 0.8125rem;
-            padding-top: 2rem;
+            padding-top: 1rem;
         }
     }
 }
@@ -49,9 +54,11 @@
         &:hover {
             background-color: transparent;
         }
+
         .article-image {
             width: 100%;
         }
+
         .content {
             width: 100%;
             padding: 1rem !important;

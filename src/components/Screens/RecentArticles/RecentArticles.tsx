@@ -19,7 +19,7 @@ function RecentArticles() {
     const highlightedArticle = recentArticles[0]
 
     const topRecentArticles = useMemo(() => {
-        return recentArticles.slice(1, isMobile ? 3 : 4)
+        return recentArticles.slice(isMobile ? 1 : 0, isMobile ? 3 : 6)
     }, [recentArticles, isMobile])
 
     return (
@@ -31,9 +31,11 @@ function RecentArticles() {
                     </div>
                     <div className="subsection">
                         <div className="recent-articles-grid">
-                            <HightlightedArticle
-                                articleDetails={highlightedArticle}
-                            />
+                            {isMobile && (
+                                <HightlightedArticle
+                                    articleDetails={highlightedArticle}
+                                />
+                            )}
                             {topRecentArticles.map((article, index) => {
                                 return (
                                     <ArticleCard
