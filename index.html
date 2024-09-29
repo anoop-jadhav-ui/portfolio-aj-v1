@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
     <head>
-        <!-- Google tag (gtag.js) -->
+        <!-- Google Tag Manager -->
         <script
             async
             src="https://www.googletagmanager.com/gtag/js?id=G-X7DKGCTP0X"
@@ -16,31 +16,51 @@
             gtag('config', 'G-X7DKGCTP0X')
         </script>
 
-        <title>Anoop Jadhav</title>
+        <!-- Essential Meta Tags -->
+        <title>Anoop Jadhav | Frontend Engineer</title>
         <meta charset="utf-8" />
-        <link rel="shortcut icon" href="/src/favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#F65555" />
         <meta
             name="description"
-            content="Frontend Engineer | Please checkout my Portfolio web app. Have a nice day!"
+            content="Frontend Engineer skilled in React and modern web technologies. View Anoop Jadhav's portfolio."
         />
+        <meta name="theme-color" content="#F65555" />
+
+        <!-- Open Graph Meta Tags for social sharing -->
+        <meta property="og:title" content="Anoop Jadhav | Frontend Engineer" />
+        <meta
+            property="og:description"
+            content="Checkout Anoop Jadhav's portfolio showcasing his frontend engineering skills!"
+        />
+        <meta property="og:image" content="/src/og_image.png" />
+        <meta property="og:url" content="https://anoopjadhav.in" />
+        <meta property="og:type" content="website" />
+
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="/src/favicon.ico" />
+
+        <!-- Preload Fonts -->
         <link
-            defer
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+            rel="preload"
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
+            as="style"
         />
         <link
             href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
             rel="stylesheet"
         />
-        <!-- <link
-            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
-            rel="stylesheet"
-        /> -->
 
+        <!-- Normalize CSS -->
+        <link
+            defer
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+        />
+
+        <!-- Preconnect to external resources -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
         <script>
             console.log(`
 ▄▀█ █▄░█ █▀█ █▀█ █▀█ ░░█ ▄▀█ █▀▄ █░█ ▄▀█ █░█ ░
@@ -51,7 +71,9 @@ Welcome to my website. Happy debugging!
         </script>
     </head>
     <body>
-        <div id="root" />
+        <main>
+            <div id="root"></div>
+        </main>
         <script type="module" src="./src/index.tsx"></script>
     </body>
 </html>
