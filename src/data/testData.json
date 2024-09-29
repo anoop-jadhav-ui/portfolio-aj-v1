@@ -104,9 +104,24 @@
     },
     "projects": [
         {
-            "description": "I create 3D models with Blender and React Three Fiber, adding animations using React Fiber Spring. For easy debugging and updates, I use Leva, allowing direct model adjustments in the browser.",
+            "description": "This is a responsive website built from scratch using Next Js and Material UI. The key challenge here was to make it load fast and make SEO friendly. I chose Next Js since it supports server side rendering which improves the load time and also helps in improving SEO ranking.",
+            "github": "",
+            "priority": 800,
+            "projectName": "Courier Dost",
+            "status": "Complete",
+            "tags": [
+                "Next Js",
+                "React Js",
+                "React Hook Forms",
+                "React Query",
+                "MUI"
+            ],
+            "url": "https://courierdost.com/"
+        },
+        {
+            "description": "I created 3D models with Blender and React Three Fiber, adding animations using React Fiber Spring. For easy debugging and updates, I use Leva, allowing direct model adjustments in the browser.",
             "github": "https://github.com/anoop-jadhav-ui/threejs-model",
-            "priority": 1,
+            "priority": 900,
             "projectName": "Blender 3D Models",
             "status": "Complete",
             "tags": ["React Js", "React Three Fibre", "Threejs"],

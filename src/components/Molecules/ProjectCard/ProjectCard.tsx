@@ -56,10 +56,10 @@ const ProjectCard = ({
                         </div>
                     )}
                 </div>
-                <div className={`projectstatus ${projectDetails.status}`}>
+                {/* <div className={`projectstatus ${projectDetails.status}`}>
                     <div className="statuscircle" />
                     <div className="label">{projectDetails.status}</div>
-                </div>
+                </div> */}
             </div>
         </div>
     )
