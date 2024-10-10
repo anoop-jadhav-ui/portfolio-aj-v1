@@ -66,4 +66,10 @@
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
+    <url>
+        <loc>https://blog.anoopjadhav.in/simple-steps-to-improve-your-website-ranking-on-google-seo</loc>
+        <lastmod>2024-10-10</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
 </urlset>
