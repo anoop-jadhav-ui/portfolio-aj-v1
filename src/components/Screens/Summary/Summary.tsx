@@ -22,7 +22,7 @@ const Summary = () => {
 
     const totalExperience = useMemo((): string => {
         try {
-            return experience
+            const totalDifference = experience
                 .map((exp) => {
                     const fromDate = moment(exp.fromDate)
                     const toDate =
@@ -30,7 +30,15 @@ const Summary = () => {
                     return moment(toDate).diff(fromDate, 'year', true)
                 })
                 .reduce((a, b) => a + b)
-                .toFixed(1)
+
+            const totalYears = Math.floor(totalDifference)
+            const totalMonths = Math.round((totalDifference - totalYears) * 12)
+
+            if (totalMonths === 0) {
+                return `${totalYears} years`
+            }
+
+            return `${totalYears} years ${totalMonths} ${totalMonths > 1 ? 'months' : 'month'}`
         } catch (err) {
             return String(moment().year() - 2014)
         }

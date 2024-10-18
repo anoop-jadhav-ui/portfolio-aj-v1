@@ -99,7 +99,7 @@
     ],
     "overview": {
         "name": "Anoop Jadhav",
-        "summary": "A passionate <span>UI Developer</span> with around <span>{totalYearsOfExperience} years</span> of experience in <span>designing and developing web & mobile applications</span> using tools and technologies like React, React Native, Figma, Blender etc.",
+        "summary": "A passionate <span>UI Developer</span> with around <span>{totalYearsOfExperience} </span> of experience in <span>designing and developing web & mobile applications</span> using tools and technologies like React, React Native, Figma, Blender etc.",
         "title": "UI DEVELOPER"
     },
     "projects": [
