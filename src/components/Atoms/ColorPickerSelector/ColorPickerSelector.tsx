@@ -17,6 +17,7 @@ const ColorPickerSelector = () => {
         },
         {
             height: `${isMobile ? 28 : 40}px`,
+            width: `${isMobile ? 28 : 40}px`,
         }
     )
 
