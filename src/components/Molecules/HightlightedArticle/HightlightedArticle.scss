@@ -1,7 +1,6 @@
 @import '../../../mixins';
 
 .highlighted-articlecard {
-    border: var(--border-width) solid var(--grey7);
     border-radius: var(--border-radius);
     overflow: hidden;
     display: flex;
@@ -21,7 +20,6 @@
 
     &:hover {
         @include card-bg;
-        border: var(--border-width) solid var(--primary-color);
     }
 
     .content {

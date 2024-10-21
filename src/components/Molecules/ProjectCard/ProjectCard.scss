@@ -1,16 +1,15 @@
 @import '../../../mixins';
+
 .project-card {
-    border: var(--border-width) solid var(--grey7);
     padding: 1rem 1rem;
     border-radius: var(--border-radius);
 
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     cursor: pointer;
 
     &:hover {
-        border: var(--border-width) solid var(--primary-color);
         @include card-bg;
     }
 
@@ -20,6 +19,7 @@
         align-items: center;
         grid-gap: 0.5rem;
         padding-top: 0.5rem;
+
         .tag {
             font-size: 0.65rem !important;
             color: var(--grey10);
@@ -46,12 +46,13 @@
 
         .projectlinks {
             display: flex;
+
             .contactimg {
                 width: 1.2rem;
             }
         }
 
-        .link + .link {
+        .link+.link {
             margin-left: 1rem;
         }
     }
@@ -63,15 +64,19 @@
         &.Progress .statuscircle {
             background-color: var(--orange);
         }
+
         &.Complete .statuscircle {
             background-color: var(--green);
         }
+
         &.Complete .label {
             color: var(--green);
         }
+
         &.Progress .label {
             color: var(--orange);
         }
+
         .label::first-letter {
             text-transform: uppercase;
         }
@@ -86,7 +91,11 @@
 }
 
 @media (max-width: 1200px) {
-    .project-card:hover {
-        background-color: transparent;
+    .project-card {
+        padding: 0;
+
+        &:hover {
+            background-color: transparent;
+        }
     }
 }

@@ -1,5 +1,4 @@
 import './ArticleCard.scss'
-
 import React from 'react'
 import { RecentArticle } from '../../../types/profileDataTypes'
 
