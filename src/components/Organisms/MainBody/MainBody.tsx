@@ -15,7 +15,7 @@ const Certifications = lazy(
     () => import('../../Screens/Certifications/Certifications')
 )
 const Hobbies = lazy(() => import('../../Screens/Hobbies/Hobbies'))
-const MessageForm = lazy(() => import('../../Screens/MessageForm/MessageForm'))
+const GetInTouch = lazy(() => import('../../Screens/GetInTouch/GetInTouch'))
 const Contact = lazy(() => import('../../Screens/Contact/Contact'))
 const Projects = lazy(() => import('../../Screens/Projects/Projects'))
 const RecentArticles = lazy(
@@ -37,7 +37,7 @@ const MainBody = () => {
         education,
         certifications,
         hobbies,
-        messageForm,
+        getInTouch,
         contactDetails,
         recentArticles,
         skills,
@@ -55,7 +55,7 @@ const MainBody = () => {
                 {education && <Education />}
                 {certifications && <Certifications />}
                 {hobbies && <Hobbies />}
-                {messageForm && <MessageForm />}
+                {getInTouch && <GetInTouch />}
                 {contactDetails && <Contact />}
             </Suspense>
         </div>

@@ -11,7 +11,7 @@ export const constants = {
         CERTIFICATIONS: 'certifications',
         SKILLS: 'skills',
         HOBBIES: 'hobbies-interests',
-        MESSAGE_FORM: 'message-form',
+        GET_IN_TOUCH: 'get-in-touch',
         CONTACT_ME: 'contactme',
     },
 }

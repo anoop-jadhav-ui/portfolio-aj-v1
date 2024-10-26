@@ -49,12 +49,10 @@ body {
     --primary-alpha: 100%;
 
     // Primary & Accent color variations
-    --primary-color: hsla(
-        var(--primary-hue),
-        var(--primary-saturation),
-        var(--primary-light),
-        var(--primary-alpha)
-    );
+    --primary-color: hsla(var(--primary-hue),
+            var(--primary-saturation),
+            var(--primary-light),
+            var(--primary-alpha));
 
     --accent-color: var(--orange);
 
@@ -176,7 +174,7 @@ body {
         list-style: none !important;
     }
 
-    ul > li {
+    ul>li {
         text-decoration: none !important;
     }
 
@@ -185,69 +183,69 @@ body {
     }
 
     a:hover,
-    ul > li a:hover {
+    ul>li a:hover {
         color: var(--primary-color);
         text-decoration: none;
         font-weight: bold;
     }
 
-    ul > li a:hover {
+    ul>li a:hover {
         color: var(--grey2) !important;
     }
 
     /*Colors*/
     .grey1,
-    .grey1 > a {
+    .grey1>a {
         color: var(--grey1);
     }
 
     .grey2,
-    .grey2 > a {
+    .grey2>a {
         color: var(--grey2) !important;
     }
 
     .grey3,
-    .grey3 > a {
+    .grey3>a {
         color: var(--grey3);
     }
 
     .grey4,
-    .grey4 > a {
+    .grey4>a {
         color: var(--grey4) !important;
     }
 
     .grey5,
-    .grey5 > a {
+    .grey5>a {
         color: var(--grey5) !important;
     }
 
     .grey6,
-    .grey6 > a {
+    .grey6>a {
         color: var(--grey6) !important;
     }
 
     .grey7,
-    .grey7 > a {
+    .grey7>a {
         color: var(--grey7) !important;
     }
 
     .grey8,
-    .grey8 > a {
+    .grey8>a {
         color: var(--grey8) !important;
     }
 
     .grey9,
-    .grey9 > a {
+    .grey9>a {
         color: var(--grey9) !important;
     }
 
     .grey10,
-    .grey10 > a {
+    .grey10>a {
         color: var(--grey10) !important;
     }
 
     .primary-color,
-    .primary-color > a {
+    .primary-color>a {
         color: var(--primary-color);
     }
 
@@ -299,11 +297,11 @@ body {
         line-height: 1.5;
     }
 
-    .subsection-data + .subsection-data {
+    .subsection-data+.subsection-data {
         margin-top: 2rem;
     }
 
-    .subsection-wrappers + .subsection-wrappers {
+    .subsection-wrappers+.subsection-wrappers {
         margin-top: 3rem;
     }
 
@@ -311,7 +309,7 @@ body {
         padding-top: 2rem;
     }
 
-    .subsection + .subsection {
+    .subsection+.subsection {
         margin-top: 4rem;
     }
 

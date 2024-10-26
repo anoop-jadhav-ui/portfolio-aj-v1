@@ -3,7 +3,7 @@ export interface FeatureToggles {
     contactDetails: boolean
     education: boolean
     experience: boolean
-    messageForm: boolean
+    getInTouch: boolean
     hobbies: boolean
     overview: boolean
     portfolioData: boolean

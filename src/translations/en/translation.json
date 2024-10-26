@@ -20,10 +20,12 @@
     "inputs": {
         "fullName": "Full Name",
         "emailAddress": "Email Address",
+        "mobileNumber": "Mobile Number",
         "message": "Message",
         "placeholders": {
             "fullName": "Enter your full name here",
             "emailAddress": "Enter your email address here",
+            "mobileNumber": "Enter your mobile number here",
             "message": "Tell me more about your project, your goals, and how I can help."
         }
     },
@@ -54,5 +56,9 @@
     "home": "Home",
     "loadingSkillsModel": "Loading 3D Models",
     "loading": "Loading",
-    "loadingMessage": "Thanks for your patience."
+    "loadingMessage": "Thanks for your patience.",
+    "downloadDialog": {
+        "title": "Download CV",
+        "description": " Would you like to share a quick message before downloading my CV?"
+    }
 }

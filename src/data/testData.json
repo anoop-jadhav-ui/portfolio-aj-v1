@@ -5,7 +5,7 @@
         "education": true,
         "experience": true,
         "hobbies": false,
-        "messageForm": true,
+        "getInTouch": true,
         "overview": true,
         "projects": true,
         "recentArticles": true,

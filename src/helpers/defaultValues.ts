@@ -12,7 +12,7 @@ const defaultFeatureToggles: FeatureToggles = {
     contactDetails: false,
     education: false,
     experience: false,
-    messageForm: false,
+    getInTouch: false,
     hobbies: false,
     overview: false,
     portfolioData: false,
