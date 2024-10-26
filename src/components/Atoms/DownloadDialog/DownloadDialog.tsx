@@ -29,7 +29,10 @@ const DownloadDialog = ({ open, onClose, onDownload }: DialogProps) => {
                 {t('downloadDialog.description')}
             </p>
             <LocalAlertBannerProvider>
-                <DownloadReasonForm onDownload={onDownload} />
+                <DownloadReasonForm
+                    onDownload={onDownload}
+                    closeDialog={onClose}
+                />
             </LocalAlertBannerProvider>
         </dialog>
     )

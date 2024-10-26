@@ -9,11 +9,16 @@ import DownloadReasonForm from './DownloadReasonForm'
 vi.mock('../../../helpers/axios')
 
 const mockOnDownload = vi.fn()
+const mockOnCloseDialog = vi.fn()
+
 const ComponentUnderTest = () => {
     return (
         <LocalAlertBannerProvider>
             <TranslationSeed>
-                <DownloadReasonForm onDownload={mockOnDownload} />
+                <DownloadReasonForm
+                    onDownload={mockOnDownload}
+                    closeDialog={mockOnCloseDialog}
+                />
             </TranslationSeed>
         </LocalAlertBannerProvider>
     )
@@ -24,7 +29,7 @@ describe('<DownloadReasonForm/>', () => {
         vi.clearAllMocks()
     })
 
-    it('shows success banner after successful submission', async () => {
+    it('shows success banner after successful submission and close the dialog', async () => {
         vi.spyOn(axiosInstance, 'post').mockResolvedValue({
             data: { msg: 'success' },
         })
@@ -51,6 +56,7 @@ describe('<DownloadReasonForm/>', () => {
         )
 
         expect(mockOnDownload).toBeCalled()
+        expect(mockOnCloseDialog).toBeCalled()
     })
 
     it('shows error banner after failed submission', async () => {
@@ -80,6 +86,7 @@ describe('<DownloadReasonForm/>', () => {
         )
 
         expect(mockOnDownload).not.toBeCalled()
+        expect(mockOnCloseDialog).not.toBeCalled()
     })
 
     it('shows error banner after api fails', async () => {

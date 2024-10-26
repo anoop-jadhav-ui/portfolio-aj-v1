@@ -26,8 +26,10 @@ const defaultValues: DownloadReasonForm = {
 
 const DownloadReasonForm = ({
     onDownload,
+    closeDialog,
 }: {
     onDownload: () => Promise<void>
+    closeDialog: () => void
 }) => {
     const { t } = useTranslation()
     const { showAlertBanner } = useLocaleAlertBanner()
@@ -86,6 +88,7 @@ const DownloadReasonForm = ({
                 showAlertBanner('success', t('messageSentSuccess'))
                 await onDownload()
                 reset()
+                closeDialog()
             } else if (response.data.msg === 'fail') {
                 showAlertBanner('error', t('sorryCouldntSendMsg'))
             }
