@@ -1,6 +1,6 @@
 <!-- Replace [YOUR_PORTFOLIO_LOGO_URL] with the URL of your portfolio logo -->
 <div align="center">
-  <img src="https://github.com/anoop-jadhav-ui/portfolio-aj-v1/blob/master/src/assets/readme/githubReadmeHeader.png" alt="Portfolio Logo">
+  <img src="https://anoopjadhav.in/images/readme/githubReadmeHeader.png" alt="Portfolio Logo">
 </div>
 
 # Portfolio Web App
@@ -45,5 +45,5 @@ $ yarn test --coverage
 ```
 
 <div align="center">
-  <img src="https://github.com/anoop-jadhav-ui/portfolio-aj-v1/blob/master/src/assets/readme/githubReadmeFooter.png" alt="Portfolio Logo">
+  <img src="https://anoopjadhav.in/images/readme/githubReadmeFooter.png" alt="Portfolio Logo">
 </div>

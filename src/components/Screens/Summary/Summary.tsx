@@ -5,13 +5,13 @@ import parse from 'html-react-parser'
 import moment from 'moment/moment'
 import React, { useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import portfolioImage from '../../../assets/portfolio-app-img.webp'
 import { useProfileDataContext } from '../../../context/ProfileDataContext'
 import { useTheme } from '../../../context/ThemeContext'
 import constants from '../../../helpers/constants'
 import ContactMeButton from '../../Molecules/ContactMeButton/ContactMeButton'
 import DownloadCV from '../../Molecules/DownloadCV/DownloadCV'
 import SectionVisibilityHOC from '../../Organisms/SectionWrapper/SectionWrapper'
+import portfolioImage from '/public/images/portfolio-app-img.webp'
 
 const Summary = () => {
     const [imageLoading, setImageLoading] = useState(false)

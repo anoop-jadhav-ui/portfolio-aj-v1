@@ -60,7 +60,7 @@ const leftPaneDataObj: Array<LeftPaneMenuItem> = [
     {
         class: constants.classNames.GET_IN_TOUCH,
         label: 'Get In Touch',
-        id: 'messageForm',
+        id: 'getInTouch',
         headerPos: 0,
     },
     {
