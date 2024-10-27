@@ -117,6 +117,7 @@ const DownloadReasonForm = ({
                         name="name"
                         id="name"
                         className={errors.name ? 'highlight-error' : ''}
+                        autoFocus
                     />
                     {errors.name && (
                         <span className="error-message-label">
@@ -144,7 +145,7 @@ const DownloadReasonForm = ({
                     <label htmlFor="message">{t('inputs.message')}</label>
                     <textarea
                         {...register('message')}
-                        placeholder={t('inputs.placeholders.message')}
+                        placeholder={t('inputs.placeholders.downloadMessage')}
                         name="message"
                         id="message"
                         className={errors.message ? 'highlight-error' : ''}

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import { useTranslation } from 'react-i18next'
 import { CgClose } from 'react-icons/cg'
 import LocalAlertBannerProvider from '../../../context/LocalAlertBannerContext'
@@ -13,8 +13,25 @@ type DialogProps = {
 
 const DownloadDialog = ({ open, onClose, onDownload }: DialogProps) => {
     const { t } = useTranslation()
+    const dialogRef = useRef<HTMLDialogElement>(null)
+
+    useEffect(() => {
+        if (open) {
+            dialogRef.current?.showModal()
+        } else {
+            dialogRef.current?.close()
+        }
+    }, [open])
+
     return (
-        <dialog open={open} className="dialog">
+        <dialog
+            className="dialog"
+            ref={dialogRef}
+            onClose={() => {
+                dialogRef.current?.close()
+                onClose()
+            }}
+        >
             <header>
                 <h2 className="title">{t('downloadDialog.title')}</h2>
                 <CgClose

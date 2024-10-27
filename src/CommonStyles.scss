@@ -21,7 +21,12 @@
     }
 }
 
+html:has(dialog[open]) {
+    overflow: hidden;
+}
+
 body {
+
     --grey1: #18181b;
     /* darkest */
     --grey2: #27272a;
@@ -316,6 +321,7 @@ body {
     .subsection-title {
         margin-bottom: 1rem;
     }
+
 }
 
 // Mobile
