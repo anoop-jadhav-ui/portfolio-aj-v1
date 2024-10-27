@@ -14,8 +14,8 @@ import SectionVisibilityHOC from '../../Organisms/SectionWrapper/SectionWrapper'
 import portfolioImage from '/images/portfolio-app-img.webp'
 
 const Summary = () => {
-    const [imageLoading, setImageLoading] = useState(false)
     const { profileData } = useProfileDataContext()
+    const [imageLoading, setImageLoading] = useState(false)
     const { darkMode } = useTheme()
     const { overview, experience } = profileData
     const { t } = useTranslation()

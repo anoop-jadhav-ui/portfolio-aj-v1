@@ -2,7 +2,7 @@ import React, { createContext, useContext, useEffect, useState } from 'react'
 import getFilteredLeftPaneData, {
     LeftPaneMenuItem,
 } from '../components/Organisms/LeftPane/leftPaneData'
-import { initialProfileData } from '../helpers/defaultValues'
+import initialProfileData from '../data/testData.json'
 import fetchProfileData from '../helpers/fetchProfileData'
 import { ProfileData } from '../types/profileDataTypes'
 
@@ -28,7 +28,9 @@ export const ProfileDataContextProvider = ({
     const [profileData, setProfileData] =
         useState<ProfileData>(initialProfileData)
     const [leftPaneData, setLeftPaneData] = useState<Array<LeftPaneMenuItem>>(
-        []
+        getFilteredLeftPaneData({
+            ...initialProfileData.appFeatureAvailability,
+        })
     )
 
     useEffect(() => {
