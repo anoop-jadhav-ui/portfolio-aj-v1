@@ -25,11 +25,7 @@
     &::backdrop {
         pointer-events: none;
         z-index: 1000;
-        background: repeating-linear-gradient(45deg,
-                rgba(0, 0, 0, 0.2),
-                rgba(0, 0, 0, 0.2) 1px,
-                rgba(0, 0, 0, 0.3) 1px,
-                rgba(0, 0, 0, 0.3) 20px);
+        background: rgba(0, 0, 0, 0.2);
         backdrop-filter: blur(3px);
     }
 
