@@ -8,7 +8,6 @@ import { ProfileData } from '../types/profileDataTypes'
 
 interface ProfileDataContextType {
     profileData: ProfileData
-    isProfileDataLoaded: boolean
     leftPaneData: Array<LeftPaneMenuItem>
 }
 type ProfileDataContextProps = {
@@ -16,7 +15,6 @@ type ProfileDataContextProps = {
 }
 const defaultGobalContext: ProfileDataContextType = {
     profileData: initialProfileData,
-    isProfileDataLoaded: false,
     leftPaneData: [],
 }
 
@@ -29,8 +27,6 @@ export const ProfileDataContextProvider = ({
 }: ProfileDataContextProps) => {
     const [profileData, setProfileData] =
         useState<ProfileData>(initialProfileData)
-    const [isProfileDataLoaded, setIsProfileDataLoaded] =
-        useState<boolean>(false)
     const [leftPaneData, setLeftPaneData] = useState<Array<LeftPaneMenuItem>>(
         []
     )
@@ -43,7 +39,6 @@ export const ProfileDataContextProvider = ({
                     ...profileData.appFeatureAvailability,
                 })
             )
-            setIsProfileDataLoaded(true)
         })
     }, [])
 
@@ -51,7 +46,6 @@ export const ProfileDataContextProvider = ({
         <ProfileDataContext.Provider
             value={{
                 profileData,
-                isProfileDataLoaded,
                 leftPaneData,
             }}
         >
