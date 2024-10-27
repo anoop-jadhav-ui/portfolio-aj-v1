@@ -19,9 +19,11 @@
     &.success-banner {
         background: var(--green);
     }
+
     &.error-banner {
         background: var(--primary-color);
     }
+
     &.neutral-banner {
         background: var(--grey5);
     }
@@ -30,6 +32,7 @@
         width: calc(100% - 2rem);
         text-align: center;
     }
+
     .cross {
         margin-left: 1rem;
         position: relative;

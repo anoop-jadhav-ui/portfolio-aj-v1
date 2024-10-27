@@ -8,6 +8,7 @@
     padding: 5.25rem 1rem;
 
     margin: auto;
+
     .darkModeWrapper {
         position: fixed;
         top: 1rem;
@@ -28,6 +29,7 @@
         padding: 6rem 1rem;
     }
 }
+
 // Tablet
 @media (max-width: 1279px) and (min-width: 769px) {
     .App {

@@ -26,18 +26,18 @@ html:has(dialog[open]) {
 }
 
 body {
-
-    --grey1: #18181b;
     /* darkest */
-    --grey2: #27272a;
-    --grey3: #3f3f46;
-    --grey4: #52525b;
-    --grey5: #71717a;
-    --grey6: #d4d4d8;
-    --grey7: #d4d4d8;
-    --grey8: #e4e4e7;
-    --grey9: #f4f4f5;
-    --grey10: #fafafa;
+    --grey10: #18181b;
+    --grey9: #27272a;
+    --grey8: #3f3f46;
+    --grey7: #52525b;
+    --grey6: #71717a;
+    --grey5: #d4d4d8;
+    --grey4: #d4d4d8;
+    --grey3: #e4e4e7;
+    --grey2: #f4f4f5;
+    --grey1: #fafafa;
+    --is-dark: true;
     /* lightest */
 
     --app-background: var(--grey10);
@@ -71,21 +71,21 @@ body {
     --font-family-code: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
         monospace;
 
-    --is-dark: false;
 
-    &.dark {
-        --grey10: #18181b;
-        --grey9: #27272a;
-        --grey8: #3f3f46;
-        --grey7: #52525b;
-        --grey6: #71717a;
-        --grey5: #d4d4d8;
-        --grey4: #d4d4d8;
-        --grey3: #e4e4e7;
-        --grey2: #f4f4f5;
-        --grey1: #fafafa;
 
-        --is-dark: true;
+    &.light {
+        --grey1: #18181b;
+        --grey2: #27272a;
+        --grey3: #3f3f46;
+        --grey4: #52525b;
+        --grey5: #71717a;
+        --grey6: #d4d4d8;
+        --grey7: #d4d4d8;
+        --grey8: #e4e4e7;
+        --grey9: #f4f4f5;
+        --grey10: #fafafa;
+
+        --is-dark: false;
     }
 
     // body bg color and font color
