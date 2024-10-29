@@ -108,7 +108,7 @@ const DownloadReasonForm = ({
             }}
             noValidate
         >
-            <div className="primary-color body-text form-wrapper">
+            <div className="primary-color body-text download-cv-form">
                 <div className="input-form-control">
                     <label htmlFor="name">{t('inputs.fullName')}</label>
                     <input

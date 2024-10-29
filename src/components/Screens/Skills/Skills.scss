@@ -3,46 +3,11 @@
     justify-content: space-between;
 }
 
-.skills-content {
-    .subsection-title {
-        margin-bottom: 2rem;
-    }
-    .skills-3d-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    .skill-bar-wrapper {
-        display: flex;
-        flex-wrap: wrap;
-
-        .skill-label {
-            width: 20%;
-        }
-        .bar-graph {
-            width: 80%;
-        }
-        & + .skill-bar-wrapper {
-            margin-top: 2rem;
-        }
-    }
+.skill-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
 }
 
 // Mobile
-@media (max-width: 768px) {
-    .skills-content {
-        .skill-bar-wrapper {
-            .skill-label {
-                width: 100%;
-            }
-            .bar-graph {
-                margin-top: 0.25rem;
-                width: 100%;
-            }
-
-            & + .skill-bar-wrapper {
-                margin-top: 1rem;
-            }
-        }
-    }
-}
+@media (max-width: 768px) {}

@@ -58,6 +58,7 @@
     "loadingSkillsModel": "Loading 3D Models",
     "loading": "Loading",
     "loadingMessage": "Thanks for your patience.",
+    "skillsSectionMessage": "While I'm always eager to explore new tools and technologies, these are the ones I feel most comfortable with.",
     "downloadDialog": {
         "title": "Download CV",
         "description": " Would you like to share a quick message before downloading my CV?"
