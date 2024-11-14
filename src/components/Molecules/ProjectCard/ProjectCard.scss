@@ -8,9 +8,10 @@
     flex-direction: column;
     justify-content: flex-start;
     cursor: pointer;
+    background-color: var(--grey9);
 
     &:hover {
-        @include card-bg;
+        background-color: var(--grey8);
     }
 
     .tags {

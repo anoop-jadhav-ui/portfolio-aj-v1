@@ -33,12 +33,10 @@
     top: 10rem;
     left: -2px;
     border-radius: 0 var(--border-radius) var(--border-radius) 0;
-    border: var(--border-width) solid var(--grey7);
     width: 14.5rem;
     animation: slideInFromLeft 300ms ease-in-out forwards;
     z-index: 1;
-
-    @include card-bg;
+    background-color: var(--grey9);
 
     &.open {
         animation: slideInFromLeft 300ms ease-in-out forwards;
@@ -60,11 +58,10 @@
         .toggle-button {
             transform: translateX(3rem);
             border-radius: 0 var(--border-radius) var(--border-radius) 0;
-            border: var(--border-width) solid var(--grey7);
+            background: var(--grey9);
 
             &:hover {
-                background: var(--grey9);
-                border: var(--border-width) solid var(--primary-color);
+                background: var(--grey8);
             }
         }
 

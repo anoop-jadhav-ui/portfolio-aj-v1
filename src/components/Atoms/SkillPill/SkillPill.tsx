@@ -15,13 +15,14 @@ const SkillPill = ({ skill }: { skill: SkillOption }) => {
             href={skill.link}
             target="_blank"
             rel="noopener noreferrer"
+            title="click to open link"
         >
             <img
                 className="icon"
                 src={skill.image}
                 alt={skill.name}
-                width="32px"
-                height="32px"
+                width="38px"
+                height="38px"
             />
             <div className="skill">{skill.name}</div>
         </a>

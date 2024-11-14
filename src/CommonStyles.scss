@@ -14,7 +14,7 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box !important;
+    box-sizing: border-box;
 
     :focus-visible {
         outline: 2px solid var(--primary-color);
@@ -275,9 +275,14 @@ body {
     }
 
     input {
-        @include card-bg;
+        background-color: var(--grey9);
+
+        &:hover {
+            background-color: var(--grey8);
+        }
+
         width: 100%;
-        border: var(--border-width) solid var(--grey7);
+        border: 0;
         height: 3rem;
         padding: 0 1rem;
         border-radius: var(--border-radius);
@@ -289,9 +294,14 @@ body {
     }
 
     textarea {
-        @include card-bg;
+        background-color: var(--grey9);
+
+        &:hover {
+            background-color: var(--grey8);
+        }
+
         width: 100%;
-        border: var(--border-width) solid var(--grey7);
+        border: 0;
         height: 6.5rem;
         padding: 0.5rem 1rem;
         border-radius: var(--border-radius);

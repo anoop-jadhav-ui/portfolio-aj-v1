@@ -3,12 +3,16 @@
 .article-card {
     cursor: pointer;
     overflow: hidden;
+    border-radius: 0.25rem;
+    box-sizing: content-box;
+    background-color: var(--grey9);
 
     &:hover {
-        @include card-bg;
+        background-color: var(--grey8);
     }
 
     .article-content {
+        box-sizing: content-box !important;
         padding: 0.5rem 1rem;
 
         .date {
