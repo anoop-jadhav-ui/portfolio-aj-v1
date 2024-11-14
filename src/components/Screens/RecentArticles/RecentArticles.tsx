@@ -54,7 +54,7 @@ function RecentArticles() {
                             aria-label={t('button.viewAll')}
                         >
                             <Button
-                                variant="neutral"
+                                variant="brand"
                                 Icon={MdArrowRightAlt}
                                 label={t('button.viewAll')}
                                 className="mx-auto"
