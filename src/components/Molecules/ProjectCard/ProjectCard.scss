@@ -92,11 +92,8 @@
 }
 
 @media (max-width: 1200px) {
-    .project-card {
-        padding: 0;
-
-        &:hover {
-            background-color: transparent;
-        }
+    .project-card:hover {
+        background-color: transparent;
     }
+
 }
