@@ -8,7 +8,7 @@
         display: flex;
         padding-bottom: 1rem;
 
-        &>div+div {
+        & > div + div {
             margin-left: 1rem;
         }
     }
@@ -89,15 +89,10 @@
         }
 
         .mainlogo {
-            opacity: 0;
             width: 100%;
 
             width: var(--image-width);
             height: var(--image-width);
-
-            &.loaded {
-                opacity: 1;
-            }
         }
     }
 
@@ -123,7 +118,6 @@
 
         /* The typewriter cursor effect */
         @keyframes blink-caret {
-
             from,
             to {
                 opacity: 0;

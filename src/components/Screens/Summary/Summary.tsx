@@ -3,7 +3,7 @@ import './Summary.css'
 import DOMPurify from 'dompurify'
 import parse from 'html-react-parser'
 import moment from 'moment/moment'
-import React, { useMemo, useState } from 'react'
+import React, { useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useProfileDataContext } from '../../../context/ProfileDataContext'
 import { useTheme } from '../../../context/ThemeContext'
@@ -15,7 +15,6 @@ import portfolioImage from '/images/portfolio-app-img.webp'
 
 const Summary = () => {
     const { profileData } = useProfileDataContext()
-    const [imageLoading, setImageLoading] = useState(false)
     const { darkMode } = useTheme()
     const { overview, experience } = profileData
     const { t } = useTranslation()
@@ -44,14 +43,6 @@ const Summary = () => {
         }
     }, [experience])
 
-    function handleImageLoaded() {
-        setImageLoading(true)
-    }
-    function handleImageErrored() {
-        console.error('Error while loading the profile image')
-        setImageLoading(false)
-    }
-
     const overviewSummaryHTML = overview.summary.replace(
         '{totalYearsOfExperience}',
         totalExperience
@@ -64,11 +55,9 @@ const Summary = () => {
             <div className="mainlogo-wrapper">
                 <img
                     src={portfolioImage}
-                    className={`mainlogo ${imageLoading && 'loaded'}`}
+                    className="mainlogo"
                     alt="mi Baburao"
                     loading="eager"
-                    onLoad={handleImageLoaded}
-                    onError={handleImageErrored}
                 />
                 <svg
                     role="img"
