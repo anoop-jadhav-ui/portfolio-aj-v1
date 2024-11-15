@@ -1,3 +1,14 @@
+@keyframes blink-caret {
+    from,
+    to {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
 .summary-section {
     align-items: center;
     display: flex;
@@ -101,31 +112,17 @@
         margin: 0;
         position: relative;
 
-        &.text-cursor {
-            &:after {
-                content: '';
-                position: absolute;
-                right: -0.5rem;
-                top: 50%;
-                transform: translateY(-50%);
+        &.text-cursor::after {
+            content: '';
+            position: absolute;
+            right: -0.5rem;
+            top: 50%;
+            transform: translateY(-50%);
 
-                height: 70%;
-                width: 0.2rem;
-                background-color: var(--primary-color);
-                animation: blink-caret 0.75s step-end infinite;
-            }
-        }
-
-        /* The typewriter cursor effect */
-        @keyframes blink-caret {
-            from,
-            to {
-                opacity: 0;
-            }
-
-            50% {
-                opacity: 1;
-            }
+            height: 70%;
+            width: 0.2rem;
+            background-color: var(--primary-color);
+            animation: blink-caret 0.75s step-end infinite;
         }
     }
 

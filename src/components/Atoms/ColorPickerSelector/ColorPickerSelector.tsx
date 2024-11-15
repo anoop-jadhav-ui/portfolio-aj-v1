@@ -4,10 +4,8 @@ import { useTheme } from '../../../context/ThemeContext'
 import './ColorPickerSelector.css'
 import lottieData from './ColorSwatchIcon.json'
 
-const hueList = [0, 220, 280, 315]
-
 const ColorPickerSelector = () => {
-    const { setColorHue, isMobile } = useTheme()
+    const { setPrimaryColor, isMobile, colorList } = useTheme()
 
     const { View, setSpeed, play, setDirection } = useLottie(
         {
@@ -27,10 +25,8 @@ const ColorPickerSelector = () => {
         evt
     ) => {
         // @ts-ignore
-        const newHue = Number(evt.target.dataset.key)
-        if (newHue >= 0) {
-            setColorHue(newHue)
-        }
+        const newColor = evt.target.dataset.key
+        setPrimaryColor(newColor)
     }
 
     return (
@@ -49,19 +45,14 @@ const ColorPickerSelector = () => {
                 {View}
             </a>
             <ul className="color-list" onClick={onColorSelection} tabIndex={0}>
-                {hueList.map((hue) => (
+                {colorList.map((color) => (
                     <li
                         className="color-ball"
-                        data-key={hue}
-                        key={hue}
-                        style={
-                            {
-                                backgroundColor: `  hsla(${hue},
-                                                        var(--primary-saturation),
-                                                        var(--primary-light),
-                                                        var(--primary-alpha))`,
-                            } as any
-                        }
+                        data-key={color}
+                        key={color}
+                        style={{
+                            backgroundColor: color,
+                        }}
                     ></li>
                 ))}
             </ul>

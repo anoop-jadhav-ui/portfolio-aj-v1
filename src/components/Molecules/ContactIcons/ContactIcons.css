@@ -20,12 +20,7 @@
 }
 
 .contactimg:hover {
-    stroke: hsla(
-        var(--primary-hue),
-        var(--primary-saturation),
-        78%,
-        var(--primary-alpha)
-    );
+    stroke: var(--primary-color);
     /* stroke: hsla(0,84%, 78%, 100%); */
 }
 

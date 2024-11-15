@@ -15,7 +15,7 @@
     box-sizing: border-box;
 
     :focus-visible {
-        outline: 2px solid var(--primary-color);
+        outline: 1px solid var(--primary-color);
     }
 }
 
@@ -46,19 +46,8 @@ body {
     --yellow: #f2c94c;
     --green: #27ae60;
 
-    --primary-hue: 0;
-    --primary-saturation: 90%;
-    --primary-light: 65%;
-    --primary-alpha: 100%;
-
     /* Primary & Accent color variations */
-    --primary-color: hsla(
-        var(--primary-hue),
-        var(--primary-saturation),
-        var(--primary-light),
-        var(--primary-alpha)
-    );
-
+    --primary-color: #ff565a;
     --accent-color: var(--orange);
 
     --border-radius: 0.25rem;

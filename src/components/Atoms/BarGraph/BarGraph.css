@@ -36,11 +36,17 @@
     .filled {
         display: block;
         height: 2.25rem;
-        background: linear-gradient(101.14deg,
-                hsl(calc(var(--primary-hue) + 25),
+        /* background: linear-gradient(
+            101.14deg,
+            hsl(
+                    calc(var(--primary-hue) + 25),
                     var(--primary-saturation),
-                    var(--primary-light)) 0.99%,
-                var(--primary-color) 177.11%);
+                    var(--primary-light)
+                )
+                0.99%,
+            var(--primary-color) 177.11%
+        ); */
+        background: var(--primary-color);
         border-radius: var(--border-radius);
         transition: width 900ms cubic-bezier(0.5, 1.2, 0.5, 1);
         cursor: pointer;
