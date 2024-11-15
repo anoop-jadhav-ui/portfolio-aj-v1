@@ -52,6 +52,9 @@ function RecentArticles() {
                             target="_blank"
                             rel="noreferrer"
                             aria-label={t('button.viewAll')}
+                            style={{
+                                display: 'inline-block',
+                            }}
                         >
                             <Button
                                 variant="brand"

@@ -3,9 +3,10 @@ import React from 'react'
 import { useTheme } from '../../../context/ThemeContext'
 import './ColorPickerSelector.css'
 import lottieData from './ColorSwatchIcon.json'
+import { primaryColorList } from '../../../helpers/color'
 
 const ColorPickerSelector = () => {
-    const { setPrimaryColor, isMobile, colorList } = useTheme()
+    const { setPrimaryColor, isMobile } = useTheme()
 
     const { View, setSpeed, play, setDirection } = useLottie(
         {
@@ -25,8 +26,11 @@ const ColorPickerSelector = () => {
         evt
     ) => {
         // @ts-ignore
-        const newColor = evt.target.dataset.key
-        setPrimaryColor(newColor)
+        const newMainColor = evt.target.dataset.key
+        const newColor = primaryColorList.find(
+            (color) => color.main === newMainColor
+        )
+        if (newColor) setPrimaryColor(newColor)
     }
 
     return (
@@ -45,13 +49,13 @@ const ColorPickerSelector = () => {
                 {View}
             </a>
             <ul className="color-list" onClick={onColorSelection} tabIndex={0}>
-                {colorList.map((color) => (
+                {primaryColorList.map((color) => (
                     <li
                         className="color-ball"
-                        data-key={color}
-                        key={color}
+                        data-key={color.main}
+                        key={color.main}
                         style={{
-                            backgroundColor: color,
+                            backgroundColor: color.main,
                         }}
                     ></li>
                 ))}

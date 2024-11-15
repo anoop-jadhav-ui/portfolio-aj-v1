@@ -6,18 +6,17 @@ import React, {
     useState,
 } from 'react'
 import { isMobile as isDeviceMobile } from 'react-device-detect'
+import { Color, primaryColorList } from '../helpers/color'
 import usePersistState from '../hooks/usePersistState'
 
 interface ThemeContextType {
     darkMode: boolean
     setDarkMode: (mode: boolean) => void
 
-    currentPrimaryColor: string
-    setPrimaryColor: (color: string) => void
+    currentPrimaryColor: Color
+    setPrimaryColor: (color: Color) => void
 
     isMobile: boolean
-
-    colorList: string[]
 }
 
 export const ThemeContext = createContext<ThemeContextType>(
@@ -26,11 +25,9 @@ export const ThemeContext = createContext<ThemeContextType>(
 export const useTheme = () => useContext(ThemeContext)
 
 const ThemeContextProvider = ({ children }: { children: ReactNode }) => {
-    const [colorList] = useState(['#FF565A', '#488CF2', '#C657F2', '#FF57CC'])
-
-    const [currentPrimaryColor, setPrimaryColor] = usePersistState<string>(
+    const [currentPrimaryColor, setPrimaryColor] = usePersistState<Color>(
         'primaryColor',
-        colorList[0]
+        primaryColorList[0]
     )
 
     const [darkMode, setDarkMode] = usePersistState<boolean>('darkMode', true)
@@ -52,7 +49,18 @@ const ThemeContextProvider = ({ children }: { children: ReactNode }) => {
     }, [darkMode])
 
     useEffect(() => {
-        document.body.style.setProperty('--primary-color', currentPrimaryColor)
+        document.body.style.setProperty(
+            '--primary-color',
+            currentPrimaryColor.main
+        )
+        document.body.style.setProperty(
+            '--primary-color-dark',
+            currentPrimaryColor.dark
+        )
+        document.body.style.setProperty(
+            '--primary-color-light',
+            currentPrimaryColor.light
+        )
     }, [currentPrimaryColor])
 
     return (
@@ -63,7 +71,6 @@ const ThemeContextProvider = ({ children }: { children: ReactNode }) => {
                 isMobile,
                 currentPrimaryColor,
                 setPrimaryColor,
-                colorList,
             }}
         >
             {children}

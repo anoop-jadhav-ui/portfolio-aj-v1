@@ -140,13 +140,21 @@ export const MessageForm = () => {
                     )}
                 </div>
             </div>
-            <Button
-                className={isLoading ? 'loading' : ''}
-                disabled={isLoading}
-                type="submit"
-                label={t('button.send')}
-                Icon={isLoading ? AiOutlineLoading3Quarters : RiMailSendLine}
-            />
+            <div
+                style={{
+                    marginTop: '1.5rem',
+                }}
+            >
+                <Button
+                    className={isLoading ? 'loading' : ''}
+                    disabled={isLoading}
+                    type="submit"
+                    label={t('button.send')}
+                    Icon={
+                        isLoading ? AiOutlineLoading3Quarters : RiMailSendLine
+                    }
+                />
+            </div>
         </form>
     )
 }

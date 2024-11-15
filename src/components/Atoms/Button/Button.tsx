@@ -46,31 +46,29 @@ const Button = ({
     const browser = useBrowserType()
 
     return (
-        <div className="buttonContainer">
-            <button
-                onClick={animateClick}
-                className={`${variant} ${browser} button ${className} ${
-                    label ? 'with-label' : 'no-label'
-                }`}
-                type={type}
-                data-testid={testID}
-                style={
-                    {
-                        '--button-x': clickPosition?.x,
-                        '--button-y': clickPosition?.y,
-                    } as React.CSSProperties
-                }
-                tabIndex={tabIndex}
-                disabled={disabled}
-            >
-                {label && <span className="label">{label}</span>}
-                {Icon && (
-                    <span className="icon">
-                        <Icon />
-                    </span>
-                )}
-            </button>
-        </div>
+        <button
+            onClick={animateClick}
+            className={`${variant} ${browser} button ${className} ${
+                label ? 'with-label' : 'no-label'
+            }`}
+            type={type}
+            data-testid={testID}
+            style={
+                {
+                    '--button-x': clickPosition?.x,
+                    '--button-y': clickPosition?.y,
+                } as React.CSSProperties
+            }
+            tabIndex={tabIndex}
+            disabled={disabled}
+        >
+            {label && <span className="label">{label}</span>}
+            {Icon && (
+                <span className="icon">
+                    <Icon />
+                </span>
+            )}
+        </button>
     )
 }
 

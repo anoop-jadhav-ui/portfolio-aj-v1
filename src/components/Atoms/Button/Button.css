@@ -1,91 +1,68 @@
-.buttonContainer {
-    perspective: 320px;
-    perspective-origin: bottom;
+.button {
+    padding: 0.6rem 1.5rem;
+    border-radius: var(--border-radius) !important;
+    font-weight: 500;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
 
-    display: inline-block;
-    padding-bottom: 0.5rem;
+    transition: 0.1s linear;
 
-    .button {
-        padding: 0.6rem 1.5rem;
-        border-radius: var(--border-radius) !important;
-        font-weight: 500;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        position: relative;
+    &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
 
-        transition: 0.1s linear;
-        transform-style: preserve-3d;
-        transform-origin: center;
+    &:hover:not(:disabled) {
+        cursor: pointer;
+    }
 
-        &:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
+    &.with-label .icon {
+        top: -1px;
+    }
+
+    &.brand {
+        border: var(--border-width) solid var(--primary-color);
+        background: var(--primary-color);
+        color: var(--grey10);
+        border: 0;
+
+        &:hover {
+            background-color: var(--primary-color-dark);
         }
+    }
 
-        &:after {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            box-sizing: border-box;
+    &.neutral {
+        border: var(--border-width) solid var(--grey7);
+        color: var(--primary-color);
+        background: var(--grey10);
 
-            border: var(--border-width) solid var(--primary-color);
-            border-radius: var(--border-radius);
-
-            top: 0;
-            left: 0;
-
-            transform: translateZ(-1rem);
+        &:hover {
+            background-color: var(--grey9);
         }
+    }
 
-        &.safari:after {
-            display: none;
-        }
+    &.base {
+        border: none;
+        background: none;
+        color: var(--primary-color);
 
-        &:hover:not(:disabled) {
-            cursor: pointer;
-            transform: rotate3d(1, 0, 0, 24deg);
+        &:hover {
+            color: var(--primary-color-dark);
         }
+    }
 
-        &:active:not(:disabled) {
-            transform: translateZ(-1rem);
-        }
+    .label {
+        text-transform: uppercase;
+        font-size: 1rem;
+    }
 
-        &.with-label .icon {
-            top: -1px;
-        }
+    .label + .icon {
+        padding-left: 0.5rem;
+    }
 
-        &.brand {
-            border: var(--border-width) solid var(--primary-color);
-            background: var(--primary-color);
-            color: var(--grey10);
-            border: 0;
-        }
-
-        &.neutral {
-            border: var(--border-width) solid var(--grey7);
-            color: var(--primary-color);
-            background: var(--grey10);
-        }
-
-        &.base {
-            border: none;
-            background: none;
-            color: var(--primary-color);
-        }
-
-        .label {
-            text-transform: uppercase;
-            font-size: 1rem;
-        }
-
-        .label+.icon {
-            padding-left: 0.5rem;
-        }
-
-        .icon {
-            padding-top: 0.25rem;
-        }
+    .icon {
+        padding-top: 0.25rem;
     }
 }
