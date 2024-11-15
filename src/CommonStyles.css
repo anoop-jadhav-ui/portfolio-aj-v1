@@ -24,41 +24,18 @@ html:has(dialog[open]) {
 }
 
 body {
-    /* darkest */
-    --grey10: #18181b;
-    --grey9: #27272a;
-    --grey8: #3f3f46;
-    --grey7: #52525b;
-    --grey6: #71717a;
-    --grey5: #d4d4d8;
-    --grey4: #d4d4d8;
-    --grey3: #e4e4e7;
-    --grey2: #f4f4f5;
     --grey1: #fafafa;
+    --grey2: #f4f4f5;
+    --grey3: #e4e4e7;
+    --grey4: #d4d4d8;
+    --grey5: #d4d4d8;
+    --grey6: #71717a;
+    --grey7: #52525b;
+    --grey8: #3f3f46;
+    --grey9: #27272a;
+    --grey10: #18181b;
+
     --is-dark: true;
-    /* lightest */
-
-    --app-background: var(--grey10);
-    --input-background: var(--grey10);
-
-    /* banner colors */
-    --orange: #f2994a;
-    --yellow: #f2c94c;
-    --green: #27ae60;
-
-    /* Primary & Accent color variations */
-    --primary-color: #ff565a;
-    --accent-color: var(--orange);
-
-    --border-radius: 0.25rem;
-    --border-width: 1px;
-
-    /* font variables */
-    /* --font-family-headers: 'Montserrat', sans-serif !important; */
-    --font-family-headers: 'Poppins', sans-serif !important;
-    --font-family-text: 'Poppins', sans-serif !important;
-    --font-family-code: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-        monospace;
 
     &.light {
         --grey1: #18181b;
@@ -74,6 +51,27 @@ body {
 
         --is-dark: false;
     }
+
+    --app-background: var(--grey10);
+    --input-background: var(--grey10);
+
+    /* banner colors */
+    --orange: #f2994a;
+    --yellow: #f2c94c;
+    --green: #27ae60;
+
+    /* Primary & Accent color variations */
+    --primary-color: #ff565a;
+
+    --border-radius: 0.25rem;
+    --border-width: 1px;
+
+    /* font variables */
+    /* --font-family-headers: 'Montserrat', sans-serif !important; */
+    --font-family-headers: 'Poppins', sans-serif !important;
+    --font-family-text: 'Poppins', sans-serif !important;
+    --font-family-code: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+        monospace;
 
     /* body bg color and font color */
     background-color: var(--app-background) !important;
