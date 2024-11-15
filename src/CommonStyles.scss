@@ -1,5 +1,3 @@
-@import './mixins';
-
 :root {
     font-size: 20px;
 }
@@ -62,7 +60,7 @@ body {
     --accent-color: var(--orange);
 
     --border-radius: 0.25rem;
-    --border-width: 2px;
+    --border-width: 1px;
 
     //font variables
     /* --font-family-headers: 'Montserrat', sans-serif !important; */
