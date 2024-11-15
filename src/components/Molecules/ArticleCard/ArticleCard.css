@@ -16,10 +16,24 @@
         box-sizing: content-box !important;
         padding: 1rem;
 
-        .date {
-            font-size: 0.8125rem;
-            color: var(--grey5);
+        .title {
+            padding-top: 0.25rem;
+        }
+        .brief {
             padding-top: 0.5rem;
+            font-size: 0.8125rem;
+        }
+        .date {
+            font-size: 0.65rem;
+            color: var(--grey5);
+        }
+
+        .explore-button {
+            padding-top: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.8125rem;
         }
     }
 }
