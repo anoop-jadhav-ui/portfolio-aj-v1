@@ -18,6 +18,13 @@
 
         .title {
             padding-top: 0.25rem;
+            font-size: 1.25rem;
+
+            /* display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+
+            overflow: hidden; */
         }
         .brief {
             padding-top: 0.5rem;
