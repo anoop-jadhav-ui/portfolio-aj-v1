@@ -1,5 +1,6 @@
 import './Certifications.css'
 
+import { ExternalLink } from 'lucide-react'
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 import { useProfileDataContext } from '../../../context/ProfileDataContext'
@@ -35,8 +36,10 @@ const Certifications = () => {
                                         }
                                         target="_Blank"
                                         rel="noopener noreferrer"
+                                        className="certificate-link"
                                     >
                                         {t('viewCertification')}
+                                        <ExternalLink size="1rem" />
                                     </a>
                                 </div>
                                 <div className="grey-1 body-text summary-text">

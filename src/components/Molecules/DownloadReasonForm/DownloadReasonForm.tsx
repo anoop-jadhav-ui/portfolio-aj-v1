@@ -1,11 +1,10 @@
 import './DownloadReasonForm.css'
 
 import { zodResolver } from '@hookform/resolvers/zod'
+import { Download, LoaderCircle } from 'lucide-react'
 import React, { useState } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import { useTranslation } from 'react-i18next'
-import { AiOutlineLoading3Quarters } from 'react-icons/ai'
-import { CgSoftwareDownload } from 'react-icons/cg'
 import { z } from 'zod'
 import { useLocaleAlertBanner } from '../../../context/LocalAlertBannerContext'
 import axiosInstance from '../../../helpers/axios'
@@ -164,11 +163,7 @@ const DownloadReasonForm = ({
                     disabled={isLoading}
                     type="submit"
                     label={t('button.downloadCv')}
-                    Icon={
-                        isLoading
-                            ? AiOutlineLoading3Quarters
-                            : CgSoftwareDownload
-                    }
+                    endIcon={isLoading ? <LoaderCircle /> : <Download />}
                 />
             </div>
         </form>

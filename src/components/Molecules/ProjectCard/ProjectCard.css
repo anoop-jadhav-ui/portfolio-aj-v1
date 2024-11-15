@@ -48,10 +48,14 @@
 
             .contactimg {
                 width: 1.2rem;
+                stroke: var(--primary-color);
+                &:hover {
+                    stroke: var(--primary-color-dark);
+                }
             }
         }
 
-        .link+.link {
+        .link + .link {
             margin-left: 1rem;
         }
     }
@@ -93,5 +97,4 @@
     .project-card:hover {
         background-color: transparent;
     }
-
 }

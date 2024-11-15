@@ -1,11 +1,10 @@
 import './MessageForm.css'
 
 import { zodResolver } from '@hookform/resolvers/zod'
+import { LoaderCircle, SendHorizontal } from 'lucide-react'
 import React, { useState } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import { useTranslation } from 'react-i18next'
-import { AiOutlineLoading3Quarters } from 'react-icons/ai'
-import { RiMailSendLine } from 'react-icons/ri'
 import { z } from 'zod'
 import { useAlertBanner } from '../../../context/AlertBannerContext'
 import axiosInstance from '../../../helpers/axios'
@@ -150,9 +149,7 @@ export const MessageForm = () => {
                     disabled={isLoading}
                     type="submit"
                     label={t('button.send')}
-                    Icon={
-                        isLoading ? AiOutlineLoading3Quarters : RiMailSendLine
-                    }
+                    endIcon={isLoading ? <LoaderCircle /> : <SendHorizontal />}
                 />
             </div>
         </form>

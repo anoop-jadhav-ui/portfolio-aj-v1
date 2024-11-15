@@ -1,8 +1,8 @@
 import './RecentArticles.css'
 
+import { ArrowRight } from 'lucide-react'
 import React, { useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
-import { MdArrowRightAlt } from 'react-icons/md'
 import { useRecentArticleContext } from '../../../context/RecentArticleContext'
 import { useTheme } from '../../../context/ThemeContext'
 import constants from '../../../helpers/constants'
@@ -58,7 +58,7 @@ function RecentArticles() {
                         >
                             <Button
                                 variant="brand"
-                                Icon={MdArrowRightAlt}
+                                endIcon={<ArrowRight />}
                                 label={t('button.viewAll')}
                                 className="mx-auto"
                                 tabIndex={-1}

@@ -1,9 +1,18 @@
-.horizontally-placed {
-    display: flex;
-    margin-top: 0;
+.social-link {
+    svg {
+        stroke: var(--primary-color);
+    }
+    &:hover {
+        svg {
+            stroke: var(--primary-color-dark);
+        }
+    }
 }
 
 .horizontally-placed {
+    display: flex;
+    margin-top: 0;
+
     .subsection-data {
         margin-top: 2rem;
     }
@@ -11,17 +20,6 @@
     .subsection-data + .subsection-data {
         padding-left: 3rem;
     }
-}
-
-.contactimg {
-    width: 1.5rem;
-    height: 1.5rem;
-    stroke: var(--primary-color);
-}
-
-.contactimg:hover {
-    stroke: var(--primary-color);
-    /* stroke: hsla(0,84%, 78%, 100%); */
 }
 
 .inside-leftpane {
@@ -44,22 +42,12 @@
         margin-top: 0;
         padding-left: 1rem;
     }
-
-    .contactimg {
-        width: 1.3rem;
-        height: 1.3rem;
-    }
 }
 
 @media (max-width: 1200px) {
     .rightpane {
         top: 45vh;
         width: 4rem;
-
-        .contactimg {
-            width: 2rem;
-            height: 2rem;
-        }
     }
 
     .rightpane.horizontally-placed {

@@ -1,8 +1,8 @@
 import './ContactMeButton.css'
 
+import { MessageSquareText } from 'lucide-react'
 import React from 'react'
 import { useTranslation } from 'react-i18next'
-import { BiMessageSquareDetail } from 'react-icons/bi'
 import Button from '../../Atoms/Button/Button'
 
 const ContactMeButton = () => {
@@ -20,7 +20,7 @@ const ContactMeButton = () => {
             <Button
                 onClick={contactMeButtonHandler}
                 variant="neutral"
-                Icon={BiMessageSquareDetail}
+                endIcon={<MessageSquareText />}
                 label={t('button.contactMe')}
             />
         </div>

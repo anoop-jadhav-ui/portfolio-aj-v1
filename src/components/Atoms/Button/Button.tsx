@@ -1,14 +1,13 @@
 import './Button.css'
 
 import React, { useState } from 'react'
-import { IconType } from 'react-icons'
 import useBrowserType from '../../../hooks/useBrowserType'
 
 interface ButtonProps {
     label?: string
     onClick?: () => void
     variant?: 'neutral' | 'brand' | 'base'
-    Icon?: IconType
+    endIcon?: React.ReactNode
     type?: 'button' | 'submit' | 'reset' | undefined
     testID?: string
     className?: string
@@ -25,7 +24,7 @@ const Button = ({
     label,
     onClick,
     variant = 'brand',
-    Icon,
+    endIcon,
     type = 'button',
     testID,
     className,
@@ -63,11 +62,7 @@ const Button = ({
             disabled={disabled}
         >
             {label && <span className="label">{label}</span>}
-            {Icon && (
-                <span className="icon">
-                    <Icon />
-                </span>
-            )}
+            {endIcon && <span className="icon">{endIcon}</span>}
         </button>
     )
 }

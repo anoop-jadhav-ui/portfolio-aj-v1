@@ -1,8 +1,8 @@
 import './DownloadCV.css'
 
+import { Download } from 'lucide-react'
 import React, { useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { CgSoftwareDownload } from 'react-icons/cg'
 import { downloadFile } from '../../../helpers/downloadFile'
 import getResumeFileURL from '../../../helpers/getStorageFile'
 import Button from '../../Atoms/Button/Button'
@@ -25,7 +25,7 @@ const DownloadCV = () => {
             <Button
                 onClick={openDialog}
                 variant="brand"
-                Icon={CgSoftwareDownload}
+                endIcon={<Download />}
                 label={t('button.downloadCv')}
             />
             {isDialogOpen && (

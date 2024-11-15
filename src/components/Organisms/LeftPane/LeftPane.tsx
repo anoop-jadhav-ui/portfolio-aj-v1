@@ -1,8 +1,8 @@
 import './LeftPane.css'
 
+import { Play } from 'lucide-react'
 import React from 'react'
 import { useTranslation } from 'react-i18next'
-import { BiLeftArrow } from 'react-icons/bi'
 import { useProfileDataContext } from '../../../context/ProfileDataContext'
 import { useSectionInViewContext } from '../../../context/SectionInViewContext'
 import usePersistState from '../../../hooks/usePersistState'
@@ -40,7 +40,7 @@ const LeftPane = () => {
                     tabIndex={0}
                     aria-label="skip to section toggle"
                 >
-                    <BiLeftArrow className="arrow" title="toggle leftpane" />
+                    <Play className="arrow" />
                 </div>
             </div>
 

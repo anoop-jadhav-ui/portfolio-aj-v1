@@ -172,11 +172,17 @@ body {
         text-decoration: none;
     }
 
+    .primary-color {
+        color: var(--primary-color);
+        a {
+            color: var(--primary-color);
+        }
+    }
+
     a:hover,
     ul > li a:hover {
-        color: var(--primary-color);
+        color: var(--primary-color-dark) !important;
         text-decoration: none;
-        font-weight: bold;
     }
 
     ul > li a:hover {
@@ -232,11 +238,6 @@ body {
     .grey10,
     .grey10 > a {
         color: var(--grey10) !important;
-    }
-
-    .primary-color,
-    .primary-color > a {
-        color: var(--primary-color);
     }
 
     .orange {

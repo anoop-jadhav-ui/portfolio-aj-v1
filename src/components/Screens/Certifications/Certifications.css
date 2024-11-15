@@ -10,6 +10,12 @@
         .summary-text {
             padding-top: 0.5rem;
         }
+
+        .certificate-link {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
     }
 }
 

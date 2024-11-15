@@ -1,5 +1,5 @@
+import { Github, Link } from 'lucide-react'
 import React from 'react'
-import { FiExternalLink, FiGithub } from 'react-icons/fi'
 import { ProjectDetails } from '../../../types/profileDataTypes'
 import './ProjectCard.css'
 
@@ -41,18 +41,12 @@ const ProjectCard = ({
                 <div className="projectlinks">
                     {projectDetails.github && (
                         <div onClick={openGithubLink} className="link">
-                            <FiGithub
-                                className="contactimg"
-                                title="github link"
-                            />
+                            <Github className="contactimg" />
                         </div>
                     )}
                     {projectDetails.url && (
                         <div onClick={openProjectLink} className="link">
-                            <FiExternalLink
-                                className="contactimg"
-                                title="application link"
-                            />
+                            <Link className="contactimg" />
                         </div>
                     )}
                 </div>

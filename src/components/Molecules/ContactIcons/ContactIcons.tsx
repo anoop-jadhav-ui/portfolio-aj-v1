@@ -1,29 +1,25 @@
 import './ContactIcons.css'
 
+import { Github, Instagram, Linkedin, Mail } from 'lucide-react'
 import React from 'react'
 import { useProfileDataContext } from '../../../context/ProfileDataContext'
-import UseAnimations from 'react-useanimations'
-import email from 'react-useanimations/lib/mail'
-import linkedIn from 'react-useanimations/lib/linkedin'
-import instagram from 'react-useanimations/lib/instagram'
-import githubIcon from 'react-useanimations/lib/github'
 
 const ContactIcons = ({ className }: { className: string }) => {
     const {
         profileData: { contactDetails },
     } = useProfileDataContext()
     const { emailId, linkedin, instaId, github } = contactDetails
-    const ICON_SIZE = className === 'inside-leftpane' ? 32 : 48
+    const ICON_SIZE = className === 'inside-leftpane' ? 24 : 38
 
     return (
         <div className={`horizontally-placed ${className}`}>
             <div className="subsection-data">
-                <a href={`mailto: ${emailId}`} title="Email Address">
-                    <UseAnimations
-                        size={ICON_SIZE}
-                        animation={email}
-                        strokeColor="var(--primary-color)"
-                    />
+                <a
+                    href={`mailto: ${emailId}`}
+                    title="Email Address"
+                    className="social-link"
+                >
+                    <Mail size={ICON_SIZE} />
                 </a>
             </div>
             <div className="subsection-data">
@@ -32,12 +28,9 @@ const ContactIcons = ({ className }: { className: string }) => {
                     rel="noopener noreferrer"
                     target="_blank"
                     title="Linkedin"
+                    className="social-link"
                 >
-                    <UseAnimations
-                        size={ICON_SIZE}
-                        animation={linkedIn}
-                        strokeColor="var(--primary-color)"
-                    />
+                    <Linkedin size={ICON_SIZE} />
                 </a>
             </div>
             <div className="subsection-data">
@@ -46,12 +39,9 @@ const ContactIcons = ({ className }: { className: string }) => {
                     rel="noopener noreferrer"
                     target="_blank"
                     title="Instagram"
+                    className="social-link"
                 >
-                    <UseAnimations
-                        size={ICON_SIZE}
-                        animation={instagram}
-                        strokeColor="var(--primary-color)"
-                    />
+                    <Instagram size={ICON_SIZE} />
                 </a>
             </div>
 
@@ -62,12 +52,9 @@ const ContactIcons = ({ className }: { className: string }) => {
                     target="_blank"
                     rel="noopener noreferrer"
                     title="Github"
+                    className="social-link"
                 >
-                    <UseAnimations
-                        size={ICON_SIZE}
-                        animation={githubIcon}
-                        strokeColor="var(--primary-color)"
-                    />
+                    <Github size={ICON_SIZE} />
                 </a>
             </div>
         </div>
