@@ -8,6 +8,3 @@
     flex-wrap: wrap;
     gap: 0.5rem;
 }
-
-// Mobile
-@media (max-width: 768px) {}

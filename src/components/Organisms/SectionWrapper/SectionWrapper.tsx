@@ -1,4 +1,4 @@
-import './SectionWrapper.scss'
+import './SectionWrapper.css'
 
 import React, { useCallback, useEffect, useMemo, useRef } from 'react'
 import { useTranslation } from 'react-i18next'

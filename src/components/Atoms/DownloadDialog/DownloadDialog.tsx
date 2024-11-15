@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { CgClose } from 'react-icons/cg'
 import LocalAlertBannerProvider from '../../../context/LocalAlertBannerContext'
 import DownloadReasonForm from '../../Molecules/DownloadReasonForm/DownloadReasonForm'
-import './DownloadDialog.scss'
+import './DownloadDialog.css'
 
 type DialogProps = {
     open: boolean

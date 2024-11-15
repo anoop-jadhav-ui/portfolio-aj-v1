@@ -1,5 +1,5 @@
 import React, { ErrorInfo } from 'react'
-import './ErrorBoundary.scss'
+import './ErrorBoundary.css'
 
 import UseAnimations from 'react-useanimations'
 import alertOctagon from 'react-useanimations/lib/alertOctagon'

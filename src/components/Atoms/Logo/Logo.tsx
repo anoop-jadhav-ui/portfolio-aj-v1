@@ -1,4 +1,4 @@
-import './Logo.scss'
+import './Logo.css'
 import React from 'react'
 export function Logo() {
     return (

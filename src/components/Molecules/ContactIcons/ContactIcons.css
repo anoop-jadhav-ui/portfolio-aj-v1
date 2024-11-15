@@ -8,7 +8,7 @@
         margin-top: 2rem;
     }
 
-    .subsection-data+.subsection-data {
+    .subsection-data + .subsection-data {
         padding-left: 3rem;
     }
 }
@@ -20,11 +20,13 @@
 }
 
 .contactimg:hover {
-    stroke: hsla(var(--primary-hue),
-            var(--primary-saturation),
-            78%,
-            var(--primary-alpha));
-    //stroke: hsla(0,84%, 78%, 100%);
+    stroke: hsla(
+        var(--primary-hue),
+        var(--primary-saturation),
+        78%,
+        var(--primary-alpha)
+    );
+    /* stroke: hsla(0,84%, 78%, 100%); */
 }
 
 .inside-leftpane {
@@ -43,7 +45,7 @@
         margin-top: 0;
     }
 
-    .subsection-data+.subsection-data {
+    .subsection-data + .subsection-data {
         margin-top: 0;
         padding-left: 1rem;
     }
@@ -66,7 +68,7 @@
     }
 
     .rightpane.horizontally-placed {
-        .subsection-data+.subsection-data {
+        .subsection-data + .subsection-data {
             margin-top: 2rem;
         }
     }

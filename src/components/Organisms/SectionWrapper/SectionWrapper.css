@@ -5,21 +5,18 @@
     top: calc(50% + var(--section-padding) - 1.5rem);
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
-    // Debugging
-    // border: 1px solid red;
 }
 
 .section {
     --section-padding: 8.25rem;
     position: relative;
 
-    // slide in animation
-    // transform: translateY(1.5rem);
-    // transition: transform 0.3s ease-in-out;
-
-    // &.section-in-view {
-    //   transform: translateY(0);
-    // }
+    /* slide in animation */
+    /* transform: translateY(1.5rem);
+     transition: transform 0.3s ease-in-out
+     &.section-in-view {
+       transform: translateY(0);
+     } */
 }
 
 /*Section spacing*/

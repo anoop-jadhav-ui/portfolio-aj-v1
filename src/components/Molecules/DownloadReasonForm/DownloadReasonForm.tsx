@@ -1,4 +1,4 @@
-import './DownloadReasonForm.scss'
+import './DownloadReasonForm.css'
 
 import { zodResolver } from '@hookform/resolvers/zod'
 import React, { useState } from 'react'

@@ -1,5 +1,5 @@
 import React from 'react'
-import './SkillPill.scss'
+import './SkillPill.css'
 
 export type SkillOption = {
     id: number

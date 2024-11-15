@@ -1,4 +1,4 @@
-import './LeftPane.scss'
+import './LeftPane.css'
 
 import React from 'react'
 import { useTranslation } from 'react-i18next'

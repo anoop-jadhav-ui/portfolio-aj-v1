@@ -1,0 +1,79 @@
+.skill-pill {
+    cursor: pointer;
+
+    position: relative;
+    --offset: 1px;
+
+    display: flex;
+    border-radius: 0.5rem;
+
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 1rem 2rem 1rem 1rem;
+
+    overflow: hidden;
+
+    background-color: var(--grey9);
+    color: var(--grey1);
+
+    font-size: 1.25rem;
+
+    .icon,
+    .skill {
+        z-index: 1;
+    }
+
+    &:hover {
+        font-weight: 400;
+        background-color: var(--grey8);
+        color: var(--grey1);
+    }
+
+    /* &:hover {
+         font-weight: 400
+         &::before {
+             content: '';
+             background: conic-gradient(transparent 270deg, var(--primary-color), transparent);
+             position: absolute;
+             top: 50%;
+             left: 50%;
+             transform: translate(-50%, -50%);
+             aspect-ratio: 1;Ø
+             width: 100%
+             animation: rotate 2s linear infinite;
+         
+         &::after {
+             content: '';
+             background: inherit;
+             border-radius: inherit;
+             position: absolute;
+             inset: var(--offset);
+             height: calc(100% - 2 * var(--offset));
+             width: calc(100% - 2 * var(--offset));
+         }
+     } */
+}
+
+.icon {
+    margin-right: 0.5rem;
+}
+
+@keyframes rotate {
+    from {
+        transform: translate(-50%, -50%) scale(1.4) rotate(0turn);
+    }
+
+    to {
+        transform: translate(-50%, -50%) scale(1.4) rotate(1turn);
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .skill-pill {
+        .icon {
+            width: 24px;
+            height: 24px;
+        }
+    }
+}

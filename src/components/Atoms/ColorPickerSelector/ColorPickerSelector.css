@@ -10,8 +10,8 @@
     .selected-color {
         cursor: pointer;
 
-        svg path {
-            fill: var(--primary-color)
+        :is(svg) path {
+            fill: var(--primary-color);
         }
     }
 
@@ -60,5 +60,4 @@
             width: 2rem;
         }
     }
-
 }

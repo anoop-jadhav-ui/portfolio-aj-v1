@@ -1,7 +1,7 @@
 import { useLottie } from 'lottie-react'
 import React from 'react'
 import { useTheme } from '../../../context/ThemeContext'
-import './ColorPickerSelector.scss'
+import './ColorPickerSelector.css'
 import lottieData from './ColorSwatchIcon.json'
 
 const hueList = [0, 220, 280, 315]

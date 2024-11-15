@@ -1,4 +1,4 @@
-import './Projects.scss'
+import './Projects.css'
 
 import React, { useMemo } from 'react'
 import { useTranslation } from 'react-i18next'

@@ -11,8 +11,8 @@
             color: var(--primary-color);
         }
 
-        input.highlight-error,
-        textarea.highlight-error {
+        :is(input).highlight-error,
+        :is(textarea).highlight-error {
             border: var(--border-width) solid var(--primary-color);
         }
 

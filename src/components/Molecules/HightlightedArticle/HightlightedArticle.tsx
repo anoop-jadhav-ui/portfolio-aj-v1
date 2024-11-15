@@ -1,6 +1,6 @@
 import React from 'react'
 import { RecentArticle } from '../../../types/profileDataTypes'
-import './HightlightedArticle.scss'
+import './HightlightedArticle.css'
 
 interface ArticleCardProps {
     articleDetails: RecentArticle

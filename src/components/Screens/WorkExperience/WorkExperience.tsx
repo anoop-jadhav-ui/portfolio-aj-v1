@@ -1,4 +1,4 @@
-import './WorkExperience.scss'
+import './WorkExperience.css'
 
 import moment from 'moment/moment'
 import React, { useMemo } from 'react'

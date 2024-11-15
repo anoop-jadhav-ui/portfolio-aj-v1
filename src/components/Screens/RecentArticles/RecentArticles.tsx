@@ -1,4 +1,4 @@
-import './RecentArticles.scss'
+import './RecentArticles.css'
 
 import React, { useMemo } from 'react'
 import { useTranslation } from 'react-i18next'

@@ -1,4 +1,4 @@
-import './MessageForm.scss'
+import './MessageForm.css'
 
 import { zodResolver } from '@hookform/resolvers/zod'
 import React, { useState } from 'react'

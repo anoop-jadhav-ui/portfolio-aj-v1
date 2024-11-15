@@ -1,4 +1,4 @@
-import './Skills.scss'
+import './Skills.css'
 
 import React from 'react'
 import { useTranslation } from 'react-i18next'

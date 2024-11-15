@@ -1,4 +1,4 @@
-import './Summary.scss'
+import './Summary.css'
 
 import DOMPurify from 'dompurify'
 import parse from 'html-react-parser'

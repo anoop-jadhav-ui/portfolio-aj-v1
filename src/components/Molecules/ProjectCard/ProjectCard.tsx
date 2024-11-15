@@ -1,7 +1,7 @@
 import React from 'react'
 import { FiExternalLink, FiGithub } from 'react-icons/fi'
 import { ProjectDetails } from '../../../types/profileDataTypes'
-import './ProjectCard.scss'
+import './ProjectCard.css'
 
 const ProjectCard = ({
     projectDetails,

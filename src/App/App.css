@@ -22,7 +22,7 @@
     z-index: 101;
 }
 
-// Mobile
+/* Mobile */
 @media (max-width: 768px) {
     .App {
         --app-max-width: 100%;
@@ -30,21 +30,21 @@
     }
 }
 
-// Tablet
+/* Tablet */
 @media (max-width: 1279px) and (min-width: 769px) {
     .App {
         --app-max-width: 1000px;
     }
 }
 
-// Desktop
+/* Desktop */
 @media (min-width: 1280px) and (max-width: 1791px) {
     .App {
         --app-max-width: 900px;
     }
 }
 
-// X Large Desktop
+/* X Large Desktop */
 @media (min-width: 1900px) {
     .App {
         padding: 8.25rem 1rem;

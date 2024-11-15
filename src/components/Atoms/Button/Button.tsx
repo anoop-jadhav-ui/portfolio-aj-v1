@@ -1,4 +1,4 @@
-import './Button.scss'
+import './Button.css'
 
 import React, { useState } from 'react'
 import { IconType } from 'react-icons'

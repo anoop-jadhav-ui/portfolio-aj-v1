@@ -5,7 +5,7 @@
         display: flex;
         align-items: center;
 
-        span+span {
+        :is(span) + span {
             margin-left: 1rem;
         }
     }
@@ -14,7 +14,7 @@
         padding-top: 0.5rem;
 
         &.list {
-            li {
+            :is(li) {
                 list-style: disc;
                 list-style-position: outside;
             }

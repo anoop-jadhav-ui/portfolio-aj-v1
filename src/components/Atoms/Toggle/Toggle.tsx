@@ -1,4 +1,4 @@
-import './Toggle.scss'
+import './Toggle.css'
 import React from 'react'
 
 interface ToggleProps {

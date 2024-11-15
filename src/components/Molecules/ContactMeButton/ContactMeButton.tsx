@@ -1,4 +1,4 @@
-import './ContactMeButton.scss'
+import './ContactMeButton.css'
 
 import React from 'react'
 import { useTranslation } from 'react-i18next'

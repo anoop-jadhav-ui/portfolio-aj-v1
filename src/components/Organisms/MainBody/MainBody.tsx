@@ -1,4 +1,4 @@
-import './MainBody.scss'
+import './MainBody.css'
 
 import React, { lazy, Suspense } from 'react'
 import { useProfileDataContext } from '../../../context/ProfileDataContext'

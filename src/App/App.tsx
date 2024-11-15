@@ -10,7 +10,7 @@ import AlertBannerProvider from '../context/AlertBannerContext'
 import { useProfileDataContext } from '../context/ProfileDataContext'
 import { useTheme } from '../context/ThemeContext'
 import '../translations/i18next-config'
-import './App.scss'
+import './App.css'
 
 export const App = () => {
     const { isMobile } = useTheme()

@@ -1,4 +1,4 @@
-import './ArticleCard.scss'
+import './ArticleCard.css'
 import React from 'react'
 import { RecentArticle } from '../../../types/profileDataTypes'
 

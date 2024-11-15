@@ -1,4 +1,4 @@
-import './Header.scss'
+import './Header.css'
 
 import React, { useMemo, useRef } from 'react'
 import { useTranslation } from 'react-i18next'
