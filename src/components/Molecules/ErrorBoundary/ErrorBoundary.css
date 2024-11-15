@@ -1,16 +1,15 @@
 .error {
     text-align: center;
-    font-weight: bold;
     padding: 3rem;
     display: flex;
     place-content: center;
     height: 100vh;
     flex-wrap: wrap;
+    font-weight: bold;
 }
 .error svg {
     width: 3em;
     height: 3em;
-    fill: var(--primary-color);
 }
 
 .error-message {

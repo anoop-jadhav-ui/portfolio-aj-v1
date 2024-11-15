@@ -1,8 +1,7 @@
 import React, { ErrorInfo } from 'react'
 import './ErrorBoundary.css'
 
-import UseAnimations from 'react-useanimations'
-import alertOctagon from 'react-useanimations/lib/alertOctagon'
+import { OctagonAlert } from 'lucide-react'
 
 interface Props {
     children: React.ReactNode
@@ -32,11 +31,7 @@ class ErrorBoundary extends React.Component<Props, { hasError: boolean }> {
             return (
                 <div className="error">
                     <div>
-                        <UseAnimations
-                            size={88}
-                            animation={alertOctagon}
-                            strokeColor="var(--primary-color)"
-                        />
+                        <OctagonAlert size={88} color="var(--primary-color)" />
                     </div>
                     <div className="error-message">
                         {this.props.errorMessage}

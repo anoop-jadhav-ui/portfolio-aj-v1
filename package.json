@@ -26,7 +26,6 @@
         "react-i18next": "^13.2.2",
         "react-page-scroll-progress-bar": "^3.0.5",
         "react-toggle-dark-mode": "^1.1.1",
-        "react-useanimations": "^2.10.0",
         "three": "^0.154.0",
         "zod": "^3.23.8"
     },

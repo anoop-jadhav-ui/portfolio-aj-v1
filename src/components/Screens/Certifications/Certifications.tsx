@@ -13,6 +13,7 @@ const Certifications = () => {
         profileData: { certifications },
     } = useProfileDataContext()
     const { t } = useTranslation()
+
     return (
         <>
             <div className="section-title h2 bold">

@@ -3897,7 +3897,7 @@ lottie-react@^2.4.0:
   dependencies:
     lottie-web "^5.10.2"
 
-lottie-web@^5.10.2, lottie-web@^5.5.7:
+lottie-web@^5.10.2:
   version "5.12.2"
   resolved "https://registry.yarnpkg.com/lottie-web/-/lottie-web-5.12.2.tgz#579ca9fe6d3fd9e352571edd3c0be162492f68e5"
   integrity sha512-uvhvYPC8kGPjXT3MyKMrL3JitEAmDMp30lVkuq/590Mw9ok6pWcFCwXJveo0t5uqYw1UREQHofD+jVpdjBv8wg==
@@ -4452,13 +4452,6 @@ react-toggle-dark-mode@^1.1.1:
   integrity sha512-25dH8tvQucpW9c024WQ6gXLxJ6Irc5iTFgAIKuwCUUfbbahyVd1OKEq5TqExzoPHoORIXlQKYXV/+fuyclr6FQ==
   dependencies:
     react-spring "^9.0.0-rc.3"
-
-react-useanimations@^2.10.0:
-  version "2.10.0"
-  resolved "https://registry.yarnpkg.com/react-useanimations/-/react-useanimations-2.10.0.tgz#cb0a7f34d6caadb819e8a81cd523f763a0c36441"
-  integrity sha512-MzGNv8vkvb6qEvMBCj+O6nUloUHSJRubMAH3uE7J4M+pjt5ud5xDaXBrQgv5GbvBg29XzviKWHTfvvkofDEu+Q==
-  dependencies:
-    lottie-web "^5.5.7"
 
 react@^18.2.0:
   version "18.3.1"
