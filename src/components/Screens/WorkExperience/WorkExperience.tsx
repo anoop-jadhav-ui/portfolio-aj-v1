@@ -2,13 +2,14 @@ import './WorkExperience.css'
 
 import DOMPurify from 'dompurify'
 import parse from 'html-react-parser'
-import { BriefcaseBusiness } from 'lucide-react'
+import { ArrowRight, BriefcaseBusiness, Calendar } from 'lucide-react'
 import moment from 'moment/moment'
 import React, { useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useProfileDataContext } from '../../../context/ProfileDataContext'
 import constants from '../../../helpers/constants'
 import { ExperienceDetails } from '../../../types/profileDataTypes'
+import Tag from '../../Atoms/Tag/Tag'
 import SectionVisibilityHOC from '../../Organisms/SectionWrapper/SectionWrapper'
 
 const WorkExperience = () => {
@@ -49,12 +50,6 @@ const WorkExperience = () => {
         })
     }, [experience])
 
-    function getFromToDates(fromDate: string, toDate: string): string {
-        return `${fromDate.substring(3)} - ${
-            toDate.includes('Present') ? toDate : toDate.substring(3)
-        }`
-    }
-
     return (
         <>
             <div className="section-title h2 bold">
@@ -64,24 +59,50 @@ const WorkExperience = () => {
             <div className="subsection work-experience-content">
                 {calculatedExperience.map((experienceDetail, key) => {
                     return (
-                        <div key={String(key)} className="subsection-data">
-                            <span className="h3 grey1 bold">
-                                {experienceDetail.name}
-                            </span>
-                            <div className="label primary-color letterspacing-2">
-                                <span>
-                                    {getFromToDates(
-                                        experienceDetail.fromDate,
-                                        experienceDetail.toDate
-                                    )}
-                                </span>
-                                <span className="dot" />
-                                <span>{experienceDetail.totalYears}</span>
-                            </div>
-                            <div className="summary list grey-1 body-text">
-                                {parse(
-                                    DOMPurify.sanitize(experienceDetail.summary)
+                        <div
+                            key={String(key)}
+                            className="subsection-data stepper"
+                        >
+                            <div className="stepper-icon">
+                                <div className="stepper-dot"></div>
+                                {key !== calculatedExperience.length - 1 && (
+                                    <div className="stepper-line"></div>
                                 )}
+                            </div>
+                            <div className="stepper-content">
+                                <div className="experience-header">
+                                    <div className="h3 grey1 bold">
+                                        {experienceDetail.name}
+                                    </div>
+                                    <div className="label primary-color">
+                                        <Tag
+                                            label={experienceDetail.totalYears}
+                                        />
+                                        <span className="date">
+                                            <Calendar size="0.8125rem" />
+                                            <span>
+                                                {experienceDetail.fromDate}
+                                            </span>
+                                            <ArrowRight size="0.8125rem" />
+                                            <span>
+                                                {experienceDetail.toDate.includes(
+                                                    'Present'
+                                                )
+                                                    ? experienceDetail.toDate
+                                                    : experienceDetail.toDate.substring(
+                                                          3
+                                                      )}
+                                            </span>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div className="summary list grey-1 body-text">
+                                    {parse(
+                                        DOMPurify.sanitize(
+                                            experienceDetail.summary
+                                        )
+                                    )}
+                                </div>
                             </div>
                         </div>
                     )

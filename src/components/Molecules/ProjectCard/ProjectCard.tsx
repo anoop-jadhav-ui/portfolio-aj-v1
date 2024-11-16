@@ -1,6 +1,7 @@
 import { Github, Link } from 'lucide-react'
 import React from 'react'
 import { ProjectDetails } from '../../../types/profileDataTypes'
+import Tag from '../../Atoms/Tag/Tag'
 import './ProjectCard.css'
 
 const ProjectCard = ({
@@ -24,15 +25,7 @@ const ProjectCard = ({
                 <div className="h4 bold">{projectDetails.projectName}</div>
                 <div className="tags">
                     {projectDetails.tags?.map((ele, index) => {
-                        return (
-                            <div
-                                className="tag label"
-                                key={String(index)}
-                                title={ele}
-                            >
-                                {ele}
-                            </div>
-                        )
+                        return <Tag label={ele} key={String(index)} />
                     })}
                 </div>
                 <div className="description">{projectDetails.description}</div>
