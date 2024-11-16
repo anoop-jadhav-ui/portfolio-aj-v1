@@ -47,8 +47,8 @@
 @media only screen and (max-width: 768px) {
     .skill-pill {
         .icon {
-            width: 24px;
-            height: 24px;
+            width: 32px;
+            height: 32px;
         }
     }
 }
