@@ -79,24 +79,6 @@
         flex-wrap: wrap;
         grid-gap: 0.8125rem;
         margin-bottom: 0;
-
-        li {
-            list-style: none;
-            cursor: pointer;
-            font-size: 16px;
-            color: var(--grey5);
-
-            &.bold {
-                color: var(--grey1);
-
-                &:before {
-                    content: '';
-                    border-left: 3px solid var(--primary-color);
-                    position: relative;
-                    left: -1rem;
-                }
-            }
-        }
     }
 
     .left-pane-header-container {
@@ -104,7 +86,7 @@
         justify-content: space-between;
 
         .left-pane-header {
-            font-size: 0.8125rem;
+            font-size: 1rem;
             padding: 1rem 1.5rem;
             color: var(--primary-color);
         }

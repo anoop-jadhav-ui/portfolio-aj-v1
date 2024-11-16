@@ -18,6 +18,7 @@ import playwright from '../../../assets/skills/playwright.svg'
 import react from '../../../assets/skills/react.svg'
 import typescript from '../../../assets/skills/typescript.svg'
 
+import { Cog } from 'lucide-react'
 import SkillPill, { SkillOption } from '../../Atoms/SkillPill/SkillPill'
 
 const skillOptions: SkillOption[] = [
@@ -103,6 +104,7 @@ const Skills = () => {
             <div className="skills-section-header">
                 <div className="section-title h2 bold">
                     {t('sectionName.skills')}
+                    <Cog size="2rem" />
                 </div>
             </div>
             <div className="subsection">

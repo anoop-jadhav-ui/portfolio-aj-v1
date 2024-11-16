@@ -1,5 +1,6 @@
 import './Projects.css'
 
+import { Lightbulb } from 'lucide-react'
 import React, { useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useProfileDataContext } from '../../../context/ProfileDataContext'
@@ -22,6 +23,7 @@ function Projects() {
         <>
             <div className="section-title h2 bold">
                 {t('sectionName.funLearningProjects')}
+                <Lightbulb size="2rem" />
             </div>
             <div className="subsection project-section-body">
                 {sortedProjects.map((projectDetails, index) => {

@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { useProfileDataContext } from '../../../context/ProfileDataContext'
 import constants from '../../../helpers/constants'
 import SectionWrapper from '../../Organisms/SectionWrapper/SectionWrapper'
+import { GraduationCap } from 'lucide-react'
 
 function Education() {
     const {
@@ -14,6 +15,7 @@ function Education() {
         <>
             <div className="section-title h2 bold">
                 {t('sectionName.education')}
+                <GraduationCap size="2rem" />
             </div>
             <div className="subsection education-content">
                 {education.map((educationDetail, key) => {

@@ -1,3 +1,4 @@
+import { BookUser } from 'lucide-react'
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 import constants from '../../../helpers/constants'
@@ -10,6 +11,7 @@ const Contact = () => {
         <>
             <div className="section-title h2 bold">
                 {t('sectionName.contactDetails')}
+                <BookUser size="2rem" />
             </div>
             <div className="subsection">
                 <div>{t('contactDetailsMessage')}</div>

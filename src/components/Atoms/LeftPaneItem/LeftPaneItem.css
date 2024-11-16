@@ -1,0 +1,22 @@
+.left-pane-item {
+    list-style: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: var(--grey5);
+
+    &.selected {
+        color: var(--primary-color);
+        font-weight: bold;
+    }
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+
+    svg {
+        width: 1rem;
+        height: 1rem;
+    }
+}

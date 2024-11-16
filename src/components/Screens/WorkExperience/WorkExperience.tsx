@@ -1,5 +1,8 @@
 import './WorkExperience.css'
 
+import DOMPurify from 'dompurify'
+import parse from 'html-react-parser'
+import { BriefcaseBusiness } from 'lucide-react'
 import moment from 'moment/moment'
 import React, { useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -7,8 +10,6 @@ import { useProfileDataContext } from '../../../context/ProfileDataContext'
 import constants from '../../../helpers/constants'
 import { ExperienceDetails } from '../../../types/profileDataTypes'
 import SectionVisibilityHOC from '../../Organisms/SectionWrapper/SectionWrapper'
-import DOMPurify from 'dompurify'
-import parse from 'html-react-parser'
 
 const WorkExperience = () => {
     const {
@@ -58,6 +59,7 @@ const WorkExperience = () => {
         <>
             <div className="section-title h2 bold">
                 {t('sectionName.workExperience')}
+                <BriefcaseBusiness size="2rem" />
             </div>
             <div className="subsection work-experience-content">
                 {calculatedExperience.map((experienceDetail, key) => {

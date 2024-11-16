@@ -29,7 +29,7 @@ const LeftPane = () => {
             }`}
         >
             <div className="left-pane-header-container">
-                <div className="left-pane-header bold uppercase letterspacing-1">
+                <div className="left-pane-header bold">
                     {t('skipToSection')}
                 </div>
                 <div
@@ -54,6 +54,7 @@ const LeftPane = () => {
                                 currentSectionInView === leftPaneItem.class
                             }
                             sectionClass={leftPaneItem.class}
+                            icon={leftPaneItem.icon}
                         />
                     )
                 })}

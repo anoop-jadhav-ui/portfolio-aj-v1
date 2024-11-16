@@ -1,6 +1,6 @@
 import './Certifications.css'
 
-import { ExternalLink } from 'lucide-react'
+import { Award, ExternalLink } from 'lucide-react'
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 import { useProfileDataContext } from '../../../context/ProfileDataContext'
@@ -18,6 +18,7 @@ const Certifications = () => {
         <>
             <div className="section-title h2 bold">
                 {t('sectionName.certifications')}
+                <Award size="2rem" />
             </div>
             <div className="subsection certifications-content">
                 {certifications.map(

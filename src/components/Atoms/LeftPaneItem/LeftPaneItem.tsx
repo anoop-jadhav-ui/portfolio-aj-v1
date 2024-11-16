@@ -1,14 +1,16 @@
 import React, { MouseEventHandler } from 'react'
-
+import './LeftPaneItem.css'
 interface LeftPaneMenuItemProps {
     label: string
     isSelected: boolean
     sectionClass: string
+    icon: React.ReactNode
 }
 const LeftPaneItem = ({
     label,
     isSelected,
     sectionClass,
+    icon,
 }: LeftPaneMenuItemProps) => {
     const scrollIntoSectionView = (): void => {
         const element = document.getElementsByClassName(`${sectionClass}`)
@@ -22,11 +24,12 @@ const LeftPaneItem = ({
     }
     return (
         <li
-            className={`grey3 ${isSelected && 'bold'}`}
+            className={`left-pane-item grey3 ${isSelected && 'selected'}`}
             onClick={
                 scrollIntoSectionView as unknown as MouseEventHandler<HTMLLIElement>
             }
         >
+            {icon}
             {label}
         </li>
     )

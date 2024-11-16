@@ -1,73 +1,98 @@
-import { FeatureToggles } from '../../../types/profileDataTypes'
+import { t } from 'i18next'
+import {
+    Award,
+    BookOpenText,
+    BookUser,
+    BriefcaseBusiness,
+    Cog,
+    Gamepad2,
+    GraduationCap,
+    Lightbulb,
+    MessageCircleMore,
+    Newspaper,
+} from 'lucide-react'
+import React from 'react'
 import constants from '../../../helpers/constants'
+import { FeatureToggles } from '../../../types/profileDataTypes'
 
 export type LeftPaneMenuItem = {
     class: string
     label: string
     id: string
     headerPos: number
+    icon: React.ReactNode
 }
 
 const leftPaneDataObj: Array<LeftPaneMenuItem> = [
     {
         class: constants.classNames.SUMMARY,
-        label: 'Summary',
+        label: t('sectionName.summary'),
         id: 'summary',
         headerPos: 0,
+        icon: <BookOpenText />,
     },
     {
         class: constants.classNames.RECENT_ARTICLES,
-        label: 'Recent Articles',
+        label: t('sectionName.recentArticles'),
         id: 'recentArticles',
         headerPos: 0,
+        icon: <Newspaper />,
     },
     {
         class: constants.classNames.PROJECTS,
-        label: 'Fun Learning Projects',
+        label: t('sectionName.funLearningProjects'),
         id: 'projects',
         headerPos: 0,
+        icon: <Lightbulb />,
     },
     {
         class: constants.classNames.WORK_EXPERIENCE,
-        label: 'Work Experience',
+        label: t('sectionName.workExperience'),
         id: 'experience',
         headerPos: 0,
+        icon: <BriefcaseBusiness />,
     },
     {
         class: constants.classNames.SKILLS,
-        label: 'Skills',
+        label: t('sectionName.skills'),
         id: 'skills',
         headerPos: 0,
+        icon: <Cog />,
     },
     {
         class: constants.classNames.EDUCATION,
-        label: 'Education',
+        label: t('sectionName.education'),
         id: 'education',
         headerPos: 0,
+        icon: <GraduationCap />,
     },
     {
         class: constants.classNames.CERTIFICATIONS,
-        label: 'Certifications',
+        label: t('sectionName.certifications'),
         id: 'certifications',
         headerPos: 0,
+        icon: <Award />,
     },
     {
         class: constants.classNames.HOBBIES,
-        label: 'Hobbies & Interests',
+        label: t('sectionName.hobbiesAndInterests'),
         id: 'hobbies',
         headerPos: 0,
+        icon: <Gamepad2 />,
     },
     {
         class: constants.classNames.GET_IN_TOUCH,
-        label: 'Get In Touch',
+        label: t('sectionName.messageFormTitle'),
         id: 'getInTouch',
         headerPos: 0,
+        icon: <MessageCircleMore />,
     },
     {
         class: constants.classNames.CONTACT_ME,
-        label: 'Contact Details',
+        label: t('sectionName.contactDetails'),
         id: 'contactDetails',
         headerPos: 0,
+        icon: <BookUser />,
     },
 ]
 

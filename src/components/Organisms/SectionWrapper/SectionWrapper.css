@@ -26,4 +26,8 @@
 
 .section-title {
     color: var(--primary-color);
+
+    display: flex !important;
+    gap: 0.75rem;
+    align-items: center;
 }

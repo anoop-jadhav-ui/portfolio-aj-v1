@@ -1,6 +1,6 @@
 import './RecentArticles.css'
 
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, Newspaper } from 'lucide-react'
 import React, { useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useRecentArticleContext } from '../../../context/RecentArticleContext'
@@ -26,6 +26,7 @@ function RecentArticles() {
                 <>
                     <div className="section-title h2 bold">
                         {t('sectionName.recentArticles')}
+                        <Newspaper size="2rem" />
                     </div>
                     {isLoadingArticles && <RecentArticlesSkeleton />}
                     {!isLoadingArticles && (

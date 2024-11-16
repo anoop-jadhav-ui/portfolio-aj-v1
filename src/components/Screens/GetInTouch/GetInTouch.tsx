@@ -1,5 +1,6 @@
 import './GetInTouch.css'
 
+import { MessageCircleMore } from 'lucide-react'
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 import constants from '../../../helpers/constants'
@@ -12,6 +13,7 @@ export const GetInTouch = () => {
         <>
             <div className="section-title h2 bold">
                 {t('sectionName.messageFormTitle')}
+                <MessageCircleMore size="2rem" />
             </div>
             <div id="contact-form" className="subsection message-content">
                 <div className="subsection-data">

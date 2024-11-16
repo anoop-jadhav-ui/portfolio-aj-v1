@@ -8,7 +8,8 @@
         "skills": "Skills",
         "hobbiesAndInterests": "Hobbies & Interests",
         "messageFormTitle": "Get in Touch",
-        "contactDetails": "Contact Details"
+        "contactDetails": "Contact Details",
+        "summary": "Summary"
     },
     "common": {
         "validations": {
@@ -38,7 +39,7 @@
     },
     "topMateInfo": "For career guidance and resume review, check out my Top Mate profile.",
     "scrollToKnowMore": "Scroll for more information",
-    "skipToSection": "Skip to section",
+    "skipToSection": "Skip to Section",
     "viewCertification": "View Certification",
     "inProgress": "In Progress",
     "complete": "Complete",
