@@ -1,6 +1,12 @@
 import { PerspectiveCamera } from '@react-three/drei'
 import { Canvas, useFrame } from '@react-three/fiber'
-import React, { useMemo, useRef, useTransition } from 'react'
+import React, {
+    useEffect,
+    useMemo,
+    useRef,
+    useState,
+    useTransition,
+} from 'react'
 import * as THREE from 'three'
 import { InstancedMesh, PointLight, Vector3 } from 'three'
 import { useTheme } from '../../../context/ThemeContext'
@@ -11,14 +17,20 @@ function Random(min: number, max: number) {
     return Math.random() * (max - min) + min
 }
 
-const Star = () => {
+const Star = ({
+    scrollSpeed,
+    scrollDirection,
+}: {
+    scrollSpeed: number
+    scrollDirection: number
+}) => {
     const [, startTransition] = useTransition()
     const { darkMode } = useTheme()
     const color = darkMode === true ? 'white' : 'black'
 
     const light = useRef<PointLight>(null)
     const mesh = useRef<InstancedMesh>(null)
-    const count = 100
+    const count = 150
 
     const particles = useMemo(() => {
         const temp = []
@@ -40,7 +52,7 @@ const Star = () => {
         startTransition(() => {
             particles.forEach((particle, index) => {
                 const { x, y, z, speed } = particle
-                particle.time += speed
+                particle.time += speed * scrollSpeed * scrollDirection
                 const t = particle.time
                 dummy.position.set(x, y, z + (t % 100))
                 dummy.updateMatrix()
@@ -71,7 +83,34 @@ const Star = () => {
         </>
     )
 }
+
 export const Stars = () => {
+    const [scrollSpeed, setScrollSpeed] = useState(1)
+    const [scrollDirection, setScrollDirection] = useState(1)
+    const lastScrollY = useRef(0)
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const currentScrollY = window.scrollY
+            const delta = currentScrollY - lastScrollY.current
+
+            if (delta > 0) {
+                setScrollDirection(1) // Scrolling down
+            } else if (delta < 0) {
+                setScrollDirection(-1) // Scrolling up
+            }
+
+            setScrollSpeed(Math.min(5, 1 + Math.abs(delta) / 100))
+
+            lastScrollY.current = currentScrollY
+        }
+
+        window.addEventListener('scroll', handleScroll)
+        return () => {
+            window.removeEventListener('scroll', handleScroll)
+        }
+    }, [])
+
     return (
         <Canvas
             style={{
@@ -86,7 +125,10 @@ export const Stars = () => {
         >
             <>
                 <PerspectiveCamera makeDefault position={cameraPosVector} />
-                <Star />
+                <Star
+                    scrollSpeed={scrollSpeed}
+                    scrollDirection={scrollDirection}
+                />
             </>
         </Canvas>
     )
