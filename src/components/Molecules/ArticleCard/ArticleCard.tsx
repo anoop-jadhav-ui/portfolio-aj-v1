@@ -29,6 +29,7 @@ const ArticleCard = ({ articleDetails }: ArticleCardProps) => {
                         {new Date(articleDetails.publishedAt).toDateString()}
                     </div>
                     <div className="bold title">{articleDetails.title}</div>
+                    <div className="brief">{articleDetails.brief}</div>
                 </div>
                 <div className="primary-color explore-button">
                     Explore <ArrowRight size="0.8125rem" />

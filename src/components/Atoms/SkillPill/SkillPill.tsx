@@ -1,5 +1,6 @@
 import React from 'react'
 import './SkillPill.css'
+import { ExternalLink } from 'lucide-react'
 
 export type SkillOption = {
     id: number
@@ -21,10 +22,14 @@ const SkillPill = ({ skill }: { skill: SkillOption }) => {
                 className="icon"
                 src={skill.image}
                 alt={skill.name}
-                width="38px"
-                height="38px"
+                width="64px"
+                height="64px"
             />
-            <div className="skill">{skill.name}</div>
+            <div className="name">{skill.name}</div>
+            <ExternalLink
+                size="1rem"
+                className="open-link-icon primary-color"
+            />
         </a>
     )
 }
