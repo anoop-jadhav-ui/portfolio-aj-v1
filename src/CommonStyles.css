@@ -102,7 +102,7 @@ body {
     }
 
     ::selection {
-        background-color: var(--primary-color);
+        background-color: var(--grey8);
     }
 
     ::marker {
