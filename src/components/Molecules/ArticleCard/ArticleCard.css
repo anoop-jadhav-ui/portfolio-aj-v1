@@ -1,7 +1,7 @@
 .article-card {
     cursor: pointer;
     overflow: hidden;
-    border-radius: 0.25rem;
+    border-radius: var(--border-radius);
     box-sizing: content-box;
     background-color: var(--grey9);
 

@@ -24,8 +24,8 @@
             color: var(--grey10);
             font-weight: bold;
             background-color: var(--primary-color);
-            padding: 1px 0.5rem;
-            border-radius: 0.1rem;
+            padding: 1px 0.65rem;
+            border-radius: 1rem;
             text-align: center;
         }
     }
