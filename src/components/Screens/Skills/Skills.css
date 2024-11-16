@@ -8,3 +8,9 @@
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     gap: 0.5rem;
 }
+
+@media screen and (max-width: 768px) {
+    .skill-pills {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    }
+}
