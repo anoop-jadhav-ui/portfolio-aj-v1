@@ -1,11 +1,10 @@
 import './Projects.css'
 
-import { Lightbulb } from 'lucide-react'
 import React, { useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useProfileDataContext } from '../../../context/ProfileDataContext'
-import constants from '../../../helpers/constants'
 import ProjectCard from '../../Molecules/ProjectCard/ProjectCard'
+import { sectionDetails } from '../../Organisms/LeftPane/leftPaneData'
 import SectionWrapper from '../../Organisms/SectionWrapper/SectionWrapper'
 
 function Projects() {
@@ -22,8 +21,8 @@ function Projects() {
     return (
         <>
             <div className="section-title h2 bold">
-                {t('sectionName.funLearningProjects')}
-                <Lightbulb size="2rem" />
+                {sectionDetails.projects.label}
+                {sectionDetails.projects.icon}
             </div>
             <div className="subsection project-section-body">
                 {sortedProjects.map((projectDetails, index) => {
@@ -39,4 +38,4 @@ function Projects() {
     )
 }
 
-export default SectionWrapper(Projects, constants.classNames.PROJECTS)
+export default SectionWrapper(Projects, sectionDetails.projects.class)

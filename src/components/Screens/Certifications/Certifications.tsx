@@ -1,11 +1,11 @@
 import './Certifications.css'
 
-import { Award, ExternalLink } from 'lucide-react'
+import { ExternalLink } from 'lucide-react'
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 import { useProfileDataContext } from '../../../context/ProfileDataContext'
-import constants from '../../../helpers/constants'
 import { CertificateDetails } from '../../../types/profileDataTypes'
+import { sectionDetails } from '../../Organisms/LeftPane/leftPaneData'
 import SectionWrapper from '../../Organisms/SectionWrapper/SectionWrapper'
 
 const Certifications = () => {
@@ -17,8 +17,8 @@ const Certifications = () => {
     return (
         <>
             <div className="section-title h2 bold">
-                {t('sectionName.certifications')}
-                <Award size="2rem" />
+                {sectionDetails.certifications.label}
+                {sectionDetails.certifications.icon}
             </div>
             <div className="subsection certifications-content">
                 {certifications.map(
@@ -58,5 +58,5 @@ const Certifications = () => {
 
 export default SectionWrapper(
     Certifications,
-    constants.classNames.CERTIFICATIONS
+    sectionDetails.certifications.class
 )

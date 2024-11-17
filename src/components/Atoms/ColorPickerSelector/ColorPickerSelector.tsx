@@ -1,9 +1,9 @@
 import { useLottie } from 'lottie-react'
 import React from 'react'
 import { useTheme } from '../../../context/ThemeContext'
+import { primaryColorList } from '../../../helpers/color'
 import './ColorPickerSelector.css'
 import lottieData from './ColorSwatchIcon.json'
-import { primaryColorList } from '../../../helpers/color'
 
 const ColorPickerSelector = () => {
     const { setPrimaryColor, isMobile } = useTheme()

@@ -22,41 +22,6 @@
     }
 }
 
-.inside-leftpane {
-    padding: 1rem 0.25rem;
-
-    margin-inline: 1.5rem;
-    position: relative;
-
-    border-top: var(--border-width) solid var(--grey8);
-
-    width: calc(100% - 3rem);
-    display: flex;
-    justify-content: space-between;
-
-    .subsection-data {
-        margin-top: 0;
-    }
-
-    .subsection-data + .subsection-data {
-        margin-top: 0;
-        padding-left: 1rem;
-    }
-}
-
-@media (max-width: 1200px) {
-    .rightpane {
-        top: 45vh;
-        width: 4rem;
-    }
-
-    .rightpane.horizontally-placed {
-        .subsection-data + .subsection-data {
-            margin-top: 2rem;
-        }
-    }
-}
-
 @keyframes slideIn {
     0% {
         right: -2.5rem;

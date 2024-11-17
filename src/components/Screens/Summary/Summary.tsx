@@ -7,9 +7,9 @@ import React, { useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useProfileDataContext } from '../../../context/ProfileDataContext'
 import { useTheme } from '../../../context/ThemeContext'
-import constants from '../../../helpers/constants'
 import ContactMeButton from '../../Molecules/ContactMeButton/ContactMeButton'
 import DownloadCV from '../../Molecules/DownloadCV/DownloadCV'
+import { sectionDetails } from '../../Organisms/LeftPane/leftPaneData'
 import SectionVisibilityHOC from '../../Organisms/SectionWrapper/SectionWrapper'
 import portfolioImage from '/images/portfolio-app-img.webp'
 
@@ -108,4 +108,4 @@ const Summary = () => {
     )
 }
 
-export default SectionVisibilityHOC(Summary, constants.classNames.SUMMARY)
+export default SectionVisibilityHOC(Summary, sectionDetails.summary.class)

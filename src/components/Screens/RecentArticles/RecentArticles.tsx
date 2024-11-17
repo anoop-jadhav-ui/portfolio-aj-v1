@@ -1,13 +1,13 @@
 import './RecentArticles.css'
 
-import { ArrowRight, Newspaper } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import React, { useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useRecentArticleContext } from '../../../context/RecentArticleContext'
 import { useTheme } from '../../../context/ThemeContext'
-import constants from '../../../helpers/constants'
 import Button from '../../Atoms/Button/Button'
 import ArticleCard from '../../Molecules/ArticleCard/ArticleCard'
+import { sectionDetails } from '../../Organisms/LeftPane/leftPaneData'
 import SectionWrapper from '../../Organisms/SectionWrapper/SectionWrapper'
 import RecentArticlesSkeleton from './RecentArticlesSkeleton'
 
@@ -25,8 +25,8 @@ function RecentArticles() {
             {recentArticles?.length > 0 && (
                 <>
                     <div className="section-title h2 bold">
-                        {t('sectionName.recentArticles')}
-                        <Newspaper size="2rem" />
+                        {sectionDetails.recentArticles.label}
+                        {sectionDetails.recentArticles.icon}
                     </div>
                     {isLoadingArticles && <RecentArticlesSkeleton />}
                     {!isLoadingArticles && (
@@ -75,5 +75,5 @@ function RecentArticles() {
 // export default RecentArticles;
 export default SectionWrapper(
     RecentArticles,
-    constants.classNames.RECENT_ARTICLES
+    sectionDetails.recentArticles.class
 )

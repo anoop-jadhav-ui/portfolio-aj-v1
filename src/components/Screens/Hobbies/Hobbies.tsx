@@ -1,7 +1,7 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 import { useProfileDataContext } from '../../../context/ProfileDataContext'
-import constants from '../../../helpers/constants'
+import { sectionDetails } from '../../Organisms/LeftPane/leftPaneData'
 import SectionWrapper from '../../Organisms/SectionWrapper/SectionWrapper'
 
 function Hobbies() {
@@ -12,7 +12,8 @@ function Hobbies() {
     return (
         <>
             <div className="section-title h2 bold">
-                {t('sectionName.hobbiesAndInterests')}
+                {sectionDetails.hobbies.label}
+                {sectionDetails.hobbies.icon}
             </div>
             <div className="subsection">
                 {hobbies.map((hobby, key) => {
@@ -30,4 +31,4 @@ function Hobbies() {
     )
 }
 
-export default SectionWrapper(Hobbies, constants.classNames.HOBBIES)
+export default SectionWrapper(Hobbies, sectionDetails.hobbies.class)

@@ -2,14 +2,14 @@ import './WorkExperience.css'
 
 import DOMPurify from 'dompurify'
 import parse from 'html-react-parser'
-import { ArrowRight, BriefcaseBusiness, Calendar } from 'lucide-react'
+import { ArrowRight, Calendar } from 'lucide-react'
 import moment from 'moment/moment'
 import React, { useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useProfileDataContext } from '../../../context/ProfileDataContext'
-import constants from '../../../helpers/constants'
 import { ExperienceDetails } from '../../../types/profileDataTypes'
 import Tag from '../../Atoms/Tag/Tag'
+import { sectionDetails } from '../../Organisms/LeftPane/leftPaneData'
 import SectionVisibilityHOC from '../../Organisms/SectionWrapper/SectionWrapper'
 
 const WorkExperience = () => {
@@ -53,8 +53,8 @@ const WorkExperience = () => {
     return (
         <>
             <div className="section-title h2 bold">
-                {t('sectionName.workExperience')}
-                <BriefcaseBusiness size="2rem" />
+                {sectionDetails.experience.label}
+                {sectionDetails.experience.icon}
             </div>
             <div className="subsection work-experience-content">
                 {calculatedExperience.map((experienceDetail, key) => {
@@ -114,5 +114,5 @@ const WorkExperience = () => {
 
 export default SectionVisibilityHOC(
     WorkExperience,
-    constants.classNames.WORK_EXPERIENCE
+    sectionDetails.experience.class
 )

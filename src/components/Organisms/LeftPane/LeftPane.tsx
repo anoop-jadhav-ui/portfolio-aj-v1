@@ -7,7 +7,6 @@ import { useProfileDataContext } from '../../../context/ProfileDataContext'
 import { useSectionInViewContext } from '../../../context/SectionInViewContext'
 import usePersistState from '../../../hooks/usePersistState'
 import LeftPaneItem from '../../Atoms/LeftPaneItem/LeftPaneItem'
-import ContactIcons from '../../Molecules/ContactIcons/ContactIcons'
 
 const LeftPane = () => {
     const { t } = useTranslation()
@@ -59,7 +58,6 @@ const LeftPane = () => {
                     )
                 })}
             </ul>
-            <ContactIcons className="inside-leftpane" />
         </div>
     )
 }

@@ -30,4 +30,9 @@
     display: flex !important;
     gap: 0.75rem;
     align-items: center;
+
+    svg {
+        width: 2rem;
+        height: 2rem;
+    }
 }

@@ -2,7 +2,6 @@ import './Skills.css'
 
 import React from 'react'
 import { useTranslation } from 'react-i18next'
-import constants from '../../../helpers/constants'
 import SectionVisibilityHOC from '../../Organisms/SectionWrapper/SectionWrapper'
 
 import blender from '../../../assets/skills/blender.svg'
@@ -18,8 +17,8 @@ import playwright from '../../../assets/skills/playwright.svg'
 import react from '../../../assets/skills/react.svg'
 import typescript from '../../../assets/skills/typescript.svg'
 
-import { Cog } from 'lucide-react'
 import SkillPill, { SkillOption } from '../../Atoms/SkillPill/SkillPill'
+import { sectionDetails } from '../../Organisms/LeftPane/leftPaneData'
 
 const skillOptions: SkillOption[] = [
     {
@@ -60,7 +59,7 @@ const skillOptions: SkillOption[] = [
     },
     {
         id: 7,
-        name: 'Material-UI',
+        name: 'MUI',
         image: materialUi,
         link: 'https://mui.com/material-ui/',
     },
@@ -103,8 +102,8 @@ const Skills = () => {
         <>
             <div className="skills-section-header">
                 <div className="section-title h2 bold">
-                    {t('sectionName.skills')}
-                    <Cog size="2rem" />
+                    {sectionDetails.skills.label}
+                    {sectionDetails.skills.icon}
                 </div>
             </div>
             <div className="subsection">
@@ -123,4 +122,4 @@ const Skills = () => {
     )
 }
 
-export default SectionVisibilityHOC(Skills, constants.classNames.SKILLS)
+export default SectionVisibilityHOC(Skills, sectionDetails.skills.class)

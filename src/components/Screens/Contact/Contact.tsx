@@ -1,8 +1,7 @@
-import { BookUser } from 'lucide-react'
 import React from 'react'
 import { useTranslation } from 'react-i18next'
-import constants from '../../../helpers/constants'
 import ContactIcons from '../../Molecules/ContactIcons/ContactIcons'
+import { sectionDetails } from '../../Organisms/LeftPane/leftPaneData'
 import SectionWrapper from '../../Organisms/SectionWrapper/SectionWrapper'
 
 const Contact = () => {
@@ -10,8 +9,8 @@ const Contact = () => {
     return (
         <>
             <div className="section-title h2 bold">
-                {t('sectionName.contactDetails')}
-                <BookUser size="2rem" />
+                {sectionDetails.contactDetails.label}
+                {sectionDetails.contactDetails.icon}
             </div>
             <div className="subsection">
                 <div>{t('contactDetailsMessage')}</div>
@@ -21,4 +20,4 @@ const Contact = () => {
     )
 }
 
-export default SectionWrapper(Contact, constants.classNames.CONTACT_ME)
+export default SectionWrapper(Contact, sectionDetails.contactDetails.class)

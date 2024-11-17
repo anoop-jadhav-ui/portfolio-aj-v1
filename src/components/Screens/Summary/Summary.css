@@ -9,6 +9,26 @@
     }
 }
 
+@keyframes rotate-clockwise {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotate-anti-clockwise {
+    0% {
+        transform: rotate(45deg);
+    }
+
+    100% {
+        transform: rotate(-405deg);
+    }
+}
+
 .summary-section {
     align-items: center;
     display: flex;
@@ -36,26 +56,6 @@
 
         border-bottom: 2px solid var(--grey8);
         overflow: hidden;
-
-        @keyframes rotate-clockwise {
-            0% {
-                transform: rotate(0deg);
-            }
-
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-
-        @keyframes rotate-anti-clockwise {
-            0% {
-                transform: rotate(45deg);
-            }
-
-            100% {
-                transform: rotate(-405deg);
-            }
-        }
 
         .ring {
             position: absolute;
