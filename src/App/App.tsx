@@ -1,4 +1,5 @@
 import '../translations/i18next-config' // This import should be at the top of the file
+import './App.css'
 
 import React, { useRef } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -11,7 +12,6 @@ import Stars from '../components/Organisms/Stars/Stars'
 import AlertBannerProvider from '../context/AlertBannerContext'
 import { useProfileDataContext } from '../context/ProfileDataContext'
 import { useTheme } from '../context/ThemeContext'
-import './App.css'
 
 export const App = () => {
     const { isMobile } = useTheme()
@@ -28,10 +28,7 @@ export const App = () => {
                     color="var(--primary-color)"
                 />
                 <Stars />
-                <div
-                    className="App row no-gutters fade show justify-content-center"
-                    ref={AppRef}
-                >
+                <div className="container mx-auto px-32" ref={AppRef}>
                     {!isMobile && leftPaneData && <LeftPane />}
                     <MainBody />
                 </div>

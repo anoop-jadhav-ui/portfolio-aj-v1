@@ -44,7 +44,7 @@ const MainBody = () => {
     } = appFeatureAvailability
 
     return (
-        <div className="main-body justify-content-center text">
+        <div>
             <Header />
             <Summary />
             <Suspense fallback={<Loader />}>

@@ -1,7 +1,9 @@
+import './index.css'
+import './CommonStyles.css'
+
 import React from 'react'
 import { createRoot } from 'react-dom/client'
 import App from './App/App'
-import './CommonStyles.css'
 import Providers from './helpers/Providers'
 
 const container = document.getElementById('root')

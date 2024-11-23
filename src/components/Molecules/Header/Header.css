@@ -9,7 +9,7 @@
     transform: translateX(-50%);
 
     width: 100%;
-    max-width: calc(var(--app-max-width) + 4rem);
+    /* max-width: calc(var(--app-max-width) + 4rem); */
 
     border-radius: 1rem;
 
@@ -20,7 +20,7 @@
         align-items: center;
         justify-content: space-between;
 
-        max-width: var(--app-max-width);
+        /* max-width: var(--app-max-width); */
         margin: auto;
 
         padding: 1rem;
@@ -82,7 +82,6 @@
 .light .overlayHeader {
     background-color: var(--grey9);
 }
-
 
 @media screen and (max-width: 768px) {
     .header.overlayHeader {
