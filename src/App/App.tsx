@@ -28,10 +28,7 @@ export const App = () => {
                     color="var(--primary-color)"
                 />
                 <Stars />
-                <div
-                    className="App row no-gutters fade show justify-content-center"
-                    ref={AppRef}
-                >
+                <div className="app-container" ref={AppRef}>
                     {!isMobile && leftPaneData && <LeftPane />}
                     <MainBody />
                 </div>
