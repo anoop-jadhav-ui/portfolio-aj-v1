@@ -12,6 +12,9 @@ import AlertBannerProvider from './context/AlertBannerContext'
 const DownloadCVPage = lazy(
     () => import('./components/Pages/DownloadCVPage/DownloadCVPage')
 )
+const NotFoundPage = lazy(
+    () => import('./components/Pages/NotFoundPage/NotFoundPage')
+)
 
 export const App = () => {
     const { t } = useTranslation()
@@ -30,6 +33,7 @@ export const App = () => {
                     <Routes>
                         <Route index element={<LandingPage />} />
                         <Route path="download" element={<DownloadCVPage />} />
+                        <Route path="*" element={<NotFoundPage />} />
                     </Routes>
                 </div>
             </AlertBannerProvider>

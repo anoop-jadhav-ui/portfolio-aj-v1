@@ -1,0 +1,31 @@
+.pageContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    h1 {
+        font-size: 6rem;
+        padding-top: 6rem;
+        margin: 0;
+        paint-order: stroke fill;
+        color: var(--grey2);
+        text-shadow: 8px 8px 0 var(--primary-color);
+    }
+
+    .title {
+        font-size: 1rem;
+    }
+    .message {
+        font-size: 1rem;
+    }
+    .link {
+        margin-top: 2rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .pageContainer {
+        padding-inline: 2rem;
+    }
+}
