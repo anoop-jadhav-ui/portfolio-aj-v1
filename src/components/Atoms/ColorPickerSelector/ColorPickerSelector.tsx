@@ -1,8 +1,9 @@
+import './ColorPickerSelector.css'
+
 import { useLottie } from 'lottie-react'
 import React from 'react'
 import { useTheme } from '../../../context/ThemeContext'
 import { primaryColorList } from '../../../helpers/color'
-import './ColorPickerSelector.css'
 import lottieData from './ColorSwatchIcon.json'
 
 const ColorPickerSelector = () => {

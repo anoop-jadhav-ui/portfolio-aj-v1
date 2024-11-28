@@ -7,6 +7,7 @@ import { useTheme } from '../../../context/ThemeContext'
 import useScrollPosition from '../../../hooks/useScrollPosition'
 import ColorPickerSelector from '../../Atoms/ColorPickerSelector/ColorPickerSelector'
 import { Logo } from '../../Atoms/Logo/Logo'
+import { Link } from 'react-router'
 
 export default function Header() {
     const headerRef = useRef<HTMLDivElement>(null)
@@ -35,7 +36,7 @@ export default function Header() {
                 <Logo />
                 <div className="menu">
                     <div className="menuItem selected">
-                        <a href="/"> {t('home')}</a>
+                        <Link to="/"> {t('home')}</Link>
                     </div>
                     <div className="menuItem">
                         <a
