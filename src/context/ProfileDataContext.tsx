@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useEffect, useState } from 'react'
 import getFilteredLeftPaneData, {
     LeftPaneMenuItem,
-} from '../components/Organisms/LeftPane/leftPaneData'
+} from '../components/Molecules/LeftPane/leftPaneData'
 import initialProfileData from '../data/testData.json'
 import fetchProfileData from '../helpers/fetchProfileData'
 import { ProfileData } from '../types/profileDataTypes'

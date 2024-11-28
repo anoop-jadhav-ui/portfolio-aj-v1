@@ -1,8 +1,9 @@
-import { ProfileDataContextProvider } from '../context/ProfileDataContext'
 import React, { ReactNode } from 'react'
-import ThemeContextProvider from '../context/ThemeContext'
-import { SectionInViewContextProvider } from '../context/SectionInViewContext'
+import { BrowserRouter } from 'react-router'
+import { ProfileDataContextProvider } from '../context/ProfileDataContext'
 import { RecentArticleContextProvider } from '../context/RecentArticleContext'
+import { SectionInViewContextProvider } from '../context/SectionInViewContext'
+import ThemeContextProvider from '../context/ThemeContext'
 
 const Providers = ({ children }: { children: ReactNode }) => {
     return (
@@ -10,7 +11,7 @@ const Providers = ({ children }: { children: ReactNode }) => {
             <ProfileDataContextProvider>
                 <RecentArticleContextProvider>
                     <SectionInViewContextProvider>
-                        {children}
+                        <BrowserRouter>{children}</BrowserRouter>
                     </SectionInViewContextProvider>
                 </RecentArticleContextProvider>
             </ProfileDataContextProvider>
