@@ -9,6 +9,12 @@ import { Stars } from './components/Molecules/Stars/Stars'
 import LandingPage from './components/Pages/LandingPage/LandingPage'
 import AlertBannerProvider from './context/AlertBannerContext'
 
+const PageNotFoundRedirect = lazy(
+    () =>
+        import(
+            './components/Organisms/PageNotFoundRedirect/PageNotFoundRedirect'
+        )
+)
 const DownloadCVPage = lazy(
     () => import('./components/Pages/DownloadCVPage/DownloadCVPage')
 )
@@ -33,7 +39,8 @@ export const App = () => {
                     <Routes>
                         <Route index element={<LandingPage />} />
                         <Route path="download" element={<DownloadCVPage />} />
-                        <Route path="*" element={<NotFoundPage />} />
+                        <Route path="404" element={<NotFoundPage />} />
+                        <Route path="*" element={<PageNotFoundRedirect />} />
                     </Routes>
                 </div>
             </AlertBannerProvider>
