@@ -7,6 +7,10 @@ const pathReference = ref(
     `resume/${import.meta.env.VITE_RESUME_FILENAME}`
 )
 
+export const getCVUrl = async () => {
+    return await getDownloadURL(pathReference)
+}
+
 export const downloadCV = async () => {
     const url = await getDownloadURL(pathReference)
     downloadFile(url, 'ResumeAnoopJadhav.pdf')

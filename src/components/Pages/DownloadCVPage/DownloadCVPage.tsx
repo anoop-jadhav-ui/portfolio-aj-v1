@@ -1,5 +1,5 @@
 import { Download } from 'lucide-react'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import { downloadCV } from '../../../helpers/downloadCV'
 import Button from '../../Atoms/Button/Button'
@@ -8,6 +8,13 @@ import styles from './DownloadCVPage.module.css'
 
 const DownloadCVPage = () => {
     const { t } = useTranslation()
+
+    useEffect(() => {
+        downloadCV().catch((error) => {
+            console.error('Error downloading CV:', error)
+        })
+    }, [])
+
     return (
         <div
             style={{

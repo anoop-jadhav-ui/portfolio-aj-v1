@@ -8,6 +8,7 @@ import ErrorBoundary from './components/Molecules/ErrorBoundary/ErrorBoundary'
 import { Stars } from './components/Molecules/Stars/Stars'
 import LandingPage from './components/Pages/LandingPage/LandingPage'
 import AlertBannerProvider from './context/AlertBannerContext'
+import { ROUTES } from './utils/routes'
 
 const PageNotFoundRedirect = lazy(
     () =>
@@ -38,8 +39,14 @@ export const App = () => {
                 <div className="app-container" ref={AppRef}>
                     <Routes>
                         <Route index element={<LandingPage />} />
-                        <Route path="download" element={<DownloadCVPage />} />
-                        <Route path="404" element={<NotFoundPage />} />
+                        <Route
+                            path={ROUTES.DOWNLOAD_CV}
+                            element={<DownloadCVPage />}
+                        />
+                        <Route
+                            path={ROUTES.NOT_FOUND}
+                            element={<NotFoundPage />}
+                        />
                         <Route path="*" element={<PageNotFoundRedirect />} />
                     </Routes>
                 </div>
