@@ -6,7 +6,7 @@
     color: var(--grey1);
 
     &:hover {
-        color: var(--grey1);
+        color: var(--grey1) !important;
     }
 
     :last-child {
