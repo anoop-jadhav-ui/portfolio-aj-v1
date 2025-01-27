@@ -62,24 +62,31 @@
     ],
     "experience": [
         {
-            "fromDate": "10 May 2021",
-            "name": "Thoughtworks",
-            "summary": "<ul><li>Exploring Next.js and backend technologies like Nest.js, GCP, AWS, etc.</li><li>Exploring Three.js and Blender.</li><li>Currently working on multiple web apps for an E-commerce client.</li><li>Worked on a React Native app for a well-known energy company and supported the app features for a few months.</li><li>Worked as a full stack developer on a food, service, and delivery portal for a client in Germany.</li></ul>",
+            "fromDate": "27 January 2025",
+            "name": "Microsoft",
+            "summary": "",
             "toDate": "Present",
             "totalYears": ""
         },
         {
-            "fromDate": "06 Feb 2017",
+            "fromDate": "10 May 2021",
+            "name": "Thoughtworks",
+            "summary": "<ul><li>Exploring Next.js and backend technologies like Nest.js, GCP, AWS, etc.</li><li>Exploring Three.js and Blender.</li><li>Currently working on multiple web apps for an E-commerce client.</li><li>Worked on a React Native app for a well-known energy company and supported the app features for a few months.</li><li>Worked as a full stack developer on a food, service, and delivery portal for a client in Germany.</li></ul>",
+            "toDate": "10 January 2025",
+            "totalYears": ""
+        },
+        {
+            "fromDate": "06 February 2017",
             "name": "Deloitte",
             "summary": "<ul><li>Worked as UI Developer to build a custom application using Salesforce Aura Components for a public sector project.</li><li>Built a CSS framework for PDF Generation using CSS2 in Visualforce Pages.</li><li>Built a tool to export knowledge articles from Salesforce.</li><li>Built a UI tool that allowed the end user to generate components using drag and drop feature.</li><li>Built custom UI applications on top of standard CRM tool provided by Salesforce using Salesforce Lightning Web Components.</li><li>Also worked as a Visual Designer for several internal projects and events.</li></ul>",
             "toDate": "29 April 2021",
             "totalYears": ""
         },
         {
-            "fromDate": "28 Aug 2014",
+            "fromDate": "28 August 2014",
             "name": "Cognizant",
             "summary": "<ul><li>Initially started my career as SAP BASIS consultant where major tasks were system monitoring, data archiving, SAP System installation etc.</li><li>Later on moved to UI Development because of my interest towards web development and design. Started with learning SAP UI5, Angular.js along with other web essential languages.</li></ul>",
-            "toDate": "17 Jan 2017",
+            "toDate": "17 January 2017",
             "totalYears": ""
         }
     ],

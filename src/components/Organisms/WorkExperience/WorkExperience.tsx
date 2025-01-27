@@ -75,9 +75,14 @@ const WorkExperience = () => {
                                         {experienceDetail.name}
                                     </div>
                                     <div className="label primary-color">
-                                        <Tag
-                                            label={experienceDetail.totalYears}
-                                        />
+                                        {experienceDetail.totalYears.trim() !==
+                                            '' && (
+                                            <Tag
+                                                label={
+                                                    experienceDetail.totalYears
+                                                }
+                                            />
+                                        )}
                                         <span className="date">
                                             <Calendar size="0.8125rem" />
                                             <span>
