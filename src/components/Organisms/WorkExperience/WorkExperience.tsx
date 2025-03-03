@@ -17,8 +17,6 @@ const WorkExperience = () => {
         profileData: { experience },
     } = useProfileDataContext()
 
-    const { t } = useTranslation()
-
     const calculatedExperience = useMemo((): Array<ExperienceDetails> => {
         return experience.map((exp): ExperienceDetails => {
             const fromDate = moment(exp.fromDate)
@@ -41,8 +39,8 @@ const WorkExperience = () => {
 
             if (months > 1) {
                 monthsOfExp = `${months} months`
-            } else if (months === 1) {
-                monthsOfExp = `${years} month`
+            } else if (months == 1) {
+                monthsOfExp = `${months} month`
             }
 
             exp.totalYears = `${yearsOfExp} ${monthsOfExp}`
