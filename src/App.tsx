@@ -9,6 +9,7 @@ import { Stars } from './components/Molecules/Stars/Stars'
 import LandingPage from './components/Pages/LandingPage/LandingPage'
 import AlertBannerProvider from './context/AlertBannerContext'
 import { ROUTES } from './utils/routes'
+import Clarity from '@microsoft/clarity'
 
 const PageNotFoundRedirect = lazy(
     () =>
@@ -22,6 +23,8 @@ const DownloadCVPage = lazy(
 const NotFoundPage = lazy(
     () => import('./components/Pages/NotFoundPage/NotFoundPage')
 )
+
+Clarity.init(import.meta.env.VITE_CLARITY_ID)
 
 export const App = () => {
     const { t } = useTranslation()
