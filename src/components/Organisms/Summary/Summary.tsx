@@ -31,13 +31,14 @@ const Summary = () => {
                 .reduce((a, b) => a + b)
 
             const totalYears = Math.floor(totalDifference)
-            const totalMonths = Math.round((totalDifference - totalYears) * 12)
+            // const totalMonths = Math.round((totalDifference - totalYears) * 12)
 
-            if (totalMonths === 0) {
-                return `${totalYears} years`
-            }
+            // if (totalMonths === 0) {
+            //     return `${totalYears} years`
+            // }
 
-            return `${totalYears} years ${totalMonths} ${totalMonths > 1 ? 'months' : 'month'}`
+            // return `${totalYears} years ${totalMonths} ${totalMonths > 1 ? 'months' : 'month'}`
+            return `${totalYears} years`
         } catch (err) {
             return String(moment().year() - 2014)
         }
