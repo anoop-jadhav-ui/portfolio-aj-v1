@@ -2,12 +2,12 @@ import './Header.css'
 
 import React, { useMemo, useRef } from 'react'
 import { useTranslation } from 'react-i18next'
+import { Link } from 'react-router'
 import { DarkModeSwitch } from 'react-toggle-dark-mode'
 import { useTheme } from '../../../context/ThemeContext'
 import useScrollPosition from '../../../hooks/useScrollPosition'
-import ColorPickerSelector from '../../Atoms/ColorPickerSelector/ColorPickerSelector'
+// import { ColorPickerSimple } from '../../Atoms/ColorPickerSelector/ColorPickerSelector'
 import { Logo } from '../../Atoms/Logo/Logo'
-import { Link } from 'react-router'
 
 export default function Header() {
     const headerRef = useRef<HTMLDivElement>(null)
@@ -47,10 +47,10 @@ export default function Header() {
                             {t('blogs')}
                         </a>
                     </div>
-
+                    {/* 
                     <div className="menuItem">
                         <ColorPickerSelector />
-                    </div>
+                    </div> */}
                     <div className="menuItem">
                         <div
                             className="darkModeSwitch"
