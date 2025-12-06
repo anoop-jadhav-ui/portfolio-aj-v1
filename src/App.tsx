@@ -1,15 +1,16 @@
 import './translations/i18next-config' // This import should be always at the top of the file
 
+import Clarity from '@microsoft/clarity'
 import React, { lazy, useRef } from 'react'
 import { useTranslation } from 'react-i18next'
 import PageScrollProgressBar from 'react-page-scroll-progress-bar'
 import { Route, Routes } from 'react-router'
 import ErrorBoundary from './components/Molecules/ErrorBoundary/ErrorBoundary'
+import ProfileCircleReveal from './components/Molecules/ProfileCircleReveal/ProfileCircleReveal'
 import { Stars } from './components/Molecules/Stars/Stars'
 import LandingPage from './components/Pages/LandingPage/LandingPage'
 import AlertBannerProvider from './context/AlertBannerContext'
 import { ROUTES } from './utils/routes'
-import Clarity from '@microsoft/clarity'
 
 const PageNotFoundRedirect = lazy(
     () =>
@@ -38,6 +39,7 @@ export const App = () => {
                     bgColor="transparent"
                     color="var(--primary-color)"
                 />
+                <ProfileCircleReveal />
                 <Stars />
                 <div className="app-container" ref={AppRef}>
                     <Routes>

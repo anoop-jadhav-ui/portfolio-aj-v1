@@ -1,0 +1,27 @@
+.profile-red-circle {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    width: 100vw;
+    height: 100vh;
+    border-radius: 50%;
+    background: var(--primary-color);
+    z-index: 9999;
+    animation: profileCircleIn 1s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
+}
+
+@keyframes profileCircleIn {
+    0% {
+        width: 100vw;
+        height: 100vw;
+        transform: translate(-50%, -50%) scale(2);
+        opacity: 1;
+    }
+    100% {
+        width: var(--image-width, 18rem);
+        height: var(--image-width, 18rem);
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0;
+        pointer-events: none;
+    }
+}
