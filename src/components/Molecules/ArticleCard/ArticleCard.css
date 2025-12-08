@@ -8,8 +8,26 @@
     display: flex;
     flex-direction: column;
 
+    --image-height: 12rem;
+
+    .image-container {
+        height: var(--image-height);
+        overflow: hidden;
+        img {
+            display: block;
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+    }
+
     &:hover {
         background-color: var(--grey8);
+
+        .image-container img {
+            transform: scale(1.04);
+        }
     }
 
     .article-content {
@@ -19,7 +37,7 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        height: 100%;
+        height: calc(100% - var(--image-height));
 
         .title {
             padding-top: 0.25rem;
@@ -50,8 +68,10 @@
 }
 
 @media only screen and (max-width: 768px) {
-    .article-card .article-content .brief {
-        display: block;
-        padding-top: 0.25rem;
+    .article-card {
+        .article-content .brief {
+            display: block;
+            padding-top: 0.25rem;
+        }
     }
 }

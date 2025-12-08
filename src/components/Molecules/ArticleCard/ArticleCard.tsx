@@ -17,12 +17,14 @@ const ArticleCard = ({ articleDetails }: ArticleCardProps) => {
 
     return (
         <div className="article-card" onClick={redirectToBlogPage} tabIndex={0}>
-            <img
-                src={articleDetails.coverImage?.url}
-                width="100%"
-                height="auto"
-                alt={articleDetails.title}
-            />
+            <div className="image-container">
+                <img
+                    src={articleDetails.coverImage?.url}
+                    width="100%"
+                    height="auto"
+                    alt={articleDetails.title}
+                />
+            </div>
             <div className="article-content">
                 <div>
                     <div className="date">
