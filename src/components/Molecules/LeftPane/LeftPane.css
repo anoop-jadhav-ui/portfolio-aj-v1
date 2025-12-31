@@ -106,8 +106,8 @@
     }
 }
 
-/* Medium devices (tablets, 768px and up)*/
-@media (max-width: 1200px) {
+/* Tablet */
+@media (max-width: 768px) {
     .left-pane {
         display: none !important;
     }

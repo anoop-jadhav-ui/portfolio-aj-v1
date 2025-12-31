@@ -11,13 +11,22 @@
     margin-top: 1.5rem;
 }
 
-@media (max-width: 1200px) {
+/* Desktop */
+@media (max-width: 1024px) {
+    .recent-articles-grid {
+        --no-of-article-columns: 3;
+    }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
     .recent-articles-grid {
         --no-of-article-columns: 2;
     }
 }
 
-@media screen and (max-width: 768px) {
+/* Mobile */
+@media (max-width: 425px) {
     .recent-articles-grid {
         --no-of-article-columns: 1;
     }

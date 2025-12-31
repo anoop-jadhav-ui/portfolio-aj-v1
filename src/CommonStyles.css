@@ -335,30 +335,22 @@ body {
 }
 
 /* Desktop */
-@media (min-width: 1280px) and (max-width: 1791px) {
+@media (max-width: 1024px) {
     :root {
         font-size: 16px;
     }
 }
 
-/* Mobile */
+/* Tablet */
 @media (max-width: 768px) {
-    body {
-        --border-width: 1px;
+    :root {
+        font-size: 14px;
     }
 }
 
-/* Medium devices (tablets, 768px and up)*/
-@media (max-width: 1200px) {
+/* Mobile */
+@media (max-width: 425px) {
     :root {
         font-size: 13px;
-    }
-
-    .letterspacing-1 {
-        letter-spacing: 1px;
-    }
-
-    .letterspacing-2 {
-        letter-spacing: 2px;
     }
 }

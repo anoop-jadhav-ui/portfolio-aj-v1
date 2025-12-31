@@ -52,6 +52,7 @@
     }
 }
 
+/* Tablet */
 @media (max-width: 768px) {
     .message-form {
         grid-template-columns: 1fr;

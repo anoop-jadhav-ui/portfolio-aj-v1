@@ -41,7 +41,8 @@
     }
 }
 
-@media (max-width: 1200px) {
+/* Mobile */
+@media (max-width: 425px) {
     .highlighted-articlecard {
         width: 100%;
         display: flex;

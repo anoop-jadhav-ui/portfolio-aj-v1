@@ -83,8 +83,8 @@
     background-color: var(--grey9);
 }
 
-
-@media screen and (max-width: 768px) {
+/* Mobile */
+@media (max-width: 425px) {
     .header.overlayHeader {
         padding: 0rem;
         top: 0;
