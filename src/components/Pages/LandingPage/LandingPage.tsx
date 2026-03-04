@@ -1,4 +1,3 @@
-import './LandingPage.css'
 
 import React from 'react'
 import { useProfileDataContext } from '../../../context/ProfileDataContext'

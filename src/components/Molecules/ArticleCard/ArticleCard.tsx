@@ -1,22 +1,25 @@
 import { ArrowRight } from 'lucide-react'
 import React from 'react'
 import { RecentArticle } from '../../../types/profileDataTypes'
-import './ArticleCard.css'
 
 interface ArticleCardProps {
     articleDetails: RecentArticle
 }
 const ArticleCard = ({ articleDetails }: ArticleCardProps) => {
-    const blogUrl = `${import.meta.env.VITE_HASHNODE_BLOG_URL}\\${
-        articleDetails.slug
-    }`
-
-    const redirectToBlogPage = () => {
-        window.open(blogUrl, '_blank')
-    }
+    const blogBaseUrl =
+        process.env.NEXT_PUBLIC_HASHNODE_BLOG_URL ??
+        process.env.VITE_HASHNODE_BLOG_URL ??
+        '#'
+    const blogUrl = `${blogBaseUrl}/${articleDetails.slug}`
 
     return (
-        <div className="article-card" onClick={redirectToBlogPage} tabIndex={0}>
+        <a
+            className="article-card"
+            href={blogUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`Read article: ${articleDetails.title}`}
+        >
             <div className="image-container">
                 <img
                     src={articleDetails.coverImage?.url}
@@ -37,7 +40,7 @@ const ArticleCard = ({ articleDetails }: ArticleCardProps) => {
                     Explore <ArrowRight size="0.8125rem" />
                 </div>
             </div>
-        </div>
+        </a>
     )
 }
 

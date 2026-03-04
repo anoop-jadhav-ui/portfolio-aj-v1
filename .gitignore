@@ -4,6 +4,7 @@
 /node_modules
 /dist
 /build
+/.next
 /.pnp
 .pnp.js
 /.idea/*
@@ -25,5 +26,4 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-
 

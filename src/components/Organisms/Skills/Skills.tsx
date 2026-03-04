@@ -1,4 +1,3 @@
-import './Skills.css'
 
 import React from 'react'
 import { useTranslation } from 'react-i18next'
@@ -19,6 +18,8 @@ import typescript from '../../../assets/skills/typescript.svg'
 
 import SkillPill, { SkillOption } from '../../Atoms/SkillPill/SkillPill'
 import { sectionDetails } from '../../Molecules/LeftPane/leftPaneData'
+
+const headingId = `${sectionDetails.skills.class}-heading`
 
 const skillOptions: SkillOption[] = [
     {
@@ -101,10 +102,10 @@ const Skills = () => {
     return (
         <>
             <div className="skills-section-header">
-                <div className="section-title h2 bold">
-                    {sectionDetails.skills.label}
+                <h2 id={headingId} className="section-title h2 bold">
+                    {t(sectionDetails.skills.label)}
                     {sectionDetails.skills.icon}
-                </div>
+                </h2>
             </div>
             <div className="subsection">
                 <div className="subsection-data">
@@ -122,4 +123,4 @@ const Skills = () => {
     )
 }
 
-export default SectionVisibilityHOC(Skills, sectionDetails.skills.class)
+export default SectionVisibilityHOC(Skills, sectionDetails.skills.class, headingId)

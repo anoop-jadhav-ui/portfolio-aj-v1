@@ -5,7 +5,6 @@ import React, {
     useEffect,
     useState,
 } from 'react'
-import { isMobile as isDeviceMobile } from 'react-device-detect'
 import { Color, primaryColorList } from '../helpers/color'
 import usePersistState from '../hooks/usePersistState'
 
@@ -34,7 +33,11 @@ const ThemeContextProvider = ({ children }: { children: ReactNode }) => {
     const [isMobile, setIsMobile] = useState<boolean>(false)
 
     useEffect(() => {
-        setIsMobile(isDeviceMobile)
+        if (typeof window === 'undefined') {
+            return
+        }
+
+        setIsMobile(window.matchMedia('(max-width: 768px)').matches)
     }, [])
 
     useEffect(() => {
@@ -45,7 +48,6 @@ const ThemeContextProvider = ({ children }: { children: ReactNode }) => {
             document.querySelector('body')?.classList.add('light')
             document.querySelector('body')?.classList.remove('dark')
         }
-        console.log('color scheme', darkMode ? '🌑' : '🌞')
     }, [darkMode])
 
     useEffect(() => {

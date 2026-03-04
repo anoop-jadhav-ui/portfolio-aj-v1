@@ -1,15 +1,14 @@
-import './DownloadReasonForm.css'
 
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Download, LoaderCircle } from 'lucide-react'
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import { useTranslation } from 'react-i18next'
 import { z } from 'zod'
-import { useLocaleAlertBanner } from '../../../context/LocalAlertBannerContext'
+import { useAlertBanner } from '../../../context/AlertBannerContext'
 import axiosInstance from '../../../helpers/axios'
+import { downloadCV } from '../../../helpers/downloadCV'
 import Button from '../../Atoms/Button/Button'
-import LocalBanner from '../../Atoms/LocalBanner/LocalBanner'
 
 type DownloadReasonForm = {
     name: string
@@ -23,15 +22,9 @@ const defaultValues: DownloadReasonForm = {
     message: '',
 }
 
-const DownloadReasonForm = ({
-    onDownload,
-    closeDialog,
-}: {
-    onDownload: () => Promise<void>
-    closeDialog: () => void
-}) => {
+const DownloadReasonForm = ({ closeDialog }: { closeDialog: () => void }) => {
     const { t } = useTranslation()
-    const { showAlertBanner } = useLocaleAlertBanner()
+    const { showAlertBanner } = useAlertBanner()
 
     const messageFormSchema = z.object({
         name: z.string().min(1, {
@@ -71,21 +64,25 @@ const DownloadReasonForm = ({
     } = methods
 
     const [isLoading, setLoading] = useState(false)
+    const isSubmittingRef = useRef(false)
 
     const successHandler: SubmitHandler<DownloadReasonForm> = async (data) => {
+        if (isSubmittingRef.current) {
+            return
+        }
         const { name, email, message } = data
+        isSubmittingRef.current = true
         try {
             setLoading(true)
-            const response = await axiosInstance.post('/mail', {
+            const response = await axiosInstance.post('/mail/download-link', {
                 email,
                 name,
                 message,
-                section: 'Download',
             })
 
             if (response.data.msg === 'success') {
-                showAlertBanner('success', t('messageSentSuccess'))
-                await onDownload()
+                showAlertBanner('success', t('downloadLinkMailed'))
+                await downloadCV()
                 reset()
                 closeDialog()
             } else if (response.data.msg === 'fail') {
@@ -94,19 +91,13 @@ const DownloadReasonForm = ({
         } catch (e: unknown) {
             showAlertBanner('error', t('sorryCouldntSendMsg'))
         } finally {
+            isSubmittingRef.current = false
             setLoading(false)
         }
     }
 
     return (
-        <form
-            onSubmit={(e) => {
-                e.stopPropagation()
-                e.preventDefault()
-                handleSubmit(successHandler)(e)
-            }}
-            noValidate
-        >
+        <form onSubmit={handleSubmit(successHandler)} noValidate>
             <div className="primary-color body-text download-cv-form">
                 <div className="input-form-control">
                     <label htmlFor="name">{t('inputs.fullName')}</label>
@@ -155,7 +146,6 @@ const DownloadReasonForm = ({
                         </span>
                     )}
                 </div>
-                <LocalBanner />
             </div>
             <div className="button-wrapper">
                 <Button

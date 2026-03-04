@@ -1,43 +1,16 @@
-@keyframes slideInFromLeft {
-    0% {
-        transform: translateX(min(-14.5rem, -230.517px));
-    }
-
-    80% {
-        transform: translateX(1rem);
-    }
-
-    100% {
-        transform: translateX(0);
-    }
-}
-
-@keyframes slideOutToLeft {
-    0% {
-        transform: translateX(0);
-    }
-
-    80% {
-        transform: translateX(min(-15.5rem, -246.517px));
-    }
-
-    100% {
-        transform: translateX(min(-14.5rem, -230.517px));
-    }
-}
-
 .left-pane {
     position: fixed;
     top: 10rem;
     left: -2px;
     border-radius: 0 var(--border-radius) var(--border-radius) 0;
     width: 14.5rem;
-    animation: slideInFromLeft 300ms ease-in-out forwards;
     z-index: 1;
     background-color: var(--grey9);
+    transform: translateX(min(-14.5rem, -230.517px));
+    transition: transform 300ms ease-in-out;
 
     &.open {
-        animation: slideInFromLeft 300ms ease-in-out forwards;
+        transform: translateX(0);
 
         .toggle-button {
             transform: translateX(0);
@@ -52,7 +25,7 @@
     }
 
     &.closed {
-        animation: slideOutToLeft 300ms ease-in-out forwards;
+        transform: translateX(min(-14.5rem, -230.517px));
 
         .toggle-button {
             transform: translateX(3rem);
@@ -98,6 +71,10 @@
             justify-content: center;
             align-items: center;
             top: 0;
+            border: 0;
+            padding: 0;
+            color: inherit;
+            background: transparent;
 
             cursor: pointer;
 

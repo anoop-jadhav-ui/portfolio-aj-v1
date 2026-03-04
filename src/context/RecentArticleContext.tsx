@@ -8,6 +8,7 @@ interface RecentArticleContextType {
 }
 type RecentArticleContextProps = {
     children: React.ReactNode
+    initialRecentArticles?: Array<RecentArticle>
 }
 const defaultGobalContext: RecentArticleContextType = {
     recentArticles: [],
@@ -21,13 +22,20 @@ export const useRecentArticleContext = () => useContext(RecentArticleContext)
 
 export const RecentArticleContextProvider = ({
     children,
+    initialRecentArticles,
 }: RecentArticleContextProps) => {
-    const [isLoadingArticles, setLoadingArticles] = useState(false)
+    const [isLoadingArticles, setLoadingArticles] = useState(
+        !initialRecentArticles
+    )
     const [recentArticles, setRecentArticles] = useState<Array<RecentArticle>>(
-        []
+        initialRecentArticles ?? []
     )
 
     useEffect(() => {
+        if (initialRecentArticles) {
+            return
+        }
+
         ;(async () => {
             try {
                 setLoadingArticles(true)
@@ -39,7 +47,7 @@ export const RecentArticleContextProvider = ({
                 setLoadingArticles(false)
             }
         })()
-    }, [])
+    }, [initialRecentArticles])
 
     return (
         <RecentArticleContext.Provider

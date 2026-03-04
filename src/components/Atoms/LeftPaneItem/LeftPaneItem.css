@@ -1,6 +1,5 @@
 .left-pane-item {
     list-style: none;
-    cursor: pointer;
     font-size: 16px;
     color: var(--grey5);
 
@@ -8,12 +7,21 @@
         color: var(--primary-color);
         font-weight: bold;
     }
+}
 
+.left-pane-item-trigger {
     cursor: pointer;
-
     display: flex;
     align-items: center;
     gap: 0.75rem;
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: inherit;
+    text-align: left;
+    font: inherit;
+    padding: 0;
 
     svg {
         width: 1rem;

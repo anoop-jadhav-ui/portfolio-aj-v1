@@ -51,6 +51,7 @@
     "pageLoadError": "Oops! Something went wrong. Please try again later.",
     "sectionLoadError": "Failed to load this section. Please try again later.",
     "messageSentSuccess": "Message sent successfully.",
+    "downloadLinkMailed": "Download link has been sent to your email.",
     "sorryCouldntSendMsg": "Sorry, we couldn't send your message. Please try again later.",
     "sendingMessage": "Sending your message...",
     "hello": "Hello, I'm",

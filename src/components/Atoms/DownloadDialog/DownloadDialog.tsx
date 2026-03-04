@@ -1,17 +1,14 @@
 import { X } from 'lucide-react'
 import React, { useEffect, useRef } from 'react'
 import { useTranslation } from 'react-i18next'
-import LocalAlertBannerProvider from '../../../context/LocalAlertBannerContext'
 import DownloadReasonForm from '../../Molecules/DownloadReasonForm/DownloadReasonForm'
-import './DownloadDialog.css'
 
 type DialogProps = {
     open: boolean
     onClose: () => void
-    onDownload: () => Promise<void>
 }
 
-const DownloadDialog = ({ open, onClose, onDownload }: DialogProps) => {
+const DownloadDialog = ({ open, onClose }: DialogProps) => {
     const { t } = useTranslation()
     const dialogRef = useRef<HTMLDialogElement>(null)
 
@@ -28,7 +25,6 @@ const DownloadDialog = ({ open, onClose, onDownload }: DialogProps) => {
             className="dialog"
             ref={dialogRef}
             onClose={() => {
-                dialogRef.current?.close()
                 onClose()
             }}
         >
@@ -45,12 +41,7 @@ const DownloadDialog = ({ open, onClose, onDownload }: DialogProps) => {
             <p className="subsection-title body-text">
                 {t('downloadDialog.description')}
             </p>
-            <LocalAlertBannerProvider>
-                <DownloadReasonForm
-                    onDownload={onDownload}
-                    closeDialog={onClose}
-                />
-            </LocalAlertBannerProvider>
+            <DownloadReasonForm closeDialog={onClose} />
         </dialog>
     )
 }

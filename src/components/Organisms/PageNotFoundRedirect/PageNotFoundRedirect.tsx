@@ -1,12 +1,12 @@
 import { useEffect } from 'react'
-import { useNavigate } from 'react-router'
+import { useRouter } from 'next/navigation'
 
 const PageNotFoundRedirect = () => {
-    const navigate = useNavigate()
+    const router = useRouter()
 
     useEffect(() => {
-        navigate('/404', { replace: true })
-    }, [navigate])
+        router.replace('/404')
+    }, [router])
 
     return null
 }

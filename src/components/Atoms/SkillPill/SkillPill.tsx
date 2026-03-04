@@ -1,13 +1,15 @@
 import React from 'react'
-import './SkillPill.css'
 import { ExternalLink } from 'lucide-react'
 
 export type SkillOption = {
     id: number
     name: string
-    image: string
+    image: string | { src: string }
     link: string
 }
+
+const getImageSrc = (image: SkillOption['image']) =>
+    typeof image === 'string' ? image : image.src
 
 const SkillPill = ({ skill }: { skill: SkillOption }) => {
     return (
@@ -20,7 +22,7 @@ const SkillPill = ({ skill }: { skill: SkillOption }) => {
         >
             <img
                 className="icon"
-                src={skill.image}
+                src={getImageSrc(skill.image)}
                 alt={skill.name}
                 width="64px"
                 height="64px"

@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const instance = axios.create({
-    baseURL: import.meta.env.VITE_MAIL_SERVER_URL,
+    baseURL: '/api',
     headers: {
         'Access-Control-Allow-Origin': '*',
         'Content-Type': 'application/json',

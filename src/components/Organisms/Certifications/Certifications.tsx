@@ -1,4 +1,3 @@
-import './Certifications.css'
 
 import { ExternalLink } from 'lucide-react'
 import React from 'react'
@@ -8,6 +7,8 @@ import { CertificateDetails } from '../../../types/profileDataTypes'
 import { sectionDetails } from '../../Molecules/LeftPane/leftPaneData'
 import SectionWrapper from '../../Molecules/SectionWrapper/SectionWrapper'
 
+const headingId = `${sectionDetails.certifications.class}-heading`
+
 const Certifications = () => {
     const {
         profileData: { certifications },
@@ -16,10 +17,10 @@ const Certifications = () => {
 
     return (
         <>
-            <div className="section-title h2 bold">
-                {sectionDetails.certifications.label}
+            <h2 id={headingId} className="section-title h2 bold">
+                {t(sectionDetails.certifications.label)}
                 {sectionDetails.certifications.icon}
-            </div>
+            </h2>
             <div className="subsection certifications-content">
                 {certifications.map(
                     (certificateDetail: CertificateDetails, key: number) => {
@@ -58,5 +59,6 @@ const Certifications = () => {
 
 export default SectionWrapper(
     Certifications,
-    sectionDetails.certifications.class
+    sectionDetails.certifications.class,
+    headingId
 )

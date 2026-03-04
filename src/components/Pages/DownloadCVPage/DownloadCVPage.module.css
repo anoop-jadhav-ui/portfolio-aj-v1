@@ -1,6 +1,90 @@
+.pageWrapper {
+    min-height: 100vh;
+}
+
 .pageContent {
     display: flex;
     flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    margin-top: 1.25rem;
+    padding: 0;
+}
+
+.breadcrumbs {
+    display: inline-flex;
     align-items: center;
-    justify-content: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    line-height: 1;
+    margin-top: 0.25rem;
+    margin-bottom: 1rem;
+}
+
+.breadcrumbLink {
+    display: inline-flex;
+    align-items: center;
+    color: var(--grey5);
+    text-decoration: none;
+}
+
+.breadcrumbLink:hover {
+    color: var(--primary-color) !important;
+}
+
+.breadcrumbDivider {
+    display: inline-flex;
+    align-items: center;
+    color: var(--grey6);
+}
+
+.breadcrumbCurrent {
+    display: inline-flex;
+    align-items: center;
+    color: var(--grey3);
+    font-weight: 600;
+}
+
+.titleRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.metaRow {
+    display: inline-flex;
+    gap: 0.5rem;
+    align-items: center;
+    color: var(--primary-color);
+}
+
+.actions {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.homeLink {
+    width: fit-content;
+    text-decoration: none;
+    border: var(--border-width) solid var(--grey7);
+    border-radius: var(--border-radius);
+    color: var(--grey2);
+    padding: 0.7rem 1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 2.5rem;
+}
+
+.homeLink:hover {
+    color: var(--grey1) !important;
+    border-color: var(--grey5);
+}
+
+@media (max-width: 425px) {
+    .pageContent {
+        margin-top: 0.75rem;
+    }
 }

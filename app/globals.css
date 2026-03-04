@@ -1,0 +1,57 @@
+@import 'normalize.css';
+@import '../src/CommonStyles.css';
+@import '../src/components/Atoms/Banner/Banner.css';
+@import '../src/components/Atoms/BarGraph/BarGraph.css';
+@import '../src/components/Atoms/Button/Button.css';
+@import '../src/components/Atoms/ColorPickerSelector/ColorPickerSelector.css';
+@import '../src/components/Atoms/Copyright/Copyright.css';
+@import '../src/components/Atoms/DownloadDialog/DownloadDialog.css';
+@import '../src/components/Atoms/LeftPaneItem/LeftPaneItem.css';
+@import '../src/components/Atoms/Loader/Loader.css';
+@import '../src/components/Atoms/LocalBanner/LocalBanner.css';
+@import '../src/components/Atoms/Logo/Logo.css';
+@import '../src/components/Atoms/SkillPill/SkillPill.css';
+@import '../src/components/Atoms/Tag/Tag.css';
+@import '../src/components/Atoms/Toggle/Toggle.css';
+@import '../src/components/Molecules/ArticleCard/ArticleCard.css';
+@import '../src/components/Molecules/ContactIcons/ContactIcons.css';
+@import '../src/components/Molecules/ContactMeButton/ContactMeButton.css';
+@import '../src/components/Molecules/DownloadCVButton/DownloadCVButton.css';
+@import '../src/components/Molecules/DownloadReasonForm/DownloadReasonForm.css';
+@import '../src/components/Molecules/ErrorBoundary/ErrorBoundary.css';
+@import '../src/components/Molecules/Header/Header.css';
+@import '../src/components/Molecules/HightlightedArticle/HightlightedArticle.css';
+@import '../src/components/Molecules/LeftPane/LeftPane.css';
+@import '../src/components/Molecules/MainBody/MainBody.css';
+@import '../src/components/Molecules/MessageForm/MessageForm.css';
+@import '../src/components/Molecules/ProfileCircleReveal/ProfileCircleReveal.css';
+@import '../src/components/Molecules/ProjectCard/ProjectCard.css';
+@import '../src/components/Molecules/SectionWrapper/SectionWrapper.css';
+@import '../src/components/Organisms/Certifications/Certifications.css';
+@import '../src/components/Organisms/GetInTouch/GetInTouch.css';
+@import '../src/components/Organisms/Projects/Projects.css';
+@import '../src/components/Organisms/RecentArticles/RecentArticles.css';
+@import '../src/components/Organisms/RecentArticles/RecentArticlesSkeleton.css';
+@import '../src/components/Organisms/Skills/Skills.css';
+@import '../src/components/Organisms/Summary/Summary.css';
+@import '../src/components/Organisms/WorkExperience/WorkExperience.css';
+@import '../src/components/Pages/LandingPage/LandingPage.css';
+
+.skip-to-main {
+    position: absolute;
+    left: 1rem;
+    top: 0;
+    transform: translateY(-120%);
+    z-index: 1000;
+    padding: 0.625rem 0.875rem;
+    border-radius: 0.5rem;
+    color: #fff;
+    background: var(--primary-color);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.skip-to-main:focus,
+.skip-to-main:focus-visible {
+    transform: translateY(0.75rem);
+}

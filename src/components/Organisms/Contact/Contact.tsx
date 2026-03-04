@@ -4,14 +4,16 @@ import ContactIcons from '../../Molecules/ContactIcons/ContactIcons'
 import { sectionDetails } from '../../Molecules/LeftPane/leftPaneData'
 import SectionWrapper from '../../Molecules/SectionWrapper/SectionWrapper'
 
+const headingId = `${sectionDetails.contactDetails.class}-heading`
+
 const Contact = () => {
     const { t } = useTranslation()
     return (
         <>
-            <div className="section-title h2 bold">
-                {sectionDetails.contactDetails.label}
+            <h2 id={headingId} className="section-title h2 bold">
+                {t(sectionDetails.contactDetails.label)}
                 {sectionDetails.contactDetails.icon}
-            </div>
+            </h2>
             <div className="subsection">
                 <div>{t('contactDetailsMessage')}</div>
                 <ContactIcons className="" />
@@ -20,4 +22,8 @@ const Contact = () => {
     )
 }
 
-export default SectionWrapper(Contact, sectionDetails.contactDetails.class)
+export default SectionWrapper(
+    Contact,
+    sectionDetails.contactDetails.class,
+    headingId
+)

@@ -1,5 +1,4 @@
 import React from 'react'
-import './Tag.css'
 
 const Tag = ({ label }: { label: string }) => {
     return (

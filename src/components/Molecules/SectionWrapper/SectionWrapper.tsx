@@ -1,4 +1,3 @@
-import './SectionWrapper.css'
 
 import React, { useCallback, useEffect, useMemo, useRef } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -51,7 +50,12 @@ const SectionInViewIdentifier = ({ sectionName }: { sectionName: string }) => {
 }
 
 const SectionWrapper =
-    (Component: () => JSX.Element, sectionName: string) => () => {
+    (
+        Component: () => JSX.Element,
+        sectionName: string,
+        headingId?: string
+    ) =>
+    () => {
         const {
             currentSectionInView,
             setSkillsSectionVisited,
@@ -76,6 +80,7 @@ const SectionWrapper =
                             ? 'section-in-view'
                             : ''
                     } ${isSkillsSectionVisited ? 'visited' : ''}`}
+                    aria-labelledby={headingId}
                 >
                     <SectionInViewIdentifier sectionName={sectionName} />
                     <Component />

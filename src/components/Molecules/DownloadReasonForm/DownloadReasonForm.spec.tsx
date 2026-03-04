@@ -1,26 +1,26 @@
 import { fireEvent, render, screen, waitFor } from '@testing-library/react'
 import React from 'react'
 import { afterEach, describe, expect, it, vi } from 'vitest'
-import LocalAlertBannerProvider from '../../../context/LocalAlertBannerContext'
+import AlertBannerProvider from '../../../context/AlertBannerContext'
 import axiosInstance from '../../../helpers/axios'
+import * as downloadCvModule from '../../../helpers/downloadCV'
 import TranslationSeed from '../../../testUtils/TranslationSeed'
 import DownloadReasonForm from './DownloadReasonForm'
 
 vi.mock('../../../helpers/axios')
+vi.mock('../../../helpers/downloadCV')
 
-const mockOnDownload = vi.fn()
 const mockOnCloseDialog = vi.fn()
 
 const ComponentUnderTest = () => {
     return (
-        <LocalAlertBannerProvider>
+        <AlertBannerProvider>
             <TranslationSeed>
                 <DownloadReasonForm
-                    onDownload={mockOnDownload}
                     closeDialog={mockOnCloseDialog}
                 />
             </TranslationSeed>
-        </LocalAlertBannerProvider>
+        </AlertBannerProvider>
     )
 }
 
@@ -30,6 +30,7 @@ describe('<DownloadReasonForm/>', () => {
     })
 
     it('shows success banner after successful submission and close the dialog', async () => {
+        vi.spyOn(downloadCvModule, 'downloadCV').mockResolvedValue(undefined)
         vi.spyOn(axiosInstance, 'post').mockResolvedValue({
             data: { msg: 'success' },
         })
@@ -52,10 +53,10 @@ describe('<DownloadReasonForm/>', () => {
         )
 
         expect(screen.getByTestId('banner')).toHaveTextContent(
-            /Message sent successfully/i
+            /Download link has been sent to your email./i
         )
 
-        expect(mockOnDownload).toBeCalled()
+        expect(downloadCvModule.downloadCV).toHaveBeenCalledTimes(1)
         expect(mockOnCloseDialog).toBeCalled()
     })
 
@@ -85,7 +86,6 @@ describe('<DownloadReasonForm/>', () => {
             /Sorry, we couldn't send your message. Please try again later./i
         )
 
-        expect(mockOnDownload).not.toBeCalled()
         expect(mockOnCloseDialog).not.toBeCalled()
     })
 

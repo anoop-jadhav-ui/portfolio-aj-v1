@@ -1,5 +1,5 @@
-import React, { MouseEventHandler } from 'react'
-import './LeftPaneItem.css'
+import React from 'react'
+import { useTranslation } from 'react-i18next'
 interface LeftPaneMenuItemProps {
     label: string
     isSelected: boolean
@@ -12,25 +12,45 @@ const LeftPaneItem = ({
     sectionClass,
     icon,
 }: LeftPaneMenuItemProps) => {
-    const scrollIntoSectionView = (): void => {
-        const element = document.getElementsByClassName(`${sectionClass}`)
-        if (element[0]) {
-            element[0].scrollIntoView({
-                behavior: 'smooth',
-                block: 'start',
-                inline: 'nearest',
-            })
-        }
-    }
-    return (
-        <li
-            className={`left-pane-item grey3 ${isSelected && 'selected'}`}
-            onClick={
-                scrollIntoSectionView as unknown as MouseEventHandler<HTMLLIElement>
+    const { t } = useTranslation()
+    const scrollIntoSectionView = () => {
+        let attempts = 0
+        const maxAttempts = 12
+        const delayMs = 80
+
+        const scrollToSection = () => {
+            const element = document.querySelector<HTMLElement>(
+                `section.${sectionClass}`
+            )
+            if (element) {
+                element.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start',
+                    inline: 'nearest',
+                })
+                return
             }
-        >
-            {icon}
-            {label}
+
+            if (attempts < maxAttempts) {
+                attempts += 1
+                window.setTimeout(scrollToSection, delayMs)
+            }
+        }
+
+        scrollToSection()
+    }
+
+    return (
+        <li className={`left-pane-item grey3 ${isSelected ? 'selected' : ''}`}>
+            <button
+                type="button"
+                className="left-pane-item-trigger"
+                onClick={scrollIntoSectionView}
+                aria-label={t(label)}
+            >
+                {icon}
+                {t(label)}
+            </button>
         </li>
     )
 }

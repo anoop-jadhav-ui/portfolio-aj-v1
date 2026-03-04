@@ -1,4 +1,3 @@
-import './WorkExperience.css'
 
 import DOMPurify from 'dompurify'
 import parse from 'html-react-parser'
@@ -12,16 +11,33 @@ import Tag from '../../Atoms/Tag/Tag'
 import { sectionDetails } from '../../Molecules/LeftPane/leftPaneData'
 import SectionVisibilityHOC from '../../Molecules/SectionWrapper/SectionWrapper'
 
+const headingId = `${sectionDetails.experience.class}-heading`
+
+const sanitizeHtml = (rawHtml: string) => {
+    const sanitizer = DOMPurify as unknown as {
+        sanitize?: (html: string) => string
+    }
+    return typeof sanitizer.sanitize === 'function'
+        ? sanitizer.sanitize(rawHtml)
+        : rawHtml
+}
+
+const parseExperienceDate = (date: string) =>
+    moment(date, ['DD MMMM YYYY', 'D MMMM YYYY', moment.ISO_8601], 'en', true)
+
 const WorkExperience = () => {
     const {
         profileData: { experience },
     } = useProfileDataContext()
+    const { t } = useTranslation()
 
     const calculatedExperience = useMemo((): Array<ExperienceDetails> => {
         return experience.map((exp): ExperienceDetails => {
-            const fromDate = moment(exp.fromDate)
+            const fromDate = parseExperienceDate(exp.fromDate)
             const toDate =
-                exp.toDate !== 'Present' ? moment(exp.toDate) : moment()
+                exp.toDate !== 'Present'
+                    ? parseExperienceDate(exp.toDate)
+                    : moment()
 
             const years = toDate.diff(fromDate, 'year')
             fromDate.add(years, 'years')
@@ -50,10 +66,10 @@ const WorkExperience = () => {
 
     return (
         <>
-            <div className="section-title h2 bold">
-                {sectionDetails.experience.label}
+            <h2 id={headingId} className="section-title h2 bold">
+                {t(sectionDetails.experience.label)}
                 {sectionDetails.experience.icon}
-            </div>
+            </h2>
             <div className="subsection work-experience-content">
                 {calculatedExperience.map((experienceDetail, key) => {
                     return (
@@ -101,9 +117,7 @@ const WorkExperience = () => {
                                 </div>
                                 <div className="summary list grey-1 body-text">
                                     {parse(
-                                        DOMPurify.sanitize(
-                                            experienceDetail.summary
-                                        )
+                                        sanitizeHtml(experienceDetail.summary)
                                     )}
                                 </div>
                             </div>
@@ -117,5 +131,6 @@ const WorkExperience = () => {
 
 export default SectionVisibilityHOC(
     WorkExperience,
-    sectionDetails.experience.class
+    sectionDetails.experience.class,
+    headingId
 )

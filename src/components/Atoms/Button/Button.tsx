@@ -1,4 +1,3 @@
-import './Button.css'
 
 import React, { useState } from 'react'
 import useBrowserType from '../../../hooks/useBrowserType'

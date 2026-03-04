@@ -1,4 +1,3 @@
-import './RecentArticles.css'
 
 import { ArrowRight } from 'lucide-react'
 import React, { useMemo } from 'react'
@@ -11,10 +10,16 @@ import { sectionDetails } from '../../Molecules/LeftPane/leftPaneData'
 import SectionWrapper from '../../Molecules/SectionWrapper/SectionWrapper'
 import RecentArticlesSkeleton from './RecentArticlesSkeleton'
 
+const headingId = `${sectionDetails.recentArticles.class}-heading`
+
 function RecentArticles() {
     const { recentArticles, isLoadingArticles } = useRecentArticleContext()
     const { isMobile } = useTheme()
     const { t } = useTranslation()
+    const blogUrl =
+        process.env.NEXT_PUBLIC_HASHNODE_BLOG_URL ??
+        process.env.VITE_HASHNODE_BLOG_URL ??
+        '#'
 
     const topRecentArticles = useMemo(() => {
         return recentArticles.slice(0, 3)
@@ -24,10 +29,10 @@ function RecentArticles() {
         <>
             {recentArticles?.length > 0 && (
                 <>
-                    <div className="section-title h2 bold">
-                        {sectionDetails.recentArticles.label}
+                    <h2 id={headingId} className="section-title h2 bold">
+                        {t(sectionDetails.recentArticles.label)}
                         {sectionDetails.recentArticles.icon}
-                    </div>
+                    </h2>
                     {isLoadingArticles && <RecentArticlesSkeleton />}
                     {!isLoadingArticles && (
                         <>
@@ -45,9 +50,7 @@ function RecentArticles() {
                             </div>
                             <div className="view-all-button text-center">
                                 <a
-                                    href={
-                                        import.meta.env.VITE_HASHNODE_BLOG_URL
-                                    }
+                                    href={blogUrl}
                                     target="_blank"
                                     rel="noreferrer"
                                     aria-label={t('button.viewAll')}
@@ -75,5 +78,6 @@ function RecentArticles() {
 // export default RecentArticles;
 export default SectionWrapper(
     RecentArticles,
-    sectionDetails.recentArticles.class
+    sectionDetails.recentArticles.class,
+    headingId
 )

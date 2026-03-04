@@ -1,4 +1,3 @@
-import './ColorPickerSelector.css'
 
 import { useLottie } from 'lottie-react'
 import React from 'react'

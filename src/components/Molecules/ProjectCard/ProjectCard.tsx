@@ -2,7 +2,6 @@ import { Github, Link } from 'lucide-react'
 import React from 'react'
 import { ProjectDetails } from '../../../types/profileDataTypes'
 import Tag from '../../Atoms/Tag/Tag'
-import './ProjectCard.css'
 
 const ProjectCard = ({
     projectDetails,

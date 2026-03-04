@@ -1,9 +1,7 @@
-import './DownloadCVButton.css'
 
 import { Download } from 'lucide-react'
 import React, { useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { downloadCV } from '../../../helpers/downloadCV'
 import Button from '../../Atoms/Button/Button'
 import DownloadDialog from '../../Atoms/DownloadDialog/DownloadDialog'
 
@@ -23,11 +21,7 @@ const DownloadCVButton = () => {
                 label={t('button.downloadCv')}
             />
             {isDialogOpen && (
-                <DownloadDialog
-                    open={isDialogOpen}
-                    onClose={closeDialog}
-                    onDownload={downloadCV}
-                />
+                <DownloadDialog open={isDialogOpen} onClose={closeDialog} />
             )}
         </div>
     )

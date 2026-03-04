@@ -1,6 +1,10 @@
-const gtagId = import.meta.env.VITE_GTAG_ID
+export function initGtm() {
+    const gtagId = process.env.NEXT_PUBLIC_GTAG_ID
 
-if (gtagId) {
+    if (typeof document === 'undefined' || !gtagId) {
+        return
+    }
+
     const script1 = document.createElement('script')
     script1.async = true
     script1.src = `https://www.googletagmanager.com/gtag/js?id=${gtagId}`

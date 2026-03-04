@@ -1,11 +1,10 @@
-import './Logo.css'
 
+import Link from 'next/link'
 import React from 'react'
-import { Link } from 'react-router'
 
 export function Logo() {
     return (
-        <Link className="logo" to="/">
+        <Link className="logo" href="/">
             <div>AnoopJadhav</div>
             <div>.</div>
         </Link>

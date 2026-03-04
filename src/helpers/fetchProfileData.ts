@@ -4,7 +4,7 @@ import firebaseApp from './firebaseApp'
 
 export default async function fetchProfileData() {
     try {
-        if (import.meta.env.MODE === 'development') {
+        if (process.env.NODE_ENV === 'development') {
             console.log('Loading local data. Skipping the api call.')
             return testProfileData
         } else {

@@ -48,7 +48,11 @@ const CanvasHOC =
     ) => {
         return (
             <Canvas
-                dpr={window?.devicePixelRatio}
+                dpr={
+                    typeof window !== 'undefined'
+                        ? window.devicePixelRatio
+                        : undefined
+                }
                 flat
                 frameloop="demand"
                 style={{

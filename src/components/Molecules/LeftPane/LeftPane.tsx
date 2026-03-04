@@ -1,4 +1,3 @@
-import './LeftPane.css'
 
 import { Play } from 'lucide-react'
 import React from 'react'
@@ -31,16 +30,16 @@ const LeftPane = () => {
                 <div className="left-pane-header bold">
                     {t('skipToSection')}
                 </div>
-                <div
+                <button
+                    type="button"
                     className="toggle-button"
                     title="Toggle sidebar"
                     onClick={toggleLeftPane}
-                    onKeyDown={toggleLeftPane}
-                    tabIndex={0}
                     aria-label="skip to section toggle"
+                    aria-expanded={leftPaneVisible}
                 >
                     <Play className="arrow" />
-                </div>
+                </button>
             </div>
 
             <ul className="menu body-text grey5">

@@ -5,6 +5,10 @@ function usePersistState<T>(
     defaultValue: T
 ): [T, (value: T) => void] {
     const [value, setValue] = useState<T>(() => {
+        if (typeof window === 'undefined') {
+            return defaultValue
+        }
+
         const returnVal = sessionStorage.getItem(key)
         if (returnVal) {
             return JSON.parse(returnVal)
@@ -17,6 +21,9 @@ function usePersistState<T>(
     return [
         value,
         (newValue) => {
+            if (typeof window === 'undefined') {
+                return
+            }
             sessionStorage.setItem(key, JSON.stringify(newValue))
             setValue(newValue)
         },

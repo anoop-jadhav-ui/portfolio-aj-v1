@@ -1,15 +1,17 @@
 import React from 'react'
 import { RecentArticle } from '../../../types/profileDataTypes'
-import './HightlightedArticle.css'
 
 interface ArticleCardProps {
     articleDetails: RecentArticle
 }
 const HightlightedArticle = ({ articleDetails }: ArticleCardProps) => {
+    const blogBaseUrl =
+        process.env.NEXT_PUBLIC_HASHNODE_BLOG_URL ??
+        process.env.VITE_HASHNODE_BLOG_URL ??
+        '#'
+
     const redirectToBlogPage = () => {
-        const URL = `${import.meta.env.VITE_HASHNODE_BLOG_URL}\\${
-            articleDetails.slug
-        }`
+        const URL = `${blogBaseUrl}/${articleDetails.slug}`
         window.open(URL, '_blank')
     }
     return (

@@ -1,5 +1,4 @@
 import React, { ReactNode } from 'react'
-import { BrowserRouter } from 'react-router'
 import { ProfileDataContextProvider } from '../context/ProfileDataContext'
 import { RecentArticleContextProvider } from '../context/RecentArticleContext'
 import { SectionInViewContextProvider } from '../context/SectionInViewContext'
@@ -11,7 +10,7 @@ const Providers = ({ children }: { children: ReactNode }) => {
             <ProfileDataContextProvider>
                 <RecentArticleContextProvider>
                     <SectionInViewContextProvider>
-                        <BrowserRouter>{children}</BrowserRouter>
+                        {children}
                     </SectionInViewContextProvider>
                 </RecentArticleContextProvider>
             </ProfileDataContextProvider>

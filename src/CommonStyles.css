@@ -6,10 +6,18 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
 
-    :focus-visible {
-        outline: 1px solid var(--primary-color);
-    }
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+[role='button']:focus-visible,
+[tabindex]:not([tabindex='-1']):focus-visible {
+    outline: 2px solid var(--focus-ring-color);
+    outline-offset: 3px;
+    border-radius: 0.25rem;
 }
 
 html:has(dialog[open]) {
@@ -41,6 +49,10 @@ body {
         --grey8: #e4e4e7;
         --grey9: #f4f4f5;
         --grey10: #fafafa;
+        --primary-color: #b42318;
+        --primary-color-dark: #8f1d14;
+        --primary-color-light: #de3b2f;
+        --focus-ring-color: #8f1d14;
 
         --is-dark: false;
     }
@@ -54,7 +66,10 @@ body {
     --green: #27ae60;
 
     /* Primary & Accent color variations */
-    --primary-color: #ff565a;
+    --primary-color: #ff676b;
+    --primary-color-dark: #e55257;
+    --primary-color-light: #ff9ea1;
+    --focus-ring-color: #ff9ea1;
 
     --border-radius: 0.5rem;
     --border-width: 1px;

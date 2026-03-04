@@ -1,4 +1,3 @@
-import './ContactIcons.css'
 
 import { Github, Instagram, Linkedin, Mail } from 'lucide-react'
 import React from 'react'
@@ -15,7 +14,7 @@ const ContactIcons = ({ className }: { className: string }) => {
         <div className={`horizontally-placed ${className}`}>
             <div className="subsection-data">
                 <a
-                    href={`mailto: ${emailId}`}
+                    href={`mailto:${emailId}`}
                     title="Email Address"
                     className="social-link"
                 >

@@ -1,8 +1,7 @@
-import './Header.css'
 
 import React, { useMemo, useRef } from 'react'
+import Link from 'next/link'
 import { useTranslation } from 'react-i18next'
-import { Link } from 'react-router'
 import { DarkModeSwitch } from 'react-toggle-dark-mode'
 import { useTheme } from '../../../context/ThemeContext'
 import useScrollPosition from '../../../hooks/useScrollPosition'
@@ -10,10 +9,14 @@ import useScrollPosition from '../../../hooks/useScrollPosition'
 import { Logo } from '../../Atoms/Logo/Logo'
 
 export default function Header() {
-    const headerRef = useRef<HTMLDivElement>(null)
+    const headerRef = useRef<HTMLElement>(null)
     const { darkMode, setDarkMode, isMobile } = useTheme()
     const { scrollPosition } = useScrollPosition()
     const { t } = useTranslation()
+    const blogUrl =
+        process.env.NEXT_PUBLIC_HASHNODE_BLOG_URL ??
+        process.env.VITE_HASHNODE_BLOG_URL ??
+        '#'
 
     const isOverlayHeader = useMemo(() => {
         if (headerRef.current) {
@@ -27,45 +30,50 @@ export default function Header() {
         setDarkMode(!darkMode)
     }
 
+    const toggleIconColor = darkMode ? '#fafafa' : '#ff565a'
+
     return (
-        <div
+        <header
             className={`header ${isOverlayHeader ? 'overlayHeader' : ''}`}
             ref={headerRef}
         >
             <div className="header-wrapper">
                 <Logo />
-                <div className="menu">
-                    <div className="menuItem selected">
-                        <Link to="/"> {t('home')}</Link>
-                    </div>
-                    <div className="menuItem">
-                        <a
-                            href={import.meta.env.VITE_HASHNODE_BLOG_URL}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            {t('blogs')}
-                        </a>
-                    </div>
+                <nav aria-label="Primary navigation">
+                    <ul className="menu">
+                        <li className="menuItem selected">
+                            <Link href="/"> {t('home')}</Link>
+                        </li>
+                        <li className="menuItem">
+                            <a
+                                href={blogUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                {t('blogs')}
+                            </a>
+                        </li>
                     {/* 
                     <div className="menuItem">
                         <ColorPickerSelector />
                     </div> */}
-                    <div className="menuItem">
-                        <div
-                            className="darkModeSwitch"
-                            title="Toggle dark mode"
-                        >
-                            <DarkModeSwitch
-                                checked={darkMode}
-                                onChange={toDarkMode}
-                                size={isMobile ? 20 : 28}
-                                sunColor="var(--primary-color)"
-                            />
-                        </div>
-                    </div>
-                </div>
+                        <li className="menuItem">
+                            <div
+                                className="darkModeSwitch"
+                                title="Toggle dark mode"
+                            >
+                                <DarkModeSwitch
+                                    checked={darkMode}
+                                    onChange={toDarkMode}
+                                    size={isMobile ? 20 : 28}
+                                    sunColor={toggleIconColor}
+                                    moonColor={toggleIconColor}
+                                />
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
             </div>
-        </div>
+        </header>
     )
 }

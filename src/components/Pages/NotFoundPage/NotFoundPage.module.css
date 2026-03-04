@@ -1,12 +1,17 @@
+.pageWrapper {
+    min-height: 100vh;
+}
+
 .pageContainer {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin-top: 1rem;
 
     h1 {
         font-size: 6rem;
-        padding-top: 6rem;
+        padding-top: 2rem;
         margin: 0;
         paint-order: stroke fill;
         color: var(--grey2);

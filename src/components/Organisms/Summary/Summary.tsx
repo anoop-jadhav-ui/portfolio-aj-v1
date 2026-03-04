@@ -1,4 +1,3 @@
-import './Summary.css'
 
 import DOMPurify from 'dompurify'
 import parse from 'html-react-parser'
@@ -11,7 +10,18 @@ import ContactMeButton from '../../Molecules/ContactMeButton/ContactMeButton'
 import DownloadCVButton from '../../Molecules/DownloadCVButton/DownloadCVButton'
 import { sectionDetails } from '../../Molecules/LeftPane/leftPaneData'
 import SectionVisibilityHOC from '../../Molecules/SectionWrapper/SectionWrapper'
-import portfolioImage from '/images/portfolio-app-img.webp'
+
+const sanitizeHtml = (rawHtml: string) => {
+    const sanitizer = DOMPurify as unknown as {
+        sanitize?: (html: string) => string
+    }
+    return typeof sanitizer.sanitize === 'function'
+        ? sanitizer.sanitize(rawHtml)
+        : rawHtml
+}
+
+const parseExperienceDate = (date: string) =>
+    moment(date, ['DD MMMM YYYY', 'D MMMM YYYY', moment.ISO_8601], 'en', true)
 
 const Summary = () => {
     const { profileData } = useProfileDataContext()
@@ -23,9 +33,11 @@ const Summary = () => {
         try {
             const totalDifference = experience
                 .map((exp) => {
-                    const fromDate = moment(exp.fromDate)
+                    const fromDate = parseExperienceDate(exp.fromDate)
                     const toDate =
-                        exp.toDate !== 'Present' ? moment(exp.toDate) : moment()
+                        exp.toDate !== 'Present'
+                            ? parseExperienceDate(exp.toDate)
+                            : moment()
                     return moment(toDate).diff(fromDate, 'year', true)
                 })
                 .reduce((a, b) => a + b)
@@ -49,13 +61,13 @@ const Summary = () => {
         totalExperience
     )
 
-    const purifiedHTML = DOMPurify.sanitize(overviewSummaryHTML)
+    const purifiedHTML = sanitizeHtml(overviewSummaryHTML)
 
     return (
         <div className="summary-mobile summary-section">
             <div className="mainlogo-wrapper">
                 <img
-                    src={portfolioImage}
+                    src="/images/portfolio-app-img.webp"
                     className="mainlogo"
                     alt="mi Baburao"
                     loading="eager"

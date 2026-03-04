@@ -4,6 +4,7 @@ Command: npx gltfjsx@6.1.11 --types ./src/assets/3dModels/figma.glb --transform 
 */
 
 import { useGLTF } from '@react-three/drei'
+import { GroupProps } from '@react-three/fiber'
 import React from 'react'
 import * as THREE from 'three'
 import { GLTF } from 'three-stdlib'
@@ -46,7 +47,7 @@ const greenMaterial = new THREE.MeshPhysicalMaterial({
     clearcoat: 1,
 })
 
-function FigmaModel(props: JSX.IntrinsicElements['group']) {
+function FigmaModel(props: GroupProps) {
     const { nodes, materials } = useGLTF(
         '/figma-transformed.glb'
     ) as unknown as GLTFResult

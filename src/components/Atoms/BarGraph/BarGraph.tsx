@@ -1,4 +1,3 @@
-import './BarGraph.css'
 import React from 'react'
 
 interface BarGraphProps {

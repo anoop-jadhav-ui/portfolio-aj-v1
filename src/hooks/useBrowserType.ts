@@ -1,22 +1,26 @@
-import { useMemo } from 'react'
+import { useEffect, useState } from 'react'
 
 const useBrowserType = () => {
-    return useMemo(() => {
+    const [browserName, setBrowserName] = useState('none')
+
+    useEffect(() => {
         const userAgent = navigator.userAgent
-        let browserName = 'none'
+        let detectedBrowser = 'none'
         if (userAgent.match(/chrome|chromium|crios/i)) {
-            browserName = 'chrome'
+            detectedBrowser = 'chrome'
         } else if (userAgent.match(/firefox|fxios/i)) {
-            browserName = 'firefox'
+            detectedBrowser = 'firefox'
         } else if (userAgent.match(/safari/i)) {
-            browserName = 'safari'
+            detectedBrowser = 'safari'
         } else if (userAgent.match(/opr\//i)) {
-            browserName = 'opera'
+            detectedBrowser = 'opera'
         } else if (userAgent.match(/edg/i)) {
-            browserName = 'edge'
+            detectedBrowser = 'edge'
         }
-        return browserName
+        setBrowserName(detectedBrowser)
     }, [])
+
+    return browserName
 }
 
 export default useBrowserType

@@ -4,6 +4,8 @@ import { useProfileDataContext } from '../../../context/ProfileDataContext'
 import { sectionDetails } from '../../Molecules/LeftPane/leftPaneData'
 import SectionWrapper from '../../Molecules/SectionWrapper/SectionWrapper'
 
+const headingId = `${sectionDetails.education.class}-heading`
+
 function Education() {
     const {
         profileData: { education },
@@ -12,10 +14,10 @@ function Education() {
 
     return (
         <>
-            <div className="section-title h2 bold">
-                {sectionDetails.education.label}
+            <h2 id={headingId} className="section-title h2 bold">
+                {t(sectionDetails.education.label)}
                 {sectionDetails.education.icon}
-            </div>
+            </h2>
             <div className="subsection education-content">
                 {education.map((educationDetail, key) => {
                     return (
@@ -38,4 +40,4 @@ function Education() {
         </>
     )
 }
-export default SectionWrapper(Education, sectionDetails.education.class)
+export default SectionWrapper(Education, sectionDetails.education.class, headingId)

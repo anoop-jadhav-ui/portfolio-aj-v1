@@ -1,9 +1,25 @@
-export function downloadFile(url: string, fileName: string) {
+const triggerDownload = (href: string, fileName: string) => {
     const anchor = document.createElement('a')
-    anchor.href = url
+    anchor.href = href
     anchor.download = fileName
-    anchor.target = '__Blank'
     document.body.appendChild(anchor)
     anchor.click()
     document.body.removeChild(anchor)
+}
+
+export async function downloadFile(url: string, fileName: string) {
+    try {
+        const response = await fetch(url)
+        if (!response.ok) {
+            throw new Error(`Failed to fetch file: ${response.status}`)
+        }
+
+        const blob = await response.blob()
+        const objectUrl = window.URL.createObjectURL(blob)
+        triggerDownload(objectUrl, fileName)
+        window.URL.revokeObjectURL(objectUrl)
+    } catch {
+        // Fallback for cases where CORS prevents blob fetch.
+        triggerDownload(url, fileName)
+    }
 }

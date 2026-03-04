@@ -1,5 +1,4 @@
 import React from 'react'
-import './RecentArticlesSkeleton.css'
 
 const RecentArticlesSkeleton = () => {
     return (

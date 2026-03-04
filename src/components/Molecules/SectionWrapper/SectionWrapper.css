@@ -25,11 +25,17 @@
 }
 
 .section-title {
-    color: var(--primary-color);
+    color: var(--primary-color, #ff565a);
 
     display: flex !important;
     gap: 0.75rem;
     align-items: center;
+    visibility: visible;
+    opacity: 1;
+
+    * {
+        color: inherit;
+    }
 
     svg {
         width: 2rem;

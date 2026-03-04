@@ -1,6 +1,5 @@
 import React from 'react'
 import { useLocaleAlertBanner } from '../../../context/LocalAlertBannerContext'
-import './LocalBanner.css'
 
 const LocalBanner = () => {
     const { type, message, isAlertBannerVisible, hideAlertBanner } =

@@ -4,6 +4,7 @@ Command: npx gltfjsx@6.1.11 --types ./src/assets/3dModels/htmlCssJs.glb --transf
 */
 
 import { useGLTF } from '@react-three/drei'
+import { GroupProps } from '@react-three/fiber'
 import React from 'react'
 import * as THREE from 'three'
 import { GLTF } from 'three-stdlib'
@@ -24,7 +25,7 @@ const css3Material = new THREE.MeshPhysicalMaterial({
     clearcoat: 1,
 })
 
-function CssModel(props: JSX.IntrinsicElements['group']) {
+function CssModel(props: GroupProps) {
     const { nodes, materials } = useGLTF(
         '/htmlCssJs-transformed.glb'
     ) as unknown as GLTFResult

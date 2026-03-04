@@ -4,6 +4,8 @@ import { useProfileDataContext } from '../../../context/ProfileDataContext'
 import { sectionDetails } from '../../Molecules/LeftPane/leftPaneData'
 import SectionWrapper from '../../Molecules/SectionWrapper/SectionWrapper'
 
+const headingId = `${sectionDetails.hobbies.class}-heading`
+
 function Hobbies() {
     const {
         profileData: { hobbies },
@@ -11,10 +13,10 @@ function Hobbies() {
     const { t } = useTranslation()
     return (
         <>
-            <div className="section-title h2 bold">
-                {sectionDetails.hobbies.label}
+            <h2 id={headingId} className="section-title h2 bold">
+                {t(sectionDetails.hobbies.label)}
                 {sectionDetails.hobbies.icon}
-            </div>
+            </h2>
             <div className="subsection">
                 {hobbies.map((hobby, key) => {
                     return (
@@ -31,4 +33,4 @@ function Hobbies() {
     )
 }
 
-export default SectionWrapper(Hobbies, sectionDetails.hobbies.class)
+export default SectionWrapper(Hobbies, sectionDetails.hobbies.class, headingId)

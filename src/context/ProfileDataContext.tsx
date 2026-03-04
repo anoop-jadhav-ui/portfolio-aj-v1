@@ -2,9 +2,11 @@ import React, { createContext, useContext, useEffect, useState } from 'react'
 import getFilteredLeftPaneData, {
     LeftPaneMenuItem,
 } from '../components/Molecules/LeftPane/leftPaneData'
-import initialProfileData from '../data/testData.json'
+import rawTestProfileData from '../data/testData.json'
 import fetchProfileData from '../helpers/fetchProfileData'
 import { ProfileData } from '../types/profileDataTypes'
+
+const testProfileData = rawTestProfileData as ProfileData
 
 interface ProfileDataContextType {
     profileData: ProfileData
@@ -12,9 +14,10 @@ interface ProfileDataContextType {
 }
 type ProfileDataContextProps = {
     children: React.ReactNode
+    initialProfileData?: ProfileData
 }
 const defaultGobalContext: ProfileDataContextType = {
-    profileData: initialProfileData,
+    profileData: testProfileData,
     leftPaneData: [],
 }
 
@@ -24,16 +27,21 @@ export const useProfileDataContext = () => useContext(ProfileDataContext)
 
 export const ProfileDataContextProvider = ({
     children,
+    initialProfileData,
 }: ProfileDataContextProps) => {
     const [profileData, setProfileData] =
-        useState<ProfileData>(initialProfileData)
+        useState<ProfileData>(initialProfileData ?? testProfileData)
     const [leftPaneData, setLeftPaneData] = useState<Array<LeftPaneMenuItem>>(
         getFilteredLeftPaneData({
-            ...initialProfileData.appFeatureAvailability,
+            ...(initialProfileData ?? testProfileData).appFeatureAvailability,
         })
     )
 
     useEffect(() => {
+        if (initialProfileData) {
+            return
+        }
+
         fetchProfileData().then((profileData) => {
             setProfileData(profileData)
             setLeftPaneData(
@@ -42,7 +50,7 @@ export const ProfileDataContextProvider = ({
                 })
             )
         })
-    }, [])
+    }, [initialProfileData])
 
     return (
         <ProfileDataContext.Provider

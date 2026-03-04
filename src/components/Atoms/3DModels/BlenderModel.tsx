@@ -4,6 +4,7 @@ Command: npx gltfjsx@6.1.11 --types ./src/assets/3dModels/blender.glb --transfor
 */
 
 import { useGLTF } from '@react-three/drei'
+import { GroupProps } from '@react-three/fiber'
 import React from 'react'
 import * as THREE from 'three'
 import { GLTF } from 'three-stdlib'
@@ -29,7 +30,7 @@ const blueMaterial = new THREE.MeshPhysicalMaterial({
     clearcoat: 1,
 })
 
-function BlenderModel(props: JSX.IntrinsicElements['group']) {
+function BlenderModel(props: GroupProps) {
     const { nodes, materials } = useGLTF(
         '/blender-transformed.glb'
     ) as unknown as GLTFResult
