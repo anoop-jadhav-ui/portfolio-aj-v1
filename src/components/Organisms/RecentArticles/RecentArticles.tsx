@@ -16,10 +16,7 @@ function RecentArticles() {
     const { recentArticles, isLoadingArticles } = useRecentArticleContext()
     const { isMobile } = useTheme()
     const { t } = useTranslation()
-    const blogUrl =
-        process.env.NEXT_PUBLIC_HASHNODE_BLOG_URL ??
-        process.env.VITE_HASHNODE_BLOG_URL ??
-        '#'
+    const blogUrl = process.env.NEXT_PUBLIC_HASHNODE_BLOG_URL ?? '#'
 
     const topRecentArticles = useMemo(() => {
         return recentArticles.slice(0, 3)

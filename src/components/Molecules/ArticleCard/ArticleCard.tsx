@@ -6,10 +6,7 @@ interface ArticleCardProps {
     articleDetails: RecentArticle
 }
 const ArticleCard = ({ articleDetails }: ArticleCardProps) => {
-    const blogBaseUrl =
-        process.env.NEXT_PUBLIC_HASHNODE_BLOG_URL ??
-        process.env.VITE_HASHNODE_BLOG_URL ??
-        '#'
+    const blogBaseUrl = process.env.NEXT_PUBLIC_HASHNODE_BLOG_URL ?? '#'
     const blogUrl = `${blogBaseUrl}/${articleDetails.slug}`
 
     return (

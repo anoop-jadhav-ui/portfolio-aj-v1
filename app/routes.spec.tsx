@@ -3,7 +3,7 @@ import { describe, expect, it, vi } from 'vitest'
 
 const mockGetProfileDataServer = vi.fn(async () => ({ name: 'Anoop' }))
 const mockGetRecentArticlesServer = vi.fn(async () => [])
-const mockRedirect = vi.fn()
+const mockNotFound = vi.fn()
 
 vi.mock('../src/server/getProfileDataServer', () => ({
     getProfileDataServer: mockGetProfileDataServer,
@@ -36,7 +36,7 @@ vi.mock('../src/app/NotFoundRoutePage', () => ({
 }))
 
 vi.mock('next/navigation', () => ({
-    redirect: mockRedirect,
+    notFound: mockNotFound,
 }))
 
 describe('App Router smoke tests', () => {
@@ -63,10 +63,10 @@ describe('App Router smoke tests', () => {
         expect(React.isValidElement(element)).toBe(true)
     })
 
-    it('redirects unknown routes to /404', async () => {
+    it('marks unknown routes as not found', async () => {
         const { default: CatchAllRoute } = await import('./[...slug]/page')
         CatchAllRoute()
 
-        expect(mockRedirect).toHaveBeenCalledWith('/404')
+        expect(mockNotFound).toHaveBeenCalledTimes(1)
     })
 })

@@ -13,10 +13,7 @@ export default function Header() {
     const { darkMode, setDarkMode, isMobile } = useTheme()
     const { scrollPosition } = useScrollPosition()
     const { t } = useTranslation()
-    const blogUrl =
-        process.env.NEXT_PUBLIC_HASHNODE_BLOG_URL ??
-        process.env.VITE_HASHNODE_BLOG_URL ??
-        '#'
+    const blogUrl = process.env.NEXT_PUBLIC_HASHNODE_BLOG_URL ?? '#'
 
     const isOverlayHeader = useMemo(() => {
         if (headerRef.current) {
