@@ -3,7 +3,9 @@ import { POST } from './route'
 
 const { mockSendMail, mockGetResumeUrl } = vi.hoisted(() => ({
     mockSendMail: vi.fn(),
-    mockGetResumeUrl: vi.fn(() => 'https://resume.example.com'),
+    mockGetResumeUrl: vi.fn<() => string | undefined>(
+        () => 'https://resume.example.com'
+    ),
 }))
 
 vi.mock('../../_lib/mailer', () => ({
@@ -29,6 +31,23 @@ describe('POST /api/mail/download-link', () => {
                     name: '',
                     email: 'invalid',
                 }),
+                headers: { 'Content-Type': 'application/json' },
+            }
+        )
+
+        const response = await POST(request)
+
+        expect(response.status).toBe(400)
+        await expect(response.json()).resolves.toEqual({ msg: 'fail' })
+        expect(mockSendMail).not.toHaveBeenCalled()
+    })
+
+    it('returns 400 for malformed json', async () => {
+        const request = new Request(
+            'http://localhost:3000/api/mail/download-link',
+            {
+                method: 'POST',
+                body: '{invalid json',
                 headers: { 'Content-Type': 'application/json' },
             }
         )

@@ -1,136 +1,180 @@
-import { PerspectiveCamera } from '@react-three/drei'
-import { Canvas, useFrame } from '@react-three/fiber'
-import React, {
-    useEffect,
-    useMemo,
-    useRef,
-    useState,
-    useTransition,
-} from 'react'
+'use client'
+
+import { useEffect, useRef } from 'react'
 import * as THREE from 'three'
-import { InstancedMesh, PointLight, Vector3 } from 'three'
 import { useTheme } from '../../../context/ThemeContext'
 
-const cameraPosVector = new Vector3(0, 0, 200)
+const STAR_COUNT = 150
+const CAMERA_Z = 200
 
-function Random(min: number, max: number) {
-    return Math.random() * (max - min) + min
+type Particle = {
+    time: number
+    x: number
+    y: number
+    z: number
+    speed: number
 }
 
-const Star = ({
-    scrollSpeed,
-    scrollDirection,
-}: {
-    scrollSpeed: number
-    scrollDirection: number
-}) => {
-    const [, startTransition] = useTransition()
+type StarEngine = {
+    material: THREE.MeshBasicMaterial
+    pointLight: THREE.PointLight
+}
+
+const Stars = () => {
     const { darkMode } = useTheme()
-    const color = darkMode === true ? 'white' : 'black'
-
-    const light = useRef<PointLight>(null)
-    const mesh = useRef<InstancedMesh>(null)
-    const count = 150
-
-    const particles = useMemo(() => {
-        const temp = []
-        for (let i = 0; i < count; i++) {
-            const time = Random(0, 100)
-            const x = Random(-100, 100)
-            const y = Random(-100, 100)
-            const z = Random(-100, 100)
-            const speed = Random(0.01, 1) / 3
-
-            temp.push({ time, x, y, z, speed })
-        }
-        return temp
-    }, [count])
-
-    const dummy = useMemo(() => new THREE.Object3D(), [])
-
-    useFrame(() => {
-        startTransition(() => {
-            particles.forEach((particle, index) => {
-                const { x, y, z, speed } = particle
-                particle.time += speed * scrollSpeed * scrollDirection
-                const t = particle.time
-                dummy.position.set(x, y, z + (t % 100))
-                dummy.updateMatrix()
-                mesh.current?.setMatrixAt(index, dummy.matrix)
-            })
-            if (mesh.current) mesh.current.instanceMatrix.needsUpdate = true
-        })
-    })
-
-    return (
-        <>
-            <pointLight
-                ref={light}
-                distance={100}
-                intensity={50}
-                color={`${color}`}
-                position={[
-                    cameraPosVector.x,
-                    cameraPosVector.y,
-                    cameraPosVector.z + 10,
-                ]}
-            />
-            <instancedMesh ref={mesh} args={[undefined, undefined, count]}>
-                <sphereGeometry args={[0.12]} />
-                <dodecahedronGeometry args={[0.12, 0]} />
-                <meshBasicMaterial color={`${color}`} />
-            </instancedMesh>
-        </>
-    )
-}
-
-export const Stars = () => {
-    const [scrollSpeed, setScrollSpeed] = useState(1)
-    const [scrollDirection, setScrollDirection] = useState(1)
-    const lastScrollY = useRef(0)
+    const mountRef = useRef<HTMLDivElement | null>(null)
+    const engineRef = useRef<StarEngine | null>(null)
 
     useEffect(() => {
-        const handleScroll = () => {
-            const currentScrollY = window.scrollY
-            const delta = currentScrollY - lastScrollY.current
-
-            if (delta > 0) {
-                setScrollDirection(1) // Scrolling down
-            } else if (delta < 0) {
-                setScrollDirection(-1) // Scrolling up
-            }
-
-            setScrollSpeed(Math.min(5, 1 + Math.abs(delta) / 100))
-
-            lastScrollY.current = currentScrollY
+        if (!mountRef.current) {
+            return
         }
 
-        window.addEventListener('scroll', handleScroll)
+        const scene = new THREE.Scene()
+        const camera = new THREE.PerspectiveCamera(
+            75,
+            window.innerWidth / window.innerHeight,
+            0.1,
+            1000
+        )
+        camera.position.set(0, 0, CAMERA_Z)
+
+        const renderer = new THREE.WebGLRenderer({
+            alpha: true,
+            antialias: true,
+        })
+        renderer.setSize(window.innerWidth, window.innerHeight)
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
+        mountRef.current.appendChild(renderer.domElement)
+
+        const color = darkMode ? '#ffffff' : '#000000'
+        const particles: Particle[] = Array.from(
+            { length: STAR_COUNT },
+            () => ({
+                time: Math.random() * 100,
+                x: Math.random() * 200 - 100,
+                y: Math.random() * 200 - 100,
+                z: Math.random() * 200 - 100,
+                speed: (Math.random() * (1 - 0.01) + 0.01) / 3,
+            })
+        )
+
+        const geometry = new THREE.DodecahedronGeometry(0.12, 0)
+        const material = new THREE.MeshBasicMaterial({
+            color,
+        })
+        const stars = new THREE.InstancedMesh(geometry, material, STAR_COUNT)
+        const dummy = new THREE.Object3D()
+
+        const pointLight = new THREE.PointLight(color, 50, 100)
+        pointLight.position.set(0, 0, CAMERA_Z + 10)
+        scene.add(stars)
+        scene.add(pointLight)
+        engineRef.current = { material, pointLight }
+
+        const onContextLost = (event: Event) => {
+            event.preventDefault()
+        }
+
+        const onVisibilityChange = () => {
+            if (document.visibilityState === 'visible') {
+                renderer.setAnimationLoop(animate)
+            } else {
+                renderer.setAnimationLoop(null)
+            }
+        }
+
+        const animate = () => {
+            const scrollTop =
+                window.scrollY ||
+                document.documentElement.scrollTop ||
+                document.body.scrollTop ||
+                0
+            const scrollOffset = scrollTop * 0.08
+
+            stars.rotation.z = scrollTop * 0.0002
+            stars.rotation.x = scrollTop * 0.00006
+
+            particles.forEach((particle, index) => {
+                particle.time += particle.speed * 0.25
+                dummy.position.set(
+                    particle.x,
+                    particle.y,
+                    particle.z + ((particle.time + scrollOffset) % 100)
+                )
+                dummy.updateMatrix()
+                stars.setMatrixAt(index, dummy.matrix)
+            })
+
+            stars.instanceMatrix.needsUpdate = true
+            renderer.render(scene, camera)
+        }
+
+        const handleResize = () => {
+            camera.aspect = window.innerWidth / window.innerHeight
+            camera.updateProjectionMatrix()
+            renderer.setSize(window.innerWidth, window.innerHeight)
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
+        }
+
+        window.addEventListener('resize', handleResize)
+        renderer.domElement.addEventListener(
+            'webglcontextlost',
+            onContextLost,
+            false
+        )
+        document.addEventListener('visibilitychange', onVisibilityChange)
+        renderer.setAnimationLoop(animate)
+
         return () => {
-            window.removeEventListener('scroll', handleScroll)
+            renderer.setAnimationLoop(null)
+            window.removeEventListener('resize', handleResize)
+            renderer.domElement.removeEventListener(
+                'webglcontextlost',
+                onContextLost
+            )
+            document.removeEventListener('visibilitychange', onVisibilityChange)
+            geometry.dispose()
+            material.dispose()
+            renderer.dispose()
+            scene.clear()
+
+            if (
+                mountRef.current &&
+                mountRef.current.contains(renderer.domElement)
+            ) {
+                mountRef.current.removeChild(renderer.domElement)
+            }
+            engineRef.current = null
         }
     }, [])
 
+    useEffect(() => {
+        const engine = engineRef.current
+        if (!engine) {
+            return
+        }
+
+        const color = darkMode ? '#ffffff' : '#000000'
+        engine.material.color.set(color)
+        engine.pointLight.color.set(color)
+    }, [darkMode])
+
     return (
-        <Canvas
+        <div
+            ref={mountRef}
             style={{
-                height: '100vH',
+                width: '100vw',
+                height: '100vh',
                 position: 'fixed',
-                top: '0',
-                left: '0',
-                background: 'var(--background)',
+                top: 0,
+                left: 0,
+                zIndex: 0,
+                pointerEvents: 'none',
+                background: 'transparent',
             }}
-            flat
-            shadows={false}
-        >
-            <>
-                <PerspectiveCamera makeDefault position={cameraPosVector} />
-                <Star
-                    scrollSpeed={scrollSpeed}
-                    scrollDirection={scrollDirection}
-                />
-            </>
-        </Canvas>
+            aria-hidden
+        />
     )
 }
 

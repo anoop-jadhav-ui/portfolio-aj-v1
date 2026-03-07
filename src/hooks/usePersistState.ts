@@ -1,22 +1,23 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 function usePersistState<T>(
     key: string,
     defaultValue: T
 ): [T, (value: T) => void] {
-    const [value, setValue] = useState<T>(() => {
+    const [value, setValue] = useState<T>(defaultValue)
+
+    useEffect(() => {
         if (typeof window === 'undefined') {
-            return defaultValue
+            return
         }
 
         const returnVal = sessionStorage.getItem(key)
         if (returnVal) {
-            return JSON.parse(returnVal)
+            setValue(JSON.parse(returnVal))
         } else {
             sessionStorage.setItem(key, JSON.stringify(defaultValue))
-            return defaultValue
         }
-    })
+    }, [defaultValue, key])
 
     return [
         value,

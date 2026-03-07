@@ -1,10 +1,11 @@
 'use client'
 
 import Clarity from '@microsoft/clarity'
-import React, { useEffect, useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import { useTranslation } from 'react-i18next'
 import PageScrollProgressBar from 'react-page-scroll-progress-bar'
 import ErrorBoundary from '../components/Molecules/ErrorBoundary/ErrorBoundary'
+import Stars from '../components/Molecules/Stars/Stars'
 import LandingPage from '../components/Pages/LandingPage/LandingPage'
 
 const HomePageClient = () => {
@@ -20,6 +21,7 @@ const HomePageClient = () => {
 
     return (
         <ErrorBoundary errorMessage={t('pageLoadError')}>
+            <Stars />
             <PageScrollProgressBar
                 container={appRef.current}
                 bgColor="transparent"

@@ -9,7 +9,13 @@ import { contactMailSchema } from '../_lib/schemas'
 
 export async function POST(request: Request) {
     try {
-        const payload = await request.json()
+        let payload: unknown
+        try {
+            payload = await request.json()
+        } catch {
+            return NextResponse.json({ msg: 'fail' }, { status: 400 })
+        }
+
         const parsedPayload = contactMailSchema.safeParse(payload)
         if (!parsedPayload.success) {
             return NextResponse.json({ msg: 'fail' }, { status: 400 })

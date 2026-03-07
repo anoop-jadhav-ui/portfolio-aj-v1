@@ -1,7 +1,15 @@
-const triggerDownload = (href: string, fileName: string) => {
+const triggerDownload = (
+    href: string,
+    fileName: string,
+    openInNewTab = false
+) => {
     const anchor = document.createElement('a')
     anchor.href = href
     anchor.download = fileName
+    if (openInNewTab) {
+        anchor.target = '_blank'
+        anchor.rel = 'noopener noreferrer'
+    }
     document.body.appendChild(anchor)
     anchor.click()
     document.body.removeChild(anchor)
@@ -20,6 +28,6 @@ export async function downloadFile(url: string, fileName: string) {
         window.URL.revokeObjectURL(objectUrl)
     } catch {
         // Fallback for cases where CORS prevents blob fetch.
-        triggerDownload(url, fileName)
+        triggerDownload(url, fileName, true)
     }
 }

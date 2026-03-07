@@ -35,14 +35,14 @@
     },
     "scripts": {
         "start": "next start -p 3000",
-        "dev": "next dev -p 3000",
-        "build": "next build",
+        "dev": "next dev --turbopack -p 3000",
+        "build": "next build --turbopack",
         "preview": "next start -p 3000",
         "test": "vitest",
-        "test:debug": "yarn vitest-preview",
+        "test:debug": "vitest-preview",
         "coverage": "vitest run --coverage",
         "prepare": "husky install",
-        "check": "yarn lint",
+        "check": "npm run lint",
         "lint": "eslint \"{src,app}/**/*.{js,jsx,ts,tsx}\"",
         "lint:fix": "eslint --fix \"{src,app}/**/*.{js,jsx,ts,tsx}\"",
         "format": "prettier --write \"{src,app}/**/*.{js,jsx,ts,tsx,css,md}\" --config .prettierrc.json"
@@ -79,8 +79,7 @@
         "**/*": "prettier --write --ignore-unknown"
     },
     "volta": {
-        "node": "20.17.0",
-        "yarn": "1.22.19"
+        "node": "20.17.0"
     },
     "engines": {
         "node": ">=20.17.0"
