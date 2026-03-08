@@ -1,5 +1,4 @@
 
-import React from 'react'
 import { useTranslation } from 'react-i18next'
 import MessageForm from '../../Molecules/MessageForm/MessageForm'
 import { sectionDetails } from '../../Molecules/LeftPane/leftPaneData'

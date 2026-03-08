@@ -1,4 +1,3 @@
-import React from 'react'
 import { useTranslation } from 'react-i18next'
 import ContactIcons from '../../Molecules/ContactIcons/ContactIcons'
 import { sectionDetails } from '../../Molecules/LeftPane/leftPaneData'

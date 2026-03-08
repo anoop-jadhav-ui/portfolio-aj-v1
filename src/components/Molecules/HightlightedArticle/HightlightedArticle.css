@@ -4,6 +4,8 @@
     display: flex;
     justify-content: space-between;
     cursor: pointer;
+    text-decoration: none;
+    color: inherit;
 
     grid-column: span var(--no-of-article-columns);
 

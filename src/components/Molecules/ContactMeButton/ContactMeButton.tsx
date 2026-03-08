@@ -1,6 +1,5 @@
 
 import { MessageSquareText } from 'lucide-react'
-import React from 'react'
 import { useTranslation } from 'react-i18next'
 import Button from '../../Atoms/Button/Button'
 

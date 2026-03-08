@@ -1,5 +1,5 @@
 import { X } from 'lucide-react'
-import React, { useEffect, useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import { useTranslation } from 'react-i18next'
 import DownloadReasonForm from '../../Molecules/DownloadReasonForm/DownloadReasonForm'
 

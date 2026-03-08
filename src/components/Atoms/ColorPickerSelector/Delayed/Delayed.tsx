@@ -1,4 +1,3 @@
-import React from 'react'
 import { ReactNode, useEffect, useState } from 'react'
 
 const Delayed = (props: { children: ReactNode; delay: number }) => {

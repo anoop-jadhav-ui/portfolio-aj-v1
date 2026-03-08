@@ -1,5 +1,4 @@
 import { ArrowRight } from 'lucide-react'
-import React from 'react'
 import { RecentArticle } from '../../../types/profileDataTypes'
 
 interface ArticleCardProps {

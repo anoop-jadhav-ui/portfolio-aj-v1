@@ -5,7 +5,6 @@ Command: npx gltfjsx@6.1.11 --types ./src/assets/3dModels/react.glb --transform 
 
 import { useGLTF } from '@react-three/drei'
 import { GroupProps } from '@react-three/fiber'
-import React from 'react'
 import * as THREE from 'three'
 import { GLTF } from 'three-stdlib'
 import CanvasHOC from '../../Molecules/CanvasHOC/CanvasHOC'

@@ -1,4 +1,4 @@
-import React, {
+import {
     createContext,
     ReactNode,
     useContext,
@@ -37,7 +37,23 @@ const ThemeContextProvider = ({ children }: { children: ReactNode }) => {
             return
         }
 
-        setIsMobile(window.matchMedia('(max-width: 768px)').matches)
+        const mediaQuery = window.matchMedia('(max-width: 768px)')
+        const handleViewportChange = () => {
+            setIsMobile(mediaQuery.matches)
+        }
+
+        handleViewportChange()
+        if (typeof mediaQuery.addEventListener === 'function') {
+            mediaQuery.addEventListener('change', handleViewportChange)
+            return () => {
+                mediaQuery.removeEventListener('change', handleViewportChange)
+            }
+        }
+
+        mediaQuery.addListener(handleViewportChange)
+        return () => {
+            mediaQuery.removeListener(handleViewportChange)
+        }
     }, [])
 
     useEffect(() => {

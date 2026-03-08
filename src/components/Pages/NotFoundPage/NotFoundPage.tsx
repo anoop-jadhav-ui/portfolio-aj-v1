@@ -2,8 +2,6 @@ import styles from './NotFoundPage.module.css'
 
 import { House } from 'lucide-react'
 import Link from 'next/link'
-import React from 'react'
-import Button from '../../Atoms/Button/Button'
 import Header from '../../Molecules/Header/Header'
 
 const NotFound = () => {
@@ -17,12 +15,9 @@ const NotFound = () => {
                         Oops! The page you are looking for doesn't exist or has
                         been moved.
                     </p>
-                    <Link href="/" className={styles.link}>
-                        <Button
-                            variant="brand"
-                            label="Go to Homepage"
-                            endIcon={<House />}
-                        />
+                    <Link href="/" className={`${styles.link} ${styles.homeButton}`}>
+                        <span>Go to Homepage</span>
+                        <House size={16} />
                     </Link>
                 </div>
             </div>

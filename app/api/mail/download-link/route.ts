@@ -6,26 +6,54 @@ import {
     getResumeUrl,
     sendMail,
 } from '../../_lib/mailer'
+import { guardApiRequest } from '../../_lib/requestGuards'
 import { downloadLinkSchema } from '../../_lib/schemas'
 
 export async function POST(request: Request) {
+    const guard = guardApiRequest(request, 'mail-download-link')
+    if (!guard.ok) {
+        return NextResponse.json(
+            { msg: 'fail' },
+            {
+                status: guard.status ?? 429,
+                headers: guard.headers,
+            }
+        )
+    }
+
     try {
         let payload: unknown
         try {
             payload = await request.json()
         } catch {
-            return NextResponse.json({ msg: 'fail' }, { status: 400 })
+            return NextResponse.json(
+                { msg: 'fail' },
+                { status: 400, headers: guard.headers }
+            )
         }
 
         const parsedPayload = downloadLinkSchema.safeParse(payload)
         if (!parsedPayload.success) {
-            return NextResponse.json({ msg: 'fail' }, { status: 400 })
+            return NextResponse.json(
+                { msg: 'fail' },
+                { status: 400, headers: guard.headers }
+            )
         }
         const { email, name, message } = parsedPayload.data
+        const receiverEmail = getReceiverEmail()
+        if (!receiverEmail) {
+            return NextResponse.json(
+                { msg: 'fail' },
+                { status: 500, headers: guard.headers }
+            )
+        }
 
         const resumeUrl = getResumeUrl()
         if (!resumeUrl) {
-            return NextResponse.json({ msg: 'fail' }, { status: 500 })
+            return NextResponse.json(
+                { msg: 'fail' },
+                { status: 500, headers: guard.headers }
+            )
         }
 
         const portfolioUrl = getPortfolioUrl()
@@ -49,7 +77,7 @@ export async function POST(request: Request) {
         })
 
         await sendMail({
-            toEmail: getReceiverEmail(),
+            toEmail: receiverEmail,
             toName: 'Anoop Jadhav',
             subject: `Portfolio | Resume requested by ${name}`,
             textPart: `${name} (${email}) requested resume download.\nMessage: ${
@@ -65,7 +93,10 @@ export async function POST(request: Request) {
             `,
         })
 
-        return NextResponse.json({ msg: 'success' }, { status: 200 })
+        return NextResponse.json(
+            { msg: 'success' },
+            { status: 200, headers: guard.headers }
+        )
     } catch (error) {
         console.error('/api/mail/download-link failed:', error)
         return NextResponse.json(
@@ -78,7 +109,7 @@ export async function POST(request: Request) {
                               : 'unknown error',
                   }
                 : { msg: 'fail' },
-            { status: 500 }
+            { status: 500, headers: guard.headers }
         )
     }
 }

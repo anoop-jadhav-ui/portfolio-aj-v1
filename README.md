@@ -60,7 +60,16 @@ $ npm run coverage
 | `VITE_HASHNODE_BLOG_URL` | `NEXT_PUBLIC_HASHNODE_BLOG_URL` |
 | `VITE_GTAG_ID` | `NEXT_PUBLIC_GTAG_ID` |
 | `VITE_CLARITY_ID` | `NEXT_PUBLIC_CLARITY_ID` |
-| `VITE_MAIL_SERVER_URL` | `MAIL_SERVER_URL` |
+
+Additional server-only keys:
+
+- `MJ_APIKEY_PUBLIC`
+- `MJ_APIKEY_PRIVATE`
+- `MJ_SENDER_EMAIL`
+- `MJ_RECEIVER_EMAIL`
+- `ALLOWED_ORIGINS` (comma-separated origins for API origin validation)
+- `API_RATE_LIMIT_MAX`
+- `API_RATE_LIMIT_WINDOW_MS`
 
 <div align="center">
   <img src="https://anoopjadhav.in/images/readme/githubReadmeFooter.png" alt="Portfolio Logo">

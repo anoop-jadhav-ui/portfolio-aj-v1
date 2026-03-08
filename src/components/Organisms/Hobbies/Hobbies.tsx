@@ -1,4 +1,3 @@
-import React from 'react'
 import { useTranslation } from 'react-i18next'
 import { useProfileDataContext } from '../../../context/ProfileDataContext'
 import { sectionDetails } from '../../Molecules/LeftPane/leftPaneData'

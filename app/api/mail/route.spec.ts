@@ -5,6 +5,8 @@ const { mockSendMail } = vi.hoisted(() => ({
     mockSendMail: vi.fn(),
 }))
 
+const originalAllowedOrigins = process.env.ALLOWED_ORIGINS
+
 vi.mock('../_lib/mailer', () => ({
     sendMail: mockSendMail,
     getPortfolioUrl: () => 'https://portfolio-next-snowy.vercel.app/',
@@ -15,6 +17,11 @@ vi.mock('../_lib/mailer', () => ({
 describe('POST /api/mail', () => {
     beforeEach(() => {
         vi.clearAllMocks()
+        if (originalAllowedOrigins === undefined) {
+            delete process.env.ALLOWED_ORIGINS
+        } else {
+            process.env.ALLOWED_ORIGINS = originalAllowedOrigins
+        }
     })
 
     it('returns 400 for invalid payload', async () => {
@@ -41,6 +48,30 @@ describe('POST /api/mail', () => {
         const response = await POST(request)
 
         expect(response.status).toBe(400)
+        await expect(response.json()).resolves.toEqual({ msg: 'fail' })
+        expect(mockSendMail).not.toHaveBeenCalled()
+    })
+
+    it('returns 403 when origin is not in allowlist', async () => {
+        process.env.ALLOWED_ORIGINS = 'https://anoopjadhav.in'
+
+        const request = new Request('http://localhost:3000/api/mail', {
+            method: 'POST',
+            body: JSON.stringify({
+                name: 'Anoop',
+                email: 'anoop@example.com',
+                message: 'Hi there',
+                section: 'Contact',
+            }),
+            headers: {
+                'Content-Type': 'application/json',
+                Origin: 'https://example-malicious.test',
+            },
+        })
+
+        const response = await POST(request)
+
+        expect(response.status).toBe(403)
         await expect(response.json()).resolves.toEqual({ msg: 'fail' })
         expect(mockSendMail).not.toHaveBeenCalled()
     })

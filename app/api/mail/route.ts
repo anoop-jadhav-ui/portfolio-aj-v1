@@ -5,22 +5,47 @@ import {
     getReceiverEmail,
     sendMail,
 } from '../_lib/mailer'
+import { guardApiRequest } from '../_lib/requestGuards'
 import { contactMailSchema } from '../_lib/schemas'
 
 export async function POST(request: Request) {
+    const guard = guardApiRequest(request, 'mail')
+    if (!guard.ok) {
+        return NextResponse.json(
+            { msg: 'fail' },
+            {
+                status: guard.status ?? 429,
+                headers: guard.headers,
+            }
+        )
+    }
+
     try {
         let payload: unknown
         try {
             payload = await request.json()
         } catch {
-            return NextResponse.json({ msg: 'fail' }, { status: 400 })
+            return NextResponse.json(
+                { msg: 'fail' },
+                { status: 400, headers: guard.headers }
+            )
         }
 
         const parsedPayload = contactMailSchema.safeParse(payload)
         if (!parsedPayload.success) {
-            return NextResponse.json({ msg: 'fail' }, { status: 400 })
+            return NextResponse.json(
+                { msg: 'fail' },
+                { status: 400, headers: guard.headers }
+            )
         }
         const { email, name, message, section } = parsedPayload.data
+        const receiverEmail = getReceiverEmail()
+        if (!receiverEmail) {
+            return NextResponse.json(
+                { msg: 'fail' },
+                { status: 500, headers: guard.headers }
+            )
+        }
 
         const portfolioUrl = getPortfolioUrl()
         const safeName = escapeHtml(name)
@@ -29,7 +54,7 @@ export async function POST(request: Request) {
         const safeMessage = escapeHtml(message)
 
         await sendMail({
-            toEmail: getReceiverEmail(),
+            toEmail: receiverEmail,
             toName: 'Anoop Jadhav',
             subject: `Portfolio | New message from ${name}`,
             textPart: `${name} (${email}) sent a message from ${section ?? 'Contact'} section.\n\n${message}`,
@@ -47,7 +72,10 @@ export async function POST(request: Request) {
             `,
         })
 
-        return NextResponse.json({ msg: 'success' }, { status: 200 })
+        return NextResponse.json(
+            { msg: 'success' },
+            { status: 200, headers: guard.headers }
+        )
     } catch (error) {
         console.error('/api/mail failed:', error)
         return NextResponse.json(
@@ -60,7 +88,7 @@ export async function POST(request: Request) {
                               : 'unknown error',
                   }
                 : { msg: 'fail' },
-            { status: 500 }
+            { status: 500, headers: guard.headers }
         )
     }
 }

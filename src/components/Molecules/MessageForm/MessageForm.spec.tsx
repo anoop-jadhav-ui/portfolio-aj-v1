@@ -1,5 +1,4 @@
 import { fireEvent, render, screen, waitFor } from '@testing-library/react'
-import React from 'react'
 import { expect, it, vi, describe } from 'vitest'
 import AlertBannerProvider from '../../../context/AlertBannerContext'
 import axiosInstance from '../../../helpers/axios'

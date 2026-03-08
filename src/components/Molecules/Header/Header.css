@@ -66,6 +66,7 @@
     }
 
     &.overlayHeader {
+        -webkit-backdrop-filter: blur(0.625rem);
         backdrop-filter: blur(0.625rem);
         background: rgba(255, 255, 255, 0.1);
 

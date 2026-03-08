@@ -1,4 +1,3 @@
-import React from 'react'
 import { RecentArticle } from '../../../types/profileDataTypes'
 
 interface ArticleCardProps {
@@ -6,16 +5,15 @@ interface ArticleCardProps {
 }
 const HightlightedArticle = ({ articleDetails }: ArticleCardProps) => {
     const blogBaseUrl = process.env.NEXT_PUBLIC_HASHNODE_BLOG_URL ?? '#'
+    const blogUrl = `${blogBaseUrl}/${articleDetails.slug}`
 
-    const redirectToBlogPage = () => {
-        const URL = `${blogBaseUrl}/${articleDetails.slug}`
-        window.open(URL, '_blank')
-    }
     return (
-        <div
+        <a
             className="highlighted-articlecard"
-            onClick={redirectToBlogPage}
-            tabIndex={0}
+            href={blogUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`Read article: ${articleDetails.title}`}
         >
             <div className="article-image">
                 <img
@@ -33,7 +31,7 @@ const HightlightedArticle = ({ articleDetails }: ArticleCardProps) => {
                     {new Date(articleDetails.publishedAt).toDateString()}
                 </div>
             </div>
-        </div>
+        </a>
     )
 }
 

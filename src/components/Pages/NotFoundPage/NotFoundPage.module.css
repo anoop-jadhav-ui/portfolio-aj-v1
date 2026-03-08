@@ -27,6 +27,24 @@
     .link {
         margin-top: 2rem;
     }
+
+    .homeButton {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        text-decoration: none;
+        border-radius: var(--border-radius);
+        border: 1px solid var(--primary-color);
+        background: var(--primary-color);
+        color: #fff;
+        font-weight: 700;
+        padding: 0.75rem 1rem;
+    }
+
+    .homeButton:hover {
+        background: var(--primary-color-dark);
+        border-color: var(--primary-color-dark);
+    }
 }
 
 @media screen and (max-width: 768px) {

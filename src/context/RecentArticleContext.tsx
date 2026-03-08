@@ -42,7 +42,7 @@ export const RecentArticleContextProvider = ({
                 const recentArticles = await getRecentArticles()
                 setRecentArticles(recentArticles)
             } catch (e) {
-                console.log(e)
+                console.error('Failed to fetch recent articles:', e)
             } finally {
                 setLoadingArticles(false)
             }

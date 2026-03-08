@@ -5,11 +5,12 @@ type useDOMReturnType = {
 }
 const useScrollPosition = (): useDOMReturnType => {
     const [scrollPosition, setScrollPosition] = useState(0)
-    const handleScroll = () => {
-        setScrollPosition(window.scrollY)
-    }
 
     useEffect(() => {
+        const handleScroll = () => {
+            setScrollPosition(window.scrollY)
+        }
+
         window.addEventListener('scroll', handleScroll, { passive: true })
         return () => {
             window.removeEventListener('scroll', handleScroll)

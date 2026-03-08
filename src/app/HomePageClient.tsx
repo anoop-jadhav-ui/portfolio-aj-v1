@@ -15,7 +15,14 @@ const HomePageClient = () => {
     useEffect(() => {
         const clarityId = process.env.NEXT_PUBLIC_CLARITY_ID
         if (clarityId) {
+            const globalWindow = window as Window & {
+                __portfolioClarityInitialized?: boolean
+            }
+            if (globalWindow.__portfolioClarityInitialized) {
+                return
+            }
             Clarity.init(clarityId)
+            globalWindow.__portfolioClarityInitialized = true
         }
     }, [])
 

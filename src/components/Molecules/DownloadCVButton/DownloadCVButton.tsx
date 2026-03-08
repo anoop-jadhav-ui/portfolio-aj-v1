@@ -1,6 +1,6 @@
 
 import { Download } from 'lucide-react'
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import Button from '../../Atoms/Button/Button'
 import DownloadDialog from '../../Atoms/DownloadDialog/DownloadDialog'

@@ -1,6 +1,5 @@
 
 import { Github, Instagram, Linkedin, Mail } from 'lucide-react'
-import React from 'react'
 import { useProfileDataContext } from '../../../context/ProfileDataContext'
 
 const ContactIcons = ({ className }: { className: string }) => {

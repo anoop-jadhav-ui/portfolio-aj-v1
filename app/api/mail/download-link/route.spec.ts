@@ -8,6 +8,8 @@ const { mockSendMail, mockGetResumeUrl } = vi.hoisted(() => ({
     ),
 }))
 
+const originalAllowedOrigins = process.env.ALLOWED_ORIGINS
+
 vi.mock('../../_lib/mailer', () => ({
     sendMail: mockSendMail,
     getPortfolioUrl: () => 'https://portfolio-next-snowy.vercel.app/',
@@ -20,6 +22,11 @@ describe('POST /api/mail/download-link', () => {
     beforeEach(() => {
         vi.clearAllMocks()
         mockGetResumeUrl.mockReturnValue('https://resume.example.com')
+        if (originalAllowedOrigins === undefined) {
+            delete process.env.ALLOWED_ORIGINS
+        } else {
+            process.env.ALLOWED_ORIGINS = originalAllowedOrigins
+        }
     })
 
     it('returns 400 for invalid payload', async () => {
@@ -55,6 +62,32 @@ describe('POST /api/mail/download-link', () => {
         const response = await POST(request)
 
         expect(response.status).toBe(400)
+        await expect(response.json()).resolves.toEqual({ msg: 'fail' })
+        expect(mockSendMail).not.toHaveBeenCalled()
+    })
+
+    it('returns 403 when origin is not in allowlist', async () => {
+        process.env.ALLOWED_ORIGINS = 'https://anoopjadhav.in'
+
+        const request = new Request(
+            'http://localhost:3000/api/mail/download-link',
+            {
+                method: 'POST',
+                body: JSON.stringify({
+                    name: 'Anoop',
+                    email: 'anoop@example.com',
+                    message: 'Please share resume',
+                }),
+                headers: {
+                    'Content-Type': 'application/json',
+                    Origin: 'https://example-malicious.test',
+                },
+            }
+        )
+
+        const response = await POST(request)
+
+        expect(response.status).toBe(403)
         await expect(response.json()).resolves.toEqual({ msg: 'fail' })
         expect(mockSendMail).not.toHaveBeenCalled()
     })

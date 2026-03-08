@@ -1,24 +1,9 @@
 
-import React, { useCallback, useEffect, useMemo, useRef } from 'react'
+import { useCallback, useEffect, useRef } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSectionInViewContext } from '../../../context/SectionInViewContext'
 import ErrorBoundary from '../ErrorBoundary/ErrorBoundary'
 import constants from '../../../helpers/constants'
-
-export const isElementInViewport = (el: HTMLDivElement) => {
-    const rect = el.getBoundingClientRect()
-    return (
-        (rect.top <= 0 && rect.bottom >= 0) ||
-        (rect.bottom >=
-            (window.innerHeight || document.documentElement.clientHeight) &&
-            rect.top <=
-                (window.innerHeight ||
-                    document.documentElement.clientHeight)) ||
-        (rect.top >= 0 &&
-            rect.bottom <=
-                (window.innerHeight || document.documentElement.clientHeight))
-    )
-}
 
 const SectionInViewIdentifier = ({ sectionName }: { sectionName: string }) => {
     const { setCurrentSectionInView } = useSectionInViewContext()
@@ -32,7 +17,7 @@ const SectionInViewIdentifier = ({ sectionName }: { sectionName: string }) => {
                 }
             })
         },
-        []
+        [sectionName, setCurrentSectionInView]
     )
 
     useEffect(() => {
@@ -44,7 +29,7 @@ const SectionInViewIdentifier = ({ sectionName }: { sectionName: string }) => {
         return () => {
             observer?.disconnect()
         }
-    }, [compRef.current])
+    }, [handleIntersection])
 
     return <div ref={compRef} className="section-floating-element" />
 }
@@ -70,7 +55,11 @@ const SectionWrapper =
             ) {
                 setSkillsSectionVisited(true)
             }
-        }, [currentSectionInView])
+        }, [
+            currentSectionInView,
+            isSkillsSectionVisited,
+            setSkillsSectionVisited,
+        ])
 
         return (
             <ErrorBoundary errorMessage={t('sectionLoadError')}>

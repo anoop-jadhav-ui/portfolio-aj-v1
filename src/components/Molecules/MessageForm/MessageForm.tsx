@@ -1,7 +1,7 @@
 
 import { zodResolver } from '@hookform/resolvers/zod'
 import { LoaderCircle, SendHorizontal } from 'lucide-react'
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import { useTranslation } from 'react-i18next'
 import { z } from 'zod'

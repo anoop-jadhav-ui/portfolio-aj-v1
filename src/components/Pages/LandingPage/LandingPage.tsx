@@ -1,5 +1,4 @@
 
-import React from 'react'
 import { useProfileDataContext } from '../../../context/ProfileDataContext'
 import { useTheme } from '../../../context/ThemeContext'
 import LeftPane from '../../Molecules/LeftPane/LeftPane'

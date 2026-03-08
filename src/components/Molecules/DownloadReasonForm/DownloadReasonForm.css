@@ -4,6 +4,7 @@
     gap: 1rem;
 
     .input-form-control {
+        display: grid;
         width: 100%;
 
         &:has(input:focus, textarea:focus) label {

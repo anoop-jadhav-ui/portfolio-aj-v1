@@ -52,8 +52,7 @@ export const getResumeUrl = () => {
     )}?alt=media`
 }
 
-export const getReceiverEmail = () =>
-    getEnv('MJ_RECEIVER_EMAIL') ?? 'anoopjadhav@gmail.com'
+export const getReceiverEmail = () => getEnv('MJ_RECEIVER_EMAIL')
 
 const getMailjetKeyPairs = (): MailjetKeyPair[] => {
     const pairs: MailjetKeyPair[] = []

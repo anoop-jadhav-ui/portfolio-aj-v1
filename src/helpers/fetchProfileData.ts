@@ -5,19 +5,18 @@ import firebaseApp from './firebaseApp'
 export default async function fetchProfileData() {
     try {
         if (process.env.NODE_ENV === 'development') {
-            console.log('Loading local data. Skipping the api call.')
             return testProfileData
-        } else {
-            const dbRef = ref(getDatabase(firebaseApp))
-            const snapshot = await get(child(dbRef, '/'))
-            if (snapshot.exists()) {
-                return snapshot.val()
-            } else {
-                throw 'Api call failed.'
-            }
         }
+
+        const dbRef = ref(getDatabase(firebaseApp))
+        const snapshot = await get(child(dbRef, '/'))
+        if (snapshot.exists()) {
+            return snapshot.val()
+        }
+
+        throw new Error('Profile data fetch failed: empty snapshot')
     } catch (err) {
-        console.log(err)
+        console.error('Failed to fetch profile data:', err)
         return testProfileData
     }
 }

@@ -1,5 +1,5 @@
 
-import React, { lazy, Suspense } from 'react'
+import { lazy, Suspense } from 'react'
 import { useProfileDataContext } from '../../../context/ProfileDataContext'
 import Loader from '../../Atoms/Loader/Loader'
 import Header from '../Header/Header'

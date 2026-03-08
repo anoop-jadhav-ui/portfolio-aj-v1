@@ -1,6 +1,6 @@
 import { ArrowLeft, CalendarClock, Download, LoaderCircle } from 'lucide-react'
 import Link from 'next/link'
-import React, { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useAlertBanner } from '../../../context/AlertBannerContext'
 import { getCVLastUpdatedAt, getCVUrl } from '../../../helpers/downloadCV'

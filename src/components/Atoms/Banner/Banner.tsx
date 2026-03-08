@@ -1,4 +1,3 @@
-import React from 'react'
 import { useAlertBanner } from '../../../context/AlertBannerContext'
 
 export type BannerStatus = 'success' | 'neutral' | 'error'

@@ -1,5 +1,5 @@
 
-import React, { useMemo, useRef } from 'react'
+import { useMemo, useRef } from 'react'
 import Link from 'next/link'
 import { useTranslation } from 'react-i18next'
 import { DarkModeSwitch } from 'react-toggle-dark-mode'

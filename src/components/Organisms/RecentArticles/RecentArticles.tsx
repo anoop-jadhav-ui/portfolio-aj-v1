@@ -1,9 +1,7 @@
-
 import { ArrowRight } from 'lucide-react'
-import React, { useMemo } from 'react'
+import { useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useRecentArticleContext } from '../../../context/RecentArticleContext'
-import { useTheme } from '../../../context/ThemeContext'
 import Button from '../../Atoms/Button/Button'
 import ArticleCard from '../../Molecules/ArticleCard/ArticleCard'
 import { sectionDetails } from '../../Molecules/LeftPane/leftPaneData'
@@ -14,13 +12,12 @@ const headingId = `${sectionDetails.recentArticles.class}-heading`
 
 function RecentArticles() {
     const { recentArticles, isLoadingArticles } = useRecentArticleContext()
-    const { isMobile } = useTheme()
     const { t } = useTranslation()
     const blogUrl = process.env.NEXT_PUBLIC_HASHNODE_BLOG_URL ?? '#'
 
     const topRecentArticles = useMemo(() => {
         return recentArticles.slice(0, 3)
-    }, [recentArticles, isMobile])
+    }, [recentArticles])
 
     return (
         <>

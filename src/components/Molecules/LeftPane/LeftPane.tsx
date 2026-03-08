@@ -1,6 +1,5 @@
 
 import { Play } from 'lucide-react'
-import React from 'react'
 import { useTranslation } from 'react-i18next'
 import { useProfileDataContext } from '../../../context/ProfileDataContext'
 import { useSectionInViewContext } from '../../../context/SectionInViewContext'

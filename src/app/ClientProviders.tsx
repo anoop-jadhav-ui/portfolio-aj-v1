@@ -1,7 +1,6 @@
 'use client'
 
-import React, { ReactNode } from 'react'
-import { useEffect } from 'react'
+import { ReactNode, useEffect } from 'react'
 import AlertBannerProvider from '../context/AlertBannerContext'
 import { ProfileDataContextProvider } from '../context/ProfileDataContext'
 import { RecentArticleContextProvider } from '../context/RecentArticleContext'

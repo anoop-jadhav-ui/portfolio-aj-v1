@@ -1,6 +1,5 @@
 
 import { ExternalLink } from 'lucide-react'
-import React from 'react'
 import { useTranslation } from 'react-i18next'
 import { useProfileDataContext } from '../../../context/ProfileDataContext'
 import { CertificateDetails } from '../../../types/profileDataTypes'
