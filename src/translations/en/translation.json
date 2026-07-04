@@ -34,6 +34,7 @@
     "button": {
         "contactMe": "Contact Me",
         "downloadCv": "Download CV",
+        "requestResumeLink": "Request via email",
         "send": "Send",
         "viewAll": "View All"
     },

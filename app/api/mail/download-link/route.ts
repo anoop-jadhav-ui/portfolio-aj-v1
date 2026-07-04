@@ -7,6 +7,7 @@ import {
     sendMail,
 } from '../../_lib/mailer'
 import { guardApiRequest } from '../../_lib/requestGuards'
+import { createResumeToken } from '../../_lib/resumeTokens'
 import { downloadLinkSchema } from '../../_lib/schemas'
 
 export async function POST(request: Request) {
@@ -60,17 +61,22 @@ export async function POST(request: Request) {
         const safeName = escapeHtml(name)
         const safeEmail = escapeHtml(email)
         const safeMessage = escapeHtml(message ?? 'N/A')
+        const downloadToken = createResumeToken({ email, name })
+        const baseUrl = portfolioUrl.endsWith('/')
+            ? portfolioUrl.slice(0, -1)
+            : portfolioUrl
+        const downloadLink = `${baseUrl}/api/resume/download?token=${downloadToken}`
 
         await sendMail({
             toEmail: email,
             toName: name,
             subject: 'Portfolio | Resume Download Link',
-            textPart: `Hi ${name},\n\nHere is the resume link:\n${resumeUrl}\n\nThanks for visiting ${portfolioUrl}`,
+            textPart: `Hi ${name},\n\nHere is your download link:\n${downloadLink}\n\nThanks for visiting ${portfolioUrl}`,
             htmlPart: `
                 <div style="font-family: Arial, sans-serif; line-height: 1.6;">
                     <h2>Hi ${safeName},</h2>
-                    <p>Thanks for your interest. You can download the resume below:</p>
-                    <p><a href="${resumeUrl}" target="_blank" rel="noreferrer">Download Resume</a></p>
+                    <p>Thanks for your interest. Use the secure link below to download the resume:</p>
+                    <p><a href="${downloadLink}" target="_blank" rel="noreferrer">Download Resume</a></p>
                     <p>Portfolio: <a href="${portfolioUrl}">${portfolioUrl}</a></p>
                 </div>
             `,

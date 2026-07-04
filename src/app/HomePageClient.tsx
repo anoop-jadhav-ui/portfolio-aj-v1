@@ -4,8 +4,12 @@ import Clarity from '@microsoft/clarity'
 import { useEffect, useRef } from 'react'
 import { useTranslation } from 'react-i18next'
 import PageScrollProgressBar from 'react-page-scroll-progress-bar'
+import dynamic from 'next/dynamic'
 import ErrorBoundary from '../components/Molecules/ErrorBoundary/ErrorBoundary'
-import Stars from '../components/Molecules/Stars/Stars'
+
+const Stars = dynamic(() => import('../components/Molecules/Stars/Stars'), {
+    ssr: false,
+})
 import LandingPage from '../components/Pages/LandingPage/LandingPage'
 
 const HomePageClient = () => {

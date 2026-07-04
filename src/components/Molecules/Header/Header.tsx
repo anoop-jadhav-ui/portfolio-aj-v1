@@ -1,5 +1,5 @@
 
-import { useMemo, useRef } from 'react'
+import { type JSX, useMemo, useRef } from 'react'
 import Link from 'next/link'
 import { useTranslation } from 'react-i18next'
 import { DarkModeSwitch } from 'react-toggle-dark-mode'
@@ -26,6 +26,14 @@ export default function Header() {
     const toDarkMode = () => {
         setDarkMode(!darkMode)
     }
+
+    const DarkModeSwitchComponent = DarkModeSwitch as unknown as (props: {
+        checked: boolean
+        onChange: (checked: boolean) => void
+        size: number
+        sunColor: string
+        moonColor: string
+    }) => JSX.Element
 
     const toggleIconColor = darkMode ? '#fafafa' : '#ff565a'
 
@@ -59,7 +67,7 @@ export default function Header() {
                                 className="darkModeSwitch"
                                 title="Toggle dark mode"
                             >
-                                <DarkModeSwitch
+                                <DarkModeSwitchComponent
                                     checked={darkMode}
                                     onChange={toDarkMode}
                                     size={isMobile ? 20 : 28}

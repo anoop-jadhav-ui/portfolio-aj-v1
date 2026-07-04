@@ -7,7 +7,6 @@ import { useTranslation } from 'react-i18next'
 import { z } from 'zod'
 import { useAlertBanner } from '../../../context/AlertBannerContext'
 import axiosInstance from '../../../helpers/axios'
-import { downloadCV } from '../../../helpers/downloadCV'
 import Button from '../../Atoms/Button/Button'
 
 type DownloadReasonForm = {
@@ -25,6 +24,15 @@ const defaultValues: DownloadReasonForm = {
 const DownloadReasonForm = ({ closeDialog }: { closeDialog: () => void }) => {
     const { t } = useTranslation()
     const { showAlertBanner } = useAlertBanner()
+    const showBannerAfterDialogClose = (
+        type: 'success' | 'error',
+        message: string
+    ) => {
+        closeDialog()
+        setTimeout(() => {
+            showAlertBanner(type, message)
+        }, 0)
+    }
 
     const messageFormSchema = z.object({
         name: z.string().min(1, {
@@ -81,15 +89,16 @@ const DownloadReasonForm = ({ closeDialog }: { closeDialog: () => void }) => {
             })
 
             if (response.data.msg === 'success') {
-                showAlertBanner('success', t('downloadLinkMailed'))
-                await downloadCV()
                 reset()
-                closeDialog()
+                showBannerAfterDialogClose('success', t('downloadLinkMailed'))
             } else if (response.data.msg === 'fail') {
-                showAlertBanner('error', t('sorryCouldntSendMsg'))
+                showBannerAfterDialogClose(
+                    'error',
+                    t('sorryCouldntSendMsg')
+                )
             }
         } catch (e: unknown) {
-            showAlertBanner('error', t('sorryCouldntSendMsg'))
+            showBannerAfterDialogClose('error', t('sorryCouldntSendMsg'))
         } finally {
             isSubmittingRef.current = false
             setLoading(false)

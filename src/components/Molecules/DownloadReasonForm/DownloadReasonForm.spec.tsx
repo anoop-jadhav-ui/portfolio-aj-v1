@@ -2,13 +2,10 @@ import { fireEvent, render, screen, waitFor } from '@testing-library/react'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import AlertBannerProvider from '../../../context/AlertBannerContext'
 import axiosInstance from '../../../helpers/axios'
-import * as downloadCvModule from '../../../helpers/downloadCV'
 import TranslationSeed from '../../../testUtils/TranslationSeed'
 import DownloadReasonForm from './DownloadReasonForm'
 
 vi.mock('../../../helpers/axios')
-vi.mock('../../../helpers/downloadCV')
-
 const mockOnCloseDialog = vi.fn()
 
 const ComponentUnderTest = () => {
@@ -29,7 +26,6 @@ describe('<DownloadReasonForm/>', () => {
     })
 
     it('shows success banner after successful submission and close the dialog', async () => {
-        vi.spyOn(downloadCvModule, 'downloadCV').mockResolvedValue(undefined)
         vi.spyOn(axiosInstance, 'post').mockResolvedValue({
             data: { msg: 'success' },
         })
@@ -55,7 +51,6 @@ describe('<DownloadReasonForm/>', () => {
             /Download link has been sent to your email./i
         )
 
-        expect(downloadCvModule.downloadCV).toHaveBeenCalledTimes(1)
         expect(mockOnCloseDialog).toBeCalled()
     })
 
@@ -85,7 +80,7 @@ describe('<DownloadReasonForm/>', () => {
             /Sorry, we couldn't send your message. Please try again later./i
         )
 
-        expect(mockOnCloseDialog).not.toBeCalled()
+        expect(mockOnCloseDialog).toBeCalled()
     })
 
     it('shows error banner after api fails', async () => {
@@ -111,5 +106,7 @@ describe('<DownloadReasonForm/>', () => {
         expect(screen.getByTestId('banner')).toHaveTextContent(
             /Sorry, we couldn't send your message. Please try again later./i
         )
+
+        expect(mockOnCloseDialog).toBeCalled()
     })
 })

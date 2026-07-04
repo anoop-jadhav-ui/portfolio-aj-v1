@@ -67,6 +67,8 @@ Additional server-only keys:
 - `MJ_APIKEY_PRIVATE`
 - `MJ_SENDER_EMAIL`
 - `MJ_RECEIVER_EMAIL`
+- `RESUME_LINK_SECRET`
+- `RESUME_LINK_TTL_HOURS`
 - `ALLOWED_ORIGINS` (comma-separated origins for API origin validation)
 - `API_RATE_LIMIT_MAX`
 - `API_RATE_LIMIT_WINDOW_MS`

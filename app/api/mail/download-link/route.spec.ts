@@ -22,6 +22,7 @@ describe('POST /api/mail/download-link', () => {
     beforeEach(() => {
         vi.clearAllMocks()
         mockGetResumeUrl.mockReturnValue('https://resume.example.com')
+        process.env.RESUME_LINK_SECRET = 'test-secret'
         if (originalAllowedOrigins === undefined) {
             delete process.env.ALLOWED_ORIGINS
         } else {
@@ -112,6 +113,11 @@ describe('POST /api/mail/download-link', () => {
         expect(response.status).toBe(200)
         await expect(response.json()).resolves.toEqual({ msg: 'success' })
         expect(mockSendMail).toHaveBeenCalledTimes(2)
+        const userEmail = mockSendMail.mock.calls[0][0]
+        expect(userEmail.textPart).toContain('/api/resume/download?token=')
+        expect(userEmail.htmlPart).toContain('/api/resume/download?token=')
+        expect(userEmail.textPart).not.toContain('https://resume.example.com')
+        expect(userEmail.htmlPart).not.toContain('https://resume.example.com')
     })
 
     it('returns 500 when resume url is missing', async () => {
